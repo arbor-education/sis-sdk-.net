@@ -1,0 +1,119 @@
+using System;
+using System.Collections;
+using Arbor.Resource;
+using Arbor.Api.Gateway;
+using Arbor.Query;
+using Arbor.Model.UkDfe;
+
+namespace Arbor.Model
+{
+    public class InterventionGroup : ModelBase
+    {
+        protected string resourceType = ResourceType.INTERVENTION_GROUP;
+        public const string INTERVENTION = "intervention";
+        public const string GROUP = "group";
+        public const string START_DATE = "startDate";
+        public const string END_DATE = "endDate";
+        public const string AIMS = "aims";
+        public const string SUCCESS_CRITERIA = "successCriteria";
+
+        public InterventionGroup ()
+        {
+            base.resourceType = this.resourceType;
+        }
+        
+        public InterventionGroup (string resourceType = "InterventionGroup", Hashtable properties = null, IGateway apiGateway = null) 
+        			: base (resourceType, properties, apiGateway)
+        {
+        
+        }
+        
+
+        public static ModelCollection<InterventionGroup> query (SimpleQuery query = null)
+        {
+            if (query == null) query = new SimpleQuery ();
+        	query.setResourceType ("InterventionGroup");
+        	RestGateway gateway = (RestGateway) InterventionGroup.getDefaultGateway ();
+        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+        
+        	ModelCollection<InterventionGroup> interventiongroupCollection = new ModelCollection<InterventionGroup> ();
+        	ModelCollection<ModelBase> collection = gateway.query (query);
+        
+        	foreach (ModelBase model in collection) {
+        	    interventiongroupCollection.add((InterventionGroup) model);
+        	}
+        
+        	return interventiongroupCollection;
+        }
+
+        public static InterventionGroup retrieve (string id)
+        {
+            RestGateway gateway = (RestGateway) InterventionGroup.getDefaultGateway();
+        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+        	return (InterventionGroup) gateway.retrieve(ResourceType.INTERVENTION_GROUP, id);
+        }
+
+        public Intervention getIntervention ()
+        {
+            return (Intervention) this.getProperty("intervention");
+        }
+
+        public void setIntervention (Intervention intervention)
+        {
+            this.setProperty("intervention", intervention);
+        }
+
+        public ModelBase getGroup ()
+        {
+            return (ModelBase) this.getProperty("group");
+        }
+
+        public void setGroup (ModelBase group)
+        {
+            this.setProperty("group", group);
+        }
+
+        public DateTime getStartDate ()
+        {
+            return (DateTime) this.getProperty("startDate");
+        }
+
+        public void setStartDate (DateTime startDate)
+        {
+            this.setProperty("startDate", startDate);
+        }
+
+        public DateTime getEndDate ()
+        {
+            return (DateTime) this.getProperty("endDate");
+        }
+
+        public void setEndDate (DateTime endDate)
+        {
+            this.setProperty("endDate", endDate);
+        }
+
+        public string getAims ()
+        {
+            return this.getProperty("aims").ToString();
+        }
+
+        public void setAims (string aims)
+        {
+            this.setProperty("aims", aims);
+        }
+
+        public string getSuccessCriteria ()
+        {
+            return this.getProperty("successCriteria").ToString();
+        }
+
+        public void setSuccessCriteria (string successCriteria)
+        {
+            this.setProperty("successCriteria", successCriteria);
+        }
+
+
+    }
+}
+
