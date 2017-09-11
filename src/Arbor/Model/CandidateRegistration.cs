@@ -12,11 +12,9 @@ namespace Arbor.Model
         protected string resourceType = ResourceType.CANDIDATE_REGISTRATION;
         public const string CANDIDATE = "candidate";
         public const string QUALIFICATION_AWARD = "qualificationAward";
-        public const string REGISTRATION_NUMBER = "registrationNumber";
-        public const string REGISTRATION_REQUESTED_DATETIME = "registrationRequestedDatetime";
-        public const string REGISTRATION_CONFIRMED_DATETIME = "registrationConfirmedDatetime";
-        public const string RESPONSE_RECEIVED_DATETIME = "responseReceivedDatetime";
-        public const string RESPONSE_MESSAGE = "responseMessage";
+        public const string QUALIFICATION_AVAILABILITY_INSTANCE = "qualificationAvailabilityInstance";
+        public const string ENTRY_STATUS = "entryStatus";
+        public const string WITHDRAWAL_STATUS = "withdrawalStatus";
 
         public CandidateRegistration ()
         {
@@ -74,54 +72,34 @@ namespace Arbor.Model
             this.setProperty("qualificationAward", qualificationAward);
         }
 
-        public string getRegistrationNumber ()
+        public QualificationAvailabilityInstance getQualificationAvailabilityInstance ()
         {
-            return this.getProperty("registrationNumber").ToString();
+            return (QualificationAvailabilityInstance) this.getProperty("qualificationAvailabilityInstance");
         }
 
-        public void setRegistrationNumber (string registrationNumber)
+        public void setQualificationAvailabilityInstance (QualificationAvailabilityInstance qualificationAvailabilityInstance)
         {
-            this.setProperty("registrationNumber", registrationNumber);
+            this.setProperty("qualificationAvailabilityInstance", qualificationAvailabilityInstance);
         }
 
-        public DateTime getRegistrationRequestedDatetime ()
+        public string getEntryStatus ()
         {
-            return (DateTime) this.getProperty("registrationRequestedDatetime");
+            return this.getProperty("entryStatus").ToString();
         }
 
-        public void setRegistrationRequestedDatetime (DateTime registrationRequestedDatetime)
+        public void setEntryStatus (string entryStatus)
         {
-            this.setProperty("registrationRequestedDatetime", registrationRequestedDatetime);
+            this.setProperty("entryStatus", entryStatus);
         }
 
-        public DateTime getRegistrationConfirmedDatetime ()
+        public string getWithdrawalStatus ()
         {
-            return (DateTime) this.getProperty("registrationConfirmedDatetime");
+            return this.getProperty("withdrawalStatus").ToString();
         }
 
-        public void setRegistrationConfirmedDatetime (DateTime registrationConfirmedDatetime)
+        public void setWithdrawalStatus (string withdrawalStatus)
         {
-            this.setProperty("registrationConfirmedDatetime", registrationConfirmedDatetime);
-        }
-
-        public DateTime getResponseReceivedDatetime ()
-        {
-            return (DateTime) this.getProperty("responseReceivedDatetime");
-        }
-
-        public void setResponseReceivedDatetime (DateTime responseReceivedDatetime)
-        {
-            this.setProperty("responseReceivedDatetime", responseReceivedDatetime);
-        }
-
-        public string getResponseMessage ()
-        {
-            return this.getProperty("responseMessage").ToString();
-        }
-
-        public void setResponseMessage (string responseMessage)
-        {
-            this.setProperty("responseMessage", responseMessage);
+            this.setProperty("withdrawalStatus", withdrawalStatus);
         }
 
 

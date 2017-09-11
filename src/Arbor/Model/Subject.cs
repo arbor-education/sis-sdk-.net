@@ -18,6 +18,7 @@ namespace Arbor.Model
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";
         public const string SUBJECT_NAME = "subjectName";
+        public const string PARENT_SUBJECT = "parentSubject";
 
         public Subject ()
         {
@@ -133,6 +134,16 @@ namespace Arbor.Model
         public void setSubjectName (string subjectName)
         {
             this.setProperty("subjectName", subjectName);
+        }
+
+        public Subject getParentSubject ()
+        {
+            return (Subject) this.getProperty("parentSubject");
+        }
+
+        public void setParentSubject (Subject parentSubject)
+        {
+            this.setProperty("parentSubject", parentSubject);
         }
 
 

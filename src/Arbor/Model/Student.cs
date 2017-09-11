@@ -11,13 +11,15 @@ namespace Arbor.Model
     {
         protected string resourceType = ResourceType.STUDENT;
         public const string UNIQUE_LEARNER_NUMBER = "uniqueLearnerNumber";
-        public const string UNIQUE_CANDIDATE_IDENTIFIER = "uniqueCandidateIdentifier";
         public const string RESPONSIBLE_LOCAL_AUTHORITY = "responsibleLocalAuthority";
+        public const string HOME_LOCAL_AUTHORITY = "homeLocalAuthority";
         public const string TRAVELLER_STATUS = "travellerStatus";
         public const string YOUTH_SUPPORT_SERVICES_AGREEMENT = "youthSupportServicesAgreement";
         public const string HOURS_AT_SETTING = "hoursAtSetting";
         public const string FUNDED_HOURS = "fundedHours";
         public const string ETHNICITY_SOURCE = "ethnicitySource";
+        public const string EXTENDED_HOURS = "extendedHours";
+        public const string THIRTY_HOUR_CODE = "thirtyHourCode";
         public const string PERSON = "person";
         public const string RELIGION = "religion";
         public const string ETHNICITY = "ethnicity";
@@ -28,6 +30,7 @@ namespace Arbor.Model
         public const string STUDENT_NUMBER = "studentNumber";
         public const string PRIMARY_GUARDIANS_SALUTATION = "primaryGuardiansSalutation";
         public const string PRIMARY_GUARDIANS_ADDRESSEE = "primaryGuardiansAddressee";
+        public const string LEGACY_SYSTEM_ID = "legacySystemId";
 
         public Student ()
         {
@@ -75,24 +78,24 @@ namespace Arbor.Model
             this.setProperty("uniqueLearnerNumber", uniqueLearnerNumber);
         }
 
-        public string getUniqueCandidateIdentifier ()
+        public LocalAuthority getResponsibleLocalAuthority ()
         {
-            return this.getProperty("uniqueCandidateIdentifier").ToString();
+            return (LocalAuthority) this.getProperty("responsibleLocalAuthority");
         }
 
-        public void setUniqueCandidateIdentifier (string uniqueCandidateIdentifier)
-        {
-            this.setProperty("uniqueCandidateIdentifier", uniqueCandidateIdentifier);
-        }
-
-        public ModelBase getResponsibleLocalAuthority ()
-        {
-            return (ModelBase) this.getProperty("responsibleLocalAuthority");
-        }
-
-        public void setResponsibleLocalAuthority (ModelBase responsibleLocalAuthority)
+        public void setResponsibleLocalAuthority (LocalAuthority responsibleLocalAuthority)
         {
             this.setProperty("responsibleLocalAuthority", responsibleLocalAuthority);
+        }
+
+        public LocalAuthority getHomeLocalAuthority ()
+        {
+            return (LocalAuthority) this.getProperty("homeLocalAuthority");
+        }
+
+        public void setHomeLocalAuthority (LocalAuthority homeLocalAuthority)
+        {
+            this.setProperty("homeLocalAuthority", homeLocalAuthority);
         }
 
         public bool getTravellerStatus ()
@@ -143,6 +146,26 @@ namespace Arbor.Model
         public void setEthnicitySource (string ethnicitySource)
         {
             this.setProperty("ethnicitySource", ethnicitySource);
+        }
+
+        public string getExtendedHours ()
+        {
+            return this.getProperty("extendedHours").ToString();
+        }
+
+        public void setExtendedHours (string extendedHours)
+        {
+            this.setProperty("extendedHours", extendedHours);
+        }
+
+        public string getThirtyHourCode ()
+        {
+            return this.getProperty("thirtyHourCode").ToString();
+        }
+
+        public void setThirtyHourCode (string thirtyHourCode)
+        {
+            this.setProperty("thirtyHourCode", thirtyHourCode);
         }
 
         public Person getPerson ()
@@ -243,6 +266,16 @@ namespace Arbor.Model
         public void setPrimaryGuardiansAddressee (string primaryGuardiansAddressee)
         {
             this.setProperty("primaryGuardiansAddressee", primaryGuardiansAddressee);
+        }
+
+        public string getLegacySystemId ()
+        {
+            return this.getProperty("legacySystemId").ToString();
+        }
+
+        public void setLegacySystemId (string legacySystemId)
+        {
+            this.setProperty("legacySystemId", legacySystemId);
         }
 
 

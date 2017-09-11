@@ -15,7 +15,8 @@ namespace Arbor.Model
         public const string NUMERIC_VALUE = "numericValue";
         public const string STUDENT = "student";
         public const string CANDIDATE_ENTRY = "candidateEntry";
-        public const string INPUT_DATE = "inputDate";
+        public const string CANDIDATE_REGISTRATION = "candidateRegistration";
+        public const string INPUT_DATETIME = "inputDatetime";
 
         public QualificationForecastResult ()
         {
@@ -103,14 +104,24 @@ namespace Arbor.Model
             this.setProperty("candidateEntry", candidateEntry);
         }
 
-        public DateTime getInputDate ()
+        public CandidateRegistration getCandidateRegistration ()
         {
-            return (DateTime) this.getProperty("inputDate");
+            return (CandidateRegistration) this.getProperty("candidateRegistration");
         }
 
-        public void setInputDate (DateTime inputDate)
+        public void setCandidateRegistration (CandidateRegistration candidateRegistration)
         {
-            this.setProperty("inputDate", inputDate);
+            this.setProperty("candidateRegistration", candidateRegistration);
+        }
+
+        public DateTime getInputDatetime ()
+        {
+            return (DateTime) this.getProperty("inputDatetime");
+        }
+
+        public void setInputDatetime (DateTime inputDatetime)
+        {
+            this.setProperty("inputDatetime", inputDatetime);
         }
 
 

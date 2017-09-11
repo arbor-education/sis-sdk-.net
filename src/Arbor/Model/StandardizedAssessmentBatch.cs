@@ -12,7 +12,6 @@ namespace Arbor.Model
         protected string resourceType = ResourceType.STANDARDIZED_ASSESSMENT_BATCH;
         public const string ACADEMIC_YEAR = "academicYear";
         public const string BATCH_NAME = "batchName";
-        public const string GRADE_POINT_SCALE_LEVEL_TYPE = "gradePointScaleLevelType";
         public const string STANDARDIZED_ASSESSMENT_TEMPLATE = "standardizedAssessmentTemplate";
         public const string ASSESSMENT_DATE = "assessmentDate";
         public const string SEN_STUDENTS_ONLY = "senStudentsOnly";
@@ -71,16 +70,6 @@ namespace Arbor.Model
         public void setBatchName (string batchName)
         {
             this.setProperty("batchName", batchName);
-        }
-
-        public string getGradePointScaleLevelType ()
-        {
-            return this.getProperty("gradePointScaleLevelType").ToString();
-        }
-
-        public void setGradePointScaleLevelType (string gradePointScaleLevelType)
-        {
-            this.setProperty("gradePointScaleLevelType", gradePointScaleLevelType);
         }
 
         public StandardizedAssessmentTemplate getStandardizedAssessmentTemplate ()

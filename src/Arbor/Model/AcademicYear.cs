@@ -15,7 +15,6 @@ namespace Arbor.Model
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
         public const string TIMETABLE_CYCLE_LENGTH = "timetableCycleLength";
-        public const string TIMETABLE_CYCLE_RESETS_EACH_TERM = "timetableCycleResetsEachTerm";
 
         public AcademicYear ()
         {
@@ -101,16 +100,6 @@ namespace Arbor.Model
         public void setTimetableCycleLength (int timetableCycleLength)
         {
             this.setProperty("timetableCycleLength", timetableCycleLength);
-        }
-
-        public bool getTimetableCycleResetsEachTerm ()
-        {
-            return (bool) this.getProperty("timetableCycleResetsEachTerm");
-        }
-
-        public void setTimetableCycleResetsEachTerm (bool timetableCycleResetsEachTerm)
-        {
-            this.setProperty("timetableCycleResetsEachTerm", timetableCycleResetsEachTerm);
         }
 
 

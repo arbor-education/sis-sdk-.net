@@ -12,10 +12,7 @@ namespace Arbor.Model
         protected string resourceType = ResourceType.MEAL_SITTING;
         public const string MEAL = "meal";
         public const string MEAL_SITTING_NAME = "mealSittingName";
-        public const string START_TIME = "startTime";
-        public const string END_TIME = "endTime";
         public const string ROOM = "room";
-        public const string ACADEMIC_YEAR = "academicYear";
         public const string EFFECTIVE_DATE = "effectiveDate";
         public const string END_DATE = "endDate";
 
@@ -75,26 +72,6 @@ namespace Arbor.Model
             this.setProperty("mealSittingName", mealSittingName);
         }
 
-        public string getStartTime ()
-        {
-            return this.getProperty("startTime").ToString();
-        }
-
-        public void setStartTime (string startTime)
-        {
-            this.setProperty("startTime", startTime);
-        }
-
-        public string getEndTime ()
-        {
-            return this.getProperty("endTime").ToString();
-        }
-
-        public void setEndTime (string endTime)
-        {
-            this.setProperty("endTime", endTime);
-        }
-
         public Room getRoom ()
         {
             return (Room) this.getProperty("room");
@@ -103,16 +80,6 @@ namespace Arbor.Model
         public void setRoom (Room room)
         {
             this.setProperty("room", room);
-        }
-
-        public AcademicYear getAcademicYear ()
-        {
-            return (AcademicYear) this.getProperty("academicYear");
-        }
-
-        public void setAcademicYear (AcademicYear academicYear)
-        {
-            this.setProperty("academicYear", academicYear);
         }
 
         public DateTime getEffectiveDate ()

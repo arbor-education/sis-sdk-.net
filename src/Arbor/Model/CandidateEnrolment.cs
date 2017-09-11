@@ -11,7 +11,6 @@ namespace Arbor.Model
     {
         protected string resourceType = ResourceType.CANDIDATE_ENROLMENT;
         public const string CANDIDATE = "candidate";
-        public const string AWARDING_ORGANIZATION = "awardingOrganization";
         public const string ENROLMENT_NUMBER = "enrolmentNumber";
         public const string ENROLMENT_REQUESTED_DATETIME = "enrolmentRequestedDatetime";
         public const string ENROLMENT_CONFIRMED_DATETIME = "enrolmentConfirmedDatetime";
@@ -60,16 +59,6 @@ namespace Arbor.Model
         public void setCandidate (Candidate candidate)
         {
             this.setProperty("candidate", candidate);
-        }
-
-        public AwardingOrganization getAwardingOrganization ()
-        {
-            return (AwardingOrganization) this.getProperty("awardingOrganization");
-        }
-
-        public void setAwardingOrganization (AwardingOrganization awardingOrganization)
-        {
-            this.setProperty("awardingOrganization", awardingOrganization);
         }
 
         public string getEnrolmentNumber ()

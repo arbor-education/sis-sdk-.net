@@ -19,6 +19,7 @@ namespace Arbor.Model
         public const string LIFETIME_OPENING_POINTS_BALANCE = "lifetimeOpeningPointsBalance";
         public const string MIN_POINT_AWARD = "minPointAward";
         public const string MAX_POINT_AWARD = "maxPointAward";
+        public const string DIRECTIONALITY = "directionality";
 
         public PointAwardScale ()
         {
@@ -144,6 +145,16 @@ namespace Arbor.Model
         public void setMaxPointAward (float maxPointAward)
         {
             this.setProperty("maxPointAward", maxPointAward);
+        }
+
+        public string getDirectionality ()
+        {
+            return this.getProperty("directionality").ToString();
+        }
+
+        public void setDirectionality (string directionality)
+        {
+            this.setProperty("directionality", directionality);
         }
 
 

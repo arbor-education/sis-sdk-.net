@@ -23,9 +23,6 @@ namespace Arbor.Model.UkDfe
         public const string STATUS_DESCRIPTION = "statusDescription";
         public const string DATA_EXPORT_STARTED_DATETIME = "dataExportStartedDatetime";
         public const string DATA_EXPORT_COMPLETED_DATETIME = "dataExportCompletedDatetime";
-        public const string SCHOOL_APPROVED_DATETIME = "schoolApprovedDatetime";
-        public const string LOCAL_AUTHORITY_REJECTED_DATETIME = "localAuthorityRejectedDatetime";
-        public const string LOCAL_AUTHORITY_ACCEPTED_DATETIME = "localAuthorityAcceptedDatetime";
         public const string IS_DRY_RUN = "isDryRun";
 
         public SchoolCensusReturn ()
@@ -64,12 +61,12 @@ namespace Arbor.Model.UkDfe
         	return (SchoolCensusReturn) gateway.retrieve(ResourceType.UK_DFE_SCHOOL_CENSUS_RETURN, id);
         }
 
-        public ModelBase getSchoolCensus ()
+        public SchoolCensus getSchoolCensus ()
         {
-            return (ModelBase) this.getProperty("schoolCensus");
+            return (SchoolCensus) this.getProperty("schoolCensus");
         }
 
-        public void setSchoolCensus (ModelBase schoolCensus)
+        public void setSchoolCensus (SchoolCensus schoolCensus)
         {
             this.setProperty("schoolCensus", schoolCensus);
         }
@@ -192,36 +189,6 @@ namespace Arbor.Model.UkDfe
         public void setDataExportCompletedDatetime (DateTime dataExportCompletedDatetime)
         {
             this.setProperty("dataExportCompletedDatetime", dataExportCompletedDatetime);
-        }
-
-        public DateTime getSchoolApprovedDatetime ()
-        {
-            return (DateTime) this.getProperty("schoolApprovedDatetime");
-        }
-
-        public void setSchoolApprovedDatetime (DateTime schoolApprovedDatetime)
-        {
-            this.setProperty("schoolApprovedDatetime", schoolApprovedDatetime);
-        }
-
-        public DateTime getLocalAuthorityRejectedDatetime ()
-        {
-            return (DateTime) this.getProperty("localAuthorityRejectedDatetime");
-        }
-
-        public void setLocalAuthorityRejectedDatetime (DateTime localAuthorityRejectedDatetime)
-        {
-            this.setProperty("localAuthorityRejectedDatetime", localAuthorityRejectedDatetime);
-        }
-
-        public DateTime getLocalAuthorityAcceptedDatetime ()
-        {
-            return (DateTime) this.getProperty("localAuthorityAcceptedDatetime");
-        }
-
-        public void setLocalAuthorityAcceptedDatetime (DateTime localAuthorityAcceptedDatetime)
-        {
-            this.setProperty("localAuthorityAcceptedDatetime", localAuthorityAcceptedDatetime);
         }
 
         public bool getIsDryRun ()

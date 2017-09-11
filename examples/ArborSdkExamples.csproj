@@ -9,7 +9,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>ArborSdkExamples</RootNamespace>
     <AssemblyName>ArborSdkExamples</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <UseMSBuildEngine>False</UseMSBuildEngine>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -31,8 +31,15 @@
     <Externalconsole>True</Externalconsole>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Xml" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\..\..\usr\lib\mono\4.5\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml">
+      <HintPath>..\..\..\..\..\..\..\..\..\usr\lib\mono\4.5\System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>..\..\..\..\..\..\..\..\..\usr\lib\mono\4.5\System.Data.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>lib\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -45,17 +52,14 @@
   <ItemGroup>
     <Folder Include="bin\" />
     <Folder Include="lib\" />
-    <Folder Include="lib\sdk-0.1.1.19642\" />
-    <Folder Include="lib\sdk-0.1.1.19340\" />
-    <Folder Include="lib\sdk-0.1.1.18528\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="config-dist.xml" />
+    <None Include="lib\ArborSdk.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="config.xml" />
     <None Include="lib\Newtonsoft.Json.dll" />
-    <None Include="lib\sdk-0.1.1.19642\ArborSdk.dll" />
-    <None Include="lib\sdk-0.1.1.19340\ArborSdk.dll" />
-    <None Include="lib\sdk-0.1.1.18528\ArborSdk.dll" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\src\ArborSdk.csproj">

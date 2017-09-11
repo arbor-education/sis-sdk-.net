@@ -27,7 +27,7 @@ namespace ArborSdkExamples
 		static string USERNAME  = "";
         static string PASSWORD = "";
 		static string URL = "";
-		const string USER_AGENT = "Arbor PHP SDK";
+		const string USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36";
 
 		public static void Main (string[] args)
 		{
@@ -96,7 +96,7 @@ namespace ArborSdkExamples
 			/***************** API Tools examples ******************/
 			
 			// Current students
-			MainClass.getCurrentStudents();
+			//MainClass.getCurrentStudents();
 			
 			// Current guardians
 			//MainClass.getCurrentGuardians();
@@ -112,6 +112,12 @@ namespace ArborSdkExamples
 
 			// Get school enrolments
 			//MainClass.getSchoolEnrolments();
+
+			// Get eligibility records
+			//MainClass.getEligibilityRecords();
+
+			// Get student by demographic tag
+			MainClass.getStudentByDemographicTag();
 		}
 
 		public static void studentRetrieve(string modelName, string id)
@@ -369,15 +375,15 @@ namespace ArborSdkExamples
 		}
 		
 		/***************** Ukdfe examples ******************/
-		
+
 		public static void localAuthorityCreate()
 		{
 			RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
 			ModelBase.setDefaultGateway(gateway);
 			
 			Arbor.Model.UkDfe.LocalAuthority model = new Arbor.Model.UkDfe.LocalAuthority();
-			model.setName("TestAuthorotah");
-			model.setShortName("AuthorotaaAah");
+			model.setProperty("name","TestAuthorotah");
+			model.setProperty("shortName","AuthorotaaAah");
 			model.save();
 			
 			// Display Logic
@@ -430,23 +436,8 @@ namespace ArborSdkExamples
 			
 			Arbor.Model.UkDfe.LocalAuthority model = 
 				(Arbor.Model.UkDfe.LocalAuthority) gateway.retrieve(Arbor.Resource.UkDfe.ResourceType.UK_DFE_LOCAL_AUTHORITY.ToString(), "1");
-			model.setShortName("AuthorotaaAah");
+			model.setProperty("shortName","AuthorotaaAah");
 			model.save ();
-				
-			// Display Logic
-			Hydrator hydrator = new Hydrator();
-			JObject extractedModel = hydrator.extractArray(model);
-			Console.WriteLine("Example: retrieve local authority \n");
-			Console.WriteLine("Retrieved model (extracted):" + extractedModel.ToString());
-		}
-		
-		public static void schoolPhaseRetrievebyCode()
-		{
-			RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
-			ModelBase.setDefaultGateway(gateway);
-			
-			Arbor.Model.UkDfe.SchoolPhase model = 
-				(Arbor.Model.UkDfe.SchoolPhase) gateway.retrieve(Arbor.Resource.UkDfe.ResourceType.UK_DFE_SCHOOL_PHASE.ToString(), "NS");
 				
 			// Display Logic
 			Hydrator hydrator = new Hydrator();
@@ -648,7 +639,48 @@ namespace ArborSdkExamples
 			Hydrator hydrator = new Hydrator();
 			foreach (SchoolEnrolment schoolEnrolment in collection) {
 				Student student = schoolEnrolment.getStudent();
-				//Console.WriteLine (hydrator.extractArray(schoolEnrolment) + "\n");
+				Console.WriteLine (hydrator.extractArray(schoolEnrolment) + "\n");
+			}
+		}
+
+		public static void getEligibilityRecords()
+		{
+			RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
+			ModelBase.setDefaultGateway (gateway);
+
+			SimpleQuery query = new SimpleQuery(ResourceType.ELIGIBILITY_RECORD);
+			ModelCollection<ModelBase> collection = gateway.query(query); // All eligibility records
+
+			foreach (EligibilityRecord eligibilityRecrd in collection) {
+				EligibilityRecord elrecDetail = (EligibilityRecord) eligibilityRecrd.getApiGateway()
+					.retrieve(ResourceType.ELIGIBILITY_RECORD, eligibilityRecrd.getResourceId().ToString());
+
+				// Or you can use gateway you've already set:
+				/*
+				EligibilityRecord elrecDetail2 = (EligibilityRecord) gateway
+					.retrieve(ResourceType.ELIGIBILITY_RECORD, eligibilityRecrd.getResourceId().ToString());
+				*/
+
+				Eligibility eligibility = elrecDetail.getEligibility ();
+				Console.WriteLine("Eligibility name: " + eligibility.getEligibilityName ());
+			}
+		}
+
+		public static void getStudentByDemographicTag()
+		{
+			RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
+			ModelBase.setDefaultGateway (gateway);
+
+			SimpleQuery query = new SimpleQuery ();
+			//query.addPropertyFilter("self.tagged", SimpleQuery.OPERATOR_EQUALS, "DEMOGRAPHIC__STUDENT__UK_DFE__PUPIL_PREMIUM");
+			query.addPropertyFilter("self", "tagged", "DEMOGRAPHIC__STUDENT__UK_DFE__PUPIL_PREMIUM");
+			Student.setDefaultGateway(gateway);
+			ModelCollection<Student> modelCollection = Student.query (query);
+
+			Console.WriteLine("List of students found for searched tag: ");
+			Hydrator hydrator = new Hydrator();
+			foreach (Student model in modelCollection) {
+				Console.WriteLine ( hydrator.extractArray(model) + "\n");
 			}
 		}
 	}

@@ -53,12 +53,12 @@ namespace Arbor.Model.UkDfe
         	return (SchoolCensusPupilReconciliation) gateway.retrieve(ResourceType.UK_DFE_SCHOOL_CENSUS_PUPIL_RECONCILIATION, id);
         }
 
-        public ModelBase getSchoolCensus ()
+        public SchoolCensus getSchoolCensus ()
         {
-            return (ModelBase) this.getProperty("schoolCensus");
+            return (SchoolCensus) this.getProperty("schoolCensus");
         }
 
-        public void setSchoolCensus (ModelBase schoolCensus)
+        public void setSchoolCensus (SchoolCensus schoolCensus)
         {
             this.setProperty("schoolCensus", schoolCensus);
         }

@@ -63,6 +63,16 @@ namespace Arbor.Model
             this.setProperty("student", student);
         }
 
+        public CurriculumStatement getCurriculumStatement ()
+        {
+            return (CurriculumStatement) this.getProperty("curriculumStatement");
+        }
+
+        public void setCurriculumStatement (CurriculumStatement curriculumStatement)
+        {
+            this.setProperty("curriculumStatement", curriculumStatement);
+        }
+
         public AchievementLevel getAchievementLevel ()
         {
             return (AchievementLevel) this.getProperty("achievementLevel");

@@ -14,8 +14,13 @@ namespace Arbor.Model
         public const string LINKED_ALLOWANCE = "linkedAllowance";
         public const string EFFECTIVE_DATE = "effectiveDate";
         public const string END_DATE = "endDate";
-        public const string ALLOWANCE = "allowance";
+        public const string GROSS_ALLOWANCE = "grossAllowance";
         public const string REASON = "reason";
+        public const string ALLOWANCE_TYPE = "allowanceType";
+        public const string PAY_FACTOR = "payFactor";
+        public const string SUPERANNUATION = "superannuation";
+        public const string NI_STATUS = "niStatus";
+        public const string BENEFIT_IN_KIND = "benefitInKind";
 
         public StaffContractPostAllowance ()
         {
@@ -93,14 +98,14 @@ namespace Arbor.Model
             this.setProperty("endDate", endDate);
         }
 
-        public string getAllowance ()
+        public string getGrossAllowance ()
         {
-            return this.getProperty("allowance").ToString();
+            return this.getProperty("grossAllowance").ToString();
         }
 
-        public void setAllowance (string allowance)
+        public void setGrossAllowance (string grossAllowance)
         {
-            this.setProperty("allowance", allowance);
+            this.setProperty("grossAllowance", grossAllowance);
         }
 
         public string getReason ()
@@ -111,6 +116,56 @@ namespace Arbor.Model
         public void setReason (string reason)
         {
             this.setProperty("reason", reason);
+        }
+
+        public string getAllowanceType ()
+        {
+            return this.getProperty("allowanceType").ToString();
+        }
+
+        public void setAllowanceType (string allowanceType)
+        {
+            this.setProperty("allowanceType", allowanceType);
+        }
+
+        public float getPayFactor ()
+        {
+            return (float) this.getProperty("payFactor");
+        }
+
+        public void setPayFactor (float payFactor)
+        {
+            this.setProperty("payFactor", payFactor);
+        }
+
+        public bool getSuperannuation ()
+        {
+            return (bool) this.getProperty("superannuation");
+        }
+
+        public void setSuperannuation (bool superannuation)
+        {
+            this.setProperty("superannuation", superannuation);
+        }
+
+        public bool getNiStatus ()
+        {
+            return (bool) this.getProperty("niStatus");
+        }
+
+        public void setNiStatus (bool niStatus)
+        {
+            this.setProperty("niStatus", niStatus);
+        }
+
+        public bool getBenefitInKind ()
+        {
+            return (bool) this.getProperty("benefitInKind");
+        }
+
+        public void setBenefitInKind (bool benefitInKind)
+        {
+            this.setProperty("benefitInKind", benefitInKind);
         }
 
 

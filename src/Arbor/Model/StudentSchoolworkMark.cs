@@ -11,9 +11,10 @@ namespace Arbor.Model
     {
         protected string resourceType = ResourceType.STUDENT_SCHOOLWORK_MARK;
         public const string STUDENT_SCHOOLWORK = "studentSchoolwork";
-        public const string SCHOOLWORK_DEFINITION_ASPECT = "schoolworkDefinitionAspect";
+        public const string SCHOOLWORK_ASPECT = "schoolworkAspect";
         public const string MARK_INTEGER = "markInteger";
         public const string MARK_DECIMAL = "markDecimal";
+        public const string MARK_NUMERIC = "markNumeric";
         public const string MARK_GRADE = "markGrade";
         public const string MARK_DATE = "markDate";
 
@@ -63,14 +64,14 @@ namespace Arbor.Model
             this.setProperty("studentSchoolwork", studentSchoolwork);
         }
 
-        public SchoolworkDefinitionAspect getSchoolworkDefinitionAspect ()
+        public SchoolworkAspect getSchoolworkAspect ()
         {
-            return (SchoolworkDefinitionAspect) this.getProperty("schoolworkDefinitionAspect");
+            return (SchoolworkAspect) this.getProperty("schoolworkAspect");
         }
 
-        public void setSchoolworkDefinitionAspect (SchoolworkDefinitionAspect schoolworkDefinitionAspect)
+        public void setSchoolworkAspect (SchoolworkAspect schoolworkAspect)
         {
-            this.setProperty("schoolworkDefinitionAspect", schoolworkDefinitionAspect);
+            this.setProperty("schoolworkAspect", schoolworkAspect);
         }
 
         public int getMarkInteger ()
@@ -91,6 +92,16 @@ namespace Arbor.Model
         public void setMarkDecimal (float markDecimal)
         {
             this.setProperty("markDecimal", markDecimal);
+        }
+
+        public float getMarkNumeric ()
+        {
+            return (float) this.getProperty("markNumeric");
+        }
+
+        public void setMarkNumeric (float markNumeric)
+        {
+            this.setProperty("markNumeric", markNumeric);
         }
 
         public Grade getMarkGrade ()

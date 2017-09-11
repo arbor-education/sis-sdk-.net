@@ -11,14 +11,14 @@ namespace Arbor.Model
     {
         protected string resourceType = ResourceType.ATTENDANCE_RECORD;
         public const string ATTENDANCE_MARK = "attendanceMark";
-        public const string SESSION = "session";
+        public const string ATTENDANCE_REGISTER = "attendanceRegister";
         public const string STUDENT = "student";
         public const string MINUTES_LATE = "minutesLate";
         public const string RECORD_NOTE = "recordNote";
         public const string START_DATETIME = "startDatetime";
         public const string END_DATETIME = "endDatetime";
         public const string ATTENDANCE_FOLLOW_UP = "attendanceFollowUp";
-        public const string STUDENT_ABSENT_NOTE = "studentAbsentNote";
+        public const string STUDENT_ABSENCE_NOTE = "studentAbsenceNote";
         public const string SOURCE_ATTENDANCE_RECORD = "sourceAttendanceRecord";
 
         public AttendanceRecord ()
@@ -67,14 +67,14 @@ namespace Arbor.Model
             this.setProperty("attendanceMark", attendanceMark);
         }
 
-        public Session getSession ()
+        public AttendanceRegister getAttendanceRegister ()
         {
-            return (Session) this.getProperty("session");
+            return (AttendanceRegister) this.getProperty("attendanceRegister");
         }
 
-        public void setSession (Session session)
+        public void setAttendanceRegister (AttendanceRegister attendanceRegister)
         {
-            this.setProperty("session", session);
+            this.setProperty("attendanceRegister", attendanceRegister);
         }
 
         public Student getStudent ()
@@ -137,14 +137,14 @@ namespace Arbor.Model
             this.setProperty("attendanceFollowUp", attendanceFollowUp);
         }
 
-        public StudentAbsenceNote getStudentAbsentNote ()
+        public StudentAbsenceNote getStudentAbsenceNote ()
         {
-            return (StudentAbsenceNote) this.getProperty("studentAbsentNote");
+            return (StudentAbsenceNote) this.getProperty("studentAbsenceNote");
         }
 
-        public void setStudentAbsentNote (StudentAbsenceNote studentAbsentNote)
+        public void setStudentAbsenceNote (StudentAbsenceNote studentAbsenceNote)
         {
-            this.setProperty("studentAbsentNote", studentAbsentNote);
+            this.setProperty("studentAbsenceNote", studentAbsenceNote);
         }
 
         public AttendanceRecord getSourceAttendanceRecord ()

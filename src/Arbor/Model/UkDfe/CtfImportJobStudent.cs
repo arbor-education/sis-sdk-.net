@@ -81,12 +81,12 @@ namespace Arbor.Model.UkDfe
         	return (CtfImportJobStudent) gateway.retrieve(ResourceType.UK_DFE_CTF_IMPORT_JOB_STUDENT, id);
         }
 
-        public ModelBase getCtfImportJob ()
+        public CtfImportJob getCtfImportJob ()
         {
-            return (ModelBase) this.getProperty("ctfImportJob");
+            return (CtfImportJob) this.getProperty("ctfImportJob");
         }
 
-        public void setCtfImportJob (ModelBase ctfImportJob)
+        public void setCtfImportJob (CtfImportJob ctfImportJob)
         {
             this.setProperty("ctfImportJob", ctfImportJob);
         }

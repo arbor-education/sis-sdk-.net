@@ -14,27 +14,21 @@ namespace Arbor.Model
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";
         public const string QUALIFICATION_SCHEME = "qualificationScheme";
+        public const string QUALIFICATION_SUBJECT = "qualificationSubject";
         public const string AWARDING_ORGANIZATION = "awardingOrganization";
         public const string AWARD_IDENTIFIER = "awardIdentifier";
-        public const string FULL_TITLE = "fullTitle";
+        public const string TITLE = "title";
         public const string SHORT_TITLE = "shortTitle";
-        public const string DESCRIPTION = "description";
         public const string QUALIFICATION_AWARD_TYPE = "qualificationAwardType";
-        public const string QUALIFICATION_AWARD_LEVEL = "qualificationAwardLevel";
-        public const string ACCREDITATION_NUMBER = "accreditationNumber";
+        public const string QUALIFICATION_AWARD_SUBTYPE = "qualificationAwardSubtype";
         public const string ACCREDITATION_START_DATE = "accreditationStartDate";
         public const string ACCREDITATION_END_DATE = "accreditationEndDate";
-        public const string ACCREDITATION_REVIEW_DATE = "accreditationReviewDate";
-        public const string EFFECTIVE_VERSION_START_DATE = "effectiveVersionStartDate";
-        public const string EFFECTIVE_VERSION_END_DATE = "effectiveVersionEndDate";
-        public const string CERTIFICATION_START_DATE = "certificationStartDate";
+        public const string EFFECTIVE_DATE = "effectiveDate";
+        public const string END_DATE = "endDate";
         public const string CERTIFICATION_END_DATE = "certificationEndDate";
         public const string OPERATIONAL_START_DATE = "operationalStartDate";
         public const string OPERATIONAL_END_DATE = "operationalEndDate";
-        public const string CLASSIFICATION = "classification";
-        public const string SECTOR_LEAD_ORGANIZATION = "sectorLeadOrganization";
-        public const string ASSESSOR = "assessor";
-        public const string QUALIFICATION_DISCOUNT_CODE = "qualificationDiscountCode";
+        public const string IS_LINEAR_QUALIFICATION = "isLinearQualification";
 
         public QualificationAward ()
         {
@@ -112,6 +106,16 @@ namespace Arbor.Model
             this.setProperty("qualificationScheme", qualificationScheme);
         }
 
+        public QualificationSubject getQualificationSubject ()
+        {
+            return (QualificationSubject) this.getProperty("qualificationSubject");
+        }
+
+        public void setQualificationSubject (QualificationSubject qualificationSubject)
+        {
+            this.setProperty("qualificationSubject", qualificationSubject);
+        }
+
         public AwardingOrganization getAwardingOrganization ()
         {
             return (AwardingOrganization) this.getProperty("awardingOrganization");
@@ -132,14 +136,14 @@ namespace Arbor.Model
             this.setProperty("awardIdentifier", awardIdentifier);
         }
 
-        public string getFullTitle ()
+        public string getTitle ()
         {
-            return this.getProperty("fullTitle").ToString();
+            return this.getProperty("title").ToString();
         }
 
-        public void setFullTitle (string fullTitle)
+        public void setTitle (string title)
         {
-            this.setProperty("fullTitle", fullTitle);
+            this.setProperty("title", title);
         }
 
         public string getShortTitle ()
@@ -152,16 +156,6 @@ namespace Arbor.Model
             this.setProperty("shortTitle", shortTitle);
         }
 
-        public string getDescription ()
-        {
-            return this.getProperty("description").ToString();
-        }
-
-        public void setDescription (string description)
-        {
-            this.setProperty("description", description);
-        }
-
         public QualificationAwardType getQualificationAwardType ()
         {
             return (QualificationAwardType) this.getProperty("qualificationAwardType");
@@ -172,24 +166,14 @@ namespace Arbor.Model
             this.setProperty("qualificationAwardType", qualificationAwardType);
         }
 
-        public QualificationAwardLevel getQualificationAwardLevel ()
+        public QualificationAwardSubtype getQualificationAwardSubtype ()
         {
-            return (QualificationAwardLevel) this.getProperty("qualificationAwardLevel");
+            return (QualificationAwardSubtype) this.getProperty("qualificationAwardSubtype");
         }
 
-        public void setQualificationAwardLevel (QualificationAwardLevel qualificationAwardLevel)
+        public void setQualificationAwardSubtype (QualificationAwardSubtype qualificationAwardSubtype)
         {
-            this.setProperty("qualificationAwardLevel", qualificationAwardLevel);
-        }
-
-        public string getAccreditationNumber ()
-        {
-            return this.getProperty("accreditationNumber").ToString();
-        }
-
-        public void setAccreditationNumber (string accreditationNumber)
-        {
-            this.setProperty("accreditationNumber", accreditationNumber);
+            this.setProperty("qualificationAwardSubtype", qualificationAwardSubtype);
         }
 
         public DateTime getAccreditationStartDate ()
@@ -212,44 +196,24 @@ namespace Arbor.Model
             this.setProperty("accreditationEndDate", accreditationEndDate);
         }
 
-        public DateTime getAccreditationReviewDate ()
+        public DateTime getEffectiveDate ()
         {
-            return (DateTime) this.getProperty("accreditationReviewDate");
+            return (DateTime) this.getProperty("effectiveDate");
         }
 
-        public void setAccreditationReviewDate (DateTime accreditationReviewDate)
+        public void setEffectiveDate (DateTime effectiveDate)
         {
-            this.setProperty("accreditationReviewDate", accreditationReviewDate);
+            this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEffectiveVersionStartDate ()
+        public DateTime getEndDate ()
         {
-            return (DateTime) this.getProperty("effectiveVersionStartDate");
+            return (DateTime) this.getProperty("endDate");
         }
 
-        public void setEffectiveVersionStartDate (DateTime effectiveVersionStartDate)
+        public void setEndDate (DateTime endDate)
         {
-            this.setProperty("effectiveVersionStartDate", effectiveVersionStartDate);
-        }
-
-        public DateTime getEffectiveVersionEndDate ()
-        {
-            return (DateTime) this.getProperty("effectiveVersionEndDate");
-        }
-
-        public void setEffectiveVersionEndDate (DateTime effectiveVersionEndDate)
-        {
-            this.setProperty("effectiveVersionEndDate", effectiveVersionEndDate);
-        }
-
-        public DateTime getCertificationStartDate ()
-        {
-            return (DateTime) this.getProperty("certificationStartDate");
-        }
-
-        public void setCertificationStartDate (DateTime certificationStartDate)
-        {
-            this.setProperty("certificationStartDate", certificationStartDate);
+            this.setProperty("endDate", endDate);
         }
 
         public DateTime getCertificationEndDate ()
@@ -282,44 +246,14 @@ namespace Arbor.Model
             this.setProperty("operationalEndDate", operationalEndDate);
         }
 
-        public string getClassification ()
+        public bool getIsLinearQualification ()
         {
-            return this.getProperty("classification").ToString();
+            return (bool) this.getProperty("isLinearQualification");
         }
 
-        public void setClassification (string classification)
+        public void setIsLinearQualification (bool isLinearQualification)
         {
-            this.setProperty("classification", classification);
-        }
-
-        public string getSectorLeadOrganization ()
-        {
-            return this.getProperty("sectorLeadOrganization").ToString();
-        }
-
-        public void setSectorLeadOrganization (string sectorLeadOrganization)
-        {
-            this.setProperty("sectorLeadOrganization", sectorLeadOrganization);
-        }
-
-        public string getAssessor ()
-        {
-            return this.getProperty("assessor").ToString();
-        }
-
-        public void setAssessor (string assessor)
-        {
-            this.setProperty("assessor", assessor);
-        }
-
-        public QualificationDiscountCode getQualificationDiscountCode ()
-        {
-            return (QualificationDiscountCode) this.getProperty("qualificationDiscountCode");
-        }
-
-        public void setQualificationDiscountCode (QualificationDiscountCode qualificationDiscountCode)
-        {
-            this.setProperty("qualificationDiscountCode", qualificationDiscountCode);
+            this.setProperty("isLinearQualification", isLinearQualification);
         }
 
 

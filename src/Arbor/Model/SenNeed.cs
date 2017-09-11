@@ -14,6 +14,8 @@ namespace Arbor.Model
         public const string SEN_NEED_TYPE = "senNeedType";
         public const string DESCRIPTION = "description";
         public const string RANKING = "ranking";
+        public const string EFFECTIVE_DATE = "effectiveDate";
+        public const string END_DATE = "endDate";
 
         public SenNeed ()
         {
@@ -89,6 +91,26 @@ namespace Arbor.Model
         public void setRanking (int ranking)
         {
             this.setProperty("ranking", ranking);
+        }
+
+        public DateTime getEffectiveDate ()
+        {
+            return (DateTime) this.getProperty("effectiveDate");
+        }
+
+        public void setEffectiveDate (DateTime effectiveDate)
+        {
+            this.setProperty("effectiveDate", effectiveDate);
+        }
+
+        public DateTime getEndDate ()
+        {
+            return (DateTime) this.getProperty("endDate");
+        }
+
+        public void setEndDate (DateTime endDate)
+        {
+            this.setProperty("endDate", endDate);
         }
 
 

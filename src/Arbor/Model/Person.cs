@@ -19,6 +19,7 @@ namespace Arbor.Model
         public const string PREFERRED_FIRST_NAME = "preferredFirstName";
         public const string PREFERRED_LAST_NAME = "preferredLastName";
         public const string DATE_OF_BIRTH = "dateOfBirth";
+        public const string COUNTRY_OF_BIRTH = "countryOfBirth";
         public const string DECEASED = "deceased";
         public const string DATE_OF_DEATH = "dateOfDeath";
 
@@ -146,6 +147,16 @@ namespace Arbor.Model
         public void setDateOfBirth (DateTime dateOfBirth)
         {
             this.setProperty("dateOfBirth", dateOfBirth);
+        }
+
+        public Country getCountryOfBirth ()
+        {
+            return (Country) this.getProperty("countryOfBirth");
+        }
+
+        public void setCountryOfBirth (Country countryOfBirth)
+        {
+            this.setProperty("countryOfBirth", countryOfBirth);
         }
 
         public bool getDeceased ()

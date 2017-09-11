@@ -18,6 +18,7 @@ namespace Arbor.Model
         public const string ACADEMIC_YEAR = "academicYear";
         public const string PROMOTED_TO_REGISTRATION_FORM = "promotedToRegistrationForm";
         public const string PROMOTED_DATETIME = "promotedDatetime";
+        public const string COPIED_TO_REGISTRATION_FORM = "copiedToRegistrationForm";
         public const string DISPLAY_ORDER = "displayOrder";
         public const string TARGET_ENROLMENT = "targetEnrolment";
 
@@ -125,6 +126,16 @@ namespace Arbor.Model
         public void setPromotedDatetime (DateTime promotedDatetime)
         {
             this.setProperty("promotedDatetime", promotedDatetime);
+        }
+
+        public RegistrationForm getCopiedToRegistrationForm ()
+        {
+            return (RegistrationForm) this.getProperty("copiedToRegistrationForm");
+        }
+
+        public void setCopiedToRegistrationForm (RegistrationForm copiedToRegistrationForm)
+        {
+            this.setProperty("copiedToRegistrationForm", copiedToRegistrationForm);
         }
 
         public int getDisplayOrder ()

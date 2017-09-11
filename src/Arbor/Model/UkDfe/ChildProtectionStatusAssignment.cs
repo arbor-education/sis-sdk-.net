@@ -48,12 +48,12 @@ namespace Arbor.Model.UkDfe
         	return (ChildProtectionStatusAssignment) gateway.retrieve(ResourceType.UK_DFE_CHILD_PROTECTION_STATUS_ASSIGNMENT, id);
         }
 
-        public ModelBase getResponsibleLocalAuthority ()
+        public LocalAuthority getResponsibleLocalAuthority ()
         {
-            return (ModelBase) this.getProperty("responsibleLocalAuthority");
+            return (LocalAuthority) this.getProperty("responsibleLocalAuthority");
         }
 
-        public void setResponsibleLocalAuthority (ModelBase responsibleLocalAuthority)
+        public void setResponsibleLocalAuthority (LocalAuthority responsibleLocalAuthority)
         {
             this.setProperty("responsibleLocalAuthority", responsibleLocalAuthority);
         }

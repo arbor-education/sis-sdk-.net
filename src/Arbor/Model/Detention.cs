@@ -22,6 +22,7 @@ namespace Arbor.Model
         public const string ATTENDANCE_MARK = "attendanceMark";
         public const string NOTES = "notes";
         public const string REASON_FOR_DETENTION = "reasonForDetention";
+        public const string ABSENTEES_DETENTION_ACTION = "absenteesDetentionAction";
 
         public Detention ()
         {
@@ -177,6 +178,16 @@ namespace Arbor.Model
         public void setReasonForDetention (Behaviour reasonForDetention)
         {
             this.setProperty("reasonForDetention", reasonForDetention);
+        }
+
+        public ModelBase getAbsenteesDetentionAction ()
+        {
+            return (ModelBase) this.getProperty("absenteesDetentionAction");
+        }
+
+        public void setAbsenteesDetentionAction (ModelBase absenteesDetentionAction)
+        {
+            this.setProperty("absenteesDetentionAction", absenteesDetentionAction);
         }
 
 

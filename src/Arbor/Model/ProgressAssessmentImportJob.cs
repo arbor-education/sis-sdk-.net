@@ -11,7 +11,7 @@ namespace Arbor.Model
     {
         protected string resourceType = ResourceType.PROGRESS_ASSESSMENT_IMPORT_JOB;
         public const string UPLOADED_DATETIME = "uploadedDatetime";
-        public const string IMPORTED_STARTED_DATETIME = "importedStartedDatetime";
+        public const string IMPORT_STARTED_DATETIME = "importStartedDatetime";
         public const string IMPORTED_DATETIME = "importedDatetime";
         public const string DATA = "data";
 
@@ -61,14 +61,14 @@ namespace Arbor.Model
             this.setProperty("uploadedDatetime", uploadedDatetime);
         }
 
-        public DateTime getImportedStartedDatetime ()
+        public DateTime getImportStartedDatetime ()
         {
-            return (DateTime) this.getProperty("importedStartedDatetime");
+            return (DateTime) this.getProperty("importStartedDatetime");
         }
 
-        public void setImportedStartedDatetime (DateTime importedStartedDatetime)
+        public void setImportStartedDatetime (DateTime importStartedDatetime)
         {
-            this.setProperty("importedStartedDatetime", importedStartedDatetime);
+            this.setProperty("importStartedDatetime", importStartedDatetime);
         }
 
         public DateTime getImportedDatetime ()

@@ -22,6 +22,7 @@ namespace Arbor.Model
         public const string GRADE_POINT_SCALE = "gradePointScale";
         public const string MARK_MIN_VALUE = "markMinValue";
         public const string MARK_MAX_VALUE = "markMaxValue";
+        public const string ORDER = "order";
 
         public Assessment ()
         {
@@ -177,6 +178,16 @@ namespace Arbor.Model
         public void setMarkMaxValue (float markMaxValue)
         {
             this.setProperty("markMaxValue", markMaxValue);
+        }
+
+        public int getOrder ()
+        {
+            return Convert.ToInt32(this.getProperty("order"));
+        }
+
+        public void setOrder (int order)
+        {
+            this.setProperty("order", order);
         }
 
 

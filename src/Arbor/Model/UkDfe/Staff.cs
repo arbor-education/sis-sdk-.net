@@ -71,12 +71,12 @@ namespace Arbor.Model.UkDfe
             this.setProperty("qualifiedTeacherStatus", qualifiedTeacherStatus);
         }
 
-        public ModelBase getQualifiedTeacherRoute ()
+        public QualifiedTeacherRoute getQualifiedTeacherRoute ()
         {
-            return (ModelBase) this.getProperty("qualifiedTeacherRoute");
+            return (QualifiedTeacherRoute) this.getProperty("qualifiedTeacherRoute");
         }
 
-        public void setQualifiedTeacherRoute (ModelBase qualifiedTeacherRoute)
+        public void setQualifiedTeacherRoute (QualifiedTeacherRoute qualifiedTeacherRoute)
         {
             this.setProperty("qualifiedTeacherRoute", qualifiedTeacherRoute);
         }

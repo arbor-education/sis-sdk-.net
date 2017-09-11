@@ -11,12 +11,14 @@ namespace Arbor.Model
     {
         protected string resourceType = ResourceType.QUALIFICATION_LEARNING_UNIT;
         public const string CODE = "code";
+        public const string ACTIVE = "active";
+        public const string DATA_ORDER = "dataOrder";
         public const string QUALIFICATION_SCHEME = "qualificationScheme";
         public const string AWARDING_ORGANIZATION = "awardingOrganization";
+        public const string QUALIFICATION_LEARNING_UNIT_LEVEL = "qualificationLearningUnitLevel";
         public const string LEARNING_UNIT_IDENTIFIER = "learningUnitIdentifier";
-        public const string FULL_TITLE = "fullTitle";
-        public const string SHORT_TITLE = "shortTitle";
-        public const string DESCRIPTION = "description";
+        public const string TITLE = "title";
+        public const string IS_LINEAR_QUALIFICATION = "isLinearQualification";
 
         public QualificationLearningUnit ()
         {
@@ -64,6 +66,26 @@ namespace Arbor.Model
             this.setProperty("code", code);
         }
 
+        public bool getActive ()
+        {
+            return (bool) this.getProperty("active");
+        }
+
+        public void setActive (bool active)
+        {
+            this.setProperty("active", active);
+        }
+
+        public int getDataOrder ()
+        {
+            return Convert.ToInt32(this.getProperty("dataOrder"));
+        }
+
+        public void setDataOrder (int dataOrder)
+        {
+            this.setProperty("dataOrder", dataOrder);
+        }
+
         public QualificationScheme getQualificationScheme ()
         {
             return (QualificationScheme) this.getProperty("qualificationScheme");
@@ -84,6 +106,16 @@ namespace Arbor.Model
             this.setProperty("awardingOrganization", awardingOrganization);
         }
 
+        public QualificationLearningUnitLevel getQualificationLearningUnitLevel ()
+        {
+            return (QualificationLearningUnitLevel) this.getProperty("qualificationLearningUnitLevel");
+        }
+
+        public void setQualificationLearningUnitLevel (QualificationLearningUnitLevel qualificationLearningUnitLevel)
+        {
+            this.setProperty("qualificationLearningUnitLevel", qualificationLearningUnitLevel);
+        }
+
         public string getLearningUnitIdentifier ()
         {
             return this.getProperty("learningUnitIdentifier").ToString();
@@ -94,34 +126,24 @@ namespace Arbor.Model
             this.setProperty("learningUnitIdentifier", learningUnitIdentifier);
         }
 
-        public string getFullTitle ()
+        public string getTitle ()
         {
-            return this.getProperty("fullTitle").ToString();
+            return this.getProperty("title").ToString();
         }
 
-        public void setFullTitle (string fullTitle)
+        public void setTitle (string title)
         {
-            this.setProperty("fullTitle", fullTitle);
+            this.setProperty("title", title);
         }
 
-        public string getShortTitle ()
+        public bool getIsLinearQualification ()
         {
-            return this.getProperty("shortTitle").ToString();
+            return (bool) this.getProperty("isLinearQualification");
         }
 
-        public void setShortTitle (string shortTitle)
+        public void setIsLinearQualification (bool isLinearQualification)
         {
-            this.setProperty("shortTitle", shortTitle);
-        }
-
-        public string getDescription ()
-        {
-            return this.getProperty("description").ToString();
-        }
-
-        public void setDescription (string description)
-        {
-            this.setProperty("description", description);
+            this.setProperty("isLinearQualification", isLinearQualification);
         }
 
 

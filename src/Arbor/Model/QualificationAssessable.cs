@@ -10,22 +10,14 @@ namespace Arbor.Model
     public class QualificationAssessable : ModelBase
     {
         protected string resourceType = ResourceType.QUALIFICATION_ASSESSABLE;
-        public const string QUALIFICATION_LEARNING_UNIT = "qualificationLearningUnit";
         public const string CODE = "code";
+        public const string ACTIVE = "active";
+        public const string DATA_ORDER = "dataOrder";
         public const string ASSESSABLE_IDENTIFIER = "assessableIdentifier";
         public const string AWARDING_ORGANIZATION = "awardingOrganization";
-        public const string FULL_TITLE = "fullTitle";
-        public const string SHORT_TITLE = "shortTitle";
-        public const string DESCRIPTION = "description";
+        public const string TITLE = "title";
         public const string ASSESSMENT_METHOD_TYPE = "assessmentMethodType";
-        public const string ASSESSOR = "assessor";
-        public const string IS_CENTER_ASSESSED = "isCenterAssessed";
-        public const string CENTER_ASSESSMENT_DUE_DATE = "centerAssessmentDueDate";
-        public const string TIME_ALLOWED = "timeAllowed";
-        public const string MAX_EXTRA_TIME = "maxExtraTime";
-        public const string CREDIT_VALUE = "creditValue";
-        public const string MAX_RESITS_ALLOWED = "maxResitsAllowed";
-        public const string TIMETABLE_SLOT_DECIDER = "timetableSlotDecider";
+        public const string CENTER_ASSESSED = "centerAssessed";
 
         public QualificationAssessable ()
         {
@@ -63,16 +55,6 @@ namespace Arbor.Model
         	return (QualificationAssessable) gateway.retrieve(ResourceType.QUALIFICATION_ASSESSABLE, id);
         }
 
-        public QualificationLearningUnit getQualificationLearningUnit ()
-        {
-            return (QualificationLearningUnit) this.getProperty("qualificationLearningUnit");
-        }
-
-        public void setQualificationLearningUnit (QualificationLearningUnit qualificationLearningUnit)
-        {
-            this.setProperty("qualificationLearningUnit", qualificationLearningUnit);
-        }
-
         public string getCode ()
         {
             return this.getProperty("code").ToString();
@@ -81,6 +63,26 @@ namespace Arbor.Model
         public void setCode (string code)
         {
             this.setProperty("code", code);
+        }
+
+        public bool getActive ()
+        {
+            return (bool) this.getProperty("active");
+        }
+
+        public void setActive (bool active)
+        {
+            this.setProperty("active", active);
+        }
+
+        public int getDataOrder ()
+        {
+            return Convert.ToInt32(this.getProperty("dataOrder"));
+        }
+
+        public void setDataOrder (int dataOrder)
+        {
+            this.setProperty("dataOrder", dataOrder);
         }
 
         public string getAssessableIdentifier ()
@@ -103,34 +105,14 @@ namespace Arbor.Model
             this.setProperty("awardingOrganization", awardingOrganization);
         }
 
-        public string getFullTitle ()
+        public string getTitle ()
         {
-            return this.getProperty("fullTitle").ToString();
+            return this.getProperty("title").ToString();
         }
 
-        public void setFullTitle (string fullTitle)
+        public void setTitle (string title)
         {
-            this.setProperty("fullTitle", fullTitle);
-        }
-
-        public string getShortTitle ()
-        {
-            return this.getProperty("shortTitle").ToString();
-        }
-
-        public void setShortTitle (string shortTitle)
-        {
-            this.setProperty("shortTitle", shortTitle);
-        }
-
-        public string getDescription ()
-        {
-            return this.getProperty("description").ToString();
-        }
-
-        public void setDescription (string description)
-        {
-            this.setProperty("description", description);
+            this.setProperty("title", title);
         }
 
         public string getAssessmentMethodType ()
@@ -143,84 +125,14 @@ namespace Arbor.Model
             this.setProperty("assessmentMethodType", assessmentMethodType);
         }
 
-        public string getAssessor ()
+        public bool getCenterAssessed ()
         {
-            return this.getProperty("assessor").ToString();
+            return (bool) this.getProperty("centerAssessed");
         }
 
-        public void setAssessor (string assessor)
+        public void setCenterAssessed (bool centerAssessed)
         {
-            this.setProperty("assessor", assessor);
-        }
-
-        public bool getIsCenterAssessed ()
-        {
-            return (bool) this.getProperty("isCenterAssessed");
-        }
-
-        public void setIsCenterAssessed (bool isCenterAssessed)
-        {
-            this.setProperty("isCenterAssessed", isCenterAssessed);
-        }
-
-        public DateTime getCenterAssessmentDueDate ()
-        {
-            return (DateTime) this.getProperty("centerAssessmentDueDate");
-        }
-
-        public void setCenterAssessmentDueDate (DateTime centerAssessmentDueDate)
-        {
-            this.setProperty("centerAssessmentDueDate", centerAssessmentDueDate);
-        }
-
-        public string getTimeAllowed ()
-        {
-            return this.getProperty("timeAllowed").ToString();
-        }
-
-        public void setTimeAllowed (string timeAllowed)
-        {
-            this.setProperty("timeAllowed", timeAllowed);
-        }
-
-        public string getMaxExtraTime ()
-        {
-            return this.getProperty("maxExtraTime").ToString();
-        }
-
-        public void setMaxExtraTime (string maxExtraTime)
-        {
-            this.setProperty("maxExtraTime", maxExtraTime);
-        }
-
-        public float getCreditValue ()
-        {
-            return (float) this.getProperty("creditValue");
-        }
-
-        public void setCreditValue (float creditValue)
-        {
-            this.setProperty("creditValue", creditValue);
-        }
-
-        public int getMaxResitsAllowed ()
-        {
-            return Convert.ToInt32(this.getProperty("maxResitsAllowed"));
-        }
-
-        public void setMaxResitsAllowed (int maxResitsAllowed)
-        {
-            this.setProperty("maxResitsAllowed", maxResitsAllowed);
-        }
-
-        public string getTimetableSlotDecider ()
-        {
-            return this.getProperty("timetableSlotDecider").ToString();
-        }
-
-        public void setTimetableSlotDecider (string timetableSlotDecider)
-        {
-            this.setProperty("timetableSlotDecider", timetableSlotDecider);
+            this.setProperty("centerAssessed", centerAssessed);
         }
 
 

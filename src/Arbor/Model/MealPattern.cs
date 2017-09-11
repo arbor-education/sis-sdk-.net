@@ -13,7 +13,13 @@ namespace Arbor.Model
         public const string ATTENDEE = "attendee";
         public const string MEAL = "meal";
         public const string MEAL_SITTING = "mealSitting";
-        public const string REGULAR_MEAL_PROVISION = "regularMealProvision";
+        public const string APPLIES_MONDAY = "appliesMonday";
+        public const string APPLIES_TUESDAY = "appliesTuesday";
+        public const string APPLIES_WEDNESDAY = "appliesWednesday";
+        public const string APPLIES_THURSDAY = "appliesThursday";
+        public const string APPLIES_FRIDAY = "appliesFriday";
+        public const string APPLIES_SATURDAY = "appliesSaturday";
+        public const string APPLIES_SUNDAY = "appliesSunday";
         public const string DAY_OF_CYCLE = "dayOfCycle";
         public const string EFFECTIVE_DATE = "effectiveDate";
         public const string END_DATE = "endDate";
@@ -86,14 +92,74 @@ namespace Arbor.Model
             this.setProperty("mealSitting", mealSitting);
         }
 
-        public MealProvision getRegularMealProvision ()
+        public bool getAppliesMonday ()
         {
-            return (MealProvision) this.getProperty("regularMealProvision");
+            return (bool) this.getProperty("appliesMonday");
         }
 
-        public void setRegularMealProvision (MealProvision regularMealProvision)
+        public void setAppliesMonday (bool appliesMonday)
         {
-            this.setProperty("regularMealProvision", regularMealProvision);
+            this.setProperty("appliesMonday", appliesMonday);
+        }
+
+        public bool getAppliesTuesday ()
+        {
+            return (bool) this.getProperty("appliesTuesday");
+        }
+
+        public void setAppliesTuesday (bool appliesTuesday)
+        {
+            this.setProperty("appliesTuesday", appliesTuesday);
+        }
+
+        public bool getAppliesWednesday ()
+        {
+            return (bool) this.getProperty("appliesWednesday");
+        }
+
+        public void setAppliesWednesday (bool appliesWednesday)
+        {
+            this.setProperty("appliesWednesday", appliesWednesday);
+        }
+
+        public bool getAppliesThursday ()
+        {
+            return (bool) this.getProperty("appliesThursday");
+        }
+
+        public void setAppliesThursday (bool appliesThursday)
+        {
+            this.setProperty("appliesThursday", appliesThursday);
+        }
+
+        public bool getAppliesFriday ()
+        {
+            return (bool) this.getProperty("appliesFriday");
+        }
+
+        public void setAppliesFriday (bool appliesFriday)
+        {
+            this.setProperty("appliesFriday", appliesFriday);
+        }
+
+        public bool getAppliesSaturday ()
+        {
+            return (bool) this.getProperty("appliesSaturday");
+        }
+
+        public void setAppliesSaturday (bool appliesSaturday)
+        {
+            this.setProperty("appliesSaturday", appliesSaturday);
+        }
+
+        public bool getAppliesSunday ()
+        {
+            return (bool) this.getProperty("appliesSunday");
+        }
+
+        public void setAppliesSunday (bool appliesSunday)
+        {
+            this.setProperty("appliesSunday", appliesSunday);
         }
 
         public int getDayOfCycle ()

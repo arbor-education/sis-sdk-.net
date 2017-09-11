@@ -13,7 +13,7 @@ namespace Arbor.Model
         public const string NUMBER_OWNER = "numberOwner";
         public const string TELEPHONE_NUMBER_TYPE = "telephoneNumberType";
         public const string NUMBER = "number";
-        public const string EXTENSION_NUMBER = "extension_number";
+        public const string EXTENSION_NUMBER = "extensionNumber";
         public const string NOTES = "notes";
         public const string TELEPHONE_NUMBER_RANKING = "telephoneNumberRanking";
 
@@ -83,14 +83,14 @@ namespace Arbor.Model
             this.setProperty("number", number);
         }
 
-        public string getExtension_number ()
+        public string getExtensionNumber ()
         {
-            return this.getProperty("extension_number").ToString();
+            return this.getProperty("extensionNumber").ToString();
         }
 
-        public void setExtension_number (string extension_number)
+        public void setExtensionNumber (string extensionNumber)
         {
-            this.setProperty("extension_number", extension_number);
+            this.setProperty("extensionNumber", extensionNumber);
         }
 
         public string getNotes ()

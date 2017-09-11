@@ -10,14 +10,20 @@ namespace Arbor.Model
     public class QualificationAspect : ModelBase
     {
         protected string resourceType = ResourceType.QUALIFICATION_ASPECT;
-        public const string QUALIFICATION_ELEMENT = "qualificationElement";
-        public const string MARK_TYPE = "markType";
-        public const string DECIMAL_PLACES = "decimalPlaces";
-        public const string MIN_VALUE = "minValue";
-        public const string MAX_VALUE = "maxValue";
-        public const string RESULT_QUALIFICATION_GRADE_SET = "resultQualificationGradeSet";
-        public const string QUALIFICATION_FORECAST_GRADE_SET = "qualificationForecastGradeSet";
+        public const string CODE = "code";
+        public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";
+        public const string QUALIFICATION_ELEMENT = "qualificationElement";
+        public const string GRADE_INDEX = "gradeIndex";
+        public const string NUMERIC_MARK_TYPE = "numericMarkType";
+        public const string DECIMAL_PLACES = "decimalPlaces";
+        public const string MINIMUM_NUMERIC_VALUE = "minimumNumericValue";
+        public const string MAXIMUM_NUMERIC_VALUE = "maximumNumericValue";
+        public const string RESULT_GRADE_SET = "resultGradeSet";
+        public const string FORECAST_GRADE_SET = "forecastGradeSet";
+        public const string ENDORSEMENT_GRADE_SET = "endorsementGradeSet";
+        public const string EFFECTIVE_DATE = "effectiveDate";
+        public const string END_DATE = "endDate";
 
         public QualificationAspect ()
         {
@@ -55,6 +61,36 @@ namespace Arbor.Model
         	return (QualificationAspect) gateway.retrieve(ResourceType.QUALIFICATION_ASPECT, id);
         }
 
+        public string getCode ()
+        {
+            return this.getProperty("code").ToString();
+        }
+
+        public void setCode (string code)
+        {
+            this.setProperty("code", code);
+        }
+
+        public bool getActive ()
+        {
+            return (bool) this.getProperty("active");
+        }
+
+        public void setActive (bool active)
+        {
+            this.setProperty("active", active);
+        }
+
+        public int getDataOrder ()
+        {
+            return Convert.ToInt32(this.getProperty("dataOrder"));
+        }
+
+        public void setDataOrder (int dataOrder)
+        {
+            this.setProperty("dataOrder", dataOrder);
+        }
+
         public ModelBase getQualificationElement ()
         {
             return (ModelBase) this.getProperty("qualificationElement");
@@ -65,14 +101,24 @@ namespace Arbor.Model
             this.setProperty("qualificationElement", qualificationElement);
         }
 
-        public string getMarkType ()
+        public int getGradeIndex ()
         {
-            return this.getProperty("markType").ToString();
+            return Convert.ToInt32(this.getProperty("gradeIndex"));
         }
 
-        public void setMarkType (string markType)
+        public void setGradeIndex (int gradeIndex)
         {
-            this.setProperty("markType", markType);
+            this.setProperty("gradeIndex", gradeIndex);
+        }
+
+        public string getNumericMarkType ()
+        {
+            return this.getProperty("numericMarkType").ToString();
+        }
+
+        public void setNumericMarkType (string numericMarkType)
+        {
+            this.setProperty("numericMarkType", numericMarkType);
         }
 
         public int getDecimalPlaces ()
@@ -85,54 +131,74 @@ namespace Arbor.Model
             this.setProperty("decimalPlaces", decimalPlaces);
         }
 
-        public float getMinValue ()
+        public float getMinimumNumericValue ()
         {
-            return (float) this.getProperty("minValue");
+            return (float) this.getProperty("minimumNumericValue");
         }
 
-        public void setMinValue (float minValue)
+        public void setMinimumNumericValue (float minimumNumericValue)
         {
-            this.setProperty("minValue", minValue);
+            this.setProperty("minimumNumericValue", minimumNumericValue);
         }
 
-        public float getMaxValue ()
+        public float getMaximumNumericValue ()
         {
-            return (float) this.getProperty("maxValue");
+            return (float) this.getProperty("maximumNumericValue");
         }
 
-        public void setMaxValue (float maxValue)
+        public void setMaximumNumericValue (float maximumNumericValue)
         {
-            this.setProperty("maxValue", maxValue);
+            this.setProperty("maximumNumericValue", maximumNumericValue);
         }
 
-        public QualificationGradeSet getResultQualificationGradeSet ()
+        public QualificationGradeSet getResultGradeSet ()
         {
-            return (QualificationGradeSet) this.getProperty("resultQualificationGradeSet");
+            return (QualificationGradeSet) this.getProperty("resultGradeSet");
         }
 
-        public void setResultQualificationGradeSet (QualificationGradeSet resultQualificationGradeSet)
+        public void setResultGradeSet (QualificationGradeSet resultGradeSet)
         {
-            this.setProperty("resultQualificationGradeSet", resultQualificationGradeSet);
+            this.setProperty("resultGradeSet", resultGradeSet);
         }
 
-        public QualificationGradeSet getQualificationForecastGradeSet ()
+        public QualificationGradeSet getForecastGradeSet ()
         {
-            return (QualificationGradeSet) this.getProperty("qualificationForecastGradeSet");
+            return (QualificationGradeSet) this.getProperty("forecastGradeSet");
         }
 
-        public void setQualificationForecastGradeSet (QualificationGradeSet qualificationForecastGradeSet)
+        public void setForecastGradeSet (QualificationGradeSet forecastGradeSet)
         {
-            this.setProperty("qualificationForecastGradeSet", qualificationForecastGradeSet);
+            this.setProperty("forecastGradeSet", forecastGradeSet);
         }
 
-        public int getDataOrder ()
+        public QualificationGradeSet getEndorsementGradeSet ()
         {
-            return Convert.ToInt32(this.getProperty("dataOrder"));
+            return (QualificationGradeSet) this.getProperty("endorsementGradeSet");
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setEndorsementGradeSet (QualificationGradeSet endorsementGradeSet)
         {
-            this.setProperty("dataOrder", dataOrder);
+            this.setProperty("endorsementGradeSet", endorsementGradeSet);
+        }
+
+        public DateTime getEffectiveDate ()
+        {
+            return (DateTime) this.getProperty("effectiveDate");
+        }
+
+        public void setEffectiveDate (DateTime effectiveDate)
+        {
+            this.setProperty("effectiveDate", effectiveDate);
+        }
+
+        public DateTime getEndDate ()
+        {
+            return (DateTime) this.getProperty("endDate");
+        }
+
+        public void setEndDate (DateTime endDate)
+        {
+            this.setProperty("endDate", endDate);
         }
 
 

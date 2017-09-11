@@ -17,7 +17,6 @@ namespace Arbor.Model
         public const string EXPIRY_DATE = "expiryDate";
         public const string NAME_ON_DOCUMENT = "nameOnDocument";
         public const string ISSUING_COUNTRY = "issuingCountry";
-        public const string FILE = "file";
 
         public PersonIdentificationDocument ()
         {
@@ -123,16 +122,6 @@ namespace Arbor.Model
         public void setIssuingCountry (Country issuingCountry)
         {
             this.setProperty("issuingCountry", issuingCountry);
-        }
-
-        public int getFile ()
-        {
-            return Convert.ToInt32(this.getProperty("file"));
-        }
-
-        public void setFile (int file)
-        {
-            this.setProperty("file", file);
         }
 
 

@@ -13,6 +13,8 @@ namespace Arbor.Model
         public const string CODE = "code";
         public const string NAME = "name";
         public const string ACHIEVED_THRESHOLD = "achievedThreshold";
+        public const string TYPE = "type";
+        public const string CURRICULUM = "curriculum";
 
         public AchievementLevelSet ()
         {
@@ -78,6 +80,26 @@ namespace Arbor.Model
         public void setAchievedThreshold (float achievedThreshold)
         {
             this.setProperty("achievedThreshold", achievedThreshold);
+        }
+
+        public string getType ()
+        {
+            return this.getProperty("type").ToString();
+        }
+
+        public void setType (string type)
+        {
+            this.setProperty("type", type);
+        }
+
+        public Curriculum getCurriculum ()
+        {
+            return (Curriculum) this.getProperty("curriculum");
+        }
+
+        public void setCurriculum (Curriculum curriculum)
+        {
+            this.setProperty("curriculum", curriculum);
         }
 
 

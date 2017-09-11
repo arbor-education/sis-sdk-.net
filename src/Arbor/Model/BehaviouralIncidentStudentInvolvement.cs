@@ -12,8 +12,11 @@ namespace Arbor.Model
         protected string resourceType = ResourceType.BEHAVIOURAL_INCIDENT_STUDENT_INVOLVEMENT;
         public const string BEHAVIOURAL_INCIDENT = "behaviouralIncident";
         public const string STUDENT = "student";
+        public const string RESOLVED_BY = "resolvedBy";
+        public const string RESOLVED_DATETIME = "resolvedDatetime";
         public const string COMMENT = "comment";
         public const string SEVERITY = "severity";
+        public const string ASSIGNEE = "assignee";
 
         public BehaviouralIncidentStudentInvolvement ()
         {
@@ -71,6 +74,26 @@ namespace Arbor.Model
             this.setProperty("student", student);
         }
 
+        public Staff getResolvedBy ()
+        {
+            return (Staff) this.getProperty("resolvedBy");
+        }
+
+        public void setResolvedBy (Staff resolvedBy)
+        {
+            this.setProperty("resolvedBy", resolvedBy);
+        }
+
+        public DateTime getResolvedDatetime ()
+        {
+            return (DateTime) this.getProperty("resolvedDatetime");
+        }
+
+        public void setResolvedDatetime (DateTime resolvedDatetime)
+        {
+            this.setProperty("resolvedDatetime", resolvedDatetime);
+        }
+
         public string getComment ()
         {
             return this.getProperty("comment").ToString();
@@ -89,6 +112,16 @@ namespace Arbor.Model
         public void setSeverity (int severity)
         {
             this.setProperty("severity", severity);
+        }
+
+        public Staff getAssignee ()
+        {
+            return (Staff) this.getProperty("assignee");
+        }
+
+        public void setAssignee (Staff assignee)
+        {
+            this.setProperty("assignee", assignee);
         }
 
 

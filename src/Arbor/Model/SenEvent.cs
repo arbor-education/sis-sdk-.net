@@ -10,9 +10,11 @@ namespace Arbor.Model
     public class SenEvent : ModelBase
     {
         protected string resourceType = ResourceType.SEN_EVENT;
-        public const string STUDENT = "student";
         public const string START_DATETIME = "startDatetime";
         public const string END_DATETIME = "endDatetime";
+        public const string LOCATION_TEXT = "locationText";
+        public const string LOCATION = "location";
+        public const string STUDENT = "student";
         public const string SEN_EVENT_TYPE = "senEventType";
         public const string SEN_EVENT_NAME = "senEventName";
         public const string SEN_EVENT_DESCRIPTION = "senEventDescription";
@@ -53,16 +55,6 @@ namespace Arbor.Model
         	return (SenEvent) gateway.retrieve(ResourceType.SEN_EVENT, id);
         }
 
-        public Student getStudent ()
-        {
-            return (Student) this.getProperty("student");
-        }
-
-        public void setStudent (Student student)
-        {
-            this.setProperty("student", student);
-        }
-
         public DateTime getStartDatetime ()
         {
             return (DateTime) this.getProperty("startDatetime");
@@ -81,6 +73,36 @@ namespace Arbor.Model
         public void setEndDatetime (DateTime endDatetime)
         {
             this.setProperty("endDatetime", endDatetime);
+        }
+
+        public string getLocationText ()
+        {
+            return this.getProperty("locationText").ToString();
+        }
+
+        public void setLocationText (string locationText)
+        {
+            this.setProperty("locationText", locationText);
+        }
+
+        public ModelBase getLocation ()
+        {
+            return (ModelBase) this.getProperty("location");
+        }
+
+        public void setLocation (ModelBase location)
+        {
+            this.setProperty("location", location);
+        }
+
+        public Student getStudent ()
+        {
+            return (Student) this.getProperty("student");
+        }
+
+        public void setStudent (Student student)
+        {
+            this.setProperty("student", student);
         }
 
         public SenEventType getSenEventType ()

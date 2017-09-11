@@ -14,6 +14,7 @@ namespace Arbor.Model
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";
         public const string IN_CARE_STATUS_NAME = "inCareStatusName";
+        public const string COUNTS_AS_IN_CARE_STATUS = "countsAsInCareStatus";
 
         public InCareStatus ()
         {
@@ -89,6 +90,16 @@ namespace Arbor.Model
         public void setInCareStatusName (string inCareStatusName)
         {
             this.setProperty("inCareStatusName", inCareStatusName);
+        }
+
+        public bool getCountsAsInCareStatus ()
+        {
+            return (bool) this.getProperty("countsAsInCareStatus");
+        }
+
+        public void setCountsAsInCareStatus (bool countsAsInCareStatus)
+        {
+            this.setProperty("countsAsInCareStatus", countsAsInCareStatus);
         }
 
 

@@ -18,6 +18,7 @@ namespace Arbor.Model
         public const string BLOOD_GROUP = "bloodGroup";
         public const string SHARE_CONTACT_DETAILS = "shareContactDetails";
         public const string PREFERRED_CONTACT_METHOD = "preferredContactMethod";
+        public const string LEGACY_SYSTEM_ID = "legacySystemId";
 
         public Guardian ()
         {
@@ -133,6 +134,16 @@ namespace Arbor.Model
         public void setPreferredContactMethod (string preferredContactMethod)
         {
             this.setProperty("preferredContactMethod", preferredContactMethod);
+        }
+
+        public string getLegacySystemId ()
+        {
+            return this.getProperty("legacySystemId").ToString();
+        }
+
+        public void setLegacySystemId (string legacySystemId)
+        {
+            this.setProperty("legacySystemId", legacySystemId);
         }
 
 

@@ -12,14 +12,16 @@ namespace Arbor.Model.UkDfe
         protected string resourceType = ResourceType.UK_DFE_SCHOOL_CENSUS_SCHOOL_DETAIL;
         public const string SCHOOL_CENSUS = "schoolCensus";
         public const string TEEN_MOTHER_PLACES = "teenMotherPlaces";
-        public const string FREE_SCHOOL_MEALS_TAKES = "freeSchoolMealsTakes";
-        public const string ADMISSION_APPEALS_LODGED = "admissionAppealsLodged";
-        public const string ADMISSION_APPEALS_WITHDRAWN = "admissionAppealsWithdrawn";
-        public const string ADMISSION_APPEALS_HEARD = "admissionAppealsHeard";
-        public const string ADMISSION_APPEALS_UPHELD = "admissionAppealsUpheld";
-        public const string ADMISSION_APPEALS_REJECTED = "admissionAppealsRejected";
+        public const string FREE_SCHOOL_MEALS_TAKEN = "freeSchoolMealsTaken";
+        public const string ADMISSIONS_APPEALS_JSON = "admissionsAppealsJson";
+        public const string ADMISSIONS_APPEALS_LODGED = "admissionsAppealsLodged";
+        public const string ADMISSIONS_APPEALS_WITHDRAWN = "admissionsAppealsWithdrawn";
+        public const string ADMISSIONS_APPEALS_HEARD = "admissionsAppealsHeard";
+        public const string ADMISSIONS_APPEALS_UPHELD = "admissionsAppealsUpheld";
+        public const string ADMISSIONS_APPEALS_REJECTED = "admissionsAppealsRejected";
         public const string SCHOOL_LUNCH_TAKEN_STUDENT_IDS = "schoolLunchTakenStudentIds";
         public const string PART_TIME_STUDENT_JSON = "partTimeStudentJson";
+        public const string QUALIFICATION_RESULTS_JSON = "qualificationResultsJson";
 
         public SchoolCensusSchoolDetail ()
         {
@@ -57,12 +59,12 @@ namespace Arbor.Model.UkDfe
         	return (SchoolCensusSchoolDetail) gateway.retrieve(ResourceType.UK_DFE_SCHOOL_CENSUS_SCHOOL_DETAIL, id);
         }
 
-        public ModelBase getSchoolCensus ()
+        public SchoolCensus getSchoolCensus ()
         {
-            return (ModelBase) this.getProperty("schoolCensus");
+            return (SchoolCensus) this.getProperty("schoolCensus");
         }
 
-        public void setSchoolCensus (ModelBase schoolCensus)
+        public void setSchoolCensus (SchoolCensus schoolCensus)
         {
             this.setProperty("schoolCensus", schoolCensus);
         }
@@ -77,64 +79,74 @@ namespace Arbor.Model.UkDfe
             this.setProperty("teenMotherPlaces", teenMotherPlaces);
         }
 
-        public int getFreeSchoolMealsTakes ()
+        public int getFreeSchoolMealsTaken ()
         {
-            return Convert.ToInt32(this.getProperty("freeSchoolMealsTakes"));
+            return Convert.ToInt32(this.getProperty("freeSchoolMealsTaken"));
         }
 
-        public void setFreeSchoolMealsTakes (int freeSchoolMealsTakes)
+        public void setFreeSchoolMealsTaken (int freeSchoolMealsTaken)
         {
-            this.setProperty("freeSchoolMealsTakes", freeSchoolMealsTakes);
+            this.setProperty("freeSchoolMealsTaken", freeSchoolMealsTaken);
         }
 
-        public int getAdmissionAppealsLodged ()
+        public string getAdmissionsAppealsJson ()
         {
-            return Convert.ToInt32(this.getProperty("admissionAppealsLodged"));
+            return this.getProperty("admissionsAppealsJson").ToString();
         }
 
-        public void setAdmissionAppealsLodged (int admissionAppealsLodged)
+        public void setAdmissionsAppealsJson (string admissionsAppealsJson)
         {
-            this.setProperty("admissionAppealsLodged", admissionAppealsLodged);
+            this.setProperty("admissionsAppealsJson", admissionsAppealsJson);
         }
 
-        public int getAdmissionAppealsWithdrawn ()
+        public int getAdmissionsAppealsLodged ()
         {
-            return Convert.ToInt32(this.getProperty("admissionAppealsWithdrawn"));
+            return Convert.ToInt32(this.getProperty("admissionsAppealsLodged"));
         }
 
-        public void setAdmissionAppealsWithdrawn (int admissionAppealsWithdrawn)
+        public void setAdmissionsAppealsLodged (int admissionsAppealsLodged)
         {
-            this.setProperty("admissionAppealsWithdrawn", admissionAppealsWithdrawn);
+            this.setProperty("admissionsAppealsLodged", admissionsAppealsLodged);
         }
 
-        public int getAdmissionAppealsHeard ()
+        public int getAdmissionsAppealsWithdrawn ()
         {
-            return Convert.ToInt32(this.getProperty("admissionAppealsHeard"));
+            return Convert.ToInt32(this.getProperty("admissionsAppealsWithdrawn"));
         }
 
-        public void setAdmissionAppealsHeard (int admissionAppealsHeard)
+        public void setAdmissionsAppealsWithdrawn (int admissionsAppealsWithdrawn)
         {
-            this.setProperty("admissionAppealsHeard", admissionAppealsHeard);
+            this.setProperty("admissionsAppealsWithdrawn", admissionsAppealsWithdrawn);
         }
 
-        public int getAdmissionAppealsUpheld ()
+        public int getAdmissionsAppealsHeard ()
         {
-            return Convert.ToInt32(this.getProperty("admissionAppealsUpheld"));
+            return Convert.ToInt32(this.getProperty("admissionsAppealsHeard"));
         }
 
-        public void setAdmissionAppealsUpheld (int admissionAppealsUpheld)
+        public void setAdmissionsAppealsHeard (int admissionsAppealsHeard)
         {
-            this.setProperty("admissionAppealsUpheld", admissionAppealsUpheld);
+            this.setProperty("admissionsAppealsHeard", admissionsAppealsHeard);
         }
 
-        public int getAdmissionAppealsRejected ()
+        public int getAdmissionsAppealsUpheld ()
         {
-            return Convert.ToInt32(this.getProperty("admissionAppealsRejected"));
+            return Convert.ToInt32(this.getProperty("admissionsAppealsUpheld"));
         }
 
-        public void setAdmissionAppealsRejected (int admissionAppealsRejected)
+        public void setAdmissionsAppealsUpheld (int admissionsAppealsUpheld)
         {
-            this.setProperty("admissionAppealsRejected", admissionAppealsRejected);
+            this.setProperty("admissionsAppealsUpheld", admissionsAppealsUpheld);
+        }
+
+        public int getAdmissionsAppealsRejected ()
+        {
+            return Convert.ToInt32(this.getProperty("admissionsAppealsRejected"));
+        }
+
+        public void setAdmissionsAppealsRejected (int admissionsAppealsRejected)
+        {
+            this.setProperty("admissionsAppealsRejected", admissionsAppealsRejected);
         }
 
         public string getSchoolLunchTakenStudentIds ()
@@ -155,6 +167,16 @@ namespace Arbor.Model.UkDfe
         public void setPartTimeStudentJson (string partTimeStudentJson)
         {
             this.setProperty("partTimeStudentJson", partTimeStudentJson);
+        }
+
+        public string getQualificationResultsJson ()
+        {
+            return this.getProperty("qualificationResultsJson").ToString();
+        }
+
+        public void setQualificationResultsJson (string qualificationResultsJson)
+        {
+            this.setProperty("qualificationResultsJson", qualificationResultsJson);
         }
 
 

@@ -13,12 +13,11 @@ namespace Arbor.Model
         public const string STUDENT = "student";
         public const string CURRICULUM_ENTITY = "curriculumEntity";
         public const string ASSESSMENT_TYPE = "assessmentType";
-        public const string ACHIEVEMENT_VALUE_FOR_CURRICULUM_ENTITY = "achievementValueForCurriculumEntity";
-        public const string CURRICULUM_MARKED = "curriculumMarked";
-        public const string ACHIEVEMENT_VALUE_FOR_CURRICULUM_MARKED = "achievementValueForCurriculumMarked";
-        public const string GRADE_POINT_VALUE_FOR_CURRICULUM_MARKED = "gradePointValueForCurriculumMarked";
-        public const string CURRICULUM_CONSIDERED = "curriculumConsidered";
-        public const string ACHIEVEMENT_VALUE_FOR_CURRICULUM_CONSIDERED = "achievementValueForCurriculumConsidered";
+        public const string CURRICULUM_COMPLETION = "curriculumCompletion";
+        public const string PREDICTED_MASTERY = "predictedMastery";
+        public const string CURRENT_MASTERY = "currentMastery";
+        public const string PREDICTED_GRADE_POINT_VALUE = "predictedGradePointValue";
+        public const string CURRENT_GRADE_POINT_VALUE = "currentGradePointValue";
         public const string GRADE_POINT_VALUE_CAP = "gradePointValueCap";
         public const string DATE = "date";
 
@@ -88,64 +87,54 @@ namespace Arbor.Model
             this.setProperty("assessmentType", assessmentType);
         }
 
-        public float getAchievementValueForCurriculumEntity ()
+        public float getCurriculumCompletion ()
         {
-            return (float) this.getProperty("achievementValueForCurriculumEntity");
+            return (float) this.getProperty("curriculumCompletion");
         }
 
-        public void setAchievementValueForCurriculumEntity (float achievementValueForCurriculumEntity)
+        public void setCurriculumCompletion (float curriculumCompletion)
         {
-            this.setProperty("achievementValueForCurriculumEntity", achievementValueForCurriculumEntity);
+            this.setProperty("curriculumCompletion", curriculumCompletion);
         }
 
-        public float getCurriculumMarked ()
+        public float getPredictedMastery ()
         {
-            return (float) this.getProperty("curriculumMarked");
+            return (float) this.getProperty("predictedMastery");
         }
 
-        public void setCurriculumMarked (float curriculumMarked)
+        public void setPredictedMastery (float predictedMastery)
         {
-            this.setProperty("curriculumMarked", curriculumMarked);
+            this.setProperty("predictedMastery", predictedMastery);
         }
 
-        public float getAchievementValueForCurriculumMarked ()
+        public float getCurrentMastery ()
         {
-            return (float) this.getProperty("achievementValueForCurriculumMarked");
+            return (float) this.getProperty("currentMastery");
         }
 
-        public void setAchievementValueForCurriculumMarked (float achievementValueForCurriculumMarked)
+        public void setCurrentMastery (float currentMastery)
         {
-            this.setProperty("achievementValueForCurriculumMarked", achievementValueForCurriculumMarked);
+            this.setProperty("currentMastery", currentMastery);
         }
 
-        public float getGradePointValueForCurriculumMarked ()
+        public float getPredictedGradePointValue ()
         {
-            return (float) this.getProperty("gradePointValueForCurriculumMarked");
+            return (float) this.getProperty("predictedGradePointValue");
         }
 
-        public void setGradePointValueForCurriculumMarked (float gradePointValueForCurriculumMarked)
+        public void setPredictedGradePointValue (float predictedGradePointValue)
         {
-            this.setProperty("gradePointValueForCurriculumMarked", gradePointValueForCurriculumMarked);
+            this.setProperty("predictedGradePointValue", predictedGradePointValue);
         }
 
-        public float getCurriculumConsidered ()
+        public float getCurrentGradePointValue ()
         {
-            return (float) this.getProperty("curriculumConsidered");
+            return (float) this.getProperty("currentGradePointValue");
         }
 
-        public void setCurriculumConsidered (float curriculumConsidered)
+        public void setCurrentGradePointValue (float currentGradePointValue)
         {
-            this.setProperty("curriculumConsidered", curriculumConsidered);
-        }
-
-        public float getAchievementValueForCurriculumConsidered ()
-        {
-            return (float) this.getProperty("achievementValueForCurriculumConsidered");
-        }
-
-        public void setAchievementValueForCurriculumConsidered (float achievementValueForCurriculumConsidered)
-        {
-            this.setProperty("achievementValueForCurriculumConsidered", achievementValueForCurriculumConsidered);
+            this.setProperty("currentGradePointValue", currentGradePointValue);
         }
 
         public float getGradePointValueCap ()

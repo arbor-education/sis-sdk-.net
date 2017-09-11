@@ -20,6 +20,8 @@ namespace Arbor.Model
         public const string BLOOD_GROUP = "bloodGroup";
         public const string STAFF_NUMBER = "staffNumber";
         public const string ZENDESK_USER = "zendeskUser";
+        public const string TIMETABLE_ABBREVIATION = "timetableAbbreviation";
+        public const string LEGACY_SYSTEM_ID = "legacySystemId";
 
         public Staff ()
         {
@@ -77,12 +79,12 @@ namespace Arbor.Model
             this.setProperty("qualifiedTeacherStatus", qualifiedTeacherStatus);
         }
 
-        public ModelBase getQualifiedTeacherRoute ()
+        public QualifiedTeacherRoute getQualifiedTeacherRoute ()
         {
-            return (ModelBase) this.getProperty("qualifiedTeacherRoute");
+            return (QualifiedTeacherRoute) this.getProperty("qualifiedTeacherRoute");
         }
 
-        public void setQualifiedTeacherRoute (ModelBase qualifiedTeacherRoute)
+        public void setQualifiedTeacherRoute (QualifiedTeacherRoute qualifiedTeacherRoute)
         {
             this.setProperty("qualifiedTeacherRoute", qualifiedTeacherRoute);
         }
@@ -155,6 +157,26 @@ namespace Arbor.Model
         public void setZendeskUser (string zendeskUser)
         {
             this.setProperty("zendeskUser", zendeskUser);
+        }
+
+        public string getTimetableAbbreviation ()
+        {
+            return this.getProperty("timetableAbbreviation").ToString();
+        }
+
+        public void setTimetableAbbreviation (string timetableAbbreviation)
+        {
+            this.setProperty("timetableAbbreviation", timetableAbbreviation);
+        }
+
+        public string getLegacySystemId ()
+        {
+            return this.getProperty("legacySystemId").ToString();
+        }
+
+        public void setLegacySystemId (string legacySystemId)
+        {
+            this.setProperty("legacySystemId", legacySystemId);
         }
 
 

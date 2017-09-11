@@ -15,6 +15,7 @@ namespace Arbor.Model
         public const string ABSENCE_EVENT = "absenceEvent";
         public const string COVER_PROPOSED_DATETIME = "coverProposedDatetime";
         public const string COVER_ARRANGED_DATETIME = "coverArrangedDatetime";
+        public const string COVER_NOT_REQUIRED_DATETIME = "coverNotRequiredDatetime";
 
         public CoverRequirement ()
         {
@@ -100,6 +101,16 @@ namespace Arbor.Model
         public void setCoverArrangedDatetime (DateTime coverArrangedDatetime)
         {
             this.setProperty("coverArrangedDatetime", coverArrangedDatetime);
+        }
+
+        public DateTime getCoverNotRequiredDatetime ()
+        {
+            return (DateTime) this.getProperty("coverNotRequiredDatetime");
+        }
+
+        public void setCoverNotRequiredDatetime (DateTime coverNotRequiredDatetime)
+        {
+            this.setProperty("coverNotRequiredDatetime", coverNotRequiredDatetime);
         }
 
 

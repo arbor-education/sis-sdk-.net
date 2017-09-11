@@ -52,12 +52,12 @@ namespace Arbor.Model.UkDfe
         	return (SchoolWorkforceCensusAgencyTpSupportCount) gateway.retrieve(ResourceType.UK_DFE_SCHOOL_WORKFORCE_CENSUS_AGENCY_TP_SUPPORT_COUNT, id);
         }
 
-        public ModelBase getSchoolWorkforceCensus ()
+        public SchoolWorkforceCensus getSchoolWorkforceCensus ()
         {
-            return (ModelBase) this.getProperty("schoolWorkforceCensus");
+            return (SchoolWorkforceCensus) this.getProperty("schoolWorkforceCensus");
         }
 
-        public void setSchoolWorkforceCensus (ModelBase schoolWorkforceCensus)
+        public void setSchoolWorkforceCensus (SchoolWorkforceCensus schoolWorkforceCensus)
         {
             this.setProperty("schoolWorkforceCensus", schoolWorkforceCensus);
         }

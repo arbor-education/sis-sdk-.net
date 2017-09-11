@@ -14,9 +14,7 @@ namespace Arbor.Model
         public const string END_DATETIME = "endDatetime";
         public const string LOCATION_TEXT = "locationText";
         public const string LOCATION = "location";
-        public const string SCHEDULED_BY = "scheduledBy";
         public const string MEAL_SITTING = "mealSitting";
-        public const string MEAL_SESSION_NAME = "mealSessionName";
         public const string REGISTER_OPENED_DATETIME = "registerOpenedDatetime";
         public const string REGISTER_CLOSED_DATETIME = "registerClosedDatetime";
         public const string INVOICED_DATETIME = "invoicedDatetime";
@@ -88,24 +86,14 @@ namespace Arbor.Model
             this.setProperty("locationText", locationText);
         }
 
-        public Room getLocation ()
+        public ModelBase getLocation ()
         {
-            return (Room) this.getProperty("location");
+            return (ModelBase) this.getProperty("location");
         }
 
-        public void setLocation (Room location)
+        public void setLocation (ModelBase location)
         {
             this.setProperty("location", location);
-        }
-
-        public ModelBase getScheduledBy ()
-        {
-            return (ModelBase) this.getProperty("scheduledBy");
-        }
-
-        public void setScheduledBy (ModelBase scheduledBy)
-        {
-            this.setProperty("scheduledBy", scheduledBy);
         }
 
         public MealSitting getMealSitting ()
@@ -116,16 +104,6 @@ namespace Arbor.Model
         public void setMealSitting (MealSitting mealSitting)
         {
             this.setProperty("mealSitting", mealSitting);
-        }
-
-        public string getMealSessionName ()
-        {
-            return this.getProperty("mealSessionName").ToString();
-        }
-
-        public void setMealSessionName (string mealSessionName)
-        {
-            this.setProperty("mealSessionName", mealSessionName);
         }
 
         public DateTime getRegisterOpenedDatetime ()

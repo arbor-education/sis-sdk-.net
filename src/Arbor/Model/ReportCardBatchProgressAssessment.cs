@@ -11,8 +11,8 @@ namespace Arbor.Model
     {
         protected string resourceType = ResourceType.REPORT_CARD_BATCH_PROGRESS_ASSESSMENT;
         public const string REPORT_CARD_BATCH = "reportCardBatch";
-        public const string ASSESSMENT = "assessment";
         public const string ORDER = "order";
+        public const string ASSESSMENT = "assessment";
         public const string MARKING_COMPLETED_DATETIME = "markingCompletedDatetime";
 
         public ReportCardBatchProgressAssessment ()
@@ -61,16 +61,6 @@ namespace Arbor.Model
             this.setProperty("reportCardBatch", reportCardBatch);
         }
 
-        public Assessment getAssessment ()
-        {
-            return (Assessment) this.getProperty("assessment");
-        }
-
-        public void setAssessment (Assessment assessment)
-        {
-            this.setProperty("assessment", assessment);
-        }
-
         public int getOrder ()
         {
             return Convert.ToInt32(this.getProperty("order"));
@@ -79,6 +69,16 @@ namespace Arbor.Model
         public void setOrder (int order)
         {
             this.setProperty("order", order);
+        }
+
+        public Assessment getAssessment ()
+        {
+            return (Assessment) this.getProperty("assessment");
+        }
+
+        public void setAssessment (Assessment assessment)
+        {
+            this.setProperty("assessment", assessment);
         }
 
         public DateTime getMarkingCompletedDatetime ()

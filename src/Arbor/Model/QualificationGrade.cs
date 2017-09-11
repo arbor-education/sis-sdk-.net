@@ -13,10 +13,10 @@ namespace Arbor.Model
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";
-        public const string SHORT_NAME = "shortName";
         public const string QUALIFICATION_GRADE_SET = "qualificationGradeSet";
-        public const string QUALIFICATION_GRADE_SET_CODE = "qualificationGradeSetCode";
-        public const string GRADE_NAME = "gradeName";
+        public const string SHORT_NAME = "shortName";
+        public const string NAME = "name";
+        public const string GRADE_IDENTIFIER = "gradeIdentifier";
         public const string GRADE_VALUE = "gradeValue";
         public const string GRADE_DESCRIPTION = "gradeDescription";
         public const string GRADE_LETTER = "gradeLetter";
@@ -88,16 +88,6 @@ namespace Arbor.Model
             this.setProperty("dataOrder", dataOrder);
         }
 
-        public string getShortName ()
-        {
-            return this.getProperty("shortName").ToString();
-        }
-
-        public void setShortName (string shortName)
-        {
-            this.setProperty("shortName", shortName);
-        }
-
         public QualificationGradeSet getQualificationGradeSet ()
         {
             return (QualificationGradeSet) this.getProperty("qualificationGradeSet");
@@ -108,24 +98,34 @@ namespace Arbor.Model
             this.setProperty("qualificationGradeSet", qualificationGradeSet);
         }
 
-        public string getQualificationGradeSetCode ()
+        public string getShortName ()
         {
-            return this.getProperty("qualificationGradeSetCode").ToString();
+            return this.getProperty("shortName").ToString();
         }
 
-        public void setQualificationGradeSetCode (string qualificationGradeSetCode)
+        public void setShortName (string shortName)
         {
-            this.setProperty("qualificationGradeSetCode", qualificationGradeSetCode);
+            this.setProperty("shortName", shortName);
         }
 
-        public string getGradeName ()
+        public string getName ()
         {
-            return this.getProperty("gradeName").ToString();
+            return this.getProperty("name").ToString();
         }
 
-        public void setGradeName (string gradeName)
+        public void setName (string name)
         {
-            this.setProperty("gradeName", gradeName);
+            this.setProperty("name", name);
+        }
+
+        public string getGradeIdentifier ()
+        {
+            return this.getProperty("gradeIdentifier").ToString();
+        }
+
+        public void setGradeIdentifier (string gradeIdentifier)
+        {
+            this.setProperty("gradeIdentifier", gradeIdentifier);
         }
 
         public float getGradeValue ()

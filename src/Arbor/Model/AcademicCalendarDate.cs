@@ -19,8 +19,6 @@ namespace Arbor.Model
         public const string CALENDAR_DAY_OF_WEEK = "calendarDayOfWeek";
         public const string ACADEMIC_YEAR = "academicYear";
         public const string TERM = "term";
-        public const string ACADEMIC_YEAR_CYCLE_NUMBER = "academicYearCycleNumber";
-        public const string TERM_CYCLE_NUMBER = "termCycleNumber";
         public const string DAY_OF_CYCLE = "dayOfCycle";
         public const string DAY_OF_TERM = "dayOfTerm";
         public const string DAY_OF_ACADEMIC_YEAR = "dayOfAcademicYear";
@@ -151,26 +149,6 @@ namespace Arbor.Model
         public void setTerm (Term term)
         {
             this.setProperty("term", term);
-        }
-
-        public int getAcademicYearCycleNumber ()
-        {
-            return Convert.ToInt32(this.getProperty("academicYearCycleNumber"));
-        }
-
-        public void setAcademicYearCycleNumber (int academicYearCycleNumber)
-        {
-            this.setProperty("academicYearCycleNumber", academicYearCycleNumber);
-        }
-
-        public int getTermCycleNumber ()
-        {
-            return Convert.ToInt32(this.getProperty("termCycleNumber"));
-        }
-
-        public void setTermCycleNumber (int termCycleNumber)
-        {
-            this.setProperty("termCycleNumber", termCycleNumber);
         }
 
         public int getDayOfCycle ()

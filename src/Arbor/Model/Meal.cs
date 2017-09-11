@@ -10,10 +10,12 @@ namespace Arbor.Model
     public class Meal : ModelBase
     {
         protected string resourceType = ResourceType.MEAL;
-        public const string CODE = "code";
-        public const string ACTIVE = "active";
-        public const string DATA_ORDER = "dataOrder";
+        public const string ACADEMIC_YEAR = "academicYear";
         public const string MEAL_NAME = "mealName";
+        public const string EFFECTIVE_DATE = "effectiveDate";
+        public const string END_DATE = "endDate";
+        public const string CUSTOMER_ACCOUNT_TYPE = "customerAccountType";
+        public const string COPIED_TO_MEAL = "copiedToMeal";
 
         public Meal ()
         {
@@ -51,34 +53,14 @@ namespace Arbor.Model
         	return (Meal) gateway.retrieve(ResourceType.MEAL, id);
         }
 
-        public string getCode ()
+        public AcademicYear getAcademicYear ()
         {
-            return this.getProperty("code").ToString();
+            return (AcademicYear) this.getProperty("academicYear");
         }
 
-        public void setCode (string code)
+        public void setAcademicYear (AcademicYear academicYear)
         {
-            this.setProperty("code", code);
-        }
-
-        public bool getActive ()
-        {
-            return (bool) this.getProperty("active");
-        }
-
-        public void setActive (bool active)
-        {
-            this.setProperty("active", active);
-        }
-
-        public int getDataOrder ()
-        {
-            return Convert.ToInt32(this.getProperty("dataOrder"));
-        }
-
-        public void setDataOrder (int dataOrder)
-        {
-            this.setProperty("dataOrder", dataOrder);
+            this.setProperty("academicYear", academicYear);
         }
 
         public string getMealName ()
@@ -89,6 +71,46 @@ namespace Arbor.Model
         public void setMealName (string mealName)
         {
             this.setProperty("mealName", mealName);
+        }
+
+        public DateTime getEffectiveDate ()
+        {
+            return (DateTime) this.getProperty("effectiveDate");
+        }
+
+        public void setEffectiveDate (DateTime effectiveDate)
+        {
+            this.setProperty("effectiveDate", effectiveDate);
+        }
+
+        public DateTime getEndDate ()
+        {
+            return (DateTime) this.getProperty("endDate");
+        }
+
+        public void setEndDate (DateTime endDate)
+        {
+            this.setProperty("endDate", endDate);
+        }
+
+        public CustomerAccountType getCustomerAccountType ()
+        {
+            return (CustomerAccountType) this.getProperty("customerAccountType");
+        }
+
+        public void setCustomerAccountType (CustomerAccountType customerAccountType)
+        {
+            this.setProperty("customerAccountType", customerAccountType);
+        }
+
+        public Meal getCopiedToMeal ()
+        {
+            return (Meal) this.getProperty("copiedToMeal");
+        }
+
+        public void setCopiedToMeal (Meal copiedToMeal)
+        {
+            this.setProperty("copiedToMeal", copiedToMeal);
         }
 
 

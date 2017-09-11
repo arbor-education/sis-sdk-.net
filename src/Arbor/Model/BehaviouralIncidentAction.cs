@@ -13,6 +13,7 @@ namespace Arbor.Model
         public const string BEHAVIOURAL_INCIDENT = "behaviouralIncident";
         public const string STUDENT = "student";
         public const string ACTION = "action";
+        public const string IS_AUTOMATIC = "isAutomatic";
 
         public BehaviouralIncidentAction ()
         {
@@ -78,6 +79,16 @@ namespace Arbor.Model
         public void setAction (ModelBase action)
         {
             this.setProperty("action", action);
+        }
+
+        public bool getIsAutomatic ()
+        {
+            return (bool) this.getProperty("isAutomatic");
+        }
+
+        public void setIsAutomatic (bool isAutomatic)
+        {
+            this.setProperty("isAutomatic", isAutomatic);
         }
 
 

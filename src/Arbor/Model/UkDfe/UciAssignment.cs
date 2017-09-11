@@ -14,7 +14,7 @@ namespace Arbor.Model.UkDfe
         public const string UCI = "uci";
         public const string ISSUED_YEAR = "issuedYear";
         public const string ISSUED_CENTER_NUMBER = "issuedCenterNumber";
-        public const string ISSUEDAWARDING_ORGANIZATION_IDENTIFIER = "issuedawardingOrganizationIdentifier";
+        public const string ISSUED_AWARDING_ORGANIZATION_IDENTIFIER = "issuedAwardingOrganizationIdentifier";
         public const string ISSUED_SERIAL_NUMBER = "issuedSerialNumber";
         public const string ISSUED_DATETIME = "issuedDatetime";
         public const string CANCELLED_DATETIME = "cancelledDatetime";
@@ -95,14 +95,14 @@ namespace Arbor.Model.UkDfe
             this.setProperty("issuedCenterNumber", issuedCenterNumber);
         }
 
-        public int getIssuedawardingOrganizationIdentifier ()
+        public int getIssuedAwardingOrganizationIdentifier ()
         {
-            return Convert.ToInt32(this.getProperty("issuedawardingOrganizationIdentifier"));
+            return Convert.ToInt32(this.getProperty("issuedAwardingOrganizationIdentifier"));
         }
 
-        public void setIssuedawardingOrganizationIdentifier (int issuedawardingOrganizationIdentifier)
+        public void setIssuedAwardingOrganizationIdentifier (int issuedAwardingOrganizationIdentifier)
         {
-            this.setProperty("issuedawardingOrganizationIdentifier", issuedawardingOrganizationIdentifier);
+            this.setProperty("issuedAwardingOrganizationIdentifier", issuedAwardingOrganizationIdentifier);
         }
 
         public int getIssuedSerialNumber ()

@@ -14,14 +14,10 @@ namespace Arbor.Model
         public const string END_DATETIME = "endDatetime";
         public const string LOCATION_TEXT = "locationText";
         public const string LOCATION = "location";
-        public const string SCHEDULED_BY = "scheduledBy";
         public const string SESSION_NAME = "sessionName";
         public const string ACADEMIC_UNIT = "academicUnit";
-        public const string SESSION_STREAM = "sessionStream";
         public const string TIMETABLE_SLOT = "timetableSlot";
         public const string ATTENDANCE_REGISTER_TYPE = "attendanceRegisterType";
-        public const string ATTENDANCE_REGISTER_OPENED_DATETIME = "attendanceRegisterOpenedDatetime";
-        public const string ATTENDANCE_REGISTER_CLOSED_DATETIME = "attendanceRegisterClosedDatetime";
         public const string LESSON_PLAN = "lessonPlan";
 
         public Session ()
@@ -90,24 +86,14 @@ namespace Arbor.Model
             this.setProperty("locationText", locationText);
         }
 
-        public Room getLocation ()
+        public ModelBase getLocation ()
         {
-            return (Room) this.getProperty("location");
+            return (ModelBase) this.getProperty("location");
         }
 
-        public void setLocation (Room location)
+        public void setLocation (ModelBase location)
         {
             this.setProperty("location", location);
-        }
-
-        public ModelBase getScheduledBy ()
-        {
-            return (ModelBase) this.getProperty("scheduledBy");
-        }
-
-        public void setScheduledBy (ModelBase scheduledBy)
-        {
-            this.setProperty("scheduledBy", scheduledBy);
         }
 
         public string getSessionName ()
@@ -130,16 +116,6 @@ namespace Arbor.Model
             this.setProperty("academicUnit", academicUnit);
         }
 
-        public SessionStream getSessionStream ()
-        {
-            return (SessionStream) this.getProperty("sessionStream");
-        }
-
-        public void setSessionStream (SessionStream sessionStream)
-        {
-            this.setProperty("sessionStream", sessionStream);
-        }
-
         public TimetableSlot getTimetableSlot ()
         {
             return (TimetableSlot) this.getProperty("timetableSlot");
@@ -158,26 +134,6 @@ namespace Arbor.Model
         public void setAttendanceRegisterType (AttendanceRegisterType attendanceRegisterType)
         {
             this.setProperty("attendanceRegisterType", attendanceRegisterType);
-        }
-
-        public DateTime getAttendanceRegisterOpenedDatetime ()
-        {
-            return (DateTime) this.getProperty("attendanceRegisterOpenedDatetime");
-        }
-
-        public void setAttendanceRegisterOpenedDatetime (DateTime attendanceRegisterOpenedDatetime)
-        {
-            this.setProperty("attendanceRegisterOpenedDatetime", attendanceRegisterOpenedDatetime);
-        }
-
-        public DateTime getAttendanceRegisterClosedDatetime ()
-        {
-            return (DateTime) this.getProperty("attendanceRegisterClosedDatetime");
-        }
-
-        public void setAttendanceRegisterClosedDatetime (DateTime attendanceRegisterClosedDatetime)
-        {
-            this.setProperty("attendanceRegisterClosedDatetime", attendanceRegisterClosedDatetime);
         }
 
         public LessonPlan getLessonPlan ()

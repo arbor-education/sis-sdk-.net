@@ -11,10 +11,9 @@ namespace Arbor.Model.UkDfe
     {
         protected string resourceType = ResourceType.UK_DFE_SCHOOL_WORKFORCE_CENSUS_STAFF_INFORMATION;
         public const string SCHOOL_WORKFORCE_CENSUS = "schoolWorkforceCensus";
-        public const string EDUCATIONAL_INSTITUTION = "educationalInstitution";
         public const string OCCASIONALS_QTS = "occasionalsQts";
         public const string OCCASIONALS_NOT_QTS = "occasionalsNotQts";
-        public const string OCCASIONALS_NOT_KNWN = "occasionalsNotKnwn";
+        public const string OCCASIONALS_NOT_KNOWN = "occasionalsNotKnown";
 
         public SchoolWorkforceCensusStaffInformation ()
         {
@@ -52,24 +51,14 @@ namespace Arbor.Model.UkDfe
         	return (SchoolWorkforceCensusStaffInformation) gateway.retrieve(ResourceType.UK_DFE_SCHOOL_WORKFORCE_CENSUS_STAFF_INFORMATION, id);
         }
 
-        public ModelBase getSchoolWorkforceCensus ()
+        public SchoolWorkforceCensus getSchoolWorkforceCensus ()
         {
-            return (ModelBase) this.getProperty("schoolWorkforceCensus");
+            return (SchoolWorkforceCensus) this.getProperty("schoolWorkforceCensus");
         }
 
-        public void setSchoolWorkforceCensus (ModelBase schoolWorkforceCensus)
+        public void setSchoolWorkforceCensus (SchoolWorkforceCensus schoolWorkforceCensus)
         {
             this.setProperty("schoolWorkforceCensus", schoolWorkforceCensus);
-        }
-
-        public EducationalInstitution getEducationalInstitution ()
-        {
-            return (EducationalInstitution) this.getProperty("educationalInstitution");
-        }
-
-        public void setEducationalInstitution (EducationalInstitution educationalInstitution)
-        {
-            this.setProperty("educationalInstitution", educationalInstitution);
         }
 
         public int getOccasionalsQts ()
@@ -92,14 +81,14 @@ namespace Arbor.Model.UkDfe
             this.setProperty("occasionalsNotQts", occasionalsNotQts);
         }
 
-        public int getOccasionalsNotKnwn ()
+        public int getOccasionalsNotKnown ()
         {
-            return Convert.ToInt32(this.getProperty("occasionalsNotKnwn"));
+            return Convert.ToInt32(this.getProperty("occasionalsNotKnown"));
         }
 
-        public void setOccasionalsNotKnwn (int occasionalsNotKnwn)
+        public void setOccasionalsNotKnown (int occasionalsNotKnown)
         {
-            this.setProperty("occasionalsNotKnwn", occasionalsNotKnwn);
+            this.setProperty("occasionalsNotKnown", occasionalsNotKnown);
         }
 
 

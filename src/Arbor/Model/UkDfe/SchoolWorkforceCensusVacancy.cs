@@ -12,7 +12,7 @@ namespace Arbor.Model.UkDfe
         protected string resourceType = ResourceType.UK_DFE_SCHOOL_WORKFORCE_CENSUS_VACANCY;
         public const string SCHOOL_WORKFORCE_CENSUS = "schoolWorkforceCensus";
         public const string EDUCATIONAL_INSTITUTION = "educationalInstitution";
-        public const string SCHOOL_WORKFORCE_VACANCY_POST = "SchoolWorkforceVacancyPost";
+        public const string SCHOOL_WORKFORCE_VACANCY_POST = "schoolWorkforceVacancyPost";
         public const string SUBJECT = "subject";
         public const string TENURE = "tenure";
         public const string VACANCY_TEMPORARILY_FILLED = "vacancyTemporarilyFilled";
@@ -54,12 +54,12 @@ namespace Arbor.Model.UkDfe
         	return (SchoolWorkforceCensusVacancy) gateway.retrieve(ResourceType.UK_DFE_SCHOOL_WORKFORCE_CENSUS_VACANCY, id);
         }
 
-        public ModelBase getSchoolWorkforceCensus ()
+        public SchoolWorkforceCensus getSchoolWorkforceCensus ()
         {
-            return (ModelBase) this.getProperty("schoolWorkforceCensus");
+            return (SchoolWorkforceCensus) this.getProperty("schoolWorkforceCensus");
         }
 
-        public void setSchoolWorkforceCensus (ModelBase schoolWorkforceCensus)
+        public void setSchoolWorkforceCensus (SchoolWorkforceCensus schoolWorkforceCensus)
         {
             this.setProperty("schoolWorkforceCensus", schoolWorkforceCensus);
         }
@@ -74,14 +74,14 @@ namespace Arbor.Model.UkDfe
             this.setProperty("educationalInstitution", educationalInstitution);
         }
 
-        public ModelBase getSchoolWorkforceVacancyPost ()
+        public SchoolWorkforceVacancyPost getSchoolWorkforceVacancyPost ()
         {
-            return (ModelBase) this.getProperty("SchoolWorkforceVacancyPost");
+            return (SchoolWorkforceVacancyPost) this.getProperty("schoolWorkforceVacancyPost");
         }
 
-        public void setSchoolWorkforceVacancyPost (ModelBase SchoolWorkforceVacancyPost)
+        public void setSchoolWorkforceVacancyPost (SchoolWorkforceVacancyPost schoolWorkforceVacancyPost)
         {
-            this.setProperty("SchoolWorkforceVacancyPost", SchoolWorkforceVacancyPost);
+            this.setProperty("schoolWorkforceVacancyPost", schoolWorkforceVacancyPost);
         }
 
         public Subject getSubject ()

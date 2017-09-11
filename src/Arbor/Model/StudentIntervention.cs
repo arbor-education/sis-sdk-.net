@@ -17,6 +17,7 @@ namespace Arbor.Model
         public const string END_DATE = "endDate";
         public const string PRIORITY = "priority";
         public const string STATUS = "status";
+        public const string MONITORING = "monitoring";
         public const string AIMS = "aims";
         public const string STRATEGIES = "strategies";
         public const string SUCCESS_CRITERIA = "successCriteria";
@@ -25,6 +26,7 @@ namespace Arbor.Model
         public const string LANGUAGE_ABILITY = "languageAbility";
         public const string MEDICAL_CONDITION = "medicalCondition";
         public const string SUCCESS = "success";
+        public const string ESTIMATED_DURATION = "estimatedDuration";
 
         public StudentIntervention ()
         {
@@ -132,6 +134,16 @@ namespace Arbor.Model
             this.setProperty("status", status);
         }
 
+        public string getMonitoring ()
+        {
+            return this.getProperty("monitoring").ToString();
+        }
+
+        public void setMonitoring (string monitoring)
+        {
+            this.setProperty("monitoring", monitoring);
+        }
+
         public string getAims ()
         {
             return this.getProperty("aims").ToString();
@@ -210,6 +222,16 @@ namespace Arbor.Model
         public void setSuccess (string success)
         {
             this.setProperty("success", success);
+        }
+
+        public string getEstimatedDuration ()
+        {
+            return this.getProperty("estimatedDuration").ToString();
+        }
+
+        public void setEstimatedDuration (string estimatedDuration)
+        {
+            this.setProperty("estimatedDuration", estimatedDuration);
         }
 
 

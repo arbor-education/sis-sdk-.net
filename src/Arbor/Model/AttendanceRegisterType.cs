@@ -16,6 +16,7 @@ namespace Arbor.Model
         public const string ATTENDANCE_REGISTER_TYPE_NAME = "attendanceRegisterTypeName";
         public const string IS_MORNING = "isMorning";
         public const string IS_AFTERNOON = "isAfternoon";
+        public const string EVENT_OBJECT_TYPE_ID = "eventObjectTypeId";
 
         public AttendanceRegisterType ()
         {
@@ -111,6 +112,16 @@ namespace Arbor.Model
         public void setIsAfternoon (bool isAfternoon)
         {
             this.setProperty("isAfternoon", isAfternoon);
+        }
+
+        public int getEventObjectTypeId ()
+        {
+            return Convert.ToInt32(this.getProperty("eventObjectTypeId"));
+        }
+
+        public void setEventObjectTypeId (int eventObjectTypeId)
+        {
+            this.setProperty("eventObjectTypeId", eventObjectTypeId);
         }
 
 
