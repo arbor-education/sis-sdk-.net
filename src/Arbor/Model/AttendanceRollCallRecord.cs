@@ -14,6 +14,7 @@ namespace Arbor.Model
         public const string RECORD_DATE = "recordDate";
         public const string STUDENT = "student";
         public const string ATTENDANCE_MARK = "attendanceMark";
+        public const string MINUTES_LATE = "minutesLate";
         public const string SOURCE_ATTENDANCE_RECORD = "sourceAttendanceRecord";
         public const string VALIDATION_ERROR = "validationError";
 
@@ -91,6 +92,16 @@ namespace Arbor.Model
         public void setAttendanceMark (AttendanceMark attendanceMark)
         {
             this.setProperty("attendanceMark", attendanceMark);
+        }
+
+        public int getMinutesLate ()
+        {
+            return Convert.ToInt32(this.getProperty("minutesLate"));
+        }
+
+        public void setMinutesLate (int minutesLate)
+        {
+            this.setProperty("minutesLate", minutesLate);
         }
 
         public AttendanceRecord getSourceAttendanceRecord ()

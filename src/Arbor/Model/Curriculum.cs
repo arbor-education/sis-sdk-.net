@@ -11,13 +11,21 @@ namespace Arbor.Model
     {
         protected string resourceType = ResourceType.CURRICULUM;
         public const string CODE = "code";
+        public const string ACTIVE = "active";
+        public const string DATA_ORDER = "dataOrder";
         public const string NAME = "name";
         public const string SHORT_NAME = "shortName";
         public const string GRADE_POINT_SCALE = "gradePointScale";
+        public const string CURRICULUM_TIER = "curriculumTier";
+        public const string LOWER_CURRICULUM_GRADE = "lowerCurriculumGrade";
+        public const string UPPER_CURRICULUM_GRADE = "upperCurriculumGrade";
         public const string LOWER_GRADE_POINT_SCALE_VALUE = "lowerGradePointScaleValue";
+        public const string LOWER_BENCHMARK_GRADE = "lowerBenchmarkGrade";
         public const string UPPER_GRADE_POINT_SCALE_VALUE = "upperGradePointScaleValue";
+        public const string UPPER_BENCHMARK_GRADE = "upperBenchmarkGrade";
         public const string ACHIEVEMENT_LEVEL_SET = "achievementLevelSet";
         public const string ASSESSMENT = "assessment";
+        public const string SUBJECT = "subject";
         public const string VALID_FROM_DATE = "validFromDate";
         public const string VALID_UNTIL_DATE = "validUntilDate";
 
@@ -67,6 +75,26 @@ namespace Arbor.Model
             this.setProperty("code", code);
         }
 
+        public bool getActive ()
+        {
+            return (bool) this.getProperty("active");
+        }
+
+        public void setActive (bool active)
+        {
+            this.setProperty("active", active);
+        }
+
+        public int getDataOrder ()
+        {
+            return Convert.ToInt32(this.getProperty("dataOrder"));
+        }
+
+        public void setDataOrder (int dataOrder)
+        {
+            this.setProperty("dataOrder", dataOrder);
+        }
+
         public string getName ()
         {
             return this.getProperty("name").ToString();
@@ -97,6 +125,36 @@ namespace Arbor.Model
             this.setProperty("gradePointScale", gradePointScale);
         }
 
+        public CurriculumTier getCurriculumTier ()
+        {
+            return (CurriculumTier) this.getProperty("curriculumTier");
+        }
+
+        public void setCurriculumTier (CurriculumTier curriculumTier)
+        {
+            this.setProperty("curriculumTier", curriculumTier);
+        }
+
+        public CurriculumGrade getLowerCurriculumGrade ()
+        {
+            return (CurriculumGrade) this.getProperty("lowerCurriculumGrade");
+        }
+
+        public void setLowerCurriculumGrade (CurriculumGrade lowerCurriculumGrade)
+        {
+            this.setProperty("lowerCurriculumGrade", lowerCurriculumGrade);
+        }
+
+        public CurriculumGrade getUpperCurriculumGrade ()
+        {
+            return (CurriculumGrade) this.getProperty("upperCurriculumGrade");
+        }
+
+        public void setUpperCurriculumGrade (CurriculumGrade upperCurriculumGrade)
+        {
+            this.setProperty("upperCurriculumGrade", upperCurriculumGrade);
+        }
+
         public float getLowerGradePointScaleValue ()
         {
             return (float) this.getProperty("lowerGradePointScaleValue");
@@ -107,6 +165,16 @@ namespace Arbor.Model
             this.setProperty("lowerGradePointScaleValue", lowerGradePointScaleValue);
         }
 
+        public Grade getLowerBenchmarkGrade ()
+        {
+            return (Grade) this.getProperty("lowerBenchmarkGrade");
+        }
+
+        public void setLowerBenchmarkGrade (Grade lowerBenchmarkGrade)
+        {
+            this.setProperty("lowerBenchmarkGrade", lowerBenchmarkGrade);
+        }
+
         public float getUpperGradePointScaleValue ()
         {
             return (float) this.getProperty("upperGradePointScaleValue");
@@ -115,6 +183,16 @@ namespace Arbor.Model
         public void setUpperGradePointScaleValue (float upperGradePointScaleValue)
         {
             this.setProperty("upperGradePointScaleValue", upperGradePointScaleValue);
+        }
+
+        public Grade getUpperBenchmarkGrade ()
+        {
+            return (Grade) this.getProperty("upperBenchmarkGrade");
+        }
+
+        public void setUpperBenchmarkGrade (Grade upperBenchmarkGrade)
+        {
+            this.setProperty("upperBenchmarkGrade", upperBenchmarkGrade);
         }
 
         public AchievementLevelSet getAchievementLevelSet ()
@@ -135,6 +213,16 @@ namespace Arbor.Model
         public void setAssessment (Assessment assessment)
         {
             this.setProperty("assessment", assessment);
+        }
+
+        public Subject getSubject ()
+        {
+            return (Subject) this.getProperty("subject");
+        }
+
+        public void setSubject (Subject subject)
+        {
+            this.setProperty("subject", subject);
         }
 
         public DateTime getValidFromDate ()

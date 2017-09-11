@@ -16,6 +16,8 @@ namespace Arbor.Model
         public const string PAY_SCALE_NAME = "payScaleName";
         public const string EFFECTIVE_DATE = "effectiveDate";
         public const string END_DATE = "endDate";
+        public const string MINIMUM_SALARY = "minimumSalary";
+        public const string MAXIMUM_SALARY = "maximumSalary";
 
         public PayScale ()
         {
@@ -63,12 +65,12 @@ namespace Arbor.Model
             this.setProperty("regionalPaySpine", regionalPaySpine);
         }
 
-        public ModelBase getPayScaleCategory ()
+        public PayScaleCategory getPayScaleCategory ()
         {
-            return (ModelBase) this.getProperty("payScaleCategory");
+            return (PayScaleCategory) this.getProperty("payScaleCategory");
         }
 
-        public void setPayScaleCategory (ModelBase payScaleCategory)
+        public void setPayScaleCategory (PayScaleCategory payScaleCategory)
         {
             this.setProperty("payScaleCategory", payScaleCategory);
         }
@@ -111,6 +113,26 @@ namespace Arbor.Model
         public void setEndDate (DateTime endDate)
         {
             this.setProperty("endDate", endDate);
+        }
+
+        public string getMinimumSalary ()
+        {
+            return this.getProperty("minimumSalary").ToString();
+        }
+
+        public void setMinimumSalary (string minimumSalary)
+        {
+            this.setProperty("minimumSalary", minimumSalary);
+        }
+
+        public string getMaximumSalary ()
+        {
+            return this.getProperty("maximumSalary").ToString();
+        }
+
+        public void setMaximumSalary (string maximumSalary)
+        {
+            this.setProperty("maximumSalary", maximumSalary);
         }
 
 

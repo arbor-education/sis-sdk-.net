@@ -14,7 +14,6 @@ namespace Arbor.Model.UkDfe
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";
         public const string ACADEMIC_YEAR = "academicYear";
-        public const string DOCUMENT_VERSION = "documentVersion";
         public const string CENSUS_YEAR = "censusYear";
         public const string CENSUS_REFERENCE_DATE = "censusReferenceDate";
         public const string CENSUS_SUBMISSION_DEADLINE_DATE = "censusSubmissionDeadlineDate";
@@ -93,16 +92,6 @@ namespace Arbor.Model.UkDfe
         public void setAcademicYear (AcademicYear academicYear)
         {
             this.setProperty("academicYear", academicYear);
-        }
-
-        public string getDocumentVersion ()
-        {
-            return this.getProperty("documentVersion").ToString();
-        }
-
-        public void setDocumentVersion (string documentVersion)
-        {
-            this.setProperty("documentVersion", documentVersion);
         }
 
         public string getCensusYear ()

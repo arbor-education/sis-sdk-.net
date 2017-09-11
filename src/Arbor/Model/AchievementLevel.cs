@@ -15,8 +15,12 @@ namespace Arbor.Model
         public const string NAME = "name";
         public const string SHORT_NAME = "shortName";
         public const string ACHIEVEMENT_VALUE = "achievementValue";
+        public const string LOWER_ACHIEVEMENT_VALUE = "lowerAchievementValue";
+        public const string UPPER_ACHIEVEMENT_VALUE = "upperAchievementValue";
         public const string LOWER_GRADE_POINT_SCALE_VALUE = "lowerGradePointScaleValue";
+        public const string LOWER_BENCHMARK_GRADE = "lowerBenchmarkGrade";
         public const string UPPER_GRADE_POINT_SCALE_VALUE = "upperGradePointScaleValue";
+        public const string UPPER_BENCHMARK_GRADE = "upperBenchmarkGrade";
 
         public AchievementLevel ()
         {
@@ -104,6 +108,26 @@ namespace Arbor.Model
             this.setProperty("achievementValue", achievementValue);
         }
 
+        public float getLowerAchievementValue ()
+        {
+            return (float) this.getProperty("lowerAchievementValue");
+        }
+
+        public void setLowerAchievementValue (float lowerAchievementValue)
+        {
+            this.setProperty("lowerAchievementValue", lowerAchievementValue);
+        }
+
+        public float getUpperAchievementValue ()
+        {
+            return (float) this.getProperty("upperAchievementValue");
+        }
+
+        public void setUpperAchievementValue (float upperAchievementValue)
+        {
+            this.setProperty("upperAchievementValue", upperAchievementValue);
+        }
+
         public float getLowerGradePointScaleValue ()
         {
             return (float) this.getProperty("lowerGradePointScaleValue");
@@ -114,6 +138,16 @@ namespace Arbor.Model
             this.setProperty("lowerGradePointScaleValue", lowerGradePointScaleValue);
         }
 
+        public Grade getLowerBenchmarkGrade ()
+        {
+            return (Grade) this.getProperty("lowerBenchmarkGrade");
+        }
+
+        public void setLowerBenchmarkGrade (Grade lowerBenchmarkGrade)
+        {
+            this.setProperty("lowerBenchmarkGrade", lowerBenchmarkGrade);
+        }
+
         public float getUpperGradePointScaleValue ()
         {
             return (float) this.getProperty("upperGradePointScaleValue");
@@ -122,6 +156,16 @@ namespace Arbor.Model
         public void setUpperGradePointScaleValue (float upperGradePointScaleValue)
         {
             this.setProperty("upperGradePointScaleValue", upperGradePointScaleValue);
+        }
+
+        public Grade getUpperBenchmarkGrade ()
+        {
+            return (Grade) this.getProperty("upperBenchmarkGrade");
+        }
+
+        public void setUpperBenchmarkGrade (Grade upperBenchmarkGrade)
+        {
+            this.setProperty("upperBenchmarkGrade", upperBenchmarkGrade);
         }
 
 

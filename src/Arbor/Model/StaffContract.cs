@@ -22,6 +22,7 @@ namespace Arbor.Model
         public const string STAFF_ORIGIN = "staffOrigin";
         public const string STAFF_DESTINATION = "staffDestination";
         public const string SUPERANNUATION_SCHEME = "superannuationScheme";
+        public const string LAST_PAY_REVIEW_DATE = "lastPayReviewDate";
 
         public StaffContract ()
         {
@@ -177,6 +178,16 @@ namespace Arbor.Model
         public void setSuperannuationScheme (SuperannuationScheme superannuationScheme)
         {
             this.setProperty("superannuationScheme", superannuationScheme);
+        }
+
+        public DateTime getLastPayReviewDate ()
+        {
+            return (DateTime) this.getProperty("lastPayReviewDate");
+        }
+
+        public void setLastPayReviewDate (DateTime lastPayReviewDate)
+        {
+            this.setProperty("lastPayReviewDate", lastPayReviewDate);
         }
 
 

@@ -15,6 +15,7 @@ namespace Arbor.Model
         public const string END_DATE = "endDate";
         public const string REGISTER_OPENS_TIME = "registerOpensTime";
         public const string REGISTER_CLOSES_TIME = "registerClosesTime";
+        public const string ROLL_CALL_PERIOD_END_TIME = "rollCallPeriodEndTime";
 
         public AttendanceRollCallTime ()
         {
@@ -100,6 +101,16 @@ namespace Arbor.Model
         public void setRegisterClosesTime (string registerClosesTime)
         {
             this.setProperty("registerClosesTime", registerClosesTime);
+        }
+
+        public string getRollCallPeriodEndTime ()
+        {
+            return this.getProperty("rollCallPeriodEndTime").ToString();
+        }
+
+        public void setRollCallPeriodEndTime (string rollCallPeriodEndTime)
+        {
+            this.setProperty("rollCallPeriodEndTime", rollCallPeriodEndTime);
         }
 
 

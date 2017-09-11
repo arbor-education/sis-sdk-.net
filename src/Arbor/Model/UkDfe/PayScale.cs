@@ -59,12 +59,12 @@ namespace Arbor.Model.UkDfe
             this.setProperty("regionalPaySpine", regionalPaySpine);
         }
 
-        public ModelBase getPayScaleCategory ()
+        public PayScaleCategory getPayScaleCategory ()
         {
-            return (ModelBase) this.getProperty("payScaleCategory");
+            return (PayScaleCategory) this.getProperty("payScaleCategory");
         }
 
-        public void setPayScaleCategory (ModelBase payScaleCategory)
+        public void setPayScaleCategory (PayScaleCategory payScaleCategory)
         {
             this.setProperty("payScaleCategory", payScaleCategory);
         }

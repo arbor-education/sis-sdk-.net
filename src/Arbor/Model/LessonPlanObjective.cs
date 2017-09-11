@@ -10,7 +10,6 @@ namespace Arbor.Model
     public class LessonPlanObjective : ModelBase
     {
         protected string resourceType = ResourceType.LESSON_PLAN_OBJECTIVE;
-        public const string LESSON_PLAN = "lessonPlan";
         public const string OBJECTIVE_TITLE = "objectiveTitle";
         public const string OBJECTIVE_DESCRIPTION = "objectiveDescription";
         public const string CURRICULUM_STATEMENT = "curriculumStatement";
@@ -51,16 +50,6 @@ namespace Arbor.Model
         	return (LessonPlanObjective) gateway.retrieve(ResourceType.LESSON_PLAN_OBJECTIVE, id);
         }
 
-        public LessonPlan getLessonPlan ()
-        {
-            return (LessonPlan) this.getProperty("lessonPlan");
-        }
-
-        public void setLessonPlan (LessonPlan lessonPlan)
-        {
-            this.setProperty("lessonPlan", lessonPlan);
-        }
-
         public string getObjectiveTitle ()
         {
             return this.getProperty("objectiveTitle").ToString();
@@ -80,6 +69,18 @@ namespace Arbor.Model
         {
             this.setProperty("objectiveDescription", objectiveDescription);
         }
+
+        public CurriculumStatement getCurriculumStatement ()
+        {
+            return (CurriculumStatement) this.getProperty("curriculumStatement");
+        }
+
+        public void setCurriculumStatement (CurriculumStatement curriculumStatement)
+        {
+            this.setProperty("curriculumStatement", curriculumStatement);
+        }
+
+
     }
 }
 

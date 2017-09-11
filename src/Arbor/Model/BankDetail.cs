@@ -84,12 +84,12 @@ namespace Arbor.Model
             this.setProperty("endDate", endDate);
         }
 
-        public ModelBase getBank ()
+        public Bank getBank ()
         {
-            return (ModelBase) this.getProperty("bank");
+            return (Bank) this.getProperty("bank");
         }
 
-        public void setBank (ModelBase bank)
+        public void setBank (Bank bank)
         {
             this.setProperty("bank", bank);
         }

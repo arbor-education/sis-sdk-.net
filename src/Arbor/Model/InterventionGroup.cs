@@ -10,12 +10,14 @@ namespace Arbor.Model
     public class InterventionGroup : ModelBase
     {
         protected string resourceType = ResourceType.INTERVENTION_GROUP;
+        public const string NAME = "name";
         public const string INTERVENTION = "intervention";
         public const string GROUP = "group";
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
         public const string AIMS = "aims";
         public const string SUCCESS_CRITERIA = "successCriteria";
+        public const string STAFF = "staff";
 
         public InterventionGroup ()
         {
@@ -51,6 +53,16 @@ namespace Arbor.Model
             RestGateway gateway = (RestGateway) InterventionGroup.getDefaultGateway();
         	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
         	return (InterventionGroup) gateway.retrieve(ResourceType.INTERVENTION_GROUP, id);
+        }
+
+        public string getName ()
+        {
+            return this.getProperty("name").ToString();
+        }
+
+        public void setName (string name)
+        {
+            this.setProperty("name", name);
         }
 
         public Intervention getIntervention ()
@@ -111,6 +123,16 @@ namespace Arbor.Model
         public void setSuccessCriteria (string successCriteria)
         {
             this.setProperty("successCriteria", successCriteria);
+        }
+
+        public Staff getStaff ()
+        {
+            return (Staff) this.getProperty("staff");
+        }
+
+        public void setStaff (Staff staff)
+        {
+            this.setProperty("staff", staff);
         }
 
 

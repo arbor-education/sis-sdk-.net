@@ -10,7 +10,6 @@ namespace Arbor.Model
     public class Letter : ModelBase
     {
         protected string resourceType = ResourceType.LETTER;
-        public const string LETTER_DRAFT = "letterDraft";
         public const string LETTER_DATE = "letterDate";
         public const string RECEIVED_DATE = "receivedDate";
         public const string PREPARED_DATETIME = "preparedDatetime";
@@ -57,16 +56,6 @@ namespace Arbor.Model
             RestGateway gateway = (RestGateway) Letter.getDefaultGateway();
         	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
         	return (Letter) gateway.retrieve(ResourceType.LETTER, id);
-        }
-
-        public LetterDraft getLetterDraft ()
-        {
-            return (LetterDraft) this.getProperty("letterDraft");
-        }
-
-        public void setLetterDraft (LetterDraft letterDraft)
-        {
-            this.setProperty("letterDraft", letterDraft);
         }
 
         public DateTime getLetterDate ()

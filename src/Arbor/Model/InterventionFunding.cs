@@ -11,6 +11,7 @@ namespace Arbor.Model
     {
         protected string resourceType = ResourceType.INTERVENTION_FUNDING;
         public const string INTERVENTION = "intervention";
+        public const string STUDENT = "student";
         public const string INTERVENTION_FUNDING_SOURCE = "interventionFundingSource";
         public const string FUNDING_AMOUNT = "fundingAmount";
         public const string FUNDING_PERCENTAGE = "fundingPercentage";
@@ -59,6 +60,16 @@ namespace Arbor.Model
         public void setIntervention (Intervention intervention)
         {
             this.setProperty("intervention", intervention);
+        }
+
+        public Student getStudent ()
+        {
+            return (Student) this.getProperty("student");
+        }
+
+        public void setStudent (Student student)
+        {
+            this.setProperty("student", student);
         }
 
         public InterventionFundingSource getInterventionFundingSource ()

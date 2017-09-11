@@ -26,7 +26,7 @@ namespace Arbor.Model
         public const string EXPECTED_ACADEMIC_LEVEL = "expectedAcademicLevel";
         public const string EXPECTED_REGISTRATION_FORM = "expectedRegistrationForm";
         public const string EXPECTED_HOUSE = "expectedHouse";
-        public const string COMPLETED_DATETIME = "completedDatetime";
+        public const string ENROLLED_DATETIME = "enrolledDatetime";
 
         public Application ()
         {
@@ -224,14 +224,14 @@ namespace Arbor.Model
             this.setProperty("expectedHouse", expectedHouse);
         }
 
-        public DateTime getCompletedDatetime ()
+        public DateTime getEnrolledDatetime ()
         {
-            return (DateTime) this.getProperty("completedDatetime");
+            return (DateTime) this.getProperty("enrolledDatetime");
         }
 
-        public void setCompletedDatetime (DateTime completedDatetime)
+        public void setEnrolledDatetime (DateTime enrolledDatetime)
         {
-            this.setProperty("completedDatetime", completedDatetime);
+            this.setProperty("enrolledDatetime", enrolledDatetime);
         }
 
 

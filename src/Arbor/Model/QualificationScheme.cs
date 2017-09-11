@@ -15,18 +15,7 @@ namespace Arbor.Model
         public const string DATA_ORDER = "dataOrder";
         public const string AWARDING_ORGANIZATION = "awardingOrganization";
         public const string SCHEME_IDENTIFIER = "schemeIdentifier";
-        public const string QUALIFICATION_SCHEME_TYPE = "qualificationSchemeType";
-        public const string FULL_TITLE = "fullTitle";
-        public const string SHORT_TITLE = "shortTitle";
-        public const string DESCRIPTION = "description";
-        public const string SCHEME_START_DATE = "schemeStartDate";
-        public const string SCHEME_END_DATE = "schemeEndDate";
-        public const string EFFECTIVE_VERSION_START_DATE = "effectiveVersionStartDate";
-        public const string EFFECTIVE_VERSION_END_DATE = "effectiveVersionEndDate";
-        public const string FIRST_TEACHING_DATE = "firstTeachingDate";
-        public const string LAST_TEACHING_DATE = "lastTeachingDate";
-        public const string ASSESSMENT_MINIMUM_LEARNER_AGE = "assessmentMinimumLearnerAge";
-        public const string ASSESSMENT_MAXIMUM_LEARNER_AGE = "assessmentMaximumLearnerAge";
+        public const string TITLE = "title";
 
         public QualificationScheme ()
         {
@@ -114,124 +103,14 @@ namespace Arbor.Model
             this.setProperty("schemeIdentifier", schemeIdentifier);
         }
 
-        public QualificationSchemeType getQualificationSchemeType ()
+        public string getTitle ()
         {
-            return (QualificationSchemeType) this.getProperty("qualificationSchemeType");
+            return this.getProperty("title").ToString();
         }
 
-        public void setQualificationSchemeType (QualificationSchemeType qualificationSchemeType)
+        public void setTitle (string title)
         {
-            this.setProperty("qualificationSchemeType", qualificationSchemeType);
-        }
-
-        public string getFullTitle ()
-        {
-            return this.getProperty("fullTitle").ToString();
-        }
-
-        public void setFullTitle (string fullTitle)
-        {
-            this.setProperty("fullTitle", fullTitle);
-        }
-
-        public string getShortTitle ()
-        {
-            return this.getProperty("shortTitle").ToString();
-        }
-
-        public void setShortTitle (string shortTitle)
-        {
-            this.setProperty("shortTitle", shortTitle);
-        }
-
-        public string getDescription ()
-        {
-            return this.getProperty("description").ToString();
-        }
-
-        public void setDescription (string description)
-        {
-            this.setProperty("description", description);
-        }
-
-        public DateTime getSchemeStartDate ()
-        {
-            return (DateTime) this.getProperty("schemeStartDate");
-        }
-
-        public void setSchemeStartDate (DateTime schemeStartDate)
-        {
-            this.setProperty("schemeStartDate", schemeStartDate);
-        }
-
-        public DateTime getSchemeEndDate ()
-        {
-            return (DateTime) this.getProperty("schemeEndDate");
-        }
-
-        public void setSchemeEndDate (DateTime schemeEndDate)
-        {
-            this.setProperty("schemeEndDate", schemeEndDate);
-        }
-
-        public DateTime getEffectiveVersionStartDate ()
-        {
-            return (DateTime) this.getProperty("effectiveVersionStartDate");
-        }
-
-        public void setEffectiveVersionStartDate (DateTime effectiveVersionStartDate)
-        {
-            this.setProperty("effectiveVersionStartDate", effectiveVersionStartDate);
-        }
-
-        public DateTime getEffectiveVersionEndDate ()
-        {
-            return (DateTime) this.getProperty("effectiveVersionEndDate");
-        }
-
-        public void setEffectiveVersionEndDate (DateTime effectiveVersionEndDate)
-        {
-            this.setProperty("effectiveVersionEndDate", effectiveVersionEndDate);
-        }
-
-        public DateTime getFirstTeachingDate ()
-        {
-            return (DateTime) this.getProperty("firstTeachingDate");
-        }
-
-        public void setFirstTeachingDate (DateTime firstTeachingDate)
-        {
-            this.setProperty("firstTeachingDate", firstTeachingDate);
-        }
-
-        public DateTime getLastTeachingDate ()
-        {
-            return (DateTime) this.getProperty("lastTeachingDate");
-        }
-
-        public void setLastTeachingDate (DateTime lastTeachingDate)
-        {
-            this.setProperty("lastTeachingDate", lastTeachingDate);
-        }
-
-        public int getAssessmentMinimumLearnerAge ()
-        {
-            return Convert.ToInt32(this.getProperty("assessmentMinimumLearnerAge"));
-        }
-
-        public void setAssessmentMinimumLearnerAge (int assessmentMinimumLearnerAge)
-        {
-            this.setProperty("assessmentMinimumLearnerAge", assessmentMinimumLearnerAge);
-        }
-
-        public int getAssessmentMaximumLearnerAge ()
-        {
-            return Convert.ToInt32(this.getProperty("assessmentMaximumLearnerAge"));
-        }
-
-        public void setAssessmentMaximumLearnerAge (int assessmentMaximumLearnerAge)
-        {
-            this.setProperty("assessmentMaximumLearnerAge", assessmentMaximumLearnerAge);
+            this.setProperty("title", title);
         }
 
 

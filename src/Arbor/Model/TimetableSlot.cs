@@ -12,9 +12,9 @@ namespace Arbor.Model
         protected string resourceType = ResourceType.TIMETABLE_SLOT;
         public const string ACADEMIC_YEAR = "academicYear";
         public const string TIMETABLED_OBJECT = "timetabledObject";
-        public const string LOCATION = "location";
         public const string DAY_OF_CYCLE = "dayOfCycle";
         public const string DAY_OF_WEEK = "dayOfWeek";
+        public const string TERM_TIME_ONLY = "termTimeOnly";
         public const string START_TIME = "startTime";
         public const string END_TIME = "endTime";
         public const string EFFECTIVE_DATE = "effectiveDate";
@@ -78,16 +78,6 @@ namespace Arbor.Model
             this.setProperty("timetabledObject", timetabledObject);
         }
 
-        public ModelBase getLocation ()
-        {
-            return (ModelBase) this.getProperty("location");
-        }
-
-        public void setLocation (ModelBase location)
-        {
-            this.setProperty("location", location);
-        }
-
         public int getDayOfCycle ()
         {
             return Convert.ToInt32(this.getProperty("dayOfCycle"));
@@ -106,6 +96,16 @@ namespace Arbor.Model
         public void setDayOfWeek (int dayOfWeek)
         {
             this.setProperty("dayOfWeek", dayOfWeek);
+        }
+
+        public bool getTermTimeOnly ()
+        {
+            return (bool) this.getProperty("termTimeOnly");
+        }
+
+        public void setTermTimeOnly (bool termTimeOnly)
+        {
+            this.setProperty("termTimeOnly", termTimeOnly);
         }
 
         public string getStartTime ()

@@ -11,8 +11,8 @@ namespace Arbor.Model
     {
         protected string resourceType = ResourceType.REPORT_CARD_BATCH_ACADEMIC_UNIT;
         public const string REPORT_CARD_BATCH = "reportCardBatch";
-        public const string ACADEMIC_UNIT = "academicUnit";
         public const string ORDER = "order";
+        public const string ACADEMIC_UNIT = "academicUnit";
         public const string MARKING_COMPLETED_DATETIME = "markingCompletedDatetime";
 
         public ReportCardBatchAcademicUnit ()
@@ -61,16 +61,6 @@ namespace Arbor.Model
             this.setProperty("reportCardBatch", reportCardBatch);
         }
 
-        public AcademicUnit getAcademicUnit ()
-        {
-            return (AcademicUnit) this.getProperty("academicUnit");
-        }
-
-        public void setAcademicUnit (AcademicUnit academicUnit)
-        {
-            this.setProperty("academicUnit", academicUnit);
-        }
-
         public int getOrder ()
         {
             return Convert.ToInt32(this.getProperty("order"));
@@ -79,6 +69,16 @@ namespace Arbor.Model
         public void setOrder (int order)
         {
             this.setProperty("order", order);
+        }
+
+        public AcademicUnit getAcademicUnit ()
+        {
+            return (AcademicUnit) this.getProperty("academicUnit");
+        }
+
+        public void setAcademicUnit (AcademicUnit academicUnit)
+        {
+            this.setProperty("academicUnit", academicUnit);
         }
 
         public DateTime getMarkingCompletedDatetime ()

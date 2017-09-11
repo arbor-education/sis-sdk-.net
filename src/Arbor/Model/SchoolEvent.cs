@@ -14,8 +14,8 @@ namespace Arbor.Model
         public const string END_DATETIME = "endDatetime";
         public const string LOCATION_TEXT = "locationText";
         public const string LOCATION = "location";
-        public const string SCHEDULED_BY = "scheduledBy";
         public const string SCHOOL_EVENT_TYPE = "schoolEventType";
+        public const string REPEATING_SCHOOL_EVENT = "repeatingSchoolEvent";
         public const string SCHOOL_EVENT_NAME = "schoolEventName";
         public const string TIMETABLE_SLOT = "timetableSlot";
         public const string NARRATIVE = "narrative";
@@ -86,24 +86,14 @@ namespace Arbor.Model
             this.setProperty("locationText", locationText);
         }
 
-        public Room getLocation ()
+        public ModelBase getLocation ()
         {
-            return (Room) this.getProperty("location");
+            return (ModelBase) this.getProperty("location");
         }
 
-        public void setLocation (Room location)
+        public void setLocation (ModelBase location)
         {
             this.setProperty("location", location);
-        }
-
-        public ModelBase getScheduledBy ()
-        {
-            return (ModelBase) this.getProperty("scheduledBy");
-        }
-
-        public void setScheduledBy (ModelBase scheduledBy)
-        {
-            this.setProperty("scheduledBy", scheduledBy);
         }
 
         public SchoolEventType getSchoolEventType ()
@@ -114,6 +104,16 @@ namespace Arbor.Model
         public void setSchoolEventType (SchoolEventType schoolEventType)
         {
             this.setProperty("schoolEventType", schoolEventType);
+        }
+
+        public RepeatingSchoolEvent getRepeatingSchoolEvent ()
+        {
+            return (RepeatingSchoolEvent) this.getProperty("repeatingSchoolEvent");
+        }
+
+        public void setRepeatingSchoolEvent (RepeatingSchoolEvent repeatingSchoolEvent)
+        {
+            this.setProperty("repeatingSchoolEvent", repeatingSchoolEvent);
         }
 
         public string getSchoolEventName ()

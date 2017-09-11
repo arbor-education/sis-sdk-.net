@@ -16,7 +16,6 @@ namespace Arbor.Model
         public const string CODE = "code";
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
-        public const string TIMETABLE_CYCLE_OFFSET = "timetableCycleOffset";
 
         public Term ()
         {
@@ -112,16 +111,6 @@ namespace Arbor.Model
         public void setEndDate (DateTime endDate)
         {
             this.setProperty("endDate", endDate);
-        }
-
-        public int getTimetableCycleOffset ()
-        {
-            return Convert.ToInt32(this.getProperty("timetableCycleOffset"));
-        }
-
-        public void setTimetableCycleOffset (int timetableCycleOffset)
-        {
-            this.setProperty("timetableCycleOffset", timetableCycleOffset);
         }
 
 

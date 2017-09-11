@@ -16,12 +16,6 @@ namespace Arbor.Model
         public const string STAFF = "staff";
         public const string LINKED_TO_ENTITY = "linkedToEntity";
         public const string IS_SHARED = "isShared";
-        public const string FILTER_BY_REPORT_CARD_TEMPLATE = "filterByReportCardTemplate";
-        public const string FILTER_BY_REPORT_CARD_TEMPLATE_SECTION = "filterByReportCardTemplateSection";
-        public const string FILTER_BY_SUBJECT = "filterBySubject";
-        public const string FILTER_BY_ACADEMIC_UNIT = "filterByAcademicUnit";
-        public const string FILTER_BY_ACADEMIC_LEVEL = "filterByAcademicLevel";
-        public const string FILTER_BY_STAFF = "filterByStaff";
 
         public Snippet ()
         {
@@ -117,66 +111,6 @@ namespace Arbor.Model
         public void setIsShared (bool isShared)
         {
             this.setProperty("isShared", isShared);
-        }
-
-        public bool getFilterByReportCardTemplate ()
-        {
-            return (bool) this.getProperty("filterByReportCardTemplate");
-        }
-
-        public void setFilterByReportCardTemplate (bool filterByReportCardTemplate)
-        {
-            this.setProperty("filterByReportCardTemplate", filterByReportCardTemplate);
-        }
-
-        public bool getFilterByReportCardTemplateSection ()
-        {
-            return (bool) this.getProperty("filterByReportCardTemplateSection");
-        }
-
-        public void setFilterByReportCardTemplateSection (bool filterByReportCardTemplateSection)
-        {
-            this.setProperty("filterByReportCardTemplateSection", filterByReportCardTemplateSection);
-        }
-
-        public bool getFilterBySubject ()
-        {
-            return (bool) this.getProperty("filterBySubject");
-        }
-
-        public void setFilterBySubject (bool filterBySubject)
-        {
-            this.setProperty("filterBySubject", filterBySubject);
-        }
-
-        public bool getFilterByAcademicUnit ()
-        {
-            return (bool) this.getProperty("filterByAcademicUnit");
-        }
-
-        public void setFilterByAcademicUnit (bool filterByAcademicUnit)
-        {
-            this.setProperty("filterByAcademicUnit", filterByAcademicUnit);
-        }
-
-        public bool getFilterByAcademicLevel ()
-        {
-            return (bool) this.getProperty("filterByAcademicLevel");
-        }
-
-        public void setFilterByAcademicLevel (bool filterByAcademicLevel)
-        {
-            this.setProperty("filterByAcademicLevel", filterByAcademicLevel);
-        }
-
-        public bool getFilterByStaff ()
-        {
-            return (bool) this.getProperty("filterByStaff");
-        }
-
-        public void setFilterByStaff (bool filterByStaff)
-        {
-            this.setProperty("filterByStaff", filterByStaff);
         }
 
 

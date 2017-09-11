@@ -117,12 +117,12 @@ namespace Arbor.Model
             this.setProperty("isAuthorizedToCollect", isAuthorizedToCollect);
         }
 
-        public int getEmergencyContactPriority ()
+        public string getEmergencyContactPriority ()
         {
-            return Convert.ToInt32(this.getProperty("emergencyContactPriority"));
+            return this.getProperty("emergencyContactPriority").ToString();
         }
 
-        public void setEmergencyContactPriority (int emergencyContactPriority)
+        public void setEmergencyContactPriority (string emergencyContactPriority)
         {
             this.setProperty("emergencyContactPriority", emergencyContactPriority);
         }

@@ -17,7 +17,7 @@ namespace Arbor.Model
         public const string APPROVED_DATE = "approvedDate";
         public const string APPROVED_BY_STAFF = "approvedByStaff";
         public const string ATTENDANCE_MARK = "attendanceMark";
-        public const string TEMPORARY_EXCLUSION = "temporaryExclusion";
+        public const string FIXED_PERIOD_EXCLUSION = "fixedPeriodExclusion";
 
         public StudentAbsenceNote ()
         {
@@ -125,14 +125,14 @@ namespace Arbor.Model
             this.setProperty("attendanceMark", attendanceMark);
         }
 
-        public TemporaryExclusion getTemporaryExclusion ()
+        public FixedPeriodExclusion getFixedPeriodExclusion ()
         {
-            return (TemporaryExclusion) this.getProperty("temporaryExclusion");
+            return (FixedPeriodExclusion) this.getProperty("fixedPeriodExclusion");
         }
 
-        public void setTemporaryExclusion (TemporaryExclusion temporaryExclusion)
+        public void setFixedPeriodExclusion (FixedPeriodExclusion fixedPeriodExclusion)
         {
-            this.setProperty("temporaryExclusion", temporaryExclusion);
+            this.setProperty("fixedPeriodExclusion", fixedPeriodExclusion);
         }
 
 

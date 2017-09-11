@@ -10,7 +10,6 @@ namespace Arbor.Model
     public class House : ModelBase
     {
         protected string resourceType = ResourceType.HOUSE;
-        public const string CODE = "code";
         public const string HOUSE_NAME = "houseName";
         public const string SHORT_NAME = "shortName";
         public const string ACADEMIC_YEAR = "academicYear";
@@ -50,16 +49,6 @@ namespace Arbor.Model
             RestGateway gateway = (RestGateway) House.getDefaultGateway();
         	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
         	return (House) gateway.retrieve(ResourceType.HOUSE, id);
-        }
-
-        public string getCode ()
-        {
-            return this.getProperty("code").ToString();
-        }
-
-        public void setCode (string code)
-        {
-            this.setProperty("code", code);
         }
 
         public string getHouseName ()

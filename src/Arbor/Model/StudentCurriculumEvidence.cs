@@ -16,6 +16,7 @@ namespace Arbor.Model
         public const string SUMMARY = "summary";
         public const string DETAILS = "details";
         public const string OBSERVATION_DATE = "observationDate";
+        public const string OBSERVATION_STAFF = "observationStaff";
         public const string EVIDENCE = "evidence";
 
         public StudentCurriculumEvidence ()
@@ -64,6 +65,16 @@ namespace Arbor.Model
             this.setProperty("student", student);
         }
 
+        public CurriculumStatement getCurriculumStatement ()
+        {
+            return (CurriculumStatement) this.getProperty("curriculumStatement");
+        }
+
+        public void setCurriculumStatement (CurriculumStatement curriculumStatement)
+        {
+            this.setProperty("curriculumStatement", curriculumStatement);
+        }
+
         public StudentCurriculumAchievement getStudentCurriculumAchievement ()
         {
             return (StudentCurriculumAchievement) this.getProperty("studentCurriculumAchievement");
@@ -102,6 +113,16 @@ namespace Arbor.Model
         public void setObservationDate (DateTime observationDate)
         {
             this.setProperty("observationDate", observationDate);
+        }
+
+        public Staff getObservationStaff ()
+        {
+            return (Staff) this.getProperty("observationStaff");
+        }
+
+        public void setObservationStaff (Staff observationStaff)
+        {
+            this.setProperty("observationStaff", observationStaff);
         }
 
         public ModelBase getEvidence ()

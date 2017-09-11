@@ -13,6 +13,7 @@ namespace Arbor.Model
         public const string BEHAVIOUR_NAME = "behaviourName";
         public const string DESCRIPTION = "description";
         public const string SEVERITY = "severity";
+        public const string ACTIVE = "active";
 
         public Behaviour ()
         {
@@ -78,6 +79,16 @@ namespace Arbor.Model
         public void setSeverity (string severity)
         {
             this.setProperty("severity", severity);
+        }
+
+        public bool getActive ()
+        {
+            return (bool) this.getProperty("active");
+        }
+
+        public void setActive (bool active)
+        {
+            this.setProperty("active", active);
         }
 
 

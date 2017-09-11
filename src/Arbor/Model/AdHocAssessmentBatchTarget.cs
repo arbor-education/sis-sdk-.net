@@ -12,6 +12,8 @@ namespace Arbor.Model
         protected string resourceType = ResourceType.AD_HOC_ASSESSMENT_BATCH_TARGET;
         public const string AD_HOC_ASSESSMENT_BATCH = "adHocAssessmentBatch";
         public const string TARGET = "target";
+        public const string MARKING_STARTED_DATETIME = "markingStartedDatetime";
+        public const string MARKING_COMPLETED_DATETIME = "markingCompletedDatetime";
 
         public AdHocAssessmentBatchTarget ()
         {
@@ -67,6 +69,26 @@ namespace Arbor.Model
         public void setTarget (ModelBase target)
         {
             this.setProperty("target", target);
+        }
+
+        public DateTime getMarkingStartedDatetime ()
+        {
+            return (DateTime) this.getProperty("markingStartedDatetime");
+        }
+
+        public void setMarkingStartedDatetime (DateTime markingStartedDatetime)
+        {
+            this.setProperty("markingStartedDatetime", markingStartedDatetime);
+        }
+
+        public DateTime getMarkingCompletedDatetime ()
+        {
+            return (DateTime) this.getProperty("markingCompletedDatetime");
+        }
+
+        public void setMarkingCompletedDatetime (DateTime markingCompletedDatetime)
+        {
+            this.setProperty("markingCompletedDatetime", markingCompletedDatetime);
         }
 
 

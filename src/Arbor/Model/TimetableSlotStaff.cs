@@ -12,6 +12,8 @@ namespace Arbor.Model
         protected string resourceType = ResourceType.TIMETABLE_SLOT_STAFF;
         public const string TIMETABLE_SLOT = "timetableSlot";
         public const string STAFF = "staff";
+        public const string EFFECTIVE_DATE = "effectiveDate";
+        public const string END_DATE = "endDate";
 
         public TimetableSlotStaff ()
         {
@@ -67,6 +69,26 @@ namespace Arbor.Model
         public void setStaff (Staff staff)
         {
             this.setProperty("staff", staff);
+        }
+
+        public DateTime getEffectiveDate ()
+        {
+            return (DateTime) this.getProperty("effectiveDate");
+        }
+
+        public void setEffectiveDate (DateTime effectiveDate)
+        {
+            this.setProperty("effectiveDate", effectiveDate);
+        }
+
+        public DateTime getEndDate ()
+        {
+            return (DateTime) this.getProperty("endDate");
+        }
+
+        public void setEndDate (DateTime endDate)
+        {
+            this.setProperty("endDate", endDate);
         }
 
 

@@ -12,11 +12,15 @@ namespace Arbor.Model
         protected string resourceType = ResourceType.MEAL_PROVISION;
         public const string MEAL = "meal";
         public const string MEAL_PROVISION_NAME = "mealProvisionName";
+        public const string EFFECTIVE_DATE = "effectiveDate";
+        public const string END_DATE = "endDate";
         public const string IS_ABSENT = "isAbsent";
         public const string IS_SCHOOL_HOT_MEAL = "isSchoolHotMeal";
+        public const string IS_SCHOOL_LIGHT_MEAL = "isSchoolLightMeal";
         public const string IS_SCHOOL_PACKED_MEAL = "isSchoolPackedMeal";
-        public const string IS_STUDENT_HOT_MEAL = "isStudentHotMeal";
+        public const string IS_STUDENT_PACKED_MEAL = "isStudentPackedMeal";
         public const string REQUIRES_MEAL = "requiresMeal";
+        public const string COPIED_TO_MEAL_PROVISION = "copiedToMealProvision";
 
         public MealProvision ()
         {
@@ -74,6 +78,26 @@ namespace Arbor.Model
             this.setProperty("mealProvisionName", mealProvisionName);
         }
 
+        public DateTime getEffectiveDate ()
+        {
+            return (DateTime) this.getProperty("effectiveDate");
+        }
+
+        public void setEffectiveDate (DateTime effectiveDate)
+        {
+            this.setProperty("effectiveDate", effectiveDate);
+        }
+
+        public DateTime getEndDate ()
+        {
+            return (DateTime) this.getProperty("endDate");
+        }
+
+        public void setEndDate (DateTime endDate)
+        {
+            this.setProperty("endDate", endDate);
+        }
+
         public bool getIsAbsent ()
         {
             return (bool) this.getProperty("isAbsent");
@@ -94,6 +118,16 @@ namespace Arbor.Model
             this.setProperty("isSchoolHotMeal", isSchoolHotMeal);
         }
 
+        public bool getIsSchoolLightMeal ()
+        {
+            return (bool) this.getProperty("isSchoolLightMeal");
+        }
+
+        public void setIsSchoolLightMeal (bool isSchoolLightMeal)
+        {
+            this.setProperty("isSchoolLightMeal", isSchoolLightMeal);
+        }
+
         public bool getIsSchoolPackedMeal ()
         {
             return (bool) this.getProperty("isSchoolPackedMeal");
@@ -104,14 +138,14 @@ namespace Arbor.Model
             this.setProperty("isSchoolPackedMeal", isSchoolPackedMeal);
         }
 
-        public bool getIsStudentHotMeal ()
+        public bool getIsStudentPackedMeal ()
         {
-            return (bool) this.getProperty("isStudentHotMeal");
+            return (bool) this.getProperty("isStudentPackedMeal");
         }
 
-        public void setIsStudentHotMeal (bool isStudentHotMeal)
+        public void setIsStudentPackedMeal (bool isStudentPackedMeal)
         {
-            this.setProperty("isStudentHotMeal", isStudentHotMeal);
+            this.setProperty("isStudentPackedMeal", isStudentPackedMeal);
         }
 
         public bool getRequiresMeal ()
@@ -122,6 +156,16 @@ namespace Arbor.Model
         public void setRequiresMeal (bool requiresMeal)
         {
             this.setProperty("requiresMeal", requiresMeal);
+        }
+
+        public MealProvision getCopiedToMealProvision ()
+        {
+            return (MealProvision) this.getProperty("copiedToMealProvision");
+        }
+
+        public void setCopiedToMealProvision (MealProvision copiedToMealProvision)
+        {
+            this.setProperty("copiedToMealProvision", copiedToMealProvision);
         }
 
 

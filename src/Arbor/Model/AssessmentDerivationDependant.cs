@@ -12,6 +12,7 @@ namespace Arbor.Model
         protected string resourceType = ResourceType.ASSESSMENT_DERIVATION_DEPENDANT;
         public const string ASSESSMENT_DERIVATION = "assessmentDerivation";
         public const string DEPENDANT_ASSESSMENT = "dependantAssessment";
+        public const string WEIGHTING = "weighting";
 
         public AssessmentDerivationDependant ()
         {
@@ -67,6 +68,16 @@ namespace Arbor.Model
         public void setDependantAssessment (Assessment dependantAssessment)
         {
             this.setProperty("dependantAssessment", dependantAssessment);
+        }
+
+        public int getWeighting ()
+        {
+            return Convert.ToInt32(this.getProperty("weighting"));
+        }
+
+        public void setWeighting (int weighting)
+        {
+            this.setProperty("weighting", weighting);
         }
 
 

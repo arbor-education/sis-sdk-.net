@@ -79,12 +79,12 @@ namespace Arbor.Model.UkDfe
             this.setProperty("sourceLocalAuthorityCode", sourceLocalAuthorityCode);
         }
 
-        public ModelBase getSourceLocalAuthority ()
+        public LocalAuthority getSourceLocalAuthority ()
         {
-            return (ModelBase) this.getProperty("sourceLocalAuthority");
+            return (LocalAuthority) this.getProperty("sourceLocalAuthority");
         }
 
-        public void setSourceLocalAuthority (ModelBase sourceLocalAuthority)
+        public void setSourceLocalAuthority (LocalAuthority sourceLocalAuthority)
         {
             this.setProperty("sourceLocalAuthority", sourceLocalAuthority);
         }
@@ -129,12 +129,12 @@ namespace Arbor.Model.UkDfe
             this.setProperty("destinationLocalAuthorityCode", destinationLocalAuthorityCode);
         }
 
-        public ModelBase getDestinationLocalAuthority ()
+        public LocalAuthority getDestinationLocalAuthority ()
         {
-            return (ModelBase) this.getProperty("destinationLocalAuthority");
+            return (LocalAuthority) this.getProperty("destinationLocalAuthority");
         }
 
-        public void setDestinationLocalAuthority (ModelBase destinationLocalAuthority)
+        public void setDestinationLocalAuthority (LocalAuthority destinationLocalAuthority)
         {
             this.setProperty("destinationLocalAuthority", destinationLocalAuthority);
         }

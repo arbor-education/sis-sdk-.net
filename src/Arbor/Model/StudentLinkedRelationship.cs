@@ -11,7 +11,7 @@ namespace Arbor.Model
     {
         protected string resourceType = ResourceType.STUDENT_LINKED_RELATIONSHIP;
         public const string STUDENT = "student";
-        public const string LINKED = "linked";
+        public const string LINKED_OBJECT = "linkedObject";
         public const string STUDENT_LINKED_RELATIONSHIP_TYPE = "studentLinkedRelationshipType";
         public const string EFFECTIVE_DATE = "effectiveDate";
         public const string END_DATE = "endDate";
@@ -62,14 +62,14 @@ namespace Arbor.Model
             this.setProperty("student", student);
         }
 
-        public ModelBase getLinked ()
+        public ModelBase getLinkedObject ()
         {
-            return (ModelBase) this.getProperty("linked");
+            return (ModelBase) this.getProperty("linkedObject");
         }
 
-        public void setLinked (ModelBase linked)
+        public void setLinkedObject (ModelBase linkedObject)
         {
-            this.setProperty("linked", linked);
+            this.setProperty("linkedObject", linkedObject);
         }
 
         public StudentLinkedRelationshipType getStudentLinkedRelationshipType ()

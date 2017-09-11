@@ -14,6 +14,7 @@ namespace Arbor.Model
         public const string QUALIFICATION_GRADE = "qualificationGrade";
         public const string NUMERIC_VALUE = "numericValue";
         public const string STUDENT = "student";
+        public const string CANDIDATE_ENTRY = "candidateEntry";
         public const string ASSESSMENT_DATE = "assessmentDate";
         public const string NARRATIVE = "narrative";
 
@@ -91,6 +92,16 @@ namespace Arbor.Model
         public void setStudent (Student student)
         {
             this.setProperty("student", student);
+        }
+
+        public CandidateEntry getCandidateEntry ()
+        {
+            return (CandidateEntry) this.getProperty("candidateEntry");
+        }
+
+        public void setCandidateEntry (CandidateEntry candidateEntry)
+        {
+            this.setProperty("candidateEntry", candidateEntry);
         }
 
         public DateTime getAssessmentDate ()

@@ -16,6 +16,7 @@ namespace Arbor.Model
         public const string GRADE_SET_NAME = "gradeSetName";
         public const string SHORT_NAME = "shortName";
         public const string GRADE_POINT_SCALE = "gradePointScale";
+        public const string IS_DISPLAY_GRADE_SET = "isDisplayGradeSet";
         public const string SCALE_DIRECTION = "scaleDirection";
 
         public GradeSet ()
@@ -112,6 +113,16 @@ namespace Arbor.Model
         public void setGradePointScale (GradePointScale gradePointScale)
         {
             this.setProperty("gradePointScale", gradePointScale);
+        }
+
+        public bool getIsDisplayGradeSet ()
+        {
+            return (bool) this.getProperty("isDisplayGradeSet");
+        }
+
+        public void setIsDisplayGradeSet (bool isDisplayGradeSet)
+        {
+            this.setProperty("isDisplayGradeSet", isDisplayGradeSet);
         }
 
         public string getScaleDirection ()

@@ -11,6 +11,7 @@ namespace Arbor.Model.UkDfe
     {
         protected string resourceType = ResourceType.UK_DFE_BUSINESS_ROLE;
         public const string SWF_CENSUS_IDENTIFIER = "swfCensusIdentifier";
+        public const string MANAGED_BY_CLIENT = "managedByClient";
 
         public BusinessRole ()
         {
@@ -56,6 +57,16 @@ namespace Arbor.Model.UkDfe
         public void setSwfCensusIdentifier (string swfCensusIdentifier)
         {
             this.setProperty("swfCensusIdentifier", swfCensusIdentifier);
+        }
+
+        public bool getManagedByClient ()
+        {
+            return (bool) this.getProperty("managedByClient");
+        }
+
+        public void setManagedByClient (bool managedByClient)
+        {
+            this.setProperty("managedByClient", managedByClient);
         }
 
 

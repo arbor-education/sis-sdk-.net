@@ -10,6 +10,7 @@ namespace Arbor.Model
     public class StudentAdHocAssessmentMark : ModelBase
     {
         protected string resourceType = ResourceType.STUDENT_AD_HOC_ASSESSMENT_MARK;
+        public const string AD_HOC_ASSESSMENT_BATCH = "adHocAssessmentBatch";
         public const string STUDENT = "student";
         public const string AD_HOC_ASSESSMENT = "adHocAssessment";
         public const string ASSESSMENT_REFERENCE_DATE = "assessmentReferenceDate";
@@ -56,6 +57,16 @@ namespace Arbor.Model
             RestGateway gateway = (RestGateway) StudentAdHocAssessmentMark.getDefaultGateway();
         	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
         	return (StudentAdHocAssessmentMark) gateway.retrieve(ResourceType.STUDENT_AD_HOC_ASSESSMENT_MARK, id);
+        }
+
+        public AdHocAssessmentBatch getAdHocAssessmentBatch ()
+        {
+            return (AdHocAssessmentBatch) this.getProperty("adHocAssessmentBatch");
+        }
+
+        public void setAdHocAssessmentBatch (AdHocAssessmentBatch adHocAssessmentBatch)
+        {
+            this.setProperty("adHocAssessmentBatch", adHocAssessmentBatch);
         }
 
         public Student getStudent ()

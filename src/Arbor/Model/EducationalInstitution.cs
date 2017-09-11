@@ -12,7 +12,7 @@ namespace Arbor.Model
         protected string resourceType = ResourceType.EDUCATIONAL_INSTITUTION;
         public const string LOCAL_AUTHORITY = "localAuthority";
         public const string ESTABLISHMENT_NUMBER = "establishmentNumber";
-        public const string SCHOOL_PHASE = "schoolPhase";
+        public const string CENSUS_SCHOOL_PHASE = "censusSchoolPhase";
         public const string SCHOOL_TYPE = "schoolType";
         public const string SCHOOL_GENDER = "schoolGender";
         public const string GOVERNANCE_TYPE = "governanceType";
@@ -33,6 +33,8 @@ namespace Arbor.Model
         public const string SHORT_NAME = "shortName";
         public const string OPENING_DATE = "openingDate";
         public const string CLOSING_DATE = "closingDate";
+        public const string ARBOR_IDENTIFIER = "arborIdentifier";
+        public const string WEBSITE = "website";
 
         public EducationalInstitution ()
         {
@@ -70,12 +72,12 @@ namespace Arbor.Model
         	return (EducationalInstitution) gateway.retrieve(ResourceType.EDUCATIONAL_INSTITUTION, id);
         }
 
-        public ModelBase getLocalAuthority ()
+        public LocalAuthority getLocalAuthority ()
         {
-            return (ModelBase) this.getProperty("localAuthority");
+            return (LocalAuthority) this.getProperty("localAuthority");
         }
 
-        public void setLocalAuthority (ModelBase localAuthority)
+        public void setLocalAuthority (LocalAuthority localAuthority)
         {
             this.setProperty("localAuthority", localAuthority);
         }
@@ -90,22 +92,22 @@ namespace Arbor.Model
             this.setProperty("establishmentNumber", establishmentNumber);
         }
 
-        public ModelBase getSchoolPhase ()
+        public CensusSchoolPhase getCensusSchoolPhase ()
         {
-            return (ModelBase) this.getProperty("schoolPhase");
+            return (CensusSchoolPhase) this.getProperty("censusSchoolPhase");
         }
 
-        public void setSchoolPhase (ModelBase schoolPhase)
+        public void setCensusSchoolPhase (CensusSchoolPhase censusSchoolPhase)
         {
-            this.setProperty("schoolPhase", schoolPhase);
+            this.setProperty("censusSchoolPhase", censusSchoolPhase);
         }
 
-        public ModelBase getSchoolType ()
+        public SchoolType getSchoolType ()
         {
-            return (ModelBase) this.getProperty("schoolType");
+            return (SchoolType) this.getProperty("schoolType");
         }
 
-        public void setSchoolType (ModelBase schoolType)
+        public void setSchoolType (SchoolType schoolType)
         {
             this.setProperty("schoolType", schoolType);
         }
@@ -120,22 +122,22 @@ namespace Arbor.Model
             this.setProperty("schoolGender", schoolGender);
         }
 
-        public ModelBase getGovernanceType ()
+        public SchoolGovernanceType getGovernanceType ()
         {
-            return (ModelBase) this.getProperty("governanceType");
+            return (SchoolGovernanceType) this.getProperty("governanceType");
         }
 
-        public void setGovernanceType (ModelBase governanceType)
+        public void setGovernanceType (SchoolGovernanceType governanceType)
         {
             this.setProperty("governanceType", governanceType);
         }
 
-        public ModelBase getIntakeType ()
+        public SchoolIntakeType getIntakeType ()
         {
-            return (ModelBase) this.getProperty("intakeType");
+            return (SchoolIntakeType) this.getProperty("intakeType");
         }
 
-        public void setIntakeType (ModelBase intakeType)
+        public void setIntakeType (SchoolIntakeType intakeType)
         {
             this.setProperty("intakeType", intakeType);
         }
@@ -298,6 +300,26 @@ namespace Arbor.Model
         public void setClosingDate (DateTime closingDate)
         {
             this.setProperty("closingDate", closingDate);
+        }
+
+        public string getArborIdentifier ()
+        {
+            return this.getProperty("arborIdentifier").ToString();
+        }
+
+        public void setArborIdentifier (string arborIdentifier)
+        {
+            this.setProperty("arborIdentifier", arborIdentifier);
+        }
+
+        public string getWebsite ()
+        {
+            return this.getProperty("website").ToString();
+        }
+
+        public void setWebsite (string website)
+        {
+            this.setProperty("website", website);
         }
 
 

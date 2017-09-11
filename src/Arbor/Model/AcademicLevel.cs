@@ -11,13 +11,13 @@ namespace Arbor.Model
     public class AcademicLevel : ModelBase
     {
         protected string resourceType = ResourceType.ACADEMIC_LEVEL;
-        public const string CODE = "code";
         public const string ACADEMIC_LEVEL_NAME = "academicLevelName";
         public const string SHORT_NAME = "shortName";
         public const string CURRICULUM_GRADE = "curriculumGrade";
         public const string ACADEMIC_YEAR = "academicYear";
         public const string PROMOTED_TO_ACADEMIC_LEVEL = "promotedToAcademicLevel";
         public const string PROMOTED_DATETIME = "promotedDatetime";
+        public const string COPIED_TO_ACADEMIC_LEVEL = "copiedToAcademicLevel";
         public const string DISPLAY_ORDER = "displayOrder";
         public const string TARGET_ENROLMENT = "targetEnrolment";
 
@@ -55,16 +55,6 @@ namespace Arbor.Model
             RestGateway gateway = (RestGateway) AcademicLevel.getDefaultGateway();
         	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
         	return (AcademicLevel) gateway.retrieve(ResourceType.ACADEMIC_LEVEL, id);
-        }
-
-        public string getCode ()
-        {
-            return this.getProperty("code").ToString();
-        }
-
-        public void setCode (string code)
-        {
-            this.setProperty("code", code);
         }
 
         public string getAcademicLevelName ()
@@ -125,6 +115,16 @@ namespace Arbor.Model
         public void setPromotedDatetime (DateTime promotedDatetime)
         {
             this.setProperty("promotedDatetime", promotedDatetime);
+        }
+
+        public AcademicLevel getCopiedToAcademicLevel ()
+        {
+            return (AcademicLevel) this.getProperty("copiedToAcademicLevel");
+        }
+
+        public void setCopiedToAcademicLevel (AcademicLevel copiedToAcademicLevel)
+        {
+            this.setProperty("copiedToAcademicLevel", copiedToAcademicLevel);
         }
 
         public int getDisplayOrder ()

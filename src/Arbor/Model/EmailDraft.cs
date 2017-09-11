@@ -13,10 +13,9 @@ namespace Arbor.Model
         public const string SENDING_PROFILE = "sendingProfile";
         public const string SUBJECT = "subject";
         public const string BODY = "body";
-        public const string REMOVE_DUPLICATE_MESSAGES = "removeDuplicateMessages";
+        public const string CUSTOM_REPORT = "customReport";
         public const string SENDING_STARTED_DATETIME = "sendingStartedDatetime";
         public const string RECIPIENTS_RESOLVED_DATETIME = "recipientsResolvedDatetime";
-        public const string DUPLICATES_REMOVED_DATETIME = "duplicatesRemovedDatetime";
         public const string SENDING_COMPLETED_DATETIME = "sendingCompletedDatetime";
 
         public EmailDraft ()
@@ -85,14 +84,14 @@ namespace Arbor.Model
             this.setProperty("body", body);
         }
 
-        public bool getRemoveDuplicateMessages ()
+        public CustomReport getCustomReport ()
         {
-            return (bool) this.getProperty("removeDuplicateMessages");
+            return (CustomReport) this.getProperty("customReport");
         }
 
-        public void setRemoveDuplicateMessages (bool removeDuplicateMessages)
+        public void setCustomReport (CustomReport customReport)
         {
-            this.setProperty("removeDuplicateMessages", removeDuplicateMessages);
+            this.setProperty("customReport", customReport);
         }
 
         public DateTime getSendingStartedDatetime ()
@@ -113,16 +112,6 @@ namespace Arbor.Model
         public void setRecipientsResolvedDatetime (DateTime recipientsResolvedDatetime)
         {
             this.setProperty("recipientsResolvedDatetime", recipientsResolvedDatetime);
-        }
-
-        public DateTime getDuplicatesRemovedDatetime ()
-        {
-            return (DateTime) this.getProperty("duplicatesRemovedDatetime");
-        }
-
-        public void setDuplicatesRemovedDatetime (DateTime duplicatesRemovedDatetime)
-        {
-            this.setProperty("duplicatesRemovedDatetime", duplicatesRemovedDatetime);
         }
 
         public DateTime getSendingCompletedDatetime ()

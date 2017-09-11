@@ -10,7 +10,6 @@ namespace Arbor.Model
     public class Schoolwork : ModelBase
     {
         protected string resourceType = ResourceType.SCHOOLWORK;
-        public const string SCHOOLWORK_DEFINITION = "schoolworkDefinition";
         public const string TITLE = "title";
         public const string STUDENT_INSTRUCTIONS = "studentInstructions";
         public const string TEACHER_NOTES = "teacherNotes";
@@ -20,7 +19,6 @@ namespace Arbor.Model
         public const string MARKING_STARTED_DATETIME = "markingStartedDatetime";
         public const string MARKING_COMPLETED_DATETIME = "markingCompletedDatetime";
         public const string SESSION = "session";
-        public const string SESSION_STREAM = "sessionStream";
         public const string ACADEMIC_UNIT = "academicUnit";
 
         public Schoolwork ()
@@ -57,16 +55,6 @@ namespace Arbor.Model
             RestGateway gateway = (RestGateway) Schoolwork.getDefaultGateway();
         	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
         	return (Schoolwork) gateway.retrieve(ResourceType.SCHOOLWORK, id);
-        }
-
-        public SchoolworkDefinition getSchoolworkDefinition ()
-        {
-            return (SchoolworkDefinition) this.getProperty("schoolworkDefinition");
-        }
-
-        public void setSchoolworkDefinition (SchoolworkDefinition schoolworkDefinition)
-        {
-            this.setProperty("schoolworkDefinition", schoolworkDefinition);
         }
 
         public string getTitle ()
@@ -157,16 +145,6 @@ namespace Arbor.Model
         public void setSession (Session session)
         {
             this.setProperty("session", session);
-        }
-
-        public SessionStream getSessionStream ()
-        {
-            return (SessionStream) this.getProperty("sessionStream");
-        }
-
-        public void setSessionStream (SessionStream sessionStream)
-        {
-            this.setProperty("sessionStream", sessionStream);
         }
 
         public AcademicUnit getAcademicUnit ()

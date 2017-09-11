@@ -47,6 +47,18 @@ namespace Arbor.Model
         	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
         	return (InverseDemographic) gateway.retrieve(ResourceType.INVERSE_DEMOGRAPHIC, id);
         }
+
+        public string getDemographic ()
+        {
+            return (string) this.getProperty("demographic");
+        }
+
+        public void setDemographic (string demographic)
+        {
+            this.setProperty("demographic", demographic);
+        }
+
+
     }
 }
 

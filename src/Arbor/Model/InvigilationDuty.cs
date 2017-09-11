@@ -10,13 +10,11 @@ namespace Arbor.Model
     public class InvigilationDuty : ModelBase
     {
         protected string resourceType = ResourceType.INVIGILATION_DUTY;
+        public const string INVIGILATION_SESSION = "invigilationSession";
+        public const string STAFF = "staff";
+        public const string ADDITIONAL_ROLE = "additionalRole";
         public const string START_DATETIME = "startDatetime";
         public const string END_DATETIME = "endDatetime";
-        public const string LOCATION_TEXT = "locationText";
-        public const string LOCATION = "location";
-        public const string SCHEDULED_BY = "scheduledBy";
-        public const string STAFF = "staff";
-        public const string INVIGILATION_SESSION = "invigilationSession";
 
         public InvigilationDuty ()
         {
@@ -54,6 +52,36 @@ namespace Arbor.Model
         	return (InvigilationDuty) gateway.retrieve(ResourceType.INVIGILATION_DUTY, id);
         }
 
+        public InvigilationSession getInvigilationSession ()
+        {
+            return (InvigilationSession) this.getProperty("invigilationSession");
+        }
+
+        public void setInvigilationSession (InvigilationSession invigilationSession)
+        {
+            this.setProperty("invigilationSession", invigilationSession);
+        }
+
+        public Staff getStaff ()
+        {
+            return (Staff) this.getProperty("staff");
+        }
+
+        public void setStaff (Staff staff)
+        {
+            this.setProperty("staff", staff);
+        }
+
+        public string getAdditionalRole ()
+        {
+            return this.getProperty("additionalRole").ToString();
+        }
+
+        public void setAdditionalRole (string additionalRole)
+        {
+            this.setProperty("additionalRole", additionalRole);
+        }
+
         public DateTime getStartDatetime ()
         {
             return (DateTime) this.getProperty("startDatetime");
@@ -72,56 +100,6 @@ namespace Arbor.Model
         public void setEndDatetime (DateTime endDatetime)
         {
             this.setProperty("endDatetime", endDatetime);
-        }
-
-        public string getLocationText ()
-        {
-            return this.getProperty("locationText").ToString();
-        }
-
-        public void setLocationText (string locationText)
-        {
-            this.setProperty("locationText", locationText);
-        }
-
-        public Room getLocation ()
-        {
-            return (Room) this.getProperty("location");
-        }
-
-        public void setLocation (Room location)
-        {
-            this.setProperty("location", location);
-        }
-
-        public ModelBase getScheduledBy ()
-        {
-            return (ModelBase) this.getProperty("scheduledBy");
-        }
-
-        public void setScheduledBy (ModelBase scheduledBy)
-        {
-            this.setProperty("scheduledBy", scheduledBy);
-        }
-
-        public Staff getStaff ()
-        {
-            return (Staff) this.getProperty("staff");
-        }
-
-        public void setStaff (Staff staff)
-        {
-            this.setProperty("staff", staff);
-        }
-
-        public InvigilationSession getInvigilationSession ()
-        {
-            return (InvigilationSession) this.getProperty("invigilationSession");
-        }
-
-        public void setInvigilationSession (InvigilationSession invigilationSession)
-        {
-            this.setProperty("invigilationSession", invigilationSession);
         }
 
 

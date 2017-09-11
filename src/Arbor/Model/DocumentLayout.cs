@@ -10,23 +10,22 @@ namespace Arbor.Model
     public class DocumentLayout : ModelBase
     {
         protected string resourceType = ResourceType.DOCUMENT_LAYOUT;
-        public const string LAYOUT_NAME = "layoutName";
-        public const string PAGE_FORMAT = "pageFormat";
-        public const string PAGE_NUMBER_STYLE = "pageNumberStyle";
-        public const string HEADER_HTML = "headerHtml";
-        public const string HEADER_PAGE1HTML = "headerPage1html";
-        public const string FOOTER_HTML = "footerHtml";
-        public const string FOOTER_PAGE1HTML = "footerPage1html";
-        public const string MARGIN_TOP = "marginTop";
-        public const string MARGIN_BOTTOM = "marginBottom";
-        public const string MARGIN_HEADER = "marginHeader";
-        public const string MARGIN_FOOTER = "marginFooter";
-        public const string MARGIN_LEFT = "marginLeft";
-        public const string MARGIN_RIGHT = "marginRight";
-        public const string MARGIN_PAGE1TOP = "marginPage1top";
-        public const string MARGIN_PAGE1BOTTOM = "marginPage1bottom";
-        public const string MARGIN_PAGE1HEADER = "marginPage1header";
-        public const string MARGIN_PAGE1FOOTER = "marginPage1footer";
+        public const string NAME = "name";
+        public const string FIRST_PAGE_HEADER_HTML = "firstPageHeaderHtml";
+        public const string FIRST_PAGE_HEADER_HEIGHT = "firstPageHeaderHeight";
+        public const string FIRST_PAGE_FOOTER_HTML = "firstPageFooterHtml";
+        public const string FIRST_PAGE_FOOTER_HEIGHT = "firstPageFooterHeight";
+        public const string OTHER_PAGES_HEADER_HTML = "otherPagesHeaderHtml";
+        public const string OTHER_PAGES_HEADER_HEIGHT = "otherPagesHeaderHeight";
+        public const string OTHER_PAGES_FOOTER_HTML = "otherPagesFooterHtml";
+        public const string OTHER_PAGES_FOOTER_HEIGHT = "otherPagesFooterHeight";
+        public const string LEFT_MARGIN = "leftMargin";
+        public const string RIGHT_MARGIN = "rightMargin";
+        public const string PAPER_SIZE = "paperSize";
+        public const string ORIENTATION = "orientation";
+        public const string DEFAULT_FONT_FAMILY = "defaultFontFamily";
+        public const string DEFAULT_FONT_SIZE = "defaultFontSize";
+        public const string SHOW_ADDRESS_ENVELOPE_SIZE = "showAddressEnvelopeSize";
 
         public DocumentLayout ()
         {
@@ -64,174 +63,164 @@ namespace Arbor.Model
         	return (DocumentLayout) gateway.retrieve(ResourceType.DOCUMENT_LAYOUT, id);
         }
 
-        public string getLayoutName ()
+        public string getName ()
         {
-            return this.getProperty("layoutName").ToString();
+            return this.getProperty("name").ToString();
         }
 
-        public void setLayoutName (string layoutName)
+        public void setName (string name)
         {
-            this.setProperty("layoutName", layoutName);
+            this.setProperty("name", name);
         }
 
-        public string getPageFormat ()
+        public string getFirstPageHeaderHtml ()
         {
-            return this.getProperty("pageFormat").ToString();
+            return this.getProperty("firstPageHeaderHtml").ToString();
         }
 
-        public void setPageFormat (string pageFormat)
+        public void setFirstPageHeaderHtml (string firstPageHeaderHtml)
         {
-            this.setProperty("pageFormat", pageFormat);
+            this.setProperty("firstPageHeaderHtml", firstPageHeaderHtml);
         }
 
-        public string getPageNumberStyle ()
+        public float getFirstPageHeaderHeight ()
         {
-            return this.getProperty("pageNumberStyle").ToString();
+            return (float) this.getProperty("firstPageHeaderHeight");
         }
 
-        public void setPageNumberStyle (string pageNumberStyle)
+        public void setFirstPageHeaderHeight (float firstPageHeaderHeight)
         {
-            this.setProperty("pageNumberStyle", pageNumberStyle);
+            this.setProperty("firstPageHeaderHeight", firstPageHeaderHeight);
         }
 
-        public string getHeaderHtml ()
+        public string getFirstPageFooterHtml ()
         {
-            return this.getProperty("headerHtml").ToString();
+            return this.getProperty("firstPageFooterHtml").ToString();
         }
 
-        public void setHeaderHtml (string headerHtml)
+        public void setFirstPageFooterHtml (string firstPageFooterHtml)
         {
-            this.setProperty("headerHtml", headerHtml);
+            this.setProperty("firstPageFooterHtml", firstPageFooterHtml);
         }
 
-        public string getHeaderPage1html ()
+        public float getFirstPageFooterHeight ()
         {
-            return this.getProperty("headerPage1html").ToString();
+            return (float) this.getProperty("firstPageFooterHeight");
         }
 
-        public void setHeaderPage1html (string headerPage1html)
+        public void setFirstPageFooterHeight (float firstPageFooterHeight)
         {
-            this.setProperty("headerPage1html", headerPage1html);
+            this.setProperty("firstPageFooterHeight", firstPageFooterHeight);
         }
 
-        public string getFooterHtml ()
+        public string getOtherPagesHeaderHtml ()
         {
-            return this.getProperty("footerHtml").ToString();
+            return this.getProperty("otherPagesHeaderHtml").ToString();
         }
 
-        public void setFooterHtml (string footerHtml)
+        public void setOtherPagesHeaderHtml (string otherPagesHeaderHtml)
         {
-            this.setProperty("footerHtml", footerHtml);
+            this.setProperty("otherPagesHeaderHtml", otherPagesHeaderHtml);
         }
 
-        public string getFooterPage1html ()
+        public float getOtherPagesHeaderHeight ()
         {
-            return this.getProperty("footerPage1html").ToString();
+            return (float) this.getProperty("otherPagesHeaderHeight");
         }
 
-        public void setFooterPage1html (string footerPage1html)
+        public void setOtherPagesHeaderHeight (float otherPagesHeaderHeight)
         {
-            this.setProperty("footerPage1html", footerPage1html);
+            this.setProperty("otherPagesHeaderHeight", otherPagesHeaderHeight);
         }
 
-        public int getMarginTop ()
+        public string getOtherPagesFooterHtml ()
         {
-            return Convert.ToInt32(this.getProperty("marginTop"));
+            return this.getProperty("otherPagesFooterHtml").ToString();
         }
 
-        public void setMarginTop (int marginTop)
+        public void setOtherPagesFooterHtml (string otherPagesFooterHtml)
         {
-            this.setProperty("marginTop", marginTop);
+            this.setProperty("otherPagesFooterHtml", otherPagesFooterHtml);
         }
 
-        public int getMarginBottom ()
+        public float getOtherPagesFooterHeight ()
         {
-            return Convert.ToInt32(this.getProperty("marginBottom"));
+            return (float) this.getProperty("otherPagesFooterHeight");
         }
 
-        public void setMarginBottom (int marginBottom)
+        public void setOtherPagesFooterHeight (float otherPagesFooterHeight)
         {
-            this.setProperty("marginBottom", marginBottom);
+            this.setProperty("otherPagesFooterHeight", otherPagesFooterHeight);
         }
 
-        public int getMarginHeader ()
+        public float getLeftMargin ()
         {
-            return Convert.ToInt32(this.getProperty("marginHeader"));
+            return (float) this.getProperty("leftMargin");
         }
 
-        public void setMarginHeader (int marginHeader)
+        public void setLeftMargin (float leftMargin)
         {
-            this.setProperty("marginHeader", marginHeader);
+            this.setProperty("leftMargin", leftMargin);
         }
 
-        public int getMarginFooter ()
+        public float getRightMargin ()
         {
-            return Convert.ToInt32(this.getProperty("marginFooter"));
+            return (float) this.getProperty("rightMargin");
         }
 
-        public void setMarginFooter (int marginFooter)
+        public void setRightMargin (float rightMargin)
         {
-            this.setProperty("marginFooter", marginFooter);
+            this.setProperty("rightMargin", rightMargin);
         }
 
-        public int getMarginLeft ()
+        public string getPaperSize ()
         {
-            return Convert.ToInt32(this.getProperty("marginLeft"));
+            return this.getProperty("paperSize").ToString();
         }
 
-        public void setMarginLeft (int marginLeft)
+        public void setPaperSize (string paperSize)
         {
-            this.setProperty("marginLeft", marginLeft);
+            this.setProperty("paperSize", paperSize);
         }
 
-        public int getMarginRight ()
+        public string getOrientation ()
         {
-            return Convert.ToInt32(this.getProperty("marginRight"));
+            return this.getProperty("orientation").ToString();
         }
 
-        public void setMarginRight (int marginRight)
+        public void setOrientation (string orientation)
         {
-            this.setProperty("marginRight", marginRight);
+            this.setProperty("orientation", orientation);
         }
 
-        public int getMarginPage1top ()
+        public string getDefaultFontFamily ()
         {
-            return Convert.ToInt32(this.getProperty("marginPage1top"));
+            return this.getProperty("defaultFontFamily").ToString();
         }
 
-        public void setMarginPage1top (int marginPage1top)
+        public void setDefaultFontFamily (string defaultFontFamily)
         {
-            this.setProperty("marginPage1top", marginPage1top);
+            this.setProperty("defaultFontFamily", defaultFontFamily);
         }
 
-        public int getMarginPage1bottom ()
+        public float getDefaultFontSize ()
         {
-            return Convert.ToInt32(this.getProperty("marginPage1bottom"));
+            return (float) this.getProperty("defaultFontSize");
         }
 
-        public void setMarginPage1bottom (int marginPage1bottom)
+        public void setDefaultFontSize (float defaultFontSize)
         {
-            this.setProperty("marginPage1bottom", marginPage1bottom);
+            this.setProperty("defaultFontSize", defaultFontSize);
         }
 
-        public int getMarginPage1header ()
+        public string getShowAddressEnvelopeSize ()
         {
-            return Convert.ToInt32(this.getProperty("marginPage1header"));
+            return this.getProperty("showAddressEnvelopeSize").ToString();
         }
 
-        public void setMarginPage1header (int marginPage1header)
+        public void setShowAddressEnvelopeSize (string showAddressEnvelopeSize)
         {
-            this.setProperty("marginPage1header", marginPage1header);
-        }
-
-        public int getMarginPage1footer ()
-        {
-            return Convert.ToInt32(this.getProperty("marginPage1footer"));
-        }
-
-        public void setMarginPage1footer (int marginPage1footer)
-        {
-            this.setProperty("marginPage1footer", marginPage1footer);
+            this.setProperty("showAddressEnvelopeSize", showAddressEnvelopeSize);
         }
 
 

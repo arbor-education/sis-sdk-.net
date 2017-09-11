@@ -12,11 +12,11 @@ namespace Arbor.Model
         protected string resourceType = ResourceType.NEW_REPORT_CARD_BATCH;
         public const string REPORT_CARD_TEMPLATE = "reportCardTemplate";
         public const string REPORT_CARD_TITLE = "reportCardTitle";
+        public const string GENERAL_SETTINGS_JSON = "generalSettingsJson";
         public const string REPORT_CARD_DATE = "reportCardDate";
+        public const string ATTAINMENT_SETTINGS_JSON = "attainmentSettingsJson";
         public const string ASSESSMENT_PERIOD_START_DATE = "assessmentPeriodStartDate";
         public const string ASSESSMENT_PERIOD_END_DATE = "assessmentPeriodEndDate";
-        public const string ATTENDANCE_PERIOD_START_DATE = "attendancePeriodStartDate";
-        public const string ATTENDANCE_PERIOD_END_DATE = "attendancePeriodEndDate";
         public const string DUE_DATE = "dueDate";
         public const string ACADEMIC_YEAR = "academicYear";
         public const string INCLUDE_TEACHER_INITIALS = "includeTeacherInitials";
@@ -29,6 +29,10 @@ namespace Arbor.Model
         public const string FINALIZED_DATETIME = "finalizedDatetime";
         public const string FINALIZATION_IN_PROGRESS = "finalizationInProgress";
         public const string SHARED_WITH_GUARDIANS = "sharedWithGuardians";
+        public const string BEHAVIOUR_FIELDS = "behaviourFields";
+        public const string ATTENDANCE_FIELDS = "attendanceFields";
+        public const string SHOW_COMMENTS = "showComments";
+        public const string CUSTOM_DISPLAY_NAMES_JSON = "customDisplayNamesJson";
 
         public NewReportCardBatch ()
         {
@@ -86,6 +90,16 @@ namespace Arbor.Model
             this.setProperty("reportCardTitle", reportCardTitle);
         }
 
+        public string getGeneralSettingsJson ()
+        {
+            return this.getProperty("generalSettingsJson").ToString();
+        }
+
+        public void setGeneralSettingsJson (string generalSettingsJson)
+        {
+            this.setProperty("generalSettingsJson", generalSettingsJson);
+        }
+
         public DateTime getReportCardDate ()
         {
             return (DateTime) this.getProperty("reportCardDate");
@@ -94,6 +108,16 @@ namespace Arbor.Model
         public void setReportCardDate (DateTime reportCardDate)
         {
             this.setProperty("reportCardDate", reportCardDate);
+        }
+
+        public string getAttainmentSettingsJson ()
+        {
+            return this.getProperty("attainmentSettingsJson").ToString();
+        }
+
+        public void setAttainmentSettingsJson (string attainmentSettingsJson)
+        {
+            this.setProperty("attainmentSettingsJson", attainmentSettingsJson);
         }
 
         public DateTime getAssessmentPeriodStartDate ()
@@ -114,26 +138,6 @@ namespace Arbor.Model
         public void setAssessmentPeriodEndDate (DateTime assessmentPeriodEndDate)
         {
             this.setProperty("assessmentPeriodEndDate", assessmentPeriodEndDate);
-        }
-
-        public DateTime getAttendancePeriodStartDate ()
-        {
-            return (DateTime) this.getProperty("attendancePeriodStartDate");
-        }
-
-        public void setAttendancePeriodStartDate (DateTime attendancePeriodStartDate)
-        {
-            this.setProperty("attendancePeriodStartDate", attendancePeriodStartDate);
-        }
-
-        public DateTime getAttendancePeriodEndDate ()
-        {
-            return (DateTime) this.getProperty("attendancePeriodEndDate");
-        }
-
-        public void setAttendancePeriodEndDate (DateTime attendancePeriodEndDate)
-        {
-            this.setProperty("attendancePeriodEndDate", attendancePeriodEndDate);
         }
 
         public DateTime getDueDate ()
@@ -254,6 +258,46 @@ namespace Arbor.Model
         public void setSharedWithGuardians (bool sharedWithGuardians)
         {
             this.setProperty("sharedWithGuardians", sharedWithGuardians);
+        }
+
+        public string getBehaviourFields ()
+        {
+            return this.getProperty("behaviourFields").ToString();
+        }
+
+        public void setBehaviourFields (string behaviourFields)
+        {
+            this.setProperty("behaviourFields", behaviourFields);
+        }
+
+        public string getAttendanceFields ()
+        {
+            return this.getProperty("attendanceFields").ToString();
+        }
+
+        public void setAttendanceFields (string attendanceFields)
+        {
+            this.setProperty("attendanceFields", attendanceFields);
+        }
+
+        public bool getShowComments ()
+        {
+            return (bool) this.getProperty("showComments");
+        }
+
+        public void setShowComments (bool showComments)
+        {
+            this.setProperty("showComments", showComments);
+        }
+
+        public string getCustomDisplayNamesJson ()
+        {
+            return this.getProperty("customDisplayNamesJson").ToString();
+        }
+
+        public void setCustomDisplayNamesJson (string customDisplayNamesJson)
+        {
+            this.setProperty("customDisplayNamesJson", customDisplayNamesJson);
         }
 
 

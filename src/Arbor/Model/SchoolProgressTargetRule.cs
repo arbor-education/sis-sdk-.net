@@ -12,6 +12,8 @@ namespace Arbor.Model
         protected string resourceType = ResourceType.SCHOOL_PROGRESS_TARGET_RULE;
         public const string RULE_NAME = "ruleName";
         public const string ASSESSMENT = "assessment";
+        public const string EFFECTIVE_DATE = "effectiveDate";
+        public const string END_DATE = "endDate";
         public const string CURRICULUM_GRADE = "curriculumGrade";
         public const string TERM_NUMBER = "termNumber";
         public const string PROGRESS_AMOUNT = "progressAmount";
@@ -73,6 +75,26 @@ namespace Arbor.Model
         public void setAssessment (Assessment assessment)
         {
             this.setProperty("assessment", assessment);
+        }
+
+        public DateTime getEffectiveDate ()
+        {
+            return (DateTime) this.getProperty("effectiveDate");
+        }
+
+        public void setEffectiveDate (DateTime effectiveDate)
+        {
+            this.setProperty("effectiveDate", effectiveDate);
+        }
+
+        public DateTime getEndDate ()
+        {
+            return (DateTime) this.getProperty("endDate");
+        }
+
+        public void setEndDate (DateTime endDate)
+        {
+            this.setProperty("endDate", endDate);
         }
 
         public CurriculumGrade getCurriculumGrade ()

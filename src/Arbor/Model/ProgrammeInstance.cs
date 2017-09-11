@@ -11,6 +11,7 @@ namespace Arbor.Model
     {
         protected string resourceType = ResourceType.PROGRAMME_INSTANCE;
         public const string PROGRAMME = "programme";
+        public const string NAME = "name";
         public const string PLANNED_START_DATE = "plannedStartDate";
         public const string PLANNED_END_DATE = "plannedEndDate";
 
@@ -58,6 +59,16 @@ namespace Arbor.Model
         public void setProgramme (Programme programme)
         {
             this.setProperty("programme", programme);
+        }
+
+        public string getName ()
+        {
+            return this.getProperty("name").ToString();
+        }
+
+        public void setName (string name)
+        {
+            this.setProperty("name", name);
         }
 
         public DateTime getPlannedStartDate ()

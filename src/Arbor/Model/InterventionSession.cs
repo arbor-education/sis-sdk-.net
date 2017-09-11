@@ -14,12 +14,12 @@ namespace Arbor.Model
         public const string END_DATETIME = "endDatetime";
         public const string LOCATION_TEXT = "locationText";
         public const string LOCATION = "location";
-        public const string SCHEDULED_BY = "scheduledBy";
         public const string INTERVENTION = "intervention";
         public const string STAFF_COUNT = "staffCount";
         public const string STUDENT_COUNT = "studentCount";
         public const string CALENDAR_WEEK = "calendarWeek";
         public const string TIMETABLE_SLOT = "timetableSlot";
+        public const string INTERVENTION_GROUP = "interventionGroup";
 
         public InterventionSession ()
         {
@@ -87,24 +87,14 @@ namespace Arbor.Model
             this.setProperty("locationText", locationText);
         }
 
-        public Room getLocation ()
+        public ModelBase getLocation ()
         {
-            return (Room) this.getProperty("location");
+            return (ModelBase) this.getProperty("location");
         }
 
-        public void setLocation (Room location)
+        public void setLocation (ModelBase location)
         {
             this.setProperty("location", location);
-        }
-
-        public ModelBase getScheduledBy ()
-        {
-            return (ModelBase) this.getProperty("scheduledBy");
-        }
-
-        public void setScheduledBy (ModelBase scheduledBy)
-        {
-            this.setProperty("scheduledBy", scheduledBy);
         }
 
         public Intervention getIntervention ()
@@ -155,6 +145,16 @@ namespace Arbor.Model
         public void setTimetableSlot (TimetableSlot timetableSlot)
         {
             this.setProperty("timetableSlot", timetableSlot);
+        }
+
+        public InterventionGroup getInterventionGroup ()
+        {
+            return (InterventionGroup) this.getProperty("interventionGroup");
+        }
+
+        public void setInterventionGroup (InterventionGroup interventionGroup)
+        {
+            this.setProperty("interventionGroup", interventionGroup);
         }
 
 

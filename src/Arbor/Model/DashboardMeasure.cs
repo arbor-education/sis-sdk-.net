@@ -14,6 +14,7 @@ namespace Arbor.Model
         public const string KPI = "kpi";
         public const string FALLBACK_KPI = "fallbackKpi";
         public const string COMPARISON_KPI = "comparisonKpi";
+        public const string TARGETABLE = "targetable";
         public const string DISPLAY_ORDER = "displayOrder";
 
         public DashboardMeasure ()
@@ -90,6 +91,16 @@ namespace Arbor.Model
         public void setComparisonKpi (Kpi comparisonKpi)
         {
             this.setProperty("comparisonKpi", comparisonKpi);
+        }
+
+        public bool getTargetable ()
+        {
+            return (bool) this.getProperty("targetable");
+        }
+
+        public void setTargetable (bool targetable)
+        {
+            this.setProperty("targetable", targetable);
         }
 
         public int getDisplayOrder ()

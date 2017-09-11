@@ -13,6 +13,7 @@ namespace Arbor.Model.UkDfe
         public const string DFES_MAIN_CODE = "dfesMainCode";
         public const string D00005 = "d00005";
         public const string ONS_CODE = "onsCode";
+        public const string D00250 = "d00250";
 
         public Ethnicity ()
         {
@@ -78,6 +79,16 @@ namespace Arbor.Model.UkDfe
         public void setOnsCode (string onsCode)
         {
             this.setProperty("onsCode", onsCode);
+        }
+
+        public string getD00250 ()
+        {
+            return this.getProperty("d00250").ToString();
+        }
+
+        public void setD00250 (string d00250)
+        {
+            this.setProperty("d00250", d00250);
         }
 
 

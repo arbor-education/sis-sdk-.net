@@ -14,8 +14,14 @@ namespace Arbor.Model
         public const string QUALIFICATION_GRADE = "qualificationGrade";
         public const string NUMERIC_VALUE = "numericValue";
         public const string STUDENT = "student";
+        public const string CANDIDATE_REGISTRATION = "candidateRegistration";
         public const string CANDIDATE_ENTRY = "candidateEntry";
-        public const string RESULT_DATE = "resultDate";
+        public const string RESULT_DATETIME = "resultDatetime";
+        public const string EMBARGO_DATETIME = "embargoDatetime";
+        public const string IMPORT_JOB = "importJob";
+        public const string MISSING_RESULT_REASON = "missingResultReason";
+        public const string PARTIAL_ABSENCE = "partialAbsence";
+        public const string ENDORSEMENT_GRADE = "endorsementGrade";
 
         public QualificationResult ()
         {
@@ -93,6 +99,16 @@ namespace Arbor.Model
             this.setProperty("student", student);
         }
 
+        public CandidateRegistration getCandidateRegistration ()
+        {
+            return (CandidateRegistration) this.getProperty("candidateRegistration");
+        }
+
+        public void setCandidateRegistration (CandidateRegistration candidateRegistration)
+        {
+            this.setProperty("candidateRegistration", candidateRegistration);
+        }
+
         public CandidateEntry getCandidateEntry ()
         {
             return (CandidateEntry) this.getProperty("candidateEntry");
@@ -103,14 +119,64 @@ namespace Arbor.Model
             this.setProperty("candidateEntry", candidateEntry);
         }
 
-        public DateTime getResultDate ()
+        public DateTime getResultDatetime ()
         {
-            return (DateTime) this.getProperty("resultDate");
+            return (DateTime) this.getProperty("resultDatetime");
         }
 
-        public void setResultDate (DateTime resultDate)
+        public void setResultDatetime (DateTime resultDatetime)
         {
-            this.setProperty("resultDate", resultDate);
+            this.setProperty("resultDatetime", resultDatetime);
+        }
+
+        public DateTime getEmbargoDatetime ()
+        {
+            return (DateTime) this.getProperty("embargoDatetime");
+        }
+
+        public void setEmbargoDatetime (DateTime embargoDatetime)
+        {
+            this.setProperty("embargoDatetime", embargoDatetime);
+        }
+
+        public ModelBase getImportJob ()
+        {
+            return (ModelBase) this.getProperty("importJob");
+        }
+
+        public void setImportJob (ModelBase importJob)
+        {
+            this.setProperty("importJob", importJob);
+        }
+
+        public string getMissingResultReason ()
+        {
+            return this.getProperty("missingResultReason").ToString();
+        }
+
+        public void setMissingResultReason (string missingResultReason)
+        {
+            this.setProperty("missingResultReason", missingResultReason);
+        }
+
+        public int getPartialAbsence ()
+        {
+            return Convert.ToInt32(this.getProperty("partialAbsence"));
+        }
+
+        public void setPartialAbsence (int partialAbsence)
+        {
+            this.setProperty("partialAbsence", partialAbsence);
+        }
+
+        public QualificationGrade getEndorsementGrade ()
+        {
+            return (QualificationGrade) this.getProperty("endorsementGrade");
+        }
+
+        public void setEndorsementGrade (QualificationGrade endorsementGrade)
+        {
+            this.setProperty("endorsementGrade", endorsementGrade);
         }
 
 

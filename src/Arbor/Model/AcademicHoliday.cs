@@ -14,7 +14,6 @@ namespace Arbor.Model
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
         public const string HOLIDAY_LABEL = "holidayLabel";
-        public const string CONSIDER_AS_DAY_OF_TIMETABLE_CYCLE = "considerAsDayOfTimetableCycle";
 
         public AcademicHoliday ()
         {
@@ -90,16 +89,6 @@ namespace Arbor.Model
         public void setHolidayLabel (string holidayLabel)
         {
             this.setProperty("holidayLabel", holidayLabel);
-        }
-
-        public bool getConsiderAsDayOfTimetableCycle ()
-        {
-            return (bool) this.getProperty("considerAsDayOfTimetableCycle");
-        }
-
-        public void setConsiderAsDayOfTimetableCycle (bool considerAsDayOfTimetableCycle)
-        {
-            this.setProperty("considerAsDayOfTimetableCycle", considerAsDayOfTimetableCycle);
         }
 
 

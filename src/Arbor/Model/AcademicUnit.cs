@@ -21,6 +21,9 @@ namespace Arbor.Model
         public const string SHORT_NAME_FORMAT = "shortNameFormat";
         public const string ACADEMIC_UNIT_CODE = "academicUnitCode";
         public const string ACADEMIC_YEAR = "academicYear";
+        public const string PROMOTED_TO_ACADEMIC_UNIT = "promotedToAcademicUnit";
+        public const string PROMOTED_DATETIME = "promotedDatetime";
+        public const string COPIED_TO_ACADEMIC_UNIT = "copiedToAcademicUnit";
         public const string EFFECTIVE_DATE = "effectiveDate";
         public const string END_DATE = "endDate";
         public const string FACULTY = "faculty";
@@ -170,6 +173,36 @@ namespace Arbor.Model
             this.setProperty("academicYear", academicYear);
         }
 
+        public AcademicUnit getPromotedToAcademicUnit ()
+        {
+            return (AcademicUnit) this.getProperty("promotedToAcademicUnit");
+        }
+
+        public void setPromotedToAcademicUnit (AcademicUnit promotedToAcademicUnit)
+        {
+            this.setProperty("promotedToAcademicUnit", promotedToAcademicUnit);
+        }
+
+        public DateTime getPromotedDatetime ()
+        {
+            return (DateTime) this.getProperty("promotedDatetime");
+        }
+
+        public void setPromotedDatetime (DateTime promotedDatetime)
+        {
+            this.setProperty("promotedDatetime", promotedDatetime);
+        }
+
+        public AcademicUnit getCopiedToAcademicUnit ()
+        {
+            return (AcademicUnit) this.getProperty("copiedToAcademicUnit");
+        }
+
+        public void setCopiedToAcademicUnit (AcademicUnit copiedToAcademicUnit)
+        {
+            this.setProperty("copiedToAcademicUnit", copiedToAcademicUnit);
+        }
+
         public DateTime getEffectiveDate ()
         {
             return (DateTime) this.getProperty("effectiveDate");
@@ -294,12 +327,6 @@ namespace Arbor.Model
         {
             ModelCollection<ModelBase> collection = (ModelCollection<ModelBase>) this.getCollectionProperty("academicUnitCohorts");
         	return (ModelCollection<AcademicUnitCohort>) this.getApiGateway().castCollection<AcademicUnitCohort>(collection);
-        }
-
-        public ModelCollection<SessionStream> getSessionStreams ()
-        {
-            ModelCollection<ModelBase> collection = (ModelCollection<ModelBase>) this.getCollectionProperty("sessionStreams");
-        	return (ModelCollection<SessionStream>) this.getApiGateway().castCollection<SessionStream>(collection);
         }
 
         public ModelCollection<AcademicUnitCurriculum> getAcademicUnitCurriculums ()

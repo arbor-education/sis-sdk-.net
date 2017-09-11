@@ -10,8 +10,6 @@ namespace Arbor.Model.UkDfe
     public class LocalAuthority : ModelBase
     {
         protected string resourceType = ResourceType.UK_DFE_LOCAL_AUTHORITY;
-        public const string NAME = "name";
-        public const string SHORT_NAME = "shortName";
         public const string AUTHORITY_CODE = "authorityCode";
         public const string AUTHORITY_CODE_PRE2011 = "authorityCodePre2011";
 
@@ -49,26 +47,6 @@ namespace Arbor.Model.UkDfe
             RestGateway gateway = (RestGateway) LocalAuthority.getDefaultGateway();
         	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
         	return (LocalAuthority) gateway.retrieve(ResourceType.UK_DFE_LOCAL_AUTHORITY, id);
-        }
-
-        public string getName ()
-        {
-            return this.getProperty("name").ToString();
-        }
-
-        public void setName (string name)
-        {
-            this.setProperty("name", name);
-        }
-
-        public string getShortName ()
-        {
-            return this.getProperty("shortName").ToString();
-        }
-
-        public void setShortName (string shortName)
-        {
-            this.setProperty("shortName", shortName);
         }
 
         public string getAuthorityCode ()

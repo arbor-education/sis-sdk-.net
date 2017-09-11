@@ -336,6 +336,8 @@ namespace Arbor.Api.Gateway
 	        webReq.AllowAutoRedirect = true;
 			webReq.Accept = "application/json";
 			webReq.UserAgent = this.userAgent;
+			webReq.AllowAutoRedirect = true;
+			webReq.MaximumAutomaticRedirections = 1;
 
 			// Set request body
 			if (body != null) {

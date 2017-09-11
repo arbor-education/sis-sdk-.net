@@ -17,11 +17,14 @@ namespace Arbor.Model
         public const string RECIPIENT_NUMBER = "recipientNumber";
         public const string RECIPIENT = "recipient";
         public const string DRAFT_RECIPIENT = "draftRecipient";
+        public const string MESSAGE_TEXT = "messageText";
         public const string SENT_DATETIME = "sentDatetime";
         public const string READ_DATETIME = "readDatetime";
         public const string RECEIVED_DATETIME = "receivedDatetime";
         public const string FAILED_DATETIME = "failedDatetime";
         public const string TOTAL_COST = "totalCost";
+        public const string CREDITS_USED = "creditsUsed";
+        public const string FREE = "free";
         public const string MESSAGE_PARTS = "messageParts";
         public const string RECIPIENT_NETWORK_CODE = "recipientNetworkCode";
         public const string ACTION_REQUIRED_BY_DATETIME = "actionRequiredByDatetime";
@@ -132,6 +135,16 @@ namespace Arbor.Model
             this.setProperty("draftRecipient", draftRecipient);
         }
 
+        public string getMessageText ()
+        {
+            return this.getProperty("messageText").ToString();
+        }
+
+        public void setMessageText (string messageText)
+        {
+            this.setProperty("messageText", messageText);
+        }
+
         public DateTime getSentDatetime ()
         {
             return (DateTime) this.getProperty("sentDatetime");
@@ -180,6 +193,26 @@ namespace Arbor.Model
         public void setTotalCost (string totalCost)
         {
             this.setProperty("totalCost", totalCost);
+        }
+
+        public float getCreditsUsed ()
+        {
+            return (float) this.getProperty("creditsUsed");
+        }
+
+        public void setCreditsUsed (float creditsUsed)
+        {
+            this.setProperty("creditsUsed", creditsUsed);
+        }
+
+        public bool getFree ()
+        {
+            return (bool) this.getProperty("free");
+        }
+
+        public void setFree (bool free)
+        {
+            this.setProperty("free", free);
         }
 
         public int getMessageParts ()

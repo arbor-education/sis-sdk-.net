@@ -19,6 +19,7 @@ namespace Arbor.Model
         public const string ISO31661_ALPHA3 = "iso31661Alpha3";
         public const string ISO31661_NUMERIC = "iso31661Numeric";
         public const string NOTE = "note";
+        public const string APPLIES_TO_POSTAL_ADDRESS = "appliesToPostalAddress";
 
         public Country ()
         {
@@ -144,6 +145,16 @@ namespace Arbor.Model
         public void setNote (string note)
         {
             this.setProperty("note", note);
+        }
+
+        public bool getAppliesToPostalAddress ()
+        {
+            return (bool) this.getProperty("appliesToPostalAddress");
+        }
+
+        public void setAppliesToPostalAddress (bool appliesToPostalAddress)
+        {
+            this.setProperty("appliesToPostalAddress", appliesToPostalAddress);
         }
 
 

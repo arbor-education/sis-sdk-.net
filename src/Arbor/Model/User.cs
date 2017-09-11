@@ -13,6 +13,7 @@ namespace Arbor.Model
         public const string STAFF = "staff";
         public const string STUDENT = "student";
         public const string GUARDIAN = "guardian";
+        public const string EXTERNAL_ADMINISTRATOR = "externalAdministrator";
         public const string USERNAME = "username";
         public const string EMAIL = "email";
         public const string PASSWORD_HASH = "passwordHash";
@@ -21,10 +22,13 @@ namespace Arbor.Model
         public const string AUTHENTICATION_TOKEN_EXPIRY_DATETIME = "authenticationTokenExpiryDatetime";
         public const string CURRENT_IP_ADDRESS = "currentIpAddress";
         public const string LAST_ACCESS_DATETIME = "lastAccessDatetime";
+        public const string PASSWORD_LAST_CHANGED_DATETIME = "passwordLastChangedDatetime";
         public const string ENABLED = "enabled";
         public const string VERIFIED_DATETIME = "verifiedDatetime";
         public const string TERMS_ACCEPTED_DATETIME = "termsAcceptedDatetime";
         public const string WELCOME_MESSAGE_DATETIME = "welcomeMessageDatetime";
+        public const string TWO_FACTOR_AUTH_METHOD = "twoFactorAuthMethod";
+        public const string TWO_FACTOR_DEVICE_IDENTIFIER = "twoFactorDeviceIdentifier";
 
         public User ()
         {
@@ -90,6 +94,16 @@ namespace Arbor.Model
         public void setGuardian (Guardian guardian)
         {
             this.setProperty("guardian", guardian);
+        }
+
+        public ExternalAdministrator getExternalAdministrator ()
+        {
+            return (ExternalAdministrator) this.getProperty("externalAdministrator");
+        }
+
+        public void setExternalAdministrator (ExternalAdministrator externalAdministrator)
+        {
+            this.setProperty("externalAdministrator", externalAdministrator);
         }
 
         public string getUsername ()
@@ -172,6 +186,16 @@ namespace Arbor.Model
             this.setProperty("lastAccessDatetime", lastAccessDatetime);
         }
 
+        public DateTime getPasswordLastChangedDatetime ()
+        {
+            return (DateTime) this.getProperty("passwordLastChangedDatetime");
+        }
+
+        public void setPasswordLastChangedDatetime (DateTime passwordLastChangedDatetime)
+        {
+            this.setProperty("passwordLastChangedDatetime", passwordLastChangedDatetime);
+        }
+
         public bool getEnabled ()
         {
             return (bool) this.getProperty("enabled");
@@ -210,6 +234,26 @@ namespace Arbor.Model
         public void setWelcomeMessageDatetime (DateTime welcomeMessageDatetime)
         {
             this.setProperty("welcomeMessageDatetime", welcomeMessageDatetime);
+        }
+
+        public string getTwoFactorAuthMethod ()
+        {
+            return this.getProperty("twoFactorAuthMethod").ToString();
+        }
+
+        public void setTwoFactorAuthMethod (string twoFactorAuthMethod)
+        {
+            this.setProperty("twoFactorAuthMethod", twoFactorAuthMethod);
+        }
+
+        public string getTwoFactorDeviceIdentifier ()
+        {
+            return this.getProperty("twoFactorDeviceIdentifier").ToString();
+        }
+
+        public void setTwoFactorDeviceIdentifier (string twoFactorDeviceIdentifier)
+        {
+            this.setProperty("twoFactorDeviceIdentifier", twoFactorDeviceIdentifier);
         }
 
 

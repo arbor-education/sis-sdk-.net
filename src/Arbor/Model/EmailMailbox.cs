@@ -18,6 +18,9 @@ namespace Arbor.Model
         public const string UID_VALIDITY = "uidValidity";
         public const string DEFAULT_ACTION_REQUIRED_BY_TIME = "defaultActionRequiredByTime";
         public const string SHARED_BY_DEFAULT = "sharedByDefault";
+        public const string FIRST_ERROR_DATETIME = "firstErrorDatetime";
+        public const string LAST_ERROR_DATETIME = "lastErrorDatetime";
+        public const string DISABLED = "disabled";
 
         public EmailMailbox ()
         {
@@ -133,6 +136,36 @@ namespace Arbor.Model
         public void setSharedByDefault (bool sharedByDefault)
         {
             this.setProperty("sharedByDefault", sharedByDefault);
+        }
+
+        public DateTime getFirstErrorDatetime ()
+        {
+            return (DateTime) this.getProperty("firstErrorDatetime");
+        }
+
+        public void setFirstErrorDatetime (DateTime firstErrorDatetime)
+        {
+            this.setProperty("firstErrorDatetime", firstErrorDatetime);
+        }
+
+        public DateTime getLastErrorDatetime ()
+        {
+            return (DateTime) this.getProperty("lastErrorDatetime");
+        }
+
+        public void setLastErrorDatetime (DateTime lastErrorDatetime)
+        {
+            this.setProperty("lastErrorDatetime", lastErrorDatetime);
+        }
+
+        public bool getDisabled ()
+        {
+            return (bool) this.getProperty("disabled");
+        }
+
+        public void setDisabled (bool disabled)
+        {
+            this.setProperty("disabled", disabled);
         }
 
 

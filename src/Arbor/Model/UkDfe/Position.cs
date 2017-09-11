@@ -49,22 +49,22 @@ namespace Arbor.Model.UkDfe
         	return (Position) gateway.retrieve(ResourceType.UK_DFE_POSITION, id);
         }
 
-        public ModelBase getPositionCategory ()
+        public PositionCategory getPositionCategory ()
         {
-            return (ModelBase) this.getProperty("positionCategory");
+            return (PositionCategory) this.getProperty("positionCategory");
         }
 
-        public void setPositionCategory (ModelBase positionCategory)
+        public void setPositionCategory (PositionCategory positionCategory)
         {
             this.setProperty("positionCategory", positionCategory);
         }
 
-        public ModelBase getWorkforceVacancyPost ()
+        public SchoolWorkforceVacancyPost getWorkforceVacancyPost ()
         {
-            return (ModelBase) this.getProperty("workforceVacancyPost");
+            return (SchoolWorkforceVacancyPost) this.getProperty("workforceVacancyPost");
         }
 
-        public void setWorkforceVacancyPost (ModelBase workforceVacancyPost)
+        public void setWorkforceVacancyPost (SchoolWorkforceVacancyPost workforceVacancyPost)
         {
             this.setProperty("workforceVacancyPost", workforceVacancyPost);
         }

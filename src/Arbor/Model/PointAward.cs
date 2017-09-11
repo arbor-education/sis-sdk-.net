@@ -12,11 +12,13 @@ namespace Arbor.Model
         protected string resourceType = ResourceType.POINT_AWARD;
         public const string POINT_AWARD_SCALE = "pointAwardScale";
         public const string STUDENT = "student";
-        public const string SESSION = "session";
         public const string POINT_AWARD_CATEGORY = "pointAwardCategory";
         public const string POINTS = "points";
         public const string AWARDED_DATETIME = "awardedDatetime";
         public const string NARRATIVE = "narrative";
+        public const string LOCATION = "location";
+        public const string AWARDED_BY_STAFF = "awardedByStaff";
+        public const string EVENT = "event";
 
         public PointAward ()
         {
@@ -74,16 +76,6 @@ namespace Arbor.Model
             this.setProperty("student", student);
         }
 
-        public Session getSession ()
-        {
-            return (Session) this.getProperty("session");
-        }
-
-        public void setSession (Session session)
-        {
-            this.setProperty("session", session);
-        }
-
         public PointAwardCategory getPointAwardCategory ()
         {
             return (PointAwardCategory) this.getProperty("pointAwardCategory");
@@ -122,6 +114,36 @@ namespace Arbor.Model
         public void setNarrative (string narrative)
         {
             this.setProperty("narrative", narrative);
+        }
+
+        public ModelBase getLocation ()
+        {
+            return (ModelBase) this.getProperty("location");
+        }
+
+        public void setLocation (ModelBase location)
+        {
+            this.setProperty("location", location);
+        }
+
+        public Staff getAwardedByStaff ()
+        {
+            return (Staff) this.getProperty("awardedByStaff");
+        }
+
+        public void setAwardedByStaff (Staff awardedByStaff)
+        {
+            this.setProperty("awardedByStaff", awardedByStaff);
+        }
+
+        public ModelBase getEvent ()
+        {
+            return (ModelBase) this.getProperty("event");
+        }
+
+        public void setEvent (ModelBase _event)
+        {
+            this.setProperty("event", _event);
         }
 
 

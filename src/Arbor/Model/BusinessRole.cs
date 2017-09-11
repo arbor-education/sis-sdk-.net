@@ -11,12 +11,14 @@ namespace Arbor.Model
     {
         protected string resourceType = ResourceType.BUSINESS_ROLE;
         public const string SWF_CENSUS_IDENTIFIER = "swfCensusIdentifier";
+        public const string MANAGED_BY_CLIENT = "managedByClient";
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";
         public const string BUSINESS_ROLE_NAME = "businessRoleName";
         public const string USER_DEFINED_NAME = "userDefinedName";
         public const string BUSINESS_ROLE_DESCRIPTION = "businessRoleDescription";
+        public const string USER_DEFINED_DESCRIPTION = "userDefinedDescription";
         public const string INTERNAL_STAFF = "internalStaff";
         public const string TEACHING_STAFF = "teachingStaff";
         public const string CUSTOMER_MANAGES_DEFAULT_USER_ROLES = "customerManagesDefaultUserRoles";
@@ -65,6 +67,16 @@ namespace Arbor.Model
         public void setSwfCensusIdentifier (string swfCensusIdentifier)
         {
             this.setProperty("swfCensusIdentifier", swfCensusIdentifier);
+        }
+
+        public bool getManagedByClient ()
+        {
+            return (bool) this.getProperty("managedByClient");
+        }
+
+        public void setManagedByClient (bool managedByClient)
+        {
+            this.setProperty("managedByClient", managedByClient);
         }
 
         public string getCode ()
@@ -125,6 +137,16 @@ namespace Arbor.Model
         public void setBusinessRoleDescription (string businessRoleDescription)
         {
             this.setProperty("businessRoleDescription", businessRoleDescription);
+        }
+
+        public string getUserDefinedDescription ()
+        {
+            return this.getProperty("userDefinedDescription").ToString();
+        }
+
+        public void setUserDefinedDescription (string userDefinedDescription)
+        {
+            this.setProperty("userDefinedDescription", userDefinedDescription);
         }
 
         public bool getInternalStaff ()

@@ -66,12 +66,12 @@ namespace Arbor.Model.UkDfe
         	return (AtfImportJobStudent) gateway.retrieve(ResourceType.UK_DFE_ATF_IMPORT_JOB_STUDENT, id);
         }
 
-        public ModelBase getAtfImportJob ()
+        public string getAtfImportJob ()
         {
-            return (ModelBase) this.getProperty("atfImportJob");
+            return (string) this.getProperty("atfImportJob");
         }
 
-        public void setAtfImportJob (ModelBase atfImportJob)
+        public void setAtfImportJob (string atfImportJob)
         {
             this.setProperty("atfImportJob", atfImportJob);
         }

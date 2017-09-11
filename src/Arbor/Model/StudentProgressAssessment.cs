@@ -12,7 +12,6 @@ namespace Arbor.Model
         protected string resourceType = ResourceType.STUDENT_PROGRESS_ASSESSMENT;
         public const string STUDENT = "student";
         public const string ASSESSMENT = "assessment";
-        public const string PROGRESS_ASSESSMENT_BATCH_TARGET = "progressAssessmentBatchTarget";
         public const string PROGRESS_MEASUREMENT_PERIOD = "progressMeasurementPeriod";
         public const string ASSESSMENT_DATE = "assessmentDate";
         public const string COMPLETED_DATE = "completedDate";
@@ -71,16 +70,6 @@ namespace Arbor.Model
         public void setAssessment (Assessment assessment)
         {
             this.setProperty("assessment", assessment);
-        }
-
-        public ProgressAssessmentBatchTarget getProgressAssessmentBatchTarget ()
-        {
-            return (ProgressAssessmentBatchTarget) this.getProperty("progressAssessmentBatchTarget");
-        }
-
-        public void setProgressAssessmentBatchTarget (ProgressAssessmentBatchTarget progressAssessmentBatchTarget)
-        {
-            this.setProperty("progressAssessmentBatchTarget", progressAssessmentBatchTarget);
         }
 
         public ProgressMeasurementPeriod getProgressMeasurementPeriod ()

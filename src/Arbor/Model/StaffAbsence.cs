@@ -17,11 +17,11 @@ namespace Arbor.Model
         public const string APPROVED_DATETIME = "approvedDatetime";
         public const string APPROVED_BY_STAFF = "approvedByStaff";
         public const string PAID_SICK_LEAVE_USED = "paidSickLeaveUsed";
-        public const string UN_PAID_SICK_LEAVE_USED = "unPaidSickLeaveUsed";
+        public const string UNPAID_SICK_LEAVE_USED = "unpaidSickLeaveUsed";
         public const string PAID_HOLIDAY_USED = "paidHolidayUsed";
-        public const string UN_PAID_HOLIDAY_USED = "unPaidHolidayUsed";
+        public const string UNPAID_HOLIDAY_USED = "unpaidHolidayUsed";
         public const string PAID_OTHER_LEAVE = "paidOtherLeave";
-        public const string UN_PAID_OTHER_LEAVE = "unPaidOtherLeave";
+        public const string UNPAID_OTHER_LEAVE = "unpaidOtherLeave";
         public const string NARRATIVE = "narrative";
 
         public StaffAbsence ()
@@ -130,14 +130,14 @@ namespace Arbor.Model
             this.setProperty("paidSickLeaveUsed", paidSickLeaveUsed);
         }
 
-        public float getUnPaidSickLeaveUsed ()
+        public float getUnpaidSickLeaveUsed ()
         {
-            return (float) this.getProperty("unPaidSickLeaveUsed");
+            return (float) this.getProperty("unpaidSickLeaveUsed");
         }
 
-        public void setUnPaidSickLeaveUsed (float unPaidSickLeaveUsed)
+        public void setUnpaidSickLeaveUsed (float unpaidSickLeaveUsed)
         {
-            this.setProperty("unPaidSickLeaveUsed", unPaidSickLeaveUsed);
+            this.setProperty("unpaidSickLeaveUsed", unpaidSickLeaveUsed);
         }
 
         public float getPaidHolidayUsed ()
@@ -150,14 +150,14 @@ namespace Arbor.Model
             this.setProperty("paidHolidayUsed", paidHolidayUsed);
         }
 
-        public float getUnPaidHolidayUsed ()
+        public float getUnpaidHolidayUsed ()
         {
-            return (float) this.getProperty("unPaidHolidayUsed");
+            return (float) this.getProperty("unpaidHolidayUsed");
         }
 
-        public void setUnPaidHolidayUsed (float unPaidHolidayUsed)
+        public void setUnpaidHolidayUsed (float unpaidHolidayUsed)
         {
-            this.setProperty("unPaidHolidayUsed", unPaidHolidayUsed);
+            this.setProperty("unpaidHolidayUsed", unpaidHolidayUsed);
         }
 
         public float getPaidOtherLeave ()
@@ -170,14 +170,14 @@ namespace Arbor.Model
             this.setProperty("paidOtherLeave", paidOtherLeave);
         }
 
-        public float getUnPaidOtherLeave ()
+        public float getUnpaidOtherLeave ()
         {
-            return (float) this.getProperty("unPaidOtherLeave");
+            return (float) this.getProperty("unpaidOtherLeave");
         }
 
-        public void setUnPaidOtherLeave (float unPaidOtherLeave)
+        public void setUnpaidOtherLeave (float unpaidOtherLeave)
         {
-            this.setProperty("unPaidOtherLeave", unPaidOtherLeave);
+            this.setProperty("unpaidOtherLeave", unpaidOtherLeave);
         }
 
         public string getNarrative ()

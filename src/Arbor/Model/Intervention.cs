@@ -22,6 +22,9 @@ namespace Arbor.Model
         public const string SUCCESS_CRITERIA = "successCriteria";
         public const string NEXT_REVIEW_DATE = "nextReviewDate";
         public const string ESTIMATED_DURATION = "estimatedDuration";
+        public const string SUBJECT = "subject";
+        public const string CATEGORY = "category";
+        public const string IS_COMPLETED = "isCompleted";
 
         public Intervention ()
         {
@@ -177,6 +180,36 @@ namespace Arbor.Model
         public void setEstimatedDuration (string estimatedDuration)
         {
             this.setProperty("estimatedDuration", estimatedDuration);
+        }
+
+        public Subject getSubject ()
+        {
+            return (Subject) this.getProperty("subject");
+        }
+
+        public void setSubject (Subject subject)
+        {
+            this.setProperty("subject", subject);
+        }
+
+        public InterventionCategory getCategory ()
+        {
+            return (InterventionCategory) this.getProperty("category");
+        }
+
+        public void setCategory (InterventionCategory category)
+        {
+            this.setProperty("category", category);
+        }
+
+        public bool getIsCompleted ()
+        {
+            return (bool) this.getProperty("isCompleted");
+        }
+
+        public void setIsCompleted (bool isCompleted)
+        {
+            this.setProperty("isCompleted", isCompleted);
         }
 
 

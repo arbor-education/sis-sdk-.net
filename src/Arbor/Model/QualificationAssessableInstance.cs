@@ -10,12 +10,19 @@ namespace Arbor.Model
     public class QualificationAssessableInstance : ModelBase
     {
         protected string resourceType = ResourceType.QUALIFICATION_ASSESSABLE_INSTANCE;
+        public const string CODE = "code";
+        public const string ACTIVE = "active";
+        public const string DATA_ORDER = "dataOrder";
         public const string ASSESSABLE_INSTANCE_IDENTIFIER = "assessableInstanceIdentifier";
         public const string QUALIFICATION_ASSESSABLE = "qualificationAssessable";
+        public const string QUALIFICATION_AVAILABILITY_INSTANCE = "qualificationAvailabilityInstance";
+        public const string QUALIFICATION_TIMETABLE_SESSION_TYPE = "qualificationTimetableSessionType";
         public const string START_DATE_RANGE_FROM = "startDateRangeFrom";
         public const string START_DATE_RANGE_UNTIL = "startDateRangeUntil";
-        public const string QUALIFICATION_TIMETABLE_SESSION_TYPE = "qualificationTimetableSessionType";
         public const string DURATION = "duration";
+        public const string IS_CENTRE_SPECIFIED_TIMETABLE = "isCentreSpecifiedTimetable";
+        public const string CENTRE_SPECIFIED_DATETIME = "centreSpecifiedDatetime";
+        public const string CENTRE_SPECIFIED_DURATION = "centreSpecifiedDuration";
         public const string IS_PROVISIONAL = "isProvisional";
 
         public QualificationAssessableInstance ()
@@ -54,6 +61,36 @@ namespace Arbor.Model
         	return (QualificationAssessableInstance) gateway.retrieve(ResourceType.QUALIFICATION_ASSESSABLE_INSTANCE, id);
         }
 
+        public string getCode ()
+        {
+            return this.getProperty("code").ToString();
+        }
+
+        public void setCode (string code)
+        {
+            this.setProperty("code", code);
+        }
+
+        public bool getActive ()
+        {
+            return (bool) this.getProperty("active");
+        }
+
+        public void setActive (bool active)
+        {
+            this.setProperty("active", active);
+        }
+
+        public int getDataOrder ()
+        {
+            return Convert.ToInt32(this.getProperty("dataOrder"));
+        }
+
+        public void setDataOrder (int dataOrder)
+        {
+            this.setProperty("dataOrder", dataOrder);
+        }
+
         public string getAssessableInstanceIdentifier ()
         {
             return this.getProperty("assessableInstanceIdentifier").ToString();
@@ -72,6 +109,26 @@ namespace Arbor.Model
         public void setQualificationAssessable (QualificationAssessable qualificationAssessable)
         {
             this.setProperty("qualificationAssessable", qualificationAssessable);
+        }
+
+        public QualificationAvailabilityInstance getQualificationAvailabilityInstance ()
+        {
+            return (QualificationAvailabilityInstance) this.getProperty("qualificationAvailabilityInstance");
+        }
+
+        public void setQualificationAvailabilityInstance (QualificationAvailabilityInstance qualificationAvailabilityInstance)
+        {
+            this.setProperty("qualificationAvailabilityInstance", qualificationAvailabilityInstance);
+        }
+
+        public QualificationTimetableSessionType getQualificationTimetableSessionType ()
+        {
+            return (QualificationTimetableSessionType) this.getProperty("qualificationTimetableSessionType");
+        }
+
+        public void setQualificationTimetableSessionType (QualificationTimetableSessionType qualificationTimetableSessionType)
+        {
+            this.setProperty("qualificationTimetableSessionType", qualificationTimetableSessionType);
         }
 
         public DateTime getStartDateRangeFrom ()
@@ -94,16 +151,6 @@ namespace Arbor.Model
             this.setProperty("startDateRangeUntil", startDateRangeUntil);
         }
 
-        public ModelBase getQualificationTimetableSessionType ()
-        {
-            return (ModelBase) this.getProperty("qualificationTimetableSessionType");
-        }
-
-        public void setQualificationTimetableSessionType (ModelBase qualificationTimetableSessionType)
-        {
-            this.setProperty("qualificationTimetableSessionType", qualificationTimetableSessionType);
-        }
-
         public string getDuration ()
         {
             return this.getProperty("duration").ToString();
@@ -112,6 +159,36 @@ namespace Arbor.Model
         public void setDuration (string duration)
         {
             this.setProperty("duration", duration);
+        }
+
+        public bool getIsCentreSpecifiedTimetable ()
+        {
+            return (bool) this.getProperty("isCentreSpecifiedTimetable");
+        }
+
+        public void setIsCentreSpecifiedTimetable (bool isCentreSpecifiedTimetable)
+        {
+            this.setProperty("isCentreSpecifiedTimetable", isCentreSpecifiedTimetable);
+        }
+
+        public DateTime getCentreSpecifiedDatetime ()
+        {
+            return (DateTime) this.getProperty("centreSpecifiedDatetime");
+        }
+
+        public void setCentreSpecifiedDatetime (DateTime centreSpecifiedDatetime)
+        {
+            this.setProperty("centreSpecifiedDatetime", centreSpecifiedDatetime);
+        }
+
+        public string getCentreSpecifiedDuration ()
+        {
+            return this.getProperty("centreSpecifiedDuration").ToString();
+        }
+
+        public void setCentreSpecifiedDuration (string centreSpecifiedDuration)
+        {
+            this.setProperty("centreSpecifiedDuration", centreSpecifiedDuration);
         }
 
         public bool getIsProvisional ()

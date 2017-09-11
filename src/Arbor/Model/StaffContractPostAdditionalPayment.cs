@@ -14,6 +14,8 @@ namespace Arbor.Model
         public const string ADDITIONAL_PAYMENT = "additionalPayment";
         public const string PAYMENT_DATE = "paymentDate";
         public const string ADDITIONAL_PAYMENT_REASON = "additionalPaymentReason";
+        public const string START_DATE = "startDate";
+        public const string END_DATE = "endDate";
 
         public StaffContractPostAdditionalPayment ()
         {
@@ -89,6 +91,26 @@ namespace Arbor.Model
         public void setAdditionalPaymentReason (AdditionalPaymentReason additionalPaymentReason)
         {
             this.setProperty("additionalPaymentReason", additionalPaymentReason);
+        }
+
+        public DateTime getStartDate ()
+        {
+            return (DateTime) this.getProperty("startDate");
+        }
+
+        public void setStartDate (DateTime startDate)
+        {
+            this.setProperty("startDate", startDate);
+        }
+
+        public DateTime getEndDate ()
+        {
+            return (DateTime) this.getProperty("endDate");
+        }
+
+        public void setEndDate (DateTime endDate)
+        {
+            this.setProperty("endDate", endDate);
         }
 
 

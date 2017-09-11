@@ -12,6 +12,7 @@ namespace Arbor.Model
         protected string resourceType = ResourceType.USER_NOTIFICATION;
         public const string USER = "user";
         public const string IS_READ = "isRead";
+        public const string STATUS = "status";
         public const string MODIFIED_GLOBAL_COUNTER = "modifiedGlobalCounter";
         public const string CREATED_DATETIME = "createdDatetime";
         public const string ACTION = "action";
@@ -76,6 +77,16 @@ namespace Arbor.Model
         public void setIsRead (bool isRead)
         {
             this.setProperty("isRead", isRead);
+        }
+
+        public string getStatus ()
+        {
+            return this.getProperty("status").ToString();
+        }
+
+        public void setStatus (string status)
+        {
+            this.setProperty("status", status);
         }
 
         public int getModifiedGlobalCounter ()

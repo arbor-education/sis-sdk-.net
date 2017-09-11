@@ -83,22 +83,22 @@ namespace Arbor.Model
             this.setProperty("mealProvision", mealProvision);
         }
 
-        public ModelBase getCustomerInvoice ()
+        public CustomerInvoice getCustomerInvoice ()
         {
-            return (ModelBase) this.getProperty("customerInvoice");
+            return (CustomerInvoice) this.getProperty("customerInvoice");
         }
 
-        public void setCustomerInvoice (ModelBase customerInvoice)
+        public void setCustomerInvoice (CustomerInvoice customerInvoice)
         {
             this.setProperty("customerInvoice", customerInvoice);
         }
 
-        public ModelBase getMealProvisionPriceCategory ()
+        public MealProvisionPriceCategory getMealProvisionPriceCategory ()
         {
-            return (ModelBase) this.getProperty("mealProvisionPriceCategory");
+            return (MealProvisionPriceCategory) this.getProperty("mealProvisionPriceCategory");
         }
 
-        public void setMealProvisionPriceCategory (ModelBase mealProvisionPriceCategory)
+        public void setMealProvisionPriceCategory (MealProvisionPriceCategory mealProvisionPriceCategory)
         {
             this.setProperty("mealProvisionPriceCategory", mealProvisionPriceCategory);
         }

@@ -12,7 +12,7 @@ namespace Arbor.Model.UkDfe
         protected string resourceType = ResourceType.UK_DFE_EDUCATIONAL_INSTITUTION;
         public const string LOCAL_AUTHORITY = "localAuthority";
         public const string ESTABLISHMENT_NUMBER = "establishmentNumber";
-        public const string SCHOOL_PHASE = "schoolPhase";
+        public const string CENSUS_SCHOOL_PHASE = "censusSchoolPhase";
         public const string SCHOOL_TYPE = "schoolType";
         public const string SCHOOL_GENDER = "schoolGender";
         public const string GOVERNANCE_TYPE = "governanceType";
@@ -66,12 +66,12 @@ namespace Arbor.Model.UkDfe
         	return (EducationalInstitution) gateway.retrieve(ResourceType.UK_DFE_EDUCATIONAL_INSTITUTION, id);
         }
 
-        public ModelBase getLocalAuthority ()
+        public LocalAuthority getLocalAuthority ()
         {
-            return (ModelBase) this.getProperty("localAuthority");
+            return (LocalAuthority) this.getProperty("localAuthority");
         }
 
-        public void setLocalAuthority (ModelBase localAuthority)
+        public void setLocalAuthority (LocalAuthority localAuthority)
         {
             this.setProperty("localAuthority", localAuthority);
         }
@@ -86,22 +86,22 @@ namespace Arbor.Model.UkDfe
             this.setProperty("establishmentNumber", establishmentNumber);
         }
 
-        public ModelBase getSchoolPhase ()
+        public CensusSchoolPhase getCensusSchoolPhase ()
         {
-            return (ModelBase) this.getProperty("schoolPhase");
+            return (CensusSchoolPhase) this.getProperty("censusSchoolPhase");
         }
 
-        public void setSchoolPhase (ModelBase schoolPhase)
+        public void setCensusSchoolPhase (CensusSchoolPhase censusSchoolPhase)
         {
-            this.setProperty("schoolPhase", schoolPhase);
+            this.setProperty("censusSchoolPhase", censusSchoolPhase);
         }
 
-        public ModelBase getSchoolType ()
+        public SchoolType getSchoolType ()
         {
-            return (ModelBase) this.getProperty("schoolType");
+            return (SchoolType) this.getProperty("schoolType");
         }
 
-        public void setSchoolType (ModelBase schoolType)
+        public void setSchoolType (SchoolType schoolType)
         {
             this.setProperty("schoolType", schoolType);
         }
@@ -116,22 +116,22 @@ namespace Arbor.Model.UkDfe
             this.setProperty("schoolGender", schoolGender);
         }
 
-        public ModelBase getGovernanceType ()
+        public SchoolGovernanceType getGovernanceType ()
         {
-            return (ModelBase) this.getProperty("governanceType");
+            return (SchoolGovernanceType) this.getProperty("governanceType");
         }
 
-        public void setGovernanceType (ModelBase governanceType)
+        public void setGovernanceType (SchoolGovernanceType governanceType)
         {
             this.setProperty("governanceType", governanceType);
         }
 
-        public ModelBase getIntakeType ()
+        public SchoolIntakeType getIntakeType ()
         {
-            return (ModelBase) this.getProperty("intakeType");
+            return (SchoolIntakeType) this.getProperty("intakeType");
         }
 
-        public void setIntakeType (ModelBase intakeType)
+        public void setIntakeType (SchoolIntakeType intakeType)
         {
             this.setProperty("intakeType", intakeType);
         }

@@ -13,7 +13,7 @@ namespace Arbor.Model
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";
-        public const string QUALIFICATION_GRADE_SET_NAME = "qualificationGradeSetName";
+        public const string NAME = "name";
         public const string SCALE_DIRECTION = "scaleDirection";
         public const string GRADE_POINT_SCALE = "gradePointScale";
 
@@ -83,14 +83,14 @@ namespace Arbor.Model
             this.setProperty("dataOrder", dataOrder);
         }
 
-        public string getQualificationGradeSetName ()
+        public string getName ()
         {
-            return this.getProperty("qualificationGradeSetName").ToString();
+            return this.getProperty("name").ToString();
         }
 
-        public void setQualificationGradeSetName (string qualificationGradeSetName)
+        public void setName (string name)
         {
-            this.setProperty("qualificationGradeSetName", qualificationGradeSetName);
+            this.setProperty("name", name);
         }
 
         public string getScaleDirection ()

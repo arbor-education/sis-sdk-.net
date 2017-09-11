@@ -52,12 +52,12 @@ namespace Arbor.Model.UkDfe
         	return (TravellerStatusAssignment) gateway.retrieve(ResourceType.UK_DFE_TRAVELLER_STATUS_ASSIGNMENT, id);
         }
 
-        public ModelBase getTravellerStatus ()
+        public TravellerStatus getTravellerStatus ()
         {
-            return (ModelBase) this.getProperty("travellerStatus");
+            return (TravellerStatus) this.getProperty("travellerStatus");
         }
 
-        public void setTravellerStatus (ModelBase travellerStatus)
+        public void setTravellerStatus (TravellerStatus travellerStatus)
         {
             this.setProperty("travellerStatus", travellerStatus);
         }

@@ -28,6 +28,7 @@ namespace Arbor.Model
         public const string IS_STATISTICAL_POSSIBLE_ATTENDANCE = "isStatisticalPossibleAttendance";
         public const string IS_DEFAULT_PRESENT = "isDefaultPresent";
         public const string IS_DEFAULT_LATE = "isDefaultLate";
+        public const string IS_DEFAULT_LATE_AFTER_REGISTER_CLOSED = "isDefaultLateAfterRegisterClosed";
         public const string IS_DEFAULT_ABSENT = "isDefaultAbsent";
         public const string IS_PHYSICAL_PRESENT = "isPhysicalPresent";
         public const string IS_PHYSICAL_LATE = "isPhysicalLate";
@@ -250,6 +251,16 @@ namespace Arbor.Model
         public void setIsDefaultLate (bool isDefaultLate)
         {
             this.setProperty("isDefaultLate", isDefaultLate);
+        }
+
+        public bool getIsDefaultLateAfterRegisterClosed ()
+        {
+            return (bool) this.getProperty("isDefaultLateAfterRegisterClosed");
+        }
+
+        public void setIsDefaultLateAfterRegisterClosed (bool isDefaultLateAfterRegisterClosed)
+        {
+            this.setProperty("isDefaultLateAfterRegisterClosed", isDefaultLateAfterRegisterClosed);
         }
 
         public bool getIsDefaultAbsent ()

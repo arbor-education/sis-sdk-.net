@@ -10,12 +10,14 @@ namespace Arbor.Model
     public class BehaviouralIncident : ModelBase
     {
         protected string resourceType = ResourceType.BEHAVIOURAL_INCIDENT;
+        public const string BEHAVIOUR = "behaviour";
         public const string INCIDENT_NAME = "incidentName";
         public const string NARRATIVE = "narrative";
         public const string INCIDENT_DATETIME = "incidentDatetime";
         public const string SEVERITY = "severity";
         public const string EVENT = "event";
         public const string LOCATION = "location";
+        public const string RESOLVED_DATETIME = "resolvedDatetime";
 
         public BehaviouralIncident ()
         {
@@ -53,6 +55,16 @@ namespace Arbor.Model
         	return (BehaviouralIncident) gateway.retrieve(ResourceType.BEHAVIOURAL_INCIDENT, id);
         }
 
+        public Behaviour getBehaviour ()
+        {
+            return (Behaviour) this.getProperty("behaviour");
+        }
+
+        public void setBehaviour (Behaviour behaviour)
+        {
+            this.setProperty("behaviour", behaviour);
+        }
+
         public string getIncidentName ()
         {
             return this.getProperty("incidentName").ToString();
@@ -83,12 +95,12 @@ namespace Arbor.Model
             this.setProperty("incidentDatetime", incidentDatetime);
         }
 
-        public int getSeverity ()
+        public string getSeverity ()
         {
-            return Convert.ToInt32(this.getProperty("severity"));
+            return this.getProperty("severity").ToString();
         }
 
-        public void setSeverity (int severity)
+        public void setSeverity (string severity)
         {
             this.setProperty("severity", severity);
         }
@@ -111,6 +123,16 @@ namespace Arbor.Model
         public void setLocation (ModelBase location)
         {
             this.setProperty("location", location);
+        }
+
+        public DateTime getResolvedDatetime ()
+        {
+            return (DateTime) this.getProperty("resolvedDatetime");
+        }
+
+        public void setResolvedDatetime (DateTime resolvedDatetime)
+        {
+            this.setProperty("resolvedDatetime", resolvedDatetime);
         }
 
 

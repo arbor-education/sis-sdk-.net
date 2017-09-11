@@ -14,6 +14,9 @@ namespace Arbor.Model
         public const string EMAIL_ADDRESS_TYPE = "emailAddressType";
         public const string EMAIL_ADDRESS = "emailAddress";
         public const string DATA_ORDER = "dataOrder";
+        public const string ROLE = "role";
+        public const string FREE = "free";
+        public const string DISPOSABLE = "disposable";
 
         public EmailAddress ()
         {
@@ -89,6 +92,36 @@ namespace Arbor.Model
         public void setDataOrder (int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
+        }
+
+        public bool getRole ()
+        {
+            return (bool) this.getProperty("role");
+        }
+
+        public void setRole (bool role)
+        {
+            this.setProperty("role", role);
+        }
+
+        public bool getFree ()
+        {
+            return (bool) this.getProperty("free");
+        }
+
+        public void setFree (bool free)
+        {
+            this.setProperty("free", free);
+        }
+
+        public bool getDisposable ()
+        {
+            return (bool) this.getProperty("disposable");
+        }
+
+        public void setDisposable (bool disposable)
+        {
+            this.setProperty("disposable", disposable);
         }
 
 
