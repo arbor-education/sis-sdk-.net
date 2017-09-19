@@ -672,7 +672,6 @@ namespace ArborSdkExamples
 			ModelBase.setDefaultGateway (gateway);
 
 			SimpleQuery query = new SimpleQuery ();
-			//query.addPropertyFilter("self.tagged", SimpleQuery.OPERATOR_EQUALS, "DEMOGRAPHIC__STUDENT__UK_DFE__PUPIL_PREMIUM");
 			query.addPropertyFilter("self", "tagged", "DEMOGRAPHIC__STUDENT__UK_DFE__PUPIL_PREMIUM");
 			Student.setDefaultGateway(gateway);
 			ModelCollection<Student> modelCollection = Student.query (query);
