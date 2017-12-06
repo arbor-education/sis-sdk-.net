@@ -716,7 +716,6 @@
     <Folder Include="Arbor\" />
     <Folder Include="Arbor\Resource\" />
     <Folder Include="lib\" />
-    <Folder Include="lib\Net3.5\" />
     <Folder Include="bin\" />
     <Folder Include="Arbor\Api\" />
     <Folder Include="Arbor\Filter\" />
@@ -731,7 +730,6 @@
     <Folder Include="lib\Net4.5\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="lib\Net3.5\Newtonsoft.Json.dll" />
     <None Include="lib\Net4.5\Newtonsoft.Json.dll" />
   </ItemGroup>
 </Project>

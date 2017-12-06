@@ -4,7 +4,7 @@
 # developer portal. Versioning is done automatically.
 
 pev -v >/dev/null 2>&1 || { echo >&2 "Script requires 'pev' but it's not installed.  Aborting."; exit 1; }
-mdtool -q >/dev/null 2>&1 || { echo >&2 "Script requires 'mdtool' but it's not installed.  Aborting."; exit 1; }
+mdtool -h >/dev/null 2>&1 || { echo >&2 "Script requires 'mdtool' but it's not installed.  Aborting."; exit 1; }
 
 echo "Building project..."
 mdtool -v build "--configuration:ArborRelease" ../ArborSdkDotNet.sln
@@ -33,9 +33,11 @@ rm $BUILD_SOURCE_PATH/bin/Release/.gitignore
 zip -9 -r $BUILD_FILE_NAME Build
 
 echo "Sending build file to the developers portal..."
-scp $BUILD_FILE_NAME crm.arbor.sc:web/sites/DeveloperPortal/public/sdk-download/net
+scp $BUILD_FILE_NAME developers-portal.production:web/sites/devapi/public/sdk-download/net/
 
 # Remove current build because of git (we don't want it as new file in repository)
 rm $BUILD_FILE_NAME
+echo "Local build file removed"
+echo "DONE"
 
 exit
