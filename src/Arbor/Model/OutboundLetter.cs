@@ -12,8 +12,6 @@ namespace Arbor.Model
         protected string resourceType = ResourceType.OUTBOUND_LETTER;
         public const string OUTBOUND_LETTER_DRAFT = "outboundLetterDraft";
         public const string SENDER = "sender";
-        public const string RECIPIENT = "recipient";
-        public const string DRAFT_RECIPIENT = "draftRecipient";
         public const string DOCUMENT_LAYOUT = "documentLayout";
         public const string BODY = "body";
         public const string GENERATED_DATETIME = "generatedDatetime";
@@ -73,26 +71,6 @@ namespace Arbor.Model
         public void setSender (ModelBase sender)
         {
             this.setProperty("sender", sender);
-        }
-
-        public ModelBase getRecipient ()
-        {
-            return (ModelBase) this.getProperty("recipient");
-        }
-
-        public void setRecipient (ModelBase recipient)
-        {
-            this.setProperty("recipient", recipient);
-        }
-
-        public MessageDraftRecipient getDraftRecipient ()
-        {
-            return (MessageDraftRecipient) this.getProperty("draftRecipient");
-        }
-
-        public void setDraftRecipient (MessageDraftRecipient draftRecipient)
-        {
-            this.setProperty("draftRecipient", draftRecipient);
         }
 
         public DocumentLayout getDocumentLayout ()

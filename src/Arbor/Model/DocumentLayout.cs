@@ -26,6 +26,7 @@ namespace Arbor.Model
         public const string DEFAULT_FONT_FAMILY = "defaultFontFamily";
         public const string DEFAULT_FONT_SIZE = "defaultFontSize";
         public const string SHOW_ADDRESS_ENVELOPE_SIZE = "showAddressEnvelopeSize";
+        public const string ARCHIVED = "archived";
 
         public DocumentLayout ()
         {
@@ -221,6 +222,16 @@ namespace Arbor.Model
         public void setShowAddressEnvelopeSize (string showAddressEnvelopeSize)
         {
             this.setProperty("showAddressEnvelopeSize", showAddressEnvelopeSize);
+        }
+
+        public bool getArchived ()
+        {
+            return (bool) this.getProperty("archived");
+        }
+
+        public void setArchived (bool archived)
+        {
+            this.setProperty("archived", archived);
         }
 
 

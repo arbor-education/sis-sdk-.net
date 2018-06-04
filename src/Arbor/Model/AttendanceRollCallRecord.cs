@@ -17,6 +17,7 @@ namespace Arbor.Model
         public const string MINUTES_LATE = "minutesLate";
         public const string SOURCE_ATTENDANCE_RECORD = "sourceAttendanceRecord";
         public const string VALIDATION_ERROR = "validationError";
+        public const string SOURCE = "source";
 
         public AttendanceRollCallRecord ()
         {
@@ -122,6 +123,16 @@ namespace Arbor.Model
         public void setValidationError (string validationError)
         {
             this.setProperty("validationError", validationError);
+        }
+
+        public string getSource ()
+        {
+            return this.getProperty("source").ToString();
+        }
+
+        public void setSource (string source)
+        {
+            this.setProperty("source", source);
         }
 
 

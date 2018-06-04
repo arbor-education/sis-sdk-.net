@@ -21,6 +21,7 @@ namespace Arbor.Model
         public const string ACADEMIC_YEAR = "academicYear";
         public const string INCLUDE_TEACHER_INITIALS = "includeTeacherInitials";
         public const string INCLUDE_TEACHER_NAME = "includeTeacherName";
+        public const string INCLUDE_STUDENT_PHOTO = "includeStudentPhoto";
         public const string INCLUDE_BASELINE = "includeBaseline";
         public const string INCLUDE_WORKING_AT_CURRENT_PERIOD = "includeWorkingAtCurrentPeriod";
         public const string INCLUDE_WORKING_AT_PREVIOUS_PERIOD = "includeWorkingAtPreviousPeriod";
@@ -178,6 +179,16 @@ namespace Arbor.Model
         public void setIncludeTeacherName (bool includeTeacherName)
         {
             this.setProperty("includeTeacherName", includeTeacherName);
+        }
+
+        public bool getIncludeStudentPhoto ()
+        {
+            return (bool) this.getProperty("includeStudentPhoto");
+        }
+
+        public void setIncludeStudentPhoto (bool includeStudentPhoto)
+        {
+            this.setProperty("includeStudentPhoto", includeStudentPhoto);
         }
 
         public bool getIncludeBaseline ()

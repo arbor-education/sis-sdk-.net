@@ -14,6 +14,7 @@ namespace Arbor.Model
         public const string ENROLMENT_MODE = "enrolmentMode";
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
+        public const string OTHER_EDUCATIONAL_INSTITUTION = "otherEducationalInstitution";
 
         public EnrolmentModeAssignment ()
         {
@@ -89,6 +90,16 @@ namespace Arbor.Model
         public void setEndDate (DateTime endDate)
         {
             this.setProperty("endDate", endDate);
+        }
+
+        public EducationalInstitution getOtherEducationalInstitution ()
+        {
+            return (EducationalInstitution) this.getProperty("otherEducationalInstitution");
+        }
+
+        public void setOtherEducationalInstitution (EducationalInstitution otherEducationalInstitution)
+        {
+            this.setProperty("otherEducationalInstitution", otherEducationalInstitution);
         }
 
 

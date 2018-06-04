@@ -10,6 +10,9 @@ namespace Arbor.Model
     public class AssessmentDerivationDependant : ModelBase
     {
         protected string resourceType = ResourceType.ASSESSMENT_DERIVATION_DEPENDANT;
+        public const string CODE = "code";
+        public const string ACTIVE = "active";
+        public const string DATA_ORDER = "dataOrder";
         public const string ASSESSMENT_DERIVATION = "assessmentDerivation";
         public const string DEPENDANT_ASSESSMENT = "dependantAssessment";
         public const string WEIGHTING = "weighting";
@@ -50,6 +53,36 @@ namespace Arbor.Model
         	return (AssessmentDerivationDependant) gateway.retrieve(ResourceType.ASSESSMENT_DERIVATION_DEPENDANT, id);
         }
 
+        public string getCode ()
+        {
+            return this.getProperty("code").ToString();
+        }
+
+        public void setCode (string code)
+        {
+            this.setProperty("code", code);
+        }
+
+        public bool getActive ()
+        {
+            return (bool) this.getProperty("active");
+        }
+
+        public void setActive (bool active)
+        {
+            this.setProperty("active", active);
+        }
+
+        public int getDataOrder ()
+        {
+            return Convert.ToInt32(this.getProperty("dataOrder"));
+        }
+
+        public void setDataOrder (int dataOrder)
+        {
+            this.setProperty("dataOrder", dataOrder);
+        }
+
         public AssessmentDerivation getAssessmentDerivation ()
         {
             return (AssessmentDerivation) this.getProperty("assessmentDerivation");
@@ -60,12 +93,12 @@ namespace Arbor.Model
             this.setProperty("assessmentDerivation", assessmentDerivation);
         }
 
-        public Assessment getDependantAssessment ()
+        public ModelBase getDependantAssessment ()
         {
-            return (Assessment) this.getProperty("dependantAssessment");
+            return (ModelBase) this.getProperty("dependantAssessment");
         }
 
-        public void setDependantAssessment (Assessment dependantAssessment)
+        public void setDependantAssessment (ModelBase dependantAssessment)
         {
             this.setProperty("dependantAssessment", dependantAssessment);
         }

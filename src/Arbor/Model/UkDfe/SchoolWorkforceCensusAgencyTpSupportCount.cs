@@ -12,7 +12,7 @@ namespace Arbor.Model.UkDfe
         protected string resourceType = ResourceType.UK_DFE_SCHOOL_WORKFORCE_CENSUS_AGENCY_TP_SUPPORT_COUNT;
         public const string SCHOOL_WORKFORCE_CENSUS = "schoolWorkforceCensus";
         public const string EDUCATIONAL_INSTITUTION = "educationalInstitution";
-        public const string BUSINESS_ROLE = "businessRole";
+        public const string WORKFORCE_CENSUS_ROLE_IDENTIFIER = "workforceCensusRoleIdentifier";
         public const string AGENCY_TP_SUPPORT_CATEGORY = "agencyTpSupportCategory";
         public const string SUP_HEAD_COUNT = "supHeadCount";
 
@@ -72,14 +72,14 @@ namespace Arbor.Model.UkDfe
             this.setProperty("educationalInstitution", educationalInstitution);
         }
 
-        public BusinessRole getBusinessRole ()
+        public string getWorkforceCensusRoleIdentifier ()
         {
-            return (BusinessRole) this.getProperty("businessRole");
+            return this.getProperty("workforceCensusRoleIdentifier").ToString();
         }
 
-        public void setBusinessRole (BusinessRole businessRole)
+        public void setWorkforceCensusRoleIdentifier (string workforceCensusRoleIdentifier)
         {
-            this.setProperty("businessRole", businessRole);
+            this.setProperty("workforceCensusRoleIdentifier", workforceCensusRoleIdentifier);
         }
 
         public string getAgencyTpSupportCategory ()

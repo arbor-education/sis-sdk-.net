@@ -48,12 +48,12 @@ namespace Arbor.Model
         	return (InverseDemographic) gateway.retrieve(ResourceType.INVERSE_DEMOGRAPHIC, id);
         }
 
-        public string getDemographic ()
+        public Demographic getDemographic ()
         {
-            return (string) this.getProperty("demographic");
+            return (Demographic) this.getProperty("demographic");
         }
 
-        public void setDemographic (string demographic)
+        public void setDemographic (Demographic demographic)
         {
             this.setProperty("demographic", demographic);
         }

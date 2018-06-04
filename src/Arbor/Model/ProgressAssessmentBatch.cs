@@ -14,7 +14,6 @@ namespace Arbor.Model
         public const string ASSESSMENT = "assessment";
         public const string PROGRESS_MEASUREMENT_PERIOD_SET = "progressMeasurementPeriodSet";
         public const string ACADEMIC_YEAR = "academicYear";
-        public const string ACADEMIC_YEAR_ASSESSMENT = "academicYearAssessment";
 
         public ProgressAssessmentBatch ()
         {
@@ -90,16 +89,6 @@ namespace Arbor.Model
         public void setAcademicYear (AcademicYear academicYear)
         {
             this.setProperty("academicYear", academicYear);
-        }
-
-        public AcademicYearAssessment getAcademicYearAssessment ()
-        {
-            return (AcademicYearAssessment) this.getProperty("academicYearAssessment");
-        }
-
-        public void setAcademicYearAssessment (AcademicYearAssessment academicYearAssessment)
-        {
-            this.setProperty("academicYearAssessment", academicYearAssessment);
         }
 
 

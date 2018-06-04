@@ -14,7 +14,8 @@ namespace Arbor.Model
         public const string SENDING_PROFILE = "sendingProfile";
         public const string BODY = "body";
         public const string CUSTOM_REPORT = "customReport";
-        public const string REMOVE_DUPLICATE_MESSAGES = "removeDuplicateMessages";
+        public const string COMBINE_MESSAGES_TO_SAME_RECIPIENT = "combineMessagesToSameRecipient";
+        public const string COMBINE_MESSAGES_TO_SAME_HOUSEHOLD = "combineMessagesToSameHousehold";
         public const string GENERATION_STARTED_DATETIME = "generationStartedDatetime";
         public const string GENERATION_COMPLETED_DATETIME = "generationCompletedDatetime";
 
@@ -94,14 +95,24 @@ namespace Arbor.Model
             this.setProperty("customReport", customReport);
         }
 
-        public bool getRemoveDuplicateMessages ()
+        public bool getCombineMessagesToSameRecipient ()
         {
-            return (bool) this.getProperty("removeDuplicateMessages");
+            return (bool) this.getProperty("combineMessagesToSameRecipient");
         }
 
-        public void setRemoveDuplicateMessages (bool removeDuplicateMessages)
+        public void setCombineMessagesToSameRecipient (bool combineMessagesToSameRecipient)
         {
-            this.setProperty("removeDuplicateMessages", removeDuplicateMessages);
+            this.setProperty("combineMessagesToSameRecipient", combineMessagesToSameRecipient);
+        }
+
+        public bool getCombineMessagesToSameHousehold ()
+        {
+            return (bool) this.getProperty("combineMessagesToSameHousehold");
+        }
+
+        public void setCombineMessagesToSameHousehold (bool combineMessagesToSameHousehold)
+        {
+            this.setProperty("combineMessagesToSameHousehold", combineMessagesToSameHousehold);
         }
 
         public DateTime getGenerationStartedDatetime ()

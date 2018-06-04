@@ -10,6 +10,9 @@ namespace Arbor.Model
     public class AssessmentDerivation : ModelBase
     {
         protected string resourceType = ResourceType.ASSESSMENT_DERIVATION;
+        public const string CODE = "code";
+        public const string ACTIVE = "active";
+        public const string DATA_ORDER = "dataOrder";
         public const string ASSESSMENT = "assessment";
         public const string CALCULATOR_CLASS = "calculatorClass";
 
@@ -49,12 +52,42 @@ namespace Arbor.Model
         	return (AssessmentDerivation) gateway.retrieve(ResourceType.ASSESSMENT_DERIVATION, id);
         }
 
-        public Assessment getAssessment ()
+        public string getCode ()
         {
-            return (Assessment) this.getProperty("assessment");
+            return this.getProperty("code").ToString();
         }
 
-        public void setAssessment (Assessment assessment)
+        public void setCode (string code)
+        {
+            this.setProperty("code", code);
+        }
+
+        public bool getActive ()
+        {
+            return (bool) this.getProperty("active");
+        }
+
+        public void setActive (bool active)
+        {
+            this.setProperty("active", active);
+        }
+
+        public int getDataOrder ()
+        {
+            return Convert.ToInt32(this.getProperty("dataOrder"));
+        }
+
+        public void setDataOrder (int dataOrder)
+        {
+            this.setProperty("dataOrder", dataOrder);
+        }
+
+        public ModelBase getAssessment ()
+        {
+            return (ModelBase) this.getProperty("assessment");
+        }
+
+        public void setAssessment (ModelBase assessment)
         {
             this.setProperty("assessment", assessment);
         }

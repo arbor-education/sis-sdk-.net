@@ -10,19 +10,14 @@ namespace Arbor.Model
     public class Assessment : ModelBase
     {
         protected string resourceType = ResourceType.ASSESSMENT;
+        public const string CODE = "code";
+        public const string ACTIVE = "active";
+        public const string DATA_ORDER = "dataOrder";
         public const string ASSESSMENT_NAME = "assessmentName";
         public const string ASSESSMENT_SHORT_NAME = "assessmentShortName";
-        public const string PARENT_ASSESSMENT = "parentAssessment";
-        public const string ASSESSMENT_CODE = "assessmentCode";
         public const string STUDENT_PROGRESS_BASELINE_CALCULATOR_CLASS_NAME = "studentProgressBaselineCalculatorClassName";
-        public const string EFFECTIVE_DATE = "effectiveDate";
-        public const string END_DATE = "endDate";
-        public const string MARK_TYPE = "markType";
         public const string SUBJECT = "subject";
         public const string GRADE_POINT_SCALE = "gradePointScale";
-        public const string MARK_MIN_VALUE = "markMinValue";
-        public const string MARK_MAX_VALUE = "markMaxValue";
-        public const string ORDER = "order";
 
         public Assessment ()
         {
@@ -60,6 +55,36 @@ namespace Arbor.Model
         	return (Assessment) gateway.retrieve(ResourceType.ASSESSMENT, id);
         }
 
+        public string getCode ()
+        {
+            return this.getProperty("code").ToString();
+        }
+
+        public void setCode (string code)
+        {
+            this.setProperty("code", code);
+        }
+
+        public bool getActive ()
+        {
+            return (bool) this.getProperty("active");
+        }
+
+        public void setActive (bool active)
+        {
+            this.setProperty("active", active);
+        }
+
+        public int getDataOrder ()
+        {
+            return Convert.ToInt32(this.getProperty("dataOrder"));
+        }
+
+        public void setDataOrder (int dataOrder)
+        {
+            this.setProperty("dataOrder", dataOrder);
+        }
+
         public string getAssessmentName ()
         {
             return this.getProperty("assessmentName").ToString();
@@ -80,26 +105,6 @@ namespace Arbor.Model
             this.setProperty("assessmentShortName", assessmentShortName);
         }
 
-        public Assessment getParentAssessment ()
-        {
-            return (Assessment) this.getProperty("parentAssessment");
-        }
-
-        public void setParentAssessment (Assessment parentAssessment)
-        {
-            this.setProperty("parentAssessment", parentAssessment);
-        }
-
-        public string getAssessmentCode ()
-        {
-            return this.getProperty("assessmentCode").ToString();
-        }
-
-        public void setAssessmentCode (string assessmentCode)
-        {
-            this.setProperty("assessmentCode", assessmentCode);
-        }
-
         public string getStudentProgressBaselineCalculatorClassName ()
         {
             return this.getProperty("studentProgressBaselineCalculatorClassName").ToString();
@@ -108,36 +113,6 @@ namespace Arbor.Model
         public void setStudentProgressBaselineCalculatorClassName (string studentProgressBaselineCalculatorClassName)
         {
             this.setProperty("studentProgressBaselineCalculatorClassName", studentProgressBaselineCalculatorClassName);
-        }
-
-        public DateTime getEffectiveDate ()
-        {
-            return (DateTime) this.getProperty("effectiveDate");
-        }
-
-        public void setEffectiveDate (DateTime effectiveDate)
-        {
-            this.setProperty("effectiveDate", effectiveDate);
-        }
-
-        public DateTime getEndDate ()
-        {
-            return (DateTime) this.getProperty("endDate");
-        }
-
-        public void setEndDate (DateTime endDate)
-        {
-            this.setProperty("endDate", endDate);
-        }
-
-        public string getMarkType ()
-        {
-            return this.getProperty("markType").ToString();
-        }
-
-        public void setMarkType (string markType)
-        {
-            this.setProperty("markType", markType);
         }
 
         public Subject getSubject ()
@@ -158,36 +133,6 @@ namespace Arbor.Model
         public void setGradePointScale (GradePointScale gradePointScale)
         {
             this.setProperty("gradePointScale", gradePointScale);
-        }
-
-        public float getMarkMinValue ()
-        {
-            return (float) this.getProperty("markMinValue");
-        }
-
-        public void setMarkMinValue (float markMinValue)
-        {
-            this.setProperty("markMinValue", markMinValue);
-        }
-
-        public float getMarkMaxValue ()
-        {
-            return (float) this.getProperty("markMaxValue");
-        }
-
-        public void setMarkMaxValue (float markMaxValue)
-        {
-            this.setProperty("markMaxValue", markMaxValue);
-        }
-
-        public int getOrder ()
-        {
-            return Convert.ToInt32(this.getProperty("order"));
-        }
-
-        public void setOrder (int order)
-        {
-            this.setProperty("order", order);
         }
 
 

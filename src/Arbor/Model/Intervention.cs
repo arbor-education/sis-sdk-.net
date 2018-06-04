@@ -14,8 +14,8 @@ namespace Arbor.Model
         public const string NAME = "name";
         public const string ACADEMIC_YEAR = "academicYear";
         public const string TERM = "term";
-        public const string START_DATE = "startDate";
-        public const string END_DATE = "endDate";
+        public const string START_DATETIME = "startDatetime";
+        public const string END_DATETIME = "endDatetime";
         public const string MONITORING = "monitoring";
         public const string AIMS_OF_INTERVENTION = "aimsOfIntervention";
         public const string STRATEGIES = "strategies";
@@ -25,6 +25,8 @@ namespace Arbor.Model
         public const string SUBJECT = "subject";
         public const string CATEGORY = "category";
         public const string IS_COMPLETED = "isCompleted";
+        public const string LOCATION = "location";
+        public const string COPIED_TO_INTERVENTION = "copiedToIntervention";
 
         public Intervention ()
         {
@@ -102,24 +104,24 @@ namespace Arbor.Model
             this.setProperty("term", term);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDatetime ()
         {
-            return (DateTime) this.getProperty("startDate");
+            return (DateTime) this.getProperty("startDatetime");
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDatetime (DateTime startDatetime)
         {
-            this.setProperty("startDate", startDate);
+            this.setProperty("startDatetime", startDatetime);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDatetime ()
         {
-            return (DateTime) this.getProperty("endDate");
+            return (DateTime) this.getProperty("endDatetime");
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDatetime (DateTime endDatetime)
         {
-            this.setProperty("endDate", endDate);
+            this.setProperty("endDatetime", endDatetime);
         }
 
         public string getMonitoring ()
@@ -210,6 +212,26 @@ namespace Arbor.Model
         public void setIsCompleted (bool isCompleted)
         {
             this.setProperty("isCompleted", isCompleted);
+        }
+
+        public ModelBase getLocation ()
+        {
+            return (ModelBase) this.getProperty("location");
+        }
+
+        public void setLocation (ModelBase location)
+        {
+            this.setProperty("location", location);
+        }
+
+        public Intervention getCopiedToIntervention ()
+        {
+            return (Intervention) this.getProperty("copiedToIntervention");
+        }
+
+        public void setCopiedToIntervention (Intervention copiedToIntervention)
+        {
+            this.setProperty("copiedToIntervention", copiedToIntervention);
         }
 
 

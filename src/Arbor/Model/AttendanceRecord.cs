@@ -20,6 +20,7 @@ namespace Arbor.Model
         public const string ATTENDANCE_FOLLOW_UP = "attendanceFollowUp";
         public const string STUDENT_ABSENCE_NOTE = "studentAbsenceNote";
         public const string SOURCE_ATTENDANCE_RECORD = "sourceAttendanceRecord";
+        public const string SOURCE = "source";
 
         public AttendanceRecord ()
         {
@@ -155,6 +156,16 @@ namespace Arbor.Model
         public void setSourceAttendanceRecord (AttendanceRecord sourceAttendanceRecord)
         {
             this.setProperty("sourceAttendanceRecord", sourceAttendanceRecord);
+        }
+
+        public string getSource ()
+        {
+            return this.getProperty("source").ToString();
+        }
+
+        public void setSource (string source)
+        {
+            this.setProperty("source", source);
         }
 
 

@@ -12,7 +12,7 @@ namespace Arbor.Model
         protected string resourceType = ResourceType.INCOMING_BANK_TRANSACTION;
         public const string BILL_PAYER = "billPayer";
         public const string RECEIVED_DATE = "receivedDate";
-        public const string CANCELLED_DATE = "cancelledDate";
+        public const string CANCELLED_DATETIME = "cancelledDatetime";
         public const string PAYMENT = "payment";
 
         public IncomingBankTransaction ()
@@ -71,14 +71,14 @@ namespace Arbor.Model
             this.setProperty("receivedDate", receivedDate);
         }
 
-        public DateTime getCancelledDate ()
+        public DateTime getCancelledDatetime ()
         {
-            return (DateTime) this.getProperty("cancelledDate");
+            return (DateTime) this.getProperty("cancelledDatetime");
         }
 
-        public void setCancelledDate (DateTime cancelledDate)
+        public void setCancelledDatetime (DateTime cancelledDatetime)
         {
-            this.setProperty("cancelledDate", cancelledDate);
+            this.setProperty("cancelledDatetime", cancelledDatetime);
         }
 
         public string getPayment ()

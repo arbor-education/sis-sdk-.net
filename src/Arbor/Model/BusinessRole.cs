@@ -10,8 +10,6 @@ namespace Arbor.Model
     public class BusinessRole : ModelBase
     {
         protected string resourceType = ResourceType.BUSINESS_ROLE;
-        public const string SWF_CENSUS_IDENTIFIER = "swfCensusIdentifier";
-        public const string MANAGED_BY_CLIENT = "managedByClient";
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";
@@ -21,6 +19,7 @@ namespace Arbor.Model
         public const string USER_DEFINED_DESCRIPTION = "userDefinedDescription";
         public const string INTERNAL_STAFF = "internalStaff";
         public const string TEACHING_STAFF = "teachingStaff";
+        public const string BUSINESS_ROLE_CATEGORY = "businessRoleCategory";
         public const string CUSTOMER_MANAGES_DEFAULT_USER_ROLES = "customerManagesDefaultUserRoles";
 
         public BusinessRole ()
@@ -57,26 +56,6 @@ namespace Arbor.Model
             RestGateway gateway = (RestGateway) BusinessRole.getDefaultGateway();
         	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
         	return (BusinessRole) gateway.retrieve(ResourceType.BUSINESS_ROLE, id);
-        }
-
-        public string getSwfCensusIdentifier ()
-        {
-            return this.getProperty("swfCensusIdentifier").ToString();
-        }
-
-        public void setSwfCensusIdentifier (string swfCensusIdentifier)
-        {
-            this.setProperty("swfCensusIdentifier", swfCensusIdentifier);
-        }
-
-        public bool getManagedByClient ()
-        {
-            return (bool) this.getProperty("managedByClient");
-        }
-
-        public void setManagedByClient (bool managedByClient)
-        {
-            this.setProperty("managedByClient", managedByClient);
         }
 
         public string getCode ()
@@ -167,6 +146,16 @@ namespace Arbor.Model
         public void setTeachingStaff (bool teachingStaff)
         {
             this.setProperty("teachingStaff", teachingStaff);
+        }
+
+        public string getBusinessRoleCategory ()
+        {
+            return this.getProperty("businessRoleCategory").ToString();
+        }
+
+        public void setBusinessRoleCategory (string businessRoleCategory)
+        {
+            this.setProperty("businessRoleCategory", businessRoleCategory);
         }
 
         public bool getCustomerManagesDefaultUserRoles ()

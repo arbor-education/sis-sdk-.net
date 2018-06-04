@@ -23,6 +23,7 @@ namespace Arbor.Model.UkDfe
         public const string XSD_ERROR = "xsdError";
         public const string DATA_ERROR = "dataError";
         public const string DATA_ERROR_MESSAGE = "dataErrorMessage";
+        public const string CUSTOM_CTF_INCLUDED_FIELDS = "customCtfIncludedFields";
 
         public CtfExportJob ()
         {
@@ -188,6 +189,16 @@ namespace Arbor.Model.UkDfe
         public void setDataErrorMessage (string dataErrorMessage)
         {
             this.setProperty("dataErrorMessage", dataErrorMessage);
+        }
+
+        public string getCustomCtfIncludedFields ()
+        {
+            return this.getProperty("customCtfIncludedFields").ToString();
+        }
+
+        public void setCustomCtfIncludedFields (string customCtfIncludedFields)
+        {
+            this.setProperty("customCtfIncludedFields", customCtfIncludedFields);
         }
 
 

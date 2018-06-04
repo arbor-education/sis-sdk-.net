@@ -23,6 +23,7 @@ namespace Arbor.Model.UkDfe
         public const string SCHOOL_APPROVED_DATETIME = "schoolApprovedDatetime";
         public const string LOCAL_AUTHORITY_REJECTED_DATETIME = "localAuthorityRejectedDatetime";
         public const string LOCAL_AUTHORITY_ACCEPTED_DATETIME = "localAuthorityAcceptedDatetime";
+        public const string IS_STAFF_CONTRACT_INFORMATION_EXCLUDED = "isStaffContractInformationExcluded";
 
         public SchoolWorkforceCensusReturn ()
         {
@@ -188,6 +189,16 @@ namespace Arbor.Model.UkDfe
         public void setLocalAuthorityAcceptedDatetime (DateTime localAuthorityAcceptedDatetime)
         {
             this.setProperty("localAuthorityAcceptedDatetime", localAuthorityAcceptedDatetime);
+        }
+
+        public bool getIsStaffContractInformationExcluded ()
+        {
+            return (bool) this.getProperty("isStaffContractInformationExcluded");
+        }
+
+        public void setIsStaffContractInformationExcluded (bool isStaffContractInformationExcluded)
+        {
+            this.setProperty("isStaffContractInformationExcluded", isStaffContractInformationExcluded);
         }
 
 

@@ -12,6 +12,7 @@ namespace Arbor.Model.UkDfe
         protected string resourceType = ResourceType.UK_DFE_CTF_EXPORT_JOB_STUDENT;
         public const string CTF_EXPORT_JOB = "ctfExportJob";
         public const string STUDENT = "student";
+        public const string CML_REMOVAL_GROUNDS = "cmlRemovalGrounds";
 
         public CtfExportJobStudent ()
         {
@@ -67,6 +68,16 @@ namespace Arbor.Model.UkDfe
         public void setStudent (Student student)
         {
             this.setProperty("student", student);
+        }
+
+        public string getCmlRemovalGrounds ()
+        {
+            return this.getProperty("cmlRemovalGrounds").ToString();
+        }
+
+        public void setCmlRemovalGrounds (string cmlRemovalGrounds)
+        {
+            this.setProperty("cmlRemovalGrounds", cmlRemovalGrounds);
         }
 
 

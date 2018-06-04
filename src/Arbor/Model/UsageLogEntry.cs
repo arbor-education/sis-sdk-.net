@@ -20,6 +20,8 @@ namespace Arbor.Model
         public const string MODULE = "module";
         public const string CONTROLLER = "controller";
         public const string ACTION = "action";
+        public const string CLIENT_IP = "clientIp";
+        public const string USER_AGENT = "userAgent";
 
         public UsageLogEntry ()
         {
@@ -155,6 +157,26 @@ namespace Arbor.Model
         public void setAction (string action)
         {
             this.setProperty("action", action);
+        }
+
+        public string getClientIp ()
+        {
+            return this.getProperty("clientIp").ToString();
+        }
+
+        public void setClientIp (string clientIp)
+        {
+            this.setProperty("clientIp", clientIp);
+        }
+
+        public string getUserAgent ()
+        {
+            return this.getProperty("userAgent").ToString();
+        }
+
+        public void setUserAgent (string userAgent)
+        {
+            this.setProperty("userAgent", userAgent);
         }
 
 

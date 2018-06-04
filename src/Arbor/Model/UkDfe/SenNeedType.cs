@@ -11,6 +11,7 @@ namespace Arbor.Model.UkDfe
     {
         protected string resourceType = ResourceType.UK_DFE_SEN_NEED_TYPE;
         public const string D00237 = "d00237";
+        public const string EXPORT_CODE = "exportCode";
 
         public SenNeedType ()
         {
@@ -56,6 +57,16 @@ namespace Arbor.Model.UkDfe
         public void setD00237 (string d00237)
         {
             this.setProperty("d00237", d00237);
+        }
+
+        public string getExportCode ()
+        {
+            return this.getProperty("exportCode").ToString();
+        }
+
+        public void setExportCode (string exportCode)
+        {
+            this.setProperty("exportCode", exportCode);
         }
 
 

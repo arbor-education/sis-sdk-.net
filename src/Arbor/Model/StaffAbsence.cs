@@ -14,14 +14,16 @@ namespace Arbor.Model
         public const string START_DATETIME = "startDatetime";
         public const string END_DATETIME = "endDatetime";
         public const string STAFF_ABSENCE_CATEGORY = "staffAbsenceCategory";
+        public const string SICKNESS_CATEGORY = "sicknessCategory";
+        public const string SICKNESS_SUBCATEGORY = "sicknessSubcategory";
         public const string APPROVED_DATETIME = "approvedDatetime";
         public const string APPROVED_BY_STAFF = "approvedByStaff";
-        public const string PAID_SICK_LEAVE_USED = "paidSickLeaveUsed";
-        public const string UNPAID_SICK_LEAVE_USED = "unpaidSickLeaveUsed";
-        public const string PAID_HOLIDAY_USED = "paidHolidayUsed";
-        public const string UNPAID_HOLIDAY_USED = "unpaidHolidayUsed";
-        public const string PAID_OTHER_LEAVE = "paidOtherLeave";
-        public const string UNPAID_OTHER_LEAVE = "unpaidOtherLeave";
+        public const string CALCULATED_WORKING_DAYS = "calculatedWorkingDays";
+        public const string ACTUAL_WORKING_DAYS = "actualWorkingDays";
+        public const string WORKING_DAYS = "workingDays";
+        public const string CALCULATED_WORKING_HOURS = "calculatedWorkingHours";
+        public const string ACTUAL_WORKING_HOURS = "actualWorkingHours";
+        public const string WORKING_HOURS = "workingHours";
         public const string NARRATIVE = "narrative";
 
         public StaffAbsence ()
@@ -100,6 +102,26 @@ namespace Arbor.Model
             this.setProperty("staffAbsenceCategory", staffAbsenceCategory);
         }
 
+        public StaffAbsenceSicknessCategory getSicknessCategory ()
+        {
+            return (StaffAbsenceSicknessCategory) this.getProperty("sicknessCategory");
+        }
+
+        public void setSicknessCategory (StaffAbsenceSicknessCategory sicknessCategory)
+        {
+            this.setProperty("sicknessCategory", sicknessCategory);
+        }
+
+        public StaffAbsenceSicknessSubcategory getSicknessSubcategory ()
+        {
+            return (StaffAbsenceSicknessSubcategory) this.getProperty("sicknessSubcategory");
+        }
+
+        public void setSicknessSubcategory (StaffAbsenceSicknessSubcategory sicknessSubcategory)
+        {
+            this.setProperty("sicknessSubcategory", sicknessSubcategory);
+        }
+
         public DateTime getApprovedDatetime ()
         {
             return (DateTime) this.getProperty("approvedDatetime");
@@ -120,64 +142,64 @@ namespace Arbor.Model
             this.setProperty("approvedByStaff", approvedByStaff);
         }
 
-        public float getPaidSickLeaveUsed ()
+        public float getCalculatedWorkingDays ()
         {
-            return (float) this.getProperty("paidSickLeaveUsed");
+            return (float) this.getProperty("calculatedWorkingDays");
         }
 
-        public void setPaidSickLeaveUsed (float paidSickLeaveUsed)
+        public void setCalculatedWorkingDays (float calculatedWorkingDays)
         {
-            this.setProperty("paidSickLeaveUsed", paidSickLeaveUsed);
+            this.setProperty("calculatedWorkingDays", calculatedWorkingDays);
         }
 
-        public float getUnpaidSickLeaveUsed ()
+        public float getActualWorkingDays ()
         {
-            return (float) this.getProperty("unpaidSickLeaveUsed");
+            return (float) this.getProperty("actualWorkingDays");
         }
 
-        public void setUnpaidSickLeaveUsed (float unpaidSickLeaveUsed)
+        public void setActualWorkingDays (float actualWorkingDays)
         {
-            this.setProperty("unpaidSickLeaveUsed", unpaidSickLeaveUsed);
+            this.setProperty("actualWorkingDays", actualWorkingDays);
         }
 
-        public float getPaidHolidayUsed ()
+        public float getWorkingDays ()
         {
-            return (float) this.getProperty("paidHolidayUsed");
+            return (float) this.getProperty("workingDays");
         }
 
-        public void setPaidHolidayUsed (float paidHolidayUsed)
+        public void setWorkingDays (float workingDays)
         {
-            this.setProperty("paidHolidayUsed", paidHolidayUsed);
+            this.setProperty("workingDays", workingDays);
         }
 
-        public float getUnpaidHolidayUsed ()
+        public float getCalculatedWorkingHours ()
         {
-            return (float) this.getProperty("unpaidHolidayUsed");
+            return (float) this.getProperty("calculatedWorkingHours");
         }
 
-        public void setUnpaidHolidayUsed (float unpaidHolidayUsed)
+        public void setCalculatedWorkingHours (float calculatedWorkingHours)
         {
-            this.setProperty("unpaidHolidayUsed", unpaidHolidayUsed);
+            this.setProperty("calculatedWorkingHours", calculatedWorkingHours);
         }
 
-        public float getPaidOtherLeave ()
+        public float getActualWorkingHours ()
         {
-            return (float) this.getProperty("paidOtherLeave");
+            return (float) this.getProperty("actualWorkingHours");
         }
 
-        public void setPaidOtherLeave (float paidOtherLeave)
+        public void setActualWorkingHours (float actualWorkingHours)
         {
-            this.setProperty("paidOtherLeave", paidOtherLeave);
+            this.setProperty("actualWorkingHours", actualWorkingHours);
         }
 
-        public float getUnpaidOtherLeave ()
+        public float getWorkingHours ()
         {
-            return (float) this.getProperty("unpaidOtherLeave");
+            return (float) this.getProperty("workingHours");
         }
 
-        public void setUnpaidOtherLeave (float unpaidOtherLeave)
+        public void setWorkingHours (float workingHours)
         {
-            this.setProperty("unpaidOtherLeave", unpaidOtherLeave);
+            this.setProperty("workingHours", workingHours);
         }
 
         public string getNarrative ()

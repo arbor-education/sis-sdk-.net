@@ -12,6 +12,7 @@ namespace Arbor.Model
         protected string resourceType = ResourceType.APPLICATION_SETTING;
         public const string SETTING_NAME = "settingName";
         public const string SETTING_VALUE = "settingValue";
+        public const string SETTING_CLASS = "settingClass";
 
         public ApplicationSetting ()
         {
@@ -67,6 +68,16 @@ namespace Arbor.Model
         public void setSettingValue (string settingValue)
         {
             this.setProperty("settingValue", settingValue);
+        }
+
+        public string getSettingClass ()
+        {
+            return this.getProperty("settingClass").ToString();
+        }
+
+        public void setSettingClass (string settingClass)
+        {
+            this.setProperty("settingClass", settingClass);
         }
 
 

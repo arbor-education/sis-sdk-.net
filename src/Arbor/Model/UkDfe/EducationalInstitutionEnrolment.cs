@@ -10,7 +10,7 @@ namespace Arbor.Model.UkDfe
     public class EducationalInstitutionEnrolment : ModelBase
     {
         protected string resourceType = ResourceType.UK_DFE_EDUCATIONAL_INSTITUTION_ENROLMENT;
-        public const string REMOVAL_GROUNDS_D00273 = "removalGroundsD00273";
+        public const string REMOVAL_GROUNDS = "removalGrounds";
 
         public EducationalInstitutionEnrolment ()
         {
@@ -48,14 +48,14 @@ namespace Arbor.Model.UkDfe
         	return (EducationalInstitutionEnrolment) gateway.retrieve(ResourceType.UK_DFE_EDUCATIONAL_INSTITUTION_ENROLMENT, id);
         }
 
-        public string getRemovalGroundsD00273 ()
+        public string getRemovalGrounds ()
         {
-            return this.getProperty("removalGroundsD00273").ToString();
+            return this.getProperty("removalGrounds").ToString();
         }
 
-        public void setRemovalGroundsD00273 (string removalGroundsD00273)
+        public void setRemovalGrounds (string removalGrounds)
         {
-            this.setProperty("removalGroundsD00273", removalGroundsD00273);
+            this.setProperty("removalGrounds", removalGrounds);
         }
 
 

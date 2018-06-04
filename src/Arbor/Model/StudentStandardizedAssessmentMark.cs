@@ -12,6 +12,7 @@ namespace Arbor.Model
         protected string resourceType = ResourceType.STUDENT_STANDARDIZED_ASSESSMENT_MARK;
         public const string STUDENT = "student";
         public const string ASSESSMENT = "assessment";
+        public const string STANDARDIZED_ASSESSMENT = "standardizedAssessment";
         public const string STUDENT_STANDARDIZED_ASSESSMENT = "studentStandardizedAssessment";
         public const string MARK_INTEGER = "markInteger";
         public const string MARK_DECIMAL = "markDecimal";
@@ -73,6 +74,16 @@ namespace Arbor.Model
         public void setAssessment (Assessment assessment)
         {
             this.setProperty("assessment", assessment);
+        }
+
+        public StandardizedAssessment getStandardizedAssessment ()
+        {
+            return (StandardizedAssessment) this.getProperty("standardizedAssessment");
+        }
+
+        public void setStandardizedAssessment (StandardizedAssessment standardizedAssessment)
+        {
+            this.setProperty("standardizedAssessment", standardizedAssessment);
         }
 
         public StudentStandardizedAssessment getStudentStandardizedAssessment ()

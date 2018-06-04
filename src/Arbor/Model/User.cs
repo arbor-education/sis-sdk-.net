@@ -29,6 +29,9 @@ namespace Arbor.Model
         public const string WELCOME_MESSAGE_DATETIME = "welcomeMessageDatetime";
         public const string TWO_FACTOR_AUTH_METHOD = "twoFactorAuthMethod";
         public const string TWO_FACTOR_DEVICE_IDENTIFIER = "twoFactorDeviceIdentifier";
+        public const string DELETED_ENTITY_TYPE = "deletedEntityType";
+        public const string DELETED_OBJECT_ID = "deletedObjectId";
+        public const string DELETED_DISPLAY_NAME = "deletedDisplayName";
 
         public User ()
         {
@@ -254,6 +257,36 @@ namespace Arbor.Model
         public void setTwoFactorDeviceIdentifier (string twoFactorDeviceIdentifier)
         {
             this.setProperty("twoFactorDeviceIdentifier", twoFactorDeviceIdentifier);
+        }
+
+        public int getDeletedEntityType ()
+        {
+            return Convert.ToInt32(this.getProperty("deletedEntityType"));
+        }
+
+        public void setDeletedEntityType (int deletedEntityType)
+        {
+            this.setProperty("deletedEntityType", deletedEntityType);
+        }
+
+        public int getDeletedObjectId ()
+        {
+            return Convert.ToInt32(this.getProperty("deletedObjectId"));
+        }
+
+        public void setDeletedObjectId (int deletedObjectId)
+        {
+            this.setProperty("deletedObjectId", deletedObjectId);
+        }
+
+        public string getDeletedDisplayName ()
+        {
+            return this.getProperty("deletedDisplayName").ToString();
+        }
+
+        public void setDeletedDisplayName (string deletedDisplayName)
+        {
+            this.setProperty("deletedDisplayName", deletedDisplayName);
         }
 
 

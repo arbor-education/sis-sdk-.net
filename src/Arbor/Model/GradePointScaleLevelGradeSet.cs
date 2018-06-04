@@ -10,6 +10,9 @@ namespace Arbor.Model
     public class GradePointScaleLevelGradeSet : ModelBase
     {
         protected string resourceType = ResourceType.GRADE_POINT_SCALE_LEVEL_GRADE_SET;
+        public const string CODE = "code";
+        public const string ACTIVE = "active";
+        public const string DATA_ORDER = "dataOrder";
         public const string GRADE_POINT_SCALE = "gradePointScale";
         public const string GRADE_SET = "gradeSet";
         public const string LEVEL_TYPE = "levelType";
@@ -49,6 +52,36 @@ namespace Arbor.Model
             RestGateway gateway = (RestGateway) GradePointScaleLevelGradeSet.getDefaultGateway();
         	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
         	return (GradePointScaleLevelGradeSet) gateway.retrieve(ResourceType.GRADE_POINT_SCALE_LEVEL_GRADE_SET, id);
+        }
+
+        public string getCode ()
+        {
+            return this.getProperty("code").ToString();
+        }
+
+        public void setCode (string code)
+        {
+            this.setProperty("code", code);
+        }
+
+        public bool getActive ()
+        {
+            return (bool) this.getProperty("active");
+        }
+
+        public void setActive (bool active)
+        {
+            this.setProperty("active", active);
+        }
+
+        public int getDataOrder ()
+        {
+            return Convert.ToInt32(this.getProperty("dataOrder"));
+        }
+
+        public void setDataOrder (int dataOrder)
+        {
+            this.setProperty("dataOrder", dataOrder);
         }
 
         public GradePointScale getGradePointScale ()

@@ -12,6 +12,7 @@ namespace Arbor.Model
         protected string resourceType = ResourceType.PINNED_ITEM;
         public const string PINNED = "pinned";
         public const string TARGET = "target";
+        public const string PINNED_UNTIL_DATETIME = "pinnedUntilDatetime";
 
         public PinnedItem ()
         {
@@ -67,6 +68,16 @@ namespace Arbor.Model
         public void setTarget (ModelBase target)
         {
             this.setProperty("target", target);
+        }
+
+        public DateTime getPinnedUntilDatetime ()
+        {
+            return (DateTime) this.getProperty("pinnedUntilDatetime");
+        }
+
+        public void setPinnedUntilDatetime (DateTime pinnedUntilDatetime)
+        {
+            this.setProperty("pinnedUntilDatetime", pinnedUntilDatetime);
         }
 
 

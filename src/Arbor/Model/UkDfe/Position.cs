@@ -12,6 +12,7 @@ namespace Arbor.Model.UkDfe
         protected string resourceType = ResourceType.UK_DFE_POSITION;
         public const string POSITION_CATEGORY = "positionCategory";
         public const string WORKFORCE_VACANCY_POST = "workforceVacancyPost";
+        public const string WORKFORCE_CENSUS_ROLE_IDENTIFIER = "workforceCensusRoleIdentifier";
 
         public Position ()
         {
@@ -67,6 +68,16 @@ namespace Arbor.Model.UkDfe
         public void setWorkforceVacancyPost (SchoolWorkforceVacancyPost workforceVacancyPost)
         {
             this.setProperty("workforceVacancyPost", workforceVacancyPost);
+        }
+
+        public string getWorkforceCensusRoleIdentifier ()
+        {
+            return this.getProperty("workforceCensusRoleIdentifier").ToString();
+        }
+
+        public void setWorkforceCensusRoleIdentifier (string workforceCensusRoleIdentifier)
+        {
+            this.setProperty("workforceCensusRoleIdentifier", workforceCensusRoleIdentifier);
         }
 
 

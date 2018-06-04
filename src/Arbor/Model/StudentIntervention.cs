@@ -13,8 +13,8 @@ namespace Arbor.Model
         public const string STUDENT = "student";
         public const string INTERVENTION = "intervention";
         public const string INTERVENTION_GROUP = "interventionGroup";
-        public const string START_DATE = "startDate";
-        public const string END_DATE = "endDate";
+        public const string START_DATETIME = "startDatetime";
+        public const string END_DATETIME = "endDatetime";
         public const string PRIORITY = "priority";
         public const string STATUS = "status";
         public const string MONITORING = "monitoring";
@@ -94,24 +94,24 @@ namespace Arbor.Model
             this.setProperty("interventionGroup", interventionGroup);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDatetime ()
         {
-            return (DateTime) this.getProperty("startDate");
+            return (DateTime) this.getProperty("startDatetime");
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDatetime (DateTime startDatetime)
         {
-            this.setProperty("startDate", startDate);
+            this.setProperty("startDatetime", startDatetime);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDatetime ()
         {
-            return (DateTime) this.getProperty("endDate");
+            return (DateTime) this.getProperty("endDatetime");
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDatetime (DateTime endDatetime)
         {
-            this.setProperty("endDate", endDate);
+            this.setProperty("endDatetime", endDatetime);
         }
 
         public string getPriority ()
