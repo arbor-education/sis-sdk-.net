@@ -4,7 +4,26 @@ namespace Arbor.Resource
 {
 	public static class ResourceType
 	{
-		public const string ACADEMIC_CALENDAR_DATE = "AcademicCalendarDate";
+	    public static string ACADEMIC_UNIT_DEPARTMENT = "Academic_unit_department";
+	    public static string ASSESSMENT_ASPECT = "Assessment_aspect";
+	    public static string CHILD_PROTECTION_NOTE = "Child_protection_note";
+	    public static string STAFF_ABSENCE_SICKNESS_CATEGORY = "Staff_absence_sickness_category";
+	    public static string FACULTY_MEMBERSHIP = "Faculty_membership";
+	    public static string STANDARDIZED_ASSESSMENT = "Standardized_assessment";
+	    public static string MEAL_PROVISION_PRICE_CATEGORY_GROUP = "Meal_provision_price_category_group";
+	    public static string IN_CARE_NOTE = "In_care_note";
+	    public static string FACULTY_RESPONSIBILITY = "Faculty_responsibility";
+	    public static string DEPARTMENT_RESPONSIBILITY = "Department_responsibility";
+	    public static string FACULTY_DEPARTMENT = "Faculty_department";
+	    public static string FACULTY_RESPONSIBILITY_TYPE = "Faculty_responsibility_type";
+	    public static string STAFF_ABSENCE_SICKNESS_SUBCATEGORY = "Staff_absence_sickness_subcategory";
+	    public static string DEPARTMENT_RESPONSIBILITY_TYPE = "Department_responsibility_type";
+	    public static string DATA_SHARING_REQUEST = "Data_sharing_request";
+	    public static string DEMOGRAPHIC = "Demographic";
+	    public static string DEPARTMENT_MEMBERSHIP = "Department_membership";
+	    public static string CUSTOM_GROUP_MEMBERSHIP_CRITERION = "Custom_group_membership_criterion";
+	    public static string DEPARTMENT = "Department";
+        public const string ACADEMIC_CALENDAR_DATE = "AcademicCalendarDate";
 		public const string ACADEMIC_HOLIDAY = "AcademicHoliday";
 		public const string ACADEMIC_LEVEL = "AcademicLevel";
 		public const string ACADEMIC_LEVEL_MEMBERSHIP = "AcademicLevelMembership";

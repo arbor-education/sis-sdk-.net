@@ -141,7 +141,9 @@ namespace Arbor.Model
 
         public DateTime getDateOfBirth ()
         {
-            return (DateTime) this.getProperty("dateOfBirth");
+            //return (DateTime) this.getProperty("dateOfBirth");
+            return Convert.ToDateTime(this.getProperty("dateOfBirth"));
+
         }
 
         public void setDateOfBirth (DateTime dateOfBirth)

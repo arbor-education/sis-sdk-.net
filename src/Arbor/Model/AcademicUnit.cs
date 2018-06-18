@@ -335,6 +335,11 @@ namespace Arbor.Model
         	return (ModelCollection<TimetableSlot>) this.getApiGateway().castCollection<TimetableSlot>(collection);
         }
 
+        public ModelCollection<AcademicUnitCohort> getAcademicUnitCohorts()
+        {
+            ModelCollection<ModelBase> collection = (ModelCollection<ModelBase>)this.getCollectionProperty("academicUnitCohorts");
+            return (ModelCollection<AcademicUnitCohort>)this.getApiGateway().castCollection<AcademicUnitCohort>(collection);
+        }//getAcademicUnitCohorts()
 
     }
 }
