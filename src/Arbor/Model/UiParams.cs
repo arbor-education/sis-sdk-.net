@@ -11,7 +11,7 @@ namespace Arbor.Model
     {
         protected string resourceType = ResourceType.UI_PARAMS;
         public const string IDENTIFIER = "identifier";
-        public const string PARAMS = "params";
+        public const string _PARAMS = "_params";
         public const string HASH = "hash";
         public const string USER = "user";
         public const string SESSION_ID = "sessionId";
@@ -64,14 +64,14 @@ namespace Arbor.Model
             this.setProperty("identifier", identifier);
         }
 
-        public string getParams ()
+        public string get_params ()
         {
-            return this.getProperty("params").ToString();
+            return this.getProperty("_params").ToString();
         }
 
-		public void setParams (string parameters)
+        public void set_params (string _params)
         {
-			this.setProperty("params", parameters);
+            this.setProperty("_params", _params);
         }
 
         public string getHash ()

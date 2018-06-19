@@ -10,7 +10,7 @@ namespace Arbor.Model
     public class Grade : ModelBase
     {
         protected string resourceType = ResourceType.GRADE;
-        public const string GRADE_CODE = "gradeCode";
+        public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";
         public const string GRADE_SET = "gradeSet";
@@ -19,6 +19,7 @@ namespace Arbor.Model
         public const string USER_DEFINED_SHORT_NAME = "userDefinedShortName";
         public const string USER_DEFINED_LONG_NAME = "userDefinedLongName";
         public const string USER_DEFINED_GRADE_DESCRIPTION = "userDefinedGradeDescription";
+        public const string GRADE_IDENTIFIER = "gradeIdentifier";
         public const string GRADE_VALUE = "gradeValue";
         public const string LOWER_GRADE_POINT_SCALE_VALUE = "lowerGradePointScaleValue";
         public const string UPPER_GRADE_POINT_SCALE_VALUE = "upperGradePointScaleValue";
@@ -61,14 +62,14 @@ namespace Arbor.Model
         	return (Grade) gateway.retrieve(ResourceType.GRADE, id);
         }
 
-        public string getGradeCode ()
+        public string getCode ()
         {
-            return this.getProperty("gradeCode").ToString();
+            return this.getProperty("code").ToString();
         }
 
-        public void setGradeCode (string gradeCode)
+        public void setCode (string code)
         {
-            this.setProperty("gradeCode", gradeCode);
+            this.setProperty("code", code);
         }
 
         public bool getActive ()
@@ -149,6 +150,16 @@ namespace Arbor.Model
         public void setUserDefinedGradeDescription (string userDefinedGradeDescription)
         {
             this.setProperty("userDefinedGradeDescription", userDefinedGradeDescription);
+        }
+
+        public string getGradeIdentifier ()
+        {
+            return this.getProperty("gradeIdentifier").ToString();
+        }
+
+        public void setGradeIdentifier (string gradeIdentifier)
+        {
+            this.setProperty("gradeIdentifier", gradeIdentifier);
         }
 
         public float getGradeValue ()

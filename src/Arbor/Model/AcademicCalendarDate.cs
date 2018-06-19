@@ -17,6 +17,8 @@ namespace Arbor.Model
         public const string CALENDAR_WEEK = "calendarWeek";
         public const string CALENDAR_DAY = "calendarDay";
         public const string CALENDAR_DAY_OF_WEEK = "calendarDayOfWeek";
+        public const string IS_PUBLIC_HOLIDAY = "isPublicHoliday";
+        public const string PUBLIC_HOLIDAY_NAME = "publicHolidayName";
         public const string ACADEMIC_YEAR = "academicYear";
         public const string TERM = "term";
         public const string DAY_OF_CYCLE = "dayOfCycle";
@@ -24,6 +26,9 @@ namespace Arbor.Model
         public const string DAY_OF_ACADEMIC_YEAR = "dayOfAcademicYear";
         public const string ACADEMIC_HOLIDAY = "academicHoliday";
         public const string IS_GOOD_SCHOOL_DAY = "isGoodSchoolDay";
+        public const string CODE = "code";
+        public const string ACTIVE = "active";
+        public const string DATA_ORDER = "dataOrder";
 
         public AcademicCalendarDate ()
         {
@@ -131,6 +136,26 @@ namespace Arbor.Model
             this.setProperty("calendarDayOfWeek", calendarDayOfWeek);
         }
 
+        public bool getIsPublicHoliday ()
+        {
+            return (bool) this.getProperty("isPublicHoliday");
+        }
+
+        public void setIsPublicHoliday (bool isPublicHoliday)
+        {
+            this.setProperty("isPublicHoliday", isPublicHoliday);
+        }
+
+        public string getPublicHolidayName ()
+        {
+            return this.getProperty("publicHolidayName").ToString();
+        }
+
+        public void setPublicHolidayName (string publicHolidayName)
+        {
+            this.setProperty("publicHolidayName", publicHolidayName);
+        }
+
         public AcademicYear getAcademicYear ()
         {
             return (AcademicYear) this.getProperty("academicYear");
@@ -199,6 +224,36 @@ namespace Arbor.Model
         public void setIsGoodSchoolDay (bool isGoodSchoolDay)
         {
             this.setProperty("isGoodSchoolDay", isGoodSchoolDay);
+        }
+
+        public string getCode ()
+        {
+            return this.getProperty("code").ToString();
+        }
+
+        public void setCode (string code)
+        {
+            this.setProperty("code", code);
+        }
+
+        public bool getActive ()
+        {
+            return (bool) this.getProperty("active");
+        }
+
+        public void setActive (bool active)
+        {
+            this.setProperty("active", active);
+        }
+
+        public int getDataOrder ()
+        {
+            return Convert.ToInt32(this.getProperty("dataOrder"));
+        }
+
+        public void setDataOrder (int dataOrder)
+        {
+            this.setProperty("dataOrder", dataOrder);
         }
 
 

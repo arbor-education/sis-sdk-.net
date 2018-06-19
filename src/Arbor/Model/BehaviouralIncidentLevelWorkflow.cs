@@ -28,6 +28,7 @@ namespace Arbor.Model
         public const string ALLOW_ASSIGN_DETENTION = "allowAssignDetention";
         public const string ALLOW_ADD_DEDUCT_POINTS = "allowAddDeductPoints";
         public const string EMAIL_ASSIGNEE = "emailAssignee";
+        public const string ALLOW_ASSIGN_INTERNAL_EXCLUSION = "allowAssignInternalExclusion";
 
         public BehaviouralIncidentLevelWorkflow ()
         {
@@ -243,6 +244,16 @@ namespace Arbor.Model
         public void setEmailAssignee (bool emailAssignee)
         {
             this.setProperty("emailAssignee", emailAssignee);
+        }
+
+        public bool getAllowAssignInternalExclusion ()
+        {
+            return (bool) this.getProperty("allowAssignInternalExclusion");
+        }
+
+        public void setAllowAssignInternalExclusion (bool allowAssignInternalExclusion)
+        {
+            this.setProperty("allowAssignInternalExclusion", allowAssignInternalExclusion);
         }
 
 

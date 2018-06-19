@@ -10,6 +10,7 @@ using Newtonsoft.Json.Linq;
 using System.Xml;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Arbor.Tools;
 using Arbor.ChangeLog;
 using Arbor.Tools.Services;
@@ -668,19 +669,40 @@ namespace ArborSdkExamples
 
 		public static void getStudentByDemographicTag()
 		{
-			RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
-			ModelBase.setDefaultGateway (gateway);
+		    RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
+		    ModelBase.setDefaultGateway(gateway);
 
-			SimpleQuery query = new SimpleQuery ();
-			query.addPropertyFilter("self", "tagged", "DEMOGRAPHIC__STUDENT__UK_DFE__PUPIL_PREMIUM");
-			Student.setDefaultGateway(gateway);
-			ModelCollection<Student> modelCollection = Student.query (query);
+		    SimpleQuery query = new SimpleQuery();
+		    query.addPropertyFilter("self", "tagged", "DEMOGRAPHIC__STUDENT__UK_DFE__PUPIL_PREMIUM");
+		    Student.setDefaultGateway(gateway);
+		    ModelCollection<Student> modelCollection = Student.query(query);
 
-			Console.WriteLine("List of students found for searched tag: ");
-			Hydrator hydrator = new Hydrator();
-			foreach (Student model in modelCollection) {
-				Console.WriteLine ( hydrator.extractArray(model) + "\n");
-			}
-		}
+		    Console.WriteLine("List of students found for searched tag: ");
+		    Hydrator hydrator = new Hydrator();
+		    List<JObject> studentCollectionFullProperties = new List<JObject>();
+		    List<ModelBase> fullStudentCollectionRetrieve = new List<ModelBase>();
+		    foreach (Student model in modelCollection)
+		    {
+		        ModelBase current = gateway.retrieve(ResourceType.STUDENT, model.getResourceId().ToString());
+		        fullStudentCollectionRetrieve.Add(current);
+		        studentCollectionFullProperties.Add(hydrator.extractArray(model));
+		    }
+
+		    int i = 0;
+		    List<Student> fullPropertyStudentList = new List<Student>();
+		    foreach (ModelBase currentStudent in fullStudentCollectionRetrieve)
+		    {
+		        Student current = (Student)hydrator.hydrateModel(currentStudent, studentCollectionFullProperties[i]);
+		        fullPropertyStudentList.Add(current);
+		        i++;
+		    }
+
+		    Person firstStudentPerson = fullPropertyStudentList.First().getPerson();
+		    object dateOfBirthTakenByModelBaseCall = firstStudentPerson.getProperty("dateOfBirth");
+		    DateTime convertedDateTimeByDateTimeCast = Convert.ToDateTime(dateOfBirthTakenByModelBaseCall);
+		    var sortedListOfStudent = fullPropertyStudentList.OrderBy(t => t.getPerson().getDateOfBirth()).ToList();
+
+		    Console.ReadKey();
+        }
 	}
 }

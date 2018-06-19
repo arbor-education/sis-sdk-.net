@@ -13,6 +13,8 @@ namespace Arbor.Model
         public const string SENDING_PROFILE = "sendingProfile";
         public const string MESSAGE_TEXT = "messageText";
         public const string CUSTOM_REPORT = "customReport";
+        public const string COMBINE_MESSAGES_TO_SAME_RECIPIENT = "combineMessagesToSameRecipient";
+        public const string COMBINE_MESSAGES_TO_SAME_HOUSEHOLD = "combineMessagesToSameHousehold";
         public const string SENDING_STARTED_DATETIME = "sendingStartedDatetime";
         public const string RECIPIENTS_RESOLVED_DATETIME = "recipientsResolvedDatetime";
         public const string SENDING_COMPLETED_DATETIME = "sendingCompletedDatetime";
@@ -81,6 +83,26 @@ namespace Arbor.Model
         public void setCustomReport (CustomReport customReport)
         {
             this.setProperty("customReport", customReport);
+        }
+
+        public bool getCombineMessagesToSameRecipient ()
+        {
+            return (bool) this.getProperty("combineMessagesToSameRecipient");
+        }
+
+        public void setCombineMessagesToSameRecipient (bool combineMessagesToSameRecipient)
+        {
+            this.setProperty("combineMessagesToSameRecipient", combineMessagesToSameRecipient);
+        }
+
+        public bool getCombineMessagesToSameHousehold ()
+        {
+            return (bool) this.getProperty("combineMessagesToSameHousehold");
+        }
+
+        public void setCombineMessagesToSameHousehold (bool combineMessagesToSameHousehold)
+        {
+            this.setProperty("combineMessagesToSameHousehold", combineMessagesToSameHousehold);
         }
 
         public DateTime getSendingStartedDatetime ()

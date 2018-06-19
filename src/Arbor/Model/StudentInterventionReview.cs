@@ -13,6 +13,7 @@ namespace Arbor.Model
         public const string STUDENT_INTERVENTION = "studentIntervention";
         public const string INTERVENTION_REVIEW = "interventionReview";
         public const string REVIEW = "review";
+        public const string REVIEW_DATE = "reviewDate";
 
         public StudentInterventionReview ()
         {
@@ -78,6 +79,16 @@ namespace Arbor.Model
         public void setReview (string review)
         {
             this.setProperty("review", review);
+        }
+
+        public DateTime getReviewDate ()
+        {
+            return (DateTime) this.getProperty("reviewDate");
+        }
+
+        public void setReviewDate (DateTime reviewDate)
+        {
+            this.setProperty("reviewDate", reviewDate);
         }
 
 

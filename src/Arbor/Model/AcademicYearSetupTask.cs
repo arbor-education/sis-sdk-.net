@@ -13,6 +13,7 @@ namespace Arbor.Model
         public const string ACADEMIC_YEAR = "academicYear";
         public const string TYPE = "type";
         public const string APPROVED_DATETIME = "approvedDatetime";
+        public const string SKIPPED_DATETIME = "skippedDatetime";
 
         public AcademicYearSetupTask ()
         {
@@ -78,6 +79,16 @@ namespace Arbor.Model
         public void setApprovedDatetime (DateTime approvedDatetime)
         {
             this.setProperty("approvedDatetime", approvedDatetime);
+        }
+
+        public DateTime getSkippedDatetime ()
+        {
+            return (DateTime) this.getProperty("skippedDatetime");
+        }
+
+        public void setSkippedDatetime (DateTime skippedDatetime)
+        {
+            this.setProperty("skippedDatetime", skippedDatetime);
         }
 
 

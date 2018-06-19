@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -41,13 +41,13 @@
     <ConsolePause>False</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>lib\Net4.5\Newtonsoft.Json.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
@@ -106,7 +106,6 @@
     <Compile Include="Arbor\Model\Alert.cs" />
     <Compile Include="Arbor\Model\Allowance.cs" />
     <Compile Include="Arbor\Model\AllowanceAmount.cs" />
-    <Compile Include="Arbor\Model\ApiKey.cs" />
     <Compile Include="Arbor\Model\Application.cs" />
     <Compile Include="Arbor\Model\ApplicationAppeal.cs" />
     <Compile Include="Arbor\Model\ApplicationSetting.cs" />
@@ -411,8 +410,6 @@
     <Compile Include="Arbor\Model\NextOfKinRelationship.cs" />
     <Compile Include="Arbor\Model\Note.cs" />
     <Compile Include="Arbor\Model\Notice.cs" />
-    <Compile Include="Arbor\Model\OutboundLetter.cs" />
-    <Compile Include="Arbor\Model\OutboundLetterDraft.cs" />
     <Compile Include="Arbor\Model\PasswordRule.cs" />
     <Compile Include="Arbor\Model\PastoralNote.cs" />
     <Compile Include="Arbor\Model\PaymentProvider.cs" />
@@ -633,7 +630,6 @@
     <Compile Include="Arbor\Model\UniversityStaff.cs" />
     <Compile Include="Arbor\Model\UsageLogEntry.cs" />
     <Compile Include="Arbor\Model\User.cs" />
-    <Compile Include="Arbor\Model\UserActivity.cs" />
     <Compile Include="Arbor\Model\UserDefinedField.cs" />
     <Compile Include="Arbor\Model\UserDefinedRecord.cs" />
     <Compile Include="Arbor\Model\UserNotification.cs" />
@@ -710,26 +706,29 @@
     <Compile Include="Arbor\Model\ModelBase.cs" />
     <Compile Include="Arbor\Model\ModelCollection.cs" />
     <Compile Include="Arbor\Model\SchoolEnrolment.cs" />
+    <Compile Include="Arbor\Model\AcademicUnitDepartment.cs" />
+    <Compile Include="Arbor\Model\AssessmentAspect.cs" />
+    <Compile Include="Arbor\Model\ChildProtectionNote.cs" />
+    <Compile Include="Arbor\Model\CustomGroupMembershipCriterion.cs" />
+    <Compile Include="Arbor\Model\DataSharingRequest.cs" />
+    <Compile Include="Arbor\Model\Demographic.cs" />
+    <Compile Include="Arbor\Model\Department.cs" />
+    <Compile Include="Arbor\Model\DepartmentMembership.cs" />
+    <Compile Include="Arbor\Model\DepartmentResponsibility.cs" />
+    <Compile Include="Arbor\Model\DepartmentResponsibilityType.cs" />
+    <Compile Include="Arbor\Model\FacultyDepartment.cs" />
+    <Compile Include="Arbor\Model\FacultyMembership.cs" />
+    <Compile Include="Arbor\Model\FacultyResponsibility.cs" />
+    <Compile Include="Arbor\Model\FacultyResponsibilityType.cs" />
+    <Compile Include="Arbor\Model\InCareNote.cs" />
+    <Compile Include="Arbor\Model\MealProvisionPriceCategoryGroup.cs" />
+    <Compile Include="Arbor\Model\StaffAbsenceSicknessCategory.cs" />
+    <Compile Include="Arbor\Model\StaffAbsenceSicknessSubcategory.cs" />
+    <Compile Include="Arbor\Model\StandardizedAssessment.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Arbor\" />
-    <Folder Include="Arbor\Resource\" />
-    <Folder Include="lib\" />
-    <Folder Include="bin\" />
-    <Folder Include="Arbor\Api\" />
-    <Folder Include="Arbor\Filter\" />
-    <Folder Include="Arbor\Resource\UkDfe\" />
-    <Folder Include="Arbor\Resource\Finance\" />
-    <Folder Include="Arbor\Tools\" />
-    <Folder Include="Arbor\ChangeLog\" />
-    <Folder Include="Arbor\Tools\Services\" />
-    <Folder Include="Arbor\Service\" />
-    <Folder Include="bin\Debug\" />
-    <Folder Include="Arbor\Model\" />
-    <Folder Include="lib\Net4.5\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="lib\Net4.5\Newtonsoft.Json.dll" />
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

@@ -1,4 +1,0 @@
-# Every file in this directory is ignored, except .gitignore file.
-# This allows us to commit an "empty" directory.
-*
-!.gitignore

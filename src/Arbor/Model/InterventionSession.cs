@@ -20,6 +20,9 @@ namespace Arbor.Model
         public const string CALENDAR_WEEK = "calendarWeek";
         public const string TIMETABLE_SLOT = "timetableSlot";
         public const string INTERVENTION_GROUP = "interventionGroup";
+        public const string ATTENDANCE_REGISTER_TYPE = "attendanceRegisterType";
+        public const string ATTENDANCE_REGISTER_OPENED_DATETIME = "attendanceRegisterOpenedDatetime";
+        public const string ATTENDANCE_REGISTER_CLOSED_DATETIME = "attendanceRegisterClosedDatetime";
 
         public InterventionSession ()
         {
@@ -155,6 +158,36 @@ namespace Arbor.Model
         public void setInterventionGroup (InterventionGroup interventionGroup)
         {
             this.setProperty("interventionGroup", interventionGroup);
+        }
+
+        public AttendanceRegisterType getAttendanceRegisterType ()
+        {
+            return (AttendanceRegisterType) this.getProperty("attendanceRegisterType");
+        }
+
+        public void setAttendanceRegisterType (AttendanceRegisterType attendanceRegisterType)
+        {
+            this.setProperty("attendanceRegisterType", attendanceRegisterType);
+        }
+
+        public DateTime getAttendanceRegisterOpenedDatetime ()
+        {
+            return (DateTime) this.getProperty("attendanceRegisterOpenedDatetime");
+        }
+
+        public void setAttendanceRegisterOpenedDatetime (DateTime attendanceRegisterOpenedDatetime)
+        {
+            this.setProperty("attendanceRegisterOpenedDatetime", attendanceRegisterOpenedDatetime);
+        }
+
+        public DateTime getAttendanceRegisterClosedDatetime ()
+        {
+            return (DateTime) this.getProperty("attendanceRegisterClosedDatetime");
+        }
+
+        public void setAttendanceRegisterClosedDatetime (DateTime attendanceRegisterClosedDatetime)
+        {
+            this.setProperty("attendanceRegisterClosedDatetime", attendanceRegisterClosedDatetime);
         }
 
 

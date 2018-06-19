@@ -11,13 +11,12 @@ namespace Arbor.Model
     {
         protected string resourceType = ResourceType.STUDENT;
         public const string UNIQUE_LEARNER_NUMBER = "uniqueLearnerNumber";
-        public const string RESPONSIBLE_LOCAL_AUTHORITY = "responsibleLocalAuthority";
         public const string HOME_LOCAL_AUTHORITY = "homeLocalAuthority";
-        public const string TRAVELLER_STATUS = "travellerStatus";
         public const string YOUTH_SUPPORT_SERVICES_AGREEMENT = "youthSupportServicesAgreement";
         public const string HOURS_AT_SETTING = "hoursAtSetting";
         public const string FUNDED_HOURS = "fundedHours";
         public const string ETHNICITY_SOURCE = "ethnicitySource";
+        public const string NHS_NUMBER = "nhsNumber";
         public const string EXTENDED_HOURS = "extendedHours";
         public const string THIRTY_HOUR_CODE = "thirtyHourCode";
         public const string PERSON = "person";
@@ -78,16 +77,6 @@ namespace Arbor.Model
             this.setProperty("uniqueLearnerNumber", uniqueLearnerNumber);
         }
 
-        public LocalAuthority getResponsibleLocalAuthority ()
-        {
-            return (LocalAuthority) this.getProperty("responsibleLocalAuthority");
-        }
-
-        public void setResponsibleLocalAuthority (LocalAuthority responsibleLocalAuthority)
-        {
-            this.setProperty("responsibleLocalAuthority", responsibleLocalAuthority);
-        }
-
         public LocalAuthority getHomeLocalAuthority ()
         {
             return (LocalAuthority) this.getProperty("homeLocalAuthority");
@@ -96,16 +85,6 @@ namespace Arbor.Model
         public void setHomeLocalAuthority (LocalAuthority homeLocalAuthority)
         {
             this.setProperty("homeLocalAuthority", homeLocalAuthority);
-        }
-
-        public bool getTravellerStatus ()
-        {
-            return (bool) this.getProperty("travellerStatus");
-        }
-
-        public void setTravellerStatus (bool travellerStatus)
-        {
-            this.setProperty("travellerStatus", travellerStatus);
         }
 
         public string getYouthSupportServicesAgreement ()
@@ -146,6 +125,16 @@ namespace Arbor.Model
         public void setEthnicitySource (string ethnicitySource)
         {
             this.setProperty("ethnicitySource", ethnicitySource);
+        }
+
+        public string getNhsNumber ()
+        {
+            return this.getProperty("nhsNumber").ToString();
+        }
+
+        public void setNhsNumber (string nhsNumber)
+        {
+            this.setProperty("nhsNumber", nhsNumber);
         }
 
         public string getExtendedHours ()

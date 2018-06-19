@@ -13,6 +13,7 @@ namespace Arbor.Model
         public const string INTERVENTION = "intervention";
         public const string STAFF = "staff";
         public const string PLANNED_HOURS = "plannedHours";
+        public const string PRICE_PER_HOUR = "pricePerHour";
 
         public InterventionPlannedStaff ()
         {
@@ -78,6 +79,16 @@ namespace Arbor.Model
         public void setPlannedHours (string plannedHours)
         {
             this.setProperty("plannedHours", plannedHours);
+        }
+
+        public string getPricePerHour ()
+        {
+            return this.getProperty("pricePerHour").ToString();
+        }
+
+        public void setPricePerHour (string pricePerHour)
+        {
+            this.setProperty("pricePerHour", pricePerHour);
         }
 
 

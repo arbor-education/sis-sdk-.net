@@ -12,6 +12,7 @@ namespace Arbor.Model
         protected string resourceType = ResourceType.POSITION;
         public const string POSITION_CATEGORY = "positionCategory";
         public const string WORKFORCE_VACANCY_POST = "workforceVacancyPost";
+        public const string WORKFORCE_CENSUS_ROLE_IDENTIFIER = "workforceCensusRoleIdentifier";
         public const string START_DATE = "startDate";
         public const string EXPECTED_END_DATE = "expectedEndDate";
         public const string END_DATE = "endDate";
@@ -76,6 +77,16 @@ namespace Arbor.Model
         public void setWorkforceVacancyPost (SchoolWorkforceVacancyPost workforceVacancyPost)
         {
             this.setProperty("workforceVacancyPost", workforceVacancyPost);
+        }
+
+        public string getWorkforceCensusRoleIdentifier ()
+        {
+            return this.getProperty("workforceCensusRoleIdentifier").ToString();
+        }
+
+        public void setWorkforceCensusRoleIdentifier (string workforceCensusRoleIdentifier)
+        {
+            this.setProperty("workforceCensusRoleIdentifier", workforceCensusRoleIdentifier);
         }
 
         public DateTime getStartDate ()

@@ -12,12 +12,10 @@ namespace Arbor.Model
         protected string resourceType = ResourceType.STUDENT_EDUCATIONAL_HISTORY;
         public const string STUDENT = "student";
         public const string EDUCATIONAL_INSTITUTION = "educationalInstitution";
-        public const string EDUCATION_RECORD_TYPE = "educationRecordType";
-        public const string ARRIVAL_DATE = "arrivalDate";
+        public const string EXPECTED_ENTRY_DATE = "expectedEntryDate";
+        public const string ACTUAL_ENTRY_DATE = "actualEntryDate";
         public const string LEAVING_DATE = "leavingDate";
         public const string UNENROLMENT_REASON = "unenrolmentReason";
-        public const string ENROLMENT_MODE = "enrolmentMode";
-        public const string ATTENDANCE_MODE = "attendanceMode";
 
         public StudentEducationalHistory ()
         {
@@ -75,24 +73,24 @@ namespace Arbor.Model
             this.setProperty("educationalInstitution", educationalInstitution);
         }
 
-        public EducationRecordType getEducationRecordType ()
+        public DateTime getExpectedEntryDate ()
         {
-            return (EducationRecordType) this.getProperty("educationRecordType");
+            return (DateTime) this.getProperty("expectedEntryDate");
         }
 
-        public void setEducationRecordType (EducationRecordType educationRecordType)
+        public void setExpectedEntryDate (DateTime expectedEntryDate)
         {
-            this.setProperty("educationRecordType", educationRecordType);
+            this.setProperty("expectedEntryDate", expectedEntryDate);
         }
 
-        public DateTime getArrivalDate ()
+        public DateTime getActualEntryDate ()
         {
-            return (DateTime) this.getProperty("arrivalDate");
+            return (DateTime) this.getProperty("actualEntryDate");
         }
 
-        public void setArrivalDate (DateTime arrivalDate)
+        public void setActualEntryDate (DateTime actualEntryDate)
         {
-            this.setProperty("arrivalDate", arrivalDate);
+            this.setProperty("actualEntryDate", actualEntryDate);
         }
 
         public DateTime getLeavingDate ()
@@ -113,26 +111,6 @@ namespace Arbor.Model
         public void setUnenrolmentReason (UnenrolmentReason unenrolmentReason)
         {
             this.setProperty("unenrolmentReason", unenrolmentReason);
-        }
-
-        public EnrolmentMode getEnrolmentMode ()
-        {
-            return (EnrolmentMode) this.getProperty("enrolmentMode");
-        }
-
-        public void setEnrolmentMode (EnrolmentMode enrolmentMode)
-        {
-            this.setProperty("enrolmentMode", enrolmentMode);
-        }
-
-        public string getAttendanceMode ()
-        {
-            return this.getProperty("attendanceMode").ToString();
-        }
-
-        public void setAttendanceMode (string attendanceMode)
-        {
-            this.setProperty("attendanceMode", attendanceMode);
         }
 
 

@@ -16,6 +16,7 @@ namespace Arbor.Model
         public const string SECTION_NAME = "sectionName";
         public const string FUNCTION_NAME = "functionName";
         public const string PERMISSION_NAME = "permissionName";
+        public const string PERMISSION_CATEGORY = "permissionCategory";
         public const string DESCRIPTION = "description";
 
         public UserRole ()
@@ -112,6 +113,16 @@ namespace Arbor.Model
         public void setPermissionName (string permissionName)
         {
             this.setProperty("permissionName", permissionName);
+        }
+
+        public string getPermissionCategory ()
+        {
+            return this.getProperty("permissionCategory").ToString();
+        }
+
+        public void setPermissionCategory (string permissionCategory)
+        {
+            this.setProperty("permissionCategory", permissionCategory);
         }
 
         public string getDescription ()

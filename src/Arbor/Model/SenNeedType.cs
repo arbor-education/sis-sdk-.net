@@ -11,6 +11,7 @@ namespace Arbor.Model
     {
         protected string resourceType = ResourceType.SEN_NEED_TYPE;
         public const string D00237 = "d00237";
+        public const string EXPORT_CODE = "exportCode";
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";
@@ -60,6 +61,16 @@ namespace Arbor.Model
         public void setD00237 (string d00237)
         {
             this.setProperty("d00237", d00237);
+        }
+
+        public string getExportCode ()
+        {
+            return this.getProperty("exportCode").ToString();
+        }
+
+        public void setExportCode (string exportCode)
+        {
+            this.setProperty("exportCode", exportCode);
         }
 
         public string getCode ()

@@ -14,7 +14,7 @@ namespace Arbor.Model
         public const string MODULE = "module";
         public const string CONTROLLER = "controller";
         public const string ACTION = "action";
-        public const string PARAMS = "params";
+        public const string _PARAMS = "_params";
         public const string HASH = "hash";
         public const string LAST_EXPORT_DATETIME = "lastExportDatetime";
         public const string LAST_EXPORT_TITLE = "lastExportTitle";
@@ -95,14 +95,14 @@ namespace Arbor.Model
             this.setProperty("action", action);
         }
 
-        public string getParams ()
+        public string get_params ()
         {
-            return this.getProperty("params").ToString();
+            return this.getProperty("_params").ToString();
         }
 
-        public void setParams (string parameters)
+        public void set_params (string _params)
         {
-			this.setProperty("params", parameters);
+            this.setProperty("_params", _params);
         }
 
         public string getHash ()

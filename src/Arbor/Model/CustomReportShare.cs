@@ -12,6 +12,7 @@ namespace Arbor.Model
         protected string resourceType = ResourceType.CUSTOM_REPORT_SHARE;
         public const string CUSTOM_REPORT = "customReport";
         public const string SHARED_WITH = "sharedWith";
+        public const string PERMISSION_LEVEL = "permissionLevel";
 
         public CustomReportShare ()
         {
@@ -67,6 +68,16 @@ namespace Arbor.Model
         public void setSharedWith (ModelBase sharedWith)
         {
             this.setProperty("sharedWith", sharedWith);
+        }
+
+        public string getPermissionLevel ()
+        {
+            return this.getProperty("permissionLevel").ToString();
+        }
+
+        public void setPermissionLevel (string permissionLevel)
+        {
+            this.setProperty("permissionLevel", permissionLevel);
         }
 
 

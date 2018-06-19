@@ -1,0 +1,39 @@
+﻿<Properties StartupConfiguration="{0E691EF6-6229-4AE5-9386-DCBD044593AB}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="src/Arbor/Model/InCareNote.cs">
+    <Files>
+      <File FileName="src/Arbor/Model/DataExport.cs" Line="1" Column="1" />
+      <File FileName="src/Arbor/Model/UiParams.cs" Line="1" Column="1" />
+      <File FileName="src/Arbor/Model/InverseDemographic.cs" Line="1" Column="1" />
+      <File FileName="src/Arbor/Model/UkDfe/AtfImportJobStudent.cs" Line="67" Column="10" />
+      <File FileName="ArborSdkVbExamplets/Application.vb" Line="1" Column="7" />
+      <File FileName="src/Arbor/Model/BusinessRole.cs" Line="1" Column="1" />
+      <File FileName="src/Arbor/Model/AcademicCalendarDate.cs" Line="1" Column="1" />
+      <File FileName="src/Arbor/Tools/Services/StudentService.cs" Line="51" Column="16" />
+      <File FileName="src/Arbor/Model/AcademicUnitDepartment.cs" Line="12" Column="54" />
+      <File FileName="src/Arbor/Model/UkDfe/AtfImportJob.cs" Line="16" Column="81" />
+      <File FileName="src/Arbor/Model/UkDfe/BusinessRole.cs" Line="1" Column="1" />
+      <File FileName="src/Arbor/Model/StandardizedAssessment.cs" Line="12" Column="54" />
+      <File FileName="src/Arbor/Model/StaffAbsenceSicknessSubcategory.cs" Line="52" Column="49" />
+      <File FileName="src/Arbor/Model/ProfilePictureImportJobFileMatch.cs" Line="49" Column="50" />
+      <File FileName="src/Arbor/Model/AcademicUnitCohort.cs" Line="1" Column="1" />
+      <File FileName="src/Arbor/Model/AcademicUnitCohortMembership.cs" Line="1" Column="1" />
+      <File FileName="src/Arbor/Model/UserLogin.cs" Line="12" Column="54" />
+      <File FileName="src/Arbor/Model/AcademicUnitEnrolmentImport.cs" Line="12" Column="54" />
+      <File FileName="src/Arbor/Model/ApplicationApplicantImportJob.cs" Line="12" Column="54" />
+      <File FileName="src/Arbor/Model/ApplicationApplicantImport.cs" Line="60" Column="14" />
+      <File FileName="src/Arbor/Model/Demographic.cs" Line="54" Column="9" />
+      <File FileName="src/Arbor/Model/OutboundLetterRecipient.cs" Line="12" Column="54" />
+      <File FileName="src/Arbor/Model/Staff.cs" Line="1" Column="1" />
+      <File FileName="src/Arbor/Model/StaffAbsence.cs" Line="1" Column="1" />
+      <File FileName="src/Arbor/Model/InsightReport.cs" Line="54" Column="63" />
+      <File FileName="src/Arbor/Model/InCareNote.cs" Line="27" Column="4" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.ItemProperties.ArborSdkExamples PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

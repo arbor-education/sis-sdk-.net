@@ -13,8 +13,7 @@ namespace Arbor.Model
         public const string CUSTOM_REPORT = "customReport";
         public const string FIELD_CLASS = "fieldClass";
         public const string FIELD_PARAMS = "fieldParams";
-        public const string TARGET_TYPE = "targetType";
-        public const string TARGET_INDEX = "targetIndex";
+        public const string TARGET_GROUPING = "targetGrouping";
         public const string TRANSFORMATION_CLASS = "transformationClass";
         public const string DISPLAY_ORDER = "displayOrder";
         public const string FORMATTER_CLASS = "formatterClass";
@@ -87,24 +86,14 @@ namespace Arbor.Model
             this.setProperty("fieldParams", fieldParams);
         }
 
-        public string getTargetType ()
+        public CustomReportGrouping getTargetGrouping ()
         {
-            return this.getProperty("targetType").ToString();
+            return (CustomReportGrouping) this.getProperty("targetGrouping");
         }
 
-        public void setTargetType (string targetType)
+        public void setTargetGrouping (CustomReportGrouping targetGrouping)
         {
-            this.setProperty("targetType", targetType);
-        }
-
-        public int getTargetIndex ()
-        {
-            return Convert.ToInt32(this.getProperty("targetIndex"));
-        }
-
-        public void setTargetIndex (int targetIndex)
-        {
-            this.setProperty("targetIndex", targetIndex);
+            this.setProperty("targetGrouping", targetGrouping);
         }
 
         public string getTransformationClass ()

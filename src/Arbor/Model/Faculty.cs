@@ -12,6 +12,7 @@ namespace Arbor.Model
         protected string resourceType = ResourceType.FACULTY;
         public const string CODE = "code";
         public const string FACULTY_NAME = "facultyName";
+        public const string IS_ACTIVE = "isActive";
 
         public Faculty ()
         {
@@ -67,6 +68,16 @@ namespace Arbor.Model
         public void setFacultyName (string facultyName)
         {
             this.setProperty("facultyName", facultyName);
+        }
+
+        public bool getIsActive ()
+        {
+            return (bool) this.getProperty("isActive");
+        }
+
+        public void setIsActive (bool isActive)
+        {
+            this.setProperty("isActive", isActive);
         }
 
 
