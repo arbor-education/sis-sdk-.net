@@ -66,6 +66,16 @@ namespace Arbor.Model.UkDfe
         	return (AtfImportJobStudent) gateway.retrieve(ResourceType.UK_DFE_ATF_IMPORT_JOB_STUDENT, id);
         }
 
+        public AtfImportJob getAtfImportJob ()
+        {
+            return (AtfImportJob) this.getProperty("atfImportJob");
+        }
+
+        public void setAtfImportJob (AtfImportJob atfImportJob)
+        {
+            this.setProperty("atfImportJob", atfImportJob);
+        }
+
         public string getFirstName ()
         {
             return this.getProperty("firstName").ToString();
@@ -86,9 +96,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("lastName", lastName);
         }
 
-        public DateTime getDateOfBirth ()
-        {
-            return (DateTime) this.getProperty("dateOfBirth");
+        public DateTime getDateOfBirth (){
+            return Convert.ToDateTime(this.getProperty("dateOfBirth"));
         }
 
         public void setDateOfBirth (DateTime dateOfBirth)
@@ -156,9 +165,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("student", student);
         }
 
-        public DateTime getImportDatetime ()
-        {
-            return (DateTime) this.getProperty("importDatetime");
+        public DateTime getImportDatetime (){
+            return Convert.ToDateTime(this.getProperty("importDatetime"));
         }
 
         public void setImportDatetime (DateTime importDatetime)

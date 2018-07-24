@@ -92,9 +92,8 @@ namespace Arbor.Model
             this.setProperty("unavailabilityEvent", unavailabilityEvent);
         }
 
-        public DateTime getRoomChangedDatetime ()
-        {
-            return (DateTime) this.getProperty("roomChangedDatetime");
+        public DateTime getRoomChangedDatetime (){
+            return Convert.ToDateTime(this.getProperty("roomChangedDatetime"));
         }
 
         public void setRoomChangedDatetime (DateTime roomChangedDatetime)

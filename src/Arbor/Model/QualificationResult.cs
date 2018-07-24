@@ -119,9 +119,8 @@ namespace Arbor.Model
             this.setProperty("candidateEntry", candidateEntry);
         }
 
-        public DateTime getResultDatetime ()
-        {
-            return (DateTime) this.getProperty("resultDatetime");
+        public DateTime getResultDatetime (){
+            return Convert.ToDateTime(this.getProperty("resultDatetime"));
         }
 
         public void setResultDatetime (DateTime resultDatetime)
@@ -129,9 +128,8 @@ namespace Arbor.Model
             this.setProperty("resultDatetime", resultDatetime);
         }
 
-        public DateTime getEmbargoDatetime ()
-        {
-            return (DateTime) this.getProperty("embargoDatetime");
+        public DateTime getEmbargoDatetime (){
+            return Convert.ToDateTime(this.getProperty("embargoDatetime"));
         }
 
         public void setEmbargoDatetime (DateTime embargoDatetime)

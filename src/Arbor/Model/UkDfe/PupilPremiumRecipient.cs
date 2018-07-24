@@ -95,7 +95,7 @@ namespace Arbor.Model.UkDfe
 
         public DateTime getStartDate ()
         {
-            return (DateTime) this.getProperty("startDate");
+            Convert.ToDateTime(this.getProperty("startDate"))
         }
 
         public void setStartDate (DateTime startDate)
@@ -105,7 +105,7 @@ namespace Arbor.Model.UkDfe
 
         public DateTime getEndDate ()
         {
-            return (DateTime) this.getProperty("endDate");
+            Convert.ToDateTime(this.getProperty("endDate"))
         }
 
         public void setEndDate (DateTime endDate)

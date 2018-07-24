@@ -74,9 +74,8 @@ namespace Arbor.Model
             this.setProperty("narrative", narrative);
         }
 
-        public DateTime getLodgedDate ()
-        {
-            return (DateTime) this.getProperty("lodgedDate");
+        public DateTime getLodgedDate (){
+            return Convert.ToDateTime(this.getProperty("lodgedDate"));
         }
 
         public void setLodgedDate (DateTime lodgedDate)
@@ -84,9 +83,8 @@ namespace Arbor.Model
             this.setProperty("lodgedDate", lodgedDate);
         }
 
-        public DateTime getWithdrawnDate ()
-        {
-            return (DateTime) this.getProperty("withdrawnDate");
+        public DateTime getWithdrawnDate (){
+            return Convert.ToDateTime(this.getProperty("withdrawnDate"));
         }
 
         public void setWithdrawnDate (DateTime withdrawnDate)
@@ -94,9 +92,8 @@ namespace Arbor.Model
             this.setProperty("withdrawnDate", withdrawnDate);
         }
 
-        public DateTime getHearingDate ()
-        {
-            return (DateTime) this.getProperty("hearingDate");
+        public DateTime getHearingDate (){
+            return Convert.ToDateTime(this.getProperty("hearingDate"));
         }
 
         public void setHearingDate (DateTime hearingDate)
@@ -104,9 +101,8 @@ namespace Arbor.Model
             this.setProperty("hearingDate", hearingDate);
         }
 
-        public DateTime getDecisionDatetime ()
-        {
-            return (DateTime) this.getProperty("decisionDatetime");
+        public DateTime getDecisionDatetime (){
+            return Convert.ToDateTime(this.getProperty("decisionDatetime"));
         }
 
         public void setDecisionDatetime (DateTime decisionDatetime)

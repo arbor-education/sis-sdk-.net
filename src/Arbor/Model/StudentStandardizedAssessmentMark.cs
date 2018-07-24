@@ -19,6 +19,8 @@ namespace Arbor.Model
         public const string MARK_COMMENT = "markComment";
         public const string MARK_GRADE = "markGrade";
         public const string ASSESSMENT_DATE = "assessmentDate";
+        public const string COMPLETED_DATETIME = "completedDatetime";
+        public const string COMPLETED_STAFF = "completedStaff";
 
         public StudentStandardizedAssessmentMark ()
         {
@@ -136,14 +138,32 @@ namespace Arbor.Model
             this.setProperty("markGrade", markGrade);
         }
 
-        public DateTime getAssessmentDate ()
-        {
-            return (DateTime) this.getProperty("assessmentDate");
+        public DateTime getAssessmentDate (){
+            return Convert.ToDateTime(this.getProperty("assessmentDate"));
         }
 
         public void setAssessmentDate (DateTime assessmentDate)
         {
             this.setProperty("assessmentDate", assessmentDate);
+        }
+
+        public DateTime getCompletedDatetime (){
+            return Convert.ToDateTime(this.getProperty("completedDatetime"));
+        }
+
+        public void setCompletedDatetime (DateTime completedDatetime)
+        {
+            this.setProperty("completedDatetime", completedDatetime);
+        }
+
+        public Staff getCompletedStaff ()
+        {
+            return (Staff) this.getProperty("completedStaff");
+        }
+
+        public void setCompletedStaff (Staff completedStaff)
+        {
+            this.setProperty("completedStaff", completedStaff);
         }
 
 

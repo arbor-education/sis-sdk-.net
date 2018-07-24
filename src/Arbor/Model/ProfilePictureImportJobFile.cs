@@ -94,7 +94,7 @@ namespace Arbor.Model
 
         public DateTime getConfirmedDatetime ()
         {
-            return (DateTime) this.getProperty("confirmedDatetime");
+            Convert.ToDateTime(this.getProperty("confirmedDatetime"))
         }
 
         public void setConfirmedDatetime (DateTime confirmedDatetime)

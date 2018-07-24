@@ -84,9 +84,8 @@ namespace Arbor.Model
             this.setProperty("documentNumber", documentNumber);
         }
 
-        public DateTime getIssueDate ()
-        {
-            return (DateTime) this.getProperty("issueDate");
+        public DateTime getIssueDate (){
+            return Convert.ToDateTime(this.getProperty("issueDate"));
         }
 
         public void setIssueDate (DateTime issueDate)
@@ -94,9 +93,8 @@ namespace Arbor.Model
             this.setProperty("issueDate", issueDate);
         }
 
-        public DateTime getExpiryDate ()
-        {
-            return (DateTime) this.getProperty("expiryDate");
+        public DateTime getExpiryDate (){
+            return Convert.ToDateTime(this.getProperty("expiryDate"));
         }
 
         public void setExpiryDate (DateTime expiryDate)

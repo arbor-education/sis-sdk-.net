@@ -65,7 +65,7 @@ namespace Arbor.Model
 
         public DateTime getLoginDatetime ()
         {
-            return (DateTime) this.getProperty("loginDatetime");
+            Convert.ToDateTime(this.getProperty("loginDatetime"))
         }
 
         public void setLoginDatetime (DateTime loginDatetime)

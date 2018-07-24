@@ -88,9 +88,8 @@ namespace Arbor.Model
             this.setProperty("mailboxFolder", mailboxFolder);
         }
 
-        public DateTime getLastRetrievedDatetime ()
-        {
-            return (DateTime) this.getProperty("lastRetrievedDatetime");
+        public DateTime getLastRetrievedDatetime (){
+            return Convert.ToDateTime(this.getProperty("lastRetrievedDatetime"));
         }
 
         public void setLastRetrievedDatetime (DateTime lastRetrievedDatetime)
@@ -138,9 +137,8 @@ namespace Arbor.Model
             this.setProperty("sharedByDefault", sharedByDefault);
         }
 
-        public DateTime getFirstErrorDatetime ()
-        {
-            return (DateTime) this.getProperty("firstErrorDatetime");
+        public DateTime getFirstErrorDatetime (){
+            return Convert.ToDateTime(this.getProperty("firstErrorDatetime"));
         }
 
         public void setFirstErrorDatetime (DateTime firstErrorDatetime)
@@ -148,9 +146,8 @@ namespace Arbor.Model
             this.setProperty("firstErrorDatetime", firstErrorDatetime);
         }
 
-        public DateTime getLastErrorDatetime ()
-        {
-            return (DateTime) this.getProperty("lastErrorDatetime");
+        public DateTime getLastErrorDatetime (){
+            return Convert.ToDateTime(this.getProperty("lastErrorDatetime"));
         }
 
         public void setLastErrorDatetime (DateTime lastErrorDatetime)

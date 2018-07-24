@@ -82,9 +82,8 @@ namespace Arbor.Model
             this.setProperty("businessRoleAssignment", businessRoleAssignment);
         }
 
-        public DateTime getStartDatetime ()
-        {
-            return (DateTime) this.getProperty("startDatetime");
+        public DateTime getStartDatetime (){
+            return Convert.ToDateTime(this.getProperty("startDatetime"));
         }
 
         public void setStartDatetime (DateTime startDatetime)
@@ -92,9 +91,8 @@ namespace Arbor.Model
             this.setProperty("startDatetime", startDatetime);
         }
 
-        public DateTime getEndDatetime ()
-        {
-            return (DateTime) this.getProperty("endDatetime");
+        public DateTime getEndDatetime (){
+            return Convert.ToDateTime(this.getProperty("endDatetime"));
         }
 
         public void setEndDatetime (DateTime endDatetime)

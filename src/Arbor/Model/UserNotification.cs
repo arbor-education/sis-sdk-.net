@@ -99,9 +99,8 @@ namespace Arbor.Model
             this.setProperty("modifiedGlobalCounter", modifiedGlobalCounter);
         }
 
-        public DateTime getCreatedDatetime ()
-        {
-            return (DateTime) this.getProperty("createdDatetime");
+        public DateTime getCreatedDatetime (){
+            return Convert.ToDateTime(this.getProperty("createdDatetime"));
         }
 
         public void setCreatedDatetime (DateTime createdDatetime)

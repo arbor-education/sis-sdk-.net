@@ -141,9 +141,8 @@ namespace Arbor.Model
             this.setProperty("statisticalGradePointScaleValue", statisticalGradePointScaleValue);
         }
 
-        public DateTime getAssessmentDate ()
-        {
-            return (DateTime) this.getProperty("assessmentDate");
+        public DateTime getAssessmentDate (){
+            return Convert.ToDateTime(this.getProperty("assessmentDate"));
         }
 
         public void setAssessmentDate (DateTime assessmentDate)
@@ -161,9 +160,8 @@ namespace Arbor.Model
             this.setProperty("markingStaff", markingStaff);
         }
 
-        public DateTime getCompletedDatetime ()
-        {
-            return (DateTime) this.getProperty("completedDatetime");
+        public DateTime getCompletedDatetime (){
+            return Convert.ToDateTime(this.getProperty("completedDatetime"));
         }
 
         public void setCompletedDatetime (DateTime completedDatetime)
@@ -181,9 +179,8 @@ namespace Arbor.Model
             this.setProperty("completedStaff", completedStaff);
         }
 
-        public DateTime getApprovedDatetime ()
-        {
-            return (DateTime) this.getProperty("approvedDatetime");
+        public DateTime getApprovedDatetime (){
+            return Convert.ToDateTime(this.getProperty("approvedDatetime"));
         }
 
         public void setApprovedDatetime (DateTime approvedDatetime)

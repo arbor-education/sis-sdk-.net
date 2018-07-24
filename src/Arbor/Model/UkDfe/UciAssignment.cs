@@ -115,9 +115,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("issuedSerialNumber", issuedSerialNumber);
         }
 
-        public DateTime getIssuedDatetime ()
-        {
-            return (DateTime) this.getProperty("issuedDatetime");
+        public DateTime getIssuedDatetime (){
+            return Convert.ToDateTime(this.getProperty("issuedDatetime"));
         }
 
         public void setIssuedDatetime (DateTime issuedDatetime)
@@ -125,9 +124,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("issuedDatetime", issuedDatetime);
         }
 
-        public DateTime getCancelledDatetime ()
-        {
-            return (DateTime) this.getProperty("cancelledDatetime");
+        public DateTime getCancelledDatetime (){
+            return Convert.ToDateTime(this.getProperty("cancelledDatetime"));
         }
 
         public void setCancelledDatetime (DateTime cancelledDatetime)

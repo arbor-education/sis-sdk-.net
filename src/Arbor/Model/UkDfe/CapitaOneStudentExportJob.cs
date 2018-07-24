@@ -62,9 +62,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("sequenceNumber", sequenceNumber);
         }
 
-        public DateTime getStartedDatetime ()
-        {
-            return (DateTime) this.getProperty("startedDatetime");
+        public DateTime getStartedDatetime (){
+            return Convert.ToDateTime(this.getProperty("startedDatetime"));
         }
 
         public void setStartedDatetime (DateTime startedDatetime)
@@ -72,9 +71,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("startedDatetime", startedDatetime);
         }
 
-        public DateTime getCompletedDatetime ()
-        {
-            return (DateTime) this.getProperty("completedDatetime");
+        public DateTime getCompletedDatetime (){
+            return Convert.ToDateTime(this.getProperty("completedDatetime"));
         }
 
         public void setCompletedDatetime (DateTime completedDatetime)
@@ -82,9 +80,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("completedDatetime", completedDatetime);
         }
 
-        public DateTime getErrorDatetime ()
-        {
-            return (DateTime) this.getProperty("errorDatetime");
+        public DateTime getErrorDatetime (){
+            return Convert.ToDateTime(this.getProperty("errorDatetime"));
         }
 
         public void setErrorDatetime (DateTime errorDatetime)

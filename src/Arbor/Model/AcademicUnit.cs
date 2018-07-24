@@ -183,9 +183,8 @@ namespace Arbor.Model
             this.setProperty("promotedToAcademicUnit", promotedToAcademicUnit);
         }
 
-        public DateTime getPromotedDatetime ()
-        {
-            return (DateTime) this.getProperty("promotedDatetime");
+        public DateTime getPromotedDatetime (){
+            return Convert.ToDateTime(this.getProperty("promotedDatetime"));
         }
 
         public void setPromotedDatetime (DateTime promotedDatetime)
@@ -203,9 +202,8 @@ namespace Arbor.Model
             this.setProperty("copiedToAcademicUnit", copiedToAcademicUnit);
         }
 
-        public DateTime getEffectiveDate ()
-        {
-            return (DateTime) this.getProperty("effectiveDate");
+        public DateTime getEffectiveDate (){
+            return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
         public void setEffectiveDate (DateTime effectiveDate)
@@ -213,9 +211,8 @@ namespace Arbor.Model
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate ()
-        {
-            return (DateTime) this.getProperty("endDate");
+        public DateTime getEndDate (){
+            return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
         public void setEndDate (DateTime endDate)

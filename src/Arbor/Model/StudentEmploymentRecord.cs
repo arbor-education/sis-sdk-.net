@@ -75,9 +75,8 @@ namespace Arbor.Model
             this.setProperty("employer", employer);
         }
 
-        public DateTime getStartDate ()
-        {
-            return (DateTime) this.getProperty("startDate");
+        public DateTime getStartDate (){
+            return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
         public void setStartDate (DateTime startDate)
@@ -85,9 +84,8 @@ namespace Arbor.Model
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
-        {
-            return (DateTime) this.getProperty("endDate");
+        public DateTime getEndDate (){
+            return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
         public void setEndDate (DateTime endDate)
@@ -115,9 +113,8 @@ namespace Arbor.Model
             this.setProperty("maxHoursPerWeek", maxHoursPerWeek);
         }
 
-        public DateTime getInformationCollectedDate ()
-        {
-            return (DateTime) this.getProperty("informationCollectedDate");
+        public DateTime getInformationCollectedDate (){
+            return Convert.ToDateTime(this.getProperty("informationCollectedDate"));
         }
 
         public void setInformationCollectedDate (DateTime informationCollectedDate)

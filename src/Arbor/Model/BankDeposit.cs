@@ -64,9 +64,8 @@ namespace Arbor.Model
             this.setProperty("bankAccount", bankAccount);
         }
 
-        public DateTime getPaidToBankDate ()
-        {
-            return (DateTime) this.getProperty("paidToBankDate");
+        public DateTime getPaidToBankDate (){
+            return Convert.ToDateTime(this.getProperty("paidToBankDate"));
         }
 
         public void setPaidToBankDate (DateTime paidToBankDate)
@@ -84,9 +83,8 @@ namespace Arbor.Model
             this.setProperty("paidByStaff", paidByStaff);
         }
 
-        public DateTime getDepositDatetime ()
-        {
-            return (DateTime) this.getProperty("depositDatetime");
+        public DateTime getDepositDatetime (){
+            return Convert.ToDateTime(this.getProperty("depositDatetime"));
         }
 
         public void setDepositDatetime (DateTime depositDatetime)

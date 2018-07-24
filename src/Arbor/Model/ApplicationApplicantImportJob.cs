@@ -131,7 +131,7 @@ namespace Arbor.Model
 
         public DateTime getApplicationDate ()
         {
-            return (DateTime) this.getProperty("applicationDate");
+            Convert.ToDateTime(this.getProperty("applicationDate"))
         }
 
         public void setApplicationDate (DateTime applicationDate)
@@ -141,7 +141,7 @@ namespace Arbor.Model
 
         public DateTime getExpectedAdmissionDate ()
         {
-            return (DateTime) this.getProperty("expectedAdmissionDate");
+            Convert.ToDateTime(this.getProperty("expectedAdmissionDate"))
         }
 
         public void setExpectedAdmissionDate (DateTime expectedAdmissionDate)
@@ -161,7 +161,7 @@ namespace Arbor.Model
 
         public DateTime getStartDatetime ()
         {
-            return (DateTime) this.getProperty("startDatetime");
+            Convert.ToDateTime(this.getProperty("startDatetime"))
         }
 
         public void setStartDatetime (DateTime startDatetime)
@@ -171,7 +171,7 @@ namespace Arbor.Model
 
         public DateTime getCompletedDatetime ()
         {
-            return (DateTime) this.getProperty("completedDatetime");
+            Convert.ToDateTime(this.getProperty("completedDatetime"))
         }
 
         public void setCompletedDatetime (DateTime completedDatetime)

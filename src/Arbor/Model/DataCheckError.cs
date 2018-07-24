@@ -98,9 +98,8 @@ namespace Arbor.Model
             this.setProperty("reportingEntity", reportingEntity);
         }
 
-        public DateTime getReportedDatetime ()
-        {
-            return (DateTime) this.getProperty("reportedDatetime");
+        public DateTime getReportedDatetime (){
+            return Convert.ToDateTime(this.getProperty("reportedDatetime"));
         }
 
         public void setReportedDatetime (DateTime reportedDatetime)
@@ -128,9 +127,9 @@ namespace Arbor.Model
             this.setProperty("errorFixIsMandatory", errorFixIsMandatory);
         }
 
-        public DateTime getIgnoredDatetime ()
-        {
-            return (DateTime) this.getProperty("ignoredDatetime");
+        public DateTime getIgnoredDatetime (){
+
+            return Convert.ToDateTime(this.getProperty("ignoredDatetime"));
         }
 
         public void setIgnoredDatetime (DateTime ignoredDatetime)
@@ -138,9 +137,8 @@ namespace Arbor.Model
             this.setProperty("ignoredDatetime", ignoredDatetime);
         }
 
-        public DateTime getIgnoredByUser ()
-        {
-            return (DateTime) this.getProperty("ignoredByUser");
+        public DateTime getIgnoredByUser (){
+            return Convert.ToDateTime(this.getProperty("ignoredByUser"));
         }
 
         public void setIgnoredByUser (DateTime ignoredByUser)
@@ -148,9 +146,8 @@ namespace Arbor.Model
             this.setProperty("ignoredByUser", ignoredByUser);
         }
 
-        public DateTime getCorrectedDatetime ()
-        {
-            return (DateTime) this.getProperty("correctedDatetime");
+        public DateTime getCorrectedDatetime (){
+            return Convert.ToDateTime(this.getProperty("correctedDatetime"));
         }
 
         public void setCorrectedDatetime (DateTime correctedDatetime)

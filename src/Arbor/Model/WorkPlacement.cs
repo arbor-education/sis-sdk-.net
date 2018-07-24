@@ -73,9 +73,8 @@ namespace Arbor.Model
             this.setProperty("employer", employer);
         }
 
-        public DateTime getStartDate ()
-        {
-            return (DateTime) this.getProperty("startDate");
+        public DateTime getStartDate (){
+            return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
         public void setStartDate (DateTime startDate)
@@ -83,9 +82,8 @@ namespace Arbor.Model
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
-        {
-            return (DateTime) this.getProperty("endDate");
+        public DateTime getEndDate (){
+            return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
         public void setEndDate (DateTime endDate)

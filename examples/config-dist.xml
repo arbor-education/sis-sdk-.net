@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <config>
-	<api>
-		<baseUrl>your_api_url</baseUrl>
-		<auth>
-			<user>your_api_username</user>
-			<password>your_api_password</password>
-		</auth>
-	</api>
+  <api>
+    <baseUrl></baseUrl>
+    <auth>
+      <user></user>
+      <password></password>
+    </auth>
+  </api>
 </config>

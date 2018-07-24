@@ -74,9 +74,8 @@ namespace Arbor.Model
             this.setProperty("reportClass", reportClass);
         }
 
-        public DateTime getLastAccessDatetime ()
-        {
-            return (DateTime) this.getProperty("lastAccessDatetime");
+        public DateTime getLastAccessDatetime (){
+            return Convert.ToDateTime(this.getProperty("lastAccessDatetime"));
         }
 
         public void setLastAccessDatetime (DateTime lastAccessDatetime)
@@ -114,9 +113,8 @@ namespace Arbor.Model
             this.setProperty("lastTotalTime", lastTotalTime);
         }
 
-        public DateTime getSetupCompletedDatetime ()
-        {
-            return (DateTime) this.getProperty("setupCompletedDatetime");
+        public DateTime getSetupCompletedDatetime (){
+            return Convert.ToDateTime(this.getProperty("setupCompletedDatetime"));
         }
 
         public void setSetupCompletedDatetime (DateTime setupCompletedDatetime)

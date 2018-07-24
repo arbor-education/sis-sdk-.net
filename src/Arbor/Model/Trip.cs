@@ -23,6 +23,7 @@ namespace Arbor.Model
         public const string REQUIRE_CONSENT = "requireConsent";
         public const string GUARDIAN_SIGNUP_START_DATETIME = "guardianSignupStartDatetime";
         public const string GUARDIAN_SIGNUP_END_DATETIME = "guardianSignupEndDatetime";
+        public const string FREE = "free";
 
         public Trip ()
         {
@@ -60,9 +61,8 @@ namespace Arbor.Model
         	return (Trip) gateway.retrieve(ResourceType.TRIP, id);
         }
 
-        public DateTime getStartDatetime ()
-        {
-            return (DateTime) this.getProperty("startDatetime");
+        public DateTime getStartDatetime (){
+            return Convert.ToDateTime(this.getProperty("startDatetime"));
         }
 
         public void setStartDatetime (DateTime startDatetime)
@@ -70,9 +70,8 @@ namespace Arbor.Model
             this.setProperty("startDatetime", startDatetime);
         }
 
-        public DateTime getEndDatetime ()
-        {
-            return (DateTime) this.getProperty("endDatetime");
+        public DateTime getEndDatetime (){
+            return Convert.ToDateTime(this.getProperty("endDatetime"));
         }
 
         public void setEndDatetime (DateTime endDatetime)
@@ -170,9 +169,8 @@ namespace Arbor.Model
             this.setProperty("requireConsent", requireConsent);
         }
 
-        public DateTime getGuardianSignupStartDatetime ()
-        {
-            return (DateTime) this.getProperty("guardianSignupStartDatetime");
+        public DateTime getGuardianSignupStartDatetime (){
+            return Convert.ToDateTime(this.getProperty("guardianSignupStartDatetime"));
         }
 
         public void setGuardianSignupStartDatetime (DateTime guardianSignupStartDatetime)
@@ -180,14 +178,23 @@ namespace Arbor.Model
             this.setProperty("guardianSignupStartDatetime", guardianSignupStartDatetime);
         }
 
-        public DateTime getGuardianSignupEndDatetime ()
-        {
-            return (DateTime) this.getProperty("guardianSignupEndDatetime");
+        public DateTime getGuardianSignupEndDatetime (){
+            return Convert.ToDateTime(this.getProperty("guardianSignupEndDatetime"));
         }
 
         public void setGuardianSignupEndDatetime (DateTime guardianSignupEndDatetime)
         {
             this.setProperty("guardianSignupEndDatetime", guardianSignupEndDatetime);
+        }
+
+        public bool getFree ()
+        {
+            return (bool) this.getProperty("free");
+        }
+
+        public void setFree (bool free)
+        {
+            this.setProperty("free", free);
         }
 
 

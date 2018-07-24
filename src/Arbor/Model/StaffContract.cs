@@ -100,9 +100,8 @@ namespace Arbor.Model
             this.setProperty("contractReference", contractReference);
         }
 
-        public DateTime getIssuedDate ()
-        {
-            return (DateTime) this.getProperty("issuedDate");
+        public DateTime getIssuedDate (){
+            return Convert.ToDateTime(this.getProperty("issuedDate"));
         }
 
         public void setIssuedDate (DateTime issuedDate)
@@ -110,9 +109,8 @@ namespace Arbor.Model
             this.setProperty("issuedDate", issuedDate);
         }
 
-        public DateTime getStartDate ()
-        {
-            return (DateTime) this.getProperty("startDate");
+        public DateTime getStartDate (){
+            return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
         public void setStartDate (DateTime startDate)
@@ -120,9 +118,8 @@ namespace Arbor.Model
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getExpectedEndDate ()
-        {
-            return (DateTime) this.getProperty("expectedEndDate");
+        public DateTime getExpectedEndDate (){
+            return Convert.ToDateTime(this.getProperty("expectedEndDate"));
         }
 
         public void setExpectedEndDate (DateTime expectedEndDate)
@@ -130,9 +127,8 @@ namespace Arbor.Model
             this.setProperty("expectedEndDate", expectedEndDate);
         }
 
-        public DateTime getEndDate ()
-        {
-            return (DateTime) this.getProperty("endDate");
+        public DateTime getEndDate (){
+            return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
         public void setEndDate (DateTime endDate)
@@ -180,9 +176,8 @@ namespace Arbor.Model
             this.setProperty("superannuationScheme", superannuationScheme);
         }
 
-        public DateTime getLastPayReviewDate ()
-        {
-            return (DateTime) this.getProperty("lastPayReviewDate");
+        public DateTime getLastPayReviewDate (){
+            return Convert.ToDateTime(this.getProperty("lastPayReviewDate"));
         }
 
         public void setLastPayReviewDate (DateTime lastPayReviewDate)

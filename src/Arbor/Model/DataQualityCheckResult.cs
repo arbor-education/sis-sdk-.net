@@ -107,9 +107,8 @@ namespace Arbor.Model
             this.setProperty("message", message);
         }
 
-        public DateTime getLastCheckedDatetime ()
-        {
-            return (DateTime) this.getProperty("lastCheckedDatetime");
+        public DateTime getLastCheckedDatetime (){
+            return Convert.ToDateTime(this.getProperty("lastCheckedDatetime"));
         }
 
         public void setLastCheckedDatetime (DateTime lastCheckedDatetime)
@@ -117,9 +116,8 @@ namespace Arbor.Model
             this.setProperty("lastCheckedDatetime", lastCheckedDatetime);
         }
 
-        public DateTime getResolvedDatetime ()
-        {
-            return (DateTime) this.getProperty("resolvedDatetime");
+        public DateTime getResolvedDatetime (){
+            return Convert.ToDateTime(this.getProperty("resolvedDatetime"));
         }
 
         public void setResolvedDatetime (DateTime resolvedDatetime)
@@ -147,9 +145,8 @@ namespace Arbor.Model
             this.setProperty("ignoredUser", ignoredUser);
         }
 
-        public DateTime getIgnoredDatetime ()
-        {
-            return (DateTime) this.getProperty("ignoredDatetime");
+        public DateTime getIgnoredDatetime (){
+            return Convert.ToDateTime(this.getProperty("ignoredDatetime"));
         }
 
         public void setIgnoredDatetime (DateTime ignoredDatetime)

@@ -69,9 +69,8 @@ namespace Arbor.Model
             this.setProperty("postalAddress", postalAddress);
         }
 
-        public DateTime getExecutedDatetime ()
-        {
-            return (DateTime) this.getProperty("executedDatetime");
+        public DateTime getExecutedDatetime (){
+            return Convert.ToDateTime(this.getProperty("executedDatetime"));
         }
 
         public void setExecutedDatetime (DateTime executedDatetime)

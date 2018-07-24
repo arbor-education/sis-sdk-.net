@@ -19,6 +19,7 @@ namespace Arbor.Model
         public const string SENDING_STARTED_DATETIME = "sendingStartedDatetime";
         public const string RECIPIENTS_RESOLVED_DATETIME = "recipientsResolvedDatetime";
         public const string SENDING_COMPLETED_DATETIME = "sendingCompletedDatetime";
+        public const string CONTEXT = "context";
 
         public EmailDraft ()
         {
@@ -116,9 +117,8 @@ namespace Arbor.Model
             this.setProperty("combineMessagesToSameHousehold", combineMessagesToSameHousehold);
         }
 
-        public DateTime getSendingStartedDatetime ()
-        {
-            return (DateTime) this.getProperty("sendingStartedDatetime");
+        public DateTime getSendingStartedDatetime (){
+            return Convert.ToDateTime(this.getProperty("sendingStartedDatetime"));
         }
 
         public void setSendingStartedDatetime (DateTime sendingStartedDatetime)
@@ -126,9 +126,8 @@ namespace Arbor.Model
             this.setProperty("sendingStartedDatetime", sendingStartedDatetime);
         }
 
-        public DateTime getRecipientsResolvedDatetime ()
-        {
-            return (DateTime) this.getProperty("recipientsResolvedDatetime");
+        public DateTime getRecipientsResolvedDatetime (){
+            return Convert.ToDateTime(this.getProperty("recipientsResolvedDatetime"));
         }
 
         public void setRecipientsResolvedDatetime (DateTime recipientsResolvedDatetime)
@@ -136,14 +135,23 @@ namespace Arbor.Model
             this.setProperty("recipientsResolvedDatetime", recipientsResolvedDatetime);
         }
 
-        public DateTime getSendingCompletedDatetime ()
-        {
-            return (DateTime) this.getProperty("sendingCompletedDatetime");
+        public DateTime getSendingCompletedDatetime (){
+            return Convert.ToDateTime(this.getProperty("sendingCompletedDatetime"));
         }
 
         public void setSendingCompletedDatetime (DateTime sendingCompletedDatetime)
         {
             this.setProperty("sendingCompletedDatetime", sendingCompletedDatetime);
+        }
+
+        public ModelBase getContext ()
+        {
+            return (ModelBase) this.getProperty("context");
+        }
+
+        public void setContext (ModelBase context)
+        {
+            this.setProperty("context", context);
         }
 
 

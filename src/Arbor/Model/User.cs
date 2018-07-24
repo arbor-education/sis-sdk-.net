@@ -159,9 +159,8 @@ namespace Arbor.Model
             this.setProperty("authenticationToken", authenticationToken);
         }
 
-        public DateTime getAuthenticationTokenExpiryDatetime ()
-        {
-            return (DateTime) this.getProperty("authenticationTokenExpiryDatetime");
+        public DateTime getAuthenticationTokenExpiryDatetime (){
+            return Convert.ToDateTime(this.getProperty("authenticationTokenExpiryDatetime"));
         }
 
         public void setAuthenticationTokenExpiryDatetime (DateTime authenticationTokenExpiryDatetime)
@@ -179,9 +178,8 @@ namespace Arbor.Model
             this.setProperty("currentIpAddress", currentIpAddress);
         }
 
-        public DateTime getLastAccessDatetime ()
-        {
-            return (DateTime) this.getProperty("lastAccessDatetime");
+        public DateTime getLastAccessDatetime (){
+            return Convert.ToDateTime(this.getProperty("lastAccessDatetime"));
         }
 
         public void setLastAccessDatetime (DateTime lastAccessDatetime)
@@ -189,9 +187,8 @@ namespace Arbor.Model
             this.setProperty("lastAccessDatetime", lastAccessDatetime);
         }
 
-        public DateTime getPasswordLastChangedDatetime ()
-        {
-            return (DateTime) this.getProperty("passwordLastChangedDatetime");
+        public DateTime getPasswordLastChangedDatetime (){
+            return Convert.ToDateTime(this.getProperty("passwordLastChangedDatetime"));
         }
 
         public void setPasswordLastChangedDatetime (DateTime passwordLastChangedDatetime)
@@ -209,9 +206,8 @@ namespace Arbor.Model
             this.setProperty("enabled", enabled);
         }
 
-        public DateTime getVerifiedDatetime ()
-        {
-            return (DateTime) this.getProperty("verifiedDatetime");
+        public DateTime getVerifiedDatetime (){
+            return Convert.ToDateTime(this.getProperty("verifiedDatetime"));
         }
 
         public void setVerifiedDatetime (DateTime verifiedDatetime)
@@ -219,9 +215,8 @@ namespace Arbor.Model
             this.setProperty("verifiedDatetime", verifiedDatetime);
         }
 
-        public DateTime getTermsAcceptedDatetime ()
-        {
-            return (DateTime) this.getProperty("termsAcceptedDatetime");
+        public DateTime getTermsAcceptedDatetime (){
+            return Convert.ToDateTime(this.getProperty("termsAcceptedDatetime"));
         }
 
         public void setTermsAcceptedDatetime (DateTime termsAcceptedDatetime)
@@ -229,9 +224,8 @@ namespace Arbor.Model
             this.setProperty("termsAcceptedDatetime", termsAcceptedDatetime);
         }
 
-        public DateTime getWelcomeMessageDatetime ()
-        {
-            return (DateTime) this.getProperty("welcomeMessageDatetime");
+        public DateTime getWelcomeMessageDatetime (){
+            return Convert.ToDateTime(this.getProperty("welcomeMessageDatetime"));
         }
 
         public void setWelcomeMessageDatetime (DateTime welcomeMessageDatetime)

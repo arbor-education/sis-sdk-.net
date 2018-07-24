@@ -73,9 +73,8 @@ namespace Arbor.Model
             this.setProperty("name", name);
         }
 
-        public DateTime getPurchaseStartDate ()
-        {
-            return (DateTime) this.getProperty("purchaseStartDate");
+        public DateTime getPurchaseStartDate (){
+            return Convert.ToDateTime(this.getProperty("purchaseStartDate"));
         }
 
         public void setPurchaseStartDate (DateTime purchaseStartDate)
@@ -83,9 +82,8 @@ namespace Arbor.Model
             this.setProperty("purchaseStartDate", purchaseStartDate);
         }
 
-        public DateTime getPurchaseEndDate ()
-        {
-            return (DateTime) this.getProperty("purchaseEndDate");
+        public DateTime getPurchaseEndDate (){
+            return Convert.ToDateTime(this.getProperty("purchaseEndDate"));
         }
 
         public void setPurchaseEndDate (DateTime purchaseEndDate)

@@ -73,9 +73,8 @@ namespace Arbor.Model
             this.setProperty("educationalInstitution", educationalInstitution);
         }
 
-        public DateTime getExpectedEntryDate ()
-        {
-            return (DateTime) this.getProperty("expectedEntryDate");
+        public DateTime getExpectedEntryDate (){
+            return Convert.ToDateTime(this.getProperty("expectedEntryDate"));
         }
 
         public void setExpectedEntryDate (DateTime expectedEntryDate)
@@ -83,9 +82,8 @@ namespace Arbor.Model
             this.setProperty("expectedEntryDate", expectedEntryDate);
         }
 
-        public DateTime getActualEntryDate ()
-        {
-            return (DateTime) this.getProperty("actualEntryDate");
+        public DateTime getActualEntryDate (){
+            return Convert.ToDateTime(this.getProperty("actualEntryDate"));
         }
 
         public void setActualEntryDate (DateTime actualEntryDate)
@@ -93,9 +91,8 @@ namespace Arbor.Model
             this.setProperty("actualEntryDate", actualEntryDate);
         }
 
-        public DateTime getLeavingDate ()
-        {
-            return (DateTime) this.getProperty("leavingDate");
+        public DateTime getLeavingDate (){
+            return Convert.ToDateTime(this.getProperty("leavingDate"));
         }
 
         public void setLeavingDate (DateTime leavingDate)

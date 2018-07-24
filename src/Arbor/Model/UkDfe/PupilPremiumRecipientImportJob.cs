@@ -51,7 +51,7 @@ namespace Arbor.Model.UkDfe
 
         public DateTime getStartDatetime ()
         {
-            return (DateTime) this.getProperty("startDatetime");
+            Convert.ToDateTime(this.getProperty("startDatetime"))
         }
 
         public void setStartDatetime (DateTime startDatetime)
@@ -61,7 +61,7 @@ namespace Arbor.Model.UkDfe
 
         public DateTime getCompletedDatetime ()
         {
-            return (DateTime) this.getProperty("completedDatetime");
+            Convert.ToDateTime(this.getProperty("completedDatetime"))
         }
 
         public void setCompletedDatetime (DateTime completedDatetime)

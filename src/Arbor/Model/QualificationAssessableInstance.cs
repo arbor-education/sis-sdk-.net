@@ -131,9 +131,8 @@ namespace Arbor.Model
             this.setProperty("qualificationTimetableSessionType", qualificationTimetableSessionType);
         }
 
-        public DateTime getStartDateRangeFrom ()
-        {
-            return (DateTime) this.getProperty("startDateRangeFrom");
+        public DateTime getStartDateRangeFrom (){
+            return Convert.ToDateTime(this.getProperty("startDateRangeFrom"));
         }
 
         public void setStartDateRangeFrom (DateTime startDateRangeFrom)
@@ -141,9 +140,8 @@ namespace Arbor.Model
             this.setProperty("startDateRangeFrom", startDateRangeFrom);
         }
 
-        public DateTime getStartDateRangeUntil ()
-        {
-            return (DateTime) this.getProperty("startDateRangeUntil");
+        public DateTime getStartDateRangeUntil (){
+            return Convert.ToDateTime(this.getProperty("startDateRangeUntil"));
         }
 
         public void setStartDateRangeUntil (DateTime startDateRangeUntil)
@@ -171,9 +169,8 @@ namespace Arbor.Model
             this.setProperty("isCentreSpecifiedTimetable", isCentreSpecifiedTimetable);
         }
 
-        public DateTime getCentreSpecifiedDatetime ()
-        {
-            return (DateTime) this.getProperty("centreSpecifiedDatetime");
+        public DateTime getCentreSpecifiedDatetime (){
+            return Convert.ToDateTime(this.getProperty("centreSpecifiedDatetime"));
         }
 
         public void setCentreSpecifiedDatetime (DateTime centreSpecifiedDatetime)

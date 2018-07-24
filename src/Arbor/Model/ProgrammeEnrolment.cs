@@ -85,9 +85,8 @@ namespace Arbor.Model
             this.setProperty("mainProgramme", mainProgramme);
         }
 
-        public DateTime getPlannedStartDate ()
-        {
-            return (DateTime) this.getProperty("plannedStartDate");
+        public DateTime getPlannedStartDate (){
+            return Convert.ToDateTime(this.getProperty("plannedStartDate"));
         }
 
         public void setPlannedStartDate (DateTime plannedStartDate)
@@ -95,9 +94,8 @@ namespace Arbor.Model
             this.setProperty("plannedStartDate", plannedStartDate);
         }
 
-        public DateTime getPlannedEndDate ()
-        {
-            return (DateTime) this.getProperty("plannedEndDate");
+        public DateTime getPlannedEndDate (){
+            return Convert.ToDateTime(this.getProperty("plannedEndDate"));
         }
 
         public void setPlannedEndDate (DateTime plannedEndDate)
@@ -105,9 +103,8 @@ namespace Arbor.Model
             this.setProperty("plannedEndDate", plannedEndDate);
         }
 
-        public DateTime getActualEndDate ()
-        {
-            return (DateTime) this.getProperty("actualEndDate");
+        public DateTime getActualEndDate (){
+            return Convert.ToDateTime(this.getProperty("actualEndDate"));
         }
 
         public void setActualEndDate (DateTime actualEndDate)

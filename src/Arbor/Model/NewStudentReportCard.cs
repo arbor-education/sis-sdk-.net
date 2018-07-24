@@ -71,9 +71,8 @@ namespace Arbor.Model
             this.setProperty("reportCardBatch", reportCardBatch);
         }
 
-        public DateTime getCompletedDatetime ()
-        {
-            return (DateTime) this.getProperty("completedDatetime");
+        public DateTime getCompletedDatetime (){
+            return Convert.ToDateTime(this.getProperty("completedDatetime"));
         }
 
         public void setCompletedDatetime (DateTime completedDatetime)
@@ -81,9 +80,8 @@ namespace Arbor.Model
             this.setProperty("completedDatetime", completedDatetime);
         }
 
-        public DateTime getApprovedDatetime ()
-        {
-            return (DateTime) this.getProperty("approvedDatetime");
+        public DateTime getApprovedDatetime (){
+            return Convert.ToDateTime(this.getProperty("approvedDatetime"));
         }
 
         public void setApprovedDatetime (DateTime approvedDatetime)

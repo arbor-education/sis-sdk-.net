@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -139,13 +140,18 @@ namespace Arbor.Model.Api
 			        }
 			        else if(de.Value is DateTime)
 			        {
-						Hashtable htDate = new Hashtable();
-						htDate.Add("entityType", "date");
-						DateTime date = (DateTime) de.Value;
-						string sDate = date.ToString("yyyy-MM-dd HH:mm:ss");
-						htDate.Add("date", sDate);
-
-			            representation[de.Key] = JsonConvert.SerializeObject(htDate).ToString();
+                        JObject jDateTime=new JObject();
+			            jDateTime["entityType"] = "date";
+                        DateTime date = (DateTime)de.Value;
+                        string sDate = date.ToString("yyyy-MM-dd HH:mm:ss");
+			            jDateTime["date"] = sDate;
+                        //Hashtable htDate = new Hashtable();
+                        //htDate.Add("entityType", "date");
+                        //DateTime date = (DateTime) de.Value;
+                        //string sDate = date.ToString("yyyy-MM-dd HH:mm:ss");
+                        //htDate.Add("date", sDate);
+                        //string serializedDateTimeHashTable=JsonConvert.SerializeObject(htDate,Formatting.Indented);
+                        representation[de.Key] = jDateTime;
 			        }
 			        else if(de.Value is ModelCollection<ModelBase>)
 			        {

@@ -69,9 +69,8 @@ namespace Arbor.Model
             this.setProperty("student", student);
         }
 
-        public DateTime getDateRequested ()
-        {
-            return (DateTime) this.getProperty("dateRequested");
+        public DateTime getDateRequested (){
+            return Convert.ToDateTime(this.getProperty("dateRequested"));
         }
 
         public void setDateRequested (DateTime dateRequested)
@@ -79,9 +78,8 @@ namespace Arbor.Model
             this.setProperty("dateRequested", dateRequested);
         }
 
-        public DateTime getDateParentConsulted ()
-        {
-            return (DateTime) this.getProperty("dateParentConsulted");
+        public DateTime getDateParentConsulted (){
+            return Convert.ToDateTime(this.getProperty("dateParentConsulted"));
         }
 
         public void setDateParentConsulted (DateTime dateParentConsulted)
@@ -149,9 +147,8 @@ namespace Arbor.Model
             this.setProperty("appealNotes", appealNotes);
         }
 
-        public DateTime getDateFinalized ()
-        {
-            return (DateTime) this.getProperty("dateFinalized");
+        public DateTime getDateFinalized (){
+            return Convert.ToDateTime(this.getProperty("dateFinalized"));
         }
 
         public void setDateFinalized (DateTime dateFinalized)
@@ -159,9 +156,8 @@ namespace Arbor.Model
             this.setProperty("dateFinalized", dateFinalized);
         }
 
-        public DateTime getDateCeased ()
-        {
-            return (DateTime) this.getProperty("dateCeased");
+        public DateTime getDateCeased (){
+            return Convert.ToDateTime(this.getProperty("dateCeased"));
         }
 
         public void setDateCeased (DateTime dateCeased)

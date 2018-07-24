@@ -159,9 +159,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("destinationEducationalInstitution", destinationEducationalInstitution);
         }
 
-        public DateTime getLastImportDatetime ()
-        {
-            return (DateTime) this.getProperty("lastImportDatetime");
+        public DateTime getLastImportDatetime (){
+            return Convert.ToDateTime(this.getProperty("lastImportDatetime"));
         }
 
         public void setLastImportDatetime (DateTime lastImportDatetime)
@@ -178,8 +177,6 @@ namespace Arbor.Model.UkDfe
         {
             this.setProperty("status", status);
         }
-
-
     }
 }
 

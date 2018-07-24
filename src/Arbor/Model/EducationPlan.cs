@@ -94,9 +94,8 @@ namespace Arbor.Model
             this.setProperty("content", content);
         }
 
-        public DateTime getStartDate ()
-        {
-            return (DateTime) this.getProperty("startDate");
+        public DateTime getStartDate (){
+            return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
         public void setStartDate (DateTime startDate)
@@ -104,9 +103,8 @@ namespace Arbor.Model
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getScheduledReviewDate ()
-        {
-            return (DateTime) this.getProperty("scheduledReviewDate");
+        public DateTime getScheduledReviewDate (){
+            return Convert.ToDateTime(this.getProperty("scheduledReviewDate"));
         }
 
         public void setScheduledReviewDate (DateTime scheduledReviewDate)
@@ -114,9 +112,8 @@ namespace Arbor.Model
             this.setProperty("scheduledReviewDate", scheduledReviewDate);
         }
 
-        public DateTime getEndDate ()
-        {
-            return (DateTime) this.getProperty("endDate");
+        public DateTime getEndDate (){
+            return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
         public void setEndDate (DateTime endDate)

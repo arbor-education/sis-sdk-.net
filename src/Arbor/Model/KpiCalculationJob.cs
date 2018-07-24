@@ -63,9 +63,8 @@ namespace Arbor.Model
             this.setProperty("kpi", kpi);
         }
 
-        public DateTime getReferenceDate ()
-        {
-            return (DateTime) this.getProperty("referenceDate");
+        public DateTime getReferenceDate (){
+            return Convert.ToDateTime(this.getProperty("referenceDate"));
         }
 
         public void setReferenceDate (DateTime referenceDate)
@@ -73,9 +72,8 @@ namespace Arbor.Model
             this.setProperty("referenceDate", referenceDate);
         }
 
-        public DateTime getRequestedDatetime ()
-        {
-            return (DateTime) this.getProperty("requestedDatetime");
+        public DateTime getRequestedDatetime (){
+            return Convert.ToDateTime(this.getProperty("requestedDatetime"));
         }
 
         public void setRequestedDatetime (DateTime requestedDatetime)
@@ -83,9 +81,8 @@ namespace Arbor.Model
             this.setProperty("requestedDatetime", requestedDatetime);
         }
 
-        public DateTime getStartedDatetime ()
-        {
-            return (DateTime) this.getProperty("startedDatetime");
+        public DateTime getStartedDatetime (){
+            return Convert.ToDateTime(this.getProperty("startedDatetime"));
         }
 
         public void setStartedDatetime (DateTime startedDatetime)
@@ -93,9 +90,8 @@ namespace Arbor.Model
             this.setProperty("startedDatetime", startedDatetime);
         }
 
-        public DateTime getCompletedDatetime ()
-        {
-            return (DateTime) this.getProperty("completedDatetime");
+        public DateTime getCompletedDatetime (){
+            return Convert.ToDateTime(this.getProperty("completedDatetime"));
         }
 
         public void setCompletedDatetime (DateTime completedDatetime)

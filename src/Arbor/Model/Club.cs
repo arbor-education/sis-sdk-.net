@@ -16,6 +16,7 @@ namespace Arbor.Model
         public const string MAX_MEMBERS_PER_SESSION = "maxMembersPerSession";
         public const string REQUIRE_CONSENT = "requireConsent";
         public const string COPIED_TO_CLUB = "copiedToClub";
+        public const string FREE = "free";
 
         public Club ()
         {
@@ -111,6 +112,16 @@ namespace Arbor.Model
         public void setCopiedToClub (Club copiedToClub)
         {
             this.setProperty("copiedToClub", copiedToClub);
+        }
+
+        public bool getFree ()
+        {
+            return (bool) this.getProperty("free");
+        }
+
+        public void setFree (bool free)
+        {
+            this.setProperty("free", free);
         }
 
 

@@ -71,9 +71,8 @@ namespace Arbor.Model
             this.setProperty("authorStaff", authorStaff);
         }
 
-        public DateTime getCommentDatetime ()
-        {
-            return (DateTime) this.getProperty("commentDatetime");
+        public DateTime getCommentDatetime (){
+            return Convert.ToDateTime(this.getProperty("commentDatetime"));
         }
 
         public void setCommentDatetime (DateTime commentDatetime)

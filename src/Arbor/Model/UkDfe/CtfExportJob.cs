@@ -131,9 +131,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("fileNumber", fileNumber);
         }
 
-        public DateTime getReportingPeriodStartDate ()
-        {
-            return (DateTime) this.getProperty("reportingPeriodStartDate");
+        public DateTime getReportingPeriodStartDate (){
+            return Convert.ToDateTime(this.getProperty("reportingPeriodStartDate"));
         }
 
         public void setReportingPeriodStartDate (DateTime reportingPeriodStartDate)
@@ -141,9 +140,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("reportingPeriodStartDate", reportingPeriodStartDate);
         }
 
-        public DateTime getReportingPeriodEndDate ()
-        {
-            return (DateTime) this.getProperty("reportingPeriodEndDate");
+        public DateTime getReportingPeriodEndDate (){
+            return Convert.ToDateTime(this.getProperty("reportingPeriodEndDate"));
         }
 
         public void setReportingPeriodEndDate (DateTime reportingPeriodEndDate)
@@ -151,9 +149,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("reportingPeriodEndDate", reportingPeriodEndDate);
         }
 
-        public DateTime getExportDatetime ()
-        {
-            return (DateTime) this.getProperty("exportDatetime");
+        public DateTime getExportDatetime (){
+            return Convert.ToDateTime(this.getProperty("exportDatetime"));
         }
 
         public void setExportDatetime (DateTime exportDatetime)

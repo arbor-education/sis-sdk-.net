@@ -52,9 +52,8 @@ namespace Arbor.Model
         	return (AcademicTeachingHour) gateway.retrieve(ResourceType.ACADEMIC_TEACHING_HOUR, id);
         }
 
-        public DateTime getEffectiveDate ()
-        {
-            return (DateTime) this.getProperty("effectiveDate");
+        public DateTime getEffectiveDate (){
+            return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
         public void setEffectiveDate (DateTime effectiveDate)
@@ -62,9 +61,8 @@ namespace Arbor.Model
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate ()
-        {
-            return (DateTime) this.getProperty("endDate");
+        public DateTime getEndDate (){
+            return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
         public void setEndDate (DateTime endDate)
