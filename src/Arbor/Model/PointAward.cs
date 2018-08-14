@@ -96,9 +96,8 @@ namespace Arbor.Model
             this.setProperty("points", points);
         }
 
-        public DateTime getAwardedDatetime ()
-        {
-            return (DateTime) this.getProperty("awardedDatetime");
+        public DateTime getAwardedDatetime (){
+            return Convert.ToDateTime(this.getProperty("awardedDatetime"));
         }
 
         public void setAwardedDatetime (DateTime awardedDatetime)

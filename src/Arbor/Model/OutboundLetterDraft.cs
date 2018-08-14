@@ -18,6 +18,7 @@ namespace Arbor.Model
         public const string COMBINE_MESSAGES_TO_SAME_HOUSEHOLD = "combineMessagesToSameHousehold";
         public const string GENERATION_STARTED_DATETIME = "generationStartedDatetime";
         public const string GENERATION_COMPLETED_DATETIME = "generationCompletedDatetime";
+        public const string CONTEXT = "context";
 
         public OutboundLetterDraft ()
         {
@@ -117,7 +118,7 @@ namespace Arbor.Model
 
         public DateTime getGenerationStartedDatetime ()
         {
-            return (DateTime) this.getProperty("generationStartedDatetime");
+            Convert.ToDateTime(this.getProperty("generationStartedDatetime"))
         }
 
         public void setGenerationStartedDatetime (DateTime generationStartedDatetime)
@@ -127,12 +128,22 @@ namespace Arbor.Model
 
         public DateTime getGenerationCompletedDatetime ()
         {
-            return (DateTime) this.getProperty("generationCompletedDatetime");
+            Convert.ToDateTime(this.getProperty("generationCompletedDatetime"))
         }
 
         public void setGenerationCompletedDatetime (DateTime generationCompletedDatetime)
         {
             this.setProperty("generationCompletedDatetime", generationCompletedDatetime);
+        }
+
+        public ModelBase getContext ()
+        {
+            return (ModelBase) this.getProperty("context");
+        }
+
+        public void setContext (ModelBase context)
+        {
+            this.setProperty("context", context);
         }
 
 

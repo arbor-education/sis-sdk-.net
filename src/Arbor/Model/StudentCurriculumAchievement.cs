@@ -103,9 +103,8 @@ namespace Arbor.Model
             this.setProperty("assessmentType", assessmentType);
         }
 
-        public DateTime getAchievementDate ()
-        {
-            return (DateTime) this.getProperty("achievementDate");
+        public DateTime getAchievementDate (){
+            return Convert.ToDateTime(this.getProperty("achievementDate"));
         }
 
         public void setAchievementDate (DateTime achievementDate)

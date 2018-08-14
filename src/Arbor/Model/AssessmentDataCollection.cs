@@ -61,9 +61,8 @@ namespace Arbor.Model
             this.setProperty("assessmentDataCollectionPolicy", assessmentDataCollectionPolicy);
         }
 
-        public DateTime getDeadlineDate ()
-        {
-            return (DateTime) this.getProperty("deadlineDate");
+        public DateTime getDeadlineDate (){
+            return Convert.ToDateTime(this.getProperty("deadlineDate"));
         }
 
         public void setDeadlineDate (DateTime deadlineDate)
@@ -71,9 +70,8 @@ namespace Arbor.Model
             this.setProperty("deadlineDate", deadlineDate);
         }
 
-        public DateTime getCollectionRangeStartDate ()
-        {
-            return (DateTime) this.getProperty("collectionRangeStartDate");
+        public DateTime getCollectionRangeStartDate (){
+            return Convert.ToDateTime(this.getProperty("collectionRangeStartDate"));
         }
 
         public void setCollectionRangeStartDate (DateTime collectionRangeStartDate)
@@ -81,9 +79,8 @@ namespace Arbor.Model
             this.setProperty("collectionRangeStartDate", collectionRangeStartDate);
         }
 
-        public DateTime getCollectionRangeEndDate ()
-        {
-            return (DateTime) this.getProperty("collectionRangeEndDate");
+        public DateTime getCollectionRangeEndDate (){
+            return Convert.ToDateTime(this.getProperty("collectionRangeEndDate"));
         }
 
         public void setCollectionRangeEndDate (DateTime collectionRangeEndDate)

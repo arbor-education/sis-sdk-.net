@@ -77,9 +77,8 @@ namespace Arbor.Model
             this.setProperty("sessionName", sessionName);
         }
 
-        public DateTime getStartDatetime ()
-        {
-            return (DateTime) this.getProperty("startDatetime");
+        public DateTime getStartDatetime (){
+            return Convert.ToDateTime(this.getProperty("startDatetime"));
         }
 
         public void setStartDatetime (DateTime startDatetime)
@@ -87,9 +86,8 @@ namespace Arbor.Model
             this.setProperty("startDatetime", startDatetime);
         }
 
-        public DateTime getEndDatetime ()
-        {
-            return (DateTime) this.getProperty("endDatetime");
+        public DateTime getEndDatetime (){
+            return Convert.ToDateTime(this.getProperty("endDatetime"));
         }
 
         public void setEndDatetime (DateTime endDatetime)
@@ -137,9 +135,8 @@ namespace Arbor.Model
             this.setProperty("attendanceRegisterType", attendanceRegisterType);
         }
 
-        public DateTime getAttendanceRegisterOpenedDatetime ()
-        {
-            return (DateTime) this.getProperty("attendanceRegisterOpenedDatetime");
+        public DateTime getAttendanceRegisterOpenedDatetime (){
+            return Convert.ToDateTime(this.getProperty("attendanceRegisterOpenedDatetime"));
         }
 
         public void setAttendanceRegisterOpenedDatetime (DateTime attendanceRegisterOpenedDatetime)
@@ -147,9 +144,8 @@ namespace Arbor.Model
             this.setProperty("attendanceRegisterOpenedDatetime", attendanceRegisterOpenedDatetime);
         }
 
-        public DateTime getAttendanceRegisterClosedDatetime ()
-        {
-            return (DateTime) this.getProperty("attendanceRegisterClosedDatetime");
+        public DateTime getAttendanceRegisterClosedDatetime (){
+            return Convert.ToDateTime(this.getProperty("attendanceRegisterClosedDatetime"));
         }
 
         public void setAttendanceRegisterClosedDatetime (DateTime attendanceRegisterClosedDatetime)

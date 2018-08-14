@@ -59,9 +59,8 @@ namespace Arbor.Model
             this.setProperty("adHocAssessment", adHocAssessment);
         }
 
-        public DateTime getAssessmentReferenceDate ()
-        {
-            return (DateTime) this.getProperty("assessmentReferenceDate");
+        public DateTime getAssessmentReferenceDate (){
+            return Convert.ToDateTime(this.getProperty("assessmentReferenceDate"));
         }
 
         public void setAssessmentReferenceDate (DateTime assessmentReferenceDate)

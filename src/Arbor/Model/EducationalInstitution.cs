@@ -282,9 +282,8 @@ namespace Arbor.Model
             this.setProperty("shortName", shortName);
         }
 
-        public DateTime getOpeningDate ()
-        {
-            return (DateTime) this.getProperty("openingDate");
+        public DateTime getOpeningDate (){
+            return Convert.ToDateTime(this.getProperty("openingDate"));
         }
 
         public void setOpeningDate (DateTime openingDate)
@@ -292,9 +291,8 @@ namespace Arbor.Model
             this.setProperty("openingDate", openingDate);
         }
 
-        public DateTime getClosingDate ()
-        {
-            return (DateTime) this.getProperty("closingDate");
+        public DateTime getClosingDate (){
+            return Convert.ToDateTime(this.getProperty("closingDate"));
         }
 
         public void setClosingDate (DateTime closingDate)

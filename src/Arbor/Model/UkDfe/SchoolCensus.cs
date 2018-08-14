@@ -117,9 +117,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("schoolCensusTerm", schoolCensusTerm);
         }
 
-        public DateTime getSchoolCensusReferenceDate ()
-        {
-            return (DateTime) this.getProperty("schoolCensusReferenceDate");
+        public DateTime getSchoolCensusReferenceDate (){
+            return Convert.ToDateTime(this.getProperty("schoolCensusReferenceDate"));
         }
 
         public void setSchoolCensusReferenceDate (DateTime schoolCensusReferenceDate)
@@ -127,9 +126,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("schoolCensusReferenceDate", schoolCensusReferenceDate);
         }
 
-        public DateTime getSchoolCensusReturnDeadlineDate ()
-        {
-            return (DateTime) this.getProperty("schoolCensusReturnDeadlineDate");
+        public DateTime getSchoolCensusReturnDeadlineDate (){
+            return Convert.ToDateTime(this.getProperty("schoolCensusReturnDeadlineDate"));
         }
 
         public void setSchoolCensusReturnDeadlineDate (DateTime schoolCensusReturnDeadlineDate)
@@ -137,9 +135,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("schoolCensusReturnDeadlineDate", schoolCensusReturnDeadlineDate);
         }
 
-        public DateTime getSchoolCensusDatabaseClosureDate ()
-        {
-            return (DateTime) this.getProperty("schoolCensusDatabaseClosureDate");
+        public DateTime getSchoolCensusDatabaseClosureDate (){
+            return  Convert.ToDateTime(this.getProperty("schoolCensusDatabaseClosureDate"));
         }
 
         public void setSchoolCensusDatabaseClosureDate (DateTime schoolCensusDatabaseClosureDate)
@@ -147,9 +144,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("schoolCensusDatabaseClosureDate", schoolCensusDatabaseClosureDate);
         }
 
-        public DateTime getSchoolCensusSpecificTime ()
-        {
-            return (DateTime) this.getProperty("schoolCensusSpecificTime");
+        public DateTime getSchoolCensusSpecificTime (){
+            return Convert.ToDateTime(this.getProperty("schoolCensusSpecificTime"));
         }
 
         public void setSchoolCensusSpecificTime (DateTime schoolCensusSpecificTime)

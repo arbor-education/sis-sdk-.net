@@ -65,9 +65,8 @@ namespace Arbor.Model
             this.setProperty("attendanceRollCall", attendanceRollCall);
         }
 
-        public DateTime getRecordDate ()
-        {
-            return (DateTime) this.getProperty("recordDate");
+        public DateTime getRecordDate (){
+            return Convert.ToDateTime(this.getProperty("recordDate"));
         }
 
         public void setRecordDate (DateTime recordDate)

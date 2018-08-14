@@ -61,9 +61,8 @@ namespace Arbor.Model
             this.setProperty("customerAccount", customerAccount);
         }
 
-        public DateTime getIssuedDatetime ()
-        {
-            return (DateTime) this.getProperty("issuedDatetime");
+        public DateTime getIssuedDatetime (){
+            return Convert.ToDateTime(this.getProperty("issuedDatetime"));
         }
 
         public void setIssuedDatetime (DateTime issuedDatetime)

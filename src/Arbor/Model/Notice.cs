@@ -60,9 +60,8 @@ namespace Arbor.Model
             this.setProperty("noticeHtml", noticeHtml);
         }
 
-        public DateTime getNoticeDatetime ()
-        {
-            return (DateTime) this.getProperty("noticeDatetime");
+        public DateTime getNoticeDatetime (){
+            return Convert.ToDateTime(this.getProperty("noticeDatetime"));
         }
 
         public void setNoticeDatetime (DateTime noticeDatetime)
@@ -70,9 +69,8 @@ namespace Arbor.Model
             this.setProperty("noticeDatetime", noticeDatetime);
         }
 
-        public DateTime getEndDatetime ()
-        {
-            return (DateTime) this.getProperty("endDatetime");
+        public DateTime getEndDatetime (){
+            return Convert.ToDateTime(this.getProperty("endDatetime"));
         }
 
         public void setEndDatetime (DateTime endDatetime)

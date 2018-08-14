@@ -171,9 +171,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("statusDescription", statusDescription);
         }
 
-        public DateTime getDataExportStartedDatetime ()
-        {
-            return (DateTime) this.getProperty("dataExportStartedDatetime");
+        public DateTime getDataExportStartedDatetime (){
+            return Convert.ToDateTime(this.getProperty("dataExportStartedDatetime"));
         }
 
         public void setDataExportStartedDatetime (DateTime dataExportStartedDatetime)
@@ -181,9 +180,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("dataExportStartedDatetime", dataExportStartedDatetime);
         }
 
-        public DateTime getDataExportCompletedDatetime ()
-        {
-            return (DateTime) this.getProperty("dataExportCompletedDatetime");
+        public DateTime getDataExportCompletedDatetime (){
+            return Convert.ToDateTime(this.getProperty("dataExportCompletedDatetime"));
         }
 
         public void setDataExportCompletedDatetime (DateTime dataExportCompletedDatetime)

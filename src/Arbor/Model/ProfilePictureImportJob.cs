@@ -83,7 +83,7 @@ namespace Arbor.Model
 
         public DateTime getCompletedDatetime ()
         {
-            return (DateTime) this.getProperty("completedDatetime");
+            Convert.ToDateTime(this.getProperty("completedDatetime"))
         }
 
         public void setCompletedDatetime (DateTime completedDatetime)

@@ -11,7 +11,7 @@ namespace Arbor.Model
     {
         protected string resourceType = ResourceType.UI_PARAMS;
         public const string IDENTIFIER = "identifier";
-        public const string _PARAMS = "_params";
+        public const string PARAMS = "params";
         public const string HASH = "hash";
         public const string USER = "user";
         public const string SESSION_ID = "sessionId";
@@ -64,14 +64,14 @@ namespace Arbor.Model
             this.setProperty("identifier", identifier);
         }
 
-        public string get_params ()
+        public string getParams ()
         {
-            return this.getProperty("_params").ToString();
+            return this.getProperty("params").ToString();
         }
 
-        public void set_params (string _params)
+        public void setParams (string _params)
         {
-            this.setProperty("_params", _params);
+            this.setProperty("params", _params);
         }
 
         public string getHash ()
@@ -104,9 +104,8 @@ namespace Arbor.Model
             this.setProperty("sessionId", sessionId);
         }
 
-        public DateTime getCreatedDatetime ()
-        {
-            return (DateTime) this.getProperty("createdDatetime");
+        public DateTime getCreatedDatetime (){
+            return Convert.ToDateTime(this.getProperty("createdDatetime"));
         }
 
         public void setCreatedDatetime (DateTime createdDatetime)
@@ -114,9 +113,8 @@ namespace Arbor.Model
             this.setProperty("createdDatetime", createdDatetime);
         }
 
-        public DateTime getLastAccessDatetime ()
-        {
-            return (DateTime) this.getProperty("lastAccessDatetime");
+        public DateTime getLastAccessDatetime (){
+            return Convert.ToDateTime(this.getProperty("lastAccessDatetime"));
         }
 
         public void setLastAccessDatetime (DateTime lastAccessDatetime)

@@ -141,9 +141,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("isDryRun", isDryRun);
         }
 
-        public DateTime getDataExportStartedDatetime ()
-        {
-            return (DateTime) this.getProperty("dataExportStartedDatetime");
+        public DateTime getDataExportStartedDatetime (){
+            return Convert.ToDateTime(this.getProperty("dataExportStartedDatetime"));
         }
 
         public void setDataExportStartedDatetime (DateTime dataExportStartedDatetime)
@@ -151,9 +150,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("dataExportStartedDatetime", dataExportStartedDatetime);
         }
 
-        public DateTime getDataExportCompletedDatetime ()
-        {
-            return (DateTime) this.getProperty("dataExportCompletedDatetime");
+        public DateTime getDataExportCompletedDatetime (){
+            return Convert.ToDateTime(this.getProperty("dataExportCompletedDatetime"));
         }
 
         public void setDataExportCompletedDatetime (DateTime dataExportCompletedDatetime)
@@ -161,9 +159,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("dataExportCompletedDatetime", dataExportCompletedDatetime);
         }
 
-        public DateTime getSchoolApprovedDatetime ()
-        {
-            return (DateTime) this.getProperty("schoolApprovedDatetime");
+        public DateTime getSchoolApprovedDatetime (){
+            return Convert.ToDateTime(this.getProperty("schoolApprovedDatetime"));
         }
 
         public void setSchoolApprovedDatetime (DateTime schoolApprovedDatetime)
@@ -171,9 +168,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("schoolApprovedDatetime", schoolApprovedDatetime);
         }
 
-        public DateTime getLocalAuthorityRejectedDatetime ()
-        {
-            return (DateTime) this.getProperty("localAuthorityRejectedDatetime");
+        public DateTime getLocalAuthorityRejectedDatetime (){
+            return Convert.ToDateTime(this.getProperty("localAuthorityRejectedDatetime"));
         }
 
         public void setLocalAuthorityRejectedDatetime (DateTime localAuthorityRejectedDatetime)
@@ -181,9 +177,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("localAuthorityRejectedDatetime", localAuthorityRejectedDatetime);
         }
 
-        public DateTime getLocalAuthorityAcceptedDatetime ()
-        {
-            return (DateTime) this.getProperty("localAuthorityAcceptedDatetime");
+        public DateTime getLocalAuthorityAcceptedDatetime (){
+            return Convert.ToDateTime(this.getProperty("localAuthorityAcceptedDatetime"));
         }
 
         public void setLocalAuthorityAcceptedDatetime (DateTime localAuthorityAcceptedDatetime)

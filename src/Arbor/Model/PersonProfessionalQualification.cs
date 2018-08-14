@@ -78,9 +78,8 @@ namespace Arbor.Model
             this.setProperty("qualificationName", qualificationName);
         }
 
-        public DateTime getDateAwarded ()
-        {
-            return (DateTime) this.getProperty("dateAwarded");
+        public DateTime getDateAwarded (){
+            return Convert.ToDateTime(this.getProperty("dateAwarded"));
         }
 
         public void setDateAwarded (DateTime dateAwarded)

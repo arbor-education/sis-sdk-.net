@@ -58,7 +58,12 @@ namespace Arbor.Api.Gateway
 			
 			string body = JsonConvert.SerializeObject(hBody, Formatting.None);
 
-			JObject responseRepresentation = this.sendRequest(HTTP_METHOD_POST.ToString(), url.AbsoluteUri, body);
+            //Console.WriteLine(hBody.ToString());
+            //Console.WriteLine(body);
+            //Console.WriteLine(Environment.NewLine);
+            //Console.WriteLine(url.AbsoluteUri);
+
+            JObject responseRepresentation = this.sendRequest(HTTP_METHOD_POST.ToString(), url.AbsoluteUri, body);
 	        JToken resultingModelRepresentation = new JObject();
 
 	        if(responseRepresentation[resourceRoot] != null)
@@ -323,7 +328,7 @@ namespace Arbor.Api.Gateway
 			HttpWebResponse response = null;
 			string serverResponse = "";
 
-			// Ignore certificate
+			// Ignore certificateC
 			System.Net.ServicePointManager.ServerCertificateValidationCallback += (s,ce,ca,p) => true;
 
 			// Set authorizaton parameters

@@ -114,9 +114,8 @@ namespace Arbor.Model
             this.setProperty("filters", filters);
         }
 
-        public DateTime getLastUpdatedDatetime ()
-        {
-            return (DateTime) this.getProperty("lastUpdatedDatetime");
+        public DateTime getLastUpdatedDatetime (){
+            return Convert.ToDateTime(this.getProperty("lastUpdatedDatetime"));
         }
 
         public void setLastUpdatedDatetime (DateTime lastUpdatedDatetime)

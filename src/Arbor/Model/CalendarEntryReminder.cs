@@ -59,9 +59,8 @@ namespace Arbor.Model
             this.setProperty("calendarEntryMapping", calendarEntryMapping);
         }
 
-        public DateTime getReminderSentDatetime ()
-        {
-            return (DateTime) this.getProperty("reminderSentDatetime");
+        public DateTime getReminderSentDatetime (){
+            return Convert.ToDateTime(this.getProperty("reminderSentDatetime"));
         }
 
         public void setReminderSentDatetime (DateTime reminderSentDatetime)

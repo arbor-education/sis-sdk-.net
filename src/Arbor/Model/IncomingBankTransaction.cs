@@ -61,9 +61,8 @@ namespace Arbor.Model
             this.setProperty("billPayer", billPayer);
         }
 
-        public DateTime getReceivedDate ()
-        {
-            return (DateTime) this.getProperty("receivedDate");
+        public DateTime getReceivedDate (){
+            return Convert.ToDateTime(this.getProperty("receivedDate"));
         }
 
         public void setReceivedDate (DateTime receivedDate)
@@ -71,9 +70,8 @@ namespace Arbor.Model
             this.setProperty("receivedDate", receivedDate);
         }
 
-        public DateTime getCancelledDatetime ()
-        {
-            return (DateTime) this.getProperty("cancelledDatetime");
+        public DateTime getCancelledDatetime (){
+            return Convert.ToDateTime(this.getProperty("cancelledDatetime"));
         }
 
         public void setCancelledDatetime (DateTime cancelledDatetime)

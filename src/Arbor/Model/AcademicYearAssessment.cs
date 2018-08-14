@@ -116,9 +116,8 @@ namespace Arbor.Model
             this.setProperty("isLinkedToSummativeTracking", isLinkedToSummativeTracking);
         }
 
-        public DateTime getSetupCompletedDatetime ()
-        {
-            return (DateTime) this.getProperty("setupCompletedDatetime");
+        public DateTime getSetupCompletedDatetime (){
+            return Convert.ToDateTime(this.getProperty("setupCompletedDatetime"));
         }
 
         public void setSetupCompletedDatetime (DateTime setupCompletedDatetime)
@@ -126,9 +125,8 @@ namespace Arbor.Model
             this.setProperty("setupCompletedDatetime", setupCompletedDatetime);
         }
 
-        public DateTime getSetupCompletionStartedDatetime ()
-        {
-            return (DateTime) this.getProperty("setupCompletionStartedDatetime");
+        public DateTime getSetupCompletionStartedDatetime (){
+            return Convert.ToDateTime(this.getProperty("setupCompletionStartedDatetime"));
         }
 
         public void setSetupCompletionStartedDatetime (DateTime setupCompletionStartedDatetime)

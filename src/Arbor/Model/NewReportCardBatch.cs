@@ -101,9 +101,8 @@ namespace Arbor.Model
             this.setProperty("generalSettingsJson", generalSettingsJson);
         }
 
-        public DateTime getReportCardDate ()
-        {
-            return (DateTime) this.getProperty("reportCardDate");
+        public DateTime getReportCardDate (){
+            return Convert.ToDateTime(this.getProperty("reportCardDate"));
         }
 
         public void setReportCardDate (DateTime reportCardDate)
@@ -121,9 +120,8 @@ namespace Arbor.Model
             this.setProperty("attainmentSettingsJson", attainmentSettingsJson);
         }
 
-        public DateTime getAssessmentPeriodStartDate ()
-        {
-            return (DateTime) this.getProperty("assessmentPeriodStartDate");
+        public DateTime getAssessmentPeriodStartDate (){
+            return Convert.ToDateTime(this.getProperty("assessmentPeriodStartDate"));
         }
 
         public void setAssessmentPeriodStartDate (DateTime assessmentPeriodStartDate)
@@ -131,9 +129,8 @@ namespace Arbor.Model
             this.setProperty("assessmentPeriodStartDate", assessmentPeriodStartDate);
         }
 
-        public DateTime getAssessmentPeriodEndDate ()
-        {
-            return (DateTime) this.getProperty("assessmentPeriodEndDate");
+        public DateTime getAssessmentPeriodEndDate (){
+            return Convert.ToDateTime(this.getProperty("assessmentPeriodEndDate"));
         }
 
         public void setAssessmentPeriodEndDate (DateTime assessmentPeriodEndDate)
@@ -141,9 +138,8 @@ namespace Arbor.Model
             this.setProperty("assessmentPeriodEndDate", assessmentPeriodEndDate);
         }
 
-        public DateTime getDueDate ()
-        {
-            return (DateTime) this.getProperty("dueDate");
+        public DateTime getDueDate (){
+            return Convert.ToDateTime(this.getProperty("dueDate"));
         }
 
         public void setDueDate (DateTime dueDate)
@@ -241,9 +237,8 @@ namespace Arbor.Model
             this.setProperty("includeTeacherTarget", includeTeacherTarget);
         }
 
-        public DateTime getFinalizedDatetime ()
-        {
-            return (DateTime) this.getProperty("finalizedDatetime");
+        public DateTime getFinalizedDatetime (){
+            return Convert.ToDateTime(this.getProperty("finalizedDatetime"));
         }
 
         public void setFinalizedDatetime (DateTime finalizedDatetime)

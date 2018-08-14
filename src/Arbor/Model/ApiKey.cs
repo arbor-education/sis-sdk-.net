@@ -73,7 +73,7 @@ namespace Arbor.Model
 
         public DateTime getIssuedDatetime ()
         {
-            return (DateTime) this.getProperty("issuedDatetime");
+            Convert.ToDateTime(this.getProperty("issuedDatetime"))
         }
 
         public void setIssuedDatetime (DateTime issuedDatetime)
@@ -83,7 +83,7 @@ namespace Arbor.Model
 
         public DateTime getRevokedDatetime ()
         {
-            return (DateTime) this.getProperty("revokedDatetime");
+            Convert.ToDateTime(this.getProperty("revokedDatetime"))
         }
 
         public void setRevokedDatetime (DateTime revokedDatetime)

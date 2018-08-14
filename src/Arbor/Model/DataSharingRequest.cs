@@ -83,9 +83,8 @@ namespace Arbor.Model
             this.setProperty("status", status);
         }
 
-        public DateTime getRequestedDatetime ()
-        {
-            return (DateTime) this.getProperty("requestedDatetime");
+        public DateTime getRequestedDatetime (){
+            return Convert.ToDateTime(this.getProperty("requestedDatetime"));
         }
 
         public void setRequestedDatetime (DateTime requestedDatetime)
@@ -103,9 +102,8 @@ namespace Arbor.Model
             this.setProperty("statusUpdatedByUser", statusUpdatedByUser);
         }
 
-        public DateTime getStatusUpdatedDatetime ()
-        {
-            return (DateTime) this.getProperty("statusUpdatedDatetime");
+        public DateTime getStatusUpdatedDatetime (){
+            return Convert.ToDateTime(this.getProperty("statusUpdatedDatetime"));
         }
 
         public void setStatusUpdatedDatetime (DateTime statusUpdatedDatetime)

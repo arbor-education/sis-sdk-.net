@@ -49,16 +49,17 @@
     <Compile Include="AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup />
-  <ItemGroup>
-    <None Include="config-dist.xml" />
-    <None Include="config.xml" />
-    <None Include="packages.config" />
-  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\src\ArborSdk.csproj">
-      <Project>{FFC09E07-E89C-4197-8ACF-1277B621D6B0}</Project>
+      <Project>{ffc09e07-e89c-4197-8acf-1277b621d6b0}</Project>
       <Name>ArborSdk</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config-dist.xml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="config.xml" />
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

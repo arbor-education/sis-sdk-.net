@@ -106,9 +106,8 @@ namespace Arbor.Model
             this.setProperty("payoutReference", payoutReference);
         }
 
-        public DateTime getPayoutInitiatedDatetime ()
-        {
-            return (DateTime) this.getProperty("payoutInitiatedDatetime");
+        public DateTime getPayoutInitiatedDatetime (){
+            return Convert.ToDateTime(this.getProperty("payoutInitiatedDatetime"));
         }
 
         public void setPayoutInitiatedDatetime (DateTime payoutInitiatedDatetime)
@@ -116,9 +115,8 @@ namespace Arbor.Model
             this.setProperty("payoutInitiatedDatetime", payoutInitiatedDatetime);
         }
 
-        public DateTime getPayoutSucceededDatetime ()
-        {
-            return (DateTime) this.getProperty("payoutSucceededDatetime");
+        public DateTime getPayoutSucceededDatetime (){
+            return Convert.ToDateTime(this.getProperty("payoutSucceededDatetime"));
         }
 
         public void setPayoutSucceededDatetime (DateTime payoutSucceededDatetime)
@@ -126,9 +124,8 @@ namespace Arbor.Model
             this.setProperty("payoutSucceededDatetime", payoutSucceededDatetime);
         }
 
-        public DateTime getPayoutFailedDatetime ()
-        {
-            return (DateTime) this.getProperty("payoutFailedDatetime");
+        public DateTime getPayoutFailedDatetime (){
+            return Convert.ToDateTime(this.getProperty("payoutFailedDatetime"));
         }
 
         public void setPayoutFailedDatetime (DateTime payoutFailedDatetime)

@@ -74,9 +74,8 @@ namespace Arbor.Model
             this.setProperty("exclusionReason", exclusionReason);
         }
 
-        public DateTime getFromDate ()
-        {
-            return (DateTime) this.getProperty("fromDate");
+        public DateTime getFromDate (){
+            return Convert.ToDateTime(this.getProperty("fromDate"));
         }
 
         public void setFromDate (DateTime fromDate)
@@ -84,9 +83,8 @@ namespace Arbor.Model
             this.setProperty("fromDate", fromDate);
         }
 
-        public DateTime getDecisionDatetime ()
-        {
-            return (DateTime) this.getProperty("decisionDatetime");
+        public DateTime getDecisionDatetime (){
+            return Convert.ToDateTime(this.getProperty("decisionDatetime"));
         }
 
         public void setDecisionDatetime (DateTime decisionDatetime)
@@ -94,9 +92,8 @@ namespace Arbor.Model
             this.setProperty("decisionDatetime", decisionDatetime);
         }
 
-        public DateTime getNotifiedStudentDatetime ()
-        {
-            return (DateTime) this.getProperty("notifiedStudentDatetime");
+        public DateTime getNotifiedStudentDatetime (){
+            return Convert.ToDateTime(this.getProperty("notifiedStudentDatetime"));
         }
 
         public void setNotifiedStudentDatetime (DateTime notifiedStudentDatetime)
@@ -104,9 +101,8 @@ namespace Arbor.Model
             this.setProperty("notifiedStudentDatetime", notifiedStudentDatetime);
         }
 
-        public DateTime getNotifiedGuardiansDatetime ()
-        {
-            return (DateTime) this.getProperty("notifiedGuardiansDatetime");
+        public DateTime getNotifiedGuardiansDatetime (){
+            return Convert.ToDateTime(this.getProperty("notifiedGuardiansDatetime"));
         }
 
         public void setNotifiedGuardiansDatetime (DateTime notifiedGuardiansDatetime)

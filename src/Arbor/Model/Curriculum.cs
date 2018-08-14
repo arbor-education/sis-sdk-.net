@@ -225,9 +225,8 @@ namespace Arbor.Model
             this.setProperty("subject", subject);
         }
 
-        public DateTime getValidFromDate ()
-        {
-            return (DateTime) this.getProperty("validFromDate");
+        public DateTime getValidFromDate (){
+            return Convert.ToDateTime(this.getProperty("validFromDate"));
         }
 
         public void setValidFromDate (DateTime validFromDate)
@@ -235,9 +234,8 @@ namespace Arbor.Model
             this.setProperty("validFromDate", validFromDate);
         }
 
-        public DateTime getValidUntilDate ()
-        {
-            return (DateTime) this.getProperty("validUntilDate");
+        public DateTime getValidUntilDate (){
+            return Convert.ToDateTime(this.getProperty("validUntilDate"));
         }
 
         public void setValidUntilDate (DateTime validUntilDate)

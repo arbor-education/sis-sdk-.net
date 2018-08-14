@@ -64,9 +64,8 @@ namespace Arbor.Model
             this.setProperty("trigger", trigger);
         }
 
-        public DateTime getReferenceDate ()
-        {
-            return (DateTime) this.getProperty("referenceDate");
+        public DateTime getReferenceDate (){
+            return Convert.ToDateTime(this.getProperty("referenceDate"));
         }
 
         public void setReferenceDate (DateTime referenceDate)
@@ -104,9 +103,8 @@ namespace Arbor.Model
             this.setProperty("alertParams", alertParams);
         }
 
-        public DateTime getSilencedDatetime ()
-        {
-            return (DateTime) this.getProperty("silencedDatetime");
+        public DateTime getSilencedDatetime (){
+            return Convert.ToDateTime(this.getProperty("silencedDatetime"));
         }
 
         public void setSilencedDatetime (DateTime silencedDatetime)
@@ -114,9 +112,8 @@ namespace Arbor.Model
             this.setProperty("silencedDatetime", silencedDatetime);
         }
 
-        public DateTime getActionDatetime ()
-        {
-            return (DateTime) this.getProperty("actionDatetime");
+        public DateTime getActionDatetime (){
+            return Convert.ToDateTime(this.getProperty("actionDatetime"));
         }
 
         public void setActionDatetime (DateTime actionDatetime)

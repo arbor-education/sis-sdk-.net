@@ -87,9 +87,8 @@ namespace Arbor.Model
             this.setProperty("teacherNotes", teacherNotes);
         }
 
-        public DateTime getSetDatetime ()
-        {
-            return (DateTime) this.getProperty("setDatetime");
+        public DateTime getSetDatetime (){
+            return Convert.ToDateTime(this.getProperty("setDatetime"));
         }
 
         public void setSetDatetime (DateTime setDatetime)
@@ -107,9 +106,8 @@ namespace Arbor.Model
             this.setProperty("dueEvent", dueEvent);
         }
 
-        public DateTime getDueDatetime ()
-        {
-            return (DateTime) this.getProperty("dueDatetime");
+        public DateTime getDueDatetime (){
+            return Convert.ToDateTime(this.getProperty("dueDatetime"));
         }
 
         public void setDueDatetime (DateTime dueDatetime)
@@ -117,9 +115,8 @@ namespace Arbor.Model
             this.setProperty("dueDatetime", dueDatetime);
         }
 
-        public DateTime getMarkingStartedDatetime ()
-        {
-            return (DateTime) this.getProperty("markingStartedDatetime");
+        public DateTime getMarkingStartedDatetime (){
+            return Convert.ToDateTime(this.getProperty("markingStartedDatetime"));
         }
 
         public void setMarkingStartedDatetime (DateTime markingStartedDatetime)
@@ -127,9 +124,8 @@ namespace Arbor.Model
             this.setProperty("markingStartedDatetime", markingStartedDatetime);
         }
 
-        public DateTime getMarkingCompletedDatetime ()
-        {
-            return (DateTime) this.getProperty("markingCompletedDatetime");
+        public DateTime getMarkingCompletedDatetime (){
+            return Convert.ToDateTime(this.getProperty("markingCompletedDatetime"));
         }
 
         public void setMarkingCompletedDatetime (DateTime markingCompletedDatetime)

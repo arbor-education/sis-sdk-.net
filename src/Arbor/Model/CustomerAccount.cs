@@ -170,9 +170,8 @@ namespace Arbor.Model
             this.setProperty("creditLimit", creditLimit);
         }
 
-        public DateTime getOpeningBalanceTransactionDatetime ()
-        {
-            return (DateTime) this.getProperty("openingBalanceTransactionDatetime");
+        public DateTime getOpeningBalanceTransactionDatetime (){
+            return Convert.ToDateTime(this.getProperty("openingBalanceTransactionDatetime"));
         }
 
         public void setOpeningBalanceTransactionDatetime (DateTime openingBalanceTransactionDatetime)

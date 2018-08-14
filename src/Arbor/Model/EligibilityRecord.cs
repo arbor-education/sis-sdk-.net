@@ -73,9 +73,8 @@ namespace Arbor.Model
             this.setProperty("person", person);
         }
 
-        public DateTime getStartDate ()
-        {
-            return (DateTime) this.getProperty("startDate");
+        public DateTime getStartDate (){
+            return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
         public void setStartDate (DateTime startDate)
@@ -83,9 +82,8 @@ namespace Arbor.Model
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
-        {
-            return (DateTime) this.getProperty("endDate");
+        public DateTime getEndDate (){
+            return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
         public void setEndDate (DateTime endDate)
@@ -93,9 +91,8 @@ namespace Arbor.Model
             this.setProperty("endDate", endDate);
         }
 
-        public DateTime getLastVerifiedDate ()
-        {
-            return (DateTime) this.getProperty("lastVerifiedDate");
+        public DateTime getLastVerifiedDate (){
+            return Convert.ToDateTime(this.getProperty("lastVerifiedDate"));
         }
 
         public void setLastVerifiedDate (DateTime lastVerifiedDate)
@@ -103,9 +100,8 @@ namespace Arbor.Model
             this.setProperty("lastVerifiedDate", lastVerifiedDate);
         }
 
-        public DateTime getNextCheckDate ()
-        {
-            return (DateTime) this.getProperty("nextCheckDate");
+        public DateTime getNextCheckDate (){
+            return Convert.ToDateTime(this.getProperty("nextCheckDate"));
         }
 
         public void setNextCheckDate (DateTime nextCheckDate)

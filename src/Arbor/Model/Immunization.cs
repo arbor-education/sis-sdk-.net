@@ -71,9 +71,8 @@ namespace Arbor.Model
             this.setProperty("immunizationType", immunizationType);
         }
 
-        public DateTime getImmunizationDate ()
-        {
-            return (DateTime) this.getProperty("immunizationDate");
+        public DateTime getImmunizationDate (){
+            return Convert.ToDateTime(this.getProperty("immunizationDate"));
         }
 
         public void setImmunizationDate (DateTime immunizationDate)

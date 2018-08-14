@@ -88,9 +88,8 @@ namespace Arbor.Model
             this.setProperty("checkClearanceLevel", checkClearanceLevel);
         }
 
-        public DateTime getRequestedDate ()
-        {
-            return (DateTime) this.getProperty("requestedDate");
+        public DateTime getRequestedDate (){
+            return Convert.ToDateTime(this.getProperty("requestedDate"));
         }
 
         public void setRequestedDate (DateTime requestedDate)
@@ -98,9 +97,8 @@ namespace Arbor.Model
             this.setProperty("requestedDate", requestedDate);
         }
 
-        public DateTime getReturnedDate ()
-        {
-            return (DateTime) this.getProperty("returnedDate");
+        public DateTime getReturnedDate (){
+            return Convert.ToDateTime(this.getProperty("returnedDate"));
         }
 
         public void setReturnedDate (DateTime returnedDate)
@@ -108,9 +106,8 @@ namespace Arbor.Model
             this.setProperty("returnedDate", returnedDate);
         }
 
-        public DateTime getExpiryDate ()
-        {
-            return (DateTime) this.getProperty("expiryDate");
+        public DateTime getExpiryDate (){
+            return Convert.ToDateTime(this.getProperty("expiryDate"));
         }
 
         public void setExpiryDate (DateTime expiryDate)
@@ -128,9 +125,8 @@ namespace Arbor.Model
             this.setProperty("referenceNumber", referenceNumber);
         }
 
-        public DateTime getAuthenticatedDate ()
-        {
-            return (DateTime) this.getProperty("authenticatedDate");
+        public DateTime getAuthenticatedDate (){
+            return Convert.ToDateTime(this.getProperty("authenticatedDate"));
         }
 
         public void setAuthenticatedDate (DateTime authenticatedDate)
@@ -148,9 +144,8 @@ namespace Arbor.Model
             this.setProperty("authenticatedByStaff", authenticatedByStaff);
         }
 
-        public DateTime getEvidenceRecordedDate ()
-        {
-            return (DateTime) this.getProperty("evidenceRecordedDate");
+        public DateTime getEvidenceRecordedDate (){
+            return Convert.ToDateTime(this.getProperty("evidenceRecordedDate"));
         }
 
         public void setEvidenceRecordedDate (DateTime evidenceRecordedDate)

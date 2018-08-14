@@ -80,7 +80,6 @@ namespace Arbor.Model
             this.setProperty("academicUnit", academicUnit);
         }
 
-
     }
 }
 

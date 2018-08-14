@@ -137,9 +137,8 @@ namespace Arbor.Model
             this.setProperty("sessionsUnauthorizedAbsence", sessionsUnauthorizedAbsence);
         }
 
-        public DateTime getAttendanceStartDate ()
-        {
-            return (DateTime) this.getProperty("attendanceStartDate");
+        public DateTime getAttendanceStartDate (){
+            return Convert.ToDateTime(this.getProperty("attendanceStartDate"));
         }
 
         public void setAttendanceStartDate (DateTime attendanceStartDate)

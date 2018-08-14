@@ -71,9 +71,8 @@ namespace Arbor.Model
             this.setProperty("code", code);
         }
 
-        public DateTime getValidityStartDate ()
-        {
-            return (DateTime) this.getProperty("validityStartDate");
+        public DateTime getValidityStartDate (){
+            return Convert.ToDateTime(this.getProperty("validityStartDate"));
         }
 
         public void setValidityStartDate (DateTime validityStartDate)
@@ -81,9 +80,8 @@ namespace Arbor.Model
             this.setProperty("validityStartDate", validityStartDate);
         }
 
-        public DateTime getValidityEndDate ()
-        {
-            return (DateTime) this.getProperty("validityEndDate");
+        public DateTime getValidityEndDate (){
+            return Convert.ToDateTime(this.getProperty("validityEndDate"));
         }
 
         public void setValidityEndDate (DateTime validityEndDate)

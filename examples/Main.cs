@@ -10,6 +10,7 @@ using Newtonsoft.Json.Linq;
 using System.Xml;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using Arbor.Tools;
 using Arbor.ChangeLog;
@@ -33,7 +34,7 @@ namespace ArborSdkExamples
 		public static void Main (string[] args)
 		{
 			XmlDocument conf = new XmlDocument();
-			string confPath = Environment.CurrentDirectory + @"\..\..\config.xml";
+			string confPath = Environment.CurrentDirectory + @"\..\..\config-dist.xml";
 			conf.Load(confPath);
 			USERNAME = conf["config"]["api"]["auth"]["user"].InnerText;
 			PASSWORD = conf["config"]["api"]["auth"]["password"].InnerText;
@@ -41,87 +42,143 @@ namespace ArborSdkExamples
 
 			Console.WriteLine ("Arbor SDK EXAMPLES");
 
-			// Retrieve model
-			//MainClass.studentRetrieve(ResourceType.STUDENT, "1");
+         //   MainClass.TestVb2();
 
-			// Query for students
-			//MainClass.studentQueryViaStaticMethod();
+            #region Test Methods
+            //MainClass.TestVb();
 
-			// Student listing
-			//MainClass.studentListing();
+            // Retrieve model
+            //MainClass.studentRetrieve(ResourceType.STUDENT, "1");
 
-			// Student query
-			//MainClass.studentQuery();
+            // Query for students
+            //MainClass.studentQueryViaStaticMethod();
 
-			// Retrieve student
-			//MainClass.studentRetrieve();
+            // Student listing
+           // MainClass.studentListing();
 
-			// Update student Ukdfe fields
-			//MainClass.studentUpdateUkdfeFields();
+            // Student query
+            //MainClass.studentQuery();
 
-			// Update student tags
-			//MainClass.studentUpdateUserTags();
+            // Retrieve student
+            //MainClass.studentRetrieve();
 
-			// Update student
-			//MainClass.studentUpdate();
+            // Update student Ukdfe fields
+            //MainClass.studentUpdateUkdfeFields();
 
-			// Navigation properties retrieve
-			//MainClass.navigationPropertiesRetrieve();
+            // Update student tags
+            //MainClass.studentUpdateUserTags();
 
-			// Create student
-			//MainClass.studentCreate();
+            // Update student
+           // MainClass.studentUpdate();
 
-			// Create student with Ukdfe fields
-			//MainClass.studentCreateWithUkdfeFields();
-			
-			/************* Ukdfe examples *************/
-			
-			// Create local authority
-			//MainClass.localAuthorityCreate();
-			
-			// Query local authority
-			//MainClass.localAuthorityQuery();
-			
-			// Retrieve local authority
-			//MainClass.localAuthorityRetrieve();
-			
-			// Retrieve local authority by code
-			//MainClass.schoolPhaseRetrievebyCode();
+            // Navigation properties retrieve
+            //MainClass.navigationPropertiesRetrieve();
 
-			// MainClass.studentGetTags();
-			
-			/***************** Change log examples ******************/
-			
-			//MainClass.getChanges();
-			
-			/***************** API Tools examples ******************/
-			
-			// Current students
-			//MainClass.getCurrentStudents();
-			
-			// Current guardians
-			//MainClass.getCurrentGuardians();
+            // Create student
+            //MainClass.studentCreate();
 
-			// Write attendance marks
-			//MainClass.writeAttendanceMarks();
+            // Create student with Ukdfe fields
+            //MainClass.studentCreateWithUkdfeFields();
 
-			// Query staff via tagging (find all teachers)
-			//MainClass.staffQueryViaTagging();
+            /************* Ukdfe examples *************/
 
-			// Query registration form
-			//MainClass.registrationFormQuery ();
+            // Create local authority
+            //MainClass.localAuthorityCreate();
 
-			// Get school enrolments
-			//MainClass.getSchoolEnrolments();
+            // Query local authority
+            //MainClass.localAuthorityQuery();
 
-			// Get eligibility records
-			//MainClass.getEligibilityRecords();
+            // Retrieve local authority
+            //MainClass.localAuthorityRetrieve();
 
-			// Get student by demographic tag
-			MainClass.getStudentByDemographicTag();
-		}
+            // Retrieve local authority by code
+            //MainClass.schoolPhaseRetrievebyCode();
 
-		public static void studentRetrieve(string modelName, string id)
+            // MainClass.studentGetTags();
+
+            /***************** Change log examples ******************/
+
+            //MainClass.getChanges();
+
+            /***************** API Tools examples ******************/
+
+            // Current students
+            //MainClass.getCurrentStudents();
+
+            // Current guardians
+            //MainClass.getCurrentGuardians();
+
+            // Write attendance marks
+            //MainClass.writeAttendanceMarks();
+
+            // Query staff via tagging (find all teachers)
+            //MainClass.staffQueryViaTagging();
+
+            // Query registration form
+            //MainClass.registrationFormQuery ();
+
+            // Get school enrolments
+            //MainClass.getSchoolEnrolments();
+
+            // Get eligibility records
+            //MainClass.getEligibilityRecords();
+
+            // Get student by demographic tag
+            MainClass.getStudentByDemographicTag();
+
+            #endregion
+        }//Main()
+
+	    public static void TestVb2(){
+
+	        RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
+	        Staff staff = (Staff)gateway.retrieve(ResourceType.STAFF, "16");
+	        StaffAbsence absence = new StaffAbsence();         
+	        absence.setStaff(staff);
+
+	        DateTime startDateTime = new DateTime(2018, 7, 22, 10, 15, 20);
+	        absence.setStartDatetime(startDateTime);
+
+            DateTime endDateTime= new DateTime(2018, 7, 25, 10, 15, 20);
+	        absence.setEndDatetime(endDateTime);
+
+            absence.setStaffAbsenceCategory((StaffAbsenceCategory) gateway.retrieve(ResourceType.STAFF_ABSENCE_CATEGORY, "SICKNESS"));
+
+	        DateTime approvedDateTime = new DateTime(2018, 7, 22, 10, 20, 18);
+            absence.setApprovedDatetime(approvedDateTime);
+
+	        absence.setApprovedByStaff(staff);
+	        absence.setNarrative("This is a sickness add");
+	        absence.connect(gateway);
+	        absence.save();
+
+	        Console.WriteLine("Example: Staff absence. ");
+	        StaffAbsence studentCopy2 = (StaffAbsence)gateway.retrieve(ResourceType.STAFF_ABSENCE, absence.getResourceId().ToString());
+	        Hydrator hydrator = new Hydrator();
+	        JObject extractedModel = hydrator.extractArray(studentCopy2);
+	        Console.WriteLine("Absence: " + extractedModel.ToString());
+	        Console.ReadKey();
+
+	    }//TestVb2()
+
+        public static void TestVb(){
+	        RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
+	        SimpleQuery query = new SimpleQuery(ResourceType.STAFF);
+	        ModelCollection<ModelBase> collection = gateway.query(query);
+	        Console.WriteLine("Example: query person model.");
+	        Console.WriteLine("Models count: " + collection.Count.ToString());
+	        Console.WriteLine("Models (extracted): " );
+	        Hydrator hydrator = new Hydrator();
+	        JObject jobtest = new JObject();
+	        foreach (Staff model in collection)
+	        {
+	            JObject example = hydrator.extractArray(model);
+	            string resourceid = example.GetValue("id").ToString();
+	            Console.WriteLine(hydrator.extractArray(model).ToString());
+	        }
+        }
+
+	    public static void studentRetrieve(string modelName, string id)
 		{
 			// Retrieve model
 			RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
@@ -284,7 +341,9 @@ namespace ArborSdkExamples
 			// TODO: implement model "AcademicUnit"
 			AcademicUnit model = (AcademicUnit) gateway.retrieve(ResourceType.ACADEMIC_UNIT, "1");
 
-			ModelCollection<AcademicUnitCohort> cohortCollection = model.getAcademicUnitCohorts();
+			ModelCollection<AcademicUnitCohort> cohortCollection = model
+			    
+			    .getAcademicUnitCohorts();
 
 			// Display Logic
 			Console.WriteLine("Example: navigation properties retrieve. \n");

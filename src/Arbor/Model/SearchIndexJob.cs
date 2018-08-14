@@ -61,9 +61,8 @@ namespace Arbor.Model
             this.setProperty("object", _object);
         }
 
-        public DateTime getStartedDatetime ()
-        {
-            return (DateTime) this.getProperty("startedDatetime");
+        public DateTime getStartedDatetime (){
+            return Convert.ToDateTime(this.getProperty("startedDatetime"));
         }
 
         public void setStartedDatetime (DateTime startedDatetime)
@@ -81,9 +80,8 @@ namespace Arbor.Model
             this.setProperty("threadIdentifier", threadIdentifier);
         }
 
-        public DateTime getCompletedDatetime ()
-        {
-            return (DateTime) this.getProperty("completedDatetime");
+        public DateTime getCompletedDatetime (){
+            return Convert.ToDateTime(this.getProperty("completedDatetime"));
         }
 
         public void setCompletedDatetime (DateTime completedDatetime)

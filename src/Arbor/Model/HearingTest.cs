@@ -60,9 +60,8 @@ namespace Arbor.Model
             this.setProperty("student", student);
         }
 
-        public DateTime getTestDate ()
-        {
-            return (DateTime) this.getProperty("testDate");
+        public DateTime getTestDate (){
+            return Convert.ToDateTime(this.getProperty("testDate"));
         }
 
         public void setTestDate (DateTime testDate)

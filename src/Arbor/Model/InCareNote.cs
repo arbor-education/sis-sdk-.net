@@ -81,9 +81,8 @@ namespace Arbor.Model
             this.setProperty("content", content);
         }
 
-        public DateTime getNoteDate ()
-        {
-            return (DateTime) this.getProperty("noteDate");
+        public DateTime getNoteDate (){
+            return Convert.ToDateTime(this.getProperty("noteDate"));
         }
 
         public void setNoteDate (DateTime noteDate)

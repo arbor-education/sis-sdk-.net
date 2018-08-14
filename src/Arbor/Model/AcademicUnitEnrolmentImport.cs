@@ -75,7 +75,7 @@ namespace Arbor.Model
 
         public DateTime getImportStartedDatetime ()
         {
-            return (DateTime) this.getProperty("importStartedDatetime");
+            Convert.ToDateTime(this.getProperty("importStartedDatetime"))
         }
 
         public void setImportStartedDatetime (DateTime importStartedDatetime)
@@ -85,7 +85,7 @@ namespace Arbor.Model
 
         public DateTime getImportCompletedDatetime ()
         {
-            return (DateTime) this.getProperty("importCompletedDatetime");
+            Convert.ToDateTime(this.getProperty("importCompletedDatetime"))
         }
 
         public void setImportCompletedDatetime (DateTime importCompletedDatetime)
@@ -95,7 +95,7 @@ namespace Arbor.Model
 
         public DateTime getEnrolmentStartDate ()
         {
-            return (DateTime) this.getProperty("enrolmentStartDate");
+            Convert.ToDateTime(this.getProperty("enrolmentStartDate"))
         }
 
         public void setEnrolmentStartDate (DateTime enrolmentStartDate)
@@ -105,7 +105,7 @@ namespace Arbor.Model
 
         public DateTime getEnrolmentEndDate ()
         {
-            return (DateTime) this.getProperty("enrolmentEndDate");
+            Convert.ToDateTime(this.getProperty("enrolmentEndDate"))
         }
 
         public void setEnrolmentEndDate (DateTime enrolmentEndDate)

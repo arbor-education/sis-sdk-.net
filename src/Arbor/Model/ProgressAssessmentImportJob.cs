@@ -51,9 +51,8 @@ namespace Arbor.Model
         	return (ProgressAssessmentImportJob) gateway.retrieve(ResourceType.PROGRESS_ASSESSMENT_IMPORT_JOB, id);
         }
 
-        public DateTime getUploadedDatetime ()
-        {
-            return (DateTime) this.getProperty("uploadedDatetime");
+        public DateTime getUploadedDatetime (){
+            return Convert.ToDateTime(this.getProperty("uploadedDatetime"));
         }
 
         public void setUploadedDatetime (DateTime uploadedDatetime)
@@ -61,9 +60,8 @@ namespace Arbor.Model
             this.setProperty("uploadedDatetime", uploadedDatetime);
         }
 
-        public DateTime getImportStartedDatetime ()
-        {
-            return (DateTime) this.getProperty("importStartedDatetime");
+        public DateTime getImportStartedDatetime (){
+            return Convert.ToDateTime(this.getProperty("importStartedDatetime"));
         }
 
         public void setImportStartedDatetime (DateTime importStartedDatetime)
@@ -71,9 +69,8 @@ namespace Arbor.Model
             this.setProperty("importStartedDatetime", importStartedDatetime);
         }
 
-        public DateTime getImportedDatetime ()
-        {
-            return (DateTime) this.getProperty("importedDatetime");
+        public DateTime getImportedDatetime (){
+            return Convert.ToDateTime(this.getProperty("importedDatetime"));
         }
 
         public void setImportedDatetime (DateTime importedDatetime)

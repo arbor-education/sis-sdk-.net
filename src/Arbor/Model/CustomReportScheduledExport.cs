@@ -169,9 +169,8 @@ namespace Arbor.Model
             this.setProperty("scheduledTime", scheduledTime);
         }
 
-        public DateTime getScheduledFromDate ()
-        {
-            return (DateTime) this.getProperty("scheduledFromDate");
+        public DateTime getScheduledFromDate (){
+            return Convert.ToDateTime(this.getProperty("scheduledFromDate"));
         }
 
         public void setScheduledFromDate (DateTime scheduledFromDate)

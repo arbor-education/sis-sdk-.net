@@ -58,9 +58,8 @@ namespace Arbor.Model
         	return (Letter) gateway.retrieve(ResourceType.LETTER, id);
         }
 
-        public DateTime getLetterDate ()
-        {
-            return (DateTime) this.getProperty("letterDate");
+        public DateTime getLetterDate (){
+            return Convert.ToDateTime(this.getProperty("letterDate"));
         }
 
         public void setLetterDate (DateTime letterDate)
@@ -68,9 +67,8 @@ namespace Arbor.Model
             this.setProperty("letterDate", letterDate);
         }
 
-        public DateTime getReceivedDate ()
-        {
-            return (DateTime) this.getProperty("receivedDate");
+        public DateTime getReceivedDate (){
+            return Convert.ToDateTime(this.getProperty("receivedDate"));
         }
 
         public void setReceivedDate (DateTime receivedDate)
@@ -78,9 +76,8 @@ namespace Arbor.Model
             this.setProperty("receivedDate", receivedDate);
         }
 
-        public DateTime getPreparedDatetime ()
-        {
-            return (DateTime) this.getProperty("preparedDatetime");
+        public DateTime getPreparedDatetime (){
+            return Convert.ToDateTime(this.getProperty("preparedDatetime"));
         }
 
         public void setPreparedDatetime (DateTime preparedDatetime)
@@ -88,9 +85,8 @@ namespace Arbor.Model
             this.setProperty("preparedDatetime", preparedDatetime);
         }
 
-        public DateTime getSentDatetime ()
-        {
-            return (DateTime) this.getProperty("sentDatetime");
+        public DateTime getSentDatetime (){
+            return Convert.ToDateTime(this.getProperty("sentDatetime"));
         }
 
         public void setSentDatetime (DateTime sentDatetime)
@@ -158,9 +154,8 @@ namespace Arbor.Model
             this.setProperty("summary", summary);
         }
 
-        public DateTime getActionRequiredByDatetime ()
-        {
-            return (DateTime) this.getProperty("actionRequiredByDatetime");
+        public DateTime getActionRequiredByDatetime (){
+            return Convert.ToDateTime(this.getProperty("actionRequiredByDatetime"));
         }
 
         public void setActionRequiredByDatetime (DateTime actionRequiredByDatetime)

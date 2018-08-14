@@ -158,9 +158,8 @@ namespace Arbor.Model
             this.setProperty("responseCode", responseCode);
         }
 
-        public DateTime getLastCheckedDatetime ()
-        {
-            return (DateTime) this.getProperty("lastCheckedDatetime");
+        public DateTime getLastCheckedDatetime (){
+            return Convert.ToDateTime(this.getProperty("lastCheckedDatetime"));
         }
 
         public void setLastCheckedDatetime (DateTime lastCheckedDatetime)

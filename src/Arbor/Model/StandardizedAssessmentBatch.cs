@@ -82,9 +82,8 @@ namespace Arbor.Model
             this.setProperty("standardizedAssessmentTemplate", standardizedAssessmentTemplate);
         }
 
-        public DateTime getAssessmentDate ()
-        {
-            return (DateTime) this.getProperty("assessmentDate");
+        public DateTime getAssessmentDate (){
+            return Convert.ToDateTime(this.getProperty("assessmentDate"));
         }
 
         public void setAssessmentDate (DateTime assessmentDate)

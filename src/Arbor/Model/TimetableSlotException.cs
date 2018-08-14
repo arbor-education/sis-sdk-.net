@@ -62,9 +62,8 @@ namespace Arbor.Model
             this.setProperty("timetableSlot", timetableSlot);
         }
 
-        public DateTime getExceptionDate ()
-        {
-            return (DateTime) this.getProperty("exceptionDate");
+        public DateTime getExceptionDate (){
+            return Convert.ToDateTime(this.getProperty("exceptionDate"));
         }
 
         public void setExceptionDate (DateTime exceptionDate)

@@ -105,9 +105,8 @@ namespace Arbor.Model
             this.setProperty("details", details);
         }
 
-        public DateTime getObservationDate ()
-        {
-            return (DateTime) this.getProperty("observationDate");
+        public DateTime getObservationDate (){
+            return Convert.ToDateTime(this.getProperty("observationDate"));
         }
 
         public void setObservationDate (DateTime observationDate)

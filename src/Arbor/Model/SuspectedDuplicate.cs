@@ -94,9 +94,8 @@ namespace Arbor.Model
             this.setProperty("duplicateScores", duplicateScores);
         }
 
-        public DateTime getResolvedDatetime ()
-        {
-            return (DateTime) this.getProperty("resolvedDatetime");
+        public DateTime getResolvedDatetime (){
+            return Convert.ToDateTime(this.getProperty("resolvedDatetime"));
         }
 
         public void setResolvedDatetime (DateTime resolvedDatetime)
