@@ -71,6 +71,7 @@ namespace Arbor.Service
 			{
 				this.marks = new List<Hashtable>();
 			}
+			return response;
 		}
 
 		public void setGateway(RestGateway gateway)
