@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArborSdkExamples", "examples\ArborSdkExamples.csproj", "{0E691EF6-6229-4AE5-9386-DCBD044593AB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArborSdk", "src\ArborSdk.csproj", "{FFC09E07-E89C-4197-8ACF-1277B621D6B0}"
@@ -17,13 +19,19 @@ Global
 		{0E691EF6-6229-4AE5-9386-DCBD044593AB}.Debug|x86.Build.0 = Debug|Any CPU
 		{0E691EF6-6229-4AE5-9386-DCBD044593AB}.Release|x86.ActiveCfg = Release|Any CPU
 		{0E691EF6-6229-4AE5-9386-DCBD044593AB}.Release|x86.Build.0 = Release|Any CPU
-		{B09F2A50-DCA9-45EE-A8A2-D17C74F6C7BF}.Debug|x86.ActiveCfg = Debug|x86
-		{B09F2A50-DCA9-45EE-A8A2-D17C74F6C7BF}.Debug|x86.Build.0 = Debug|x86
-		{B09F2A50-DCA9-45EE-A8A2-D17C74F6C7BF}.Release|x86.ActiveCfg = Release|x86
-		{B09F2A50-DCA9-45EE-A8A2-D17C74F6C7BF}.Release|x86.Build.0 = Release|x86
 		{FFC09E07-E89C-4197-8ACF-1277B621D6B0}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{FFC09E07-E89C-4197-8ACF-1277B621D6B0}.Debug|x86.Build.0 = Debug|Any CPU
 		{FFC09E07-E89C-4197-8ACF-1277B621D6B0}.Release|x86.ActiveCfg = Release|Any CPU
 		{FFC09E07-E89C-4197-8ACF-1277B621D6B0}.Release|x86.Build.0 = Release|Any CPU
+		{B09F2A50-DCA9-45EE-A8A2-D17C74F6C7BF}.Debug|x86.ActiveCfg = Debug|x86
+		{B09F2A50-DCA9-45EE-A8A2-D17C74F6C7BF}.Debug|x86.Build.0 = Debug|x86
+		{B09F2A50-DCA9-45EE-A8A2-D17C74F6C7BF}.Release|x86.ActiveCfg = Release|x86
+		{B09F2A50-DCA9-45EE-A8A2-D17C74F6C7BF}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {89CA4458-2439-450D-8609-44B1DC290C93}
 	EndGlobalSection
 EndGlobal

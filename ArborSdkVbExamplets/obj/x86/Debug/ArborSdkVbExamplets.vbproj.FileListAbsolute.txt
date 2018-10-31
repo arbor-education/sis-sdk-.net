@@ -1,0 +1,12 @@
+C:\Users\Zoran Denda\Documents\GitHub\sis-sdk-.net\ArborSdkVbExamplets\bin\Debug\ArborSdkVbExamplets.exe.config
+C:\Users\Zoran Denda\Documents\GitHub\sis-sdk-.net\ArborSdkVbExamplets\bin\Debug\ArborSdkVbExamplets.exe
+C:\Users\Zoran Denda\Documents\GitHub\sis-sdk-.net\ArborSdkVbExamplets\bin\Debug\ArborSdkVbExamplets.pdb
+C:\Users\Zoran Denda\Documents\GitHub\sis-sdk-.net\ArborSdkVbExamplets\bin\Debug\ArborSdk.dll
+C:\Users\Zoran Denda\Documents\GitHub\sis-sdk-.net\ArborSdkVbExamplets\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Zoran Denda\Documents\GitHub\sis-sdk-.net\ArborSdkVbExamplets\bin\Debug\ArborSdk.pdb
+C:\Users\Zoran Denda\Documents\GitHub\sis-sdk-.net\ArborSdkVbExamplets\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Zoran Denda\Documents\GitHub\sis-sdk-.net\ArborSdkVbExamplets\obj\x86\Debug\ArborSdkVbExamplets.vbprojAssemblyReference.cache
+C:\Users\Zoran Denda\Documents\GitHub\sis-sdk-.net\ArborSdkVbExamplets\obj\x86\Debug\ArborSdkVbExamplets.vbproj.CoreCompileInputs.cache
+C:\Users\Zoran Denda\Documents\GitHub\sis-sdk-.net\ArborSdkVbExamplets\obj\x86\Debug\ArborSdkVbExamplets.vbproj.CopyComplete
+C:\Users\Zoran Denda\Documents\GitHub\sis-sdk-.net\ArborSdkVbExamplets\obj\x86\Debug\ArborSdkVbExamplets.exe
+C:\Users\Zoran Denda\Documents\GitHub\sis-sdk-.net\ArborSdkVbExamplets\obj\x86\Debug\ArborSdkVbExamplets.pdb

@@ -49,9 +49,10 @@
     <Compile Include="AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup />
   <ItemGroup>
-    <None Include="config-dist.xml" />
+    <None Include="config-dist.xml">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="config.xml" />
     <None Include="packages.config" />
   </ItemGroup>

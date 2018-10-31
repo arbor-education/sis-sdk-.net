@@ -33,13 +33,13 @@ namespace ArborSdkExamples
 		public static void Main (string[] args)
 		{
 			XmlDocument conf = new XmlDocument();
-			string confPath = Environment.CurrentDirectory + @"\..\..\config.xml";
+			string confPath = Environment.CurrentDirectory + @"\..\..\config-dist.xml";
 			conf.Load(confPath);
 			USERNAME = conf["config"]["api"]["auth"]["user"].InnerText;
 			PASSWORD = conf["config"]["api"]["auth"]["password"].InnerText;
 			URL = conf["config"]["api"]["baseUrl"].InnerText;
 
-			Console.WriteLine ("Arbor SDK EXAMPLES");
+			Console.WriteLine ("Arbor SDK EXAMPLES    ");
 
 			// Retrieve model
 			//MainClass.studentRetrieve(ResourceType.STUDENT, "1");
@@ -48,7 +48,7 @@ namespace ArborSdkExamples
 			//MainClass.studentQueryViaStaticMethod();
 
 			// Student listing
-			//MainClass.studentListing();
+			MainClass.studentListing();
 
 			// Student query
 			//MainClass.studentQuery();
@@ -69,7 +69,7 @@ namespace ArborSdkExamples
 			//MainClass.navigationPropertiesRetrieve();
 
 			// Create student
-			//MainClass.studentCreate();
+			MainClass.studentCreate();
 
 			// Create student with Ukdfe fields
 			//MainClass.studentCreateWithUkdfeFields();
@@ -118,7 +118,7 @@ namespace ArborSdkExamples
 			//MainClass.getEligibilityRecords();
 
 			// Get student by demographic tag
-			MainClass.getStudentByDemographicTag();
+			//MainClass.getStudentByDemographicTag();
 		}
 
 		public static void studentRetrieve(string modelName, string id)

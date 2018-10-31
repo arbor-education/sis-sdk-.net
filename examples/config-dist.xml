@@ -2,10 +2,10 @@
 
 <config>
 	<api>
-		<baseUrl>your_api_url</baseUrl>
+		<baseUrl></baseUrl>
 		<auth>
-			<user>your_api_username</user>
-			<password>your_api_password</password>
+			<user></user>
+			<password></password>
 		</auth>
 	</api>
 </config>

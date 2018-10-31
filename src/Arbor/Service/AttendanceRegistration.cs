@@ -44,7 +44,7 @@ namespace Arbor.Service
 		}
 
 
-		public void saveMarks()
+		public JObject saveMarks()
 		{
 			List<Hashtable> payload = new List<Hashtable>();
 			Hashtable htRequest = new Hashtable();

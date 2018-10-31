@@ -3,7 +3,6 @@ using System.Collections;
 using Arbor.Resource.UkDfe;
 using Arbor.Api.Gateway;
 using Arbor.Query;
-using Arbor.Model.UkDfe;
 
 namespace Arbor.Model.UkDfe
 {

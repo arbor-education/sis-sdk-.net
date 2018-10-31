@@ -1,0 +1,11 @@
+C:\Users\Zoran Denda\Documents\GitHub\sis-sdk-.net\examples\bin\Debug\ArborSdkExamples.exe
+C:\Users\Zoran Denda\Documents\GitHub\sis-sdk-.net\examples\bin\Debug\ArborSdkExamples.pdb
+C:\Users\Zoran Denda\Documents\GitHub\sis-sdk-.net\examples\bin\Debug\ArborSdk.dll
+C:\Users\Zoran Denda\Documents\GitHub\sis-sdk-.net\examples\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Zoran Denda\Documents\GitHub\sis-sdk-.net\examples\bin\Debug\ArborSdk.pdb
+C:\Users\Zoran Denda\Documents\GitHub\sis-sdk-.net\examples\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Zoran Denda\Documents\GitHub\sis-sdk-.net\examples\obj\Debug\ArborSdkExamples.csprojAssemblyReference.cache
+C:\Users\Zoran Denda\Documents\GitHub\sis-sdk-.net\examples\obj\Debug\ArborSdkExamples.csproj.CoreCompileInputs.cache
+C:\Users\Zoran Denda\Documents\GitHub\sis-sdk-.net\examples\obj\Debug\ArborSdkExamples.csproj.CopyComplete
+C:\Users\Zoran Denda\Documents\GitHub\sis-sdk-.net\examples\obj\Debug\ArborSdkExamples.exe
+C:\Users\Zoran Denda\Documents\GitHub\sis-sdk-.net\examples\obj\Debug\ArborSdkExamples.pdb
