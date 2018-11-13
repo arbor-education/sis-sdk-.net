@@ -44,7 +44,7 @@ namespace Arbor.Service
 		}
 
 
-		public void saveMarks()
+		public JObject saveMarks()
 		{
 			List<Hashtable> payload = new List<Hashtable>();
 			Hashtable htRequest = new Hashtable();
@@ -71,6 +71,7 @@ namespace Arbor.Service
 			{
 				this.marks = new List<Hashtable>();
 			}
+		    return response;
 		}
 
 		public void setGateway(RestGateway gateway)

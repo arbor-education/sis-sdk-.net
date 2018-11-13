@@ -1,8 +1,6 @@
 using System;
-using ArborSdk;
 using Arbor.Api.Gateway;
 using Arbor.Model;
-using Arbor.Filter;
 using Arbor.Query;
 using Arbor.Resource;
 using Arbor.Model.Api;
@@ -10,9 +8,7 @@ using Newtonsoft.Json.Linq;
 using System.Xml;
 using System.Collections;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
-using Arbor.Tools;
 using Arbor.ChangeLog;
 using Arbor.Tools.Services;
 using Arbor.Service;
@@ -42,7 +38,7 @@ namespace ArborSdkExamples
 
 			Console.WriteLine ("Arbor SDK EXAMPLES");
 
-         //   MainClass.TestVb2();
+           //MainClass.TestVb2();
 
             #region Test Methods
             //MainClass.TestVb();
@@ -54,7 +50,7 @@ namespace ArborSdkExamples
             //MainClass.studentQueryViaStaticMethod();
 
             // Student listing
-           // MainClass.studentListing();
+            //MainClass.studentListing();
 
             // Student query
             //MainClass.studentQuery();
@@ -124,7 +120,7 @@ namespace ArborSdkExamples
             //MainClass.getEligibilityRecords();
 
             // Get student by demographic tag
-            MainClass.getStudentByDemographicTag();
+            //MainClass.getStudentByDemographicTag();
 
             #endregion
         }//Main()
