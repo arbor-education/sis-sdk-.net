@@ -465,7 +465,7 @@ namespace ArborSdkExamples
 			ModelBase.setDefaultGateway(gateway);
 
 			// Set session start time to today 9AM
-			DateTime sessionStartTime = DateTime.Now;
+			DateTime sessionStartTime = new DateTime(DateTime.Now.Year,DateTime.Now.Month,DateTime.Now.Day,9,0,0);
 
 			// Get some students which we are going to mark
 			Student student12 = Student.retrieve("12");
