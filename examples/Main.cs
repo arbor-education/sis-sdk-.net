@@ -23,7 +23,7 @@ namespace ArborSdkExamples
 		 * api  credentials into it.
 		 */
 		static string USERNAME  = "";
-        static string PASSWORD = "";
+                static string PASSWORD = "";
 		static string URL = "";
 		const string USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36";
 
@@ -37,12 +37,9 @@ namespace ArborSdkExamples
 			URL = conf["config"]["api"]["baseUrl"].InnerText;
 
 			Console.WriteLine ("Arbor SDK EXAMPLES");
-
-           //MainClass.TestVb2();
-
+			
             #region Test Methods
-            //MainClass.TestVb();
-
+    
             // Retrieve model
             //MainClass.studentRetrieve(ResourceType.STUDENT, "1");
 
@@ -55,9 +52,6 @@ namespace ArborSdkExamples
             // Student query
             //MainClass.studentQuery();
 
-            // Retrieve student
-            //MainClass.studentRetrieve();
-
             // Update student Ukdfe fields
             //MainClass.studentUpdateUkdfeFields();
 
@@ -66,9 +60,6 @@ namespace ArborSdkExamples
 
             // Update student
            // MainClass.studentUpdate();
-
-            // Navigation properties retrieve
-            //MainClass.navigationPropertiesRetrieve();
 
             // Create student
             //MainClass.studentCreate();
@@ -87,9 +78,6 @@ namespace ArborSdkExamples
             // Retrieve local authority
             //MainClass.localAuthorityRetrieve();
 
-            // Retrieve local authority by code
-            //MainClass.schoolPhaseRetrievebyCode();
-
             // MainClass.studentGetTags();
 
             /***************** Change log examples ******************/
@@ -101,9 +89,6 @@ namespace ArborSdkExamples
             // Current students
             //MainClass.getCurrentStudents();
 
-            // Current guardians
-            //MainClass.getCurrentGuardians();
-
             // Write attendance marks
             //MainClass.writeAttendanceMarks();
 
@@ -113,9 +98,6 @@ namespace ArborSdkExamples
             // Query registration form
             //MainClass.registrationFormQuery ();
 
-            // Get school enrolments
-            //MainClass.getSchoolEnrolments();
-
             // Get eligibility records
             //MainClass.getEligibilityRecords();
 
@@ -124,55 +106,6 @@ namespace ArborSdkExamples
 
             #endregion
         }//Main()
-
-	    public static void TestVb2(){
-
-	        RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
-	        Staff staff = (Staff)gateway.retrieve(ResourceType.STAFF, "16");
-	        StaffAbsence absence = new StaffAbsence();         
-	        absence.setStaff(staff);
-
-	        DateTime startDateTime = new DateTime(2018, 7, 22, 10, 15, 20);
-	        absence.setStartDatetime(startDateTime);
-
-            DateTime endDateTime= new DateTime(2018, 7, 25, 10, 15, 20);
-	        absence.setEndDatetime(endDateTime);
-
-            absence.setStaffAbsenceCategory((StaffAbsenceCategory) gateway.retrieve(ResourceType.STAFF_ABSENCE_CATEGORY, "SICKNESS"));
-
-	        DateTime approvedDateTime = new DateTime(2018, 7, 22, 10, 20, 18);
-            absence.setApprovedDatetime(approvedDateTime);
-
-	        absence.setApprovedByStaff(staff);
-	        absence.setNarrative("This is a sickness add");
-	        absence.connect(gateway);
-	        absence.save();
-
-	        Console.WriteLine("Example: Staff absence. ");
-	        StaffAbsence studentCopy2 = (StaffAbsence)gateway.retrieve(ResourceType.STAFF_ABSENCE, absence.getResourceId().ToString());
-	        Hydrator hydrator = new Hydrator();
-	        JObject extractedModel = hydrator.extractArray(studentCopy2);
-	        Console.WriteLine("Absence: " + extractedModel.ToString());
-	        Console.ReadKey();
-
-	    }//TestVb2()
-
-        public static void TestVb(){
-	        RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
-	        SimpleQuery query = new SimpleQuery(ResourceType.STAFF);
-	        ModelCollection<ModelBase> collection = gateway.query(query);
-	        Console.WriteLine("Example: query person model.");
-	        Console.WriteLine("Models count: " + collection.Count.ToString());
-	        Console.WriteLine("Models (extracted): " );
-	        Hydrator hydrator = new Hydrator();
-	        JObject jobtest = new JObject();
-	        foreach (Staff model in collection)
-	        {
-	            JObject example = hydrator.extractArray(model);
-	            string resourceid = example.GetValue("id").ToString();
-	            Console.WriteLine(hydrator.extractArray(model).ToString());
-	        }
-        }
 
 	    public static void studentRetrieve(string modelName, string id)
 		{
@@ -248,17 +181,6 @@ namespace ArborSdkExamples
 			}
 		}
 
-		public static void studentRetrieve()
-		{
-			RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
-			Student student = (Student) gateway.retrieve(ResourceType.STUDENT, "137");
-
-			// Display logic
-			Console.WriteLine("Example: student retrieve. \n");
-			Hydrator hydrator = new Hydrator();
-			JObject jArr = hydrator.extractArray(student);
-			Console.WriteLine (jArr);
-		}
 
 		public static void studentUpdateUkdfeFields()
 		{
@@ -302,6 +224,18 @@ namespace ArborSdkExamples
 			// Display logic
 			MainClass.studentRetrieve();
 		}
+		
+		private static void studentRetrieve()
+		{
+			    RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
+			    Student student = (Student)gateway.retrieve(ResourceType.STUDENT, "137");
+
+			    // Display logic
+			    Console.WriteLine("Example: student retrieve. \n");
+			    Hydrator hydrator = new Hydrator();
+			    JObject jArr = hydrator.extractArray(student);
+			    Console.WriteLine(jArr);
+		}
 
 		public static void studentUpdate()
 		{
@@ -329,26 +263,6 @@ namespace ArborSdkExamples
 			JObject extractedModel = hydrator.extractArray(studentCopy2);
 			Console.WriteLine("Example: update student ID. \n");
 			Console.WriteLine("Retrieved model (extracted):" + extractedModel.ToString());
-		}
-
-		public static void navigationPropertiesRetrieve()
-		{
-			RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
-			// TODO: implement model "AcademicUnit"
-			AcademicUnit model = (AcademicUnit) gateway.retrieve(ResourceType.ACADEMIC_UNIT, "1");
-
-			ModelCollection<AcademicUnitCohort> cohortCollection = model
-			    
-			    .getAcademicUnitCohorts();
-
-			// Display Logic
-			Console.WriteLine("Example: navigation properties retrieve. \n");
-			Console.WriteLine("Cohort count = " + cohortCollection.Count.ToString ());
-
-			Hydrator hydrator = new Hydrator();
-			foreach (AcademicUnitCohort aucModel in cohortCollection) {
-				Console.WriteLine ( hydrator.extractArray(aucModel) + "\n");
-			}
 		}
 
 		public static void studentCreate()
@@ -543,23 +457,6 @@ namespace ArborSdkExamples
 				Console.WriteLine ( hydrator.extractArray(student) + "\n");
 			}
 		}
-		
-		public static void getCurrentGuardians()
-		{
-			RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
-			GuardianService.setDefaultGateway(gateway);
-			ModelCollection<Guardian> guardianCollection =  GuardianService.getCurrentGuardians();
-			
-			// Display logic
-			Console.WriteLine("Example: get current guardians. \n");
-			Console.WriteLine ("Guardians count: " + guardianCollection.Count.ToString ());
-			Console.WriteLine ("Guardians: \n");
-			
-			Hydrator hydrator = new Hydrator();
-			foreach (Guardian guardian in guardianCollection) {
-				Console.WriteLine ( hydrator.extractArray(guardian) + "\n");
-			}
-		}
 
 		public static void writeAttendanceMarks()
 		{
@@ -573,7 +470,7 @@ namespace ArborSdkExamples
 			// Get some students which we are going to mark
 			Student student12 = Student.retrieve("12");
 			Student student13 = Student.retrieve("13");
-			Student student14 = Student.retrieve("1090");
+			Student student14 = Student.retrieve("14");
 
 			// Get some valid attendance marks
 			AttendanceMark attMarkPresent = AttendanceMark.retrieve("PRESENT");
@@ -680,25 +577,6 @@ namespace ArborSdkExamples
 			}
 		}
 
-		public static void getSchoolEnrolments()
-		{
-			RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
-			ModelBase.setDefaultGateway (gateway);
-
-			SimpleQuery query = new SimpleQuery(ResourceType.SCHOOL_ENROLMENT);
-			string date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-			query.addPropertyFilter("startDate", SimpleQuery.OPERATOR_BEFORE, date);
-			query.addPropertyFilter("endDate", SimpleQuery.OPERATOR_AFTER, date);
-
-			ModelCollection<ModelBase> collection = gateway.query(query); // School enrolments
-
-			Hydrator hydrator = new Hydrator();
-			foreach (SchoolEnrolment schoolEnrolment in collection) {
-				Student student = schoolEnrolment.getStudent();
-				Console.WriteLine (hydrator.extractArray(schoolEnrolment) + "\n");
-			}
-		}
-
 		public static void getEligibilityRecords()
 		{
 			RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
@@ -759,5 +637,5 @@ namespace ArborSdkExamples
 
 		    Console.ReadKey();
         }
-	}
+   }
 }
