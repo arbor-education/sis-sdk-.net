@@ -120,7 +120,7 @@ namespace Arbor.Model
 
         public bool getTestForSchool ()
         {
-            return (bool) this.getProperty("testForSchool");
+            return Convert.ToBoolean( this.getProperty("testForSchool"));
         }
 
         public void setTestForSchool (bool testForSchool)
@@ -130,7 +130,7 @@ namespace Arbor.Model
 
         public bool getTestForGroups ()
         {
-            return (bool) this.getProperty("testForGroups");
+            return Convert.ToBoolean( this.getProperty("testForGroups"));
         }
 
         public void setTestForGroups (bool testForGroups)
@@ -140,7 +140,7 @@ namespace Arbor.Model
 
         public bool getTestForAcademicUnits ()
         {
-            return (bool) this.getProperty("testForAcademicUnits");
+            return Convert.ToBoolean( this.getProperty("testForAcademicUnits"));
         }
 
         public void setTestForAcademicUnits (bool testForAcademicUnits)
@@ -150,7 +150,7 @@ namespace Arbor.Model
 
         public bool getTestForStudents ()
         {
-            return (bool) this.getProperty("testForStudents");
+            return Convert.ToBoolean( this.getProperty("testForStudents"));
         }
 
         public void setTestForStudents (bool testForStudents)
@@ -160,7 +160,7 @@ namespace Arbor.Model
 
         public bool getTestForStudentAcademicUnitEnrolments ()
         {
-            return (bool) this.getProperty("testForStudentAcademicUnitEnrolments");
+            return Convert.ToBoolean( this.getProperty("testForStudentAcademicUnitEnrolments"));
         }
 
         public void setTestForStudentAcademicUnitEnrolments (bool testForStudentAcademicUnitEnrolments)

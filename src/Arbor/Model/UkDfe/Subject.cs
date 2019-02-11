@@ -53,7 +53,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getUsedInSwfOnly ()
         {
-            return (bool) this.getProperty("usedInSwfOnly");
+            return Convert.ToBoolean( this.getProperty("usedInSwfOnly"));
         }
 
         public void setUsedInSwfOnly (bool usedInSwfOnly)
@@ -63,7 +63,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getUsedInCbdsOnly ()
         {
-            return (bool) this.getProperty("usedInCbdsOnly");
+            return Convert.ToBoolean( this.getProperty("usedInCbdsOnly"));
         }
 
         public void setUsedInCbdsOnly (bool usedInCbdsOnly)

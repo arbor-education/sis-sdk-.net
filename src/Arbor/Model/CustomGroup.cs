@@ -116,7 +116,7 @@ namespace Arbor.Model
 
         public bool getIsDynamic ()
         {
-            return (bool) this.getProperty("isDynamic");
+            return Convert.ToBoolean( this.getProperty("isDynamic"));
         }
 
         public void setIsDynamic (bool isDynamic)

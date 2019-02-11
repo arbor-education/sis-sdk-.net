@@ -73,7 +73,7 @@ namespace Arbor.Model
 
         public bool getNoEventException ()
         {
-            return (bool) this.getProperty("noEventException");
+            return Convert.ToBoolean( this.getProperty("noEventException"));
         }
 
         public void setNoEventException (bool noEventException)
@@ -83,7 +83,7 @@ namespace Arbor.Model
 
         public bool getLocationException ()
         {
-            return (bool) this.getProperty("locationException");
+            return Convert.ToBoolean( this.getProperty("locationException"));
         }
 
         public void setLocationException (bool locationException)
@@ -93,7 +93,7 @@ namespace Arbor.Model
 
         public bool getTimeException ()
         {
-            return (bool) this.getProperty("timeException");
+            return Convert.ToBoolean( this.getProperty("timeException"));
         }
 
         public void setTimeException (bool timeException)

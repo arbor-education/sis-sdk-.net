@@ -94,7 +94,7 @@ namespace Arbor.Model
 
         public bool getVoluntaryContribution ()
         {
-            return (bool) this.getProperty("voluntaryContribution");
+            return Convert.ToBoolean( this.getProperty("voluntaryContribution"));
         }
 
         public void setVoluntaryContribution (bool voluntaryContribution)

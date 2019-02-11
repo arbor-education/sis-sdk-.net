@@ -93,7 +93,7 @@ namespace Arbor.Model
 
         public bool getAffectsWorkingAbility ()
         {
-            return (bool) this.getProperty("affectsWorkingAbility");
+            return Convert.ToBoolean( this.getProperty("affectsWorkingAbility"));
         }
 
         public void setAffectsWorkingAbility (bool affectsWorkingAbility)

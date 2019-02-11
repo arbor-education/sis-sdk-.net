@@ -90,7 +90,7 @@ namespace Arbor.Model
 
         public bool getRole ()
         {
-            return (bool) this.getProperty("role");
+            return Convert.ToBoolean( this.getProperty("role"));
         }
 
         public void setRole (bool role)
@@ -100,7 +100,7 @@ namespace Arbor.Model
 
         public bool getFree ()
         {
-            return (bool) this.getProperty("free");
+            return Convert.ToBoolean( this.getProperty("free"));
         }
 
         public void setFree (bool free)
@@ -110,7 +110,7 @@ namespace Arbor.Model
 
         public bool getDisposable ()
         {
-            return (bool) this.getProperty("disposable");
+            return Convert.ToBoolean( this.getProperty("disposable"));
         }
 
         public void setDisposable (bool disposable)
@@ -120,7 +120,7 @@ namespace Arbor.Model
 
         public bool getAcceptAll ()
         {
-            return (bool) this.getProperty("acceptAll");
+            return Convert.ToBoolean( this.getProperty("acceptAll"));
         }
 
         public void setAcceptAll (bool acceptAll)

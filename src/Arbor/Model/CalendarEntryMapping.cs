@@ -103,7 +103,7 @@ namespace Arbor.Model
 
         public bool getTimeslotBlocked ()
         {
-            return (bool) this.getProperty("timeslotBlocked");
+            return Convert.ToBoolean( this.getProperty("timeslotBlocked"));
         }
 
         public void setTimeslotBlocked (bool timeslotBlocked)

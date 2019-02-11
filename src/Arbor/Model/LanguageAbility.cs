@@ -77,7 +77,7 @@ namespace Arbor.Model
 
         public bool getIsNativeLanguage ()
         {
-            return (bool) this.getProperty("isNativeLanguage");
+            return Convert.ToBoolean( this.getProperty("isNativeLanguage"));
         }
 
         public void setIsNativeLanguage (bool isNativeLanguage)
@@ -87,7 +87,7 @@ namespace Arbor.Model
 
         public bool getSpeaksLanguage ()
         {
-            return (bool) this.getProperty("speaksLanguage");
+            return Convert.ToBoolean( this.getProperty("speaksLanguage"));
         }
 
         public void setSpeaksLanguage (bool speaksLanguage)
@@ -97,7 +97,7 @@ namespace Arbor.Model
 
         public bool getUnderstandsLanguage ()
         {
-            return (bool) this.getProperty("understandsLanguage");
+            return Convert.ToBoolean( this.getProperty("understandsLanguage"));
         }
 
         public void setUnderstandsLanguage (bool understandsLanguage)
@@ -107,7 +107,7 @@ namespace Arbor.Model
 
         public bool getIsSpokenAtHome ()
         {
-            return (bool) this.getProperty("isSpokenAtHome");
+            return Convert.ToBoolean( this.getProperty("isSpokenAtHome"));
         }
 
         public void setIsSpokenAtHome (bool isSpokenAtHome)

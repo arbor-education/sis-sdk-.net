@@ -77,7 +77,7 @@ namespace Arbor.Model
 
         public bool getMainProgramme ()
         {
-            return (bool) this.getProperty("mainProgramme");
+            return Convert.ToBoolean( this.getProperty("mainProgramme"));
         }
 
         public void setMainProgramme (bool mainProgramme)

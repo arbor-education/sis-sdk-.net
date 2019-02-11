@@ -85,7 +85,7 @@ namespace Arbor.Model
 
         public bool getRequireNumber ()
         {
-            return (bool) this.getProperty("requireNumber");
+            return Convert.ToBoolean( this.getProperty("requireNumber"));
         }
 
         public void setRequireNumber (bool requireNumber)
@@ -95,7 +95,7 @@ namespace Arbor.Model
 
         public bool getRequireLetter ()
         {
-            return (bool) this.getProperty("requireLetter");
+            return Convert.ToBoolean( this.getProperty("requireLetter"));
         }
 
         public void setRequireLetter (bool requireLetter)
@@ -105,7 +105,7 @@ namespace Arbor.Model
 
         public bool getRequireMixedCase ()
         {
-            return (bool) this.getProperty("requireMixedCase");
+            return Convert.ToBoolean( this.getProperty("requireMixedCase"));
         }
 
         public void setRequireMixedCase (bool requireMixedCase)

@@ -89,7 +89,7 @@ namespace Arbor.Model
 
         public bool getAppliesOnMonday ()
         {
-            return (bool) this.getProperty("appliesOnMonday");
+            return Convert.ToBoolean( this.getProperty("appliesOnMonday"));
         }
 
         public void setAppliesOnMonday (bool appliesOnMonday)
@@ -99,7 +99,7 @@ namespace Arbor.Model
 
         public bool getAppliesOnTuesday ()
         {
-            return (bool) this.getProperty("appliesOnTuesday");
+            return Convert.ToBoolean( this.getProperty("appliesOnTuesday"));
         }
 
         public void setAppliesOnTuesday (bool appliesOnTuesday)
@@ -109,7 +109,7 @@ namespace Arbor.Model
 
         public bool getAppliesOnWednesday ()
         {
-            return (bool) this.getProperty("appliesOnWednesday");
+            return Convert.ToBoolean( this.getProperty("appliesOnWednesday"));
         }
 
         public void setAppliesOnWednesday (bool appliesOnWednesday)
@@ -119,7 +119,7 @@ namespace Arbor.Model
 
         public bool getAppliesOnThursday ()
         {
-            return (bool) this.getProperty("appliesOnThursday");
+            return Convert.ToBoolean( this.getProperty("appliesOnThursday"));
         }
 
         public void setAppliesOnThursday (bool appliesOnThursday)
@@ -129,7 +129,7 @@ namespace Arbor.Model
 
         public bool getAppliesOnFriday ()
         {
-            return (bool) this.getProperty("appliesOnFriday");
+            return Convert.ToBoolean( this.getProperty("appliesOnFriday"));
         }
 
         public void setAppliesOnFriday (bool appliesOnFriday)
@@ -139,7 +139,7 @@ namespace Arbor.Model
 
         public bool getAppliesOnSaturday ()
         {
-            return (bool) this.getProperty("appliesOnSaturday");
+            return Convert.ToBoolean( this.getProperty("appliesOnSaturday"));
         }
 
         public void setAppliesOnSaturday (bool appliesOnSaturday)
@@ -149,7 +149,7 @@ namespace Arbor.Model
 
         public bool getAppliesOnSunday ()
         {
-            return (bool) this.getProperty("appliesOnSunday");
+            return Convert.ToBoolean( this.getProperty("appliesOnSunday"));
         }
 
         public void setAppliesOnSunday (bool appliesOnSunday)

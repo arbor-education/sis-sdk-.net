@@ -161,7 +161,7 @@ namespace Arbor.Model
 
         public bool getRequireConsent ()
         {
-            return (bool) this.getProperty("requireConsent");
+            return Convert.ToBoolean( this.getProperty("requireConsent"));
         }
 
         public void setRequireConsent (bool requireConsent)
@@ -189,7 +189,7 @@ namespace Arbor.Model
 
         public bool getFree ()
         {
-            return (bool) this.getProperty("free");
+            return Convert.ToBoolean( this.getProperty("free"));
         }
 
         public void setFree (bool free)

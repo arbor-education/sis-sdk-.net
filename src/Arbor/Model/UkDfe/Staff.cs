@@ -53,7 +53,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getEligibleForSchoolWorkforceReturn ()
         {
-            return (bool) this.getProperty("eligibleForSchoolWorkforceReturn");
+            return Convert.ToBoolean( this.getProperty("eligibleForSchoolWorkforceReturn"));
         }
 
         public void setEligibleForSchoolWorkforceReturn (bool eligibleForSchoolWorkforceReturn)
@@ -63,7 +63,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getQualifiedTeacherStatus ()
         {
-            return (bool) this.getProperty("qualifiedTeacherStatus");
+            return Convert.ToBoolean( this.getProperty("qualifiedTeacherStatus"));
         }
 
         public void setQualifiedTeacherStatus (bool qualifiedTeacherStatus)
@@ -83,7 +83,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getHltaStatus ()
         {
-            return (bool) this.getProperty("hltaStatus");
+            return Convert.ToBoolean( this.getProperty("hltaStatus"));
         }
 
         public void setHltaStatus (bool hltaStatus)

@@ -66,7 +66,7 @@ namespace Arbor.Model
 
         public bool getActive ()
         {
-            return (bool) this.getProperty("active");
+            return Convert.ToBoolean( this.getProperty("active"));
         }
 
         public void setActive (bool active)
@@ -96,7 +96,7 @@ namespace Arbor.Model
 
         public bool getIsMorning ()
         {
-            return (bool) this.getProperty("isMorning");
+            return Convert.ToBoolean( this.getProperty("isMorning"));
         }
 
         public void setIsMorning (bool isMorning)
@@ -106,7 +106,7 @@ namespace Arbor.Model
 
         public bool getIsAfternoon ()
         {
-            return (bool) this.getProperty("isAfternoon");
+            return Convert.ToBoolean( this.getProperty("isAfternoon"));
         }
 
         public void setIsAfternoon (bool isAfternoon)

@@ -73,7 +73,7 @@ namespace Arbor.Model
 
         public bool getActive ()
         {
-            return (bool) this.getProperty("active");
+            return Convert.ToBoolean( this.getProperty("active"));
         }
 
         public void setActive (bool active)
@@ -161,7 +161,7 @@ namespace Arbor.Model
 
         public bool getIsCentreSpecifiedTimetable ()
         {
-            return (bool) this.getProperty("isCentreSpecifiedTimetable");
+            return Convert.ToBoolean( this.getProperty("isCentreSpecifiedTimetable"));
         }
 
         public void setIsCentreSpecifiedTimetable (bool isCentreSpecifiedTimetable)
@@ -190,7 +190,7 @@ namespace Arbor.Model
 
         public bool getIsProvisional ()
         {
-            return (bool) this.getProperty("isProvisional");
+            return Convert.ToBoolean( this.getProperty("isProvisional"));
         }
 
         public void setIsProvisional (bool isProvisional)

@@ -72,7 +72,7 @@ namespace Arbor.Model
 
         public bool getActive ()
         {
-            return (bool) this.getProperty("active");
+            return Convert.ToBoolean( this.getProperty("active"));
         }
 
         public void setActive (bool active)
@@ -102,7 +102,7 @@ namespace Arbor.Model
 
         public bool getIsPaidSickLeave ()
         {
-            return (bool) this.getProperty("isPaidSickLeave");
+            return Convert.ToBoolean( this.getProperty("isPaidSickLeave"));
         }
 
         public void setIsPaidSickLeave (bool isPaidSickLeave)
@@ -112,7 +112,7 @@ namespace Arbor.Model
 
         public bool getIsUnpaidSickLeave ()
         {
-            return (bool) this.getProperty("isUnpaidSickLeave");
+            return Convert.ToBoolean( this.getProperty("isUnpaidSickLeave"));
         }
 
         public void setIsUnpaidSickLeave (bool isUnpaidSickLeave)
@@ -122,7 +122,7 @@ namespace Arbor.Model
 
         public bool getIsPaidHoliday ()
         {
-            return (bool) this.getProperty("isPaidHoliday");
+            return Convert.ToBoolean( this.getProperty("isPaidHoliday"));
         }
 
         public void setIsPaidHoliday (bool isPaidHoliday)
@@ -132,7 +132,7 @@ namespace Arbor.Model
 
         public bool getIsUnpaidHoliday ()
         {
-            return (bool) this.getProperty("isUnpaidHoliday");
+            return Convert.ToBoolean( this.getProperty("isUnpaidHoliday"));
         }
 
         public void setIsUnpaidHoliday (bool isUnpaidHoliday)
@@ -142,7 +142,7 @@ namespace Arbor.Model
 
         public bool getIsPaidMaternity ()
         {
-            return (bool) this.getProperty("isPaidMaternity");
+            return Convert.ToBoolean( this.getProperty("isPaidMaternity"));
         }
 
         public void setIsPaidMaternity (bool isPaidMaternity)
@@ -152,7 +152,7 @@ namespace Arbor.Model
 
         public bool getIsUnpaidMaternity ()
         {
-            return (bool) this.getProperty("isUnpaidMaternity");
+            return Convert.ToBoolean( this.getProperty("isUnpaidMaternity"));
         }
 
         public void setIsUnpaidMaternity (bool isUnpaidMaternity)
@@ -162,7 +162,7 @@ namespace Arbor.Model
 
         public bool getIsPaidPaternity ()
         {
-            return (bool) this.getProperty("isPaidPaternity");
+            return Convert.ToBoolean( this.getProperty("isPaidPaternity"));
         }
 
         public void setIsPaidPaternity (bool isPaidPaternity)
@@ -172,7 +172,7 @@ namespace Arbor.Model
 
         public bool getIsUnpaidPaternity ()
         {
-            return (bool) this.getProperty("isUnpaidPaternity");
+            return Convert.ToBoolean( this.getProperty("isUnpaidPaternity"));
         }
 
         public void setIsUnpaidPaternity (bool isUnpaidPaternity)
@@ -182,7 +182,7 @@ namespace Arbor.Model
 
         public bool getIsAuthorizedAbsence ()
         {
-            return (bool) this.getProperty("isAuthorizedAbsence");
+            return Convert.ToBoolean( this.getProperty("isAuthorizedAbsence"));
         }
 
         public void setIsAuthorizedAbsence (bool isAuthorizedAbsence)

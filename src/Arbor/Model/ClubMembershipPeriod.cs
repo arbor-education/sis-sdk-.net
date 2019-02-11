@@ -103,7 +103,7 @@ namespace Arbor.Model
 
         public bool getAllowGuardianPortalSignup ()
         {
-            return (bool) this.getProperty("allowGuardianPortalSignup");
+            return Convert.ToBoolean( this.getProperty("allowGuardianPortalSignup"));
         }
 
         public void setAllowGuardianPortalSignup (bool allowGuardianPortalSignup)

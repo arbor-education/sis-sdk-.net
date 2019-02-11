@@ -83,7 +83,7 @@ namespace Arbor.Model
 
         public bool getConsentReceived ()
         {
-            return (bool) this.getProperty("consentReceived");
+            return Convert.ToBoolean( this.getProperty("consentReceived"));
         }
 
         public void setConsentReceived (bool consentReceived)

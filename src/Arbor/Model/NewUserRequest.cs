@@ -147,7 +147,7 @@ namespace Arbor.Model
 
         public bool getApproversExist ()
         {
-            return (bool) this.getProperty("approversExist");
+            return Convert.ToBoolean( this.getProperty("approversExist"));
         }
 
         public void setApproversExist (bool approversExist)

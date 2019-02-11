@@ -129,7 +129,7 @@ namespace Arbor.Model
 
         public bool getSharedByDefault ()
         {
-            return (bool) this.getProperty("sharedByDefault");
+            return Convert.ToBoolean( this.getProperty("sharedByDefault"));
         }
 
         public void setSharedByDefault (bool sharedByDefault)
@@ -157,7 +157,7 @@ namespace Arbor.Model
 
         public bool getDisabled ()
         {
-            return (bool) this.getProperty("disabled");
+            return Convert.ToBoolean( this.getProperty("disabled"));
         }
 
         public void setDisabled (bool disabled)

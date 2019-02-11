@@ -74,7 +74,7 @@ namespace Arbor.Model
 
         public DateTime getLastUpdatedDatetime ()
         {
-            return (DateTime) this.getProperty("lastUpdatedDatetime");
+            return Convert.ToDateTime( this.getProperty("lastUpdatedDatetime"));
         }
 
         public void setLastUpdatedDatetime (DateTime lastUpdatedDatetime)
@@ -94,7 +94,7 @@ namespace Arbor.Model
 
         public bool getDoNotUpdate ()
         {
-            return (bool) this.getProperty("doNotUpdate");
+            return Convert.ToBoolean( this.getProperty("doNotUpdate"));
         }
 
         public void setDoNotUpdate (bool doNotUpdate)

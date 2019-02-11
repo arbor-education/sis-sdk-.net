@@ -226,7 +226,7 @@ namespace Arbor.Model
 
         public bool getArchived ()
         {
-            return (bool) this.getProperty("archived");
+            return Convert.ToBoolean( this.getProperty("archived"));
         }
 
         public void setArchived (bool archived)

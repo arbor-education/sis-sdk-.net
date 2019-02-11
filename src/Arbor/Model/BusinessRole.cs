@@ -70,7 +70,7 @@ namespace Arbor.Model
 
         public bool getActive ()
         {
-            return (bool) this.getProperty("active");
+            return Convert.ToBoolean( this.getProperty("active"));
         }
 
         public void setActive (bool active)
@@ -130,7 +130,7 @@ namespace Arbor.Model
 
         public bool getInternalStaff ()
         {
-            return (bool) this.getProperty("internalStaff");
+            return Convert.ToBoolean( this.getProperty("internalStaff"));
         }
 
         public void setInternalStaff (bool internalStaff)
@@ -140,7 +140,7 @@ namespace Arbor.Model
 
         public bool getTeachingStaff ()
         {
-            return (bool) this.getProperty("teachingStaff");
+            return Convert.ToBoolean( this.getProperty("teachingStaff"));
         }
 
         public void setTeachingStaff (bool teachingStaff)
@@ -160,7 +160,7 @@ namespace Arbor.Model
 
         public bool getCustomerManagesDefaultUserRoles ()
         {
-            return (bool) this.getProperty("customerManagesDefaultUserRoles");
+            return Convert.ToBoolean( this.getProperty("customerManagesDefaultUserRoles"));
         }
 
         public void setCustomerManagesDefaultUserRoles (bool customerManagesDefaultUserRoles)

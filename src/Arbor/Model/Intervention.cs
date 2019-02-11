@@ -203,7 +203,7 @@ namespace Arbor.Model
 
         public bool getIsCompleted ()
         {
-            return (bool) this.getProperty("isCompleted");
+            return Convert.ToBoolean( this.getProperty("isCompleted"));
         }
 
         public void setIsCompleted (bool isCompleted)

@@ -136,7 +136,7 @@ namespace Arbor.Model
 
         public bool getIsPublicHoliday ()
         {
-            return (bool) this.getProperty("isPublicHoliday");
+            return Convert.ToBoolean( this.getProperty("isPublicHoliday"));
         }
 
         public void setIsPublicHoliday (bool isPublicHoliday)
@@ -216,7 +216,7 @@ namespace Arbor.Model
 
         public bool getIsGoodSchoolDay ()
         {
-            return (bool) this.getProperty("isGoodSchoolDay");
+            return Convert.ToBoolean( this.getProperty("isGoodSchoolDay"));
         }
 
         public void setIsGoodSchoolDay (bool isGoodSchoolDay)
@@ -236,7 +236,7 @@ namespace Arbor.Model
 
         public bool getActive ()
         {
-            return (bool) this.getProperty("active");
+            return Convert.ToBoolean( this.getProperty("active"));
         }
 
         public void setActive (bool active)

@@ -136,7 +136,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getIsTemporary ()
         {
-            return (bool) this.getProperty("isTemporary");
+            return Convert.ToBoolean( this.getProperty("isTemporary"));
         }
 
         public void setIsTemporary (bool isTemporary)

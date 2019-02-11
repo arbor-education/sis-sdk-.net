@@ -148,7 +148,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getHasChildMotherProvision ()
         {
-            return (bool) this.getProperty("hasChildMotherProvision");
+            return Convert.ToBoolean( this.getProperty("hasChildMotherProvision"));
         }
 
         public void setHasChildMotherProvision (bool hasChildMotherProvision)
@@ -158,7 +158,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getHasChildcarePlaces ()
         {
-            return (bool) this.getProperty("hasChildcarePlaces");
+            return Convert.ToBoolean( this.getProperty("hasChildcarePlaces"));
         }
 
         public void setHasChildcarePlaces (bool hasChildcarePlaces)

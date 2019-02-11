@@ -106,7 +106,7 @@ namespace Arbor.Model
 
         public bool getRepeatEnrolment ()
         {
-            return (bool) this.getProperty("repeatEnrolment");
+            return Convert.ToBoolean( this.getProperty("repeatEnrolment"));
         }
 
         public void setRepeatEnrolment (bool repeatEnrolment)

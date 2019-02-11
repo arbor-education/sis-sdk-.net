@@ -118,7 +118,7 @@ namespace Arbor.Model
 
         public bool getShareContactDetails ()
         {
-            return (bool) this.getProperty("shareContactDetails");
+            return Convert.ToBoolean( this.getProperty("shareContactDetails"));
         }
 
         public void setShareContactDetails (bool shareContactDetails)

@@ -103,7 +103,7 @@ namespace Arbor.Model
 
         public bool getIsCorrespondenceAddress ()
         {
-            return (bool) this.getProperty("isCorrespondenceAddress");
+            return Convert.ToBoolean( this.getProperty("isCorrespondenceAddress"));
         }
 
         public void setIsCorrespondenceAddress (bool isCorrespondenceAddress)
