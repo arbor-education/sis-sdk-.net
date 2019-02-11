@@ -113,7 +113,7 @@ namespace Arbor.Model
 
         public bool getAllowSelfServiceScheduling ()
         {
-            return (bool) this.getProperty("allowSelfServiceScheduling");
+            return Convert.ToBoolean( this.getProperty("allowSelfServiceScheduling"));
         }
 
         public void setAllowSelfServiceScheduling (bool allowSelfServiceScheduling)
@@ -181,7 +181,7 @@ namespace Arbor.Model
 
         public bool getAllowDuplicateScheduling ()
         {
-            return (bool) this.getProperty("allowDuplicateScheduling");
+            return Convert.ToBoolean( this.getProperty("allowDuplicateScheduling"));
         }
 
         public void setAllowDuplicateScheduling (bool allowDuplicateScheduling)

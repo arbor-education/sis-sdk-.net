@@ -138,7 +138,7 @@ namespace Arbor.Model
 
         public bool getSuperannuation ()
         {
-            return (bool) this.getProperty("superannuation");
+            return Convert.ToBoolean( this.getProperty("superannuation"));
         }
 
         public void setSuperannuation (bool superannuation)
@@ -148,7 +148,7 @@ namespace Arbor.Model
 
         public bool getNiStatus ()
         {
-            return (bool) this.getProperty("niStatus");
+            return Convert.ToBoolean( this.getProperty("niStatus"));
         }
 
         public void setNiStatus (bool niStatus)
@@ -158,7 +158,7 @@ namespace Arbor.Model
 
         public bool getBenefitInKind ()
         {
-            return (bool) this.getProperty("benefitInKind");
+            return Convert.ToBoolean( this.getProperty("benefitInKind"));
         }
 
         public void setBenefitInKind (bool benefitInKind)

@@ -232,7 +232,7 @@ namespace Arbor.Model
 
         public bool getSelfServiceEnrolment ()
         {
-            return (bool) this.getProperty("selfServiceEnrolment");
+            return Convert.ToBoolean( this.getProperty("selfServiceEnrolment"));
         }
 
         public void setSelfServiceEnrolment (bool selfServiceEnrolment)
@@ -292,7 +292,7 @@ namespace Arbor.Model
 
         public bool getIsMainAssessableUnit ()
         {
-            return (bool) this.getProperty("isMainAssessableUnit");
+            return Convert.ToBoolean( this.getProperty("isMainAssessableUnit"));
         }
 
         public void setIsMainAssessableUnit (bool isMainAssessableUnit)

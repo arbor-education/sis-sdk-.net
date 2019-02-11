@@ -100,7 +100,7 @@ namespace Arbor.Model
 
         public bool getTermTimeOnly ()
         {
-            return (bool) this.getProperty("termTimeOnly");
+            return Convert.ToBoolean( this.getProperty("termTimeOnly"));
         }
 
         public void setTermTimeOnly (bool termTimeOnly)

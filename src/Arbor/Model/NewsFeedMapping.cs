@@ -83,7 +83,7 @@ namespace Arbor.Model
 
         public DateTime getRankValidUntil ()
         {
-            return (DateTime) this.getProperty("rankValidUntil");
+            return Convert.ToDateTime(this.getProperty("rankValidUntil"));
         }
 
         public void setRankValidUntil (DateTime rankValidUntil)

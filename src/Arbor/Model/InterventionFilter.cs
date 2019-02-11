@@ -127,7 +127,7 @@ namespace Arbor.Model
 
         public bool getIsOutcome ()
         {
-            return (bool) this.getProperty("isOutcome");
+            return Convert.ToBoolean( this.getProperty("isOutcome"));
         }
 
         public void setIsOutcome (bool isOutcome)

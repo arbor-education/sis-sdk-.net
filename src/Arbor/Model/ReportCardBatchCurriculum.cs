@@ -91,7 +91,7 @@ namespace Arbor.Model
 
         public bool getIncludeStatements ()
         {
-            return (bool) this.getProperty("includeStatements");
+            return Convert.ToBoolean( this.getProperty("includeStatements"));
         }
 
         public void setIncludeStatements (bool includeStatements)
@@ -151,7 +151,7 @@ namespace Arbor.Model
 
         public bool getIncludeSummativeGrade ()
         {
-            return (bool) this.getProperty("includeSummativeGrade");
+            return Convert.ToBoolean( this.getProperty("includeSummativeGrade"));
         }
 
         public void setIncludeSummativeGrade (bool includeSummativeGrade)

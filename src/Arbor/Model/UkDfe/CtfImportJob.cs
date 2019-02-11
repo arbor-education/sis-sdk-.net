@@ -170,7 +170,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getIsQueuedForAllStudentImport ()
         {
-            return (bool) this.getProperty("isQueuedForAllStudentImport");
+            return Convert.ToBoolean( this.getProperty("isQueuedForAllStudentImport"));
         }
 
         public void setIsQueuedForAllStudentImport (bool isQueuedForAllStudentImport)

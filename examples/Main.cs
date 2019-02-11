@@ -308,7 +308,7 @@ namespace ArborSdkExamples
 			student.getPerson().save();
 			student.setEthnicity( (Ethnicity) gateway.retrieve(ResourceType.ETHNICITY, "AAFR"));
 			student.setReligion( (Religion) gateway.retrieve(ResourceType.RELIGION, "CHRISTIAN"));
-			student.setUniqueLearnerNumber(1234);
+			student.setUniqueLearnerNumber(1000000000);
 			student.setStudentNumber("TEST123456");
 			student.tag("sims-id", 123);
 			student.connect(gateway);

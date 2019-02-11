@@ -87,7 +87,7 @@ namespace Arbor.Model
 
         public DateTime getReferenceDatetime ()
         {
-            return (DateTime) this.getProperty("referenceDatetime");
+            return Convert.ToDateTime(this.getProperty("referenceDatetime"));
         }
 
         public void setReferenceDatetime (DateTime referenceDatetime)
@@ -97,7 +97,7 @@ namespace Arbor.Model
 
         public DateTime getDueDatetime ()
         {
-            return (DateTime) this.getProperty("dueDatetime");
+            return Convert.ToDateTime(this.getProperty("dueDatetime"));
         }
 
         public void setDueDatetime (DateTime dueDatetime)
@@ -107,7 +107,7 @@ namespace Arbor.Model
 
         public DateTime getResolvedDatetime ()
         {
-            return (DateTime) this.getProperty("resolvedDatetime");
+            return Convert.ToDateTime(this.getProperty("resolvedDatetime"));
         }
 
         public void setResolvedDatetime (DateTime resolvedDatetime)

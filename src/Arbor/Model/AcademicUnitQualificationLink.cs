@@ -74,7 +74,7 @@ namespace Arbor.Model
 
         public bool getAutomaticEntry ()
         {
-            return (bool) this.getProperty("automaticEntry");
+            return Convert.ToBoolean( this.getProperty("automaticEntry"));
         }
 
         public void setAutomaticEntry (bool automaticEntry)

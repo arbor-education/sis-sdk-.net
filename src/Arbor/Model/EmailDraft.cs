@@ -99,7 +99,7 @@ namespace Arbor.Model
 
         public bool getCombineMessagesToSameRecipient ()
         {
-            return (bool) this.getProperty("combineMessagesToSameRecipient");
+            return Convert.ToBoolean( this.getProperty("combineMessagesToSameRecipient"));
         }
 
         public void setCombineMessagesToSameRecipient (bool combineMessagesToSameRecipient)
@@ -109,7 +109,7 @@ namespace Arbor.Model
 
         public bool getCombineMessagesToSameHousehold ()
         {
-            return (bool) this.getProperty("combineMessagesToSameHousehold");
+            return Convert.ToBoolean( this.getProperty("combineMessagesToSameHousehold"));
         }
 
         public void setCombineMessagesToSameHousehold (bool combineMessagesToSameHousehold)

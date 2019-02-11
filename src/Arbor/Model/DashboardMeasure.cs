@@ -95,7 +95,7 @@ namespace Arbor.Model
 
         public bool getTargetable ()
         {
-            return (bool) this.getProperty("targetable");
+            return Convert.ToBoolean( this.getProperty("targetable"));
         }
 
         public void setTargetable (bool targetable)

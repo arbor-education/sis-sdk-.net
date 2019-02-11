@@ -73,7 +73,7 @@ namespace Arbor.Model
 
         public bool getIsDefault ()
         {
-            return (bool) this.getProperty("isDefault");
+            return Convert.ToBoolean( this.getProperty("isDefault"));
         }
 
         public void setIsDefault (bool isDefault)
@@ -83,7 +83,7 @@ namespace Arbor.Model
 
         public bool getIsOriginal ()
         {
-            return (bool) this.getProperty("isOriginal");
+            return Convert.ToBoolean( this.getProperty("isOriginal"));
         }
 
         public void setIsOriginal (bool isOriginal)

@@ -108,7 +108,7 @@ namespace Arbor.Model
 
         public bool getIsLinkedToSummativeTracking ()
         {
-            return (bool) this.getProperty("isLinkedToSummativeTracking");
+            return Convert.ToBoolean( this.getProperty("isLinkedToSummativeTracking"));
         }
 
         public void setIsLinkedToSummativeTracking (bool isLinkedToSummativeTracking)
@@ -136,7 +136,7 @@ namespace Arbor.Model
 
         public bool getAllowComments ()
         {
-            return (bool) this.getProperty("allowComments");
+            return Convert.ToBoolean( this.getProperty("allowComments"));
         }
 
         public void setAllowComments (bool allowComments)

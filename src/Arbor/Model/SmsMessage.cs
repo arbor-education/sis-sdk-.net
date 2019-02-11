@@ -203,7 +203,7 @@ namespace Arbor.Model
 
         public bool getFree ()
         {
-            return (bool) this.getProperty("free");
+            return Convert.ToBoolean( this.getProperty("free"));
         }
 
         public void setFree (bool free)

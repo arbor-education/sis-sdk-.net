@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Newtonsoft.Json.Linq;
 using Arbor.Api.Gateway;
+using Arbor.Resource;
 
 namespace Arbor.Model
 {
@@ -197,24 +198,22 @@ namespace Arbor.Model
 			this.setProperty("userTags", tags);
 		}
 
-		public JObject getUserTags()
+	    public JObject getUserTags()
 	    {
-	        if(this.getProperty("userTags") == null)
+	        if (this.getProperty("userTags") == null)
 	        {
-	            this.setUserTags(new JObject());
+	            Tag tag = new Tag(ResourceType.TAG, new Hashtable(), apiGateway);
+	            this.setUserTags(tag);
 	        }
+	        return JObject.FromObject(this.getProperty("userTags"));
+	    }//getUserTags()
 
-			object property = this.getProperty("userTags");
-			return (JObject) this.getProperty("userTags");
-	    }
-
-		public void tag (string tagName, object value)
-		{
-			JObject tags = JObject.Parse("{\"" + tagName + "\":\"" + value.ToString() + "\"}");
-
-			this.setUserTags(tags);
-	    }
-		
-	}
+	    public void tag(string tagName, object value)
+	    {
+	        Tag tags = this.getUserTags().ToObject<Tag>();
+	        tags.properties.Add(tagName, value.ToString());
+	        this.setUserTags(tags);
+	    }//tag()
+    }
 }
 

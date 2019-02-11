@@ -96,7 +96,7 @@ namespace Arbor.Model
 
         public bool getCollectCurrentMark ()
         {
-            return (bool) this.getProperty("collectCurrentMark");
+            return Convert.ToBoolean( this.getProperty("collectCurrentMark"));
         }
 
         public void setCollectCurrentMark (bool collectCurrentMark)
@@ -106,7 +106,7 @@ namespace Arbor.Model
 
         public bool getCollectComment ()
         {
-            return (bool) this.getProperty("collectComment");
+            return Convert.ToBoolean( this.getProperty("collectComment"));
         }
 
         public void setCollectComment (bool collectComment)

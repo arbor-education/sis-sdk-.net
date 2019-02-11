@@ -160,7 +160,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getXsdError ()
         {
-            return (bool) this.getProperty("xsdError");
+            return Convert.ToBoolean( this.getProperty("xsdError"));
         }
 
         public void setXsdError (bool xsdError)
@@ -170,7 +170,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getDataError ()
         {
-            return (bool) this.getProperty("dataError");
+            return Convert.ToBoolean( this.getProperty("dataError"));
         }
 
         public void setDataError (bool dataError)

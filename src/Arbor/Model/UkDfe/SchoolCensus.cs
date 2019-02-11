@@ -69,7 +69,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getActive ()
         {
-            return (bool) this.getProperty("active");
+            return Convert.ToBoolean( this.getProperty("active"));
         }
 
         public void setActive (bool active)

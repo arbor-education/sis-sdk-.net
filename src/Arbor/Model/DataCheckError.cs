@@ -119,7 +119,7 @@ namespace Arbor.Model
 
         public bool getErrorFixIsMandatory ()
         {
-            return (bool) this.getProperty("errorFixIsMandatory");
+            return Convert.ToBoolean( this.getProperty("errorFixIsMandatory"));
         }
 
         public void setErrorFixIsMandatory (bool errorFixIsMandatory)

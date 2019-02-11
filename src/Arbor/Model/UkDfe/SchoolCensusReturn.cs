@@ -113,7 +113,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getDataError ()
         {
-            return (bool) this.getProperty("dataError");
+            return Convert.ToBoolean( this.getProperty("dataError"));
         }
 
         public void setDataError (bool dataError)
@@ -123,7 +123,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getXsdError ()
         {
-            return (bool) this.getProperty("xsdError");
+            return Convert.ToBoolean( this.getProperty("xsdError"));
         }
 
         public void setXsdError (bool xsdError)
@@ -133,7 +133,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getXsltError ()
         {
-            return (bool) this.getProperty("xsltError");
+            return Convert.ToBoolean( this.getProperty("xsltError"));
         }
 
         public void setXsltError (bool xsltError)
@@ -143,7 +143,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getSummaryError ()
         {
-            return (bool) this.getProperty("summaryError");
+            return Convert.ToBoolean( this.getProperty("summaryError"));
         }
 
         public void setSummaryError (bool summaryError)
@@ -191,7 +191,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getIsDryRun ()
         {
-            return (bool) this.getProperty("isDryRun");
+            return Convert.ToBoolean( this.getProperty("isDryRun"));
         }
 
         public void setIsDryRun (bool isDryRun)

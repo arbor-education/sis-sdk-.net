@@ -127,7 +127,7 @@ namespace Arbor.Model
 
         public bool getCompressed ()
         {
-            return (bool) this.getProperty("compressed");
+            return Convert.ToBoolean( this.getProperty("compressed"));
         }
 
         public void setCompressed (bool compressed)

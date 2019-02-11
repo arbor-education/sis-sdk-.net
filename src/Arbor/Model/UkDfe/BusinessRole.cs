@@ -61,7 +61,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getManagedByClient ()
         {
-            return (bool) this.getProperty("managedByClient");
+            return Convert.ToBoolean( this.getProperty("managedByClient"));
         }
 
         public void setManagedByClient (bool managedByClient)

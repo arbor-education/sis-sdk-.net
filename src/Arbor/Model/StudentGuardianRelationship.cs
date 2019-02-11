@@ -89,7 +89,7 @@ namespace Arbor.Model
 
         public bool getIsLegalGuardian ()
         {
-            return (bool) this.getProperty("isLegalGuardian");
+            return Convert.ToBoolean( this.getProperty("isLegalGuardian"));
         }
 
         public void setIsLegalGuardian (bool isLegalGuardian)
@@ -99,7 +99,7 @@ namespace Arbor.Model
 
         public bool getIsPrimaryGuardian ()
         {
-            return (bool) this.getProperty("isPrimaryGuardian");
+            return Convert.ToBoolean( this.getProperty("isPrimaryGuardian"));
         }
 
         public void setIsPrimaryGuardian (bool isPrimaryGuardian)
@@ -109,7 +109,7 @@ namespace Arbor.Model
 
         public bool getIsAuthorizedToCollect ()
         {
-            return (bool) this.getProperty("isAuthorizedToCollect");
+            return Convert.ToBoolean( this.getProperty("isAuthorizedToCollect"));
         }
 
         public void setIsAuthorizedToCollect (bool isAuthorizedToCollect)
@@ -129,7 +129,7 @@ namespace Arbor.Model
 
         public bool getUnsubscribedFromComms ()
         {
-            return (bool) this.getProperty("unsubscribedFromComms");
+            return Convert.ToBoolean( this.getProperty("unsubscribedFromComms"));
         }
 
         public void setUnsubscribedFromComms (bool unsubscribedFromComms)
@@ -139,7 +139,7 @@ namespace Arbor.Model
 
         public bool getGuardianUserAuthorized ()
         {
-            return (bool) this.getProperty("guardianUserAuthorized");
+            return Convert.ToBoolean( this.getProperty("guardianUserAuthorized"));
         }
 
         public void setGuardianUserAuthorized (bool guardianUserAuthorized)

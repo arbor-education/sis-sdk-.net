@@ -159,7 +159,7 @@ namespace Arbor.Model
 
         public bool getIncludeTeacherInitials ()
         {
-            return (bool) this.getProperty("includeTeacherInitials");
+            return Convert.ToBoolean( this.getProperty("includeTeacherInitials"));
         }
 
         public void setIncludeTeacherInitials (bool includeTeacherInitials)
@@ -169,7 +169,7 @@ namespace Arbor.Model
 
         public bool getIncludeTeacherName ()
         {
-            return (bool) this.getProperty("includeTeacherName");
+            return Convert.ToBoolean( this.getProperty("includeTeacherName"));
         }
 
         public void setIncludeTeacherName (bool includeTeacherName)
@@ -179,7 +179,7 @@ namespace Arbor.Model
 
         public bool getIncludeStudentPhoto ()
         {
-            return (bool) this.getProperty("includeStudentPhoto");
+            return Convert.ToBoolean( this.getProperty("includeStudentPhoto"));
         }
 
         public void setIncludeStudentPhoto (bool includeStudentPhoto)
@@ -189,7 +189,7 @@ namespace Arbor.Model
 
         public bool getIncludeBaseline ()
         {
-            return (bool) this.getProperty("includeBaseline");
+            return Convert.ToBoolean( this.getProperty("includeBaseline"));
         }
 
         public void setIncludeBaseline (bool includeBaseline)
@@ -199,7 +199,7 @@ namespace Arbor.Model
 
         public bool getIncludeWorkingAtCurrentPeriod ()
         {
-            return (bool) this.getProperty("includeWorkingAtCurrentPeriod");
+            return Convert.ToBoolean( this.getProperty("includeWorkingAtCurrentPeriod"));
         }
 
         public void setIncludeWorkingAtCurrentPeriod (bool includeWorkingAtCurrentPeriod)
@@ -209,7 +209,7 @@ namespace Arbor.Model
 
         public bool getIncludeWorkingAtPreviousPeriod ()
         {
-            return (bool) this.getProperty("includeWorkingAtPreviousPeriod");
+            return Convert.ToBoolean( this.getProperty("includeWorkingAtPreviousPeriod"));
         }
 
         public void setIncludeWorkingAtPreviousPeriod (bool includeWorkingAtPreviousPeriod)
@@ -229,7 +229,7 @@ namespace Arbor.Model
 
         public bool getIncludeTeacherTarget ()
         {
-            return (bool) this.getProperty("includeTeacherTarget");
+            return Convert.ToBoolean( this.getProperty("includeTeacherTarget"));
         }
 
         public void setIncludeTeacherTarget (bool includeTeacherTarget)
@@ -248,7 +248,7 @@ namespace Arbor.Model
 
         public bool getFinalizationInProgress ()
         {
-            return (bool) this.getProperty("finalizationInProgress");
+            return Convert.ToBoolean( this.getProperty("finalizationInProgress"));
         }
 
         public void setFinalizationInProgress (bool finalizationInProgress)
@@ -258,7 +258,7 @@ namespace Arbor.Model
 
         public bool getSharedWithGuardians ()
         {
-            return (bool) this.getProperty("sharedWithGuardians");
+            return Convert.ToBoolean( this.getProperty("sharedWithGuardians"));
         }
 
         public void setSharedWithGuardians (bool sharedWithGuardians)
@@ -288,7 +288,7 @@ namespace Arbor.Model
 
         public bool getShowComments ()
         {
-            return (bool) this.getProperty("showComments");
+            return Convert.ToBoolean( this.getProperty("showComments"));
         }
 
         public void setShowComments (bool showComments)

@@ -93,7 +93,7 @@ namespace Arbor.Model
 
         public bool getSenStudentsOnly ()
         {
-            return (bool) this.getProperty("senStudentsOnly");
+            return Convert.ToBoolean( this.getProperty("senStudentsOnly"));
         }
 
         public void setSenStudentsOnly (bool senStudentsOnly)

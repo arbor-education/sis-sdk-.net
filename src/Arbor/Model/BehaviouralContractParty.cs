@@ -72,7 +72,7 @@ namespace Arbor.Model
 
         public bool getResponsible ()
         {
-            return (bool) this.getProperty("responsible");
+            return Convert.ToBoolean( this.getProperty("responsible"));
         }
 
         public void setResponsible (bool responsible)

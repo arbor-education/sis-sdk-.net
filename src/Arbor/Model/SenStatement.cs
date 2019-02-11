@@ -129,7 +129,7 @@ namespace Arbor.Model
 
         public bool getSubjectToSenTribunal ()
         {
-            return (bool) this.getProperty("subjectToSenTribunal");
+            return Convert.ToBoolean( this.getProperty("subjectToSenTribunal"));
         }
 
         public void setSubjectToSenTribunal (bool subjectToSenTribunal)

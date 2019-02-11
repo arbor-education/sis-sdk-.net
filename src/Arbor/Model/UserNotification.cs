@@ -71,7 +71,7 @@ namespace Arbor.Model
 
         public bool getIsRead ()
         {
-            return (bool) this.getProperty("isRead");
+            return Convert.ToBoolean( this.getProperty("isRead"));
         }
 
         public void setIsRead (bool isRead)

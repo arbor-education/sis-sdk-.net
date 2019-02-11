@@ -149,7 +149,7 @@ namespace Arbor.Model
 
         public bool getIsVocationalQualification ()
         {
-            return (bool) this.getProperty("isVocationalQualification");
+            return Convert.ToBoolean( this.getProperty("isVocationalQualification"));
         }
 
         public void setIsVocationalQualification (bool isVocationalQualification)
@@ -159,7 +159,7 @@ namespace Arbor.Model
 
         public bool getIsVerified ()
         {
-            return (bool) this.getProperty("isVerified");
+            return Convert.ToBoolean( this.getProperty("isVerified"));
         }
 
         public void setIsVerified (bool isVerified)

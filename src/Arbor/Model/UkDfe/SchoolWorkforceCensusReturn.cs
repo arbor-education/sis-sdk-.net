@@ -113,7 +113,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getXsltError ()
         {
-            return (bool) this.getProperty("xsltError");
+            return Convert.ToBoolean( this.getProperty("xsltError"));
         }
 
         public void setXsltError (bool xsltError)
@@ -123,7 +123,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getDataError ()
         {
-            return (bool) this.getProperty("dataError");
+            return Convert.ToBoolean( this.getProperty("dataError"));
         }
 
         public void setDataError (bool dataError)
@@ -133,7 +133,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getIsDryRun ()
         {
-            return (bool) this.getProperty("isDryRun");
+            return Convert.ToBoolean( this.getProperty("isDryRun"));
         }
 
         public void setIsDryRun (bool isDryRun)
@@ -188,7 +188,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getIsStaffContractInformationExcluded ()
         {
-            return (bool) this.getProperty("isStaffContractInformationExcluded");
+            return Convert.ToBoolean( this.getProperty("isStaffContractInformationExcluded"));
         }
 
         public void setIsStaffContractInformationExcluded (bool isStaffContractInformationExcluded)

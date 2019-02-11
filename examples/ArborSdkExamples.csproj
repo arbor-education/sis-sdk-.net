@@ -50,16 +50,16 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\src\ArborSdk.csproj">
-      <Project>{ffc09e07-e89c-4197-8acf-1277b621d6b0}</Project>
-      <Name>ArborSdk</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="config-dist.xml">
       <SubType>Designer</SubType>
     </None>
     <None Include="config.xml" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\src\ArborSdk.csproj">
+      <Project>{ffc09e07-e89c-4197-8acf-1277b621d6b0}</Project>
+      <Name>ArborSdk</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

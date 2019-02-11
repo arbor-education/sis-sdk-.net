@@ -181,7 +181,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getBasicDetailsProcessed ()
         {
-            return (bool) this.getProperty("basicDetailsProcessed");
+            return Convert.ToBoolean( this.getProperty("basicDetailsProcessed"));
         }
 
         public void setBasicDetailsProcessed (bool basicDetailsProcessed)
@@ -191,7 +191,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getFsmHistoryProcessed ()
         {
-            return (bool) this.getProperty("fsmHistoryProcessed");
+            return Convert.ToBoolean( this.getProperty("fsmHistoryProcessed"));
         }
 
         public void setFsmHistoryProcessed (bool fsmHistoryProcessed)
@@ -201,7 +201,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getLookedAfterProcessed ()
         {
-            return (bool) this.getProperty("lookedAfterProcessed");
+            return Convert.ToBoolean( this.getProperty("lookedAfterProcessed"));
         }
 
         public void setLookedAfterProcessed (bool lookedAfterProcessed)
@@ -211,7 +211,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getSenHistoryProcessed ()
         {
-            return (bool) this.getProperty("senHistoryProcessed");
+            return Convert.ToBoolean( this.getProperty("senHistoryProcessed"));
         }
 
         public void setSenHistoryProcessed (bool senHistoryProcessed)
@@ -221,7 +221,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getAddressProcessed ()
         {
-            return (bool) this.getProperty("addressProcessed");
+            return Convert.ToBoolean( this.getProperty("addressProcessed"));
         }
 
         public void setAddressProcessed (bool addressProcessed)
@@ -231,7 +231,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getContactsProcessed ()
         {
-            return (bool) this.getProperty("contactsProcessed");
+            return Convert.ToBoolean( this.getProperty("contactsProcessed"));
         }
 
         public void setContactsProcessed (bool contactsProcessed)
@@ -241,7 +241,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getAttendanceProcessed ()
         {
-            return (bool) this.getProperty("attendanceProcessed");
+            return Convert.ToBoolean( this.getProperty("attendanceProcessed"));
         }
 
         public void setAttendanceProcessed (bool attendanceProcessed)
@@ -251,7 +251,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getStageAssessmentsProcessed ()
         {
-            return (bool) this.getProperty("stageAssessmentsProcessed");
+            return Convert.ToBoolean( this.getProperty("stageAssessmentsProcessed"));
         }
 
         public void setStageAssessmentsProcessed (bool stageAssessmentsProcessed)
@@ -261,7 +261,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getSchoolHistoryProcessed ()
         {
-            return (bool) this.getProperty("schoolHistoryProcessed");
+            return Convert.ToBoolean( this.getProperty("schoolHistoryProcessed"));
         }
 
         public void setSchoolHistoryProcessed (bool schoolHistoryProcessed)
@@ -271,7 +271,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getNawDetailsProcessed ()
         {
-            return (bool) this.getProperty("nawDetailsProcessed");
+            return Convert.ToBoolean( this.getProperty("nawDetailsProcessed"));
         }
 
         public void setNawDetailsProcessed (bool nawDetailsProcessed)
@@ -401,7 +401,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getIsCurrentlyBeingProcessed ()
         {
-            return (bool) this.getProperty("isCurrentlyBeingProcessed");
+            return Convert.ToBoolean( this.getProperty("isCurrentlyBeingProcessed"));
         }
 
         public void setIsCurrentlyBeingProcessed (bool isCurrentlyBeingProcessed)

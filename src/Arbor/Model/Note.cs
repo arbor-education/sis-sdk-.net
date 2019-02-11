@@ -72,7 +72,7 @@ namespace Arbor.Model
 
         public bool getIsSharedWithGuardians ()
         {
-            return (bool) this.getProperty("isSharedWithGuardians");
+            return Convert.ToBoolean( this.getProperty("isSharedWithGuardians"));
         }
 
         public void setIsSharedWithGuardians (bool isSharedWithGuardians)

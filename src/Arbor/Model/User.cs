@@ -198,7 +198,7 @@ namespace Arbor.Model
 
         public bool getEnabled ()
         {
-            return (bool) this.getProperty("enabled");
+            return Convert.ToBoolean( this.getProperty("enabled"));
         }
 
         public void setEnabled (bool enabled)

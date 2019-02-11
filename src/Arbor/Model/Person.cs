@@ -160,7 +160,7 @@ namespace Arbor.Model
 
         public bool getDeceased ()
         {
-            return (bool) this.getProperty("deceased");
+            return Convert.ToBoolean( this.getProperty("deceased"));
         }
 
         public void setDeceased (bool deceased)

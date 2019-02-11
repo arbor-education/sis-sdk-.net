@@ -88,7 +88,7 @@ namespace Arbor.Model
 
         public bool getGoalAchieved ()
         {
-            return (bool) this.getProperty("goalAchieved");
+            return Convert.ToBoolean( this.getProperty("goalAchieved"));
         }
 
         public void setGoalAchieved (bool goalAchieved)

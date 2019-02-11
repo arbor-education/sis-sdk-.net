@@ -62,7 +62,7 @@ namespace Arbor.Model
 
         public DateTime getReferenceDatetime ()
         {
-            return (DateTime) this.getProperty("referenceDatetime");
+            return Convert.ToDateTime(this.getProperty("referenceDatetime"));
         }
 
         public void setReferenceDatetime (DateTime referenceDatetime)
@@ -172,7 +172,7 @@ namespace Arbor.Model
 
         public bool getMappedToNewsFeed ()
         {
-            return (bool) this.getProperty("mappedToNewsFeed");
+            return Convert.ToBoolean( this.getProperty("mappedToNewsFeed"));
         }
 
         public void setMappedToNewsFeed (bool mappedToNewsFeed)
