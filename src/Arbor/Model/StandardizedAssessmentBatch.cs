@@ -82,8 +82,9 @@ namespace Arbor.Model
             this.setProperty("standardizedAssessmentTemplate", standardizedAssessmentTemplate);
         }
 
-        public DateTime getAssessmentDate (){
-            return Convert.ToDateTime(this.getProperty("assessmentDate"));
+        public DateTime getAssessmentDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("assessmentDate"))
         }
 
         public void setAssessmentDate (DateTime assessmentDate)
@@ -93,7 +94,7 @@ namespace Arbor.Model
 
         public bool getSenStudentsOnly ()
         {
-            return (bool) this.getProperty("senStudentsOnly");
+            return Convert.ToBoolean(this.getProperty("senStudentsOnly"))
         }
 
         public void setSenStudentsOnly (bool senStudentsOnly)

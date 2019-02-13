@@ -107,8 +107,9 @@ namespace Arbor.Model
             this.setProperty("promotedToAcademicLevel", promotedToAcademicLevel);
         }
 
-        public DateTime getPromotedDatetime (){
-            return Convert.ToDateTime(this.getProperty("promotedDatetime"));
+        public DateTime getPromotedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("promotedDatetime"))
         }
 
         public void setPromotedDatetime (DateTime promotedDatetime)

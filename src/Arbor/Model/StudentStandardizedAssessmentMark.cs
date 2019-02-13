@@ -11,7 +11,6 @@ namespace Arbor.Model
     {
         protected string resourceType = ResourceType.STUDENT_STANDARDIZED_ASSESSMENT_MARK;
         public const string STUDENT = "student";
-        public const string ASSESSMENT = "assessment";
         public const string STANDARDIZED_ASSESSMENT = "standardizedAssessment";
         public const string STUDENT_STANDARDIZED_ASSESSMENT = "studentStandardizedAssessment";
         public const string MARK_INTEGER = "markInteger";
@@ -66,16 +65,6 @@ namespace Arbor.Model
         public void setStudent (Student student)
         {
             this.setProperty("student", student);
-        }
-
-        public Assessment getAssessment ()
-        {
-            return (Assessment) this.getProperty("assessment");
-        }
-
-        public void setAssessment (Assessment assessment)
-        {
-            this.setProperty("assessment", assessment);
         }
 
         public StandardizedAssessment getStandardizedAssessment ()
@@ -138,8 +127,9 @@ namespace Arbor.Model
             this.setProperty("markGrade", markGrade);
         }
 
-        public DateTime getAssessmentDate (){
-            return Convert.ToDateTime(this.getProperty("assessmentDate"));
+        public DateTime getAssessmentDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("assessmentDate"))
         }
 
         public void setAssessmentDate (DateTime assessmentDate)
@@ -147,8 +137,9 @@ namespace Arbor.Model
             this.setProperty("assessmentDate", assessmentDate);
         }
 
-        public DateTime getCompletedDatetime (){
-            return Convert.ToDateTime(this.getProperty("completedDatetime"));
+        public DateTime getCompletedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("completedDatetime"))
         }
 
         public void setCompletedDatetime (DateTime completedDatetime)

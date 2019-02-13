@@ -68,7 +68,7 @@ namespace Arbor.Model
 
         public bool getActive ()
         {
-            return (bool) this.getProperty("active");
+            return Convert.ToBoolean(this.getProperty("active"))
         }
 
         public void setActive (bool active)
@@ -116,8 +116,9 @@ namespace Arbor.Model
             this.setProperty("issuedCenterNumber", issuedCenterNumber);
         }
 
-        public DateTime getCenterNumberIssuedDate (){
-            return Convert.ToDateTime(this.getProperty("centerNumberIssuedDate"));
+        public DateTime getCenterNumberIssuedDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("centerNumberIssuedDate"))
         }
 
         public void setCenterNumberIssuedDate (DateTime centerNumberIssuedDate)
@@ -125,8 +126,9 @@ namespace Arbor.Model
             this.setProperty("centerNumberIssuedDate", centerNumberIssuedDate);
         }
 
-        public DateTime getEffectiveDate (){
-            return Convert.ToDateTime(this.getProperty("effectiveDate"));
+        public DateTime getEffectiveDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("effectiveDate"))
         }
 
         public void setEffectiveDate (DateTime effectiveDate)
@@ -134,8 +136,9 @@ namespace Arbor.Model
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate (){
-            return Convert.ToDateTime(this.getProperty("endDate"));
+        public DateTime getEndDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("endDate"))
         }
 
         public void setEndDate (DateTime endDate)

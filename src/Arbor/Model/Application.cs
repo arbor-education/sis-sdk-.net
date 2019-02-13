@@ -74,8 +74,9 @@ namespace Arbor.Model
             this.setProperty("student", student);
         }
 
-        public DateTime getApplicationDatetime (){
-            return Convert.ToDateTime(this.getProperty("applicationDatetime"));
+        public DateTime getApplicationDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("applicationDatetime"))
         }
 
         public void setApplicationDatetime (DateTime applicationDatetime)
@@ -123,8 +124,9 @@ namespace Arbor.Model
             this.setProperty("bucketScore", bucketScore);
         }
 
-        public DateTime getWithdrawnDatetime (){
-            return Convert.ToDateTime(this.getProperty("withdrawnDatetime"));
+        public DateTime getWithdrawnDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("withdrawnDatetime"))
         }
 
         public void setWithdrawnDatetime (DateTime withdrawnDatetime)
@@ -142,8 +144,9 @@ namespace Arbor.Model
             this.setProperty("withdrawalReason", withdrawalReason);
         }
 
-        public DateTime getRejectedDatetime (){
-            return Convert.ToDateTime(this.getProperty("rejectedDatetime"));
+        public DateTime getRejectedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("rejectedDatetime"))
         }
 
         public void setRejectedDatetime (DateTime rejectedDatetime)
@@ -161,8 +164,9 @@ namespace Arbor.Model
             this.setProperty("intakeSeasonGroup", intakeSeasonGroup);
         }
 
-        public DateTime getOfferedDatetime (){
-            return Convert.ToDateTime(this.getProperty("offeredDatetime"));
+        public DateTime getOfferedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("offeredDatetime"))
         }
 
         public void setOfferedDatetime (DateTime offeredDatetime)
@@ -170,8 +174,9 @@ namespace Arbor.Model
             this.setProperty("offeredDatetime", offeredDatetime);
         }
 
-        public DateTime getAcceptedDatetime (){
-            return Convert.ToDateTime(this.getProperty("acceptedDatetime"));
+        public DateTime getAcceptedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("acceptedDatetime"))
         }
 
         public void setAcceptedDatetime (DateTime acceptedDatetime)
@@ -179,8 +184,9 @@ namespace Arbor.Model
             this.setProperty("acceptedDatetime", acceptedDatetime);
         }
 
-        public DateTime getExpectedAdmissionDate (){
-            return Convert.ToDateTime(this.getProperty("expectedAdmissionDate"));
+        public DateTime getExpectedAdmissionDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("expectedAdmissionDate"))
         }
 
         public void setExpectedAdmissionDate (DateTime expectedAdmissionDate)
@@ -218,8 +224,9 @@ namespace Arbor.Model
             this.setProperty("expectedHouse", expectedHouse);
         }
 
-        public DateTime getEnrolledDatetime (){
-            return Convert.ToDateTime(this.getProperty("enrolledDatetime"));
+        public DateTime getEnrolledDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("enrolledDatetime"))
         }
 
         public void setEnrolledDatetime (DateTime enrolledDatetime)

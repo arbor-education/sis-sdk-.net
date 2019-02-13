@@ -105,8 +105,9 @@ namespace Arbor.Model
             this.setProperty("assignedStaff", assignedStaff);
         }
 
-        public DateTime getDeadlineDate (){
-            return Convert.ToDateTime(this.getProperty("deadlineDate"));
+        public DateTime getDeadlineDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("deadlineDate"))
         }
 
         public void setDeadlineDate (DateTime deadlineDate)

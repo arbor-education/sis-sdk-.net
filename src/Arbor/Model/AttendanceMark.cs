@@ -85,7 +85,7 @@ namespace Arbor.Model
 
         public bool getActive ()
         {
-            return (bool) this.getProperty("active");
+            return Convert.ToBoolean(this.getProperty("active"))
         }
 
         public void setActive (bool active)
@@ -145,7 +145,7 @@ namespace Arbor.Model
 
         public bool getIsLegalPresent ()
         {
-            return (bool) this.getProperty("isLegalPresent");
+            return Convert.ToBoolean(this.getProperty("isLegalPresent"))
         }
 
         public void setIsLegalPresent (bool isLegalPresent)
@@ -155,7 +155,7 @@ namespace Arbor.Model
 
         public bool getIsLegalApprovedEducationalActivity ()
         {
-            return (bool) this.getProperty("isLegalApprovedEducationalActivity");
+            return Convert.ToBoolean(this.getProperty("isLegalApprovedEducationalActivity"))
         }
 
         public void setIsLegalApprovedEducationalActivity (bool isLegalApprovedEducationalActivity)
@@ -165,7 +165,7 @@ namespace Arbor.Model
 
         public bool getIsLegalNotRequired ()
         {
-            return (bool) this.getProperty("isLegalNotRequired");
+            return Convert.ToBoolean(this.getProperty("isLegalNotRequired"))
         }
 
         public void setIsLegalNotRequired (bool isLegalNotRequired)
@@ -175,7 +175,7 @@ namespace Arbor.Model
 
         public bool getIsLegalAbsent ()
         {
-            return (bool) this.getProperty("isLegalAbsent");
+            return Convert.ToBoolean(this.getProperty("isLegalAbsent"))
         }
 
         public void setIsLegalAbsent (bool isLegalAbsent)
@@ -185,7 +185,7 @@ namespace Arbor.Model
 
         public bool getIsStatisticalPresent ()
         {
-            return (bool) this.getProperty("isStatisticalPresent");
+            return Convert.ToBoolean(this.getProperty("isStatisticalPresent"))
         }
 
         public void setIsStatisticalPresent (bool isStatisticalPresent)
@@ -195,7 +195,7 @@ namespace Arbor.Model
 
         public bool getIsStatisticalAuthorizedAbsent ()
         {
-            return (bool) this.getProperty("isStatisticalAuthorizedAbsent");
+            return Convert.ToBoolean(this.getProperty("isStatisticalAuthorizedAbsent"))
         }
 
         public void setIsStatisticalAuthorizedAbsent (bool isStatisticalAuthorizedAbsent)
@@ -205,7 +205,7 @@ namespace Arbor.Model
 
         public bool getIsStatisticalUnauthorizedAbsent ()
         {
-            return (bool) this.getProperty("isStatisticalUnauthorizedAbsent");
+            return Convert.ToBoolean(this.getProperty("isStatisticalUnauthorizedAbsent"))
         }
 
         public void setIsStatisticalUnauthorizedAbsent (bool isStatisticalUnauthorizedAbsent)
@@ -215,7 +215,7 @@ namespace Arbor.Model
 
         public bool getIsStatisticalApprovedEducationalActivity ()
         {
-            return (bool) this.getProperty("isStatisticalApprovedEducationalActivity");
+            return Convert.ToBoolean(this.getProperty("isStatisticalApprovedEducationalActivity"))
         }
 
         public void setIsStatisticalApprovedEducationalActivity (bool isStatisticalApprovedEducationalActivity)
@@ -225,7 +225,7 @@ namespace Arbor.Model
 
         public bool getIsStatisticalPossibleAttendance ()
         {
-            return (bool) this.getProperty("isStatisticalPossibleAttendance");
+            return Convert.ToBoolean(this.getProperty("isStatisticalPossibleAttendance"))
         }
 
         public void setIsStatisticalPossibleAttendance (bool isStatisticalPossibleAttendance)
@@ -235,7 +235,7 @@ namespace Arbor.Model
 
         public bool getIsDefaultPresent ()
         {
-            return (bool) this.getProperty("isDefaultPresent");
+            return Convert.ToBoolean(this.getProperty("isDefaultPresent"))
         }
 
         public void setIsDefaultPresent (bool isDefaultPresent)
@@ -245,7 +245,7 @@ namespace Arbor.Model
 
         public bool getIsDefaultLate ()
         {
-            return (bool) this.getProperty("isDefaultLate");
+            return Convert.ToBoolean(this.getProperty("isDefaultLate"))
         }
 
         public void setIsDefaultLate (bool isDefaultLate)
@@ -255,7 +255,7 @@ namespace Arbor.Model
 
         public bool getIsDefaultLateAfterRegisterClosed ()
         {
-            return (bool) this.getProperty("isDefaultLateAfterRegisterClosed");
+            return Convert.ToBoolean(this.getProperty("isDefaultLateAfterRegisterClosed"))
         }
 
         public void setIsDefaultLateAfterRegisterClosed (bool isDefaultLateAfterRegisterClosed)
@@ -265,7 +265,7 @@ namespace Arbor.Model
 
         public bool getIsDefaultAbsent ()
         {
-            return (bool) this.getProperty("isDefaultAbsent");
+            return Convert.ToBoolean(this.getProperty("isDefaultAbsent"))
         }
 
         public void setIsDefaultAbsent (bool isDefaultAbsent)
@@ -275,7 +275,7 @@ namespace Arbor.Model
 
         public bool getIsPhysicalPresent ()
         {
-            return (bool) this.getProperty("isPhysicalPresent");
+            return Convert.ToBoolean(this.getProperty("isPhysicalPresent"))
         }
 
         public void setIsPhysicalPresent (bool isPhysicalPresent)
@@ -285,7 +285,7 @@ namespace Arbor.Model
 
         public bool getIsPhysicalLate ()
         {
-            return (bool) this.getProperty("isPhysicalLate");
+            return Convert.ToBoolean(this.getProperty("isPhysicalLate"))
         }
 
         public void setIsPhysicalLate (bool isPhysicalLate)
@@ -295,7 +295,7 @@ namespace Arbor.Model
 
         public bool getIsPhysicalAbsent ()
         {
-            return (bool) this.getProperty("isPhysicalAbsent");
+            return Convert.ToBoolean(this.getProperty("isPhysicalAbsent"))
         }
 
         public void setIsPhysicalAbsent (bool isPhysicalAbsent)
@@ -305,7 +305,7 @@ namespace Arbor.Model
 
         public bool getIsPhysicalNotRequired ()
         {
-            return (bool) this.getProperty("isPhysicalNotRequired");
+            return Convert.ToBoolean(this.getProperty("isPhysicalNotRequired"))
         }
 
         public void setIsPhysicalNotRequired (bool isPhysicalNotRequired)
@@ -315,7 +315,7 @@ namespace Arbor.Model
 
         public bool getIsPresumedAbsent ()
         {
-            return (bool) this.getProperty("isPresumedAbsent");
+            return Convert.ToBoolean(this.getProperty("isPresumedAbsent"))
         }
 
         public void setIsPresumedAbsent (bool isPresumedAbsent)
@@ -325,7 +325,7 @@ namespace Arbor.Model
 
         public bool getIsExcluded ()
         {
-            return (bool) this.getProperty("isExcluded");
+            return Convert.ToBoolean(this.getProperty("isExcluded"))
         }
 
         public void setIsExcluded (bool isExcluded)

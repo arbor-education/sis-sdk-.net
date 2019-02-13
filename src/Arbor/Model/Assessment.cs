@@ -15,9 +15,12 @@ namespace Arbor.Model
         public const string DATA_ORDER = "dataOrder";
         public const string ASSESSMENT_NAME = "assessmentName";
         public const string ASSESSMENT_SHORT_NAME = "assessmentShortName";
-        public const string STUDENT_PROGRESS_BASELINE_CALCULATOR_CLASS_NAME = "studentProgressBaselineCalculatorClassName";
+        public const string USER_DEFINED_NAME = "userDefinedName";
+        public const string USER_DEFINED_SHORT_NAME = "userDefinedShortName";
         public const string SUBJECT = "subject";
+        public const string CURRICULUM_TIER = "curriculumTier";
         public const string GRADE_POINT_SCALE = "gradePointScale";
+        public const string STUDENT_PROGRESS_BASELINE_CALCULATOR_CLASS_NAME = "studentProgressBaselineCalculatorClassName";
 
         public Assessment ()
         {
@@ -67,7 +70,7 @@ namespace Arbor.Model
 
         public bool getActive ()
         {
-            return (bool) this.getProperty("active");
+            return Convert.ToBoolean(this.getProperty("active"))
         }
 
         public void setActive (bool active)
@@ -105,14 +108,24 @@ namespace Arbor.Model
             this.setProperty("assessmentShortName", assessmentShortName);
         }
 
-        public string getStudentProgressBaselineCalculatorClassName ()
+        public string getUserDefinedName ()
         {
-            return this.getProperty("studentProgressBaselineCalculatorClassName").ToString();
+            return this.getProperty("userDefinedName").ToString();
         }
 
-        public void setStudentProgressBaselineCalculatorClassName (string studentProgressBaselineCalculatorClassName)
+        public void setUserDefinedName (string userDefinedName)
         {
-            this.setProperty("studentProgressBaselineCalculatorClassName", studentProgressBaselineCalculatorClassName);
+            this.setProperty("userDefinedName", userDefinedName);
+        }
+
+        public string getUserDefinedShortName ()
+        {
+            return this.getProperty("userDefinedShortName").ToString();
+        }
+
+        public void setUserDefinedShortName (string userDefinedShortName)
+        {
+            this.setProperty("userDefinedShortName", userDefinedShortName);
         }
 
         public Subject getSubject ()
@@ -125,6 +138,16 @@ namespace Arbor.Model
             this.setProperty("subject", subject);
         }
 
+        public CurriculumTier getCurriculumTier ()
+        {
+            return (CurriculumTier) this.getProperty("curriculumTier");
+        }
+
+        public void setCurriculumTier (CurriculumTier curriculumTier)
+        {
+            this.setProperty("curriculumTier", curriculumTier);
+        }
+
         public GradePointScale getGradePointScale ()
         {
             return (GradePointScale) this.getProperty("gradePointScale");
@@ -133,6 +156,16 @@ namespace Arbor.Model
         public void setGradePointScale (GradePointScale gradePointScale)
         {
             this.setProperty("gradePointScale", gradePointScale);
+        }
+
+        public string getStudentProgressBaselineCalculatorClassName ()
+        {
+            return this.getProperty("studentProgressBaselineCalculatorClassName").ToString();
+        }
+
+        public void setStudentProgressBaselineCalculatorClassName (string studentProgressBaselineCalculatorClassName)
+        {
+            this.setProperty("studentProgressBaselineCalculatorClassName", studentProgressBaselineCalculatorClassName);
         }
 
 

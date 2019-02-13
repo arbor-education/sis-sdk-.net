@@ -70,8 +70,9 @@ namespace Arbor.Model
             this.setProperty("suggestedByStaff", suggestedByStaff);
         }
 
-        public DateTime getSuggestedDatetime (){
-            return Convert.ToDateTime(this.getProperty("suggestedDatetime"));
+        public DateTime getSuggestedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("suggestedDatetime"))
         }
 
         public void setSuggestedDatetime (DateTime suggestedDatetime)

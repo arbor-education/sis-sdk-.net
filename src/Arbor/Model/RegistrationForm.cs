@@ -118,8 +118,9 @@ namespace Arbor.Model
             this.setProperty("promotedToRegistrationForm", promotedToRegistrationForm);
         }
 
-        public DateTime getPromotedDatetime (){
-            return Convert.ToDateTime(this.getProperty("promotedDatetime"));
+        public DateTime getPromotedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("promotedDatetime"))
         }
 
         public void setPromotedDatetime (DateTime promotedDatetime)

@@ -73,7 +73,7 @@ namespace Arbor.Model
 
         public bool getActive ()
         {
-            return (bool) this.getProperty("active");
+            return Convert.ToBoolean(this.getProperty("active"))
         }
 
         public void setActive (bool active)
@@ -131,8 +131,9 @@ namespace Arbor.Model
             this.setProperty("qualificationTimetableSessionType", qualificationTimetableSessionType);
         }
 
-        public DateTime getStartDateRangeFrom (){
-            return Convert.ToDateTime(this.getProperty("startDateRangeFrom"));
+        public DateTime getStartDateRangeFrom ()
+        {
+            return Convert.ToDateTime(this.getProperty("startDateRangeFrom"))
         }
 
         public void setStartDateRangeFrom (DateTime startDateRangeFrom)
@@ -140,8 +141,9 @@ namespace Arbor.Model
             this.setProperty("startDateRangeFrom", startDateRangeFrom);
         }
 
-        public DateTime getStartDateRangeUntil (){
-            return Convert.ToDateTime(this.getProperty("startDateRangeUntil"));
+        public DateTime getStartDateRangeUntil ()
+        {
+            return Convert.ToDateTime(this.getProperty("startDateRangeUntil"))
         }
 
         public void setStartDateRangeUntil (DateTime startDateRangeUntil)
@@ -161,7 +163,7 @@ namespace Arbor.Model
 
         public bool getIsCentreSpecifiedTimetable ()
         {
-            return (bool) this.getProperty("isCentreSpecifiedTimetable");
+            return Convert.ToBoolean(this.getProperty("isCentreSpecifiedTimetable"))
         }
 
         public void setIsCentreSpecifiedTimetable (bool isCentreSpecifiedTimetable)
@@ -169,8 +171,9 @@ namespace Arbor.Model
             this.setProperty("isCentreSpecifiedTimetable", isCentreSpecifiedTimetable);
         }
 
-        public DateTime getCentreSpecifiedDatetime (){
-            return Convert.ToDateTime(this.getProperty("centreSpecifiedDatetime"));
+        public DateTime getCentreSpecifiedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("centreSpecifiedDatetime"))
         }
 
         public void setCentreSpecifiedDatetime (DateTime centreSpecifiedDatetime)
@@ -190,7 +193,7 @@ namespace Arbor.Model
 
         public bool getIsProvisional ()
         {
-            return (bool) this.getProperty("isProvisional");
+            return Convert.ToBoolean(this.getProperty("isProvisional"))
         }
 
         public void setIsProvisional (bool isProvisional)

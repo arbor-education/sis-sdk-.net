@@ -14,6 +14,7 @@ namespace Arbor.Model
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";
         public const string ASSESSMENT_DERIVATION = "assessmentDerivation";
+        public const string DESCRIPTION = "description";
         public const string DEPENDANT_ASSESSMENT = "dependantAssessment";
         public const string WEIGHTING = "weighting";
 
@@ -65,7 +66,7 @@ namespace Arbor.Model
 
         public bool getActive ()
         {
-            return (bool) this.getProperty("active");
+            return Convert.ToBoolean(this.getProperty("active"))
         }
 
         public void setActive (bool active)
@@ -91,6 +92,16 @@ namespace Arbor.Model
         public void setAssessmentDerivation (AssessmentDerivation assessmentDerivation)
         {
             this.setProperty("assessmentDerivation", assessmentDerivation);
+        }
+
+        public string getDescription ()
+        {
+            return this.getProperty("description").ToString();
+        }
+
+        public void setDescription (string description)
+        {
+            this.setProperty("description", description);
         }
 
         public ModelBase getDependantAssessment ()

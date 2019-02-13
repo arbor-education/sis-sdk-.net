@@ -83,8 +83,9 @@ namespace Arbor.Model
             this.setProperty("absenceEvent", absenceEvent);
         }
 
-        public DateTime getCoverProposedDatetime (){
-            return Convert.ToDateTime(this.getProperty("coverProposedDatetime"));
+        public DateTime getCoverProposedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("coverProposedDatetime"))
         }
 
         public void setCoverProposedDatetime (DateTime coverProposedDatetime)
@@ -92,8 +93,9 @@ namespace Arbor.Model
             this.setProperty("coverProposedDatetime", coverProposedDatetime);
         }
 
-        public DateTime getCoverArrangedDatetime (){
-            return Convert.ToDateTime(this.getProperty("coverArrangedDatetime"));
+        public DateTime getCoverArrangedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("coverArrangedDatetime"))
         }
 
         public void setCoverArrangedDatetime (DateTime coverArrangedDatetime)
@@ -101,8 +103,9 @@ namespace Arbor.Model
             this.setProperty("coverArrangedDatetime", coverArrangedDatetime);
         }
 
-        public DateTime getCoverNotRequiredDatetime (){
-            return Convert.ToDateTime(this.getProperty("coverNotRequiredDatetime"));
+        public DateTime getCoverNotRequiredDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("coverNotRequiredDatetime"))
         }
 
         public void setCoverNotRequiredDatetime (DateTime coverNotRequiredDatetime)

@@ -139,8 +139,9 @@ namespace Arbor.Model
             this.setProperty("preferredLastName", preferredLastName);
         }
 
-        public DateTime getDateOfBirth (){
-            return Convert.ToDateTime(this.getProperty("dateOfBirth"));
+        public DateTime getDateOfBirth ()
+        {
+            return Convert.ToDateTime(this.getProperty("dateOfBirth"))
         }
 
         public void setDateOfBirth (DateTime dateOfBirth)
@@ -160,7 +161,7 @@ namespace Arbor.Model
 
         public bool getDeceased ()
         {
-            return (bool) this.getProperty("deceased");
+            return Convert.ToBoolean(this.getProperty("deceased"))
         }
 
         public void setDeceased (bool deceased)
@@ -168,14 +169,17 @@ namespace Arbor.Model
             this.setProperty("deceased", deceased);
         }
 
-        public DateTime getDateOfDeath (){
-            return Convert.ToDateTime(this.getProperty("dateOfDeath"));
+        public DateTime getDateOfDeath ()
+        {
+            return Convert.ToDateTime(this.getProperty("dateOfDeath"))
         }
 
         public void setDateOfDeath (DateTime dateOfDeath)
         {
             this.setProperty("dateOfDeath", dateOfDeath);
         }
+
+
     }
 }
 

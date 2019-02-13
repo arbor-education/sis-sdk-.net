@@ -71,8 +71,9 @@ namespace Arbor.Model
             this.setProperty("type", type);
         }
 
-        public DateTime getApprovedDatetime (){
-            return Convert.ToDateTime(this.getProperty("approvedDatetime"));
+        public DateTime getApprovedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("approvedDatetime"))
         }
 
         public void setApprovedDatetime (DateTime approvedDatetime)
@@ -80,8 +81,9 @@ namespace Arbor.Model
             this.setProperty("approvedDatetime", approvedDatetime);
         }
 
-        public DateTime getSkippedDatetime (){
-            return Convert.ToDateTime(this.getProperty("skippedDatetime"));
+        public DateTime getSkippedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("skippedDatetime"))
         }
 
         public void setSkippedDatetime (DateTime skippedDatetime)

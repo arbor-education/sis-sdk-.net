@@ -10,11 +10,12 @@ namespace Arbor.Model
     public class SmsMessageDraft : ModelBase
     {
         protected string resourceType = ResourceType.SMS_MESSAGE_DRAFT;
-        public const string SENDING_PROFILE = "sendingProfile";
+        public const string SENDER = "sender";
         public const string MESSAGE_TEXT = "messageText";
         public const string CUSTOM_REPORT = "customReport";
         public const string COMBINE_MESSAGES_TO_SAME_RECIPIENT = "combineMessagesToSameRecipient";
         public const string COMBINE_MESSAGES_TO_SAME_HOUSEHOLD = "combineMessagesToSameHousehold";
+        public const string SENDING_QUEUED_DATETIME = "sendingQueuedDatetime";
         public const string SENDING_STARTED_DATETIME = "sendingStartedDatetime";
         public const string RECIPIENTS_RESOLVED_DATETIME = "recipientsResolvedDatetime";
         public const string SENDING_COMPLETED_DATETIME = "sendingCompletedDatetime";
@@ -56,14 +57,14 @@ namespace Arbor.Model
         	return (SmsMessageDraft) gateway.retrieve(ResourceType.SMS_MESSAGE_DRAFT, id);
         }
 
-        public SendingProfile getSendingProfile ()
+        public ModelBase getSender ()
         {
-            return (SendingProfile) this.getProperty("sendingProfile");
+            return (ModelBase) this.getProperty("sender");
         }
 
-        public void setSendingProfile (SendingProfile sendingProfile)
+        public void setSender (ModelBase sender)
         {
-            this.setProperty("sendingProfile", sendingProfile);
+            this.setProperty("sender", sender);
         }
 
         public string getMessageText ()
@@ -88,7 +89,7 @@ namespace Arbor.Model
 
         public bool getCombineMessagesToSameRecipient ()
         {
-            return (bool) this.getProperty("combineMessagesToSameRecipient");
+            return Convert.ToBoolean(this.getProperty("combineMessagesToSameRecipient"))
         }
 
         public void setCombineMessagesToSameRecipient (bool combineMessagesToSameRecipient)
@@ -98,7 +99,7 @@ namespace Arbor.Model
 
         public bool getCombineMessagesToSameHousehold ()
         {
-            return (bool) this.getProperty("combineMessagesToSameHousehold");
+            return Convert.ToBoolean(this.getProperty("combineMessagesToSameHousehold"))
         }
 
         public void setCombineMessagesToSameHousehold (bool combineMessagesToSameHousehold)
@@ -106,8 +107,19 @@ namespace Arbor.Model
             this.setProperty("combineMessagesToSameHousehold", combineMessagesToSameHousehold);
         }
 
-        public DateTime getSendingStartedDatetime (){
-            return Convert.ToDateTime(this.getProperty("sendingStartedDatetime"));
+        public DateTime getSendingQueuedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("sendingQueuedDatetime"))
+        }
+
+        public void setSendingQueuedDatetime (DateTime sendingQueuedDatetime)
+        {
+            this.setProperty("sendingQueuedDatetime", sendingQueuedDatetime);
+        }
+
+        public DateTime getSendingStartedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("sendingStartedDatetime"))
         }
 
         public void setSendingStartedDatetime (DateTime sendingStartedDatetime)
@@ -115,8 +127,9 @@ namespace Arbor.Model
             this.setProperty("sendingStartedDatetime", sendingStartedDatetime);
         }
 
-        public DateTime getRecipientsResolvedDatetime (){
-            return Convert.ToDateTime(this.getProperty("recipientsResolvedDatetime"));
+        public DateTime getRecipientsResolvedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("recipientsResolvedDatetime"))
         }
 
         public void setRecipientsResolvedDatetime (DateTime recipientsResolvedDatetime)
@@ -124,8 +137,9 @@ namespace Arbor.Model
             this.setProperty("recipientsResolvedDatetime", recipientsResolvedDatetime);
         }
 
-        public DateTime getSendingCompletedDatetime (){
-            return Convert.ToDateTime(this.getProperty("sendingCompletedDatetime"));
+        public DateTime getSendingCompletedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("sendingCompletedDatetime"))
         }
 
         public void setSendingCompletedDatetime (DateTime sendingCompletedDatetime)

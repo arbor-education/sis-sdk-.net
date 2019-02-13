@@ -62,8 +62,9 @@ namespace Arbor.Model
             this.setProperty("intervention", intervention);
         }
 
-        public DateTime getReviewDueDate (){
-            return Convert.ToDateTime(this.getProperty("reviewDueDate"));
+        public DateTime getReviewDueDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("reviewDueDate"))
         }
 
         public void setReviewDueDate (DateTime reviewDueDate)
@@ -71,8 +72,9 @@ namespace Arbor.Model
             this.setProperty("reviewDueDate", reviewDueDate);
         }
 
-        public DateTime getReviewCompletedDate (){
-            return Convert.ToDateTime(this.getProperty("reviewCompletedDate"));
+        public DateTime getReviewCompletedDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("reviewCompletedDate"))
         }
 
         public void setReviewCompletedDate (DateTime reviewCompletedDate)

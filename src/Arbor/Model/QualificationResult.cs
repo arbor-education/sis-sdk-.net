@@ -119,8 +119,9 @@ namespace Arbor.Model
             this.setProperty("candidateEntry", candidateEntry);
         }
 
-        public DateTime getResultDatetime (){
-            return Convert.ToDateTime(this.getProperty("resultDatetime"));
+        public DateTime getResultDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("resultDatetime"))
         }
 
         public void setResultDatetime (DateTime resultDatetime)
@@ -128,8 +129,9 @@ namespace Arbor.Model
             this.setProperty("resultDatetime", resultDatetime);
         }
 
-        public DateTime getEmbargoDatetime (){
-            return Convert.ToDateTime(this.getProperty("embargoDatetime"));
+        public DateTime getEmbargoDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("embargoDatetime"))
         }
 
         public void setEmbargoDatetime (DateTime embargoDatetime)
@@ -137,12 +139,12 @@ namespace Arbor.Model
             this.setProperty("embargoDatetime", embargoDatetime);
         }
 
-        public ModelBase getImportJob ()
+        public QualificationResultImportJob getImportJob ()
         {
-            return (ModelBase) this.getProperty("importJob");
+            return (QualificationResultImportJob) this.getProperty("importJob");
         }
 
-        public void setImportJob (ModelBase importJob)
+        public void setImportJob (QualificationResultImportJob importJob)
         {
             this.setProperty("importJob", importJob);
         }

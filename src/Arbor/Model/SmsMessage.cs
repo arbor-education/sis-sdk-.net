@@ -145,8 +145,9 @@ namespace Arbor.Model
             this.setProperty("messageText", messageText);
         }
 
-        public DateTime getSentDatetime (){
-            return Convert.ToDateTime(this.getProperty("sentDatetime"));
+        public DateTime getSentDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("sentDatetime"))
         }
 
         public void setSentDatetime (DateTime sentDatetime)
@@ -154,8 +155,9 @@ namespace Arbor.Model
             this.setProperty("sentDatetime", sentDatetime);
         }
 
-        public DateTime getReadDatetime (){
-            return Convert.ToDateTime(this.getProperty("readDatetime"));
+        public DateTime getReadDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("readDatetime"))
         }
 
         public void setReadDatetime (DateTime readDatetime)
@@ -163,8 +165,9 @@ namespace Arbor.Model
             this.setProperty("readDatetime", readDatetime);
         }
 
-        public DateTime getReceivedDatetime (){
-            return Convert.ToDateTime(this.getProperty("receivedDatetime"));
+        public DateTime getReceivedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("receivedDatetime"))
         }
 
         public void setReceivedDatetime (DateTime receivedDatetime)
@@ -172,8 +175,9 @@ namespace Arbor.Model
             this.setProperty("receivedDatetime", receivedDatetime);
         }
 
-        public DateTime getFailedDatetime (){
-            return Convert.ToDateTime(this.getProperty("failedDatetime"));
+        public DateTime getFailedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("failedDatetime"))
         }
 
         public void setFailedDatetime (DateTime failedDatetime)
@@ -203,7 +207,7 @@ namespace Arbor.Model
 
         public bool getFree ()
         {
-            return (bool) this.getProperty("free");
+            return Convert.ToBoolean(this.getProperty("free"))
         }
 
         public void setFree (bool free)
@@ -231,8 +235,9 @@ namespace Arbor.Model
             this.setProperty("recipientNetworkCode", recipientNetworkCode);
         }
 
-        public DateTime getActionRequiredByDatetime (){
-            return Convert.ToDateTime(this.getProperty("actionRequiredByDatetime"));
+        public DateTime getActionRequiredByDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("actionRequiredByDatetime"))
         }
 
         public void setActionRequiredByDatetime (DateTime actionRequiredByDatetime)

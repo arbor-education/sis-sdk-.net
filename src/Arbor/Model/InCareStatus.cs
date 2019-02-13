@@ -64,7 +64,7 @@ namespace Arbor.Model
 
         public bool getActive ()
         {
-            return (bool) this.getProperty("active");
+            return Convert.ToBoolean(this.getProperty("active"))
         }
 
         public void setActive (bool active)
@@ -94,7 +94,7 @@ namespace Arbor.Model
 
         public bool getCountsAsInCareStatus ()
         {
-            return (bool) this.getProperty("countsAsInCareStatus");
+            return Convert.ToBoolean(this.getProperty("countsAsInCareStatus"))
         }
 
         public void setCountsAsInCareStatus (bool countsAsInCareStatus)

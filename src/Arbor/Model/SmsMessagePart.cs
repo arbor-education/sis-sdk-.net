@@ -73,8 +73,9 @@ namespace Arbor.Model
             this.setProperty("partIdentifier", partIdentifier);
         }
 
-        public DateTime getReceivedDatetime (){
-            return Convert.ToDateTime(this.getProperty("receivedDatetime"));
+        public DateTime getReceivedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("receivedDatetime"))
         }
 
         public void setReceivedDatetime (DateTime receivedDatetime)
@@ -82,8 +83,9 @@ namespace Arbor.Model
             this.setProperty("receivedDatetime", receivedDatetime);
         }
 
-        public DateTime getFailedDatetime (){
-            return Convert.ToDateTime(this.getProperty("failedDatetime"));
+        public DateTime getFailedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("failedDatetime"))
         }
 
         public void setFailedDatetime (DateTime failedDatetime)

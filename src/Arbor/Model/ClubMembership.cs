@@ -17,6 +17,7 @@ namespace Arbor.Model
         public const string STUDENT = "student";
         public const string CONSENT_RECEIVED = "consentReceived";
         public const string CUSTOMER_INVOICE = "customerInvoice";
+        public const string CANCELLED_DATETIME = "cancelledDatetime";
 
         public ClubMembership ()
         {
@@ -64,8 +65,9 @@ namespace Arbor.Model
             this.setProperty("club", club);
         }
 
-        public DateTime getStartDate (){
-            return Convert.ToDateTime(this.getProperty("startDate"));
+        public DateTime getStartDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("startDate"))
         }
 
         public void setStartDate (DateTime startDate)
@@ -73,8 +75,9 @@ namespace Arbor.Model
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate (){
-            return  Convert.ToDateTime(this.getProperty("endDate"));
+        public DateTime getEndDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("endDate"))
         }
 
         public void setEndDate (DateTime endDate)
@@ -104,7 +107,7 @@ namespace Arbor.Model
 
         public bool getConsentReceived ()
         {
-            return (bool) this.getProperty("consentReceived");
+            return Convert.ToBoolean(this.getProperty("consentReceived"))
         }
 
         public void setConsentReceived (bool consentReceived)
@@ -120,6 +123,16 @@ namespace Arbor.Model
         public void setCustomerInvoice (CustomerInvoice customerInvoice)
         {
             this.setProperty("customerInvoice", customerInvoice);
+        }
+
+        public DateTime getCancelledDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("cancelledDatetime"))
+        }
+
+        public void setCancelledDatetime (DateTime cancelledDatetime)
+        {
+            this.setProperty("cancelledDatetime", cancelledDatetime);
         }
 
 

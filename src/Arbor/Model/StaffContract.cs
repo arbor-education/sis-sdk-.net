@@ -21,6 +21,7 @@ namespace Arbor.Model
         public const string PAYROLL_NUMBER = "payrollNumber";
         public const string STAFF_ORIGIN = "staffOrigin";
         public const string STAFF_DESTINATION = "staffDestination";
+        public const string STAFF_LEAVING_REASON = "staffLeavingReason";
         public const string SUPERANNUATION_SCHEME = "superannuationScheme";
         public const string LAST_PAY_REVIEW_DATE = "lastPayReviewDate";
 
@@ -100,8 +101,9 @@ namespace Arbor.Model
             this.setProperty("contractReference", contractReference);
         }
 
-        public DateTime getIssuedDate (){
-            return Convert.ToDateTime(this.getProperty("issuedDate"));
+        public DateTime getIssuedDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("issuedDate"))
         }
 
         public void setIssuedDate (DateTime issuedDate)
@@ -109,8 +111,9 @@ namespace Arbor.Model
             this.setProperty("issuedDate", issuedDate);
         }
 
-        public DateTime getStartDate (){
-            return Convert.ToDateTime(this.getProperty("startDate"));
+        public DateTime getStartDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("startDate"))
         }
 
         public void setStartDate (DateTime startDate)
@@ -118,8 +121,9 @@ namespace Arbor.Model
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getExpectedEndDate (){
-            return Convert.ToDateTime(this.getProperty("expectedEndDate"));
+        public DateTime getExpectedEndDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("expectedEndDate"))
         }
 
         public void setExpectedEndDate (DateTime expectedEndDate)
@@ -127,8 +131,9 @@ namespace Arbor.Model
             this.setProperty("expectedEndDate", expectedEndDate);
         }
 
-        public DateTime getEndDate (){
-            return Convert.ToDateTime(this.getProperty("endDate"));
+        public DateTime getEndDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("endDate"))
         }
 
         public void setEndDate (DateTime endDate)
@@ -166,6 +171,16 @@ namespace Arbor.Model
             this.setProperty("staffDestination", staffDestination);
         }
 
+        public StaffLeavingReason getStaffLeavingReason ()
+        {
+            return (StaffLeavingReason) this.getProperty("staffLeavingReason");
+        }
+
+        public void setStaffLeavingReason (StaffLeavingReason staffLeavingReason)
+        {
+            this.setProperty("staffLeavingReason", staffLeavingReason);
+        }
+
         public SuperannuationScheme getSuperannuationScheme ()
         {
             return (SuperannuationScheme) this.getProperty("superannuationScheme");
@@ -176,8 +191,9 @@ namespace Arbor.Model
             this.setProperty("superannuationScheme", superannuationScheme);
         }
 
-        public DateTime getLastPayReviewDate (){
-            return Convert.ToDateTime(this.getProperty("lastPayReviewDate"));
+        public DateTime getLastPayReviewDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("lastPayReviewDate"))
         }
 
         public void setLastPayReviewDate (DateTime lastPayReviewDate)

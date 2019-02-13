@@ -64,7 +64,7 @@ namespace Arbor.Model
 
         public bool getActive ()
         {
-            return (bool) this.getProperty("active");
+            return Convert.ToBoolean(this.getProperty("active"))
         }
 
         public void setActive (bool active)
@@ -94,7 +94,7 @@ namespace Arbor.Model
 
         public bool getIsVocationalQualification ()
         {
-            return (bool) this.getProperty("isVocationalQualification");
+            return Convert.ToBoolean(this.getProperty("isVocationalQualification"))
         }
 
         public void setIsVocationalQualification (bool isVocationalQualification)

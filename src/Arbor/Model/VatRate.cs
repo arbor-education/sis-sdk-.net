@@ -68,7 +68,7 @@ namespace Arbor.Model
 
         public bool getActive ()
         {
-            return (bool) this.getProperty("active");
+            return Convert.ToBoolean(this.getProperty("active"))
         }
 
         public void setActive (bool active)
@@ -88,7 +88,7 @@ namespace Arbor.Model
 
         public bool getIsDefaultVatRate ()
         {
-            return (bool) this.getProperty("isDefaultVatRate");
+            return Convert.ToBoolean(this.getProperty("isDefaultVatRate"))
         }
 
         public void setIsDefaultVatRate (bool isDefaultVatRate)
@@ -126,8 +126,9 @@ namespace Arbor.Model
             this.setProperty("rate", rate);
         }
 
-        public DateTime getEffectiveDate (){
-            return Convert.ToDateTime(this.getProperty("effectiveDate"));
+        public DateTime getEffectiveDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("effectiveDate"))
         }
 
         public void setEffectiveDate (DateTime effectiveDate)
@@ -135,8 +136,9 @@ namespace Arbor.Model
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate (){
-            return Convert.ToDateTime(this.getProperty("endDate"));
+        public DateTime getEndDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("endDate"))
         }
 
         public void setEndDate (DateTime endDate)

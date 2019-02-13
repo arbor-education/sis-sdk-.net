@@ -15,7 +15,6 @@ namespace Arbor.Model
         public const string SUPPLIER_IDENTIFIER = "supplierIdentifier";
         public const string ENTITY_TYPE = "entityType";
         public const string CURRENT_DATA_SET_VERSION = "currentDataSetVersion";
-        public const string FILTERS = "filters";
         public const string LAST_UPDATED_DATETIME = "lastUpdatedDatetime";
 
         public DataSetSubscription ()
@@ -104,18 +103,9 @@ namespace Arbor.Model
             this.setProperty("currentDataSetVersion", currentDataSetVersion);
         }
 
-        public string getFilters ()
+        public DateTime getLastUpdatedDatetime ()
         {
-            return this.getProperty("filters").ToString();
-        }
-
-        public void setFilters (string filters)
-        {
-            this.setProperty("filters", filters);
-        }
-
-        public DateTime getLastUpdatedDatetime (){
-            return Convert.ToDateTime(this.getProperty("lastUpdatedDatetime"));
+            return Convert.ToDateTime(this.getProperty("lastUpdatedDatetime"))
         }
 
         public void setLastUpdatedDatetime (DateTime lastUpdatedDatetime)

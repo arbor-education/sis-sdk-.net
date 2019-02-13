@@ -58,7 +58,7 @@ namespace Arbor.Model
 
         public bool getUsedInSwfOnly ()
         {
-            return (bool) this.getProperty("usedInSwfOnly");
+            return Convert.ToBoolean(this.getProperty("usedInSwfOnly"))
         }
 
         public void setUsedInSwfOnly (bool usedInSwfOnly)
@@ -68,7 +68,7 @@ namespace Arbor.Model
 
         public bool getUsedInCbdsOnly ()
         {
-            return (bool) this.getProperty("usedInCbdsOnly");
+            return Convert.ToBoolean(this.getProperty("usedInCbdsOnly"))
         }
 
         public void setUsedInCbdsOnly (bool usedInCbdsOnly)
@@ -108,7 +108,7 @@ namespace Arbor.Model
 
         public bool getActive ()
         {
-            return (bool) this.getProperty("active");
+            return Convert.ToBoolean(this.getProperty("active"))
         }
 
         public void setActive (bool active)

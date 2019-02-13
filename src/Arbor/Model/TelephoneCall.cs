@@ -100,8 +100,9 @@ namespace Arbor.Model
             this.setProperty("callerTelephoneNumberModel", callerTelephoneNumberModel);
         }
 
-        public DateTime getCallDatetime (){
-            return Convert.ToDateTime(this.getProperty("callDatetime"));
+        public DateTime getCallDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("callDatetime"))
         }
 
         public void setCallDatetime (DateTime callDatetime)
@@ -179,8 +180,9 @@ namespace Arbor.Model
             this.setProperty("summary", summary);
         }
 
-        public DateTime getActionRequiredByDatetime (){
-            return Convert.ToDateTime(this.getProperty("actionRequiredByDatetime"));
+        public DateTime getActionRequiredByDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("actionRequiredByDatetime"))
         }
 
         public void setActionRequiredByDatetime (DateTime actionRequiredByDatetime)

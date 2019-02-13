@@ -72,8 +72,9 @@ namespace Arbor.Model
             this.setProperty("enrolmentMode", enrolmentMode);
         }
 
-        public DateTime getStartDate (){
-            return Convert.ToDateTime(this.getProperty("startDate"));
+        public DateTime getStartDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("startDate"))
         }
 
         public void setStartDate (DateTime startDate)
@@ -81,8 +82,9 @@ namespace Arbor.Model
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate (){
-            return Convert.ToDateTime(this.getProperty("endDate"));
+        public DateTime getEndDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("endDate"))
         }
 
         public void setEndDate (DateTime endDate)

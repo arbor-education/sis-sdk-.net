@@ -59,12 +59,12 @@ namespace Arbor.Model
             this.setProperty("mealSitting", mealSitting);
         }
 
-        public ModelBase getAutomaticAttendeeTarget ()
+        public RegistrationForm getAutomaticAttendeeTarget ()
         {
-            return (ModelBase) this.getProperty("automaticAttendeeTarget");
+            return (RegistrationForm) this.getProperty("automaticAttendeeTarget");
         }
 
-        public void setAutomaticAttendeeTarget (ModelBase automaticAttendeeTarget)
+        public void setAutomaticAttendeeTarget (RegistrationForm automaticAttendeeTarget)
         {
             this.setProperty("automaticAttendeeTarget", automaticAttendeeTarget);
         }

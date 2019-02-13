@@ -12,6 +12,7 @@ namespace Arbor.Model
         protected string resourceType = ResourceType.SUSPECTED_DUPLICATE;
         public const string SUSPECT_ONE = "suspectOne";
         public const string SUSPECT_TWO = "suspectTwo";
+        public const string UNIQUE_KEY = "uniqueKey";
         public const string TOTAL_DUPLICATE_SCORE = "totalDuplicateScore";
         public const string DUPLICATE_SCORES = "duplicateScores";
         public const string RESOLVED_DATETIME = "resolvedDatetime";
@@ -74,6 +75,16 @@ namespace Arbor.Model
             this.setProperty("suspectTwo", suspectTwo);
         }
 
+        public string getUniqueKey ()
+        {
+            return this.getProperty("uniqueKey").ToString();
+        }
+
+        public void setUniqueKey (string uniqueKey)
+        {
+            this.setProperty("uniqueKey", uniqueKey);
+        }
+
         public int getTotalDuplicateScore ()
         {
             return Convert.ToInt32(this.getProperty("totalDuplicateScore"));
@@ -94,8 +105,9 @@ namespace Arbor.Model
             this.setProperty("duplicateScores", duplicateScores);
         }
 
-        public DateTime getResolvedDatetime (){
-            return Convert.ToDateTime(this.getProperty("resolvedDatetime"));
+        public DateTime getResolvedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("resolvedDatetime"))
         }
 
         public void setResolvedDatetime (DateTime resolvedDatetime)

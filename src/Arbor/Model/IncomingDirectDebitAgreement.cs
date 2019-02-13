@@ -84,8 +84,9 @@ namespace Arbor.Model
             this.setProperty("paymentProviderAgreementIdentifier", paymentProviderAgreementIdentifier);
         }
 
-        public DateTime getAgreementStartDate (){
-            return Convert.ToDateTime(this.getProperty("agreementStartDate"));
+        public DateTime getAgreementStartDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("agreementStartDate"))
         }
 
         public void setAgreementStartDate (DateTime agreementStartDate)
@@ -93,8 +94,9 @@ namespace Arbor.Model
             this.setProperty("agreementStartDate", agreementStartDate);
         }
 
-        public DateTime getAgreementEndDate (){
-            return Convert.ToDateTime(this.getProperty("agreementEndDate"));
+        public DateTime getAgreementEndDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("agreementEndDate"))
         }
 
         public void setAgreementEndDate (DateTime agreementEndDate)

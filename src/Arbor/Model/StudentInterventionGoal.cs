@@ -60,8 +60,9 @@ namespace Arbor.Model
             this.setProperty("studentIntervention", studentIntervention);
         }
 
-        public DateTime getTargetDate (){
-            return Convert.ToDateTime(this.getProperty("targetDate"));
+        public DateTime getTargetDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("targetDate"))
         }
 
         public void setTargetDate (DateTime targetDate)

@@ -56,8 +56,9 @@ namespace Arbor.Model
         	return (MealSession) gateway.retrieve(ResourceType.MEAL_SESSION, id);
         }
 
-        public DateTime getStartDatetime (){
-            return Convert.ToDateTime(this.getProperty("startDatetime"));
+        public DateTime getStartDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("startDatetime"))
         }
 
         public void setStartDatetime (DateTime startDatetime)
@@ -65,8 +66,9 @@ namespace Arbor.Model
             this.setProperty("startDatetime", startDatetime);
         }
 
-        public DateTime getEndDatetime (){
-            return Convert.ToDateTime(this.getProperty("endDatetime"));
+        public DateTime getEndDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("endDatetime"))
         }
 
         public void setEndDatetime (DateTime endDatetime)
@@ -104,8 +106,9 @@ namespace Arbor.Model
             this.setProperty("mealSitting", mealSitting);
         }
 
-        public DateTime getRegisterOpenedDatetime (){
-            return Convert.ToDateTime(this.getProperty("registerOpenedDatetime"));
+        public DateTime getRegisterOpenedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("registerOpenedDatetime"))
         }
 
         public void setRegisterOpenedDatetime (DateTime registerOpenedDatetime)
@@ -113,8 +116,9 @@ namespace Arbor.Model
             this.setProperty("registerOpenedDatetime", registerOpenedDatetime);
         }
 
-        public DateTime getRegisterClosedDatetime (){
-            return Convert.ToDateTime(this.getProperty("registerClosedDatetime"));
+        public DateTime getRegisterClosedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("registerClosedDatetime"))
         }
 
         public void setRegisterClosedDatetime (DateTime registerClosedDatetime)
@@ -122,8 +126,9 @@ namespace Arbor.Model
             this.setProperty("registerClosedDatetime", registerClosedDatetime);
         }
 
-        public DateTime getInvoicedDatetime (){
-            return Convert.ToDateTime(this.getProperty("invoicedDatetime"));
+        public DateTime getInvoicedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("invoicedDatetime"))
         }
 
         public void setInvoicedDatetime (DateTime invoicedDatetime)

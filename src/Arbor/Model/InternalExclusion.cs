@@ -104,8 +104,9 @@ namespace Arbor.Model
             this.setProperty("exclusionReason", exclusionReason);
         }
 
-        public DateTime getIssuedDatetime (){
-            return Convert.ToDateTime(this.getProperty("issuedDatetime"));
+        public DateTime getIssuedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("issuedDatetime"))
         }
 
         public void setIssuedDatetime (DateTime issuedDatetime)

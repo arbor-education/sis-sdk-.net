@@ -122,8 +122,9 @@ namespace Arbor.Model
             this.setProperty("subject", subject);
         }
 
-        public DateTime getOriginationDatetime (){
-            return Convert.ToDateTime(this.getProperty("originationDatetime"));
+        public DateTime getOriginationDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("originationDatetime"))
         }
 
         public void setOriginationDatetime (DateTime originationDatetime)
@@ -131,8 +132,9 @@ namespace Arbor.Model
             this.setProperty("originationDatetime", originationDatetime);
         }
 
-        public DateTime getSendingStartedDatetime (){
-            return Convert.ToDateTime(this.getProperty("sendingStartedDatetime"));
+        public DateTime getSendingStartedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("sendingStartedDatetime"))
         }
 
         public void setSendingStartedDatetime (DateTime sendingStartedDatetime)
@@ -140,8 +142,9 @@ namespace Arbor.Model
             this.setProperty("sendingStartedDatetime", sendingStartedDatetime);
         }
 
-        public DateTime getSentDatetime (){
-            return Convert.ToDateTime(this.getProperty("sentDatetime"));
+        public DateTime getSentDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("sentDatetime"))
         }
 
         public void setSentDatetime (DateTime sentDatetime)
@@ -149,8 +152,9 @@ namespace Arbor.Model
             this.setProperty("sentDatetime", sentDatetime);
         }
 
-        public DateTime getReceivedDatetime (){
-            return Convert.ToDateTime(this.getProperty("receivedDatetime"));
+        public DateTime getReceivedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("receivedDatetime"))
         }
 
         public void setReceivedDatetime (DateTime receivedDatetime)
@@ -158,8 +162,9 @@ namespace Arbor.Model
             this.setProperty("receivedDatetime", receivedDatetime);
         }
 
-        public DateTime getFailedDatetime (){
-            return Convert.ToDateTime(this.getProperty("failedDatetime"));
+        public DateTime getFailedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("failedDatetime"))
         }
 
         public void setFailedDatetime (DateTime failedDatetime)
@@ -187,8 +192,9 @@ namespace Arbor.Model
             this.setProperty("htmlPart", htmlPart);
         }
 
-        public DateTime getReadDatetime (){
-            return Convert.ToDateTime(this.getProperty("readDatetime"));
+        public DateTime getReadDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("readDatetime"))
         }
 
         public void setReadDatetime (DateTime readDatetime)
@@ -196,8 +202,9 @@ namespace Arbor.Model
             this.setProperty("readDatetime", readDatetime);
         }
 
-        public DateTime getActionRequiredByDatetime (){
-            return Convert.ToDateTime(this.getProperty("actionRequiredByDatetime"));
+        public DateTime getActionRequiredByDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("actionRequiredByDatetime"))
         }
 
         public void setActionRequiredByDatetime (DateTime actionRequiredByDatetime)

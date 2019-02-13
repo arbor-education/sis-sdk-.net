@@ -11,7 +11,6 @@ namespace Arbor.Model
     {
         protected string resourceType = ResourceType.BANK_DEPOSIT;
         public const string BANK_ACCOUNT = "bankAccount";
-        public const string PAID_TO_BANK_DATE = "paidToBankDate";
         public const string PAID_BY_STAFF = "paidByStaff";
         public const string DEPOSIT_DATETIME = "depositDatetime";
         public const string TOTAL_CHEQUE_AMOUNT = "totalChequeAmount";
@@ -64,15 +63,6 @@ namespace Arbor.Model
             this.setProperty("bankAccount", bankAccount);
         }
 
-        public DateTime getPaidToBankDate (){
-            return Convert.ToDateTime(this.getProperty("paidToBankDate"));
-        }
-
-        public void setPaidToBankDate (DateTime paidToBankDate)
-        {
-            this.setProperty("paidToBankDate", paidToBankDate);
-        }
-
         public Staff getPaidByStaff ()
         {
             return (Staff) this.getProperty("paidByStaff");
@@ -83,8 +73,9 @@ namespace Arbor.Model
             this.setProperty("paidByStaff", paidByStaff);
         }
 
-        public DateTime getDepositDatetime (){
-            return Convert.ToDateTime(this.getProperty("depositDatetime"));
+        public DateTime getDepositDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("depositDatetime"))
         }
 
         public void setDepositDatetime (DateTime depositDatetime)

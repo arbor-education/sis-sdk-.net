@@ -183,8 +183,9 @@ namespace Arbor.Model
             this.setProperty("promotedToAcademicUnit", promotedToAcademicUnit);
         }
 
-        public DateTime getPromotedDatetime (){
-            return Convert.ToDateTime(this.getProperty("promotedDatetime"));
+        public DateTime getPromotedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("promotedDatetime"))
         }
 
         public void setPromotedDatetime (DateTime promotedDatetime)
@@ -202,8 +203,9 @@ namespace Arbor.Model
             this.setProperty("copiedToAcademicUnit", copiedToAcademicUnit);
         }
 
-        public DateTime getEffectiveDate (){
-            return Convert.ToDateTime(this.getProperty("effectiveDate"));
+        public DateTime getEffectiveDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("effectiveDate"))
         }
 
         public void setEffectiveDate (DateTime effectiveDate)
@@ -211,8 +213,9 @@ namespace Arbor.Model
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate (){
-            return Convert.ToDateTime(this.getProperty("endDate"));
+        public DateTime getEndDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("endDate"))
         }
 
         public void setEndDate (DateTime endDate)
@@ -232,7 +235,7 @@ namespace Arbor.Model
 
         public bool getSelfServiceEnrolment ()
         {
-            return (bool) this.getProperty("selfServiceEnrolment");
+            return Convert.ToBoolean(this.getProperty("selfServiceEnrolment"))
         }
 
         public void setSelfServiceEnrolment (bool selfServiceEnrolment)
@@ -292,7 +295,7 @@ namespace Arbor.Model
 
         public bool getIsMainAssessableUnit ()
         {
-            return (bool) this.getProperty("isMainAssessableUnit");
+            return Convert.ToBoolean(this.getProperty("isMainAssessableUnit"))
         }
 
         public void setIsMainAssessableUnit (bool isMainAssessableUnit)
@@ -332,11 +335,6 @@ namespace Arbor.Model
         	return (ModelCollection<TimetableSlot>) this.getApiGateway().castCollection<TimetableSlot>(collection);
         }
 
-        public ModelCollection<AcademicUnitCohort> getAcademicUnitCohorts()
-        {
-            ModelCollection<ModelBase> collection = (ModelCollection<ModelBase>)this.getCollectionProperty("academicUnitCohorts");
-            return (ModelCollection<AcademicUnitCohort>)this.getApiGateway().castCollection<AcademicUnitCohort>(collection);
-        }//getAcademicUnitCohorts()
 
     }
 }

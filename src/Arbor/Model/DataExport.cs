@@ -100,9 +100,9 @@ namespace Arbor.Model
             return this.getProperty("params").ToString();
         }
 
-        public void setParams (string _params)
+        public void setParams (string params)
         {
-            this.setProperty("params", _params);
+            this.setProperty("params", params);
         }
 
         public string getHash ()
@@ -115,8 +115,9 @@ namespace Arbor.Model
             this.setProperty("hash", hash);
         }
 
-        public DateTime getLastExportDatetime (){
-            return Convert.ToDateTime(this.getProperty("lastExportDatetime"));
+        public DateTime getLastExportDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("lastExportDatetime"))
         }
 
         public void setLastExportDatetime (DateTime lastExportDatetime)

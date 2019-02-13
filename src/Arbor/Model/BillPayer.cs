@@ -13,6 +13,7 @@ namespace Arbor.Model
         public const string LEGAL_ENTITY = "legalEntity";
         public const string DELETED_LEGAL_ENTITY_NAME = "deletedLegalEntityName";
         public const string STRIPE_CUSTOMER_ID = "stripeCustomerId";
+        public const string NEW_STRIPE_CUSTOMER_ID = "newStripeCustomerId";
 
         public BillPayer ()
         {
@@ -78,6 +79,16 @@ namespace Arbor.Model
         public void setStripeCustomerId (string stripeCustomerId)
         {
             this.setProperty("stripeCustomerId", stripeCustomerId);
+        }
+
+        public string getNewStripeCustomerId ()
+        {
+            return this.getProperty("newStripeCustomerId").ToString();
+        }
+
+        public void setNewStripeCustomerId (string newStripeCustomerId)
+        {
+            this.setProperty("newStripeCustomerId", newStripeCustomerId);
         }
 
 

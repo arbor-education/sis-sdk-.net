@@ -15,6 +15,9 @@ namespace Arbor.Model
         public const string PRICE_EX_VAT = "priceExVat";
         public const string VAT_RATE = "vatRate";
         public const string VOLUNTARY_CONTRIBUTION = "voluntaryContribution";
+        public const string INSTALMENTS_PERMITTED = "instalmentsPermitted";
+        public const string MINIMUM_INSTALMENT_AMOUNT = "minimumInstalmentAmount";
+        public const string AUTO_CONFIRM_INSTALMENT_THRESHOLD = "autoConfirmInstalmentThreshold";
 
         public TripPrice ()
         {
@@ -94,12 +97,42 @@ namespace Arbor.Model
 
         public bool getVoluntaryContribution ()
         {
-            return (bool) this.getProperty("voluntaryContribution");
+            return Convert.ToBoolean(this.getProperty("voluntaryContribution"))
         }
 
         public void setVoluntaryContribution (bool voluntaryContribution)
         {
             this.setProperty("voluntaryContribution", voluntaryContribution);
+        }
+
+        public bool getInstalmentsPermitted ()
+        {
+            return Convert.ToBoolean(this.getProperty("instalmentsPermitted"))
+        }
+
+        public void setInstalmentsPermitted (bool instalmentsPermitted)
+        {
+            this.setProperty("instalmentsPermitted", instalmentsPermitted);
+        }
+
+        public string getMinimumInstalmentAmount ()
+        {
+            return this.getProperty("minimumInstalmentAmount").ToString();
+        }
+
+        public void setMinimumInstalmentAmount (string minimumInstalmentAmount)
+        {
+            this.setProperty("minimumInstalmentAmount", minimumInstalmentAmount);
+        }
+
+        public string getAutoConfirmInstalmentThreshold ()
+        {
+            return this.getProperty("autoConfirmInstalmentThreshold").ToString();
+        }
+
+        public void setAutoConfirmInstalmentThreshold (string autoConfirmInstalmentThreshold)
+        {
+            this.setProperty("autoConfirmInstalmentThreshold", autoConfirmInstalmentThreshold);
         }
 
 

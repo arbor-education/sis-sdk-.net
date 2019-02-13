@@ -50,18 +50,19 @@ namespace Arbor.Model
         	return (BookableResourcePeriod) gateway.retrieve(ResourceType.BOOKABLE_RESOURCE_PERIOD, id);
         }
 
-        public ModelBase getResource ()
+        public Staff getResource ()
         {
-            return (ModelBase) this.getProperty("resource");
+            return (Staff) this.getProperty("resource");
         }
 
-        public void setResource (ModelBase resource)
+        public void setResource (Staff resource)
         {
             this.setProperty("resource", resource);
         }
 
-        public DateTime getStartDatetime (){
-            return Convert.ToDateTime(this.getProperty("startDatetime"));
+        public DateTime getStartDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("startDatetime"))
         }
 
         public void setStartDatetime (DateTime startDatetime)
@@ -69,8 +70,9 @@ namespace Arbor.Model
             this.setProperty("startDatetime", startDatetime);
         }
 
-        public DateTime getEndDatetime (){
-            return Convert.ToDateTime(this.getProperty("endDatetime"));
+        public DateTime getEndDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("endDatetime"))
         }
 
         public void setEndDatetime (DateTime endDatetime)

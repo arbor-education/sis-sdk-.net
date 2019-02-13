@@ -17,6 +17,7 @@ namespace Arbor.Model
         public const string SMS_BODY = "smsBody";
         public const string LETTER_BODY = "letterBody";
         public const string COMMUNICATION_TEMPLATE_DEFINITION_CLASS = "communicationTemplateDefinitionClass";
+        public const string CUSTOM_REPORT = "customReport";
 
         public CommunicationTemplate ()
         {
@@ -122,6 +123,16 @@ namespace Arbor.Model
         public void setCommunicationTemplateDefinitionClass (string communicationTemplateDefinitionClass)
         {
             this.setProperty("communicationTemplateDefinitionClass", communicationTemplateDefinitionClass);
+        }
+
+        public CustomReport getCustomReport ()
+        {
+            return (CustomReport) this.getProperty("customReport");
+        }
+
+        public void setCustomReport (CustomReport customReport)
+        {
+            this.setProperty("customReport", customReport);
         }
 
 

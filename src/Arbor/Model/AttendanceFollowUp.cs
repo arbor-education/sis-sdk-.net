@@ -65,8 +65,9 @@ namespace Arbor.Model
             this.setProperty("student", student);
         }
 
-        public DateTime getAttendanceDate (){
-            return Convert.ToDateTime(this.getProperty("attendanceDate"));
+        public DateTime getAttendanceDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("attendanceDate"))
         }
 
         public void setAttendanceDate (DateTime attendanceDate)
@@ -74,8 +75,9 @@ namespace Arbor.Model
             this.setProperty("attendanceDate", attendanceDate);
         }
 
-        public DateTime getSendingStartedDatetime (){
-            return Convert.ToDateTime(this.getProperty("sendingStartedDatetime"));
+        public DateTime getSendingStartedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("sendingStartedDatetime"))
         }
 
         public void setSendingStartedDatetime (DateTime sendingStartedDatetime)
@@ -83,8 +85,9 @@ namespace Arbor.Model
             this.setProperty("sendingStartedDatetime", sendingStartedDatetime);
         }
 
-        public DateTime getEmailSentDatetime (){
-            return Convert.ToDateTime(this.getProperty("emailSentDatetime"));
+        public DateTime getEmailSentDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("emailSentDatetime"))
         }
 
         public void setEmailSentDatetime (DateTime emailSentDatetime)
@@ -92,8 +95,9 @@ namespace Arbor.Model
             this.setProperty("emailSentDatetime", emailSentDatetime);
         }
 
-        public DateTime getEmailFailedDatetime (){
-            return Convert.ToDateTime(this.getProperty("emailFailedDatetime"));
+        public DateTime getEmailFailedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("emailFailedDatetime"))
         }
 
         public void setEmailFailedDatetime (DateTime emailFailedDatetime)
@@ -101,8 +105,9 @@ namespace Arbor.Model
             this.setProperty("emailFailedDatetime", emailFailedDatetime);
         }
 
-        public DateTime getSmsSentDatetime (){
-            return Convert.ToDateTime(this.getProperty("smsSentDatetime"));
+        public DateTime getSmsSentDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("smsSentDatetime"))
         }
 
         public void setSmsSentDatetime (DateTime smsSentDatetime)
@@ -110,8 +115,9 @@ namespace Arbor.Model
             this.setProperty("smsSentDatetime", smsSentDatetime);
         }
 
-        public DateTime getSmsFailedDatetime (){
-            return Convert.ToDateTime(this.getProperty("smsFailedDatetime"));
+        public DateTime getSmsFailedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("smsFailedDatetime"))
         }
 
         public void setSmsFailedDatetime (DateTime smsFailedDatetime)
@@ -119,8 +125,9 @@ namespace Arbor.Model
             this.setProperty("smsFailedDatetime", smsFailedDatetime);
         }
 
-        public DateTime getTelephoneCallDatetime (){
-            return Convert.ToDateTime(this.getProperty("telephoneCallDatetime"));
+        public DateTime getTelephoneCallDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("telephoneCallDatetime"))
         }
 
         public void setTelephoneCallDatetime (DateTime telephoneCallDatetime)

@@ -10,13 +10,11 @@ namespace Arbor.Model
     public class Alert : ModelBase
     {
         protected string resourceType = ResourceType.ALERT;
-        public const string TRIGGER = "trigger";
-        public const string REFERENCE_DATE = "referenceDate";
-        public const string OBJECT = "object";
-        public const string SEVERITY = "severity";
-        public const string ALERT_PARAMS = "alertParams";
-        public const string SILENCED_DATETIME = "silencedDatetime";
-        public const string ACTION_DATETIME = "actionDatetime";
+        public const string ALERT_RULE = "alertRule";
+        public const string TRIGGER_EVENT_TYPE = "triggerEventType";
+        public const string TRIGGERED_BY = "triggeredBy";
+        public const string REFERENCE = "reference";
+        public const string TRIGGERED_DATETIME = "triggeredDatetime";
 
         public Alert ()
         {
@@ -54,71 +52,54 @@ namespace Arbor.Model
         	return (Alert) gateway.retrieve(ResourceType.ALERT, id);
         }
 
-        public Trigger getTrigger ()
+        public AlertRule getAlertRule ()
         {
-            return (Trigger) this.getProperty("trigger");
+            return (AlertRule) this.getProperty("alertRule");
         }
 
-        public void setTrigger (Trigger trigger)
+        public void setAlertRule (AlertRule alertRule)
         {
-            this.setProperty("trigger", trigger);
+            this.setProperty("alertRule", alertRule);
         }
 
-        public DateTime getReferenceDate (){
-            return Convert.ToDateTime(this.getProperty("referenceDate"));
-        }
-
-        public void setReferenceDate (DateTime referenceDate)
+        public string getTriggerEventType ()
         {
-            this.setProperty("referenceDate", referenceDate);
+            return this.getProperty("triggerEventType").ToString();
         }
 
-        public ModelBase getObject ()
+        public void setTriggerEventType (string triggerEventType)
         {
-            return (ModelBase) this.getProperty("object");
+            this.setProperty("triggerEventType", triggerEventType);
         }
 
-        public void setObject (ModelBase _object)
+        public ModelBase getTriggeredBy ()
         {
-            this.setProperty("object", _object);
+            return (ModelBase) this.getProperty("triggeredBy");
         }
 
-        public string getSeverity ()
+        public void setTriggeredBy (ModelBase triggeredBy)
         {
-            return this.getProperty("severity").ToString();
+            this.setProperty("triggeredBy", triggeredBy);
         }
 
-        public void setSeverity (string severity)
+        public ModelBase getReference ()
         {
-            this.setProperty("severity", severity);
+            return (ModelBase) this.getProperty("reference");
         }
 
-        public string getAlertParams ()
+        public void setReference (ModelBase reference)
         {
-            return this.getProperty("alertParams").ToString();
+            this.setProperty("reference", reference);
         }
 
-        public void setAlertParams (string alertParams)
+        public DateTime getTriggeredDatetime ()
         {
-            this.setProperty("alertParams", alertParams);
+            return Convert.ToDateTime(this.getProperty("triggeredDatetime"))
         }
 
-        public DateTime getSilencedDatetime (){
-            return Convert.ToDateTime(this.getProperty("silencedDatetime"));
-        }
-
-        public void setSilencedDatetime (DateTime silencedDatetime)
+        public void setTriggeredDatetime (DateTime triggeredDatetime)
         {
-            this.setProperty("silencedDatetime", silencedDatetime);
-        }
-
-        public DateTime getActionDatetime (){
-            return Convert.ToDateTime(this.getProperty("actionDatetime"));
-        }
-
-        public void setActionDatetime (DateTime actionDatetime)
-        {
-            this.setProperty("actionDatetime", actionDatetime);
+            this.setProperty("triggeredDatetime", triggeredDatetime);
         }
 
 

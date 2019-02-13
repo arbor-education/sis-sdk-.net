@@ -15,7 +15,8 @@ namespace Arbor.Model
         public const string PURCHASE_START_DATE = "purchaseStartDate";
         public const string PURCHASE_END_DATE = "purchaseEndDate";
         public const string MEMBERSHIP_PERIOD_TYPE = "membershipPeriodType";
-        public const string ALLOW_GUARDIAN_PORTAL_SIGNUP = "allowGuardianPortalSignup";
+        public const string GUARDIAN_SIGNUP_START_DATETIME = "guardianSignupStartDatetime";
+        public const string GUARDIAN_SIGNUP_END_DATETIME = "guardianSignupEndDatetime";
 
         public ClubMembershipPeriod ()
         {
@@ -73,8 +74,9 @@ namespace Arbor.Model
             this.setProperty("name", name);
         }
 
-        public DateTime getPurchaseStartDate (){
-            return Convert.ToDateTime(this.getProperty("purchaseStartDate"));
+        public DateTime getPurchaseStartDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("purchaseStartDate"))
         }
 
         public void setPurchaseStartDate (DateTime purchaseStartDate)
@@ -82,8 +84,9 @@ namespace Arbor.Model
             this.setProperty("purchaseStartDate", purchaseStartDate);
         }
 
-        public DateTime getPurchaseEndDate (){
-            return Convert.ToDateTime(this.getProperty("purchaseEndDate"));
+        public DateTime getPurchaseEndDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("purchaseEndDate"))
         }
 
         public void setPurchaseEndDate (DateTime purchaseEndDate)
@@ -101,14 +104,24 @@ namespace Arbor.Model
             this.setProperty("membershipPeriodType", membershipPeriodType);
         }
 
-        public bool getAllowGuardianPortalSignup ()
+        public DateTime getGuardianSignupStartDatetime ()
         {
-            return (bool) this.getProperty("allowGuardianPortalSignup");
+            return Convert.ToDateTime(this.getProperty("guardianSignupStartDatetime"))
         }
 
-        public void setAllowGuardianPortalSignup (bool allowGuardianPortalSignup)
+        public void setGuardianSignupStartDatetime (DateTime guardianSignupStartDatetime)
         {
-            this.setProperty("allowGuardianPortalSignup", allowGuardianPortalSignup);
+            this.setProperty("guardianSignupStartDatetime", guardianSignupStartDatetime);
+        }
+
+        public DateTime getGuardianSignupEndDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("guardianSignupEndDatetime"))
+        }
+
+        public void setGuardianSignupEndDatetime (DateTime guardianSignupEndDatetime)
+        {
+            this.setProperty("guardianSignupEndDatetime", guardianSignupEndDatetime);
         }
 
 

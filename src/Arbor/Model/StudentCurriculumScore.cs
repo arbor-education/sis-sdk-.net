@@ -147,8 +147,9 @@ namespace Arbor.Model
             this.setProperty("gradePointValueCap", gradePointValueCap);
         }
 
-        public DateTime getDate (){
-            return Convert.ToDateTime(this.getProperty("date"));
+        public DateTime getDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("date"))
         }
 
         public void setDate (DateTime date)

@@ -70,8 +70,9 @@ namespace Arbor.Model
             this.setProperty("intakeSeason", intakeSeason);
         }
 
-        public DateTime getExpectedAdmissionDate (){
-            return Convert.ToDateTime(this.getProperty("expectedAdmissionDate"));
+        public DateTime getExpectedAdmissionDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("expectedAdmissionDate"))
         }
 
         public void setExpectedAdmissionDate (DateTime expectedAdmissionDate)

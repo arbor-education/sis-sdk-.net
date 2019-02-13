@@ -81,8 +81,9 @@ namespace Arbor.Model
             this.setProperty("review", review);
         }
 
-        public DateTime getReviewDate (){
-            return Convert.ToDateTime(this.getProperty("reviewDate"));
+        public DateTime getReviewDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("reviewDate"))
         }
 
         public void setReviewDate (DateTime reviewDate)

@@ -17,6 +17,7 @@ namespace Arbor.Model
         public const string USERNAME = "username";
         public const string EMAIL = "email";
         public const string PASSWORD_HASH = "passwordHash";
+        public const string PASSWORD_RESET_HASH = "passwordResetHash";
         public const string AUTHENTICATION_TYPE = "authenticationType";
         public const string AUTHENTICATION_TOKEN = "authenticationToken";
         public const string AUTHENTICATION_TOKEN_EXPIRY_DATETIME = "authenticationTokenExpiryDatetime";
@@ -139,6 +140,16 @@ namespace Arbor.Model
             this.setProperty("passwordHash", passwordHash);
         }
 
+        public string getPasswordResetHash ()
+        {
+            return this.getProperty("passwordResetHash").ToString();
+        }
+
+        public void setPasswordResetHash (string passwordResetHash)
+        {
+            this.setProperty("passwordResetHash", passwordResetHash);
+        }
+
         public string getAuthenticationType ()
         {
             return this.getProperty("authenticationType").ToString();
@@ -159,8 +170,9 @@ namespace Arbor.Model
             this.setProperty("authenticationToken", authenticationToken);
         }
 
-        public DateTime getAuthenticationTokenExpiryDatetime (){
-            return Convert.ToDateTime(this.getProperty("authenticationTokenExpiryDatetime"));
+        public DateTime getAuthenticationTokenExpiryDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("authenticationTokenExpiryDatetime"))
         }
 
         public void setAuthenticationTokenExpiryDatetime (DateTime authenticationTokenExpiryDatetime)
@@ -178,8 +190,9 @@ namespace Arbor.Model
             this.setProperty("currentIpAddress", currentIpAddress);
         }
 
-        public DateTime getLastAccessDatetime (){
-            return Convert.ToDateTime(this.getProperty("lastAccessDatetime"));
+        public DateTime getLastAccessDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("lastAccessDatetime"))
         }
 
         public void setLastAccessDatetime (DateTime lastAccessDatetime)
@@ -187,8 +200,9 @@ namespace Arbor.Model
             this.setProperty("lastAccessDatetime", lastAccessDatetime);
         }
 
-        public DateTime getPasswordLastChangedDatetime (){
-            return Convert.ToDateTime(this.getProperty("passwordLastChangedDatetime"));
+        public DateTime getPasswordLastChangedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("passwordLastChangedDatetime"))
         }
 
         public void setPasswordLastChangedDatetime (DateTime passwordLastChangedDatetime)
@@ -198,7 +212,7 @@ namespace Arbor.Model
 
         public bool getEnabled ()
         {
-            return (bool) this.getProperty("enabled");
+            return Convert.ToBoolean(this.getProperty("enabled"))
         }
 
         public void setEnabled (bool enabled)
@@ -206,8 +220,9 @@ namespace Arbor.Model
             this.setProperty("enabled", enabled);
         }
 
-        public DateTime getVerifiedDatetime (){
-            return Convert.ToDateTime(this.getProperty("verifiedDatetime"));
+        public DateTime getVerifiedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("verifiedDatetime"))
         }
 
         public void setVerifiedDatetime (DateTime verifiedDatetime)
@@ -215,8 +230,9 @@ namespace Arbor.Model
             this.setProperty("verifiedDatetime", verifiedDatetime);
         }
 
-        public DateTime getTermsAcceptedDatetime (){
-            return Convert.ToDateTime(this.getProperty("termsAcceptedDatetime"));
+        public DateTime getTermsAcceptedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("termsAcceptedDatetime"))
         }
 
         public void setTermsAcceptedDatetime (DateTime termsAcceptedDatetime)
@@ -224,8 +240,9 @@ namespace Arbor.Model
             this.setProperty("termsAcceptedDatetime", termsAcceptedDatetime);
         }
 
-        public DateTime getWelcomeMessageDatetime (){
-            return Convert.ToDateTime(this.getProperty("welcomeMessageDatetime"));
+        public DateTime getWelcomeMessageDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("welcomeMessageDatetime"))
         }
 
         public void setWelcomeMessageDatetime (DateTime welcomeMessageDatetime)

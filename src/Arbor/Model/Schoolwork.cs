@@ -20,6 +20,7 @@ namespace Arbor.Model
         public const string MARKING_COMPLETED_DATETIME = "markingCompletedDatetime";
         public const string SESSION = "session";
         public const string ACADEMIC_UNIT = "academicUnit";
+        public const string SUBMIT_VIA_ARBOR = "submitViaArbor";
 
         public Schoolwork ()
         {
@@ -87,8 +88,9 @@ namespace Arbor.Model
             this.setProperty("teacherNotes", teacherNotes);
         }
 
-        public DateTime getSetDatetime (){
-            return Convert.ToDateTime(this.getProperty("setDatetime"));
+        public DateTime getSetDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("setDatetime"))
         }
 
         public void setSetDatetime (DateTime setDatetime)
@@ -96,18 +98,19 @@ namespace Arbor.Model
             this.setProperty("setDatetime", setDatetime);
         }
 
-        public ModelBase getDueEvent ()
+        public Session getDueEvent ()
         {
-            return (ModelBase) this.getProperty("dueEvent");
+            return (Session) this.getProperty("dueEvent");
         }
 
-        public void setDueEvent (ModelBase dueEvent)
+        public void setDueEvent (Session dueEvent)
         {
             this.setProperty("dueEvent", dueEvent);
         }
 
-        public DateTime getDueDatetime (){
-            return Convert.ToDateTime(this.getProperty("dueDatetime"));
+        public DateTime getDueDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("dueDatetime"))
         }
 
         public void setDueDatetime (DateTime dueDatetime)
@@ -115,8 +118,9 @@ namespace Arbor.Model
             this.setProperty("dueDatetime", dueDatetime);
         }
 
-        public DateTime getMarkingStartedDatetime (){
-            return Convert.ToDateTime(this.getProperty("markingStartedDatetime"));
+        public DateTime getMarkingStartedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("markingStartedDatetime"))
         }
 
         public void setMarkingStartedDatetime (DateTime markingStartedDatetime)
@@ -124,8 +128,9 @@ namespace Arbor.Model
             this.setProperty("markingStartedDatetime", markingStartedDatetime);
         }
 
-        public DateTime getMarkingCompletedDatetime (){
-            return Convert.ToDateTime(this.getProperty("markingCompletedDatetime"));
+        public DateTime getMarkingCompletedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("markingCompletedDatetime"))
         }
 
         public void setMarkingCompletedDatetime (DateTime markingCompletedDatetime)
@@ -151,6 +156,16 @@ namespace Arbor.Model
         public void setAcademicUnit (AcademicUnit academicUnit)
         {
             this.setProperty("academicUnit", academicUnit);
+        }
+
+        public bool getSubmitViaArbor ()
+        {
+            return Convert.ToBoolean(this.getProperty("submitViaArbor"))
+        }
+
+        public void setSubmitViaArbor (bool submitViaArbor)
+        {
+            this.setProperty("submitViaArbor", submitViaArbor);
         }
 
 

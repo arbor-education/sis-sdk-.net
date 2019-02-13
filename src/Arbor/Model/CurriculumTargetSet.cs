@@ -82,8 +82,9 @@ namespace Arbor.Model
             this.setProperty("name", name);
         }
 
-        public DateTime getEffectiveDate (){
-            return Convert.ToDateTime(this.getProperty("effectiveDate"));
+        public DateTime getEffectiveDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("effectiveDate"))
         }
 
         public void setEffectiveDate (DateTime effectiveDate)
@@ -91,8 +92,9 @@ namespace Arbor.Model
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate (){
-            return Convert.ToDateTime(this.getProperty("endDate"));
+        public DateTime getEndDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("endDate"))
         }
 
         public void setEndDate (DateTime endDate)

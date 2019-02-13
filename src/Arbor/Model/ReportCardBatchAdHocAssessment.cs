@@ -81,8 +81,9 @@ namespace Arbor.Model
             this.setProperty("order", order);
         }
 
-        public DateTime getMarkingCompletedDatetime (){
-            return Convert.ToDateTime(this.getProperty("markingCompletedDatetime"));
+        public DateTime getMarkingCompletedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("markingCompletedDatetime"))
         }
 
         public void setMarkingCompletedDatetime (DateTime markingCompletedDatetime)

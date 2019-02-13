@@ -14,6 +14,7 @@ namespace Arbor.Model
         public const string STUDENT = "student";
         public const string CUSTOMER_INVOICE = "customerInvoice";
         public const string CONSENT_RECEIVED = "consentReceived";
+        public const string STATUS = "status";
 
         public TripParticipant ()
         {
@@ -83,12 +84,22 @@ namespace Arbor.Model
 
         public bool getConsentReceived ()
         {
-            return (bool) this.getProperty("consentReceived");
+            return Convert.ToBoolean(this.getProperty("consentReceived"))
         }
 
         public void setConsentReceived (bool consentReceived)
         {
             this.setProperty("consentReceived", consentReceived);
+        }
+
+        public string getStatus ()
+        {
+            return this.getProperty("status").ToString();
+        }
+
+        public void setStatus (string status)
+        {
+            this.setProperty("status", status);
         }
 
 

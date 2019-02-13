@@ -63,8 +63,9 @@ namespace Arbor.Model
             this.setProperty("event", _event);
         }
 
-        public DateTime getStartDatetime (){
-            return Convert.ToDateTime(this.getProperty("startDatetime"));
+        public DateTime getStartDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("startDatetime"))
         }
 
         public void setStartDatetime (DateTime startDatetime)
@@ -72,8 +73,9 @@ namespace Arbor.Model
             this.setProperty("startDatetime", startDatetime);
         }
 
-        public DateTime getEndDatetime (){
-            return Convert.ToDateTime(this.getProperty("endDatetime"));
+        public DateTime getEndDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("endDatetime"))
         }
 
         public void setEndDatetime (DateTime endDatetime)
@@ -103,7 +105,7 @@ namespace Arbor.Model
 
         public bool getTimeslotBlocked ()
         {
-            return (bool) this.getProperty("timeslotBlocked");
+            return Convert.ToBoolean(this.getProperty("timeslotBlocked"))
         }
 
         public void setTimeslotBlocked (bool timeslotBlocked)

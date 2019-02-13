@@ -119,8 +119,9 @@ namespace Arbor.Model
             this.setProperty("transactionReference", transactionReference);
         }
 
-        public DateTime getTransactionInitiatedDatetime (){
-            return Convert.ToDateTime(this.getProperty("transactionInitiatedDatetime"));
+        public DateTime getTransactionInitiatedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("transactionInitiatedDatetime"))
         }
 
         public void setTransactionInitiatedDatetime (DateTime transactionInitiatedDatetime)
@@ -128,8 +129,9 @@ namespace Arbor.Model
             this.setProperty("transactionInitiatedDatetime", transactionInitiatedDatetime);
         }
 
-        public DateTime getTransactionSucceededDatetime (){
-            return Convert.ToDateTime(this.getProperty("transactionSucceededDatetime"));
+        public DateTime getTransactionSucceededDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("transactionSucceededDatetime"))
         }
 
         public void setTransactionSucceededDatetime (DateTime transactionSucceededDatetime)
@@ -137,8 +139,9 @@ namespace Arbor.Model
             this.setProperty("transactionSucceededDatetime", transactionSucceededDatetime);
         }
 
-        public DateTime getTransactionFailedDatetime (){
-            return Convert.ToDateTime(this.getProperty("transactionFailedDatetime"));
+        public DateTime getTransactionFailedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("transactionFailedDatetime"))
         }
 
         public void setTransactionFailedDatetime (DateTime transactionFailedDatetime)
@@ -146,8 +149,9 @@ namespace Arbor.Model
             this.setProperty("transactionFailedDatetime", transactionFailedDatetime);
         }
 
-        public DateTime getTransactionRefundedDatetime (){
-            return Convert.ToDateTime(this.getProperty("transactionRefundedDatetime"));
+        public DateTime getTransactionRefundedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("transactionRefundedDatetime"))
         }
 
         public void setTransactionRefundedDatetime (DateTime transactionRefundedDatetime)
@@ -155,8 +159,9 @@ namespace Arbor.Model
             this.setProperty("transactionRefundedDatetime", transactionRefundedDatetime);
         }
 
-        public DateTime getCancelledDatetime (){
-            return Convert.ToDateTime(this.getProperty("cancelledDatetime"));
+        public DateTime getCancelledDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("cancelledDatetime"))
         }
 
         public void setCancelledDatetime (DateTime cancelledDatetime)
@@ -164,8 +169,9 @@ namespace Arbor.Model
             this.setProperty("cancelledDatetime", cancelledDatetime);
         }
 
-        public DateTime getCustomerNotificationDatetime (){
-            return Convert.ToDateTime(this.getProperty("customerNotificationDatetime"));
+        public DateTime getCustomerNotificationDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("customerNotificationDatetime"))
         }
 
         public void setCustomerNotificationDatetime (DateTime customerNotificationDatetime)

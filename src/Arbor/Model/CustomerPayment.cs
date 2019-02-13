@@ -17,6 +17,7 @@ namespace Arbor.Model
         public const string INCOMING_BANK_TRANSACTION = "incomingBankTransaction";
         public const string RECEIVED_CHEQUE = "receivedCheque";
         public const string CASH_RECEIPT = "cashReceipt";
+        public const string STRIPE_INCOMING_CARD_TRANSACTION = "stripeIncomingCardTransaction";
         public const string PAYMENT_AMOUNT = "paymentAmount";
         public const string PAYMENT_DATETIME = "paymentDatetime";
         public const string PAYMENT_SUCCEEDED_DATETIME = "paymentSucceededDatetime";
@@ -130,6 +131,16 @@ namespace Arbor.Model
             this.setProperty("cashReceipt", cashReceipt);
         }
 
+        public StripeIncomingCardTransaction getStripeIncomingCardTransaction ()
+        {
+            return (StripeIncomingCardTransaction) this.getProperty("stripeIncomingCardTransaction");
+        }
+
+        public void setStripeIncomingCardTransaction (StripeIncomingCardTransaction stripeIncomingCardTransaction)
+        {
+            this.setProperty("stripeIncomingCardTransaction", stripeIncomingCardTransaction);
+        }
+
         public string getPaymentAmount ()
         {
             return this.getProperty("paymentAmount").ToString();
@@ -140,8 +151,9 @@ namespace Arbor.Model
             this.setProperty("paymentAmount", paymentAmount);
         }
 
-        public DateTime getPaymentDatetime (){
-            return Convert.ToDateTime(this.getProperty("paymentDatetime"));
+        public DateTime getPaymentDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("paymentDatetime"))
         }
 
         public void setPaymentDatetime (DateTime paymentDatetime)
@@ -149,8 +161,9 @@ namespace Arbor.Model
             this.setProperty("paymentDatetime", paymentDatetime);
         }
 
-        public DateTime getPaymentSucceededDatetime (){
-            return Convert.ToDateTime(this.getProperty("paymentSucceededDatetime"));
+        public DateTime getPaymentSucceededDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("paymentSucceededDatetime"))
         }
 
         public void setPaymentSucceededDatetime (DateTime paymentSucceededDatetime)
@@ -158,8 +171,9 @@ namespace Arbor.Model
             this.setProperty("paymentSucceededDatetime", paymentSucceededDatetime);
         }
 
-        public DateTime getPaymentFailedDatetime (){
-            return Convert.ToDateTime(this.getProperty("paymentFailedDatetime"));
+        public DateTime getPaymentFailedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("paymentFailedDatetime"))
         }
 
         public void setPaymentFailedDatetime (DateTime paymentFailedDatetime)
@@ -177,8 +191,9 @@ namespace Arbor.Model
             this.setProperty("narrative", narrative);
         }
 
-        public DateTime getPaymentCancelledDatetime (){
-            return Convert.ToDateTime(this.getProperty("paymentCancelledDatetime"));
+        public DateTime getPaymentCancelledDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("paymentCancelledDatetime"))
         }
 
         public void setPaymentCancelledDatetime (DateTime paymentCancelledDatetime)

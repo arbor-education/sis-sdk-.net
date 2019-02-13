@@ -78,8 +78,9 @@ namespace Arbor.Model
             this.setProperty("kpiCategory", kpiCategory);
         }
 
-        public DateTime getReferenceDatetime (){
-            return Convert.ToDateTime(this.getProperty("referenceDatetime"));
+        public DateTime getReferenceDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("referenceDatetime"))
         }
 
         public void setReferenceDatetime (DateTime referenceDatetime)
@@ -87,8 +88,9 @@ namespace Arbor.Model
             this.setProperty("referenceDatetime", referenceDatetime);
         }
 
-        public DateTime getCalculationRangeStartDatetime (){
-            return Convert.ToDateTime(this.getProperty("calculationRangeStartDatetime"));
+        public DateTime getCalculationRangeStartDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("calculationRangeStartDatetime"))
         }
 
         public void setCalculationRangeStartDatetime (DateTime calculationRangeStartDatetime)
@@ -96,8 +98,9 @@ namespace Arbor.Model
             this.setProperty("calculationRangeStartDatetime", calculationRangeStartDatetime);
         }
 
-        public DateTime getCalculationRangeEndDatetime (){
-            return Convert.ToDateTime(this.getProperty("calculationRangeEndDatetime"));
+        public DateTime getCalculationRangeEndDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("calculationRangeEndDatetime"))
         }
 
         public void setCalculationRangeEndDatetime (DateTime calculationRangeEndDatetime)
@@ -135,8 +138,9 @@ namespace Arbor.Model
             this.setProperty("kpiRange", kpiRange);
         }
 
-        public DateTime getRecalculationScheduledDatetime (){
-            return Convert.ToDateTime(this.getProperty("recalculationScheduledDatetime"));
+        public DateTime getRecalculationScheduledDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("recalculationScheduledDatetime"))
         }
 
         public void setRecalculationScheduledDatetime (DateTime recalculationScheduledDatetime)
@@ -144,8 +148,9 @@ namespace Arbor.Model
             this.setProperty("recalculationScheduledDatetime", recalculationScheduledDatetime);
         }
 
-        public DateTime getRecalculationStartedDatetime (){
-            return Convert.ToDateTime(this.getProperty("recalculationStartedDatetime"));
+        public DateTime getRecalculationStartedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("recalculationStartedDatetime"))
         }
 
         public void setRecalculationStartedDatetime (DateTime recalculationStartedDatetime)
@@ -153,8 +158,9 @@ namespace Arbor.Model
             this.setProperty("recalculationStartedDatetime", recalculationStartedDatetime);
         }
 
-        public DateTime getLastCalculatedDatetime (){
-            return Convert.ToDateTime(this.getProperty("lastCalculatedDatetime"));
+        public DateTime getLastCalculatedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("lastCalculatedDatetime"))
         }
 
         public void setLastCalculatedDatetime (DateTime lastCalculatedDatetime)

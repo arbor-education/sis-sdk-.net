@@ -70,8 +70,9 @@ namespace Arbor.Model
             this.setProperty("emailAddress", emailAddress);
         }
 
-        public DateTime getSentDatetime (){
-            return Convert.ToDateTime(this.getProperty("sentDatetime"));
+        public DateTime getSentDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("sentDatetime"))
         }
 
         public void setSentDatetime (DateTime sentDatetime)

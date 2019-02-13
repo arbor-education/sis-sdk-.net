@@ -11,7 +11,6 @@ namespace Arbor.Model
     {
         protected string resourceType = ResourceType.STANDARDIZED_ASSESSMENT_TEMPLATE_ASSESSMENT;
         public const string STANDARDIZED_ASSESSMENT_TEMPLATE = "standardizedAssessmentTemplate";
-        public const string ASSESSMENT = "assessment";
         public const string STANDARDIZED_ASSESSMENT = "standardizedAssessment";
         public const string DATA_ORDER = "dataOrder";
 
@@ -59,16 +58,6 @@ namespace Arbor.Model
         public void setStandardizedAssessmentTemplate (StandardizedAssessmentTemplate standardizedAssessmentTemplate)
         {
             this.setProperty("standardizedAssessmentTemplate", standardizedAssessmentTemplate);
-        }
-
-        public Assessment getAssessment ()
-        {
-            return (Assessment) this.getProperty("assessment");
-        }
-
-        public void setAssessment (Assessment assessment)
-        {
-            this.setProperty("assessment", assessment);
         }
 
         public StandardizedAssessment getStandardizedAssessment ()

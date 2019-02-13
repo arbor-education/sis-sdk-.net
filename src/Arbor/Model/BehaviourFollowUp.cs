@@ -71,8 +71,9 @@ namespace Arbor.Model
             this.setProperty("staff", staff);
         }
 
-        public DateTime getFollowUpDatetime (){
-            return Convert.ToDateTime(this.getProperty("followUpDatetime"));
+        public DateTime getFollowUpDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("followUpDatetime"))
         }
 
         public void setFollowUpDatetime (DateTime followUpDatetime)
