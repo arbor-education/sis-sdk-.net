@@ -17,6 +17,8 @@ namespace Arbor.Model
         public const string REQUIRE_CONSENT = "requireConsent";
         public const string COPIED_TO_CLUB = "copiedToClub";
         public const string FREE = "free";
+        public const string ATTENDANCE_REGISTER_TYPE = "attendanceRegisterType";
+        public const string ATTENDANCE_REGISTER_EFFECTIVE_DATE = "attendanceRegisterEffectiveDate";
 
         public Club ()
         {
@@ -96,7 +98,7 @@ namespace Arbor.Model
 
         public bool getRequireConsent ()
         {
-            return (bool) this.getProperty("requireConsent");
+            return Convert.ToBoolean(this.getProperty("requireConsent"))
         }
 
         public void setRequireConsent (bool requireConsent)
@@ -116,12 +118,32 @@ namespace Arbor.Model
 
         public bool getFree ()
         {
-            return (bool) this.getProperty("free");
+            return Convert.ToBoolean(this.getProperty("free"))
         }
 
         public void setFree (bool free)
         {
             this.setProperty("free", free);
+        }
+
+        public AttendanceRegisterType getAttendanceRegisterType ()
+        {
+            return (AttendanceRegisterType) this.getProperty("attendanceRegisterType");
+        }
+
+        public void setAttendanceRegisterType (AttendanceRegisterType attendanceRegisterType)
+        {
+            this.setProperty("attendanceRegisterType", attendanceRegisterType);
+        }
+
+        public DateTime getAttendanceRegisterEffectiveDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("attendanceRegisterEffectiveDate"))
+        }
+
+        public void setAttendanceRegisterEffectiveDate (DateTime attendanceRegisterEffectiveDate)
+        {
+            this.setProperty("attendanceRegisterEffectiveDate", attendanceRegisterEffectiveDate);
         }
 
 

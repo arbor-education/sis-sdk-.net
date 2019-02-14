@@ -59,8 +59,9 @@ namespace Arbor.Model
         	return (UsageLogEntry) gateway.retrieve(ResourceType.USAGE_LOG_ENTRY, id);
         }
 
-        public DateTime getTimestamp (){
-            return Convert.ToDateTime(this.getProperty("timestamp"));
+        public DateTime getTimestamp ()
+        {
+            return Convert.ToDateTime(this.getProperty("timestamp"))
         }
 
         public void setTimestamp (DateTime timestamp)

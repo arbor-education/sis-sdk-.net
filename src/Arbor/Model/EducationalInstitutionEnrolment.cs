@@ -61,8 +61,9 @@ namespace Arbor.Model
             this.setProperty("student", student);
         }
 
-        public DateTime getEntryDate (){
-            return Convert.ToDateTime(this.getProperty("entryDate"));
+        public DateTime getEntryDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("entryDate"))
         }
 
         public void setEntryDate (DateTime entryDate)
@@ -70,8 +71,9 @@ namespace Arbor.Model
             this.setProperty("entryDate", entryDate);
         }
 
-        public DateTime getLeavingDate (){
-            return Convert.ToDateTime(this.getProperty("leavingDate"));
+        public DateTime getLeavingDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("leavingDate"))
         }
 
         public void setLeavingDate (DateTime leavingDate)

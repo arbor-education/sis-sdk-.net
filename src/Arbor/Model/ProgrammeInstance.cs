@@ -71,8 +71,9 @@ namespace Arbor.Model
             this.setProperty("name", name);
         }
 
-        public DateTime getPlannedStartDate (){
-            return Convert.ToDateTime(this.getProperty("plannedStartDate"));
+        public DateTime getPlannedStartDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("plannedStartDate"))
         }
 
         public void setPlannedStartDate (DateTime plannedStartDate)
@@ -80,8 +81,9 @@ namespace Arbor.Model
             this.setProperty("plannedStartDate", plannedStartDate);
         }
 
-        public DateTime getPlannedEndDate (){
-            return Convert.ToDateTime(this.getProperty("plannedEndDate"));
+        public DateTime getPlannedEndDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("plannedEndDate"))
         }
 
         public void setPlannedEndDate (DateTime plannedEndDate)

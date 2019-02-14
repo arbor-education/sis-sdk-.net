@@ -61,8 +61,9 @@ namespace Arbor.Model
             this.setProperty("customerAccount", customerAccount);
         }
 
-        public DateTime getPayoutDatetime (){
-            return Convert.ToDateTime(this.getProperty("payoutDatetime"));
+        public DateTime getPayoutDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("payoutDatetime"))
         }
 
         public void setPayoutDatetime (DateTime payoutDatetime)

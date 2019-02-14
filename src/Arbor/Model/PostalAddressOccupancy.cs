@@ -73,8 +73,9 @@ namespace Arbor.Model
             this.setProperty("occupant", occupant);
         }
 
-        public DateTime getEffectiveDate (){
-            return Convert.ToDateTime(this.getProperty("effectiveDate"));
+        public DateTime getEffectiveDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("effectiveDate"))
         }
 
         public void setEffectiveDate (DateTime effectiveDate)
@@ -82,8 +83,9 @@ namespace Arbor.Model
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate (){
-            return Convert.ToDateTime(this.getProperty("endDate"));
+        public DateTime getEndDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("endDate"))
         }
 
         public void setEndDate (DateTime endDate)
@@ -103,7 +105,7 @@ namespace Arbor.Model
 
         public bool getIsCorrespondenceAddress ()
         {
-            return (bool) this.getProperty("isCorrespondenceAddress");
+            return Convert.ToBoolean(this.getProperty("isCorrespondenceAddress"))
         }
 
         public void setIsCorrespondenceAddress (bool isCorrespondenceAddress)

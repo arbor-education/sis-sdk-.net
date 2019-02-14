@@ -73,8 +73,9 @@ namespace Arbor.Model
             this.setProperty("billPayer", billPayer);
         }
 
-        public DateTime getCreditNoteDate (){
-            return Convert.ToDateTime(this.getProperty("creditNoteDate"));
+        public DateTime getCreditNoteDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("creditNoteDate"))
         }
 
         public void setCreditNoteDate (DateTime creditNoteDate)

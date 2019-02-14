@@ -83,8 +83,9 @@ namespace Arbor.Model
             this.setProperty("narrative", narrative);
         }
 
-        public DateTime getContractStartDate (){
-            return Convert.ToDateTime(this.getProperty("contractStartDate"));
+        public DateTime getContractStartDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("contractStartDate"))
         }
 
         public void setContractStartDate (DateTime contractStartDate)
@@ -92,8 +93,9 @@ namespace Arbor.Model
             this.setProperty("contractStartDate", contractStartDate);
         }
 
-        public DateTime getContractEndDate (){
-            return Convert.ToDateTime(this.getProperty("contractEndDate"));
+        public DateTime getContractEndDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("contractEndDate"))
         }
 
         public void setContractEndDate (DateTime contractEndDate)
@@ -101,8 +103,9 @@ namespace Arbor.Model
             this.setProperty("contractEndDate", contractEndDate);
         }
 
-        public DateTime getContractReviewDate (){
-            return Convert.ToDateTime(this.getProperty("contractReviewDate"));
+        public DateTime getContractReviewDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("contractReviewDate"))
         }
 
         public void setContractReviewDate (DateTime contractReviewDate)

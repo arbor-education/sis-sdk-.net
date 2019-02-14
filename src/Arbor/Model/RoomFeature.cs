@@ -61,7 +61,7 @@ namespace Arbor.Model
 
         public bool getAssignToPeople ()
         {
-            return (bool) this.getProperty("assignToPeople");
+            return Convert.ToBoolean(this.getProperty("assignToPeople"))
         }
 
         public void setAssignToPeople (bool assignToPeople)

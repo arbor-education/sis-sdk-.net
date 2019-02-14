@@ -74,7 +74,7 @@ namespace Arbor.Model
 
         public bool getAutomaticEntry ()
         {
-            return (bool) this.getProperty("automaticEntry");
+            return Convert.ToBoolean(this.getProperty("automaticEntry"))
         }
 
         public void setAutomaticEntry (bool automaticEntry)
@@ -82,8 +82,9 @@ namespace Arbor.Model
             this.setProperty("automaticEntry", automaticEntry);
         }
 
-        public DateTime getEffectiveDate (){
-            return Convert.ToDateTime(this.getProperty("effectiveDate"));
+        public DateTime getEffectiveDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("effectiveDate"))
         }
 
         public void setEffectiveDate (DateTime effectiveDate)
@@ -91,8 +92,9 @@ namespace Arbor.Model
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate (){
-            return Convert.ToDateTime(this.getProperty("endDate"));
+        public DateTime getEndDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("endDate"))
         }
 
         public void setEndDate (DateTime endDate)

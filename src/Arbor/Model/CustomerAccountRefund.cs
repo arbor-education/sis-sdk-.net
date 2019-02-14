@@ -14,6 +14,9 @@ namespace Arbor.Model
         public const string REFUND_DATETIME = "refundDatetime";
         public const string REFUND = "refund";
         public const string TRANSACTION = "transaction";
+        public const string STRIPE_REFUND_TRANSACTION = "stripeRefundTransaction";
+        public const string REFUND_SUCCEEDED_DATETIME = "refundSucceededDatetime";
+        public const string REFUND_FAILED_DATETIME = "refundFailedDatetime";
 
         public CustomerAccountRefund ()
         {
@@ -61,8 +64,9 @@ namespace Arbor.Model
             this.setProperty("customerAccount", customerAccount);
         }
 
-        public DateTime getRefundDatetime (){
-            return Convert.ToDateTime(this.getProperty("refundDatetime"));
+        public DateTime getRefundDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("refundDatetime"))
         }
 
         public void setRefundDatetime (DateTime refundDatetime)
@@ -88,6 +92,36 @@ namespace Arbor.Model
         public void setTransaction (ModelBase transaction)
         {
             this.setProperty("transaction", transaction);
+        }
+
+        public StripeRefundTransaction getStripeRefundTransaction ()
+        {
+            return (StripeRefundTransaction) this.getProperty("stripeRefundTransaction");
+        }
+
+        public void setStripeRefundTransaction (StripeRefundTransaction stripeRefundTransaction)
+        {
+            this.setProperty("stripeRefundTransaction", stripeRefundTransaction);
+        }
+
+        public DateTime getRefundSucceededDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("refundSucceededDatetime"))
+        }
+
+        public void setRefundSucceededDatetime (DateTime refundSucceededDatetime)
+        {
+            this.setProperty("refundSucceededDatetime", refundSucceededDatetime);
+        }
+
+        public DateTime getRefundFailedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("refundFailedDatetime"))
+        }
+
+        public void setRefundFailedDatetime (DateTime refundFailedDatetime)
+        {
+            this.setProperty("refundFailedDatetime", refundFailedDatetime);
         }
 
 

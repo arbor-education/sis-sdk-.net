@@ -11,6 +11,7 @@ namespace Arbor.Model
     {
         protected string resourceType = ResourceType.AD_HOC_ASSESSMENT_BATCH;
         public const string AD_HOC_ASSESSMENT = "adHocAssessment";
+        public const string PROGRESS_MEASUREMENT_PERIOD = "progressMeasurementPeriod";
         public const string ASSESSMENT_REFERENCE_DATE = "assessmentReferenceDate";
 
         public AdHocAssessmentBatch ()
@@ -59,8 +60,19 @@ namespace Arbor.Model
             this.setProperty("adHocAssessment", adHocAssessment);
         }
 
-        public DateTime getAssessmentReferenceDate (){
-            return Convert.ToDateTime(this.getProperty("assessmentReferenceDate"));
+        public ProgressMeasurementPeriod getProgressMeasurementPeriod ()
+        {
+            return (ProgressMeasurementPeriod) this.getProperty("progressMeasurementPeriod");
+        }
+
+        public void setProgressMeasurementPeriod (ProgressMeasurementPeriod progressMeasurementPeriod)
+        {
+            this.setProperty("progressMeasurementPeriod", progressMeasurementPeriod);
+        }
+
+        public DateTime getAssessmentReferenceDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("assessmentReferenceDate"))
         }
 
         public void setAssessmentReferenceDate (DateTime assessmentReferenceDate)

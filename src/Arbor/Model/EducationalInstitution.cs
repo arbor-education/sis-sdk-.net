@@ -29,6 +29,7 @@ namespace Arbor.Model
         public const string SPECIAL_SCHOOL_MIN_FEMALE_AGE = "specialSchoolMinFemaleAge";
         public const string SPECIAL_SCHOOL_MAX_FEMALE_AGE = "specialSchoolMaxFemaleAge";
         public const string SPECIAL_SCHOOL_SEN_PROVISIONS = "specialSchoolSenProvisions";
+        public const string CENSUS_SCHOOL_OPENING_DATE = "censusSchoolOpeningDate";
         public const string EDUCATIONAL_INSTITUTION_NAME = "educationalInstitutionName";
         public const string SHORT_NAME = "shortName";
         public const string OPENING_DATE = "openingDate";
@@ -154,7 +155,7 @@ namespace Arbor.Model
 
         public bool getHasChildMotherProvision ()
         {
-            return (bool) this.getProperty("hasChildMotherProvision");
+            return Convert.ToBoolean(this.getProperty("hasChildMotherProvision"))
         }
 
         public void setHasChildMotherProvision (bool hasChildMotherProvision)
@@ -164,7 +165,7 @@ namespace Arbor.Model
 
         public bool getHasChildcarePlaces ()
         {
-            return (bool) this.getProperty("hasChildcarePlaces");
+            return Convert.ToBoolean(this.getProperty("hasChildcarePlaces"))
         }
 
         public void setHasChildcarePlaces (bool hasChildcarePlaces)
@@ -262,6 +263,16 @@ namespace Arbor.Model
             this.setProperty("specialSchoolSenProvisions", specialSchoolSenProvisions);
         }
 
+        public DateTime getCensusSchoolOpeningDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("censusSchoolOpeningDate"))
+        }
+
+        public void setCensusSchoolOpeningDate (DateTime censusSchoolOpeningDate)
+        {
+            this.setProperty("censusSchoolOpeningDate", censusSchoolOpeningDate);
+        }
+
         public string getEducationalInstitutionName ()
         {
             return this.getProperty("educationalInstitutionName").ToString();
@@ -282,8 +293,9 @@ namespace Arbor.Model
             this.setProperty("shortName", shortName);
         }
 
-        public DateTime getOpeningDate (){
-            return Convert.ToDateTime(this.getProperty("openingDate"));
+        public DateTime getOpeningDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("openingDate"))
         }
 
         public void setOpeningDate (DateTime openingDate)
@@ -291,8 +303,9 @@ namespace Arbor.Model
             this.setProperty("openingDate", openingDate);
         }
 
-        public DateTime getClosingDate (){
-            return Convert.ToDateTime(this.getProperty("closingDate"));
+        public DateTime getClosingDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("closingDate"))
         }
 
         public void setClosingDate (DateTime closingDate)

@@ -70,8 +70,9 @@ namespace Arbor.Model
             this.setProperty("target", target);
         }
 
-        public DateTime getPinnedUntilDatetime (){
-            return Convert.ToDateTime(this.getProperty("pinnedUntilDatetime"));
+        public DateTime getPinnedUntilDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("pinnedUntilDatetime"))
         }
 
         public void setPinnedUntilDatetime (DateTime pinnedUntilDatetime)

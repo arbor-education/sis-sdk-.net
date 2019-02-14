@@ -78,8 +78,9 @@ namespace Arbor.Model
             this.setProperty("mealProvisionName", mealProvisionName);
         }
 
-        public DateTime getEffectiveDate (){
-            return Convert.ToDateTime(this.getProperty("effectiveDate"));
+        public DateTime getEffectiveDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("effectiveDate"))
         }
 
         public void setEffectiveDate (DateTime effectiveDate)
@@ -87,8 +88,9 @@ namespace Arbor.Model
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate (){
-            return Convert.ToDateTime(this.getProperty("endDate"));
+        public DateTime getEndDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("endDate"))
         }
 
         public void setEndDate (DateTime endDate)
@@ -98,7 +100,7 @@ namespace Arbor.Model
 
         public bool getIsAbsent ()
         {
-            return (bool) this.getProperty("isAbsent");
+            return Convert.ToBoolean(this.getProperty("isAbsent"))
         }
 
         public void setIsAbsent (bool isAbsent)
@@ -108,7 +110,7 @@ namespace Arbor.Model
 
         public bool getIsSchoolHotMeal ()
         {
-            return (bool) this.getProperty("isSchoolHotMeal");
+            return Convert.ToBoolean(this.getProperty("isSchoolHotMeal"))
         }
 
         public void setIsSchoolHotMeal (bool isSchoolHotMeal)
@@ -118,7 +120,7 @@ namespace Arbor.Model
 
         public bool getIsSchoolLightMeal ()
         {
-            return (bool) this.getProperty("isSchoolLightMeal");
+            return Convert.ToBoolean(this.getProperty("isSchoolLightMeal"))
         }
 
         public void setIsSchoolLightMeal (bool isSchoolLightMeal)
@@ -128,7 +130,7 @@ namespace Arbor.Model
 
         public bool getIsSchoolPackedMeal ()
         {
-            return (bool) this.getProperty("isSchoolPackedMeal");
+            return Convert.ToBoolean(this.getProperty("isSchoolPackedMeal"))
         }
 
         public void setIsSchoolPackedMeal (bool isSchoolPackedMeal)
@@ -138,7 +140,7 @@ namespace Arbor.Model
 
         public bool getIsStudentPackedMeal ()
         {
-            return (bool) this.getProperty("isStudentPackedMeal");
+            return Convert.ToBoolean(this.getProperty("isStudentPackedMeal"))
         }
 
         public void setIsStudentPackedMeal (bool isStudentPackedMeal)
@@ -148,7 +150,7 @@ namespace Arbor.Model
 
         public bool getRequiresMeal ()
         {
-            return (bool) this.getProperty("requiresMeal");
+            return Convert.ToBoolean(this.getProperty("requiresMeal"))
         }
 
         public void setRequiresMeal (bool requiresMeal)

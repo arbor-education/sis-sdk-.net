@@ -70,7 +70,7 @@ namespace Arbor.Model
 
         public bool getActive ()
         {
-            return (bool) this.getProperty("active");
+            return Convert.ToBoolean(this.getProperty("active"))
         }
 
         public void setActive (bool active)
@@ -100,7 +100,7 @@ namespace Arbor.Model
 
         public bool getIsRequested ()
         {
-            return (bool) this.getProperty("isRequested");
+            return Convert.ToBoolean(this.getProperty("isRequested"))
         }
 
         public void setIsRequested (bool isRequested)
@@ -110,7 +110,7 @@ namespace Arbor.Model
 
         public bool getHasExpiryDate ()
         {
-            return (bool) this.getProperty("hasExpiryDate");
+            return Convert.ToBoolean(this.getProperty("hasExpiryDate"))
         }
 
         public void setHasExpiryDate (bool hasExpiryDate)
@@ -120,7 +120,7 @@ namespace Arbor.Model
 
         public bool getHasReferenceNumber ()
         {
-            return (bool) this.getProperty("hasReferenceNumber");
+            return Convert.ToBoolean(this.getProperty("hasReferenceNumber"))
         }
 
         public void setHasReferenceNumber (bool hasReferenceNumber)
@@ -130,7 +130,7 @@ namespace Arbor.Model
 
         public bool getEvidenceRequired ()
         {
-            return (bool) this.getProperty("evidenceRequired");
+            return Convert.ToBoolean(this.getProperty("evidenceRequired"))
         }
 
         public void setEvidenceRequired (bool evidenceRequired)

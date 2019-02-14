@@ -108,7 +108,7 @@ namespace Arbor.Model
 
         public bool getIsLinkedToSummativeTracking ()
         {
-            return (bool) this.getProperty("isLinkedToSummativeTracking");
+            return Convert.ToBoolean(this.getProperty("isLinkedToSummativeTracking"))
         }
 
         public void setIsLinkedToSummativeTracking (bool isLinkedToSummativeTracking)
@@ -116,8 +116,9 @@ namespace Arbor.Model
             this.setProperty("isLinkedToSummativeTracking", isLinkedToSummativeTracking);
         }
 
-        public DateTime getSetupCompletedDatetime (){
-            return Convert.ToDateTime(this.getProperty("setupCompletedDatetime"));
+        public DateTime getSetupCompletedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("setupCompletedDatetime"))
         }
 
         public void setSetupCompletedDatetime (DateTime setupCompletedDatetime)
@@ -125,8 +126,9 @@ namespace Arbor.Model
             this.setProperty("setupCompletedDatetime", setupCompletedDatetime);
         }
 
-        public DateTime getSetupCompletionStartedDatetime (){
-            return Convert.ToDateTime(this.getProperty("setupCompletionStartedDatetime"));
+        public DateTime getSetupCompletionStartedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("setupCompletionStartedDatetime"))
         }
 
         public void setSetupCompletionStartedDatetime (DateTime setupCompletionStartedDatetime)
@@ -136,7 +138,7 @@ namespace Arbor.Model
 
         public bool getAllowComments ()
         {
-            return (bool) this.getProperty("allowComments");
+            return Convert.ToBoolean(this.getProperty("allowComments"))
         }
 
         public void setAllowComments (bool allowComments)

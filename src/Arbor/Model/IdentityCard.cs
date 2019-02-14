@@ -74,7 +74,7 @@ namespace Arbor.Model
 
         public bool getActive ()
         {
-            return (bool) this.getProperty("active");
+            return Convert.ToBoolean(this.getProperty("active"))
         }
 
         public void setActive (bool active)
@@ -82,8 +82,9 @@ namespace Arbor.Model
             this.setProperty("active", active);
         }
 
-        public DateTime getIssuedDatetime (){
-            return Convert.ToDateTime(this.getProperty("issuedDatetime"));
+        public DateTime getIssuedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("issuedDatetime"))
         }
 
         public void setIssuedDatetime (DateTime issuedDatetime)
@@ -91,8 +92,9 @@ namespace Arbor.Model
             this.setProperty("issuedDatetime", issuedDatetime);
         }
 
-        public DateTime getLostDatetime (){
-            return Convert.ToDateTime(this.getProperty("lostDatetime"));
+        public DateTime getLostDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("lostDatetime"))
         }
 
         public void setLostDatetime (DateTime lostDatetime)

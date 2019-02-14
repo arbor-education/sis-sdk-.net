@@ -71,8 +71,9 @@ namespace Arbor.Model
             this.setProperty("enrolmentNumber", enrolmentNumber);
         }
 
-        public DateTime getEnrolmentRequestedDatetime (){
-            return Convert.ToDateTime(this.getProperty("enrolmentRequestedDatetime"));
+        public DateTime getEnrolmentRequestedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("enrolmentRequestedDatetime"))
         }
 
         public void setEnrolmentRequestedDatetime (DateTime enrolmentRequestedDatetime)
@@ -80,8 +81,9 @@ namespace Arbor.Model
             this.setProperty("enrolmentRequestedDatetime", enrolmentRequestedDatetime);
         }
 
-        public DateTime getEnrolmentConfirmedDatetime (){
-            return Convert.ToDateTime(this.getProperty("enrolmentConfirmedDatetime"));
+        public DateTime getEnrolmentConfirmedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("enrolmentConfirmedDatetime"))
         }
 
         public void setEnrolmentConfirmedDatetime (DateTime enrolmentConfirmedDatetime)

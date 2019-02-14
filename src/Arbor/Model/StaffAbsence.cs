@@ -3,6 +3,7 @@ using System.Collections;
 using Arbor.Resource;
 using Arbor.Api.Gateway;
 using Arbor.Query;
+using Arbor.Model.UkDfe;
 
 namespace Arbor.Model
 {
@@ -36,6 +37,7 @@ namespace Arbor.Model
         
         }
         
+
         public static ModelCollection<StaffAbsence> query (SimpleQuery query = null)
         {
             if (query == null) query = new SimpleQuery ();
@@ -70,8 +72,9 @@ namespace Arbor.Model
             this.setProperty("staff", staff);
         }
 
-        public DateTime getStartDatetime (){
-            return Convert.ToDateTime(this.getProperty("startDatetime"));
+        public DateTime getStartDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("startDatetime"))
         }
 
         public void setStartDatetime (DateTime startDatetime)
@@ -79,8 +82,9 @@ namespace Arbor.Model
             this.setProperty("startDatetime", startDatetime);
         }
 
-        public DateTime getEndDatetime (){
-            return Convert.ToDateTime(this.getProperty("endDatetime"));
+        public DateTime getEndDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("endDatetime"))
         }
 
         public void setEndDatetime (DateTime endDatetime)
@@ -118,8 +122,9 @@ namespace Arbor.Model
             this.setProperty("sicknessSubcategory", sicknessSubcategory);
         }
 
-        public DateTime getApprovedDatetime (){
-            return Convert.ToDateTime(this.getProperty("approvedDatetime"));
+        public DateTime getApprovedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("approvedDatetime"))
         }
 
         public void setApprovedDatetime (DateTime approvedDatetime)
@@ -206,6 +211,7 @@ namespace Arbor.Model
         {
             this.setProperty("narrative", narrative);
         }
+
 
     }
 }

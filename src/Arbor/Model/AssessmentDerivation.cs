@@ -14,6 +14,9 @@ namespace Arbor.Model
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";
         public const string ASSESSMENT = "assessment";
+        public const string ACADEMIC_YEAR = "academicYear";
+        public const string EFFECTIVE_DATE = "effectiveDate";
+        public const string END_DATE = "endDate";
         public const string CALCULATOR_CLASS = "calculatorClass";
 
         public AssessmentDerivation ()
@@ -64,7 +67,7 @@ namespace Arbor.Model
 
         public bool getActive ()
         {
-            return (bool) this.getProperty("active");
+            return Convert.ToBoolean(this.getProperty("active"))
         }
 
         public void setActive (bool active)
@@ -90,6 +93,36 @@ namespace Arbor.Model
         public void setAssessment (ModelBase assessment)
         {
             this.setProperty("assessment", assessment);
+        }
+
+        public AcademicYear getAcademicYear ()
+        {
+            return (AcademicYear) this.getProperty("academicYear");
+        }
+
+        public void setAcademicYear (AcademicYear academicYear)
+        {
+            this.setProperty("academicYear", academicYear);
+        }
+
+        public DateTime getEffectiveDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("effectiveDate"))
+        }
+
+        public void setEffectiveDate (DateTime effectiveDate)
+        {
+            this.setProperty("effectiveDate", effectiveDate);
+        }
+
+        public DateTime getEndDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("endDate"))
+        }
+
+        public void setEndDate (DateTime endDate)
+        {
+            this.setProperty("endDate", endDate);
         }
 
         public string getCalculatorClass ()

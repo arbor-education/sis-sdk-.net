@@ -11,6 +11,7 @@ namespace Arbor.Model
     {
         protected string resourceType = ResourceType.ROOM_LAYOUT;
         public const string ROOM = "room";
+        public const string MAIN_ENTRANCE_LOCATION = "mainEntranceLocation";
 
         public RoomLayout ()
         {
@@ -56,6 +57,16 @@ namespace Arbor.Model
         public void setRoom (Room room)
         {
             this.setProperty("room", room);
+        }
+
+        public string getMainEntranceLocation ()
+        {
+            return this.getProperty("mainEntranceLocation").ToString();
+        }
+
+        public void setMainEntranceLocation (string mainEntranceLocation)
+        {
+            this.setProperty("mainEntranceLocation", mainEntranceLocation);
         }
 
 

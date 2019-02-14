@@ -106,7 +106,7 @@ namespace Arbor.Model
 
         public bool getOpen ()
         {
-            return (bool) this.getProperty("open");
+            return Convert.ToBoolean(this.getProperty("open"))
         }
 
         public void setOpen (bool open)

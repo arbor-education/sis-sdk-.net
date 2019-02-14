@@ -76,8 +76,9 @@ namespace Arbor.Model
             this.setProperty("student", student);
         }
 
-        public DateTime getStartDate (){
-            return Convert.ToDateTime(this.getProperty("startDate"));
+        public DateTime getStartDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("startDate"))
         }
 
         public void setStartDate (DateTime startDate)
@@ -85,8 +86,9 @@ namespace Arbor.Model
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate (){
-            return Convert.ToDateTime(this.getProperty("endDate"));
+        public DateTime getEndDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("endDate"))
         }
 
         public void setEndDate (DateTime endDate)
@@ -106,7 +108,7 @@ namespace Arbor.Model
 
         public bool getRepeatEnrolment ()
         {
-            return (bool) this.getProperty("repeatEnrolment");
+            return Convert.ToBoolean(this.getProperty("repeatEnrolment"))
         }
 
         public void setRepeatEnrolment (bool repeatEnrolment)

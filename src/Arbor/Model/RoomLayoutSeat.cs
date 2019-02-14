@@ -13,7 +13,6 @@ namespace Arbor.Model
         public const string ROOM_LAYOUT = "roomLayout";
         public const string X = "x";
         public const string Y = "y";
-        public const string SEQUENCE_NUMBER = "sequenceNumber";
 
         public RoomLayoutSeat ()
         {
@@ -61,34 +60,24 @@ namespace Arbor.Model
             this.setProperty("roomLayout", roomLayout);
         }
 
-        public float getX ()
+        public int getX ()
         {
-            return (float) this.getProperty("x");
+            return Convert.ToInt32(this.getProperty("x"));
         }
 
-        public void setX (float x)
+        public void setX (int x)
         {
             this.setProperty("x", x);
         }
 
-        public float getY ()
+        public int getY ()
         {
-            return (float) this.getProperty("y");
+            return Convert.ToInt32(this.getProperty("y"));
         }
 
-        public void setY (float y)
+        public void setY (int y)
         {
             this.setProperty("y", y);
-        }
-
-        public int getSequenceNumber ()
-        {
-            return Convert.ToInt32(this.getProperty("sequenceNumber"));
-        }
-
-        public void setSequenceNumber (int sequenceNumber)
-        {
-            this.setProperty("sequenceNumber", sequenceNumber);
         }
 
 

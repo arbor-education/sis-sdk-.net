@@ -17,6 +17,8 @@ namespace Arbor.Model
         public const string RECORD_NOTE = "recordNote";
         public const string START_DATETIME = "startDatetime";
         public const string END_DATETIME = "endDatetime";
+        public const string EVENT = "event";
+        public const string EVENT_GROUP = "eventGroup";
         public const string ATTENDANCE_FOLLOW_UP = "attendanceFollowUp";
         public const string STUDENT_ABSENCE_NOTE = "studentAbsenceNote";
         public const string SOURCE_ATTENDANCE_RECORD = "sourceAttendanceRecord";
@@ -108,8 +110,9 @@ namespace Arbor.Model
             this.setProperty("recordNote", recordNote);
         }
 
-        public DateTime getStartDatetime (){
-            return Convert.ToDateTime(this.getProperty("startDatetime"));
+        public DateTime getStartDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("startDatetime"))
         }
 
         public void setStartDatetime (DateTime startDatetime)
@@ -117,13 +120,34 @@ namespace Arbor.Model
             this.setProperty("startDatetime", startDatetime);
         }
 
-        public DateTime getEndDatetime (){
-            return Convert.ToDateTime(this.getProperty("endDatetime"));
+        public DateTime getEndDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("endDatetime"))
         }
 
         public void setEndDatetime (DateTime endDatetime)
         {
             this.setProperty("endDatetime", endDatetime);
+        }
+
+        public ModelBase getEvent ()
+        {
+            return (ModelBase) this.getProperty("event");
+        }
+
+        public void setEvent (ModelBase _event)
+        {
+            this.setProperty("event", _event);
+        }
+
+        public ModelBase getEventGroup ()
+        {
+            return (ModelBase) this.getProperty("eventGroup");
+        }
+
+        public void setEventGroup (ModelBase eventGroup)
+        {
+            this.setProperty("eventGroup", eventGroup);
         }
 
         public AttendanceFollowUp getAttendanceFollowUp ()

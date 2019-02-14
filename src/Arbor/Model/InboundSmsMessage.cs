@@ -97,12 +97,12 @@ namespace Arbor.Model
             this.setProperty("recipientNumber", recipientNumber);
         }
 
-        public ModelBase getRecipient ()
+        public EducationalInstitution getRecipient ()
         {
-            return (ModelBase) this.getProperty("recipient");
+            return (EducationalInstitution) this.getProperty("recipient");
         }
 
-        public void setRecipient (ModelBase recipient)
+        public void setRecipient (EducationalInstitution recipient)
         {
             this.setProperty("recipient", recipient);
         }
@@ -127,8 +127,9 @@ namespace Arbor.Model
             this.setProperty("messageIdentifier", messageIdentifier);
         }
 
-        public DateTime getReceivedDatetime (){
-            return Convert.ToDateTime(this.getProperty("receivedDatetime"));
+        public DateTime getReceivedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("receivedDatetime"))
         }
 
         public void setReceivedDatetime (DateTime receivedDatetime)
@@ -136,8 +137,9 @@ namespace Arbor.Model
             this.setProperty("receivedDatetime", receivedDatetime);
         }
 
-        public DateTime getReadDatetime (){
-            return Convert.ToDateTime(this.getProperty("readDatetime"));
+        public DateTime getReadDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("readDatetime"))
         }
 
         public void setReadDatetime (DateTime readDatetime)
@@ -145,8 +147,9 @@ namespace Arbor.Model
             this.setProperty("readDatetime", readDatetime);
         }
 
-        public DateTime getActionRequiredByDatetime (){
-            return Convert.ToDateTime(this.getProperty("actionRequiredByDatetime"));
+        public DateTime getActionRequiredByDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("actionRequiredByDatetime"))
         }
 
         public void setActionRequiredByDatetime (DateTime actionRequiredByDatetime)

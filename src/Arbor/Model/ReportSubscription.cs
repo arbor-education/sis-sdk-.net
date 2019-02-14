@@ -59,12 +59,12 @@ namespace Arbor.Model
             this.setProperty("reportIdentifier", reportIdentifier);
         }
 
-        public ModelBase getSubscriber ()
+        public Staff getSubscriber ()
         {
-            return (ModelBase) this.getProperty("subscriber");
+            return (Staff) this.getProperty("subscriber");
         }
 
-        public void setSubscriber (ModelBase subscriber)
+        public void setSubscriber (Staff subscriber)
         {
             this.setProperty("subscriber", subscriber);
         }

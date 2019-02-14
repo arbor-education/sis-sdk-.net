@@ -78,7 +78,7 @@ namespace Arbor.Model
 
         public bool getAutoClose ()
         {
-            return (bool) this.getProperty("autoClose");
+            return Convert.ToBoolean(this.getProperty("autoClose"))
         }
 
         public void setAutoClose (bool autoClose)
@@ -118,7 +118,7 @@ namespace Arbor.Model
 
         public bool getResetToZero ()
         {
-            return (bool) this.getProperty("resetToZero");
+            return Convert.ToBoolean(this.getProperty("resetToZero"))
         }
 
         public void setResetToZero (bool resetToZero)
@@ -208,7 +208,7 @@ namespace Arbor.Model
 
         public bool getEditableWatchers ()
         {
-            return (bool) this.getProperty("editableWatchers");
+            return Convert.ToBoolean(this.getProperty("editableWatchers"))
         }
 
         public void setEditableWatchers (bool editableWatchers)
@@ -218,7 +218,7 @@ namespace Arbor.Model
 
         public bool getAllowAssignDetention ()
         {
-            return (bool) this.getProperty("allowAssignDetention");
+            return Convert.ToBoolean(this.getProperty("allowAssignDetention"))
         }
 
         public void setAllowAssignDetention (bool allowAssignDetention)
@@ -228,7 +228,7 @@ namespace Arbor.Model
 
         public bool getAllowAddDeductPoints ()
         {
-            return (bool) this.getProperty("allowAddDeductPoints");
+            return Convert.ToBoolean(this.getProperty("allowAddDeductPoints"))
         }
 
         public void setAllowAddDeductPoints (bool allowAddDeductPoints)
@@ -238,7 +238,7 @@ namespace Arbor.Model
 
         public bool getEmailAssignee ()
         {
-            return (bool) this.getProperty("emailAssignee");
+            return Convert.ToBoolean(this.getProperty("emailAssignee"))
         }
 
         public void setEmailAssignee (bool emailAssignee)
@@ -248,7 +248,7 @@ namespace Arbor.Model
 
         public bool getAllowAssignInternalExclusion ()
         {
-            return (bool) this.getProperty("allowAssignInternalExclusion");
+            return Convert.ToBoolean(this.getProperty("allowAssignInternalExclusion"))
         }
 
         public void setAllowAssignInternalExclusion (bool allowAssignInternalExclusion)

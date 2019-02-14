@@ -81,12 +81,12 @@ namespace Arbor.Model
             this.setProperty("mobileTelephoneNumber", mobileTelephoneNumber);
         }
 
-        public ModelBase getPermittedSender ()
+        public Staff getPermittedSender ()
         {
-            return (ModelBase) this.getProperty("permittedSender");
+            return (Staff) this.getProperty("permittedSender");
         }
 
-        public void setPermittedSender (ModelBase permittedSender)
+        public void setPermittedSender (Staff permittedSender)
         {
             this.setProperty("permittedSender", permittedSender);
         }

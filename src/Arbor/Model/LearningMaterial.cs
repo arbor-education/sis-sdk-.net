@@ -114,8 +114,9 @@ namespace Arbor.Model
             this.setProperty("thirdPartySite", thirdPartySite);
         }
 
-        public DateTime getAuthoredDatetime (){
-            return Convert.ToDateTime(this.getProperty("authoredDatetime"));
+        public DateTime getAuthoredDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("authoredDatetime"))
         }
 
         public void setAuthoredDatetime (DateTime authoredDatetime)

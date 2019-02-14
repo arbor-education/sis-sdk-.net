@@ -27,8 +27,6 @@ namespace Arbor.Model
         public const string BIRTH_DELIVERY = "birthDelivery";
         public const string HANDEDNESS = "handedness";
         public const string STUDENT_NUMBER = "studentNumber";
-        public const string PRIMARY_GUARDIANS_SALUTATION = "primaryGuardiansSalutation";
-        public const string PRIMARY_GUARDIANS_ADDRESSEE = "primaryGuardiansAddressee";
         public const string LEGACY_SYSTEM_ID = "legacySystemId";
 
         public Student ()
@@ -235,26 +233,6 @@ namespace Arbor.Model
         public void setStudentNumber (string studentNumber)
         {
             this.setProperty("studentNumber", studentNumber);
-        }
-
-        public string getPrimaryGuardiansSalutation ()
-        {
-            return this.getProperty("primaryGuardiansSalutation").ToString();
-        }
-
-        public void setPrimaryGuardiansSalutation (string primaryGuardiansSalutation)
-        {
-            this.setProperty("primaryGuardiansSalutation", primaryGuardiansSalutation);
-        }
-
-        public string getPrimaryGuardiansAddressee ()
-        {
-            return this.getProperty("primaryGuardiansAddressee").ToString();
-        }
-
-        public void setPrimaryGuardiansAddressee (string primaryGuardiansAddressee)
-        {
-            this.setProperty("primaryGuardiansAddressee", primaryGuardiansAddressee);
         }
 
         public string getLegacySystemId ()

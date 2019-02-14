@@ -78,7 +78,7 @@ namespace Arbor.Model
 
         public bool getActive ()
         {
-            return (bool) this.getProperty("active");
+            return Convert.ToBoolean(this.getProperty("active"))
         }
 
         public void setActive (bool active)
@@ -176,8 +176,9 @@ namespace Arbor.Model
             this.setProperty("qualificationAwardSubtype", qualificationAwardSubtype);
         }
 
-        public DateTime getAccreditationStartDate (){
-            return Convert.ToDateTime(this.getProperty("accreditationStartDate"));
+        public DateTime getAccreditationStartDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("accreditationStartDate"))
         }
 
         public void setAccreditationStartDate (DateTime accreditationStartDate)
@@ -185,8 +186,9 @@ namespace Arbor.Model
             this.setProperty("accreditationStartDate", accreditationStartDate);
         }
 
-        public DateTime getAccreditationEndDate (){
-            return Convert.ToDateTime(this.getProperty("accreditationEndDate"));
+        public DateTime getAccreditationEndDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("accreditationEndDate"))
         }
 
         public void setAccreditationEndDate (DateTime accreditationEndDate)
@@ -194,8 +196,9 @@ namespace Arbor.Model
             this.setProperty("accreditationEndDate", accreditationEndDate);
         }
 
-        public DateTime getEffectiveDate (){
-            return Convert.ToDateTime(this.getProperty("effectiveDate"));
+        public DateTime getEffectiveDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("effectiveDate"))
         }
 
         public void setEffectiveDate (DateTime effectiveDate)
@@ -203,8 +206,9 @@ namespace Arbor.Model
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate (){
-            return Convert.ToDateTime(this.getProperty("endDate"));
+        public DateTime getEndDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("endDate"))
         }
 
         public void setEndDate (DateTime endDate)
@@ -212,8 +216,9 @@ namespace Arbor.Model
             this.setProperty("endDate", endDate);
         }
 
-        public DateTime getCertificationEndDate (){
-            return Convert.ToDateTime(this.getProperty("certificationEndDate"));
+        public DateTime getCertificationEndDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("certificationEndDate"))
         }
 
         public void setCertificationEndDate (DateTime certificationEndDate)
@@ -221,8 +226,9 @@ namespace Arbor.Model
             this.setProperty("certificationEndDate", certificationEndDate);
         }
 
-        public DateTime getOperationalStartDate (){
-            return Convert.ToDateTime(this.getProperty("operationalStartDate"));
+        public DateTime getOperationalStartDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("operationalStartDate"))
         }
 
         public void setOperationalStartDate (DateTime operationalStartDate)
@@ -230,8 +236,9 @@ namespace Arbor.Model
             this.setProperty("operationalStartDate", operationalStartDate);
         }
 
-        public DateTime getOperationalEndDate (){
-            return Convert.ToDateTime(this.getProperty("operationalEndDate"));
+        public DateTime getOperationalEndDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("operationalEndDate"))
         }
 
         public void setOperationalEndDate (DateTime operationalEndDate)
@@ -241,7 +248,7 @@ namespace Arbor.Model
 
         public bool getIsLinearQualification ()
         {
-            return (bool) this.getProperty("isLinearQualification");
+            return Convert.ToBoolean(this.getProperty("isLinearQualification"))
         }
 
         public void setIsLinearQualification (bool isLinearQualification)

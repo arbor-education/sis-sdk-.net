@@ -114,8 +114,9 @@ namespace Arbor.Model
             this.setProperty("statisticalGradePointScaleValue", statisticalGradePointScaleValue);
         }
 
-        public DateTime getRecordedDate (){
-            return Convert.ToDateTime(this.getProperty("recordedDate"));
+        public DateTime getRecordedDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("recordedDate"))
         }
 
         public void setRecordedDate (DateTime recordedDate)

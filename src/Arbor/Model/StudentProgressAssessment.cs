@@ -82,8 +82,9 @@ namespace Arbor.Model
             this.setProperty("progressMeasurementPeriod", progressMeasurementPeriod);
         }
 
-        public DateTime getAssessmentDate (){
-            return Convert.ToDateTime(this.getProperty("assessmentDate"));
+        public DateTime getAssessmentDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("assessmentDate"))
         }
 
         public void setAssessmentDate (DateTime assessmentDate)
@@ -91,8 +92,9 @@ namespace Arbor.Model
             this.setProperty("assessmentDate", assessmentDate);
         }
 
-        public DateTime getCompletedDate (){
-            return Convert.ToDateTime(this.getProperty("completedDate"));
+        public DateTime getCompletedDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("completedDate"))
         }
 
         public void setCompletedDate (DateTime completedDate)

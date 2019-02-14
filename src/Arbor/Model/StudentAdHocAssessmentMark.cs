@@ -89,8 +89,9 @@ namespace Arbor.Model
             this.setProperty("adHocAssessment", adHocAssessment);
         }
 
-        public DateTime getAssessmentReferenceDate (){
-            return Convert.ToDateTime(this.getProperty("assessmentReferenceDate"));
+        public DateTime getAssessmentReferenceDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("assessmentReferenceDate"))
         }
 
         public void setAssessmentReferenceDate (DateTime assessmentReferenceDate)
@@ -138,9 +139,9 @@ namespace Arbor.Model
             this.setProperty("markingStaff", markingStaff);
         }
 
-        public DateTime getCompletedDatetime (){
-            return Convert.ToDateTime(this.getProperty("completedDatetime"));
-
+        public DateTime getCompletedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("completedDatetime"))
         }
 
         public void setCompletedDatetime (DateTime completedDatetime)
@@ -158,8 +159,9 @@ namespace Arbor.Model
             this.setProperty("completedStaff", completedStaff);
         }
 
-        public DateTime getApprovedDatetime (){
-            return Convert.ToDateTime(this.getProperty("approvedDatetime"));
+        public DateTime getApprovedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("approvedDatetime"))
         }
 
         public void setApprovedDatetime (DateTime approvedDatetime)

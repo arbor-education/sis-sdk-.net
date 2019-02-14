@@ -17,6 +17,7 @@ namespace Arbor.Model
         public const string CLUB = "club";
         public const string NAME = "name";
         public const string TIMETABLE_SLOT = "timetableSlot";
+        public const string ATTENDANCE_REGISTER_TYPE = "attendanceRegisterType";
 
         public ClubSession ()
         {
@@ -54,8 +55,9 @@ namespace Arbor.Model
         	return (ClubSession) gateway.retrieve(ResourceType.CLUB_SESSION, id);
         }
 
-        public DateTime getStartDatetime (){
-            return Convert.ToDateTime(this.getProperty("startDatetime"));
+        public DateTime getStartDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("startDatetime"))
         }
 
         public void setStartDatetime (DateTime startDatetime)
@@ -63,8 +65,9 @@ namespace Arbor.Model
             this.setProperty("startDatetime", startDatetime);
         }
 
-        public DateTime getEndDatetime (){
-            return Convert.ToDateTime(this.getProperty("endDatetime"));
+        public DateTime getEndDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("endDatetime"))
         }
 
         public void setEndDatetime (DateTime endDatetime)
@@ -120,6 +123,16 @@ namespace Arbor.Model
         public void setTimetableSlot (TimetableSlot timetableSlot)
         {
             this.setProperty("timetableSlot", timetableSlot);
+        }
+
+        public AttendanceRegisterType getAttendanceRegisterType ()
+        {
+            return (AttendanceRegisterType) this.getProperty("attendanceRegisterType");
+        }
+
+        public void setAttendanceRegisterType (AttendanceRegisterType attendanceRegisterType)
+        {
+            this.setProperty("attendanceRegisterType", attendanceRegisterType);
         }
 
 

@@ -94,8 +94,9 @@ namespace Arbor.Model
             this.setProperty("approvedByStaff", approvedByStaff);
         }
 
-        public DateTime getApprovedDatetime (){
-            return Convert.ToDateTime(this.getProperty("approvedDatetime"));
+        public DateTime getApprovedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("approvedDatetime"))
         }
 
         public void setApprovedDatetime (DateTime approvedDatetime)
@@ -113,8 +114,9 @@ namespace Arbor.Model
             this.setProperty("rejectedByStaff", rejectedByStaff);
         }
 
-        public DateTime getRejectedDatetime (){
-            return Convert.ToDateTime(this.getProperty("rejectedDatetime"));
+        public DateTime getRejectedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("rejectedDatetime"))
         }
 
         public void setRejectedDatetime (DateTime rejectedDatetime)

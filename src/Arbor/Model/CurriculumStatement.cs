@@ -139,7 +139,7 @@ namespace Arbor.Model
 
         public bool getRequirementForHigher ()
         {
-            return (bool) this.getProperty("requirementForHigher");
+            return Convert.ToBoolean(this.getProperty("requirementForHigher"))
         }
 
         public void setRequirementForHigher (bool requirementForHigher)

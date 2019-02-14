@@ -73,8 +73,9 @@ namespace Arbor.Model
             this.setProperty("coveringStaff", coveringStaff);
         }
 
-        public DateTime getCoverStartDatetime (){
-            return Convert.ToDateTime(this.getProperty("coverStartDatetime"));
+        public DateTime getCoverStartDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("coverStartDatetime"))
         }
 
         public void setCoverStartDatetime (DateTime coverStartDatetime)
@@ -82,8 +83,9 @@ namespace Arbor.Model
             this.setProperty("coverStartDatetime", coverStartDatetime);
         }
 
-        public DateTime getCoverEndDatetime (){
-            return Convert.ToDateTime(this.getProperty("coverEndDatetime"));
+        public DateTime getCoverEndDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("coverEndDatetime"))
         }
 
         public void setCoverEndDatetime (DateTime coverEndDatetime)
@@ -91,8 +93,9 @@ namespace Arbor.Model
             this.setProperty("coverEndDatetime", coverEndDatetime);
         }
 
-        public DateTime getAgreedDatetime (){
-            return Convert.ToDateTime(this.getProperty("agreedDatetime"));
+        public DateTime getAgreedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("agreedDatetime"))
         }
 
         public void setAgreedDatetime (DateTime agreedDatetime)
@@ -100,8 +103,9 @@ namespace Arbor.Model
             this.setProperty("agreedDatetime", agreedDatetime);
         }
 
-        public DateTime getNotAgreedDatetime (){
-            return Convert.ToDateTime(this.getProperty("notAgreedDatetime"));
+        public DateTime getNotAgreedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("notAgreedDatetime"))
         }
 
         public void setNotAgreedDatetime (DateTime notAgreedDatetime)

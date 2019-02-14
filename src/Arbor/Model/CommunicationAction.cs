@@ -81,8 +81,9 @@ namespace Arbor.Model
             this.setProperty("reply", reply);
         }
 
-        public DateTime getActionDatetime (){
-            return Convert.ToDateTime(this.getProperty("actionDatetime"));
+        public DateTime getActionDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("actionDatetime"))
         }
 
         public void setActionDatetime (DateTime actionDatetime)

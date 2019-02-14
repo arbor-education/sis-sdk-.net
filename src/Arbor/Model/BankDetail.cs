@@ -54,18 +54,19 @@ namespace Arbor.Model
         	return (BankDetail) gateway.retrieve(ResourceType.BANK_DETAIL, id);
         }
 
-        public ModelBase getAccountHolder ()
+        public Staff getAccountHolder ()
         {
-            return (ModelBase) this.getProperty("accountHolder");
+            return (Staff) this.getProperty("accountHolder");
         }
 
-        public void setAccountHolder (ModelBase accountHolder)
+        public void setAccountHolder (Staff accountHolder)
         {
             this.setProperty("accountHolder", accountHolder);
         }
 
-        public DateTime getEffectiveDate (){
-            return Convert.ToDateTime(this.getProperty("effectiveDate"));
+        public DateTime getEffectiveDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("effectiveDate"))
         }
 
         public void setEffectiveDate (DateTime effectiveDate)
@@ -73,8 +74,9 @@ namespace Arbor.Model
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate (){
-            return Convert.ToDateTime(this.getProperty("endDate"));
+        public DateTime getEndDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("endDate"))
         }
 
         public void setEndDate (DateTime endDate)

@@ -61,18 +61,19 @@ namespace Arbor.Model
             this.setProperty("timetableSlot", timetableSlot);
         }
 
-        public ModelBase getLocation ()
+        public Room getLocation ()
         {
-            return (ModelBase) this.getProperty("location");
+            return (Room) this.getProperty("location");
         }
 
-        public void setLocation (ModelBase location)
+        public void setLocation (Room location)
         {
             this.setProperty("location", location);
         }
 
-        public DateTime getEffectiveDate (){
-            return Convert.ToDateTime(this.getProperty("effectiveDate"));
+        public DateTime getEffectiveDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("effectiveDate"))
         }
 
         public void setEffectiveDate (DateTime effectiveDate)
@@ -80,8 +81,9 @@ namespace Arbor.Model
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate (){
-            return Convert.ToDateTime(this.getProperty("endDate"));
+        public DateTime getEndDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("endDate"))
         }
 
         public void setEndDate (DateTime endDate)

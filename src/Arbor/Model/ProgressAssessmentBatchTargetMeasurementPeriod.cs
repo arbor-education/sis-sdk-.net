@@ -72,8 +72,9 @@ namespace Arbor.Model
             this.setProperty("progressMeasurementPeriod", progressMeasurementPeriod);
         }
 
-        public DateTime getMarkingStartedDatetime (){
-            return Convert.ToDateTime(this.getProperty("markingStartedDatetime"));
+        public DateTime getMarkingStartedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("markingStartedDatetime"))
         }
 
         public void setMarkingStartedDatetime (DateTime markingStartedDatetime)
@@ -81,8 +82,9 @@ namespace Arbor.Model
             this.setProperty("markingStartedDatetime", markingStartedDatetime);
         }
 
-        public DateTime getMarkingCompletedDatetime (){
-            return Convert.ToDateTime(this.getProperty("markingCompletedDatetime"));
+        public DateTime getMarkingCompletedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("markingCompletedDatetime"))
         }
 
         public void setMarkingCompletedDatetime (DateTime markingCompletedDatetime)
@@ -90,8 +92,9 @@ namespace Arbor.Model
             this.setProperty("markingCompletedDatetime", markingCompletedDatetime);
         }
 
-        public DateTime getMarkingFinalizedDatetime (){
-            return Convert.ToDateTime(this.getProperty("markingFinalizedDatetime"));
+        public DateTime getMarkingFinalizedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("markingFinalizedDatetime"))
         }
 
         public void setMarkingFinalizedDatetime (DateTime markingFinalizedDatetime)

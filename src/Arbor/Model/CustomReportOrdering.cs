@@ -16,6 +16,7 @@ namespace Arbor.Model
         public const string TRANSFORMATION_CLASS = "transformationClass";
         public const string DIRECTION = "direction";
         public const string TARGET_GROUPING = "targetGrouping";
+        public const string CUSTOM_REPORT_COLUMN = "customReportColumn";
 
         public CustomReportOrdering ()
         {
@@ -111,6 +112,16 @@ namespace Arbor.Model
         public void setTargetGrouping (CustomReportGrouping targetGrouping)
         {
             this.setProperty("targetGrouping", targetGrouping);
+        }
+
+        public CustomReportColumn getCustomReportColumn ()
+        {
+            return (CustomReportColumn) this.getProperty("customReportColumn");
+        }
+
+        public void setCustomReportColumn (CustomReportColumn customReportColumn)
+        {
+            this.setProperty("customReportColumn", customReportColumn);
         }
 
 

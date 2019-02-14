@@ -17,6 +17,7 @@ namespace Arbor.Model
         public const string INCOMING_BANK_TRANSACTION = "incomingBankTransaction";
         public const string RECEIVED_CHEQUE = "receivedCheque";
         public const string CASH_RECEIPT = "cashReceipt";
+        public const string STRIPE_INCOMING_CARD_TRANSACTION = "stripeIncomingCardTransaction";
         public const string PREPAYMENT_AMOUNT = "prepaymentAmount";
         public const string PREPAYMENT_DATETIME = "prepaymentDatetime";
         public const string PREPAYMENT_SUCCEEDED_DATETIME = "prepaymentSucceededDatetime";
@@ -130,6 +131,16 @@ namespace Arbor.Model
             this.setProperty("cashReceipt", cashReceipt);
         }
 
+        public StripeIncomingCardTransaction getStripeIncomingCardTransaction ()
+        {
+            return (StripeIncomingCardTransaction) this.getProperty("stripeIncomingCardTransaction");
+        }
+
+        public void setStripeIncomingCardTransaction (StripeIncomingCardTransaction stripeIncomingCardTransaction)
+        {
+            this.setProperty("stripeIncomingCardTransaction", stripeIncomingCardTransaction);
+        }
+
         public string getPrepaymentAmount ()
         {
             return this.getProperty("prepaymentAmount").ToString();
@@ -140,8 +151,9 @@ namespace Arbor.Model
             this.setProperty("prepaymentAmount", prepaymentAmount);
         }
 
-        public DateTime getPrepaymentDatetime (){
-            return Convert.ToDateTime(this.getProperty("prepaymentDatetime"));
+        public DateTime getPrepaymentDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("prepaymentDatetime"))
         }
 
         public void setPrepaymentDatetime (DateTime prepaymentDatetime)
@@ -149,8 +161,9 @@ namespace Arbor.Model
             this.setProperty("prepaymentDatetime", prepaymentDatetime);
         }
 
-        public DateTime getPrepaymentSucceededDatetime (){
-            return Convert.ToDateTime(this.getProperty("prepaymentSucceededDatetime"));
+        public DateTime getPrepaymentSucceededDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("prepaymentSucceededDatetime"))
         }
 
         public void setPrepaymentSucceededDatetime (DateTime prepaymentSucceededDatetime)
@@ -158,8 +171,9 @@ namespace Arbor.Model
             this.setProperty("prepaymentSucceededDatetime", prepaymentSucceededDatetime);
         }
 
-        public DateTime getPrepaymentFailedDatetime (){
-            return Convert.ToDateTime(this.getProperty("prepaymentFailedDatetime"));
+        public DateTime getPrepaymentFailedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("prepaymentFailedDatetime"))
         }
 
         public void setPrepaymentFailedDatetime (DateTime prepaymentFailedDatetime)
@@ -177,8 +191,9 @@ namespace Arbor.Model
             this.setProperty("narrative", narrative);
         }
 
-        public DateTime getPrepaymentCancelledDatetime (){
-            return Convert.ToDateTime(this.getProperty("prepaymentCancelledDatetime"));
+        public DateTime getPrepaymentCancelledDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("prepaymentCancelledDatetime"))
         }
 
         public void setPrepaymentCancelledDatetime (DateTime prepaymentCancelledDatetime)

@@ -90,9 +90,9 @@ namespace Arbor.Model
             this.setProperty("invoiceNumber", invoiceNumber);
         }
 
-        public DateTime getInvoiceDate (){
-
-            return Convert.ToDateTime(this.getProperty("invoiceDate"));
+        public DateTime getInvoiceDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("invoiceDate"))
         }
 
         public void setInvoiceDate (DateTime invoiceDate)
@@ -100,8 +100,9 @@ namespace Arbor.Model
             this.setProperty("invoiceDate", invoiceDate);
         }
 
-        public DateTime getInvoiceIssuedDate (){
-            return Convert.ToDateTime(this.getProperty("invoiceIssuedDate"));
+        public DateTime getInvoiceIssuedDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("invoiceIssuedDate"))
         }
 
         public void setInvoiceIssuedDate (DateTime invoiceIssuedDate)
@@ -109,8 +110,9 @@ namespace Arbor.Model
             this.setProperty("invoiceIssuedDate", invoiceIssuedDate);
         }
 
-        public DateTime getPaymentDueDate (){
-            return Convert.ToDateTime(this.getProperty("paymentDueDate"));
+        public DateTime getPaymentDueDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("paymentDueDate"))
         }
 
         public void setPaymentDueDate (DateTime paymentDueDate)
@@ -118,8 +120,9 @@ namespace Arbor.Model
             this.setProperty("paymentDueDate", paymentDueDate);
         }
 
-        public DateTime getFullyPaidDate (){
-            return Convert.ToDateTime(this.getProperty("fullyPaidDate"));
+        public DateTime getFullyPaidDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("fullyPaidDate"))
         }
 
         public void setFullyPaidDate (DateTime fullyPaidDate)
@@ -167,8 +170,9 @@ namespace Arbor.Model
             this.setProperty("balance", balance);
         }
 
-        public DateTime getCancelledDate (){
-            return Convert.ToDateTime(this.getProperty("cancelledDate"));
+        public DateTime getCancelledDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("cancelledDate"))
         }
 
         public void setCancelledDate (DateTime cancelledDate)
@@ -176,8 +180,9 @@ namespace Arbor.Model
             this.setProperty("cancelledDate", cancelledDate);
         }
 
-        public DateTime getReissuedDate (){
-            return Convert.ToDateTime(this.getProperty("reissuedDate"));
+        public DateTime getReissuedDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("reissuedDate"))
         }
 
         public void setReissuedDate (DateTime reissuedDate)

@@ -63,8 +63,9 @@ namespace Arbor.Model
             this.setProperty("person", person);
         }
 
-        public DateTime getFromDate (){
-            return Convert.ToDateTime(this.getProperty("fromDate"));
+        public DateTime getFromDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("fromDate"))
         }
 
         public void setFromDate (DateTime fromDate)
@@ -72,8 +73,9 @@ namespace Arbor.Model
             this.setProperty("fromDate", fromDate);
         }
 
-        public DateTime getEndDate (){
-            return Convert.ToDateTime(this.getProperty("endDate"));
+        public DateTime getEndDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("endDate"))
         }
 
         public void setEndDate (DateTime endDate)

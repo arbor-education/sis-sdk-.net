@@ -78,8 +78,9 @@ namespace Arbor.Model
             this.setProperty("exclusionReason", exclusionReason);
         }
 
-        public DateTime getFromDatetime (){
-            return Convert.ToDateTime(this.getProperty("fromDatetime"));
+        public DateTime getFromDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("fromDatetime"))
         }
 
         public void setFromDatetime (DateTime fromDatetime)
@@ -87,8 +88,9 @@ namespace Arbor.Model
             this.setProperty("fromDatetime", fromDatetime);
         }
 
-        public DateTime getUntilDatetime (){
-            return Convert.ToDateTime(this.getProperty("untilDatetime"));
+        public DateTime getUntilDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("untilDatetime"))
         }
 
         public void setUntilDatetime (DateTime untilDatetime)
@@ -116,8 +118,9 @@ namespace Arbor.Model
             this.setProperty("dailyEndTime", dailyEndTime);
         }
 
-        public DateTime getDecisionDatetime (){
-            return Convert.ToDateTime(this.getProperty("decisionDatetime"));
+        public DateTime getDecisionDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("decisionDatetime"))
         }
 
         public void setDecisionDatetime (DateTime decisionDatetime)
@@ -125,8 +128,9 @@ namespace Arbor.Model
             this.setProperty("decisionDatetime", decisionDatetime);
         }
 
-        public DateTime getNotifiedStudentDatetime (){
-            return Convert.ToDateTime(this.getProperty("notifiedStudentDatetime"));
+        public DateTime getNotifiedStudentDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("notifiedStudentDatetime"))
         }
 
         public void setNotifiedStudentDatetime (DateTime notifiedStudentDatetime)
@@ -134,8 +138,9 @@ namespace Arbor.Model
             this.setProperty("notifiedStudentDatetime", notifiedStudentDatetime);
         }
 
-        public DateTime getNotifiedGuardiansDatetime (){
-            return Convert.ToDateTime(this.getProperty("notifiedGuardiansDatetime"));
+        public DateTime getNotifiedGuardiansDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("notifiedGuardiansDatetime"))
         }
 
         public void setNotifiedGuardiansDatetime (DateTime notifiedGuardiansDatetime)

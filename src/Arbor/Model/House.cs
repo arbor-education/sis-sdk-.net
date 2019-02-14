@@ -14,6 +14,7 @@ namespace Arbor.Model
         public const string SHORT_NAME = "shortName";
         public const string ACADEMIC_YEAR = "academicYear";
         public const string DISPLAY_ORDER = "displayOrder";
+        public const string COPIED_TO_HOUSE = "copiedToHouse";
 
         public House ()
         {
@@ -89,6 +90,16 @@ namespace Arbor.Model
         public void setDisplayOrder (int displayOrder)
         {
             this.setProperty("displayOrder", displayOrder);
+        }
+
+        public House getCopiedToHouse ()
+        {
+            return (House) this.getProperty("copiedToHouse");
+        }
+
+        public void setCopiedToHouse (House copiedToHouse)
+        {
+            this.setProperty("copiedToHouse", copiedToHouse);
         }
 
 

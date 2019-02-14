@@ -147,8 +147,9 @@ namespace Arbor.Model
             this.setProperty("lineNumber", lineNumber);
         }
 
-        public DateTime getFullyPaidDate (){
-            return Convert.ToDateTime(this.getProperty("fullyPaidDate"));
+        public DateTime getFullyPaidDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("fullyPaidDate"))
         }
 
         public void setFullyPaidDate (DateTime fullyPaidDate)

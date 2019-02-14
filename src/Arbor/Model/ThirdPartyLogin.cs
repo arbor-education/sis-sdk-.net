@@ -83,8 +83,9 @@ namespace Arbor.Model
             this.setProperty("password", password);
         }
 
-        public DateTime getVerifiedDatetime (){
-            return Convert.ToDateTime(this.getProperty("verifiedDatetime"));
+        public DateTime getVerifiedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("verifiedDatetime"))
         }
 
         public void setVerifiedDatetime (DateTime verifiedDatetime)
@@ -92,8 +93,9 @@ namespace Arbor.Model
             this.setProperty("verifiedDatetime", verifiedDatetime);
         }
 
-        public DateTime getFailedDatetime (){
-            return Convert.ToDateTime(this.getProperty("failedDatetime"));
+        public DateTime getFailedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("failedDatetime"))
         }
 
         public void setFailedDatetime (DateTime failedDatetime)

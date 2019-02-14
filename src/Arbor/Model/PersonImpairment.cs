@@ -82,8 +82,9 @@ namespace Arbor.Model
             this.setProperty("impairmentCategory", impairmentCategory);
         }
 
-        public DateTime getDateAdvised (){
-            return Convert.ToDateTime(this.getProperty("dateAdvised"));
+        public DateTime getDateAdvised ()
+        {
+            return Convert.ToDateTime(this.getProperty("dateAdvised"))
         }
 
         public void setDateAdvised (DateTime dateAdvised)
@@ -93,7 +94,7 @@ namespace Arbor.Model
 
         public bool getAffectsWorkingAbility ()
         {
-            return (bool) this.getProperty("affectsWorkingAbility");
+            return Convert.ToBoolean(this.getProperty("affectsWorkingAbility"))
         }
 
         public void setAffectsWorkingAbility (bool affectsWorkingAbility)

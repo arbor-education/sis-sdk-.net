@@ -63,8 +63,9 @@ namespace Arbor.Model
         	return (Meeting) gateway.retrieve(ResourceType.MEETING, id);
         }
 
-        public DateTime getStartDatetime (){
-            return Convert.ToDateTime(this.getProperty("startDatetime"));
+        public DateTime getStartDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("startDatetime"))
         }
 
         public void setStartDatetime (DateTime startDatetime)
@@ -72,8 +73,9 @@ namespace Arbor.Model
             this.setProperty("startDatetime", startDatetime);
         }
 
-        public DateTime getEndDatetime (){
-            return Convert.ToDateTime(this.getProperty("endDatetime"));
+        public DateTime getEndDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("endDatetime"))
         }
 
         public void setEndDatetime (DateTime endDatetime)
@@ -113,7 +115,7 @@ namespace Arbor.Model
 
         public bool getAllowSelfServiceScheduling ()
         {
-            return (bool) this.getProperty("allowSelfServiceScheduling");
+            return Convert.ToBoolean(this.getProperty("allowSelfServiceScheduling"))
         }
 
         public void setAllowSelfServiceScheduling (bool allowSelfServiceScheduling)
@@ -121,8 +123,9 @@ namespace Arbor.Model
             this.setProperty("allowSelfServiceScheduling", allowSelfServiceScheduling);
         }
 
-        public DateTime getSelfSchedulingOpensDatetime (){
-            return Convert.ToDateTime(this.getProperty("selfSchedulingOpensDatetime"));
+        public DateTime getSelfSchedulingOpensDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("selfSchedulingOpensDatetime"))
         }
 
         public void setSelfSchedulingOpensDatetime (DateTime selfSchedulingOpensDatetime)
@@ -130,8 +133,9 @@ namespace Arbor.Model
             this.setProperty("selfSchedulingOpensDatetime", selfSchedulingOpensDatetime);
         }
 
-        public DateTime getSelfSchedulingClosesDatetime (){
-            return Convert.ToDateTime(this.getProperty("selfSchedulingClosesDatetime"));
+        public DateTime getSelfSchedulingClosesDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("selfSchedulingClosesDatetime"))
         }
 
         public void setSelfSchedulingClosesDatetime (DateTime selfSchedulingClosesDatetime)
@@ -169,19 +173,19 @@ namespace Arbor.Model
             this.setProperty("scheduleSuggestedDuration", scheduleSuggestedDuration);
         }
 
-        public ModelBase getScheduleLocation ()
+        public Room getScheduleLocation ()
         {
-            return (ModelBase) this.getProperty("scheduleLocation");
+            return (Room) this.getProperty("scheduleLocation");
         }
 
-        public void setScheduleLocation (ModelBase scheduleLocation)
+        public void setScheduleLocation (Room scheduleLocation)
         {
             this.setProperty("scheduleLocation", scheduleLocation);
         }
 
         public bool getAllowDuplicateScheduling ()
         {
-            return (bool) this.getProperty("allowDuplicateScheduling");
+            return Convert.ToBoolean(this.getProperty("allowDuplicateScheduling"))
         }
 
         public void setAllowDuplicateScheduling (bool allowDuplicateScheduling)

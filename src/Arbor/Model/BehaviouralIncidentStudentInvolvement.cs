@@ -84,8 +84,9 @@ namespace Arbor.Model
             this.setProperty("resolvedBy", resolvedBy);
         }
 
-        public DateTime getResolvedDatetime (){
-            return Convert.ToDateTime(this.getProperty("resolvedDatetime"));
+        public DateTime getResolvedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("resolvedDatetime"))
         }
 
         public void setResolvedDatetime (DateTime resolvedDatetime)

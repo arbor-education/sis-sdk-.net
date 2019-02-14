@@ -69,8 +69,9 @@ namespace Arbor.Model
             this.setProperty("student", student);
         }
 
-        public DateTime getDateRequested (){
-            return Convert.ToDateTime(this.getProperty("dateRequested"));
+        public DateTime getDateRequested ()
+        {
+            return Convert.ToDateTime(this.getProperty("dateRequested"))
         }
 
         public void setDateRequested (DateTime dateRequested)
@@ -78,8 +79,9 @@ namespace Arbor.Model
             this.setProperty("dateRequested", dateRequested);
         }
 
-        public DateTime getDateParentConsulted (){
-            return Convert.ToDateTime(this.getProperty("dateParentConsulted"));
+        public DateTime getDateParentConsulted ()
+        {
+            return Convert.ToDateTime(this.getProperty("dateParentConsulted"))
         }
 
         public void setDateParentConsulted (DateTime dateParentConsulted)
@@ -129,7 +131,7 @@ namespace Arbor.Model
 
         public bool getSubjectToSenTribunal ()
         {
-            return (bool) this.getProperty("subjectToSenTribunal");
+            return Convert.ToBoolean(this.getProperty("subjectToSenTribunal"))
         }
 
         public void setSubjectToSenTribunal (bool subjectToSenTribunal)
@@ -147,8 +149,9 @@ namespace Arbor.Model
             this.setProperty("appealNotes", appealNotes);
         }
 
-        public DateTime getDateFinalized (){
-            return Convert.ToDateTime(this.getProperty("dateFinalized"));
+        public DateTime getDateFinalized ()
+        {
+            return Convert.ToDateTime(this.getProperty("dateFinalized"))
         }
 
         public void setDateFinalized (DateTime dateFinalized)
@@ -156,8 +159,9 @@ namespace Arbor.Model
             this.setProperty("dateFinalized", dateFinalized);
         }
 
-        public DateTime getDateCeased (){
-            return Convert.ToDateTime(this.getProperty("dateCeased"));
+        public DateTime getDateCeased ()
+        {
+            return Convert.ToDateTime(this.getProperty("dateCeased"))
         }
 
         public void setDateCeased (DateTime dateCeased)

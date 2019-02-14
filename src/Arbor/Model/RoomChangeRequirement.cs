@@ -82,18 +82,19 @@ namespace Arbor.Model
             this.setProperty("newRoom", newRoom);
         }
 
-        public ModelBase getUnavailabilityEvent ()
+        public RoomUnavailability getUnavailabilityEvent ()
         {
-            return (ModelBase) this.getProperty("unavailabilityEvent");
+            return (RoomUnavailability) this.getProperty("unavailabilityEvent");
         }
 
-        public void setUnavailabilityEvent (ModelBase unavailabilityEvent)
+        public void setUnavailabilityEvent (RoomUnavailability unavailabilityEvent)
         {
             this.setProperty("unavailabilityEvent", unavailabilityEvent);
         }
 
-        public DateTime getRoomChangedDatetime (){
-            return Convert.ToDateTime(this.getProperty("roomChangedDatetime"));
+        public DateTime getRoomChangedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("roomChangedDatetime"))
         }
 
         public void setRoomChangedDatetime (DateTime roomChangedDatetime)

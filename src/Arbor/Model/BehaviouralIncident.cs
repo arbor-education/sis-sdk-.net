@@ -85,8 +85,9 @@ namespace Arbor.Model
             this.setProperty("narrative", narrative);
         }
 
-        public DateTime getIncidentDatetime (){
-            return Convert.ToDateTime(this.getProperty("incidentDatetime"));
+        public DateTime getIncidentDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("incidentDatetime"))
         }
 
         public void setIncidentDatetime (DateTime incidentDatetime)
@@ -124,8 +125,9 @@ namespace Arbor.Model
             this.setProperty("location", location);
         }
 
-        public DateTime getResolvedDatetime (){
-            return Convert.ToDateTime(this.getProperty("resolvedDatetime"));
+        public DateTime getResolvedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("resolvedDatetime"))
         }
 
         public void setResolvedDatetime (DateTime resolvedDatetime)

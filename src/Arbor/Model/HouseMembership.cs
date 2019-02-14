@@ -14,6 +14,8 @@ namespace Arbor.Model
         public const string STUDENT = "student";
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
+        public const string HOUSE_AUTOMATIC_ENROLMENT = "houseAutomaticEnrolment";
+        public const string ENROLMENT_DEPENDENCY = "enrolmentDependency";
 
         public HouseMembership ()
         {
@@ -71,8 +73,9 @@ namespace Arbor.Model
             this.setProperty("student", student);
         }
 
-        public DateTime getStartDate (){
-            return Convert.ToDateTime(this.getProperty("startDate"));
+        public DateTime getStartDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("startDate"))
         }
 
         public void setStartDate (DateTime startDate)
@@ -80,13 +83,34 @@ namespace Arbor.Model
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate (){
-            return Convert.ToDateTime(this.getProperty("endDate"));
+        public DateTime getEndDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("endDate"))
         }
 
         public void setEndDate (DateTime endDate)
         {
             this.setProperty("endDate", endDate);
+        }
+
+        public HouseAutomaticEnrolment getHouseAutomaticEnrolment ()
+        {
+            return (HouseAutomaticEnrolment) this.getProperty("houseAutomaticEnrolment");
+        }
+
+        public void setHouseAutomaticEnrolment (HouseAutomaticEnrolment houseAutomaticEnrolment)
+        {
+            this.setProperty("houseAutomaticEnrolment", houseAutomaticEnrolment);
+        }
+
+        public RegistrationFormMembership getEnrolmentDependency ()
+        {
+            return (RegistrationFormMembership) this.getProperty("enrolmentDependency");
+        }
+
+        public void setEnrolmentDependency (RegistrationFormMembership enrolmentDependency)
+        {
+            this.setProperty("enrolmentDependency", enrolmentDependency);
         }
 
 
