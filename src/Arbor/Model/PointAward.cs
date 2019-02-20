@@ -98,7 +98,7 @@ namespace Arbor.Model
 
         public DateTime getAwardedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("awardedDatetime"))
+            return Convert.ToDateTime(this.getProperty("awardedDatetime"));
         }
 
         public void setAwardedDatetime (DateTime awardedDatetime)

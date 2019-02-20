@@ -117,7 +117,7 @@ namespace Arbor.Model
 
         public bool getIsDefault ()
         {
-            return Convert.ToBoolean(this.getProperty("isDefault"))
+            return Convert.ToBoolean(this.getProperty("isDefault"));
         }
 
         public void setIsDefault (bool isDefault)
@@ -127,7 +127,7 @@ namespace Arbor.Model
 
         public bool getIsAddressForReuse ()
         {
-            return Convert.ToBoolean(this.getProperty("isAddressForReuse"))
+            return Convert.ToBoolean(this.getProperty("isAddressForReuse"));
         }
 
         public void setIsAddressForReuse (bool isAddressForReuse)

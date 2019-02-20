@@ -124,7 +124,7 @@ namespace Arbor.Model
 
         public DateTime getOriginationDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("originationDatetime"))
+            return Convert.ToDateTime(this.getProperty("originationDatetime"));
         }
 
         public void setOriginationDatetime (DateTime originationDatetime)
@@ -134,7 +134,7 @@ namespace Arbor.Model
 
         public DateTime getSendingStartedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("sendingStartedDatetime"))
+            return Convert.ToDateTime(this.getProperty("sendingStartedDatetime"));
         }
 
         public void setSendingStartedDatetime (DateTime sendingStartedDatetime)
@@ -144,7 +144,7 @@ namespace Arbor.Model
 
         public DateTime getSentDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("sentDatetime"))
+            return Convert.ToDateTime(this.getProperty("sentDatetime"));
         }
 
         public void setSentDatetime (DateTime sentDatetime)
@@ -154,7 +154,7 @@ namespace Arbor.Model
 
         public DateTime getReceivedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("receivedDatetime"))
+            return Convert.ToDateTime(this.getProperty("receivedDatetime"));
         }
 
         public void setReceivedDatetime (DateTime receivedDatetime)
@@ -164,7 +164,7 @@ namespace Arbor.Model
 
         public DateTime getFailedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("failedDatetime"))
+            return Convert.ToDateTime(this.getProperty("failedDatetime"));
         }
 
         public void setFailedDatetime (DateTime failedDatetime)
@@ -194,7 +194,7 @@ namespace Arbor.Model
 
         public DateTime getReadDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("readDatetime"))
+            return Convert.ToDateTime(this.getProperty("readDatetime"));
         }
 
         public void setReadDatetime (DateTime readDatetime)
@@ -204,7 +204,7 @@ namespace Arbor.Model
 
         public DateTime getActionRequiredByDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("actionRequiredByDatetime"))
+            return Convert.ToDateTime(this.getProperty("actionRequiredByDatetime"));
         }
 
         public void setActionRequiredByDatetime (DateTime actionRequiredByDatetime)

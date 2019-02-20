@@ -80,7 +80,7 @@ namespace Arbor.Model
 
         public DateTime getReferenceDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("referenceDatetime"))
+            return Convert.ToDateTime(this.getProperty("referenceDatetime"));
         }
 
         public void setReferenceDatetime (DateTime referenceDatetime)
@@ -90,7 +90,7 @@ namespace Arbor.Model
 
         public DateTime getCalculationRangeStartDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("calculationRangeStartDatetime"))
+            return Convert.ToDateTime(this.getProperty("calculationRangeStartDatetime"));
         }
 
         public void setCalculationRangeStartDatetime (DateTime calculationRangeStartDatetime)
@@ -100,7 +100,7 @@ namespace Arbor.Model
 
         public DateTime getCalculationRangeEndDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("calculationRangeEndDatetime"))
+            return Convert.ToDateTime(this.getProperty("calculationRangeEndDatetime"));
         }
 
         public void setCalculationRangeEndDatetime (DateTime calculationRangeEndDatetime)
@@ -140,7 +140,7 @@ namespace Arbor.Model
 
         public DateTime getRecalculationScheduledDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("recalculationScheduledDatetime"))
+            return Convert.ToDateTime(this.getProperty("recalculationScheduledDatetime"));
         }
 
         public void setRecalculationScheduledDatetime (DateTime recalculationScheduledDatetime)
@@ -150,7 +150,7 @@ namespace Arbor.Model
 
         public DateTime getRecalculationStartedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("recalculationStartedDatetime"))
+            return Convert.ToDateTime(this.getProperty("recalculationStartedDatetime"));
         }
 
         public void setRecalculationStartedDatetime (DateTime recalculationStartedDatetime)
@@ -160,7 +160,7 @@ namespace Arbor.Model
 
         public DateTime getLastCalculatedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("lastCalculatedDatetime"))
+            return Convert.ToDateTime(this.getProperty("lastCalculatedDatetime"));
         }
 
         public void setLastCalculatedDatetime (DateTime lastCalculatedDatetime)

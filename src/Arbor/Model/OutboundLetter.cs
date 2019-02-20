@@ -95,7 +95,7 @@ namespace Arbor.Model
 
         public DateTime getGeneratedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("generatedDatetime"))
+            return Convert.ToDateTime(this.getProperty("generatedDatetime"));
         }
 
         public void setGeneratedDatetime (DateTime generatedDatetime)
@@ -105,7 +105,7 @@ namespace Arbor.Model
 
         public DateTime getActionRequiredDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("actionRequiredDatetime"))
+            return Convert.ToDateTime(this.getProperty("actionRequiredDatetime"));
         }
 
         public void setActionRequiredDatetime (DateTime actionRequiredDatetime)

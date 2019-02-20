@@ -76,7 +76,7 @@ namespace Arbor.Model
 
         public DateTime getPurchaseStartDate ()
         {
-            return Convert.ToDateTime(this.getProperty("purchaseStartDate"))
+            return Convert.ToDateTime(this.getProperty("purchaseStartDate"));
         }
 
         public void setPurchaseStartDate (DateTime purchaseStartDate)
@@ -86,7 +86,7 @@ namespace Arbor.Model
 
         public DateTime getPurchaseEndDate ()
         {
-            return Convert.ToDateTime(this.getProperty("purchaseEndDate"))
+            return Convert.ToDateTime(this.getProperty("purchaseEndDate"));
         }
 
         public void setPurchaseEndDate (DateTime purchaseEndDate)
@@ -106,7 +106,7 @@ namespace Arbor.Model
 
         public DateTime getGuardianSignupStartDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("guardianSignupStartDatetime"))
+            return Convert.ToDateTime(this.getProperty("guardianSignupStartDatetime"));
         }
 
         public void setGuardianSignupStartDatetime (DateTime guardianSignupStartDatetime)
@@ -116,7 +116,7 @@ namespace Arbor.Model
 
         public DateTime getGuardianSignupEndDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("guardianSignupEndDatetime"))
+            return Convert.ToDateTime(this.getProperty("guardianSignupEndDatetime"));
         }
 
         public void setGuardianSignupEndDatetime (DateTime guardianSignupEndDatetime)

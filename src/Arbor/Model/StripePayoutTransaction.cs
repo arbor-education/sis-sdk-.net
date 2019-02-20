@@ -89,7 +89,7 @@ namespace Arbor.Model
 
         public DateTime getPayoutInitiatedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("payoutInitiatedDatetime"))
+            return Convert.ToDateTime(this.getProperty("payoutInitiatedDatetime"));
         }
 
         public void setPayoutInitiatedDatetime (DateTime payoutInitiatedDatetime)
@@ -99,7 +99,7 @@ namespace Arbor.Model
 
         public DateTime getPayoutSucceededDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("payoutSucceededDatetime"))
+            return Convert.ToDateTime(this.getProperty("payoutSucceededDatetime"));
         }
 
         public void setPayoutSucceededDatetime (DateTime payoutSucceededDatetime)
@@ -109,7 +109,7 @@ namespace Arbor.Model
 
         public DateTime getPayoutFailedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("payoutFailedDatetime"))
+            return Convert.ToDateTime(this.getProperty("payoutFailedDatetime"));
         }
 
         public void setPayoutFailedDatetime (DateTime payoutFailedDatetime)
@@ -119,7 +119,7 @@ namespace Arbor.Model
 
         public DateTime getPayoutScheduledDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("payoutScheduledDatetime"))
+            return Convert.ToDateTime(this.getProperty("payoutScheduledDatetime"));
         }
 
         public void setPayoutScheduledDatetime (DateTime payoutScheduledDatetime)
@@ -129,7 +129,7 @@ namespace Arbor.Model
 
         public DateTime getVatInvoiceGenerationInitiatedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("vatInvoiceGenerationInitiatedDatetime"))
+            return Convert.ToDateTime(this.getProperty("vatInvoiceGenerationInitiatedDatetime"));
         }
 
         public void setVatInvoiceGenerationInitiatedDatetime (DateTime vatInvoiceGenerationInitiatedDatetime)

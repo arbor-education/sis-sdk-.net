@@ -63,7 +63,7 @@ namespace Arbor.Model
 
         public DateTime getDeadlineDate ()
         {
-            return Convert.ToDateTime(this.getProperty("deadlineDate"))
+            return Convert.ToDateTime(this.getProperty("deadlineDate"));
         }
 
         public void setDeadlineDate (DateTime deadlineDate)
@@ -73,7 +73,7 @@ namespace Arbor.Model
 
         public DateTime getCollectionRangeStartDate ()
         {
-            return Convert.ToDateTime(this.getProperty("collectionRangeStartDate"))
+            return Convert.ToDateTime(this.getProperty("collectionRangeStartDate"));
         }
 
         public void setCollectionRangeStartDate (DateTime collectionRangeStartDate)
@@ -83,7 +83,7 @@ namespace Arbor.Model
 
         public DateTime getCollectionRangeEndDate ()
         {
-            return Convert.ToDateTime(this.getProperty("collectionRangeEndDate"))
+            return Convert.ToDateTime(this.getProperty("collectionRangeEndDate"));
         }
 
         public void setCollectionRangeEndDate (DateTime collectionRangeEndDate)

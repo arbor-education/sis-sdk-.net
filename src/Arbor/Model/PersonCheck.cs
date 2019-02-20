@@ -90,7 +90,7 @@ namespace Arbor.Model
 
         public DateTime getRequestedDate ()
         {
-            return Convert.ToDateTime(this.getProperty("requestedDate"))
+            return Convert.ToDateTime(this.getProperty("requestedDate"));
         }
 
         public void setRequestedDate (DateTime requestedDate)
@@ -100,7 +100,7 @@ namespace Arbor.Model
 
         public DateTime getReturnedDate ()
         {
-            return Convert.ToDateTime(this.getProperty("returnedDate"))
+            return Convert.ToDateTime(this.getProperty("returnedDate"));
         }
 
         public void setReturnedDate (DateTime returnedDate)
@@ -110,7 +110,7 @@ namespace Arbor.Model
 
         public DateTime getExpiryDate ()
         {
-            return Convert.ToDateTime(this.getProperty("expiryDate"))
+            return Convert.ToDateTime(this.getProperty("expiryDate"));
         }
 
         public void setExpiryDate (DateTime expiryDate)
@@ -130,7 +130,7 @@ namespace Arbor.Model
 
         public DateTime getAuthenticatedDate ()
         {
-            return Convert.ToDateTime(this.getProperty("authenticatedDate"))
+            return Convert.ToDateTime(this.getProperty("authenticatedDate"));
         }
 
         public void setAuthenticatedDate (DateTime authenticatedDate)
@@ -150,7 +150,7 @@ namespace Arbor.Model
 
         public DateTime getEvidenceRecordedDate ()
         {
-            return Convert.ToDateTime(this.getProperty("evidenceRecordedDate"))
+            return Convert.ToDateTime(this.getProperty("evidenceRecordedDate"));
         }
 
         public void setEvidenceRecordedDate (DateTime evidenceRecordedDate)

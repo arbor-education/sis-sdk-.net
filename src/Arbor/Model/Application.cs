@@ -76,7 +76,7 @@ namespace Arbor.Model
 
         public DateTime getApplicationDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("applicationDatetime"))
+            return Convert.ToDateTime(this.getProperty("applicationDatetime"));
         }
 
         public void setApplicationDatetime (DateTime applicationDatetime)
@@ -126,7 +126,7 @@ namespace Arbor.Model
 
         public DateTime getWithdrawnDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("withdrawnDatetime"))
+            return Convert.ToDateTime(this.getProperty("withdrawnDatetime"));
         }
 
         public void setWithdrawnDatetime (DateTime withdrawnDatetime)
@@ -146,7 +146,7 @@ namespace Arbor.Model
 
         public DateTime getRejectedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("rejectedDatetime"))
+            return Convert.ToDateTime(this.getProperty("rejectedDatetime"));
         }
 
         public void setRejectedDatetime (DateTime rejectedDatetime)
@@ -166,7 +166,7 @@ namespace Arbor.Model
 
         public DateTime getOfferedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("offeredDatetime"))
+            return Convert.ToDateTime(this.getProperty("offeredDatetime"));
         }
 
         public void setOfferedDatetime (DateTime offeredDatetime)
@@ -176,7 +176,7 @@ namespace Arbor.Model
 
         public DateTime getAcceptedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("acceptedDatetime"))
+            return Convert.ToDateTime(this.getProperty("acceptedDatetime"));
         }
 
         public void setAcceptedDatetime (DateTime acceptedDatetime)
@@ -186,7 +186,7 @@ namespace Arbor.Model
 
         public DateTime getExpectedAdmissionDate ()
         {
-            return Convert.ToDateTime(this.getProperty("expectedAdmissionDate"))
+            return Convert.ToDateTime(this.getProperty("expectedAdmissionDate"));
         }
 
         public void setExpectedAdmissionDate (DateTime expectedAdmissionDate)
@@ -226,7 +226,7 @@ namespace Arbor.Model
 
         public DateTime getEnrolledDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("enrolledDatetime"))
+            return Convert.ToDateTime(this.getProperty("enrolledDatetime"));
         }
 
         public void setEnrolledDatetime (DateTime enrolledDatetime)

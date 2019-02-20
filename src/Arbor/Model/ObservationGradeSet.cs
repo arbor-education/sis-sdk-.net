@@ -10,7 +10,9 @@ namespace Arbor.Model
     public class ObservationGradeSet : ModelBase
     {
         protected string resourceType = ResourceType.OBSERVATION_GRADE_SET;
-        public const string OBSERVATION_TYPE = "observationType";
+        public const string CODE = "code";
+        public const string ACTIVE = "active";
+        public const string DATA_ORDER = "dataOrder";
         public const string NAME = "name";
         public const string SCALE_DIRECTION = "scaleDirection";
 
@@ -50,14 +52,34 @@ namespace Arbor.Model
         	return (ObservationGradeSet) gateway.retrieve(ResourceType.OBSERVATION_GRADE_SET, id);
         }
 
-        public ObservationType getObservationType ()
+        public string getCode ()
         {
-            return (ObservationType) this.getProperty("observationType");
+            return this.getProperty("code").ToString();
         }
 
-        public void setObservationType (ObservationType observationType)
+        public void setCode (string code)
         {
-            this.setProperty("observationType", observationType);
+            this.setProperty("code", code);
+        }
+
+        public bool getActive ()
+        {
+            return Convert.ToBoolean(this.getProperty("active"));
+        }
+
+        public void setActive (bool active)
+        {
+            this.setProperty("active", active);
+        }
+
+        public int getDataOrder ()
+        {
+            return Convert.ToInt32(this.getProperty("dataOrder"));
+        }
+
+        public void setDataOrder (int dataOrder)
+        {
+            this.setProperty("dataOrder", dataOrder);
         }
 
         public string getName ()

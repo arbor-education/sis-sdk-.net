@@ -84,7 +84,7 @@ namespace Arbor.Model
 
         public DateTime getStatusDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("statusDatetime"))
+            return Convert.ToDateTime(this.getProperty("statusDatetime"));
         }
 
         public void setStatusDatetime (DateTime statusDatetime)

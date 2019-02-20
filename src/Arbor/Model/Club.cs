@@ -98,7 +98,7 @@ namespace Arbor.Model
 
         public bool getRequireConsent ()
         {
-            return Convert.ToBoolean(this.getProperty("requireConsent"))
+            return Convert.ToBoolean(this.getProperty("requireConsent"));
         }
 
         public void setRequireConsent (bool requireConsent)
@@ -118,7 +118,7 @@ namespace Arbor.Model
 
         public bool getFree ()
         {
-            return Convert.ToBoolean(this.getProperty("free"))
+            return Convert.ToBoolean(this.getProperty("free"));
         }
 
         public void setFree (bool free)
@@ -138,7 +138,7 @@ namespace Arbor.Model
 
         public DateTime getAttendanceRegisterEffectiveDate ()
         {
-            return Convert.ToDateTime(this.getProperty("attendanceRegisterEffectiveDate"))
+            return Convert.ToDateTime(this.getProperty("attendanceRegisterEffectiveDate"));
         }
 
         public void setAttendanceRegisterEffectiveDate (DateTime attendanceRegisterEffectiveDate)

@@ -117,7 +117,7 @@ namespace Arbor.Model
 
         public DateTime getLastExportDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("lastExportDatetime"))
+            return Convert.ToDateTime(this.getProperty("lastExportDatetime"));
         }
 
         public void setLastExportDatetime (DateTime lastExportDatetime)

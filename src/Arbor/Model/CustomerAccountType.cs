@@ -97,7 +97,7 @@ namespace Arbor.Model
 
         public bool getIsPrepayment ()
         {
-            return Convert.ToBoolean(this.getProperty("isPrepayment"))
+            return Convert.ToBoolean(this.getProperty("isPrepayment"));
         }
 
         public void setIsPrepayment (bool isPrepayment)
@@ -107,7 +107,7 @@ namespace Arbor.Model
 
         public bool getAutoCreateForStudents ()
         {
-            return Convert.ToBoolean(this.getProperty("autoCreateForStudents"))
+            return Convert.ToBoolean(this.getProperty("autoCreateForStudents"));
         }
 
         public void setAutoCreateForStudents (bool autoCreateForStudents)
@@ -117,7 +117,7 @@ namespace Arbor.Model
 
         public bool getAutoCreateForStaff ()
         {
-            return Convert.ToBoolean(this.getProperty("autoCreateForStaff"))
+            return Convert.ToBoolean(this.getProperty("autoCreateForStaff"));
         }
 
         public void setAutoCreateForStaff (bool autoCreateForStaff)
@@ -127,7 +127,7 @@ namespace Arbor.Model
 
         public bool getCardPaymentsEnabled ()
         {
-            return Convert.ToBoolean(this.getProperty("cardPaymentsEnabled"))
+            return Convert.ToBoolean(this.getProperty("cardPaymentsEnabled"));
         }
 
         public void setCardPaymentsEnabled (bool cardPaymentsEnabled)

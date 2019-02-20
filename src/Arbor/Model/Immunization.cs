@@ -73,7 +73,7 @@ namespace Arbor.Model
 
         public DateTime getImmunizationDate ()
         {
-            return Convert.ToDateTime(this.getProperty("immunizationDate"))
+            return Convert.ToDateTime(this.getProperty("immunizationDate"));
         }
 
         public void setImmunizationDate (DateTime immunizationDate)

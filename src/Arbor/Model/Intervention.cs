@@ -106,7 +106,7 @@ namespace Arbor.Model
 
         public DateTime getStartDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("startDatetime"))
+            return Convert.ToDateTime(this.getProperty("startDatetime"));
         }
 
         public void setStartDatetime (DateTime startDatetime)
@@ -116,7 +116,7 @@ namespace Arbor.Model
 
         public DateTime getEndDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("endDatetime"))
+            return Convert.ToDateTime(this.getProperty("endDatetime"));
         }
 
         public void setEndDatetime (DateTime endDatetime)
@@ -166,7 +166,7 @@ namespace Arbor.Model
 
         public DateTime getNextReviewDate ()
         {
-            return Convert.ToDateTime(this.getProperty("nextReviewDate"))
+            return Convert.ToDateTime(this.getProperty("nextReviewDate"));
         }
 
         public void setNextReviewDate (DateTime nextReviewDate)
@@ -206,7 +206,7 @@ namespace Arbor.Model
 
         public bool getIsCompleted ()
         {
-            return Convert.ToBoolean(this.getProperty("isCompleted"))
+            return Convert.ToBoolean(this.getProperty("isCompleted"));
         }
 
         public void setIsCompleted (bool isCompleted)

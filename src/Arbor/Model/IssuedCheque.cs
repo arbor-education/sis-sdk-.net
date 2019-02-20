@@ -63,7 +63,7 @@ namespace Arbor.Model
 
         public DateTime getIssuedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("issuedDatetime"))
+            return Convert.ToDateTime(this.getProperty("issuedDatetime"));
         }
 
         public void setIssuedDatetime (DateTime issuedDatetime)

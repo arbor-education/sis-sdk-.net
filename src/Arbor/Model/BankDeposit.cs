@@ -75,7 +75,7 @@ namespace Arbor.Model
 
         public DateTime getDepositDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("depositDatetime"))
+            return Convert.ToDateTime(this.getProperty("depositDatetime"));
         }
 
         public void setDepositDatetime (DateTime depositDatetime)

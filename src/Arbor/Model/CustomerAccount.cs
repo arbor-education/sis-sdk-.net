@@ -172,7 +172,7 @@ namespace Arbor.Model
 
         public DateTime getOpeningBalanceTransactionDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("openingBalanceTransactionDatetime"))
+            return Convert.ToDateTime(this.getProperty("openingBalanceTransactionDatetime"));
         }
 
         public void setOpeningBalanceTransactionDatetime (DateTime openingBalanceTransactionDatetime)

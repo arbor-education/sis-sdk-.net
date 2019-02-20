@@ -10,6 +10,9 @@ namespace Arbor.Model
     public class ObservationGrade : ModelBase
     {
         protected string resourceType = ResourceType.OBSERVATION_GRADE;
+        public const string CODE = "code";
+        public const string ACTIVE = "active";
+        public const string DATA_ORDER = "dataOrder";
         public const string OBSERVATION_GRADE_SET = "observationGradeSet";
         public const string SHORT_NAME = "shortName";
         public const string NAME = "name";
@@ -49,6 +52,36 @@ namespace Arbor.Model
             RestGateway gateway = (RestGateway) ObservationGrade.getDefaultGateway();
         	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
         	return (ObservationGrade) gateway.retrieve(ResourceType.OBSERVATION_GRADE, id);
+        }
+
+        public string getCode ()
+        {
+            return this.getProperty("code").ToString();
+        }
+
+        public void setCode (string code)
+        {
+            this.setProperty("code", code);
+        }
+
+        public bool getActive ()
+        {
+            return Convert.ToBoolean(this.getProperty("active"));
+        }
+
+        public void setActive (bool active)
+        {
+            this.setProperty("active", active);
+        }
+
+        public int getDataOrder ()
+        {
+            return Convert.ToInt32(this.getProperty("dataOrder"));
+        }
+
+        public void setDataOrder (int dataOrder)
+        {
+            this.setProperty("dataOrder", dataOrder);
         }
 
         public ObservationGradeSet getObservationGradeSet ()

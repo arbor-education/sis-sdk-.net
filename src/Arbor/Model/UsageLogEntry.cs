@@ -61,7 +61,7 @@ namespace Arbor.Model
 
         public DateTime getTimestamp ()
         {
-            return Convert.ToDateTime(this.getProperty("timestamp"))
+            return Convert.ToDateTime(this.getProperty("timestamp"));
         }
 
         public void setTimestamp (DateTime timestamp)

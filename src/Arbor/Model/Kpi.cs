@@ -197,7 +197,7 @@ namespace Arbor.Model
 
         public bool getCalculateForSchool ()
         {
-            return Convert.ToBoolean(this.getProperty("calculateForSchool"))
+            return Convert.ToBoolean(this.getProperty("calculateForSchool"));
         }
 
         public void setCalculateForSchool (bool calculateForSchool)
@@ -207,7 +207,7 @@ namespace Arbor.Model
 
         public bool getCalculateForGroups ()
         {
-            return Convert.ToBoolean(this.getProperty("calculateForGroups"))
+            return Convert.ToBoolean(this.getProperty("calculateForGroups"));
         }
 
         public void setCalculateForGroups (bool calculateForGroups)
@@ -217,7 +217,7 @@ namespace Arbor.Model
 
         public bool getCalculateForAcademicUnits ()
         {
-            return Convert.ToBoolean(this.getProperty("calculateForAcademicUnits"))
+            return Convert.ToBoolean(this.getProperty("calculateForAcademicUnits"));
         }
 
         public void setCalculateForAcademicUnits (bool calculateForAcademicUnits)
@@ -227,7 +227,7 @@ namespace Arbor.Model
 
         public bool getCalculateForStudents ()
         {
-            return Convert.ToBoolean(this.getProperty("calculateForStudents"))
+            return Convert.ToBoolean(this.getProperty("calculateForStudents"));
         }
 
         public void setCalculateForStudents (bool calculateForStudents)
@@ -237,7 +237,7 @@ namespace Arbor.Model
 
         public bool getCalculateForStudentAcademicUnitEnrolments ()
         {
-            return Convert.ToBoolean(this.getProperty("calculateForStudentAcademicUnitEnrolments"))
+            return Convert.ToBoolean(this.getProperty("calculateForStudentAcademicUnitEnrolments"));
         }
 
         public void setCalculateForStudentAcademicUnitEnrolments (bool calculateForStudentAcademicUnitEnrolments)

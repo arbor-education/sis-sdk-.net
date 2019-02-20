@@ -65,7 +65,7 @@ namespace Arbor.Model
 
         public bool getActive ()
         {
-            return Convert.ToBoolean(this.getProperty("active"))
+            return Convert.ToBoolean(this.getProperty("active"));
         }
 
         public void setActive (bool active)
@@ -95,7 +95,7 @@ namespace Arbor.Model
 
         public bool getIsMale ()
         {
-            return Convert.ToBoolean(this.getProperty("isMale"))
+            return Convert.ToBoolean(this.getProperty("isMale"));
         }
 
         public void setIsMale (bool isMale)
@@ -105,7 +105,7 @@ namespace Arbor.Model
 
         public bool getIsFemale ()
         {
-            return Convert.ToBoolean(this.getProperty("isFemale"))
+            return Convert.ToBoolean(this.getProperty("isFemale"));
         }
 
         public void setIsFemale (bool isFemale)

@@ -67,7 +67,7 @@ namespace Arbor.Model
 
         public DateTime getStartDate ()
         {
-            return Convert.ToDateTime(this.getProperty("startDate"))
+            return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
         public void setStartDate (DateTime startDate)
@@ -77,7 +77,7 @@ namespace Arbor.Model
 
         public DateTime getEndDate ()
         {
-            return Convert.ToDateTime(this.getProperty("endDate"))
+            return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
         public void setEndDate (DateTime endDate)
@@ -107,7 +107,7 @@ namespace Arbor.Model
 
         public bool getConsentReceived ()
         {
-            return Convert.ToBoolean(this.getProperty("consentReceived"))
+            return Convert.ToBoolean(this.getProperty("consentReceived"));
         }
 
         public void setConsentReceived (bool consentReceived)
@@ -127,7 +127,7 @@ namespace Arbor.Model
 
         public DateTime getCancelledDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("cancelledDatetime"))
+            return Convert.ToDateTime(this.getProperty("cancelledDatetime"));
         }
 
         public void setCancelledDatetime (DateTime cancelledDatetime)

@@ -139,7 +139,7 @@ namespace Arbor.Model
 
         public DateTime getReceivedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("receivedDatetime"))
+            return Convert.ToDateTime(this.getProperty("receivedDatetime"));
         }
 
         public void setReceivedDatetime (DateTime receivedDatetime)
@@ -149,7 +149,7 @@ namespace Arbor.Model
 
         public DateTime getFailedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("failedDatetime"))
+            return Convert.ToDateTime(this.getProperty("failedDatetime"));
         }
 
         public void setFailedDatetime (DateTime failedDatetime)

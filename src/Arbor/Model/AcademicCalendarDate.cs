@@ -68,7 +68,7 @@ namespace Arbor.Model
 
         public DateTime getStartDate ()
         {
-            return Convert.ToDateTime(this.getProperty("startDate"))
+            return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
         public void setStartDate (DateTime startDate)
@@ -78,7 +78,7 @@ namespace Arbor.Model
 
         public DateTime getEndDate ()
         {
-            return Convert.ToDateTime(this.getProperty("endDate"))
+            return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
         public void setEndDate (DateTime endDate)
@@ -138,7 +138,7 @@ namespace Arbor.Model
 
         public bool getIsPublicHoliday ()
         {
-            return Convert.ToBoolean(this.getProperty("isPublicHoliday"))
+            return Convert.ToBoolean(this.getProperty("isPublicHoliday"));
         }
 
         public void setIsPublicHoliday (bool isPublicHoliday)
@@ -218,7 +218,7 @@ namespace Arbor.Model
 
         public bool getIsGoodSchoolDay ()
         {
-            return Convert.ToBoolean(this.getProperty("isGoodSchoolDay"))
+            return Convert.ToBoolean(this.getProperty("isGoodSchoolDay"));
         }
 
         public void setIsGoodSchoolDay (bool isGoodSchoolDay)
@@ -238,7 +238,7 @@ namespace Arbor.Model
 
         public bool getActive ()
         {
-            return Convert.ToBoolean(this.getProperty("active"))
+            return Convert.ToBoolean(this.getProperty("active"));
         }
 
         public void setActive (bool active)

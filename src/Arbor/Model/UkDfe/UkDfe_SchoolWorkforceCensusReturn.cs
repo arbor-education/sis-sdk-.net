@@ -113,7 +113,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getXsltError ()
         {
-            return Convert.ToBoolean(this.getProperty("xsltError"))
+            return Convert.ToBoolean(this.getProperty("xsltError"));
         }
 
         public void setXsltError (bool xsltError)
@@ -123,7 +123,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getDataError ()
         {
-            return Convert.ToBoolean(this.getProperty("dataError"))
+            return Convert.ToBoolean(this.getProperty("dataError"));
         }
 
         public void setDataError (bool dataError)
@@ -133,7 +133,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getIsDryRun ()
         {
-            return Convert.ToBoolean(this.getProperty("isDryRun"))
+            return Convert.ToBoolean(this.getProperty("isDryRun"));
         }
 
         public void setIsDryRun (bool isDryRun)
@@ -143,7 +143,7 @@ namespace Arbor.Model.UkDfe
 
         public DateTime getDataExportStartedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("dataExportStartedDatetime"))
+            return Convert.ToDateTime(this.getProperty("dataExportStartedDatetime"));
         }
 
         public void setDataExportStartedDatetime (DateTime dataExportStartedDatetime)
@@ -153,7 +153,7 @@ namespace Arbor.Model.UkDfe
 
         public DateTime getDataExportCompletedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("dataExportCompletedDatetime"))
+            return Convert.ToDateTime(this.getProperty("dataExportCompletedDatetime"));
         }
 
         public void setDataExportCompletedDatetime (DateTime dataExportCompletedDatetime)
@@ -163,7 +163,7 @@ namespace Arbor.Model.UkDfe
 
         public DateTime getSchoolApprovedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("schoolApprovedDatetime"))
+            return Convert.ToDateTime(this.getProperty("schoolApprovedDatetime"));
         }
 
         public void setSchoolApprovedDatetime (DateTime schoolApprovedDatetime)
@@ -173,7 +173,7 @@ namespace Arbor.Model.UkDfe
 
         public DateTime getLocalAuthorityRejectedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("localAuthorityRejectedDatetime"))
+            return Convert.ToDateTime(this.getProperty("localAuthorityRejectedDatetime"));
         }
 
         public void setLocalAuthorityRejectedDatetime (DateTime localAuthorityRejectedDatetime)
@@ -183,7 +183,7 @@ namespace Arbor.Model.UkDfe
 
         public DateTime getLocalAuthorityAcceptedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("localAuthorityAcceptedDatetime"))
+            return Convert.ToDateTime(this.getProperty("localAuthorityAcceptedDatetime"));
         }
 
         public void setLocalAuthorityAcceptedDatetime (DateTime localAuthorityAcceptedDatetime)
@@ -193,7 +193,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getIsStaffContractInformationExcluded ()
         {
-            return Convert.ToBoolean(this.getProperty("isStaffContractInformationExcluded"))
+            return Convert.ToBoolean(this.getProperty("isStaffContractInformationExcluded"));
         }
 
         public void setIsStaffContractInformationExcluded (bool isStaffContractInformationExcluded)

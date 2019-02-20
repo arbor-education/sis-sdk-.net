@@ -129,7 +129,7 @@ namespace Arbor.Model
 
         public DateTime getAssessmentDate ()
         {
-            return Convert.ToDateTime(this.getProperty("assessmentDate"))
+            return Convert.ToDateTime(this.getProperty("assessmentDate"));
         }
 
         public void setAssessmentDate (DateTime assessmentDate)
@@ -139,7 +139,7 @@ namespace Arbor.Model
 
         public DateTime getCompletedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("completedDatetime"))
+            return Convert.ToDateTime(this.getProperty("completedDatetime"));
         }
 
         public void setCompletedDatetime (DateTime completedDatetime)

@@ -68,7 +68,7 @@ namespace Arbor.Model
 
         public DateTime getAttendancePeriodDate ()
         {
-            return Convert.ToDateTime(this.getProperty("attendancePeriodDate"))
+            return Convert.ToDateTime(this.getProperty("attendancePeriodDate"));
         }
 
         public void setAttendancePeriodDate (DateTime attendancePeriodDate)

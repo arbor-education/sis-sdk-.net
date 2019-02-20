@@ -88,7 +88,7 @@ namespace Arbor.Model
 
         public bool getGoalAchieved ()
         {
-            return Convert.ToBoolean(this.getProperty("goalAchieved"))
+            return Convert.ToBoolean(this.getProperty("goalAchieved"));
         }
 
         public void setGoalAchieved (bool goalAchieved)
@@ -108,7 +108,7 @@ namespace Arbor.Model
 
         public DateTime getPeriodStartDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("periodStartDatetime"))
+            return Convert.ToDateTime(this.getProperty("periodStartDatetime"));
         }
 
         public void setPeriodStartDatetime (DateTime periodStartDatetime)
@@ -118,7 +118,7 @@ namespace Arbor.Model
 
         public DateTime getPeriodEndDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("periodEndDatetime"))
+            return Convert.ToDateTime(this.getProperty("periodEndDatetime"));
         }
 
         public void setPeriodEndDatetime (DateTime periodEndDatetime)
@@ -128,7 +128,7 @@ namespace Arbor.Model
 
         public DateTime getSignedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("signedDatetime"))
+            return Convert.ToDateTime(this.getProperty("signedDatetime"));
         }
 
         public void setSignedDatetime (DateTime signedDatetime)

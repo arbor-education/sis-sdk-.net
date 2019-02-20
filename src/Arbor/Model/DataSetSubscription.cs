@@ -105,7 +105,7 @@ namespace Arbor.Model
 
         public DateTime getLastUpdatedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("lastUpdatedDatetime"))
+            return Convert.ToDateTime(this.getProperty("lastUpdatedDatetime"));
         }
 
         public void setLastUpdatedDatetime (DateTime lastUpdatedDatetime)

@@ -103,7 +103,7 @@ namespace Arbor.Model
 
         public DateTime getReportCardDate ()
         {
-            return Convert.ToDateTime(this.getProperty("reportCardDate"))
+            return Convert.ToDateTime(this.getProperty("reportCardDate"));
         }
 
         public void setReportCardDate (DateTime reportCardDate)
@@ -123,7 +123,7 @@ namespace Arbor.Model
 
         public DateTime getAssessmentPeriodStartDate ()
         {
-            return Convert.ToDateTime(this.getProperty("assessmentPeriodStartDate"))
+            return Convert.ToDateTime(this.getProperty("assessmentPeriodStartDate"));
         }
 
         public void setAssessmentPeriodStartDate (DateTime assessmentPeriodStartDate)
@@ -133,7 +133,7 @@ namespace Arbor.Model
 
         public DateTime getAssessmentPeriodEndDate ()
         {
-            return Convert.ToDateTime(this.getProperty("assessmentPeriodEndDate"))
+            return Convert.ToDateTime(this.getProperty("assessmentPeriodEndDate"));
         }
 
         public void setAssessmentPeriodEndDate (DateTime assessmentPeriodEndDate)
@@ -143,7 +143,7 @@ namespace Arbor.Model
 
         public DateTime getDueDate ()
         {
-            return Convert.ToDateTime(this.getProperty("dueDate"))
+            return Convert.ToDateTime(this.getProperty("dueDate"));
         }
 
         public void setDueDate (DateTime dueDate)
@@ -163,7 +163,7 @@ namespace Arbor.Model
 
         public bool getIncludeTeacherInitials ()
         {
-            return Convert.ToBoolean(this.getProperty("includeTeacherInitials"))
+            return Convert.ToBoolean(this.getProperty("includeTeacherInitials"));
         }
 
         public void setIncludeTeacherInitials (bool includeTeacherInitials)
@@ -173,7 +173,7 @@ namespace Arbor.Model
 
         public bool getIncludeTeacherName ()
         {
-            return Convert.ToBoolean(this.getProperty("includeTeacherName"))
+            return Convert.ToBoolean(this.getProperty("includeTeacherName"));
         }
 
         public void setIncludeTeacherName (bool includeTeacherName)
@@ -183,7 +183,7 @@ namespace Arbor.Model
 
         public bool getIncludeStudentPhoto ()
         {
-            return Convert.ToBoolean(this.getProperty("includeStudentPhoto"))
+            return Convert.ToBoolean(this.getProperty("includeStudentPhoto"));
         }
 
         public void setIncludeStudentPhoto (bool includeStudentPhoto)
@@ -193,7 +193,7 @@ namespace Arbor.Model
 
         public bool getIncludeBaseline ()
         {
-            return Convert.ToBoolean(this.getProperty("includeBaseline"))
+            return Convert.ToBoolean(this.getProperty("includeBaseline"));
         }
 
         public void setIncludeBaseline (bool includeBaseline)
@@ -203,7 +203,7 @@ namespace Arbor.Model
 
         public bool getIncludeWorkingAtCurrentPeriod ()
         {
-            return Convert.ToBoolean(this.getProperty("includeWorkingAtCurrentPeriod"))
+            return Convert.ToBoolean(this.getProperty("includeWorkingAtCurrentPeriod"));
         }
 
         public void setIncludeWorkingAtCurrentPeriod (bool includeWorkingAtCurrentPeriod)
@@ -213,7 +213,7 @@ namespace Arbor.Model
 
         public bool getIncludeWorkingAtPreviousPeriod ()
         {
-            return Convert.ToBoolean(this.getProperty("includeWorkingAtPreviousPeriod"))
+            return Convert.ToBoolean(this.getProperty("includeWorkingAtPreviousPeriod"));
         }
 
         public void setIncludeWorkingAtPreviousPeriod (bool includeWorkingAtPreviousPeriod)
@@ -233,7 +233,7 @@ namespace Arbor.Model
 
         public bool getIncludeTeacherTarget ()
         {
-            return Convert.ToBoolean(this.getProperty("includeTeacherTarget"))
+            return Convert.ToBoolean(this.getProperty("includeTeacherTarget"));
         }
 
         public void setIncludeTeacherTarget (bool includeTeacherTarget)
@@ -243,7 +243,7 @@ namespace Arbor.Model
 
         public DateTime getFinalizedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("finalizedDatetime"))
+            return Convert.ToDateTime(this.getProperty("finalizedDatetime"));
         }
 
         public void setFinalizedDatetime (DateTime finalizedDatetime)
@@ -253,7 +253,7 @@ namespace Arbor.Model
 
         public bool getFinalizationInProgress ()
         {
-            return Convert.ToBoolean(this.getProperty("finalizationInProgress"))
+            return Convert.ToBoolean(this.getProperty("finalizationInProgress"));
         }
 
         public void setFinalizationInProgress (bool finalizationInProgress)
@@ -263,7 +263,7 @@ namespace Arbor.Model
 
         public bool getSharedWithGuardians ()
         {
-            return Convert.ToBoolean(this.getProperty("sharedWithGuardians"))
+            return Convert.ToBoolean(this.getProperty("sharedWithGuardians"));
         }
 
         public void setSharedWithGuardians (bool sharedWithGuardians)
@@ -293,7 +293,7 @@ namespace Arbor.Model
 
         public bool getShowComments ()
         {
-            return Convert.ToBoolean(this.getProperty("showComments"))
+            return Convert.ToBoolean(this.getProperty("showComments"));
         }
 
         public void setShowComments (bool showComments)

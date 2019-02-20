@@ -72,7 +72,7 @@ namespace Arbor.Model
 
         public DateTime getAssessmentReferenceDate ()
         {
-            return Convert.ToDateTime(this.getProperty("assessmentReferenceDate"))
+            return Convert.ToDateTime(this.getProperty("assessmentReferenceDate"));
         }
 
         public void setAssessmentReferenceDate (DateTime assessmentReferenceDate)

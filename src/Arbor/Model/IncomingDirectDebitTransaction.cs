@@ -121,7 +121,7 @@ namespace Arbor.Model
 
         public DateTime getTransactionInitiatedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("transactionInitiatedDatetime"))
+            return Convert.ToDateTime(this.getProperty("transactionInitiatedDatetime"));
         }
 
         public void setTransactionInitiatedDatetime (DateTime transactionInitiatedDatetime)
@@ -131,7 +131,7 @@ namespace Arbor.Model
 
         public DateTime getTransactionSucceededDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("transactionSucceededDatetime"))
+            return Convert.ToDateTime(this.getProperty("transactionSucceededDatetime"));
         }
 
         public void setTransactionSucceededDatetime (DateTime transactionSucceededDatetime)
@@ -141,7 +141,7 @@ namespace Arbor.Model
 
         public DateTime getTransactionFailedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("transactionFailedDatetime"))
+            return Convert.ToDateTime(this.getProperty("transactionFailedDatetime"));
         }
 
         public void setTransactionFailedDatetime (DateTime transactionFailedDatetime)
@@ -151,7 +151,7 @@ namespace Arbor.Model
 
         public DateTime getTransactionRefundedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("transactionRefundedDatetime"))
+            return Convert.ToDateTime(this.getProperty("transactionRefundedDatetime"));
         }
 
         public void setTransactionRefundedDatetime (DateTime transactionRefundedDatetime)
@@ -161,7 +161,7 @@ namespace Arbor.Model
 
         public DateTime getCancelledDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("cancelledDatetime"))
+            return Convert.ToDateTime(this.getProperty("cancelledDatetime"));
         }
 
         public void setCancelledDatetime (DateTime cancelledDatetime)
@@ -171,7 +171,7 @@ namespace Arbor.Model
 
         public DateTime getCustomerNotificationDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("customerNotificationDatetime"))
+            return Convert.ToDateTime(this.getProperty("customerNotificationDatetime"));
         }
 
         public void setCustomerNotificationDatetime (DateTime customerNotificationDatetime)

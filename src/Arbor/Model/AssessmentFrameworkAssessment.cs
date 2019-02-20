@@ -72,7 +72,7 @@ namespace Arbor.Model
 
         public bool getSetupCompleted ()
         {
-            return Convert.ToBoolean(this.getProperty("setupCompleted"))
+            return Convert.ToBoolean(this.getProperty("setupCompleted"));
         }
 
         public void setSetupCompleted (bool setupCompleted)

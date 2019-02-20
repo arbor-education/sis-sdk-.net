@@ -83,7 +83,7 @@ namespace Arbor.Model
 
         public bool getUseComment ()
         {
-            return Convert.ToBoolean(this.getProperty("useComment"))
+            return Convert.ToBoolean(this.getProperty("useComment"));
         }
 
         public void setUseComment (bool useComment)

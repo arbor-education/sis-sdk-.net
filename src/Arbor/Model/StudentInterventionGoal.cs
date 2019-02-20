@@ -62,7 +62,7 @@ namespace Arbor.Model
 
         public DateTime getTargetDate ()
         {
-            return Convert.ToDateTime(this.getProperty("targetDate"))
+            return Convert.ToDateTime(this.getProperty("targetDate"));
         }
 
         public void setTargetDate (DateTime targetDate)

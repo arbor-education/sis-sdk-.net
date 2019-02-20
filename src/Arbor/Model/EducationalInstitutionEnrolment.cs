@@ -63,7 +63,7 @@ namespace Arbor.Model
 
         public DateTime getEntryDate ()
         {
-            return Convert.ToDateTime(this.getProperty("entryDate"))
+            return Convert.ToDateTime(this.getProperty("entryDate"));
         }
 
         public void setEntryDate (DateTime entryDate)
@@ -73,7 +73,7 @@ namespace Arbor.Model
 
         public DateTime getLeavingDate ()
         {
-            return Convert.ToDateTime(this.getProperty("leavingDate"))
+            return Convert.ToDateTime(this.getProperty("leavingDate"));
         }
 
         public void setLeavingDate (DateTime leavingDate)

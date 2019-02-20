@@ -75,7 +75,7 @@ namespace Arbor.Model
 
         public DateTime getOpenedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("openedDatetime"))
+            return Convert.ToDateTime(this.getProperty("openedDatetime"));
         }
 
         public void setOpenedDatetime (DateTime openedDatetime)
@@ -85,7 +85,7 @@ namespace Arbor.Model
 
         public DateTime getCompletedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("completedDatetime"))
+            return Convert.ToDateTime(this.getProperty("completedDatetime"));
         }
 
         public void setCompletedDatetime (DateTime completedDatetime)
@@ -95,7 +95,7 @@ namespace Arbor.Model
 
         public DateTime getValidatedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("validatedDatetime"))
+            return Convert.ToDateTime(this.getProperty("validatedDatetime"));
         }
 
         public void setValidatedDatetime (DateTime validatedDatetime)
@@ -105,7 +105,7 @@ namespace Arbor.Model
 
         public DateTime getClosedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("closedDatetime"))
+            return Convert.ToDateTime(this.getProperty("closedDatetime"));
         }
 
         public void setClosedDatetime (DateTime closedDatetime)

@@ -92,7 +92,7 @@ namespace Arbor.Model
 
         public DateTime getInvoiceDate ()
         {
-            return Convert.ToDateTime(this.getProperty("invoiceDate"))
+            return Convert.ToDateTime(this.getProperty("invoiceDate"));
         }
 
         public void setInvoiceDate (DateTime invoiceDate)
@@ -102,7 +102,7 @@ namespace Arbor.Model
 
         public DateTime getInvoiceIssuedDate ()
         {
-            return Convert.ToDateTime(this.getProperty("invoiceIssuedDate"))
+            return Convert.ToDateTime(this.getProperty("invoiceIssuedDate"));
         }
 
         public void setInvoiceIssuedDate (DateTime invoiceIssuedDate)
@@ -112,7 +112,7 @@ namespace Arbor.Model
 
         public DateTime getPaymentDueDate ()
         {
-            return Convert.ToDateTime(this.getProperty("paymentDueDate"))
+            return Convert.ToDateTime(this.getProperty("paymentDueDate"));
         }
 
         public void setPaymentDueDate (DateTime paymentDueDate)
@@ -122,7 +122,7 @@ namespace Arbor.Model
 
         public DateTime getFullyPaidDate ()
         {
-            return Convert.ToDateTime(this.getProperty("fullyPaidDate"))
+            return Convert.ToDateTime(this.getProperty("fullyPaidDate"));
         }
 
         public void setFullyPaidDate (DateTime fullyPaidDate)
@@ -172,7 +172,7 @@ namespace Arbor.Model
 
         public DateTime getCancelledDate ()
         {
-            return Convert.ToDateTime(this.getProperty("cancelledDate"))
+            return Convert.ToDateTime(this.getProperty("cancelledDate"));
         }
 
         public void setCancelledDate (DateTime cancelledDate)
@@ -182,7 +182,7 @@ namespace Arbor.Model
 
         public DateTime getReissuedDate ()
         {
-            return Convert.ToDateTime(this.getProperty("reissuedDate"))
+            return Convert.ToDateTime(this.getProperty("reissuedDate"));
         }
 
         public void setReissuedDate (DateTime reissuedDate)

@@ -62,7 +62,7 @@ namespace Arbor.Model
 
         public bool getIsMedical ()
         {
-            return Convert.ToBoolean(this.getProperty("isMedical"))
+            return Convert.ToBoolean(this.getProperty("isMedical"));
         }
 
         public void setIsMedical (bool isMedical)
@@ -72,7 +72,7 @@ namespace Arbor.Model
 
         public bool getIsAcademic ()
         {
-            return Convert.ToBoolean(this.getProperty("isAcademic"))
+            return Convert.ToBoolean(this.getProperty("isAcademic"));
         }
 
         public void setIsAcademic (bool isAcademic)

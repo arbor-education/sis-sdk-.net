@@ -71,7 +71,7 @@ namespace Arbor.Model
 
         public DateTime getEffectiveDate ()
         {
-            return Convert.ToDateTime(this.getProperty("effectiveDate"))
+            return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
         public void setEffectiveDate (DateTime effectiveDate)
@@ -81,7 +81,7 @@ namespace Arbor.Model
 
         public DateTime getEndDate ()
         {
-            return Convert.ToDateTime(this.getProperty("endDate"))
+            return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
         public void setEndDate (DateTime endDate)
@@ -91,7 +91,7 @@ namespace Arbor.Model
 
         public bool getAppliesOnMonday ()
         {
-            return Convert.ToBoolean(this.getProperty("appliesOnMonday"))
+            return Convert.ToBoolean(this.getProperty("appliesOnMonday"));
         }
 
         public void setAppliesOnMonday (bool appliesOnMonday)
@@ -101,7 +101,7 @@ namespace Arbor.Model
 
         public bool getAppliesOnTuesday ()
         {
-            return Convert.ToBoolean(this.getProperty("appliesOnTuesday"))
+            return Convert.ToBoolean(this.getProperty("appliesOnTuesday"));
         }
 
         public void setAppliesOnTuesday (bool appliesOnTuesday)
@@ -111,7 +111,7 @@ namespace Arbor.Model
 
         public bool getAppliesOnWednesday ()
         {
-            return Convert.ToBoolean(this.getProperty("appliesOnWednesday"))
+            return Convert.ToBoolean(this.getProperty("appliesOnWednesday"));
         }
 
         public void setAppliesOnWednesday (bool appliesOnWednesday)
@@ -121,7 +121,7 @@ namespace Arbor.Model
 
         public bool getAppliesOnThursday ()
         {
-            return Convert.ToBoolean(this.getProperty("appliesOnThursday"))
+            return Convert.ToBoolean(this.getProperty("appliesOnThursday"));
         }
 
         public void setAppliesOnThursday (bool appliesOnThursday)
@@ -131,7 +131,7 @@ namespace Arbor.Model
 
         public bool getAppliesOnFriday ()
         {
-            return Convert.ToBoolean(this.getProperty("appliesOnFriday"))
+            return Convert.ToBoolean(this.getProperty("appliesOnFriday"));
         }
 
         public void setAppliesOnFriday (bool appliesOnFriday)
@@ -141,7 +141,7 @@ namespace Arbor.Model
 
         public bool getAppliesOnSaturday ()
         {
-            return Convert.ToBoolean(this.getProperty("appliesOnSaturday"))
+            return Convert.ToBoolean(this.getProperty("appliesOnSaturday"));
         }
 
         public void setAppliesOnSaturday (bool appliesOnSaturday)
@@ -151,7 +151,7 @@ namespace Arbor.Model
 
         public bool getAppliesOnSunday ()
         {
-            return Convert.ToBoolean(this.getProperty("appliesOnSunday"))
+            return Convert.ToBoolean(this.getProperty("appliesOnSunday"));
         }
 
         public void setAppliesOnSunday (bool appliesOnSunday)

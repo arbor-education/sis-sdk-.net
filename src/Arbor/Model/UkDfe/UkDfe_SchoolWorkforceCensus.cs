@@ -66,7 +66,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getActive ()
         {
-            return Convert.ToBoolean(this.getProperty("active"))
+            return Convert.ToBoolean(this.getProperty("active"));
         }
 
         public void setActive (bool active)
@@ -106,7 +106,7 @@ namespace Arbor.Model.UkDfe
 
         public DateTime getCensusReferenceDate ()
         {
-            return Convert.ToDateTime(this.getProperty("censusReferenceDate"))
+            return Convert.ToDateTime(this.getProperty("censusReferenceDate"));
         }
 
         public void setCensusReferenceDate (DateTime censusReferenceDate)
@@ -116,7 +116,7 @@ namespace Arbor.Model.UkDfe
 
         public DateTime getCensusSubmissionDeadlineDate ()
         {
-            return Convert.ToDateTime(this.getProperty("censusSubmissionDeadlineDate"))
+            return Convert.ToDateTime(this.getProperty("censusSubmissionDeadlineDate"));
         }
 
         public void setCensusSubmissionDeadlineDate (DateTime censusSubmissionDeadlineDate)

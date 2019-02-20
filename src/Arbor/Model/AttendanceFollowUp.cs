@@ -67,7 +67,7 @@ namespace Arbor.Model
 
         public DateTime getAttendanceDate ()
         {
-            return Convert.ToDateTime(this.getProperty("attendanceDate"))
+            return Convert.ToDateTime(this.getProperty("attendanceDate"));
         }
 
         public void setAttendanceDate (DateTime attendanceDate)
@@ -77,7 +77,7 @@ namespace Arbor.Model
 
         public DateTime getSendingStartedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("sendingStartedDatetime"))
+            return Convert.ToDateTime(this.getProperty("sendingStartedDatetime"));
         }
 
         public void setSendingStartedDatetime (DateTime sendingStartedDatetime)
@@ -87,7 +87,7 @@ namespace Arbor.Model
 
         public DateTime getEmailSentDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("emailSentDatetime"))
+            return Convert.ToDateTime(this.getProperty("emailSentDatetime"));
         }
 
         public void setEmailSentDatetime (DateTime emailSentDatetime)
@@ -97,7 +97,7 @@ namespace Arbor.Model
 
         public DateTime getEmailFailedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("emailFailedDatetime"))
+            return Convert.ToDateTime(this.getProperty("emailFailedDatetime"));
         }
 
         public void setEmailFailedDatetime (DateTime emailFailedDatetime)
@@ -107,7 +107,7 @@ namespace Arbor.Model
 
         public DateTime getSmsSentDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("smsSentDatetime"))
+            return Convert.ToDateTime(this.getProperty("smsSentDatetime"));
         }
 
         public void setSmsSentDatetime (DateTime smsSentDatetime)
@@ -117,7 +117,7 @@ namespace Arbor.Model
 
         public DateTime getSmsFailedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("smsFailedDatetime"))
+            return Convert.ToDateTime(this.getProperty("smsFailedDatetime"));
         }
 
         public void setSmsFailedDatetime (DateTime smsFailedDatetime)
@@ -127,7 +127,7 @@ namespace Arbor.Model
 
         public DateTime getTelephoneCallDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("telephoneCallDatetime"))
+            return Convert.ToDateTime(this.getProperty("telephoneCallDatetime"));
         }
 
         public void setTelephoneCallDatetime (DateTime telephoneCallDatetime)

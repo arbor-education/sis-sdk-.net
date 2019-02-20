@@ -73,7 +73,7 @@ namespace Arbor.Model
 
         public DateTime getPlannedStartDate ()
         {
-            return Convert.ToDateTime(this.getProperty("plannedStartDate"))
+            return Convert.ToDateTime(this.getProperty("plannedStartDate"));
         }
 
         public void setPlannedStartDate (DateTime plannedStartDate)
@@ -83,7 +83,7 @@ namespace Arbor.Model
 
         public DateTime getPlannedEndDate ()
         {
-            return Convert.ToDateTime(this.getProperty("plannedEndDate"))
+            return Convert.ToDateTime(this.getProperty("plannedEndDate"));
         }
 
         public void setPlannedEndDate (DateTime plannedEndDate)

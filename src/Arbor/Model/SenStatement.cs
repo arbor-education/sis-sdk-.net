@@ -71,7 +71,7 @@ namespace Arbor.Model
 
         public DateTime getDateRequested ()
         {
-            return Convert.ToDateTime(this.getProperty("dateRequested"))
+            return Convert.ToDateTime(this.getProperty("dateRequested"));
         }
 
         public void setDateRequested (DateTime dateRequested)
@@ -81,7 +81,7 @@ namespace Arbor.Model
 
         public DateTime getDateParentConsulted ()
         {
-            return Convert.ToDateTime(this.getProperty("dateParentConsulted"))
+            return Convert.ToDateTime(this.getProperty("dateParentConsulted"));
         }
 
         public void setDateParentConsulted (DateTime dateParentConsulted)
@@ -131,7 +131,7 @@ namespace Arbor.Model
 
         public bool getSubjectToSenTribunal ()
         {
-            return Convert.ToBoolean(this.getProperty("subjectToSenTribunal"))
+            return Convert.ToBoolean(this.getProperty("subjectToSenTribunal"));
         }
 
         public void setSubjectToSenTribunal (bool subjectToSenTribunal)
@@ -151,7 +151,7 @@ namespace Arbor.Model
 
         public DateTime getDateFinalized ()
         {
-            return Convert.ToDateTime(this.getProperty("dateFinalized"))
+            return Convert.ToDateTime(this.getProperty("dateFinalized"));
         }
 
         public void setDateFinalized (DateTime dateFinalized)
@@ -161,7 +161,7 @@ namespace Arbor.Model
 
         public DateTime getDateCeased ()
         {
-            return Convert.ToDateTime(this.getProperty("dateCeased"))
+            return Convert.ToDateTime(this.getProperty("dateCeased"));
         }
 
         public void setDateCeased (DateTime dateCeased)

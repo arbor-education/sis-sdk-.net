@@ -85,7 +85,7 @@ namespace Arbor.Model
 
         public DateTime getStartDate ()
         {
-            return Convert.ToDateTime(this.getProperty("startDate"))
+            return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
         public void setStartDate (DateTime startDate)
@@ -95,7 +95,7 @@ namespace Arbor.Model
 
         public DateTime getScheduledReviewDate ()
         {
-            return Convert.ToDateTime(this.getProperty("scheduledReviewDate"))
+            return Convert.ToDateTime(this.getProperty("scheduledReviewDate"));
         }
 
         public void setScheduledReviewDate (DateTime scheduledReviewDate)
@@ -105,7 +105,7 @@ namespace Arbor.Model
 
         public DateTime getEndDate ()
         {
-            return Convert.ToDateTime(this.getProperty("endDate"))
+            return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
         public void setEndDate (DateTime endDate)

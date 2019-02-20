@@ -76,7 +76,7 @@ namespace Arbor.Model
 
         public DateTime getReferenceDateRangeStartDate ()
         {
-            return Convert.ToDateTime(this.getProperty("referenceDateRangeStartDate"))
+            return Convert.ToDateTime(this.getProperty("referenceDateRangeStartDate"));
         }
 
         public void setReferenceDateRangeStartDate (DateTime referenceDateRangeStartDate)
@@ -86,7 +86,7 @@ namespace Arbor.Model
 
         public DateTime getReferenceDateRangeEndDate ()
         {
-            return Convert.ToDateTime(this.getProperty("referenceDateRangeEndDate"))
+            return Convert.ToDateTime(this.getProperty("referenceDateRangeEndDate"));
         }
 
         public void setReferenceDateRangeEndDate (DateTime referenceDateRangeEndDate)

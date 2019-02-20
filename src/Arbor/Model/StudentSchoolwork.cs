@@ -75,7 +75,7 @@ namespace Arbor.Model
 
         public DateTime getDueDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("dueDatetime"))
+            return Convert.ToDateTime(this.getProperty("dueDatetime"));
         }
 
         public void setDueDatetime (DateTime dueDatetime)
@@ -85,7 +85,7 @@ namespace Arbor.Model
 
         public DateTime getSubmittedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("submittedDatetime"))
+            return Convert.ToDateTime(this.getProperty("submittedDatetime"));
         }
 
         public void setSubmittedDatetime (DateTime submittedDatetime)
@@ -95,7 +95,7 @@ namespace Arbor.Model
 
         public DateTime getMarkingCompletedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("markingCompletedDatetime"))
+            return Convert.ToDateTime(this.getProperty("markingCompletedDatetime"));
         }
 
         public void setMarkingCompletedDatetime (DateTime markingCompletedDatetime)
@@ -105,7 +105,7 @@ namespace Arbor.Model
 
         public DateTime getNotSubmittedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("notSubmittedDatetime"))
+            return Convert.ToDateTime(this.getProperty("notSubmittedDatetime"));
         }
 
         public void setNotSubmittedDatetime (DateTime notSubmittedDatetime)

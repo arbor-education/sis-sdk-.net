@@ -86,7 +86,7 @@ namespace Arbor.Model
 
         public DateTime getIssueDate ()
         {
-            return Convert.ToDateTime(this.getProperty("issueDate"))
+            return Convert.ToDateTime(this.getProperty("issueDate"));
         }
 
         public void setIssueDate (DateTime issueDate)
@@ -96,7 +96,7 @@ namespace Arbor.Model
 
         public DateTime getExpiryDate ()
         {
-            return Convert.ToDateTime(this.getProperty("expiryDate"))
+            return Convert.ToDateTime(this.getProperty("expiryDate"));
         }
 
         public void setExpiryDate (DateTime expiryDate)

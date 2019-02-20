@@ -63,7 +63,7 @@ namespace Arbor.Model
 
         public bool getEligibleForSchoolWorkforceReturn ()
         {
-            return Convert.ToBoolean(this.getProperty("eligibleForSchoolWorkforceReturn"))
+            return Convert.ToBoolean(this.getProperty("eligibleForSchoolWorkforceReturn"));
         }
 
         public void setEligibleForSchoolWorkforceReturn (bool eligibleForSchoolWorkforceReturn)
@@ -73,7 +73,7 @@ namespace Arbor.Model
 
         public bool getQualifiedTeacherStatus ()
         {
-            return Convert.ToBoolean(this.getProperty("qualifiedTeacherStatus"))
+            return Convert.ToBoolean(this.getProperty("qualifiedTeacherStatus"));
         }
 
         public void setQualifiedTeacherStatus (bool qualifiedTeacherStatus)
@@ -83,7 +83,7 @@ namespace Arbor.Model
 
         public bool getQualifiedTeacherLearningAndSkillsStatus ()
         {
-            return Convert.ToBoolean(this.getProperty("qualifiedTeacherLearningAndSkillsStatus"))
+            return Convert.ToBoolean(this.getProperty("qualifiedTeacherLearningAndSkillsStatus"));
         }
 
         public void setQualifiedTeacherLearningAndSkillsStatus (bool qualifiedTeacherLearningAndSkillsStatus)
@@ -93,7 +93,7 @@ namespace Arbor.Model
 
         public bool getEarlyYearsTeacherStatus ()
         {
-            return Convert.ToBoolean(this.getProperty("earlyYearsTeacherStatus"))
+            return Convert.ToBoolean(this.getProperty("earlyYearsTeacherStatus"));
         }
 
         public void setEarlyYearsTeacherStatus (bool earlyYearsTeacherStatus)
@@ -113,7 +113,7 @@ namespace Arbor.Model
 
         public bool getHltaStatus ()
         {
-            return Convert.ToBoolean(this.getProperty("hltaStatus"))
+            return Convert.ToBoolean(this.getProperty("hltaStatus"));
         }
 
         public void setHltaStatus (bool hltaStatus)

@@ -111,7 +111,7 @@ namespace Arbor.Model
 
         public bool getActive ()
         {
-            return Convert.ToBoolean(this.getProperty("active"))
+            return Convert.ToBoolean(this.getProperty("active"));
         }
 
         public void setActive (bool active)
@@ -151,7 +151,7 @@ namespace Arbor.Model
 
         public bool getAppliesToStudents ()
         {
-            return Convert.ToBoolean(this.getProperty("appliesToStudents"))
+            return Convert.ToBoolean(this.getProperty("appliesToStudents"));
         }
 
         public void setAppliesToStudents (bool appliesToStudents)
@@ -161,7 +161,7 @@ namespace Arbor.Model
 
         public bool getAppliesToStaff ()
         {
-            return Convert.ToBoolean(this.getProperty("appliesToStaff"))
+            return Convert.ToBoolean(this.getProperty("appliesToStaff"));
         }
 
         public void setAppliesToStaff (bool appliesToStaff)

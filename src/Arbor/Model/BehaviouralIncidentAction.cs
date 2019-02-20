@@ -83,7 +83,7 @@ namespace Arbor.Model
 
         public bool getIsAutomatic ()
         {
-            return Convert.ToBoolean(this.getProperty("isAutomatic"))
+            return Convert.ToBoolean(this.getProperty("isAutomatic"));
         }
 
         public void setIsAutomatic (bool isAutomatic)

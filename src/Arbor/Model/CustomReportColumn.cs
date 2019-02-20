@@ -128,7 +128,7 @@ namespace Arbor.Model
 
         public bool getLocked ()
         {
-            return Convert.ToBoolean(this.getProperty("locked"))
+            return Convert.ToBoolean(this.getProperty("locked"));
         }
 
         public void setLocked (bool locked)

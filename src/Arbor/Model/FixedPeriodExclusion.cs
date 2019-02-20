@@ -80,7 +80,7 @@ namespace Arbor.Model
 
         public DateTime getFromDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("fromDatetime"))
+            return Convert.ToDateTime(this.getProperty("fromDatetime"));
         }
 
         public void setFromDatetime (DateTime fromDatetime)
@@ -90,7 +90,7 @@ namespace Arbor.Model
 
         public DateTime getUntilDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("untilDatetime"))
+            return Convert.ToDateTime(this.getProperty("untilDatetime"));
         }
 
         public void setUntilDatetime (DateTime untilDatetime)
@@ -120,7 +120,7 @@ namespace Arbor.Model
 
         public DateTime getDecisionDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("decisionDatetime"))
+            return Convert.ToDateTime(this.getProperty("decisionDatetime"));
         }
 
         public void setDecisionDatetime (DateTime decisionDatetime)
@@ -130,7 +130,7 @@ namespace Arbor.Model
 
         public DateTime getNotifiedStudentDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("notifiedStudentDatetime"))
+            return Convert.ToDateTime(this.getProperty("notifiedStudentDatetime"));
         }
 
         public void setNotifiedStudentDatetime (DateTime notifiedStudentDatetime)
@@ -140,7 +140,7 @@ namespace Arbor.Model
 
         public DateTime getNotifiedGuardiansDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("notifiedGuardiansDatetime"))
+            return Convert.ToDateTime(this.getProperty("notifiedGuardiansDatetime"));
         }
 
         public void setNotifiedGuardiansDatetime (DateTime notifiedGuardiansDatetime)

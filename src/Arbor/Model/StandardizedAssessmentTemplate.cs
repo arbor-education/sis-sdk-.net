@@ -73,7 +73,7 @@ namespace Arbor.Model
 
         public DateTime getValidityStartDate ()
         {
-            return Convert.ToDateTime(this.getProperty("validityStartDate"))
+            return Convert.ToDateTime(this.getProperty("validityStartDate"));
         }
 
         public void setValidityStartDate (DateTime validityStartDate)
@@ -83,7 +83,7 @@ namespace Arbor.Model
 
         public DateTime getValidityEndDate ()
         {
-            return Convert.ToDateTime(this.getProperty("validityEndDate"))
+            return Convert.ToDateTime(this.getProperty("validityEndDate"));
         }
 
         public void setValidityEndDate (DateTime validityEndDate)

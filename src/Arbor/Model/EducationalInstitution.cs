@@ -155,7 +155,7 @@ namespace Arbor.Model
 
         public bool getHasChildMotherProvision ()
         {
-            return Convert.ToBoolean(this.getProperty("hasChildMotherProvision"))
+            return Convert.ToBoolean(this.getProperty("hasChildMotherProvision"));
         }
 
         public void setHasChildMotherProvision (bool hasChildMotherProvision)
@@ -165,7 +165,7 @@ namespace Arbor.Model
 
         public bool getHasChildcarePlaces ()
         {
-            return Convert.ToBoolean(this.getProperty("hasChildcarePlaces"))
+            return Convert.ToBoolean(this.getProperty("hasChildcarePlaces"));
         }
 
         public void setHasChildcarePlaces (bool hasChildcarePlaces)
@@ -265,7 +265,7 @@ namespace Arbor.Model
 
         public DateTime getCensusSchoolOpeningDate ()
         {
-            return Convert.ToDateTime(this.getProperty("censusSchoolOpeningDate"))
+            return Convert.ToDateTime(this.getProperty("censusSchoolOpeningDate"));
         }
 
         public void setCensusSchoolOpeningDate (DateTime censusSchoolOpeningDate)
@@ -295,7 +295,7 @@ namespace Arbor.Model
 
         public DateTime getOpeningDate ()
         {
-            return Convert.ToDateTime(this.getProperty("openingDate"))
+            return Convert.ToDateTime(this.getProperty("openingDate"));
         }
 
         public void setOpeningDate (DateTime openingDate)
@@ -305,7 +305,7 @@ namespace Arbor.Model
 
         public DateTime getClosingDate ()
         {
-            return Convert.ToDateTime(this.getProperty("closingDate"))
+            return Convert.ToDateTime(this.getProperty("closingDate"));
         }
 
         public void setClosingDate (DateTime closingDate)

@@ -60,7 +60,7 @@ namespace Arbor.Model
 
         public DateTime getLetterDate ()
         {
-            return Convert.ToDateTime(this.getProperty("letterDate"))
+            return Convert.ToDateTime(this.getProperty("letterDate"));
         }
 
         public void setLetterDate (DateTime letterDate)
@@ -70,7 +70,7 @@ namespace Arbor.Model
 
         public DateTime getReceivedDate ()
         {
-            return Convert.ToDateTime(this.getProperty("receivedDate"))
+            return Convert.ToDateTime(this.getProperty("receivedDate"));
         }
 
         public void setReceivedDate (DateTime receivedDate)
@@ -80,7 +80,7 @@ namespace Arbor.Model
 
         public DateTime getPreparedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("preparedDatetime"))
+            return Convert.ToDateTime(this.getProperty("preparedDatetime"));
         }
 
         public void setPreparedDatetime (DateTime preparedDatetime)
@@ -90,7 +90,7 @@ namespace Arbor.Model
 
         public DateTime getSentDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("sentDatetime"))
+            return Convert.ToDateTime(this.getProperty("sentDatetime"));
         }
 
         public void setSentDatetime (DateTime sentDatetime)
@@ -160,7 +160,7 @@ namespace Arbor.Model
 
         public DateTime getActionRequiredByDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("actionRequiredByDatetime"))
+            return Convert.ToDateTime(this.getProperty("actionRequiredByDatetime"));
         }
 
         public void setActionRequiredByDatetime (DateTime actionRequiredByDatetime)

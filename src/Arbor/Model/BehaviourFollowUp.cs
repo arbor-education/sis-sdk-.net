@@ -73,7 +73,7 @@ namespace Arbor.Model
 
         public DateTime getFollowUpDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("followUpDatetime"))
+            return Convert.ToDateTime(this.getProperty("followUpDatetime"));
         }
 
         public void setFollowUpDatetime (DateTime followUpDatetime)
