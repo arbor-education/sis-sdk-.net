@@ -101,7 +101,7 @@ namespace Arbor.Model
 
         public DateTime getOfferedDate ()
         {
-            return Convert.ToDateTime(this.getProperty("offeredDate"))
+            return Convert.ToDateTime(this.getProperty("offeredDate"));
         }
 
         public void setOfferedDate (DateTime offeredDate)
@@ -111,7 +111,7 @@ namespace Arbor.Model
 
         public DateTime getAcceptedDate ()
         {
-            return Convert.ToDateTime(this.getProperty("acceptedDate"))
+            return Convert.ToDateTime(this.getProperty("acceptedDate"));
         }
 
         public void setAcceptedDate (DateTime acceptedDate)
@@ -121,7 +121,7 @@ namespace Arbor.Model
 
         public DateTime getStartDate ()
         {
-            return Convert.ToDateTime(this.getProperty("startDate"))
+            return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
         public void setStartDate (DateTime startDate)
@@ -141,7 +141,7 @@ namespace Arbor.Model
 
         public DateTime getExpectedEndDate ()
         {
-            return Convert.ToDateTime(this.getProperty("expectedEndDate"))
+            return Convert.ToDateTime(this.getProperty("expectedEndDate"));
         }
 
         public void setExpectedEndDate (DateTime expectedEndDate)
@@ -161,7 +161,7 @@ namespace Arbor.Model
 
         public DateTime getEndDate ()
         {
-            return Convert.ToDateTime(this.getProperty("endDate"))
+            return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
         public void setEndDate (DateTime endDate)

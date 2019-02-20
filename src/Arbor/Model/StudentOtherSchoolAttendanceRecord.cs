@@ -139,7 +139,7 @@ namespace Arbor.Model
 
         public DateTime getAttendanceStartDate ()
         {
-            return Convert.ToDateTime(this.getProperty("attendanceStartDate"))
+            return Convert.ToDateTime(this.getProperty("attendanceStartDate"));
         }
 
         public void setAttendanceStartDate (DateTime attendanceStartDate)

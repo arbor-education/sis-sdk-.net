@@ -86,7 +86,7 @@ namespace Arbor.Model
 
         public DateTime getAgreementStartDate ()
         {
-            return Convert.ToDateTime(this.getProperty("agreementStartDate"))
+            return Convert.ToDateTime(this.getProperty("agreementStartDate"));
         }
 
         public void setAgreementStartDate (DateTime agreementStartDate)
@@ -96,7 +96,7 @@ namespace Arbor.Model
 
         public DateTime getAgreementEndDate ()
         {
-            return Convert.ToDateTime(this.getProperty("agreementEndDate"))
+            return Convert.ToDateTime(this.getProperty("agreementEndDate"));
         }
 
         public void setAgreementEndDate (DateTime agreementEndDate)

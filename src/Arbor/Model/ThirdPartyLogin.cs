@@ -85,7 +85,7 @@ namespace Arbor.Model
 
         public DateTime getVerifiedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("verifiedDatetime"))
+            return Convert.ToDateTime(this.getProperty("verifiedDatetime"));
         }
 
         public void setVerifiedDatetime (DateTime verifiedDatetime)
@@ -95,7 +95,7 @@ namespace Arbor.Model
 
         public DateTime getFailedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("failedDatetime"))
+            return Convert.ToDateTime(this.getProperty("failedDatetime"));
         }
 
         public void setFailedDatetime (DateTime failedDatetime)

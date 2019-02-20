@@ -73,7 +73,7 @@ namespace Arbor.Model
 
         public DateTime getNoteCreatedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("noteCreatedDatetime"))
+            return Convert.ToDateTime(this.getProperty("noteCreatedDatetime"));
         }
 
         public void setNoteCreatedDatetime (DateTime noteCreatedDatetime)
@@ -83,7 +83,7 @@ namespace Arbor.Model
 
         public bool getIsSharedWithGuardians ()
         {
-            return Convert.ToBoolean(this.getProperty("isSharedWithGuardians"))
+            return Convert.ToBoolean(this.getProperty("isSharedWithGuardians"));
         }
 
         public void setIsSharedWithGuardians (bool isSharedWithGuardians)

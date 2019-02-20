@@ -72,7 +72,7 @@ namespace Arbor.Model
 
         public bool getReportsGenerating ()
         {
-            return Convert.ToBoolean(this.getProperty("reportsGenerating"))
+            return Convert.ToBoolean(this.getProperty("reportsGenerating"));
         }
 
         public void setReportsGenerating (bool reportsGenerating)

@@ -63,7 +63,7 @@ namespace Arbor.Model
 
         public DateTime getEffectiveDate ()
         {
-            return Convert.ToDateTime(this.getProperty("effectiveDate"))
+            return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
         public void setEffectiveDate (DateTime effectiveDate)
@@ -73,7 +73,7 @@ namespace Arbor.Model
 
         public DateTime getEndDate ()
         {
-            return Convert.ToDateTime(this.getProperty("endDate"))
+            return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
         public void setEndDate (DateTime endDate)

@@ -80,7 +80,7 @@ namespace Arbor.Model
 
         public DateTime getDateAwarded ()
         {
-            return Convert.ToDateTime(this.getProperty("dateAwarded"))
+            return Convert.ToDateTime(this.getProperty("dateAwarded"));
         }
 
         public void setDateAwarded (DateTime dateAwarded)
@@ -150,7 +150,7 @@ namespace Arbor.Model
 
         public bool getIsVocationalQualification ()
         {
-            return Convert.ToBoolean(this.getProperty("isVocationalQualification"))
+            return Convert.ToBoolean(this.getProperty("isVocationalQualification"));
         }
 
         public void setIsVocationalQualification (bool isVocationalQualification)
@@ -160,7 +160,7 @@ namespace Arbor.Model
 
         public bool getIsVerified ()
         {
-            return Convert.ToBoolean(this.getProperty("isVerified"))
+            return Convert.ToBoolean(this.getProperty("isVerified"));
         }
 
         public void setIsVerified (bool isVerified)

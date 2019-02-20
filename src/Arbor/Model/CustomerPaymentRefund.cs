@@ -65,7 +65,7 @@ namespace Arbor.Model
 
         public DateTime getRefundDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("refundDatetime"))
+            return Convert.ToDateTime(this.getProperty("refundDatetime"));
         }
 
         public void setRefundDatetime (DateTime refundDatetime)
@@ -95,7 +95,7 @@ namespace Arbor.Model
 
         public DateTime getRefundSucceededDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("refundSucceededDatetime"))
+            return Convert.ToDateTime(this.getProperty("refundSucceededDatetime"));
         }
 
         public void setRefundSucceededDatetime (DateTime refundSucceededDatetime)
@@ -105,7 +105,7 @@ namespace Arbor.Model
 
         public DateTime getRefundFailedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("refundFailedDatetime"))
+            return Convert.ToDateTime(this.getProperty("refundFailedDatetime"));
         }
 
         public void setRefundFailedDatetime (DateTime refundFailedDatetime)

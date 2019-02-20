@@ -97,7 +97,7 @@ namespace Arbor.Model
 
         public bool getVoluntaryContribution ()
         {
-            return Convert.ToBoolean(this.getProperty("voluntaryContribution"))
+            return Convert.ToBoolean(this.getProperty("voluntaryContribution"));
         }
 
         public void setVoluntaryContribution (bool voluntaryContribution)
@@ -107,7 +107,7 @@ namespace Arbor.Model
 
         public bool getInstalmentsPermitted ()
         {
-            return Convert.ToBoolean(this.getProperty("instalmentsPermitted"))
+            return Convert.ToBoolean(this.getProperty("instalmentsPermitted"));
         }
 
         public void setInstalmentsPermitted (bool instalmentsPermitted)

@@ -71,7 +71,7 @@ namespace Arbor.Model
 
         public bool getIsRead ()
         {
-            return Convert.ToBoolean(this.getProperty("isRead"))
+            return Convert.ToBoolean(this.getProperty("isRead"));
         }
 
         public void setIsRead (bool isRead)
@@ -101,7 +101,7 @@ namespace Arbor.Model
 
         public DateTime getCreatedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("createdDatetime"))
+            return Convert.ToDateTime(this.getProperty("createdDatetime"));
         }
 
         public void setCreatedDatetime (DateTime createdDatetime)

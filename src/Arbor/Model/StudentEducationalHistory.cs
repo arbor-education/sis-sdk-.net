@@ -75,7 +75,7 @@ namespace Arbor.Model
 
         public DateTime getExpectedEntryDate ()
         {
-            return Convert.ToDateTime(this.getProperty("expectedEntryDate"))
+            return Convert.ToDateTime(this.getProperty("expectedEntryDate"));
         }
 
         public void setExpectedEntryDate (DateTime expectedEntryDate)
@@ -85,7 +85,7 @@ namespace Arbor.Model
 
         public DateTime getActualEntryDate ()
         {
-            return Convert.ToDateTime(this.getProperty("actualEntryDate"))
+            return Convert.ToDateTime(this.getProperty("actualEntryDate"));
         }
 
         public void setActualEntryDate (DateTime actualEntryDate)
@@ -95,7 +95,7 @@ namespace Arbor.Model
 
         public DateTime getLeavingDate ()
         {
-            return Convert.ToDateTime(this.getProperty("leavingDate"))
+            return Convert.ToDateTime(this.getProperty("leavingDate"));
         }
 
         public void setLeavingDate (DateTime leavingDate)

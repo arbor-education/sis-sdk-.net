@@ -138,7 +138,7 @@ namespace Arbor.Model
 
         public bool getIsCustom ()
         {
-            return Convert.ToBoolean(this.getProperty("isCustom"))
+            return Convert.ToBoolean(this.getProperty("isCustom"));
         }
 
         public void setIsCustom (bool isCustom)

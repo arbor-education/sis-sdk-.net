@@ -77,7 +77,7 @@ namespace Arbor.Model
 
         public bool getActive ()
         {
-            return Convert.ToBoolean(this.getProperty("active"))
+            return Convert.ToBoolean(this.getProperty("active"));
         }
 
         public void setActive (bool active)
@@ -227,7 +227,7 @@ namespace Arbor.Model
 
         public DateTime getValidFromDate ()
         {
-            return Convert.ToDateTime(this.getProperty("validFromDate"))
+            return Convert.ToDateTime(this.getProperty("validFromDate"));
         }
 
         public void setValidFromDate (DateTime validFromDate)
@@ -237,7 +237,7 @@ namespace Arbor.Model
 
         public DateTime getValidUntilDate ()
         {
-            return Convert.ToDateTime(this.getProperty("validUntilDate"))
+            return Convert.ToDateTime(this.getProperty("validUntilDate"));
         }
 
         public void setValidUntilDate (DateTime validUntilDate)

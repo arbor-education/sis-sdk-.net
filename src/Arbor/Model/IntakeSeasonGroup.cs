@@ -72,7 +72,7 @@ namespace Arbor.Model
 
         public DateTime getExpectedAdmissionDate ()
         {
-            return Convert.ToDateTime(this.getProperty("expectedAdmissionDate"))
+            return Convert.ToDateTime(this.getProperty("expectedAdmissionDate"));
         }
 
         public void setExpectedAdmissionDate (DateTime expectedAdmissionDate)

@@ -121,7 +121,7 @@ namespace Arbor.Model
 
         public DateTime getResultDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("resultDatetime"))
+            return Convert.ToDateTime(this.getProperty("resultDatetime"));
         }
 
         public void setResultDatetime (DateTime resultDatetime)
@@ -131,7 +131,7 @@ namespace Arbor.Model
 
         public DateTime getEmbargoDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("embargoDatetime"))
+            return Convert.ToDateTime(this.getProperty("embargoDatetime"));
         }
 
         public void setEmbargoDatetime (DateTime embargoDatetime)

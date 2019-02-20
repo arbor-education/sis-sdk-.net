@@ -67,7 +67,7 @@ namespace Arbor.Model
 
         public bool getActive ()
         {
-            return Convert.ToBoolean(this.getProperty("active"))
+            return Convert.ToBoolean(this.getProperty("active"));
         }
 
         public void setActive (bool active)
@@ -127,7 +127,7 @@ namespace Arbor.Model
 
         public bool getCenterAssessed ()
         {
-            return Convert.ToBoolean(this.getProperty("centerAssessed"))
+            return Convert.ToBoolean(this.getProperty("centerAssessed"));
         }
 
         public void setCenterAssessed (bool centerAssessed)

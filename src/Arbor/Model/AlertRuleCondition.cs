@@ -74,7 +74,7 @@ namespace Arbor.Model
 
         public bool getConditionGroup ()
         {
-            return Convert.ToBoolean(this.getProperty("conditionGroup"))
+            return Convert.ToBoolean(this.getProperty("conditionGroup"));
         }
 
         public void setConditionGroup (bool conditionGroup)

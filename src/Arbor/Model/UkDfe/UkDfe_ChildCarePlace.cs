@@ -69,7 +69,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getChildCareOnSite ()
         {
-            return Convert.ToBoolean(this.getProperty("childCareOnSite"))
+            return Convert.ToBoolean(this.getProperty("childCareOnSite"));
         }
 
         public void setChildCareOnSite (bool childCareOnSite)

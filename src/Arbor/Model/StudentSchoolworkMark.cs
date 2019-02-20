@@ -116,7 +116,7 @@ namespace Arbor.Model
 
         public DateTime getMarkDate ()
         {
-            return Convert.ToDateTime(this.getProperty("markDate"))
+            return Convert.ToDateTime(this.getProperty("markDate"));
         }
 
         public void setMarkDate (DateTime markDate)

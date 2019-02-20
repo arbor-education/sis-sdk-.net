@@ -76,7 +76,7 @@ namespace Arbor.Model
 
         public DateTime getLastAccessDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("lastAccessDatetime"))
+            return Convert.ToDateTime(this.getProperty("lastAccessDatetime"));
         }
 
         public void setLastAccessDatetime (DateTime lastAccessDatetime)
@@ -116,7 +116,7 @@ namespace Arbor.Model
 
         public DateTime getSetupCompletedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("setupCompletedDatetime"))
+            return Convert.ToDateTime(this.getProperty("setupCompletedDatetime"));
         }
 
         public void setSetupCompletedDatetime (DateTime setupCompletedDatetime)

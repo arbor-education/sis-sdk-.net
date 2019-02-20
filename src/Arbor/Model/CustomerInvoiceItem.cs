@@ -149,7 +149,7 @@ namespace Arbor.Model
 
         public DateTime getFullyPaidDate ()
         {
-            return Convert.ToDateTime(this.getProperty("fullyPaidDate"))
+            return Convert.ToDateTime(this.getProperty("fullyPaidDate"));
         }
 
         public void setFullyPaidDate (DateTime fullyPaidDate)

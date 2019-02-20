@@ -91,7 +91,7 @@ namespace Arbor.Model
 
         public bool getExecuteOnMonday ()
         {
-            return Convert.ToBoolean(this.getProperty("executeOnMonday"))
+            return Convert.ToBoolean(this.getProperty("executeOnMonday"));
         }
 
         public void setExecuteOnMonday (bool executeOnMonday)
@@ -101,7 +101,7 @@ namespace Arbor.Model
 
         public bool getExecuteOnTuesday ()
         {
-            return Convert.ToBoolean(this.getProperty("executeOnTuesday"))
+            return Convert.ToBoolean(this.getProperty("executeOnTuesday"));
         }
 
         public void setExecuteOnTuesday (bool executeOnTuesday)
@@ -111,7 +111,7 @@ namespace Arbor.Model
 
         public bool getExecuteOnWednesday ()
         {
-            return Convert.ToBoolean(this.getProperty("executeOnWednesday"))
+            return Convert.ToBoolean(this.getProperty("executeOnWednesday"));
         }
 
         public void setExecuteOnWednesday (bool executeOnWednesday)
@@ -121,7 +121,7 @@ namespace Arbor.Model
 
         public bool getExecuteOnThursday ()
         {
-            return Convert.ToBoolean(this.getProperty("executeOnThursday"))
+            return Convert.ToBoolean(this.getProperty("executeOnThursday"));
         }
 
         public void setExecuteOnThursday (bool executeOnThursday)
@@ -131,7 +131,7 @@ namespace Arbor.Model
 
         public bool getExecuteOnFriday ()
         {
-            return Convert.ToBoolean(this.getProperty("executeOnFriday"))
+            return Convert.ToBoolean(this.getProperty("executeOnFriday"));
         }
 
         public void setExecuteOnFriday (bool executeOnFriday)
@@ -141,7 +141,7 @@ namespace Arbor.Model
 
         public bool getExecuteOnSaturday ()
         {
-            return Convert.ToBoolean(this.getProperty("executeOnSaturday"))
+            return Convert.ToBoolean(this.getProperty("executeOnSaturday"));
         }
 
         public void setExecuteOnSaturday (bool executeOnSaturday)
@@ -151,7 +151,7 @@ namespace Arbor.Model
 
         public bool getExecuteOnSunday ()
         {
-            return Convert.ToBoolean(this.getProperty("executeOnSunday"))
+            return Convert.ToBoolean(this.getProperty("executeOnSunday"));
         }
 
         public void setExecuteOnSunday (bool executeOnSunday)
@@ -171,7 +171,7 @@ namespace Arbor.Model
 
         public DateTime getScheduledFromDate ()
         {
-            return Convert.ToDateTime(this.getProperty("scheduledFromDate"))
+            return Convert.ToDateTime(this.getProperty("scheduledFromDate"));
         }
 
         public void setScheduledFromDate (DateTime scheduledFromDate)

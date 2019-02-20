@@ -64,7 +64,7 @@ namespace Arbor.Model
 
         public DateTime getStartDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("startDatetime"))
+            return Convert.ToDateTime(this.getProperty("startDatetime"));
         }
 
         public void setStartDatetime (DateTime startDatetime)
@@ -74,7 +74,7 @@ namespace Arbor.Model
 
         public DateTime getEndDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("endDatetime"))
+            return Convert.ToDateTime(this.getProperty("endDatetime"));
         }
 
         public void setEndDatetime (DateTime endDatetime)
@@ -164,7 +164,7 @@ namespace Arbor.Model
 
         public bool getRequireConsent ()
         {
-            return Convert.ToBoolean(this.getProperty("requireConsent"))
+            return Convert.ToBoolean(this.getProperty("requireConsent"));
         }
 
         public void setRequireConsent (bool requireConsent)
@@ -174,7 +174,7 @@ namespace Arbor.Model
 
         public DateTime getGuardianSignupStartDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("guardianSignupStartDatetime"))
+            return Convert.ToDateTime(this.getProperty("guardianSignupStartDatetime"));
         }
 
         public void setGuardianSignupStartDatetime (DateTime guardianSignupStartDatetime)
@@ -184,7 +184,7 @@ namespace Arbor.Model
 
         public DateTime getGuardianSignupEndDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("guardianSignupEndDatetime"))
+            return Convert.ToDateTime(this.getProperty("guardianSignupEndDatetime"));
         }
 
         public void setGuardianSignupEndDatetime (DateTime guardianSignupEndDatetime)
@@ -194,7 +194,7 @@ namespace Arbor.Model
 
         public bool getFree ()
         {
-            return Convert.ToBoolean(this.getProperty("free"))
+            return Convert.ToBoolean(this.getProperty("free"));
         }
 
         public void setFree (bool free)

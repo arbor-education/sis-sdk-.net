@@ -94,7 +94,7 @@ namespace Arbor.Model
 
         public DateTime getNoteCreatedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("noteCreatedDatetime"))
+            return Convert.ToDateTime(this.getProperty("noteCreatedDatetime"));
         }
 
         public void setNoteCreatedDatetime (DateTime noteCreatedDatetime)

@@ -105,7 +105,7 @@ namespace Arbor.Model
 
         public DateTime getAchievementDate ()
         {
-            return Convert.ToDateTime(this.getProperty("achievementDate"))
+            return Convert.ToDateTime(this.getProperty("achievementDate"));
         }
 
         public void setAchievementDate (DateTime achievementDate)

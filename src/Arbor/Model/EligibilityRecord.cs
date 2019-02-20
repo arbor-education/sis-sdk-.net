@@ -75,7 +75,7 @@ namespace Arbor.Model
 
         public DateTime getStartDate ()
         {
-            return Convert.ToDateTime(this.getProperty("startDate"))
+            return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
         public void setStartDate (DateTime startDate)
@@ -85,7 +85,7 @@ namespace Arbor.Model
 
         public DateTime getEndDate ()
         {
-            return Convert.ToDateTime(this.getProperty("endDate"))
+            return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
         public void setEndDate (DateTime endDate)
@@ -95,7 +95,7 @@ namespace Arbor.Model
 
         public DateTime getLastVerifiedDate ()
         {
-            return Convert.ToDateTime(this.getProperty("lastVerifiedDate"))
+            return Convert.ToDateTime(this.getProperty("lastVerifiedDate"));
         }
 
         public void setLastVerifiedDate (DateTime lastVerifiedDate)
@@ -105,7 +105,7 @@ namespace Arbor.Model
 
         public DateTime getNextCheckDate ()
         {
-            return Convert.ToDateTime(this.getProperty("nextCheckDate"))
+            return Convert.ToDateTime(this.getProperty("nextCheckDate"));
         }
 
         public void setNextCheckDate (DateTime nextCheckDate)

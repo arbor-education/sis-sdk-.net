@@ -107,7 +107,7 @@ namespace Arbor.Model.UkDfe
 
         public DateTime getAssessmentDate ()
         {
-            return Convert.ToDateTime(this.getProperty("assessmentDate"))
+            return Convert.ToDateTime(this.getProperty("assessmentDate"));
         }
 
         public void setAssessmentDate (DateTime assessmentDate)
@@ -117,7 +117,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getImported ()
         {
-            return Convert.ToBoolean(this.getProperty("imported"))
+            return Convert.ToBoolean(this.getProperty("imported"));
         }
 
         public void setImported (bool imported)

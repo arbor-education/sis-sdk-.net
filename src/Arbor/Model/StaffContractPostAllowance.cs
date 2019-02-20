@@ -80,7 +80,7 @@ namespace Arbor.Model
 
         public DateTime getEffectiveDate ()
         {
-            return Convert.ToDateTime(this.getProperty("effectiveDate"))
+            return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
         public void setEffectiveDate (DateTime effectiveDate)
@@ -90,7 +90,7 @@ namespace Arbor.Model
 
         public DateTime getEndDate ()
         {
-            return Convert.ToDateTime(this.getProperty("endDate"))
+            return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
         public void setEndDate (DateTime endDate)
@@ -140,7 +140,7 @@ namespace Arbor.Model
 
         public bool getSuperannuation ()
         {
-            return Convert.ToBoolean(this.getProperty("superannuation"))
+            return Convert.ToBoolean(this.getProperty("superannuation"));
         }
 
         public void setSuperannuation (bool superannuation)
@@ -150,7 +150,7 @@ namespace Arbor.Model
 
         public bool getNiStatus ()
         {
-            return Convert.ToBoolean(this.getProperty("niStatus"))
+            return Convert.ToBoolean(this.getProperty("niStatus"));
         }
 
         public void setNiStatus (bool niStatus)
@@ -160,7 +160,7 @@ namespace Arbor.Model
 
         public bool getBenefitInKind ()
         {
-            return Convert.ToBoolean(this.getProperty("benefitInKind"))
+            return Convert.ToBoolean(this.getProperty("benefitInKind"));
         }
 
         public void setBenefitInKind (bool benefitInKind)

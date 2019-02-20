@@ -67,7 +67,7 @@ namespace Arbor.Model
 
         public DateTime getAbsenceStartDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("absenceStartDatetime"))
+            return Convert.ToDateTime(this.getProperty("absenceStartDatetime"));
         }
 
         public void setAbsenceStartDatetime (DateTime absenceStartDatetime)
@@ -77,7 +77,7 @@ namespace Arbor.Model
 
         public DateTime getAbsenceEndDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("absenceEndDatetime"))
+            return Convert.ToDateTime(this.getProperty("absenceEndDatetime"));
         }
 
         public void setAbsenceEndDatetime (DateTime absenceEndDatetime)
@@ -97,7 +97,7 @@ namespace Arbor.Model
 
         public DateTime getApprovedDate ()
         {
-            return Convert.ToDateTime(this.getProperty("approvedDate"))
+            return Convert.ToDateTime(this.getProperty("approvedDate"));
         }
 
         public void setApprovedDate (DateTime approvedDate)

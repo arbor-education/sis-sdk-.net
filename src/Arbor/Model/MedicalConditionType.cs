@@ -64,7 +64,7 @@ namespace Arbor.Model
 
         public bool getActive ()
         {
-            return Convert.ToBoolean(this.getProperty("active"))
+            return Convert.ToBoolean(this.getProperty("active"));
         }
 
         public void setActive (bool active)
@@ -94,7 +94,7 @@ namespace Arbor.Model
 
         public bool getIsAllergy ()
         {
-            return Convert.ToBoolean(this.getProperty("isAllergy"))
+            return Convert.ToBoolean(this.getProperty("isAllergy"));
         }
 
         public void setIsAllergy (bool isAllergy)

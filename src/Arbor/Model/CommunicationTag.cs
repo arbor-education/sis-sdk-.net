@@ -72,7 +72,7 @@ namespace Arbor.Model
 
         public bool getIsShared ()
         {
-            return Convert.ToBoolean(this.getProperty("isShared"))
+            return Convert.ToBoolean(this.getProperty("isShared"));
         }
 
         public void setIsShared (bool isShared)

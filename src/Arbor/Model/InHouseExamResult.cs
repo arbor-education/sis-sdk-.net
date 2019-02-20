@@ -105,7 +105,7 @@ namespace Arbor.Model
 
         public DateTime getResultDate ()
         {
-            return Convert.ToDateTime(this.getProperty("resultDate"))
+            return Convert.ToDateTime(this.getProperty("resultDate"));
         }
 
         public void setResultDate (DateTime resultDate)

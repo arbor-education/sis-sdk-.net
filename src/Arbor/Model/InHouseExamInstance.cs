@@ -62,7 +62,7 @@ namespace Arbor.Model
 
         public DateTime getExpectedStartDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("expectedStartDatetime"))
+            return Convert.ToDateTime(this.getProperty("expectedStartDatetime"));
         }
 
         public void setExpectedStartDatetime (DateTime expectedStartDatetime)
@@ -72,7 +72,7 @@ namespace Arbor.Model
 
         public DateTime getExpectedEndDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("expectedEndDatetime"))
+            return Convert.ToDateTime(this.getProperty("expectedEndDatetime"));
         }
 
         public void setExpectedEndDatetime (DateTime expectedEndDatetime)

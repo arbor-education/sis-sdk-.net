@@ -153,7 +153,7 @@ namespace Arbor.Model
 
         public DateTime getPrepaymentDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("prepaymentDatetime"))
+            return Convert.ToDateTime(this.getProperty("prepaymentDatetime"));
         }
 
         public void setPrepaymentDatetime (DateTime prepaymentDatetime)
@@ -163,7 +163,7 @@ namespace Arbor.Model
 
         public DateTime getPrepaymentSucceededDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("prepaymentSucceededDatetime"))
+            return Convert.ToDateTime(this.getProperty("prepaymentSucceededDatetime"));
         }
 
         public void setPrepaymentSucceededDatetime (DateTime prepaymentSucceededDatetime)
@@ -173,7 +173,7 @@ namespace Arbor.Model
 
         public DateTime getPrepaymentFailedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("prepaymentFailedDatetime"))
+            return Convert.ToDateTime(this.getProperty("prepaymentFailedDatetime"));
         }
 
         public void setPrepaymentFailedDatetime (DateTime prepaymentFailedDatetime)
@@ -193,7 +193,7 @@ namespace Arbor.Model
 
         public DateTime getPrepaymentCancelledDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("prepaymentCancelledDatetime"))
+            return Convert.ToDateTime(this.getProperty("prepaymentCancelledDatetime"));
         }
 
         public void setPrepaymentCancelledDatetime (DateTime prepaymentCancelledDatetime)

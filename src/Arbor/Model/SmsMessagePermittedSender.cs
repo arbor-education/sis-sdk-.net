@@ -72,7 +72,7 @@ namespace Arbor.Model
 
         public bool getAllow ()
         {
-            return Convert.ToBoolean(this.getProperty("allow"))
+            return Convert.ToBoolean(this.getProperty("allow"));
         }
 
         public void setAllow (bool allow)

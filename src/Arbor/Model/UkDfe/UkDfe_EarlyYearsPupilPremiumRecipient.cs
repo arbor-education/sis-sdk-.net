@@ -64,7 +64,7 @@ namespace Arbor.Model.UkDfe
 
         public DateTime getStartDate ()
         {
-            return Convert.ToDateTime(this.getProperty("startDate"))
+            return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
         public void setStartDate (DateTime startDate)
@@ -74,7 +74,7 @@ namespace Arbor.Model.UkDfe
 
         public DateTime getEndDate ()
         {
-            return Convert.ToDateTime(this.getProperty("endDate"))
+            return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
         public void setEndDate (DateTime endDate)
@@ -84,7 +84,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getRecipientForEconomicReasons ()
         {
-            return Convert.ToBoolean(this.getProperty("recipientForEconomicReasons"))
+            return Convert.ToBoolean(this.getProperty("recipientForEconomicReasons"));
         }
 
         public void setRecipientForEconomicReasons (bool recipientForEconomicReasons)
@@ -94,7 +94,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getRecipientForOtherReasons ()
         {
-            return Convert.ToBoolean(this.getProperty("recipientForOtherReasons"))
+            return Convert.ToBoolean(this.getProperty("recipientForOtherReasons"));
         }
 
         public void setRecipientForOtherReasons (bool recipientForOtherReasons)

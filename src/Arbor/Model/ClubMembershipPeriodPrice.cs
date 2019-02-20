@@ -105,7 +105,7 @@ namespace Arbor.Model
 
         public bool getVariableContribution ()
         {
-            return Convert.ToBoolean(this.getProperty("variableContribution"))
+            return Convert.ToBoolean(this.getProperty("variableContribution"));
         }
 
         public void setVariableContribution (bool variableContribution)

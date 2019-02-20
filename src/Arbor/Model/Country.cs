@@ -69,7 +69,7 @@ namespace Arbor.Model
 
         public bool getActive ()
         {
-            return Convert.ToBoolean(this.getProperty("active"))
+            return Convert.ToBoolean(this.getProperty("active"));
         }
 
         public void setActive (bool active)
@@ -149,7 +149,7 @@ namespace Arbor.Model
 
         public bool getAppliesToPostalAddress ()
         {
-            return Convert.ToBoolean(this.getProperty("appliesToPostalAddress"))
+            return Convert.ToBoolean(this.getProperty("appliesToPostalAddress"));
         }
 
         public void setAppliesToPostalAddress (bool appliesToPostalAddress)

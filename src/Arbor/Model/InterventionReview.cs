@@ -64,7 +64,7 @@ namespace Arbor.Model
 
         public DateTime getReviewDueDate ()
         {
-            return Convert.ToDateTime(this.getProperty("reviewDueDate"))
+            return Convert.ToDateTime(this.getProperty("reviewDueDate"));
         }
 
         public void setReviewDueDate (DateTime reviewDueDate)
@@ -74,7 +74,7 @@ namespace Arbor.Model
 
         public DateTime getReviewCompletedDate ()
         {
-            return Convert.ToDateTime(this.getProperty("reviewCompletedDate"))
+            return Convert.ToDateTime(this.getProperty("reviewCompletedDate"));
         }
 
         public void setReviewCompletedDate (DateTime reviewCompletedDate)

@@ -64,7 +64,7 @@ namespace Arbor.Model
 
         public DateTime getExceptionDate ()
         {
-            return Convert.ToDateTime(this.getProperty("exceptionDate"))
+            return Convert.ToDateTime(this.getProperty("exceptionDate"));
         }
 
         public void setExceptionDate (DateTime exceptionDate)
@@ -74,7 +74,7 @@ namespace Arbor.Model
 
         public bool getNoEventException ()
         {
-            return Convert.ToBoolean(this.getProperty("noEventException"))
+            return Convert.ToBoolean(this.getProperty("noEventException"));
         }
 
         public void setNoEventException (bool noEventException)
@@ -84,7 +84,7 @@ namespace Arbor.Model
 
         public bool getLocationException ()
         {
-            return Convert.ToBoolean(this.getProperty("locationException"))
+            return Convert.ToBoolean(this.getProperty("locationException"));
         }
 
         public void setLocationException (bool locationException)
@@ -94,7 +94,7 @@ namespace Arbor.Model
 
         public bool getTimeException ()
         {
-            return Convert.ToBoolean(this.getProperty("timeException"))
+            return Convert.ToBoolean(this.getProperty("timeException"));
         }
 
         public void setTimeException (bool timeException)

@@ -83,7 +83,7 @@ namespace Arbor.Model
 
         public DateTime getNoteDate ()
         {
-            return Convert.ToDateTime(this.getProperty("noteDate"))
+            return Convert.ToDateTime(this.getProperty("noteDate"));
         }
 
         public void setNoteDate (DateTime noteDate)

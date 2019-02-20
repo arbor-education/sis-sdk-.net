@@ -172,7 +172,7 @@ namespace Arbor.Model
 
         public DateTime getAuthenticationTokenExpiryDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("authenticationTokenExpiryDatetime"))
+            return Convert.ToDateTime(this.getProperty("authenticationTokenExpiryDatetime"));
         }
 
         public void setAuthenticationTokenExpiryDatetime (DateTime authenticationTokenExpiryDatetime)
@@ -192,7 +192,7 @@ namespace Arbor.Model
 
         public DateTime getLastAccessDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("lastAccessDatetime"))
+            return Convert.ToDateTime(this.getProperty("lastAccessDatetime"));
         }
 
         public void setLastAccessDatetime (DateTime lastAccessDatetime)
@@ -202,7 +202,7 @@ namespace Arbor.Model
 
         public DateTime getPasswordLastChangedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("passwordLastChangedDatetime"))
+            return Convert.ToDateTime(this.getProperty("passwordLastChangedDatetime"));
         }
 
         public void setPasswordLastChangedDatetime (DateTime passwordLastChangedDatetime)
@@ -212,7 +212,7 @@ namespace Arbor.Model
 
         public bool getEnabled ()
         {
-            return Convert.ToBoolean(this.getProperty("enabled"))
+            return Convert.ToBoolean(this.getProperty("enabled"));
         }
 
         public void setEnabled (bool enabled)
@@ -222,7 +222,7 @@ namespace Arbor.Model
 
         public DateTime getVerifiedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("verifiedDatetime"))
+            return Convert.ToDateTime(this.getProperty("verifiedDatetime"));
         }
 
         public void setVerifiedDatetime (DateTime verifiedDatetime)
@@ -232,7 +232,7 @@ namespace Arbor.Model
 
         public DateTime getTermsAcceptedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("termsAcceptedDatetime"))
+            return Convert.ToDateTime(this.getProperty("termsAcceptedDatetime"));
         }
 
         public void setTermsAcceptedDatetime (DateTime termsAcceptedDatetime)
@@ -242,7 +242,7 @@ namespace Arbor.Model
 
         public DateTime getWelcomeMessageDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("welcomeMessageDatetime"))
+            return Convert.ToDateTime(this.getProperty("welcomeMessageDatetime"));
         }
 
         public void setWelcomeMessageDatetime (DateTime welcomeMessageDatetime)

@@ -152,7 +152,7 @@ namespace Arbor.Model
 
         public DateTime getEffectiveDate ()
         {
-            return Convert.ToDateTime(this.getProperty("effectiveDate"))
+            return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
         public void setEffectiveDate (DateTime effectiveDate)
@@ -162,7 +162,7 @@ namespace Arbor.Model
 
         public DateTime getEndDate ()
         {
-            return Convert.ToDateTime(this.getProperty("endDate"))
+            return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
         public void setEndDate (DateTime endDate)
@@ -172,7 +172,7 @@ namespace Arbor.Model
 
         public DateTime getSafeguardedPeriodStartDate ()
         {
-            return Convert.ToDateTime(this.getProperty("safeguardedPeriodStartDate"))
+            return Convert.ToDateTime(this.getProperty("safeguardedPeriodStartDate"));
         }
 
         public void setSafeguardedPeriodStartDate (DateTime safeguardedPeriodStartDate)
@@ -182,7 +182,7 @@ namespace Arbor.Model
 
         public DateTime getSafeguardedPeriodEndDate ()
         {
-            return Convert.ToDateTime(this.getProperty("safeguardedPeriodEndDate"))
+            return Convert.ToDateTime(this.getProperty("safeguardedPeriodEndDate"));
         }
 
         public void setSafeguardedPeriodEndDate (DateTime safeguardedPeriodEndDate)

@@ -81,7 +81,7 @@ namespace Arbor.Model
 
         public bool getHasInverse ()
         {
-            return Convert.ToBoolean(this.getProperty("hasInverse"))
+            return Convert.ToBoolean(this.getProperty("hasInverse"));
         }
 
         public void setHasInverse (bool hasInverse)
@@ -121,7 +121,7 @@ namespace Arbor.Model
 
         public DateTime getEffectiveDate ()
         {
-            return Convert.ToDateTime(this.getProperty("effectiveDate"))
+            return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
         public void setEffectiveDate (DateTime effectiveDate)
@@ -131,7 +131,7 @@ namespace Arbor.Model
 
         public DateTime getEndDate ()
         {
-            return Convert.ToDateTime(this.getProperty("endDate"))
+            return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
         public void setEndDate (DateTime endDate)
@@ -161,7 +161,7 @@ namespace Arbor.Model
 
         public bool getActive ()
         {
-            return Convert.ToBoolean(this.getProperty("active"))
+            return Convert.ToBoolean(this.getProperty("active"));
         }
 
         public void setActive (bool active)

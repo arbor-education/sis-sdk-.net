@@ -149,7 +149,7 @@ namespace Arbor.Model
 
         public DateTime getTransactionInitiatedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("transactionInitiatedDatetime"))
+            return Convert.ToDateTime(this.getProperty("transactionInitiatedDatetime"));
         }
 
         public void setTransactionInitiatedDatetime (DateTime transactionInitiatedDatetime)

@@ -129,7 +129,7 @@ namespace Arbor.Model
 
         public DateTime getReceivedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("receivedDatetime"))
+            return Convert.ToDateTime(this.getProperty("receivedDatetime"));
         }
 
         public void setReceivedDatetime (DateTime receivedDatetime)
@@ -139,7 +139,7 @@ namespace Arbor.Model
 
         public DateTime getReadDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("readDatetime"))
+            return Convert.ToDateTime(this.getProperty("readDatetime"));
         }
 
         public void setReadDatetime (DateTime readDatetime)
@@ -149,7 +149,7 @@ namespace Arbor.Model
 
         public DateTime getActionRequiredByDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("actionRequiredByDatetime"))
+            return Convert.ToDateTime(this.getProperty("actionRequiredByDatetime"));
         }
 
         public void setActionRequiredByDatetime (DateTime actionRequiredByDatetime)

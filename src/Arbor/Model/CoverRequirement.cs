@@ -85,7 +85,7 @@ namespace Arbor.Model
 
         public DateTime getCoverProposedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("coverProposedDatetime"))
+            return Convert.ToDateTime(this.getProperty("coverProposedDatetime"));
         }
 
         public void setCoverProposedDatetime (DateTime coverProposedDatetime)
@@ -95,7 +95,7 @@ namespace Arbor.Model
 
         public DateTime getCoverArrangedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("coverArrangedDatetime"))
+            return Convert.ToDateTime(this.getProperty("coverArrangedDatetime"));
         }
 
         public void setCoverArrangedDatetime (DateTime coverArrangedDatetime)
@@ -105,7 +105,7 @@ namespace Arbor.Model
 
         public DateTime getCoverNotRequiredDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("coverNotRequiredDatetime"))
+            return Convert.ToDateTime(this.getProperty("coverNotRequiredDatetime"));
         }
 
         public void setCoverNotRequiredDatetime (DateTime coverNotRequiredDatetime)

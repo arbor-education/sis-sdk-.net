@@ -149,7 +149,7 @@ namespace Arbor.Model
 
         public DateTime getDate ()
         {
-            return Convert.ToDateTime(this.getProperty("date"))
+            return Convert.ToDateTime(this.getProperty("date"));
         }
 
         public void setDate (DateTime date)

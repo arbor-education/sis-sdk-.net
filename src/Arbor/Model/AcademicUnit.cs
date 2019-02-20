@@ -185,7 +185,7 @@ namespace Arbor.Model
 
         public DateTime getPromotedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("promotedDatetime"))
+            return Convert.ToDateTime(this.getProperty("promotedDatetime"));
         }
 
         public void setPromotedDatetime (DateTime promotedDatetime)
@@ -205,7 +205,7 @@ namespace Arbor.Model
 
         public DateTime getEffectiveDate ()
         {
-            return Convert.ToDateTime(this.getProperty("effectiveDate"))
+            return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
         public void setEffectiveDate (DateTime effectiveDate)
@@ -215,7 +215,7 @@ namespace Arbor.Model
 
         public DateTime getEndDate ()
         {
-            return Convert.ToDateTime(this.getProperty("endDate"))
+            return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
         public void setEndDate (DateTime endDate)
@@ -235,7 +235,7 @@ namespace Arbor.Model
 
         public bool getSelfServiceEnrolment ()
         {
-            return Convert.ToBoolean(this.getProperty("selfServiceEnrolment"))
+            return Convert.ToBoolean(this.getProperty("selfServiceEnrolment"));
         }
 
         public void setSelfServiceEnrolment (bool selfServiceEnrolment)
@@ -295,7 +295,7 @@ namespace Arbor.Model
 
         public bool getIsMainAssessableUnit ()
         {
-            return Convert.ToBoolean(this.getProperty("isMainAssessableUnit"))
+            return Convert.ToBoolean(this.getProperty("isMainAssessableUnit"));
         }
 
         public void setIsMainAssessableUnit (bool isMainAssessableUnit)

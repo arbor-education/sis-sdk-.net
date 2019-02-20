@@ -61,7 +61,7 @@ namespace Arbor.Model
 
         public DateTime getReminderSentDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("reminderSentDatetime"))
+            return Convert.ToDateTime(this.getProperty("reminderSentDatetime"));
         }
 
         public void setReminderSentDatetime (DateTime reminderSentDatetime)

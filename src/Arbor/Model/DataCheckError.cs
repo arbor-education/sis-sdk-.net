@@ -100,7 +100,7 @@ namespace Arbor.Model
 
         public DateTime getReportedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("reportedDatetime"))
+            return Convert.ToDateTime(this.getProperty("reportedDatetime"));
         }
 
         public void setReportedDatetime (DateTime reportedDatetime)
@@ -120,7 +120,7 @@ namespace Arbor.Model
 
         public bool getErrorFixIsMandatory ()
         {
-            return Convert.ToBoolean(this.getProperty("errorFixIsMandatory"))
+            return Convert.ToBoolean(this.getProperty("errorFixIsMandatory"));
         }
 
         public void setErrorFixIsMandatory (bool errorFixIsMandatory)
@@ -130,7 +130,7 @@ namespace Arbor.Model
 
         public DateTime getIgnoredDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("ignoredDatetime"))
+            return Convert.ToDateTime(this.getProperty("ignoredDatetime"));
         }
 
         public void setIgnoredDatetime (DateTime ignoredDatetime)
@@ -140,7 +140,7 @@ namespace Arbor.Model
 
         public DateTime getIgnoredByUser ()
         {
-            return Convert.ToDateTime(this.getProperty("ignoredByUser"))
+            return Convert.ToDateTime(this.getProperty("ignoredByUser"));
         }
 
         public void setIgnoredByUser (DateTime ignoredByUser)
@@ -150,7 +150,7 @@ namespace Arbor.Model
 
         public DateTime getCorrectedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("correctedDatetime"))
+            return Convert.ToDateTime(this.getProperty("correctedDatetime"));
         }
 
         public void setCorrectedDatetime (DateTime correctedDatetime)

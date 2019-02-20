@@ -95,7 +95,7 @@ namespace Arbor.Model
 
         public bool getIsInvigilationRoom ()
         {
-            return Convert.ToBoolean(this.getProperty("isInvigilationRoom"))
+            return Convert.ToBoolean(this.getProperty("isInvigilationRoom"));
         }
 
         public void setIsInvigilationRoom (bool isInvigilationRoom)

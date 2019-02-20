@@ -62,7 +62,7 @@ namespace Arbor.Model
 
         public DateTime getNoticeDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("noticeDatetime"))
+            return Convert.ToDateTime(this.getProperty("noticeDatetime"));
         }
 
         public void setNoticeDatetime (DateTime noticeDatetime)
@@ -72,7 +72,7 @@ namespace Arbor.Model
 
         public DateTime getEndDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("endDatetime"))
+            return Convert.ToDateTime(this.getProperty("endDatetime"));
         }
 
         public void setEndDatetime (DateTime endDatetime)

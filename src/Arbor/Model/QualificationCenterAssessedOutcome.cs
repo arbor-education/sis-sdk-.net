@@ -106,7 +106,7 @@ namespace Arbor.Model
 
         public DateTime getAssessmentDate ()
         {
-            return Convert.ToDateTime(this.getProperty("assessmentDate"))
+            return Convert.ToDateTime(this.getProperty("assessmentDate"));
         }
 
         public void setAssessmentDate (DateTime assessmentDate)

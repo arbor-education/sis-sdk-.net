@@ -103,7 +103,7 @@ namespace Arbor.Model
 
         public DateTime getIssuedDate ()
         {
-            return Convert.ToDateTime(this.getProperty("issuedDate"))
+            return Convert.ToDateTime(this.getProperty("issuedDate"));
         }
 
         public void setIssuedDate (DateTime issuedDate)
@@ -113,7 +113,7 @@ namespace Arbor.Model
 
         public DateTime getStartDate ()
         {
-            return Convert.ToDateTime(this.getProperty("startDate"))
+            return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
         public void setStartDate (DateTime startDate)
@@ -123,7 +123,7 @@ namespace Arbor.Model
 
         public DateTime getExpectedEndDate ()
         {
-            return Convert.ToDateTime(this.getProperty("expectedEndDate"))
+            return Convert.ToDateTime(this.getProperty("expectedEndDate"));
         }
 
         public void setExpectedEndDate (DateTime expectedEndDate)
@@ -133,7 +133,7 @@ namespace Arbor.Model
 
         public DateTime getEndDate ()
         {
-            return Convert.ToDateTime(this.getProperty("endDate"))
+            return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
         public void setEndDate (DateTime endDate)
@@ -193,7 +193,7 @@ namespace Arbor.Model
 
         public DateTime getLastPayReviewDate ()
         {
-            return Convert.ToDateTime(this.getProperty("lastPayReviewDate"))
+            return Convert.ToDateTime(this.getProperty("lastPayReviewDate"));
         }
 
         public void setLastPayReviewDate (DateTime lastPayReviewDate)

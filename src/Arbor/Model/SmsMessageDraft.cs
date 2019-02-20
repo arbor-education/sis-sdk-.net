@@ -89,7 +89,7 @@ namespace Arbor.Model
 
         public bool getCombineMessagesToSameRecipient ()
         {
-            return Convert.ToBoolean(this.getProperty("combineMessagesToSameRecipient"))
+            return Convert.ToBoolean(this.getProperty("combineMessagesToSameRecipient"));
         }
 
         public void setCombineMessagesToSameRecipient (bool combineMessagesToSameRecipient)
@@ -99,7 +99,7 @@ namespace Arbor.Model
 
         public bool getCombineMessagesToSameHousehold ()
         {
-            return Convert.ToBoolean(this.getProperty("combineMessagesToSameHousehold"))
+            return Convert.ToBoolean(this.getProperty("combineMessagesToSameHousehold"));
         }
 
         public void setCombineMessagesToSameHousehold (bool combineMessagesToSameHousehold)
@@ -109,7 +109,7 @@ namespace Arbor.Model
 
         public DateTime getSendingQueuedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("sendingQueuedDatetime"))
+            return Convert.ToDateTime(this.getProperty("sendingQueuedDatetime"));
         }
 
         public void setSendingQueuedDatetime (DateTime sendingQueuedDatetime)
@@ -119,7 +119,7 @@ namespace Arbor.Model
 
         public DateTime getSendingStartedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("sendingStartedDatetime"))
+            return Convert.ToDateTime(this.getProperty("sendingStartedDatetime"));
         }
 
         public void setSendingStartedDatetime (DateTime sendingStartedDatetime)
@@ -129,7 +129,7 @@ namespace Arbor.Model
 
         public DateTime getRecipientsResolvedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("recipientsResolvedDatetime"))
+            return Convert.ToDateTime(this.getProperty("recipientsResolvedDatetime"));
         }
 
         public void setRecipientsResolvedDatetime (DateTime recipientsResolvedDatetime)
@@ -139,7 +139,7 @@ namespace Arbor.Model
 
         public DateTime getSendingCompletedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("sendingCompletedDatetime"))
+            return Convert.ToDateTime(this.getProperty("sendingCompletedDatetime"));
         }
 
         public void setSendingCompletedDatetime (DateTime sendingCompletedDatetime)

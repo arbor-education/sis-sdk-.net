@@ -120,7 +120,7 @@ namespace Arbor.Model
 
         public DateTime getPromotedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("promotedDatetime"))
+            return Convert.ToDateTime(this.getProperty("promotedDatetime"));
         }
 
         public void setPromotedDatetime (DateTime promotedDatetime)

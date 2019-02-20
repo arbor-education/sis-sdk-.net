@@ -149,7 +149,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getHasChildMotherProvision ()
         {
-            return Convert.ToBoolean(this.getProperty("hasChildMotherProvision"))
+            return Convert.ToBoolean(this.getProperty("hasChildMotherProvision"));
         }
 
         public void setHasChildMotherProvision (bool hasChildMotherProvision)
@@ -159,7 +159,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getHasChildcarePlaces ()
         {
-            return Convert.ToBoolean(this.getProperty("hasChildcarePlaces"))
+            return Convert.ToBoolean(this.getProperty("hasChildcarePlaces"));
         }
 
         public void setHasChildcarePlaces (bool hasChildcarePlaces)
@@ -259,7 +259,7 @@ namespace Arbor.Model.UkDfe
 
         public DateTime getCensusSchoolOpeningDate ()
         {
-            return Convert.ToDateTime(this.getProperty("censusSchoolOpeningDate"))
+            return Convert.ToDateTime(this.getProperty("censusSchoolOpeningDate"));
         }
 
         public void setCensusSchoolOpeningDate (DateTime censusSchoolOpeningDate)

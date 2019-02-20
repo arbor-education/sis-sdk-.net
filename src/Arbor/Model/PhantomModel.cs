@@ -72,7 +72,7 @@ namespace Arbor.Model
 
         public DateTime getModelCreatedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("modelCreatedDatetime"))
+            return Convert.ToDateTime(this.getProperty("modelCreatedDatetime"));
         }
 
         public void setModelCreatedDatetime (DateTime modelCreatedDatetime)

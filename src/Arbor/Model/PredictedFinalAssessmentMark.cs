@@ -116,7 +116,7 @@ namespace Arbor.Model
 
         public DateTime getRecordedDate ()
         {
-            return Convert.ToDateTime(this.getProperty("recordedDate"))
+            return Convert.ToDateTime(this.getProperty("recordedDate"));
         }
 
         public void setRecordedDate (DateTime recordedDate)

@@ -116,7 +116,7 @@ namespace Arbor.Model
 
         public bool getParkingAllocationProvided ()
         {
-            return Convert.ToBoolean(this.getProperty("parkingAllocationProvided"))
+            return Convert.ToBoolean(this.getProperty("parkingAllocationProvided"));
         }
 
         public void setParkingAllocationProvided (bool parkingAllocationProvided)

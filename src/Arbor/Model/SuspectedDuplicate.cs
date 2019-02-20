@@ -107,7 +107,7 @@ namespace Arbor.Model
 
         public DateTime getResolvedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("resolvedDatetime"))
+            return Convert.ToDateTime(this.getProperty("resolvedDatetime"));
         }
 
         public void setResolvedDatetime (DateTime resolvedDatetime)

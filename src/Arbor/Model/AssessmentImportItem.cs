@@ -83,7 +83,7 @@ namespace Arbor.Model
 
         public DateTime getImportedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("importedDatetime"))
+            return Convert.ToDateTime(this.getProperty("importedDatetime"));
         }
 
         public void setImportedDatetime (DateTime importedDatetime)

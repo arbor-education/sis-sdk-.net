@@ -76,7 +76,7 @@ namespace Arbor.Model
 
         public DateTime getLodgedDate ()
         {
-            return Convert.ToDateTime(this.getProperty("lodgedDate"))
+            return Convert.ToDateTime(this.getProperty("lodgedDate"));
         }
 
         public void setLodgedDate (DateTime lodgedDate)
@@ -86,7 +86,7 @@ namespace Arbor.Model
 
         public DateTime getWithdrawnDate ()
         {
-            return Convert.ToDateTime(this.getProperty("withdrawnDate"))
+            return Convert.ToDateTime(this.getProperty("withdrawnDate"));
         }
 
         public void setWithdrawnDate (DateTime withdrawnDate)
@@ -96,7 +96,7 @@ namespace Arbor.Model
 
         public DateTime getHearingDate ()
         {
-            return Convert.ToDateTime(this.getProperty("hearingDate"))
+            return Convert.ToDateTime(this.getProperty("hearingDate"));
         }
 
         public void setHearingDate (DateTime hearingDate)
@@ -106,7 +106,7 @@ namespace Arbor.Model
 
         public DateTime getDecisionDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("decisionDatetime"))
+            return Convert.ToDateTime(this.getProperty("decisionDatetime"));
         }
 
         public void setDecisionDatetime (DateTime decisionDatetime)

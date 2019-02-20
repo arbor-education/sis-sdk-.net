@@ -94,7 +94,7 @@ namespace Arbor.Model
 
         public DateTime getRoomChangedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("roomChangedDatetime"))
+            return Convert.ToDateTime(this.getProperty("roomChangedDatetime"));
         }
 
         public void setRoomChangedDatetime (DateTime roomChangedDatetime)

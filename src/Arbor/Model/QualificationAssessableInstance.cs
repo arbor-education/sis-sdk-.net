@@ -73,7 +73,7 @@ namespace Arbor.Model
 
         public bool getActive ()
         {
-            return Convert.ToBoolean(this.getProperty("active"))
+            return Convert.ToBoolean(this.getProperty("active"));
         }
 
         public void setActive (bool active)
@@ -133,7 +133,7 @@ namespace Arbor.Model
 
         public DateTime getStartDateRangeFrom ()
         {
-            return Convert.ToDateTime(this.getProperty("startDateRangeFrom"))
+            return Convert.ToDateTime(this.getProperty("startDateRangeFrom"));
         }
 
         public void setStartDateRangeFrom (DateTime startDateRangeFrom)
@@ -143,7 +143,7 @@ namespace Arbor.Model
 
         public DateTime getStartDateRangeUntil ()
         {
-            return Convert.ToDateTime(this.getProperty("startDateRangeUntil"))
+            return Convert.ToDateTime(this.getProperty("startDateRangeUntil"));
         }
 
         public void setStartDateRangeUntil (DateTime startDateRangeUntil)
@@ -163,7 +163,7 @@ namespace Arbor.Model
 
         public bool getIsCentreSpecifiedTimetable ()
         {
-            return Convert.ToBoolean(this.getProperty("isCentreSpecifiedTimetable"))
+            return Convert.ToBoolean(this.getProperty("isCentreSpecifiedTimetable"));
         }
 
         public void setIsCentreSpecifiedTimetable (bool isCentreSpecifiedTimetable)
@@ -173,7 +173,7 @@ namespace Arbor.Model
 
         public DateTime getCentreSpecifiedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("centreSpecifiedDatetime"))
+            return Convert.ToDateTime(this.getProperty("centreSpecifiedDatetime"));
         }
 
         public void setCentreSpecifiedDatetime (DateTime centreSpecifiedDatetime)
@@ -193,7 +193,7 @@ namespace Arbor.Model
 
         public bool getIsProvisional ()
         {
-            return Convert.ToBoolean(this.getProperty("isProvisional"))
+            return Convert.ToBoolean(this.getProperty("isProvisional"));
         }
 
         public void setIsProvisional (bool isProvisional)

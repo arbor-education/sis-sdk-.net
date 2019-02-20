@@ -127,7 +127,7 @@ namespace Arbor.Model
 
         public bool getIsCalculatedGrade ()
         {
-            return Convert.ToBoolean(this.getProperty("isCalculatedGrade"))
+            return Convert.ToBoolean(this.getProperty("isCalculatedGrade"));
         }
 
         public void setIsCalculatedGrade (bool isCalculatedGrade)

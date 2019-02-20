@@ -102,7 +102,7 @@ namespace Arbor.Model
 
         public DateTime getCallDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("callDatetime"))
+            return Convert.ToDateTime(this.getProperty("callDatetime"));
         }
 
         public void setCallDatetime (DateTime callDatetime)
@@ -182,7 +182,7 @@ namespace Arbor.Model
 
         public DateTime getActionRequiredByDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("actionRequiredByDatetime"))
+            return Convert.ToDateTime(this.getProperty("actionRequiredByDatetime"));
         }
 
         public void setActionRequiredByDatetime (DateTime actionRequiredByDatetime)

@@ -58,7 +58,7 @@ namespace Arbor.Model
 
         public DateTime getStartDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("startDatetime"))
+            return Convert.ToDateTime(this.getProperty("startDatetime"));
         }
 
         public void setStartDatetime (DateTime startDatetime)
@@ -68,7 +68,7 @@ namespace Arbor.Model
 
         public DateTime getEndDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("endDatetime"))
+            return Convert.ToDateTime(this.getProperty("endDatetime"));
         }
 
         public void setEndDatetime (DateTime endDatetime)
@@ -108,7 +108,7 @@ namespace Arbor.Model
 
         public DateTime getRegisterOpenedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("registerOpenedDatetime"))
+            return Convert.ToDateTime(this.getProperty("registerOpenedDatetime"));
         }
 
         public void setRegisterOpenedDatetime (DateTime registerOpenedDatetime)
@@ -118,7 +118,7 @@ namespace Arbor.Model
 
         public DateTime getRegisterClosedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("registerClosedDatetime"))
+            return Convert.ToDateTime(this.getProperty("registerClosedDatetime"));
         }
 
         public void setRegisterClosedDatetime (DateTime registerClosedDatetime)
@@ -128,7 +128,7 @@ namespace Arbor.Model
 
         public DateTime getInvoicedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("invoicedDatetime"))
+            return Convert.ToDateTime(this.getProperty("invoicedDatetime"));
         }
 
         public void setInvoicedDatetime (DateTime invoicedDatetime)

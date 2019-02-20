@@ -63,7 +63,7 @@ namespace Arbor.Model
 
         public DateTime getPayoutDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("payoutDatetime"))
+            return Convert.ToDateTime(this.getProperty("payoutDatetime"));
         }
 
         public void setPayoutDatetime (DateTime payoutDatetime)

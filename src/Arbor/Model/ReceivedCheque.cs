@@ -74,7 +74,7 @@ namespace Arbor.Model
 
         public DateTime getReceivedDate ()
         {
-            return Convert.ToDateTime(this.getProperty("receivedDate"))
+            return Convert.ToDateTime(this.getProperty("receivedDate"));
         }
 
         public void setReceivedDate (DateTime receivedDate)
@@ -84,7 +84,7 @@ namespace Arbor.Model
 
         public DateTime getCancelledDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("cancelledDatetime"))
+            return Convert.ToDateTime(this.getProperty("cancelledDatetime"));
         }
 
         public void setCancelledDatetime (DateTime cancelledDatetime)

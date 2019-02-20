@@ -50,7 +50,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getIsTraineeship ()
         {
-            return Convert.ToBoolean(this.getProperty("isTraineeship"))
+            return Convert.ToBoolean(this.getProperty("isTraineeship"));
         }
 
         public void setIsTraineeship (bool isTraineeship)

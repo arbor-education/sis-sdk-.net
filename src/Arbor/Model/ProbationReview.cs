@@ -63,7 +63,7 @@ namespace Arbor.Model
 
         public DateTime getReviewDate ()
         {
-            return Convert.ToDateTime(this.getProperty("reviewDate"))
+            return Convert.ToDateTime(this.getProperty("reviewDate"));
         }
 
         public void setReviewDate (DateTime reviewDate)

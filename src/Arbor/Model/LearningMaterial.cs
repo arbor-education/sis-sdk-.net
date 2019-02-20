@@ -116,7 +116,7 @@ namespace Arbor.Model
 
         public DateTime getAuthoredDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("authoredDatetime"))
+            return Convert.ToDateTime(this.getProperty("authoredDatetime"));
         }
 
         public void setAuthoredDatetime (DateTime authoredDatetime)

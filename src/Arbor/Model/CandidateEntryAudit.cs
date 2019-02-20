@@ -72,7 +72,7 @@ namespace Arbor.Model
 
         public DateTime getActionDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("actionDatetime"))
+            return Convert.ToDateTime(this.getProperty("actionDatetime"));
         }
 
         public void setActionDatetime (DateTime actionDatetime)

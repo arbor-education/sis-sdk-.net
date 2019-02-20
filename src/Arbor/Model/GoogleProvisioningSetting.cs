@@ -54,7 +54,7 @@ namespace Arbor.Model
 
         public bool getProvisionStaffUsers ()
         {
-            return Convert.ToBoolean(this.getProperty("provisionStaffUsers"))
+            return Convert.ToBoolean(this.getProperty("provisionStaffUsers"));
         }
 
         public void setProvisionStaffUsers (bool provisionStaffUsers)
@@ -64,7 +64,7 @@ namespace Arbor.Model
 
         public bool getProvisionStudentUsers ()
         {
-            return Convert.ToBoolean(this.getProperty("provisionStudentUsers"))
+            return Convert.ToBoolean(this.getProperty("provisionStudentUsers"));
         }
 
         public void setProvisionStudentUsers (bool provisionStudentUsers)
@@ -94,7 +94,7 @@ namespace Arbor.Model
 
         public DateTime getLastSyncDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("lastSyncDatetime"))
+            return Convert.ToDateTime(this.getProperty("lastSyncDatetime"));
         }
 
         public void setLastSyncDatetime (DateTime lastSyncDatetime)

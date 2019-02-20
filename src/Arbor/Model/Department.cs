@@ -72,7 +72,7 @@ namespace Arbor.Model
 
         public bool getIsActive ()
         {
-            return Convert.ToBoolean(this.getProperty("isActive"))
+            return Convert.ToBoolean(this.getProperty("isActive"));
         }
 
         public void setIsActive (bool isActive)

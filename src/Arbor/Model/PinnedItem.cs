@@ -72,7 +72,7 @@ namespace Arbor.Model
 
         public DateTime getPinnedUntilDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("pinnedUntilDatetime"))
+            return Convert.ToDateTime(this.getProperty("pinnedUntilDatetime"));
         }
 
         public void setPinnedUntilDatetime (DateTime pinnedUntilDatetime)

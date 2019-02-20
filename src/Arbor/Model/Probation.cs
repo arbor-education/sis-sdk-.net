@@ -64,7 +64,7 @@ namespace Arbor.Model
 
         public DateTime getStartDate ()
         {
-            return Convert.ToDateTime(this.getProperty("startDate"))
+            return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
         public void setStartDate (DateTime startDate)
@@ -74,7 +74,7 @@ namespace Arbor.Model
 
         public DateTime getOriginalEndDate ()
         {
-            return Convert.ToDateTime(this.getProperty("originalEndDate"))
+            return Convert.ToDateTime(this.getProperty("originalEndDate"));
         }
 
         public void setOriginalEndDate (DateTime originalEndDate)
@@ -84,7 +84,7 @@ namespace Arbor.Model
 
         public DateTime getCurrentEndDate ()
         {
-            return Convert.ToDateTime(this.getProperty("currentEndDate"))
+            return Convert.ToDateTime(this.getProperty("currentEndDate"));
         }
 
         public void setCurrentEndDate (DateTime currentEndDate)

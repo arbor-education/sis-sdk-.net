@@ -64,7 +64,7 @@ namespace Arbor.Model
 
         public DateTime getStartDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("startDatetime"))
+            return Convert.ToDateTime(this.getProperty("startDatetime"));
         }
 
         public void setStartDatetime (DateTime startDatetime)
@@ -74,7 +74,7 @@ namespace Arbor.Model
 
         public DateTime getEndDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("endDatetime"))
+            return Convert.ToDateTime(this.getProperty("endDatetime"));
         }
 
         public void setEndDatetime (DateTime endDatetime)
@@ -84,7 +84,7 @@ namespace Arbor.Model
 
         public DateTime getSelfSchedulingOpensDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("selfSchedulingOpensDatetime"))
+            return Convert.ToDateTime(this.getProperty("selfSchedulingOpensDatetime"));
         }
 
         public void setSelfSchedulingOpensDatetime (DateTime selfSchedulingOpensDatetime)
@@ -94,7 +94,7 @@ namespace Arbor.Model
 
         public DateTime getSelfSchedulingClosesDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("selfSchedulingClosesDatetime"))
+            return Convert.ToDateTime(this.getProperty("selfSchedulingClosesDatetime"));
         }
 
         public void setSelfSchedulingClosesDatetime (DateTime selfSchedulingClosesDatetime)

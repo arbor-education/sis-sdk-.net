@@ -76,7 +76,7 @@ namespace Arbor.Model
 
         public DateTime getInvitationDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("invitationDatetime"))
+            return Convert.ToDateTime(this.getProperty("invitationDatetime"));
         }
 
         public void setInvitationDatetime (DateTime invitationDatetime)
@@ -96,7 +96,7 @@ namespace Arbor.Model
 
         public DateTime getStatusChangedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("statusChangedDatetime"))
+            return Convert.ToDateTime(this.getProperty("statusChangedDatetime"));
         }
 
         public void setStatusChangedDatetime (DateTime statusChangedDatetime)

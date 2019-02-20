@@ -77,7 +77,7 @@ namespace Arbor.Model
 
         public bool getMainProgramme ()
         {
-            return Convert.ToBoolean(this.getProperty("mainProgramme"))
+            return Convert.ToBoolean(this.getProperty("mainProgramme"));
         }
 
         public void setMainProgramme (bool mainProgramme)
@@ -87,7 +87,7 @@ namespace Arbor.Model
 
         public DateTime getPlannedStartDate ()
         {
-            return Convert.ToDateTime(this.getProperty("plannedStartDate"))
+            return Convert.ToDateTime(this.getProperty("plannedStartDate"));
         }
 
         public void setPlannedStartDate (DateTime plannedStartDate)
@@ -97,7 +97,7 @@ namespace Arbor.Model
 
         public DateTime getPlannedEndDate ()
         {
-            return Convert.ToDateTime(this.getProperty("plannedEndDate"))
+            return Convert.ToDateTime(this.getProperty("plannedEndDate"));
         }
 
         public void setPlannedEndDate (DateTime plannedEndDate)
@@ -107,7 +107,7 @@ namespace Arbor.Model
 
         public DateTime getActualEndDate ()
         {
-            return Convert.ToDateTime(this.getProperty("actualEndDate"))
+            return Convert.ToDateTime(this.getProperty("actualEndDate"));
         }
 
         public void setActualEndDate (DateTime actualEndDate)

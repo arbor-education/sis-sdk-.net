@@ -72,7 +72,7 @@ namespace Arbor.Model
 
         public DateTime getSentDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("sentDatetime"))
+            return Convert.ToDateTime(this.getProperty("sentDatetime"));
         }
 
         public void setSentDatetime (DateTime sentDatetime)

@@ -76,7 +76,7 @@ namespace Arbor.Model
 
         public bool getActive ()
         {
-            return Convert.ToBoolean(this.getProperty("active"))
+            return Convert.ToBoolean(this.getProperty("active"));
         }
 
         public void setActive (bool active)
@@ -126,7 +126,7 @@ namespace Arbor.Model
 
         public bool getIsDefaultPresent ()
         {
-            return Convert.ToBoolean(this.getProperty("isDefaultPresent"))
+            return Convert.ToBoolean(this.getProperty("isDefaultPresent"));
         }
 
         public void setIsDefaultPresent (bool isDefaultPresent)
@@ -136,7 +136,7 @@ namespace Arbor.Model
 
         public bool getIsDefaultAbsent ()
         {
-            return Convert.ToBoolean(this.getProperty("isDefaultAbsent"))
+            return Convert.ToBoolean(this.getProperty("isDefaultAbsent"));
         }
 
         public void setIsDefaultAbsent (bool isDefaultAbsent)
@@ -146,7 +146,7 @@ namespace Arbor.Model
 
         public bool getIsDefaultLate ()
         {
-            return Convert.ToBoolean(this.getProperty("isDefaultLate"))
+            return Convert.ToBoolean(this.getProperty("isDefaultLate"));
         }
 
         public void setIsDefaultLate (bool isDefaultLate)
@@ -156,7 +156,7 @@ namespace Arbor.Model
 
         public bool getIsLegalPresent ()
         {
-            return Convert.ToBoolean(this.getProperty("isLegalPresent"))
+            return Convert.ToBoolean(this.getProperty("isLegalPresent"));
         }
 
         public void setIsLegalPresent (bool isLegalPresent)
@@ -166,7 +166,7 @@ namespace Arbor.Model
 
         public bool getIsLegalHolidayLeave ()
         {
-            return Convert.ToBoolean(this.getProperty("isLegalHolidayLeave"))
+            return Convert.ToBoolean(this.getProperty("isLegalHolidayLeave"));
         }
 
         public void setIsLegalHolidayLeave (bool isLegalHolidayLeave)
@@ -176,7 +176,7 @@ namespace Arbor.Model
 
         public bool getIsLegalMedicalLeave ()
         {
-            return Convert.ToBoolean(this.getProperty("isLegalMedicalLeave"))
+            return Convert.ToBoolean(this.getProperty("isLegalMedicalLeave"));
         }
 
         public void setIsLegalMedicalLeave (bool isLegalMedicalLeave)
@@ -186,7 +186,7 @@ namespace Arbor.Model
 
         public bool getIsLegalIllness ()
         {
-            return Convert.ToBoolean(this.getProperty("isLegalIllness"))
+            return Convert.ToBoolean(this.getProperty("isLegalIllness"));
         }
 
         public void setIsLegalIllness (bool isLegalIllness)
@@ -196,7 +196,7 @@ namespace Arbor.Model
 
         public bool getIsPhysicalPresent ()
         {
-            return Convert.ToBoolean(this.getProperty("isPhysicalPresent"))
+            return Convert.ToBoolean(this.getProperty("isPhysicalPresent"));
         }
 
         public void setIsPhysicalPresent (bool isPhysicalPresent)
@@ -206,7 +206,7 @@ namespace Arbor.Model
 
         public bool getIsPhysicalLate ()
         {
-            return Convert.ToBoolean(this.getProperty("isPhysicalLate"))
+            return Convert.ToBoolean(this.getProperty("isPhysicalLate"));
         }
 
         public void setIsPhysicalLate (bool isPhysicalLate)
@@ -216,7 +216,7 @@ namespace Arbor.Model
 
         public bool getIsPhysicalAbsent ()
         {
-            return Convert.ToBoolean(this.getProperty("isPhysicalAbsent"))
+            return Convert.ToBoolean(this.getProperty("isPhysicalAbsent"));
         }
 
         public void setIsPhysicalAbsent (bool isPhysicalAbsent)
@@ -226,7 +226,7 @@ namespace Arbor.Model
 
         public bool getIsPhysicalNotRequired ()
         {
-            return Convert.ToBoolean(this.getProperty("isPhysicalNotRequired"))
+            return Convert.ToBoolean(this.getProperty("isPhysicalNotRequired"));
         }
 
         public void setIsPhysicalNotRequired (bool isPhysicalNotRequired)

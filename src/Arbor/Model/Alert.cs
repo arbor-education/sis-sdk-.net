@@ -94,7 +94,7 @@ namespace Arbor.Model
 
         public DateTime getTriggeredDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("triggeredDatetime"))
+            return Convert.ToDateTime(this.getProperty("triggeredDatetime"));
         }
 
         public void setTriggeredDatetime (DateTime triggeredDatetime)
