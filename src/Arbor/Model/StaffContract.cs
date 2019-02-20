@@ -171,15 +171,6 @@ namespace Arbor.Model
             this.setProperty("staffDestination", staffDestination);
         }
 
-        public StaffLeavingReason getStaffLeavingReason ()
-        {
-            return (StaffLeavingReason) this.getProperty("staffLeavingReason");
-        }
-
-        public void setStaffLeavingReason (StaffLeavingReason staffLeavingReason)
-        {
-            this.setProperty("staffLeavingReason", staffLeavingReason);
-        }
 
         public SuperannuationScheme getSuperannuationScheme ()
         {

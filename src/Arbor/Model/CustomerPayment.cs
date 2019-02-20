@@ -131,15 +131,6 @@ namespace Arbor.Model
             this.setProperty("cashReceipt", cashReceipt);
         }
 
-        public StripeIncomingCardTransaction getStripeIncomingCardTransaction ()
-        {
-            return (StripeIncomingCardTransaction) this.getProperty("stripeIncomingCardTransaction");
-        }
-
-        public void setStripeIncomingCardTransaction (StripeIncomingCardTransaction stripeIncomingCardTransaction)
-        {
-            this.setProperty("stripeIncomingCardTransaction", stripeIncomingCardTransaction);
-        }
 
         public string getPaymentAmount ()
         {

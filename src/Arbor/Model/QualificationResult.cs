@@ -139,15 +139,6 @@ namespace Arbor.Model
             this.setProperty("embargoDatetime", embargoDatetime);
         }
 
-        public QualificationResultImportJob getImportJob ()
-        {
-            return (QualificationResultImportJob) this.getProperty("importJob");
-        }
-
-        public void setImportJob (QualificationResultImportJob importJob)
-        {
-            this.setProperty("importJob", importJob);
-        }
 
         public string getMissingResultReason ()
         {

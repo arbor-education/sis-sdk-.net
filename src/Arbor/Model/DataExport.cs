@@ -100,9 +100,9 @@ namespace Arbor.Model
             return this.getProperty("params").ToString();
         }
 
-        public void setParams (string params)
+        public void setParams (string parameters)
         {
-            this.setProperty("params", params);
+            this.setProperty("params", parameters);
         }
 
         public string getHash ()
