@@ -59,26 +59,26 @@ namespace ArborSdkExamples
             //MainClass.studentUpdateUserTags();
 
             //// Update student
-             //MainClass.studentUpdate();
+            //MainClass.studentUpdate();
 
-            // Create student
+            //// Create student
             //MainClass.studentCreate();
 
-            // Create student with Ukdfe fields
+            //// Create student with Ukdfe fields
             //MainClass.studentCreateWithUkdfeFields();
 
             /************* Ukdfe examples *************/
 
-            // Create local authority
-           // MainClass.localAuthorityCreate();
+            //// Create local authority
+            //MainClass.localAuthorityCreate();
 
-            // Query local authority
-             //MainClass.localAuthorityQuery();
+            //// Query local authority
+            //MainClass.localAuthorityQuery();
 
-            // Retrieve local authority
+            //// Retrieve local authority
             //MainClass.localAuthorityRetrieve();
 
-            //MainClass.studentGetTags();
+            ////MainClass.studentGetTags();
 
             /***************** Change log examples ******************/
 
@@ -86,22 +86,22 @@ namespace ArborSdkExamples
 
             /***************** API Tools examples ******************/
 
-            // Current students
+            //// Current students
             //MainClass.getCurrentStudents();
 
-            // Write attendance marks
+            //// Write attendance marks
             //MainClass.writeAttendanceMarks();
 
-            // Query staff via tagging (find all teachers)
+            //// Query staff via tagging (find all teachers)
             //MainClass.staffQueryViaTagging();
 
-            // Query registration form
-            //MainClass.registrationFormQuery ();
+            //// Query registration form
+            //MainClass.registrationFormQuery();
 
-            // Get eligibility records
-           //MainClass.getEligibilityRecords();
+            //// Get eligibility records
+            //MainClass.getEligibilityRecords();
 
-            // Get student by demographic tag
+            //// Get student by demographic tag
             //MainClass.getStudentByDemographicTag();
 
             #endregion
@@ -355,12 +355,12 @@ namespace ArborSdkExamples
         {
             RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
             ModelBase.setDefaultGateway(gateway);
-
-            Arbor.Model.UkDfe.LocalAuthority model = new Arbor.Model.UkDfe.LocalAuthority();
-            model.setProperty("name", "TestAuthorotah");
-            model.setProperty("shortName", "AuthorotaaAah");
+            Country country = (Country) gateway.retrieve(ResourceType.COUNTRY, "GBR");
+            LocalAuthority model = new LocalAuthority();
+            model.setName("Test local authority");
+            model.setCode("001");
+            model.setCountry(country);
             model.save();
-
             // Display Logic
             Hydrator hydrator = new Hydrator();
             JObject extractedModel = hydrator.extractArray(model);

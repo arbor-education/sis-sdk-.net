@@ -25,9 +25,9 @@ namespace Arbor.Tools.Services
 		public static ModelCollection<Student> getCurrentStudents()
 		{
 			RestGateway gateway = (RestGateway) StudentService.getGateway();
-			ModelCollection<Student> studentCollection = new ModelCollection<Student> ();
+			ModelCollection<Student> studentCollection = new ModelCollection<Student>();
 						
-			SimpleQuery query = new SimpleQuery(ResourceType.SCHOOL_ENROLMENT);
+			SimpleQuery query = new SimpleQuery(ResourceType.ACADEMIC_YEAR_ENROLMENT);
 			string date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 			query.addPropertyFilter("startDate", SimpleQuery.OPERATOR_BEFORE, date);
 			query.addPropertyFilter("endDate", SimpleQuery.OPERATOR_AFTER, date);
@@ -36,12 +36,10 @@ namespace Arbor.Tools.Services
 			
 			// Get students from school enrolment and add to the collection
 			foreach (ModelBase model in collection) {
-				SchoolEnrolment schoolEnrolment = (SchoolEnrolment) model;
-				Student student = schoolEnrolment.getStudent();
-				
+				AcademicYearEnrolment schoolEnrolment = (AcademicYearEnrolment) model;
+				Student student = schoolEnrolment.getStudent();			
         	    studentCollection.add(student);
-        	}
-			
+			}		
 			return studentCollection;
 		}
 		
