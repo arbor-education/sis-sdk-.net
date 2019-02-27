@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Newtonsoft.Json.Linq;
 using Arbor.Api.Gateway;
+using Arbor.Resource;
 
 namespace Arbor.Model
 {

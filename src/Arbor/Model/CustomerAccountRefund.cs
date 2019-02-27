@@ -94,15 +94,6 @@ namespace Arbor.Model
             this.setProperty("transaction", transaction);
         }
 
-        public StripeRefundTransaction getStripeRefundTransaction ()
-        {
-            return (StripeRefundTransaction) this.getProperty("stripeRefundTransaction");
-        }
-
-        public void setStripeRefundTransaction (StripeRefundTransaction stripeRefundTransaction)
-        {
-            this.setProperty("stripeRefundTransaction", stripeRefundTransaction);
-        }
 
         public DateTime getRefundSucceededDatetime ()
         {
