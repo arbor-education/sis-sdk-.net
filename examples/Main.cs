@@ -80,10 +80,6 @@ namespace ArborSdkExamples
 
             ////MainClass.studentGetTags();
 
-            /***************** Change log examples ******************/
-
-            //MainClass.getChanges();
-
             /***************** API Tools examples ******************/
 
             //// Current students
@@ -422,29 +418,6 @@ namespace ArborSdkExamples
             Console.WriteLine("Retrieved model (extracted):" + extractedModel.ToString());
         }
 
-
-        /***************** Change log examples ******************/
-
-        public static void getChanges()
-        {
-            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
-            List<Change> changes = gateway.getChanges(ResourceType.STUDENT, 43322);
-
-            // Display logic
-            Console.WriteLine("Example: get changes. \n");
-            Console.WriteLine("Changes count: " + changes.Count.ToString());
-            Console.WriteLine("Changes: \n");
-
-            foreach (Change change in changes)
-            {
-                string line = " Object: "
-                    + change.getChangedResource().getResourceType()
-                    + ", ID:" + change.getChangedResource().getResourceId().ToString()
-                    + " has been " + change.getChangeType() + "ed";
-                Console.WriteLine(line);
-            }
-        }
-
         /***************** API Tools examples ******************/
 
         public static void getCurrentStudents()
@@ -647,8 +620,6 @@ namespace ArborSdkExamples
             object dateOfBirthTakenByModelBaseCall = firstStudentPerson.getProperty("dateOfBirth");
             DateTime convertedDateTimeByDateTimeCast = Convert.ToDateTime(dateOfBirthTakenByModelBaseCall);
             var sortedListOfStudent = fullPropertyStudentList.OrderBy(t => t.getPerson().getDateOfBirth()).ToList();
-
-            Console.ReadKey();
         }
 
     }//class
