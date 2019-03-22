@@ -39,7 +39,10 @@ namespace ArborSdkExamples
             Console.WriteLine("Arbor SDK EXAMPLES");
 
             #region Test Methods
-
+		    
+            //Graph query
+            MainClass.graphQlQuery();
+		
             //// Retrieve model
             //MainClass.studentRetrieve(ResourceType.STUDENT, "1");
 
@@ -621,6 +624,14 @@ namespace ArborSdkExamples
             DateTime convertedDateTimeByDateTimeCast = Convert.ToDateTime(dateOfBirthTakenByModelBaseCall);
             var sortedListOfStudent = fullPropertyStudentList.OrderBy(t => t.getPerson().getDateOfBirth()).ToList();
         }
+        public static void graphQlQuery(){
+            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
+            JObject query=new JObject();
+            query.Add("query", "{ BusinessRole { businessRole businessRoleName defaultUserRoles { permissionName code } } }");
+            JObject result = gateway.sendRequest("POST", "https://api-sandbox2.uk.arbor.sc/graphql/query", query.ToString(Newtonsoft.Json.Formatting.None));
+            Console.WriteLine(result);
+        }//graphQuery()
+	    
 
     }//class
 }//namespace
