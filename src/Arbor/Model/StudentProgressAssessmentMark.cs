@@ -18,6 +18,7 @@ namespace Arbor.Model
         public const string LOWER_GRADE_POINT_SCALE_VALUE = "lowerGradePointScaleValue";
         public const string UPPER_GRADE_POINT_SCALE_VALUE = "upperGradePointScaleValue";
         public const string STATISTICAL_GRADE_POINT_SCALE_VALUE = "statisticalGradePointScaleValue";
+        public const string ASSESSMENT_MARK_NON_SUBMISSION_REASON = "assessmentMarkNonSubmissionReason";
         public const string ASSESSMENT_DATE = "assessmentDate";
         public const string MARKING_STAFF = "markingStaff";
         public const string COMPLETED_DATETIME = "completedDatetime";
@@ -139,6 +140,16 @@ namespace Arbor.Model
         public void setStatisticalGradePointScaleValue (float statisticalGradePointScaleValue)
         {
             this.setProperty("statisticalGradePointScaleValue", statisticalGradePointScaleValue);
+        }
+
+        public AssessmentMarkNonSubmissionReason getAssessmentMarkNonSubmissionReason ()
+        {
+            return (AssessmentMarkNonSubmissionReason) this.getProperty("assessmentMarkNonSubmissionReason");
+        }
+
+        public void setAssessmentMarkNonSubmissionReason (AssessmentMarkNonSubmissionReason assessmentMarkNonSubmissionReason)
+        {
+            this.setProperty("assessmentMarkNonSubmissionReason", assessmentMarkNonSubmissionReason);
         }
 
         public DateTime getAssessmentDate ()

@@ -113,7 +113,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getXsltError ()
         {
-            return (bool) this.getProperty("xsltError");
+            return Convert.ToBoolean(this.getProperty("xsltError"));
         }
 
         public void setXsltError (bool xsltError)
@@ -123,7 +123,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getDataError ()
         {
-            return (bool) this.getProperty("dataError");
+            return Convert.ToBoolean(this.getProperty("dataError"));
         }
 
         public void setDataError (bool dataError)
@@ -133,7 +133,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getIsDryRun ()
         {
-            return (bool) this.getProperty("isDryRun");
+            return Convert.ToBoolean(this.getProperty("isDryRun"));
         }
 
         public void setIsDryRun (bool isDryRun)
@@ -141,7 +141,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("isDryRun", isDryRun);
         }
 
-        public DateTime getDataExportStartedDatetime (){
+        public DateTime getDataExportStartedDatetime ()
+        {
             return Convert.ToDateTime(this.getProperty("dataExportStartedDatetime"));
         }
 
@@ -150,7 +151,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("dataExportStartedDatetime", dataExportStartedDatetime);
         }
 
-        public DateTime getDataExportCompletedDatetime (){
+        public DateTime getDataExportCompletedDatetime ()
+        {
             return Convert.ToDateTime(this.getProperty("dataExportCompletedDatetime"));
         }
 
@@ -159,7 +161,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("dataExportCompletedDatetime", dataExportCompletedDatetime);
         }
 
-        public DateTime getSchoolApprovedDatetime (){
+        public DateTime getSchoolApprovedDatetime ()
+        {
             return Convert.ToDateTime(this.getProperty("schoolApprovedDatetime"));
         }
 
@@ -168,7 +171,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("schoolApprovedDatetime", schoolApprovedDatetime);
         }
 
-        public DateTime getLocalAuthorityRejectedDatetime (){
+        public DateTime getLocalAuthorityRejectedDatetime ()
+        {
             return Convert.ToDateTime(this.getProperty("localAuthorityRejectedDatetime"));
         }
 
@@ -177,7 +181,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("localAuthorityRejectedDatetime", localAuthorityRejectedDatetime);
         }
 
-        public DateTime getLocalAuthorityAcceptedDatetime (){
+        public DateTime getLocalAuthorityAcceptedDatetime ()
+        {
             return Convert.ToDateTime(this.getProperty("localAuthorityAcceptedDatetime"));
         }
 
@@ -188,7 +193,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getIsStaffContractInformationExcluded ()
         {
-            return (bool) this.getProperty("isStaffContractInformationExcluded");
+            return Convert.ToBoolean(this.getProperty("isStaffContractInformationExcluded"));
         }
 
         public void setIsStaffContractInformationExcluded (bool isStaffContractInformationExcluded)

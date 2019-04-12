@@ -70,7 +70,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("proficiency", proficiency);
         }
 
-        public DateTime getProficiencyDate (){
+        public DateTime getProficiencyDate ()
+        {
             return Convert.ToDateTime(this.getProperty("proficiencyDate"));
         }
 

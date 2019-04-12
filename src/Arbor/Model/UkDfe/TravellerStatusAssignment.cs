@@ -72,7 +72,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("student", student);
         }
 
-        public DateTime getStartDate (){
+        public DateTime getStartDate ()
+        {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
@@ -81,9 +82,10 @@ namespace Arbor.Model.UkDfe
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate (){
+        public DateTime getEndDate ()
+        {
             return Convert.ToDateTime(this.getProperty("endDate"));
-        }                                                  
+        }
 
         public void setEndDate (DateTime endDate)
         {

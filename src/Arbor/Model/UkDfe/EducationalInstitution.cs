@@ -29,6 +29,7 @@ namespace Arbor.Model.UkDfe
         public const string SPECIAL_SCHOOL_MIN_FEMALE_AGE = "specialSchoolMinFemaleAge";
         public const string SPECIAL_SCHOOL_MAX_FEMALE_AGE = "specialSchoolMaxFemaleAge";
         public const string SPECIAL_SCHOOL_SEN_PROVISIONS = "specialSchoolSenProvisions";
+        public const string CENSUS_SCHOOL_OPENING_DATE = "censusSchoolOpeningDate";
 
         public EducationalInstitution ()
         {
@@ -148,7 +149,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getHasChildMotherProvision ()
         {
-            return (bool) this.getProperty("hasChildMotherProvision");
+            return Convert.ToBoolean(this.getProperty("hasChildMotherProvision"));
         }
 
         public void setHasChildMotherProvision (bool hasChildMotherProvision)
@@ -158,7 +159,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getHasChildcarePlaces ()
         {
-            return (bool) this.getProperty("hasChildcarePlaces");
+            return Convert.ToBoolean(this.getProperty("hasChildcarePlaces"));
         }
 
         public void setHasChildcarePlaces (bool hasChildcarePlaces)
@@ -254,6 +255,16 @@ namespace Arbor.Model.UkDfe
         public void setSpecialSchoolSenProvisions (string specialSchoolSenProvisions)
         {
             this.setProperty("specialSchoolSenProvisions", specialSchoolSenProvisions);
+        }
+
+        public DateTime getCensusSchoolOpeningDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("censusSchoolOpeningDate"));
+        }
+
+        public void setCensusSchoolOpeningDate (DateTime censusSchoolOpeningDate)
+        {
+            this.setProperty("censusSchoolOpeningDate", censusSchoolOpeningDate);
         }
 
 

@@ -52,6 +52,15 @@ namespace Arbor.Model
         	return (Alert) gateway.retrieve(ResourceType.ALERT, id);
         }
 
+        public AlertRule getAlertRule ()
+        {
+            return (AlertRule) this.getProperty("alertRule");
+        }
+
+        public void setAlertRule (AlertRule alertRule)
+        {
+            this.setProperty("alertRule", alertRule);
+        }
 
         public string getTriggerEventType ()
         {

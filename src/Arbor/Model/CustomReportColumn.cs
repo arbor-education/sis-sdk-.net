@@ -19,6 +19,7 @@ namespace Arbor.Model
         public const string FORMATTER_CLASS = "formatterClass";
         public const string LOCKED = "locked";
         public const string CUSTOM_LABEL = "customLabel";
+        public const string SUMMARY_ROW_FORMULA_CLASS = "summaryRowFormulaClass";
 
         public CustomReportColumn ()
         {
@@ -144,6 +145,16 @@ namespace Arbor.Model
         public void setCustomLabel (string customLabel)
         {
             this.setProperty("customLabel", customLabel);
+        }
+
+        public string getSummaryRowFormulaClass ()
+        {
+            return this.getProperty("summaryRowFormulaClass").ToString();
+        }
+
+        public void setSummaryRowFormulaClass (string summaryRowFormulaClass)
+        {
+            this.setProperty("summaryRowFormulaClass", summaryRowFormulaClass);
         }
 
 

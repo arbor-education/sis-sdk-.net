@@ -18,6 +18,7 @@ namespace Arbor.Model
         public const string AUTO_CREATE_FOR_STUDENTS = "autoCreateForStudents";
         public const string AUTO_CREATE_FOR_STAFF = "autoCreateForStaff";
         public const string CARD_PAYMENTS_ENABLED = "cardPaymentsEnabled";
+        public const string SHOW_IN_PARENT_PORTAL = "showInParentPortal";
 
         public CustomerAccountType ()
         {
@@ -133,6 +134,16 @@ namespace Arbor.Model
         public void setCardPaymentsEnabled (bool cardPaymentsEnabled)
         {
             this.setProperty("cardPaymentsEnabled", cardPaymentsEnabled);
+        }
+
+        public bool getShowInParentPortal ()
+        {
+            return Convert.ToBoolean(this.getProperty("showInParentPortal"));
+        }
+
+        public void setShowInParentPortal (bool showInParentPortal)
+        {
+            this.setProperty("showInParentPortal", showInParentPortal);
         }
 
 

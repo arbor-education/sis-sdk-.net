@@ -51,7 +51,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getIsMemberOfSenUnit ()
         {
-            return (bool) this.getProperty("isMemberOfSenUnit");
+            return Convert.ToBoolean(this.getProperty("isMemberOfSenUnit"));
         }
 
         public void setIsMemberOfSenUnit (bool isMemberOfSenUnit)
@@ -61,7 +61,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getHasResourcedProvision ()
         {
-            return (bool) this.getProperty("hasResourcedProvision");
+            return Convert.ToBoolean(this.getProperty("hasResourcedProvision"));
         }
 
         public void setHasResourcedProvision (bool hasResourcedProvision)

@@ -93,7 +93,15 @@ namespace Arbor.Model
             this.setProperty("endDate", endDate);
         }
 
+        public HouseAutomaticEnrolment getHouseAutomaticEnrolment ()
+        {
+            return (HouseAutomaticEnrolment) this.getProperty("houseAutomaticEnrolment");
+        }
 
+        public void setHouseAutomaticEnrolment (HouseAutomaticEnrolment houseAutomaticEnrolment)
+        {
+            this.setProperty("houseAutomaticEnrolment", houseAutomaticEnrolment);
+        }
 
         public RegistrationFormMembership getEnrolmentDependency ()
         {
