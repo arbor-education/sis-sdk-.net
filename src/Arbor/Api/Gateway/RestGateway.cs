@@ -21,14 +21,14 @@ namespace Arbor.Api.Gateway
     	public const string HTTP_METHOD_POST 	= "post";
      	public const string HTTP_METHOD_PUT 	= "put";
     	public const string HTTP_METHOD_DELETE 	= "delete";
-		
+
 		private string baseUrl;
 		private string authUser;
 		private string authPassword;
 		private string userAgent;
-		
 
-		public RestGateway (string baseUrl, string authUser, string authPassword, 
+
+		public RestGateway (string baseUrl, string authUser, string authPassword,
 		                    string userAgent = "Arbor .NET SDK")
 		{
 			this.baseUrl 		= baseUrl;
@@ -41,7 +41,7 @@ namespace Arbor.Api.Gateway
 		{
 			PluralizeFilter filterPluralize = new PluralizeFilter();
 	        CamelCaseToDash filterCamelToDash = new CamelCaseToDash();
-			
+
 	        string pluralResource = filterPluralize.filter(model.getResourceType());
 	        string resource = filterCamelToDash.filter(pluralResource).ToLower();
 			Uri url = new Uri(this.baseUrl + "/rest-v2/" + resource);
@@ -55,7 +55,7 @@ namespace Arbor.Api.Gateway
 			Hashtable hResource = new Hashtable();
 			hResource.Add(resourceRoot, arrayRepresentation);
 			hBody.Add("request", hResource);
-			
+
 			string body = JsonConvert.SerializeObject(hBody, Formatting.None);
 
             //Console.WriteLine(hBody.ToString());
@@ -77,7 +77,7 @@ namespace Arbor.Api.Gateway
 
 	        return model;
 		}
-		
+
 		public ModelBase retrieve (string resource, string id)
 		{
 			// Filters
@@ -99,22 +99,22 @@ namespace Arbor.Api.Gateway
 			} else {
 				throw new Exception ("Resource" + resource +" with ID " + id + " could not be retrieved from URL: "  + url);
 			}
-			
+
 			return model;
 		}
-		
+
 		public object instantiateModel(string resourceType)
 		{
 			char delimiter = '_';
 			string modelClass = "";
 			object instance;
-			
+
 			// This is a module resource
 			if (resourceType.IndexOf (delimiter) != -1) {
 				string[] resource = resourceType.Split (delimiter);
 				string modulePrefix = resource [0];
 				string moduleResource = resource [1];
-				
+
 				modelClass = "Arbor.Model." + modulePrefix + "." + moduleResource;
 				Type model = Type.GetType (modelClass);
 				instance = Activator.CreateInstance (model);
@@ -130,15 +130,15 @@ namespace Arbor.Api.Gateway
 
 				instance = Activator.CreateInstance (concreteModelType, resourceType, new Hashtable (), this);
 			}
-			
+
 			return instance;
 		}
-		
+
 		private T Instantiate<T>()
 		{
 			return Activator.CreateInstance<T>();
 		}
-		
+
 		/// <summary>
 		/// Update the specified model.
 		/// </summary>
@@ -156,7 +156,7 @@ namespace Arbor.Api.Gateway
 	        JObject arrayRepresentation = hydrator.extractArray(model);
 
 	        string resourceRoot = lcfirst(model.getResourceType());
-			
+
 			// Property "revisionId" is read-only and cannot be updated
 			if (arrayRepresentation["revisionId"] != null)
 			{
@@ -176,20 +176,20 @@ namespace Arbor.Api.Gateway
 				Hashtable hResource = new Hashtable();
 				hResource.Add(resourceRoot, modelDiff);
 				hBody.Add("request", hResource);
-				
+
 				string body = JsonConvert.SerializeObject(hBody, Formatting.None, new ArborJsonConverter());
 
 				// Send request to the server and perform an update
 				JObject responseRepresentation = this.sendRequest(HTTP_METHOD_PUT.ToString(), url.AbsoluteUri, body);
 				JToken resultingModelRepresentation = new JObject();
-				
+
 				if(responseRepresentation[resourceRoot] != null)
 				{
 					resultingModelRepresentation = responseRepresentation[resourceRoot];
 				} else {
 					throw new Exception("API Error: " + responseRepresentation.ToString());
 				}
-				
+
 				hydrator.hydrateModel(model, (JObject) resultingModelRepresentation);
 			}
 			else
@@ -286,27 +286,27 @@ namespace Arbor.Api.Gateway
 			webReq.Headers.Add ("Authorization", "Basic " + auth);
 			webReq.Method = WebRequestMethods.Http.Get;
 			webReq.AllowAutoRedirect = true;
-			webReq.Proxy = null;
+			// webReq.Proxy = null;
 			webReq.Accept = "application/json";
 			webReq.UserAgent = this.userAgent;
-			
+
 			try
 			{
 				HttpWebResponse response = (HttpWebResponse)webReq.GetResponse ();
 				Stream dataStream = response.GetResponseStream ();
 				StreamReader reader = new StreamReader (dataStream);
 				string serverResponse = reader.ReadToEnd ();
-	
+
 				JObject arrayRepresentation = JObject.Parse (serverResponse);
 				string resource = model.getResourceType ();
 				string resourceRoot = Char.ToLowerInvariant (resource [0]) + resource.Substring (1);
-	
+
 				if (arrayRepresentation [resourceRoot] != null) {
 					Hydrator hydrator = new Hydrator ();
 					hydrator.hydrateModel (model, (JObject) arrayRepresentation [resourceRoot]);
 				} else {
-					throw new Exception ("Resource" + resource 
-					                     +" with ID " + model.getResourceId() 
+					throw new Exception ("Resource" + resource
+					                     +" with ID " + model.getResourceId()
 					                     + " could not be retrieved from URL: "  + url.AbsolutePath);
 				}
 			}
@@ -314,7 +314,7 @@ namespace Arbor.Api.Gateway
 			{
 				throw new ServerErrorException(ex.Message, ex);
 			}
-			
+
 
 			return model;
 		}
@@ -368,7 +368,7 @@ namespace Arbor.Api.Gateway
 				{
 					string sResponse = new StreamReader(ex.Response.GetResponseStream()).ReadToEnd();
 					responsePayload = JObject.Parse(sResponse);
-	
+
 					if (responsePayload["response"] != null)
 					{
 						if (responsePayload["response"]["errors"] != null)
@@ -377,7 +377,7 @@ namespace Arbor.Api.Gateway
 			                string serverMessage = responsePayload["response"]["errors"][0]["message"].ToString();
 			                string serverTrace = responsePayload["response"]["errors"][0]["trace"].ToString();
 							code = ((HttpWebResponse) ex.Response).StatusCode;
-	
+
 							message = "Server threw: " + serverException + " with message: " + serverMessage + " URL=" + url;
 						}
 						else if (responsePayload["response"]["reason"] != null)
@@ -394,7 +394,7 @@ namespace Arbor.Api.Gateway
 						if (responsePayload["status"]["errors"] != null)
 						{
 							string serverException = responsePayload["status"]["errors"].ToString();
-	
+
 							message = "Server threw: " + serverException + " URL=" + url;
 						}
 					}
@@ -428,19 +428,19 @@ namespace Arbor.Api.Gateway
 			text = Char.ToLowerInvariant (text [0]) + text.Substring (1);
 			return text;
 		}
-		
+
 		public object castCollection<T>(ModelCollection<ModelBase> genericCollection)
 		{
 			ModelCollection<T> specificCollection = new ModelCollection<T>();
-			
+
 			foreach(ModelBase element in genericCollection)
 			{
 				specificCollection.add((T)(object)element);
 			}
-			
+
 			return (Object) specificCollection;
 		}
-		
+
 		/// <summary>
 		/// Gets the changes.
 		/// </summary>
@@ -460,23 +460,23 @@ namespace Arbor.Api.Gateway
 		{
 			PluralizeFilter filterPluralize = new PluralizeFilter();
 	        CamelCaseToDash filterCamelToDash = new CamelCaseToDash();
-	
+
 	        string pluralResource = filterPluralize.filter(resourceType);
 	        string resourceSegment = (filterCamelToDash.filter(pluralResource)).ToLower();
-	
+
 	        string uri = this.getBaseUrl() + string.Format("/rest-v2/{0}/changelog?", resourceSegment);
 	        if(fromRevision > 0)
 	        {
 	            uri += string.Format("fromRevision={0}&", fromRevision);
 	        }
-	
+
 	        if(toRevision > -1)
 	        {
 	            uri += string.Format("toRevision={0}&", toRevision);
 	        }
-	
+
 	        JObject arrayRepresentation = this.sendRequest(HTTP_METHOD_GET, uri);
-	
+
 	        List<Change> changes = new List<Change>();
 	        if(arrayRepresentation["changes"] != null)
 	        {
@@ -556,4 +556,3 @@ namespace Arbor.Api.Gateway
 		}
 	}
 }
-
