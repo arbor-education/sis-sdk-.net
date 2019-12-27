@@ -22,6 +22,7 @@ namespace Arbor.Model.UkDfe
         public const string SCHOOL_LUNCH_TAKEN_STUDENT_IDS = "schoolLunchTakenStudentIds";
         public const string PART_TIME_STUDENT_JSON = "partTimeStudentJson";
         public const string QUALIFICATION_RESULTS_JSON = "qualificationResultsJson";
+        public const string PREVIOUS_YEAR_QUALIFICATION_RESULTS_JSON = "previousYearQualificationResultsJson";
 
         public UkDfe_SchoolCensusSchoolDetail ()
         {
@@ -177,6 +178,16 @@ namespace Arbor.Model.UkDfe
         public void setQualificationResultsJson (string qualificationResultsJson)
         {
             this.setProperty("qualificationResultsJson", qualificationResultsJson);
+        }
+
+        public string getPreviousYearQualificationResultsJson ()
+        {
+            return this.getProperty("previousYearQualificationResultsJson").ToString();
+        }
+
+        public void setPreviousYearQualificationResultsJson (string previousYearQualificationResultsJson)
+        {
+            this.setProperty("previousYearQualificationResultsJson", previousYearQualificationResultsJson);
         }
 
 

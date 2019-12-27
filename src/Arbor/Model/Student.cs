@@ -28,6 +28,7 @@ namespace Arbor.Model
         public const string HANDEDNESS = "handedness";
         public const string STUDENT_NUMBER = "studentNumber";
         public const string LEGACY_SYSTEM_ID = "legacySystemId";
+        public const string MINIMUM_DATA_RETENTION_DATE = "minimumDataRetentionDate";
 
         public Student ()
         {
@@ -243,6 +244,16 @@ namespace Arbor.Model
         public void setLegacySystemId (string legacySystemId)
         {
             this.setProperty("legacySystemId", legacySystemId);
+        }
+
+        public DateTime getMinimumDataRetentionDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("minimumDataRetentionDate"));
+        }
+
+        public void setMinimumDataRetentionDate (DateTime minimumDataRetentionDate)
+        {
+            this.setProperty("minimumDataRetentionDate", minimumDataRetentionDate);
         }
 
 

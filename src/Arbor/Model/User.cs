@@ -33,6 +33,8 @@ namespace Arbor.Model
         public const string DELETED_ENTITY_TYPE = "deletedEntityType";
         public const string DELETED_OBJECT_ID = "deletedObjectId";
         public const string DELETED_DISPLAY_NAME = "deletedDisplayName";
+        public const string GOOGLE_TWO_FACTOR_SECRET = "googleTwoFactorSecret";
+        public const string SSO_TWO_FACTOR_ACTIVATED = "ssoTwoFactorActivated";
 
         public User ()
         {
@@ -298,6 +300,26 @@ namespace Arbor.Model
         public void setDeletedDisplayName (string deletedDisplayName)
         {
             this.setProperty("deletedDisplayName", deletedDisplayName);
+        }
+
+        public string getGoogleTwoFactorSecret ()
+        {
+            return this.getProperty("googleTwoFactorSecret").ToString();
+        }
+
+        public void setGoogleTwoFactorSecret (string googleTwoFactorSecret)
+        {
+            this.setProperty("googleTwoFactorSecret", googleTwoFactorSecret);
+        }
+
+        public bool getSsoTwoFactorActivated ()
+        {
+            return Convert.ToBoolean(this.getProperty("ssoTwoFactorActivated"));
+        }
+
+        public void setSsoTwoFactorActivated (bool ssoTwoFactorActivated)
+        {
+            this.setProperty("ssoTwoFactorActivated", ssoTwoFactorActivated);
         }
 
 

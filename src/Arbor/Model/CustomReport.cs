@@ -17,6 +17,7 @@ namespace Arbor.Model
         public const string LAST_DB_TIME = "lastDbTime";
         public const string LAST_TOTAL_TIME = "lastTotalTime";
         public const string SETUP_COMPLETED_DATETIME = "setupCompletedDatetime";
+        public const string TRANSIENT = "transient";
 
         public CustomReport ()
         {
@@ -122,6 +123,16 @@ namespace Arbor.Model
         public void setSetupCompletedDatetime (DateTime setupCompletedDatetime)
         {
             this.setProperty("setupCompletedDatetime", setupCompletedDatetime);
+        }
+
+        public bool getTransient ()
+        {
+            return Convert.ToBoolean(this.getProperty("transient"));
+        }
+
+        public void setTransient (bool transient)
+        {
+            this.setProperty("transient", transient);
         }
 
 

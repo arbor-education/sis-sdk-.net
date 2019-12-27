@@ -12,6 +12,7 @@ namespace Arbor.Model
         protected string resourceType = ResourceType.QUALIFICATION_AWARD_LEARNING_UNIT;
         public const string QUALIFICATION_AWARD = "qualificationAward";
         public const string QUALIFICATION_LEARNING_UNIT = "qualificationLearningUnit";
+        public const string IS_USER_DEFINED = "isUserDefined";
 
         public QualificationAwardLearningUnit ()
         {
@@ -67,6 +68,16 @@ namespace Arbor.Model
         public void setQualificationLearningUnit (QualificationLearningUnit qualificationLearningUnit)
         {
             this.setProperty("qualificationLearningUnit", qualificationLearningUnit);
+        }
+
+        public bool getIsUserDefined ()
+        {
+            return Convert.ToBoolean(this.getProperty("isUserDefined"));
+        }
+
+        public void setIsUserDefined (bool isUserDefined)
+        {
+            this.setProperty("isUserDefined", isUserDefined);
         }
 
 

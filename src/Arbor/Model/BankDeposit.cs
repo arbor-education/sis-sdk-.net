@@ -16,6 +16,7 @@ namespace Arbor.Model
         public const string TOTAL_CHEQUE_AMOUNT = "totalChequeAmount";
         public const string TOTAL_CASH_AMOUNT = "totalCashAmount";
         public const string DEPOSIT_REFERENCE = "depositReference";
+        public const string REFUND_ADJUSTMENT_AMOUNT = "refundAdjustmentAmount";
 
         public BankDeposit ()
         {
@@ -111,6 +112,16 @@ namespace Arbor.Model
         public void setDepositReference (string depositReference)
         {
             this.setProperty("depositReference", depositReference);
+        }
+
+        public string getRefundAdjustmentAmount ()
+        {
+            return this.getProperty("refundAdjustmentAmount").ToString();
+        }
+
+        public void setRefundAdjustmentAmount (string refundAdjustmentAmount)
+        {
+            this.setProperty("refundAdjustmentAmount", refundAdjustmentAmount);
         }
 
 

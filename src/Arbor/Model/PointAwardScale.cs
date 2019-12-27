@@ -20,6 +20,9 @@ namespace Arbor.Model
         public const string MIN_POINT_AWARD = "minPointAward";
         public const string MAX_POINT_AWARD = "maxPointAward";
         public const string DIRECTIONALITY = "directionality";
+        public const string SHOW_IN_PARENT_PORTAL = "showInParentPortal";
+        public const string SHOW_NARRATIVE_IN_PARENT_PORTAL = "showNarrativeInParentPortal";
+        public const string SHOW_AWARDED_BY_IN_PARENT_PORTAL = "showAwardedByInParentPortal";
 
         public PointAwardScale ()
         {
@@ -155,6 +158,36 @@ namespace Arbor.Model
         public void setDirectionality (string directionality)
         {
             this.setProperty("directionality", directionality);
+        }
+
+        public bool getShowInParentPortal ()
+        {
+            return Convert.ToBoolean(this.getProperty("showInParentPortal"));
+        }
+
+        public void setShowInParentPortal (bool showInParentPortal)
+        {
+            this.setProperty("showInParentPortal", showInParentPortal);
+        }
+
+        public bool getShowNarrativeInParentPortal ()
+        {
+            return Convert.ToBoolean(this.getProperty("showNarrativeInParentPortal"));
+        }
+
+        public void setShowNarrativeInParentPortal (bool showNarrativeInParentPortal)
+        {
+            this.setProperty("showNarrativeInParentPortal", showNarrativeInParentPortal);
+        }
+
+        public bool getShowAwardedByInParentPortal ()
+        {
+            return Convert.ToBoolean(this.getProperty("showAwardedByInParentPortal"));
+        }
+
+        public void setShowAwardedByInParentPortal (bool showAwardedByInParentPortal)
+        {
+            this.setProperty("showAwardedByInParentPortal", showAwardedByInParentPortal);
         }
 
 
