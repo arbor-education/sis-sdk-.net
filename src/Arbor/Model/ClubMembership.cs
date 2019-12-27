@@ -16,8 +16,11 @@ namespace Arbor.Model
         public const string CLUB_MEMBERSHIP_PERIOD = "clubMembershipPeriod";
         public const string STUDENT = "student";
         public const string CONSENT_RECEIVED = "consentReceived";
+        public const string ACTIVATED_DATETIME = "activatedDatetime";
         public const string CUSTOMER_INVOICE = "customerInvoice";
+        public const string CUSTOMER_INVOICE_ITEM = "customerInvoiceItem";
         public const string CANCELLED_DATETIME = "cancelledDatetime";
+        public const string DISABLED_DATETIME = "disabledDatetime";
 
         public ClubMembership ()
         {
@@ -115,6 +118,16 @@ namespace Arbor.Model
             this.setProperty("consentReceived", consentReceived);
         }
 
+        public DateTime getActivatedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("activatedDatetime"));
+        }
+
+        public void setActivatedDatetime (DateTime activatedDatetime)
+        {
+            this.setProperty("activatedDatetime", activatedDatetime);
+        }
+
         public CustomerInvoice getCustomerInvoice ()
         {
             return (CustomerInvoice) this.getProperty("customerInvoice");
@@ -125,6 +138,16 @@ namespace Arbor.Model
             this.setProperty("customerInvoice", customerInvoice);
         }
 
+        public CustomerInvoiceItem getCustomerInvoiceItem ()
+        {
+            return (CustomerInvoiceItem) this.getProperty("customerInvoiceItem");
+        }
+
+        public void setCustomerInvoiceItem (CustomerInvoiceItem customerInvoiceItem)
+        {
+            this.setProperty("customerInvoiceItem", customerInvoiceItem);
+        }
+
         public DateTime getCancelledDatetime ()
         {
             return Convert.ToDateTime(this.getProperty("cancelledDatetime"));
@@ -133,6 +156,16 @@ namespace Arbor.Model
         public void setCancelledDatetime (DateTime cancelledDatetime)
         {
             this.setProperty("cancelledDatetime", cancelledDatetime);
+        }
+
+        public DateTime getDisabledDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("disabledDatetime"));
+        }
+
+        public void setDisabledDatetime (DateTime disabledDatetime)
+        {
+            this.setProperty("disabledDatetime", disabledDatetime);
         }
 
 

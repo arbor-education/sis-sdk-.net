@@ -18,6 +18,7 @@ namespace Arbor.Model
         public const string AIMS = "aims";
         public const string SUCCESS_CRITERIA = "successCriteria";
         public const string STAFF = "staff";
+        public const string IS_ATTENDANCE_REGISTERED = "isAttendanceRegistered";
 
         public InterventionGroup ()
         {
@@ -133,6 +134,16 @@ namespace Arbor.Model
         public void setStaff (Staff staff)
         {
             this.setProperty("staff", staff);
+        }
+
+        public bool getIsAttendanceRegistered ()
+        {
+            return Convert.ToBoolean(this.getProperty("isAttendanceRegistered"));
+        }
+
+        public void setIsAttendanceRegistered (bool isAttendanceRegistered)
+        {
+            this.setProperty("isAttendanceRegistered", isAttendanceRegistered);
         }
 
 

@@ -16,6 +16,7 @@ namespace Arbor.Model
         public const string REFUND_TRANSACTION = "refundTransaction";
         public const string REFUND_SUCCEEDED_DATETIME = "refundSucceededDatetime";
         public const string REFUND_FAILED_DATETIME = "refundFailedDatetime";
+        public const string CUSTOMER_PAYMENT_REFUND_METHOD = "customerPaymentRefundMethod";
 
         public CustomerPaymentRefund ()
         {
@@ -111,6 +112,16 @@ namespace Arbor.Model
         public void setRefundFailedDatetime (DateTime refundFailedDatetime)
         {
             this.setProperty("refundFailedDatetime", refundFailedDatetime);
+        }
+
+        public string getCustomerPaymentRefundMethod ()
+        {
+            return this.getProperty("customerPaymentRefundMethod").ToString();
+        }
+
+        public void setCustomerPaymentRefundMethod (string customerPaymentRefundMethod)
+        {
+            this.setProperty("customerPaymentRefundMethod", customerPaymentRefundMethod);
         }
 
 

@@ -19,6 +19,7 @@ namespace Arbor.Model
         public const string FREE = "free";
         public const string ATTENDANCE_REGISTER_TYPE = "attendanceRegisterType";
         public const string ATTENDANCE_REGISTER_EFFECTIVE_DATE = "attendanceRegisterEffectiveDate";
+        public const string ACCOUNTING_CODE = "accountingCode";
 
         public Club ()
         {
@@ -144,6 +145,16 @@ namespace Arbor.Model
         public void setAttendanceRegisterEffectiveDate (DateTime attendanceRegisterEffectiveDate)
         {
             this.setProperty("attendanceRegisterEffectiveDate", attendanceRegisterEffectiveDate);
+        }
+
+        public string getAccountingCode ()
+        {
+            return this.getProperty("accountingCode").ToString();
+        }
+
+        public void setAccountingCode (string accountingCode)
+        {
+            this.setProperty("accountingCode", accountingCode);
         }
 
 

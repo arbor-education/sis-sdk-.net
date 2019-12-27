@@ -15,6 +15,7 @@ namespace Arbor.Model
         public const string NEW_ROOM = "newRoom";
         public const string UNAVAILABILITY_EVENT = "unavailabilityEvent";
         public const string ROOM_CHANGED_DATETIME = "roomChangedDatetime";
+        public const string IGNORED_DATETIME = "ignoredDatetime";
 
         public RoomChangeRequirement ()
         {
@@ -100,6 +101,16 @@ namespace Arbor.Model
         public void setRoomChangedDatetime (DateTime roomChangedDatetime)
         {
             this.setProperty("roomChangedDatetime", roomChangedDatetime);
+        }
+
+        public DateTime getIgnoredDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("ignoredDatetime"));
+        }
+
+        public void setIgnoredDatetime (DateTime ignoredDatetime)
+        {
+            this.setProperty("ignoredDatetime", ignoredDatetime);
         }
 
 

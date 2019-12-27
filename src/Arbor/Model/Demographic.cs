@@ -11,6 +11,7 @@ namespace Arbor.Model
     {
         protected string resourceType = ResourceType.DEMOGRAPHIC;
         public const string LABEL = "label";
+        public const string SHORT_NAME = "shortName";
         public const string TYPE = "type";
         public const string HAS_INVERSE = "hasInverse";
         public const string INVERSE_LABEL = "inverseLabel";
@@ -67,6 +68,16 @@ namespace Arbor.Model
         public void setLabel (string label)
         {
             this.setProperty("label", label);
+        }
+
+        public string getShortName ()
+        {
+            return this.getProperty("shortName").ToString();
+        }
+
+        public void setShortName (string shortName)
+        {
+            this.setProperty("shortName", shortName);
         }
 
         public string getType ()

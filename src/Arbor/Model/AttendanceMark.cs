@@ -36,6 +36,7 @@ namespace Arbor.Model
         public const string IS_PHYSICAL_NOT_REQUIRED = "isPhysicalNotRequired";
         public const string IS_PRESUMED_ABSENT = "isPresumedAbsent";
         public const string IS_EXCLUDED = "isExcluded";
+        public const string SHOW_IN_REGISTER = "showInRegister";
 
         public AttendanceMark ()
         {
@@ -331,6 +332,16 @@ namespace Arbor.Model
         public void setIsExcluded (bool isExcluded)
         {
             this.setProperty("isExcluded", isExcluded);
+        }
+
+        public bool getShowInRegister ()
+        {
+            return Convert.ToBoolean(this.getProperty("showInRegister"));
+        }
+
+        public void setShowInRegister (bool showInRegister)
+        {
+            this.setProperty("showInRegister", showInRegister);
         }
 
 

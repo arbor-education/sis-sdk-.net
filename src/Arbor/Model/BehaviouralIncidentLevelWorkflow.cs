@@ -18,10 +18,20 @@ namespace Arbor.Model
         public const string RESET_TO_ZERO = "resetToZero";
         public const string GUARDIAN_EMAIL_TEMPLATE = "guardianEmailTemplate";
         public const string MESSAGE_CHANNEL = "messageChannel";
+        public const string BEHAVIOURAL_INCIDENT_SMS_GUARDIAN = "behaviouralIncidentSmsGuardian";
+        public const string BEHAVIOURAL_INCIDENT_EMAIL_GUARDIAN = "behaviouralIncidentEmailGuardian";
+        public const string DETENTION_SMS_GUARDIAN = "detentionSmsGuardian";
+        public const string DETENTION_EMAIL_GUARDIAN = "detentionEmailGuardian";
+        public const string BEHAVIOURAL_INCIDENT_SMS_TEMPLATE = "behaviouralIncidentSmsTemplate";
+        public const string BEHAVIOURAL_INCIDENT_EMAIL_TEMPLATE = "behaviouralIncidentEmailTemplate";
         public const string DEFAULT_ASSIGNEE = "defaultAssignee";
         public const string SPECIFIC_ASSIGNEE = "specificAssignee";
         public const string DETENTION_TYPE = "detentionType";
         public const string DETENTION_TIME_FRAME = "detentionTimeFrame";
+        public const string ASSIGNMENT_POLICY = "assignmentPolicy";
+        public const string INTERNAL_EXCLUSION_TYPE = "internalExclusionType";
+        public const string INTERNAL_EXCLUSION_TIME_FRAME = "internalExclusionTimeFrame";
+        public const string NUMBER_OF_SESSIONS = "numberOfSessions";
         public const string POINT_AWARD_SCALE = "pointAwardScale";
         public const string ADD_DEDUCT_POINTS = "addDeductPoints";
         public const string EDITABLE_WATCHERS = "editableWatchers";
@@ -146,6 +156,66 @@ namespace Arbor.Model
             this.setProperty("messageChannel", messageChannel);
         }
 
+        public bool getBehaviouralIncidentSmsGuardian ()
+        {
+            return Convert.ToBoolean(this.getProperty("behaviouralIncidentSmsGuardian"));
+        }
+
+        public void setBehaviouralIncidentSmsGuardian (bool behaviouralIncidentSmsGuardian)
+        {
+            this.setProperty("behaviouralIncidentSmsGuardian", behaviouralIncidentSmsGuardian);
+        }
+
+        public bool getBehaviouralIncidentEmailGuardian ()
+        {
+            return Convert.ToBoolean(this.getProperty("behaviouralIncidentEmailGuardian"));
+        }
+
+        public void setBehaviouralIncidentEmailGuardian (bool behaviouralIncidentEmailGuardian)
+        {
+            this.setProperty("behaviouralIncidentEmailGuardian", behaviouralIncidentEmailGuardian);
+        }
+
+        public bool getDetentionSmsGuardian ()
+        {
+            return Convert.ToBoolean(this.getProperty("detentionSmsGuardian"));
+        }
+
+        public void setDetentionSmsGuardian (bool detentionSmsGuardian)
+        {
+            this.setProperty("detentionSmsGuardian", detentionSmsGuardian);
+        }
+
+        public bool getDetentionEmailGuardian ()
+        {
+            return Convert.ToBoolean(this.getProperty("detentionEmailGuardian"));
+        }
+
+        public void setDetentionEmailGuardian (bool detentionEmailGuardian)
+        {
+            this.setProperty("detentionEmailGuardian", detentionEmailGuardian);
+        }
+
+        public CommunicationTemplate getBehaviouralIncidentSmsTemplate ()
+        {
+            return (CommunicationTemplate) this.getProperty("behaviouralIncidentSmsTemplate");
+        }
+
+        public void setBehaviouralIncidentSmsTemplate (CommunicationTemplate behaviouralIncidentSmsTemplate)
+        {
+            this.setProperty("behaviouralIncidentSmsTemplate", behaviouralIncidentSmsTemplate);
+        }
+
+        public CommunicationTemplate getBehaviouralIncidentEmailTemplate ()
+        {
+            return (CommunicationTemplate) this.getProperty("behaviouralIncidentEmailTemplate");
+        }
+
+        public void setBehaviouralIncidentEmailTemplate (CommunicationTemplate behaviouralIncidentEmailTemplate)
+        {
+            this.setProperty("behaviouralIncidentEmailTemplate", behaviouralIncidentEmailTemplate);
+        }
+
         public string getDefaultAssignee ()
         {
             return this.getProperty("defaultAssignee").ToString();
@@ -184,6 +254,46 @@ namespace Arbor.Model
         public void setDetentionTimeFrame (string detentionTimeFrame)
         {
             this.setProperty("detentionTimeFrame", detentionTimeFrame);
+        }
+
+        public string getAssignmentPolicy ()
+        {
+            return this.getProperty("assignmentPolicy").ToString();
+        }
+
+        public void setAssignmentPolicy (string assignmentPolicy)
+        {
+            this.setProperty("assignmentPolicy", assignmentPolicy);
+        }
+
+        public InternalExclusionType getInternalExclusionType ()
+        {
+            return (InternalExclusionType) this.getProperty("internalExclusionType");
+        }
+
+        public void setInternalExclusionType (InternalExclusionType internalExclusionType)
+        {
+            this.setProperty("internalExclusionType", internalExclusionType);
+        }
+
+        public string getInternalExclusionTimeFrame ()
+        {
+            return this.getProperty("internalExclusionTimeFrame").ToString();
+        }
+
+        public void setInternalExclusionTimeFrame (string internalExclusionTimeFrame)
+        {
+            this.setProperty("internalExclusionTimeFrame", internalExclusionTimeFrame);
+        }
+
+        public int getNumberOfSessions ()
+        {
+            return Convert.ToInt32(this.getProperty("numberOfSessions"));
+        }
+
+        public void setNumberOfSessions (int numberOfSessions)
+        {
+            this.setProperty("numberOfSessions", numberOfSessions);
         }
 
         public PointAwardScale getPointAwardScale ()

@@ -11,9 +11,9 @@ namespace Arbor.Model
     {
         protected string resourceType = ResourceType.TARGET_JUDGEMENT_RULE;
         public const string ASSESSMENT_ASPECT = "assessmentAspect";
+        public const string TARGET_JUDGEMENT = "targetJudgement";
         public const string AMOUNT = "amount";
         public const string AMOUNT_UNIT = "amountUnit";
-        public const string TYPE = "type";
 
         public TargetJudgementRule ()
         {
@@ -61,6 +61,16 @@ namespace Arbor.Model
             this.setProperty("assessmentAspect", assessmentAspect);
         }
 
+        public TargetJudgement getTargetJudgement ()
+        {
+            return (TargetJudgement) this.getProperty("targetJudgement");
+        }
+
+        public void setTargetJudgement (TargetJudgement targetJudgement)
+        {
+            this.setProperty("targetJudgement", targetJudgement);
+        }
+
         public float getAmount ()
         {
             return (float) this.getProperty("amount");
@@ -79,16 +89,6 @@ namespace Arbor.Model
         public void setAmountUnit (string amountUnit)
         {
             this.setProperty("amountUnit", amountUnit);
-        }
-
-        public string getType ()
-        {
-            return this.getProperty("type").ToString();
-        }
-
-        public void setType (string type)
-        {
-            this.setProperty("type", type);
         }
 
 

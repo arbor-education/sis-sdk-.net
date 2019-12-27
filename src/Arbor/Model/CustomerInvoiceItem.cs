@@ -20,6 +20,7 @@ namespace Arbor.Model
         public const string ITEM_TOTAL_AMOUNT = "itemTotalAmount";
         public const string LINE_NUMBER = "lineNumber";
         public const string FULLY_PAID_DATE = "fullyPaidDate";
+        public const string ITEM_STATUS = "itemStatus";
 
         public CustomerInvoiceItem ()
         {
@@ -155,6 +156,16 @@ namespace Arbor.Model
         public void setFullyPaidDate (DateTime fullyPaidDate)
         {
             this.setProperty("fullyPaidDate", fullyPaidDate);
+        }
+
+        public string getItemStatus ()
+        {
+            return this.getProperty("itemStatus").ToString();
+        }
+
+        public void setItemStatus (string itemStatus)
+        {
+            this.setProperty("itemStatus", itemStatus);
         }
 
 

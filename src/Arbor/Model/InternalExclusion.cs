@@ -15,6 +15,7 @@ namespace Arbor.Model
         public const string INTERNAL_EXCLUSION_SESSION = "internalExclusionSession";
         public const string INTERNAL_EXCLUSION_TYPE = "internalExclusionType";
         public const string EXCLUSION_REASON = "exclusionReason";
+        public const string INTERNAL_EXCLUSION_REASON = "internalExclusionReason";
         public const string ISSUED_DATETIME = "issuedDatetime";
         public const string NARRATIVE = "narrative";
 
@@ -102,6 +103,16 @@ namespace Arbor.Model
         public void setExclusionReason (ExclusionReason exclusionReason)
         {
             this.setProperty("exclusionReason", exclusionReason);
+        }
+
+        public InternalExclusionReason getInternalExclusionReason ()
+        {
+            return (InternalExclusionReason) this.getProperty("internalExclusionReason");
+        }
+
+        public void setInternalExclusionReason (InternalExclusionReason internalExclusionReason)
+        {
+            this.setProperty("internalExclusionReason", internalExclusionReason);
         }
 
         public DateTime getIssuedDatetime ()

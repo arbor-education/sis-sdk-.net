@@ -17,6 +17,7 @@ namespace Arbor.Model
         public const string SCOPE_ENTITY = "scopeEntity";
         public const string GRADE = "grade";
         public const string NUMBER = "number";
+        public const string ASSESSMENT_MARK_NON_SUBMISSION_REASON = "assessmentMarkNonSubmissionReason";
         public const string MARKING_STAFF = "markingStaff";
         public const string COMPLETED_DATETIME = "completedDatetime";
         public const string COMPLETED_STAFF = "completedStaff";
@@ -127,6 +128,16 @@ namespace Arbor.Model
         public void setNumber (float number)
         {
             this.setProperty("number", number);
+        }
+
+        public AssessmentMarkNonSubmissionReason getAssessmentMarkNonSubmissionReason ()
+        {
+            return (AssessmentMarkNonSubmissionReason) this.getProperty("assessmentMarkNonSubmissionReason");
+        }
+
+        public void setAssessmentMarkNonSubmissionReason (AssessmentMarkNonSubmissionReason assessmentMarkNonSubmissionReason)
+        {
+            this.setProperty("assessmentMarkNonSubmissionReason", assessmentMarkNonSubmissionReason);
         }
 
         public Staff getMarkingStaff ()

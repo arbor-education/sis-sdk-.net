@@ -11,6 +11,7 @@ namespace Arbor.Model
     {
         protected string resourceType = ResourceType.CUSTOMER_CREDIT_NOTE_ITEM;
         public const string CUSTOMER_CREDIT_NOTE = "customerCreditNote";
+        public const string CUSTOMER_INVOICE = "customerInvoice";
         public const string CUSTOMER_INVOICE_ITEM = "customerInvoiceItem";
         public const string CREDIT_AMOUNT = "creditAmount";
         public const string QUANTITY_CREDITED = "quantityCredited";
@@ -60,6 +61,16 @@ namespace Arbor.Model
         public void setCustomerCreditNote (CustomerCreditNote customerCreditNote)
         {
             this.setProperty("customerCreditNote", customerCreditNote);
+        }
+
+        public CustomerInvoice getCustomerInvoice ()
+        {
+            return (CustomerInvoice) this.getProperty("customerInvoice");
+        }
+
+        public void setCustomerInvoice (CustomerInvoice customerInvoice)
+        {
+            this.setProperty("customerInvoice", customerInvoice);
         }
 
         public CustomerInvoiceItem getCustomerInvoiceItem ()

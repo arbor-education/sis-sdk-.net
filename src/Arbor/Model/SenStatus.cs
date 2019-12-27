@@ -17,6 +17,7 @@ namespace Arbor.Model
         public const string SEN_STATUS_NAME = "senStatusName";
         public const string DESCRIPTION = "description";
         public const string COUNTS_AS_SEN_STATUS = "countsAsSenStatus";
+        public const string EXPORT_CODE = "exportCode";
 
         public SenStatus ()
         {
@@ -122,6 +123,16 @@ namespace Arbor.Model
         public void setCountsAsSenStatus (bool countsAsSenStatus)
         {
             this.setProperty("countsAsSenStatus", countsAsSenStatus);
+        }
+
+        public string getExportCode ()
+        {
+            return this.getProperty("exportCode").ToString();
+        }
+
+        public void setExportCode (string exportCode)
+        {
+            this.setProperty("exportCode", exportCode);
         }
 
 

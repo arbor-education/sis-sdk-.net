@@ -25,6 +25,7 @@ namespace Arbor.Model
         public const string GUARDIAN_SIGNUP_END_DATETIME = "guardianSignupEndDatetime";
         public const string FREE = "free";
         public const string ATTENDANCE_REGISTER_TYPE = "attendanceRegisterType";
+        public const string ACCOUNTING_CODE = "accountingCode";
 
         public Trip ()
         {
@@ -210,6 +211,16 @@ namespace Arbor.Model
         public void setAttendanceRegisterType (AttendanceRegisterType attendanceRegisterType)
         {
             this.setProperty("attendanceRegisterType", attendanceRegisterType);
+        }
+
+        public string getAccountingCode ()
+        {
+            return this.getProperty("accountingCode").ToString();
+        }
+
+        public void setAccountingCode (string accountingCode)
+        {
+            this.setProperty("accountingCode", accountingCode);
         }
 
 
