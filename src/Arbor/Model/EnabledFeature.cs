@@ -12,6 +12,7 @@ namespace Arbor.Model
         protected string resourceType = ResourceType.ENABLED_FEATURE;
         public const string FEATURE_IDENTIFIER = "featureIdentifier";
         public const string CRM_CONTRACT_SERVICE_SUBSCRIPTION_ID = "crmContractServiceSubscriptionId";
+        public const string BILLING_SERVICE_CONTRACT_SUBSCRIPTION_ID = "billingServiceContractSubscriptionId";
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
 
@@ -69,6 +70,16 @@ namespace Arbor.Model
         public void setCrmContractServiceSubscriptionId (int crmContractServiceSubscriptionId)
         {
             this.setProperty("crmContractServiceSubscriptionId", crmContractServiceSubscriptionId);
+        }
+
+        public int getBillingServiceContractSubscriptionId ()
+        {
+            return Convert.ToInt32(this.getProperty("billingServiceContractSubscriptionId"));
+        }
+
+        public void setBillingServiceContractSubscriptionId (int billingServiceContractSubscriptionId)
+        {
+            this.setProperty("billingServiceContractSubscriptionId", billingServiceContractSubscriptionId);
         }
 
         public DateTime getStartDate ()
