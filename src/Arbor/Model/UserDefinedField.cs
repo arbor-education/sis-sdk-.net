@@ -14,6 +14,9 @@ namespace Arbor.Model
         public const string IDENTIFIER = "identifier";
         public const string RELATED_ENTITY_TYPE = "relatedEntityType";
         public const string FIELD_TYPE = "fieldType";
+        public const string SOURCE = "source";
+        public const string CODE = "code";
+        public const string ACTIVE = "active";
 
         public UserDefinedField ()
         {
@@ -89,6 +92,36 @@ namespace Arbor.Model
         public void setFieldType (string fieldType)
         {
             this.setProperty("fieldType", fieldType);
+        }
+
+        public string getSource ()
+        {
+            return this.getProperty("source").ToString();
+        }
+
+        public void setSource (string source)
+        {
+            this.setProperty("source", source);
+        }
+
+        public string getCode ()
+        {
+            return this.getProperty("code").ToString();
+        }
+
+        public void setCode (string code)
+        {
+            this.setProperty("code", code);
+        }
+
+        public bool getActive ()
+        {
+            return Convert.ToBoolean(this.getProperty("active"));
+        }
+
+        public void setActive (bool active)
+        {
+            this.setProperty("active", active);
         }
 
 

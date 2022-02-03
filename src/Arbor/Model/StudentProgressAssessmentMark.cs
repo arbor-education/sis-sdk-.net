@@ -13,7 +13,6 @@ namespace Arbor.Model
         public const string STUDENT = "student";
         public const string ASSESSMENT = "assessment";
         public const string PROGRESS_MEASUREMENT_PERIOD = "progressMeasurementPeriod";
-        public const string STUDENT_PROGRESS_ASSESSMENT = "studentProgressAssessment";
         public const string GRADE = "grade";
         public const string LOWER_GRADE_POINT_SCALE_VALUE = "lowerGradePointScaleValue";
         public const string UPPER_GRADE_POINT_SCALE_VALUE = "upperGradePointScaleValue";
@@ -90,16 +89,6 @@ namespace Arbor.Model
         public void setProgressMeasurementPeriod (ProgressMeasurementPeriod progressMeasurementPeriod)
         {
             this.setProperty("progressMeasurementPeriod", progressMeasurementPeriod);
-        }
-
-        public StudentProgressAssessment getStudentProgressAssessment ()
-        {
-            return (StudentProgressAssessment) this.getProperty("studentProgressAssessment");
-        }
-
-        public void setStudentProgressAssessment (StudentProgressAssessment studentProgressAssessment)
-        {
-            this.setProperty("studentProgressAssessment", studentProgressAssessment);
         }
 
         public Grade getGrade ()

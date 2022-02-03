@@ -15,9 +15,9 @@ namespace Arbor.Model
         public const string INCOMING_DIRECT_DEBIT_TRANSACTION = "incomingDirectDebitTransaction";
         public const string INCOMING_CARD_TRANSACTION = "incomingCardTransaction";
         public const string INCOMING_BANK_TRANSACTION = "incomingBankTransaction";
+        public const string INCOMING_CASHLESS_CATERING_SYSTEM_TRANSACTION = "incomingCashlessCateringSystemTransaction";
         public const string RECEIVED_CHEQUE = "receivedCheque";
         public const string CASH_RECEIPT = "cashReceipt";
-        public const string STRIPE_INCOMING_CARD_TRANSACTION = "stripeIncomingCardTransaction";
         public const string PREPAYMENT_AMOUNT = "prepaymentAmount";
         public const string PREPAYMENT_DATETIME = "prepaymentDatetime";
         public const string PREPAYMENT_SUCCEEDED_DATETIME = "prepaymentSucceededDatetime";
@@ -111,6 +111,16 @@ namespace Arbor.Model
             this.setProperty("incomingBankTransaction", incomingBankTransaction);
         }
 
+        public IncomingCashlessCateringSystemTransaction getIncomingCashlessCateringSystemTransaction ()
+        {
+            return (IncomingCashlessCateringSystemTransaction) this.getProperty("incomingCashlessCateringSystemTransaction");
+        }
+
+        public void setIncomingCashlessCateringSystemTransaction (IncomingCashlessCateringSystemTransaction incomingCashlessCateringSystemTransaction)
+        {
+            this.setProperty("incomingCashlessCateringSystemTransaction", incomingCashlessCateringSystemTransaction);
+        }
+
         public ReceivedCheque getReceivedCheque ()
         {
             return (ReceivedCheque) this.getProperty("receivedCheque");
@@ -129,16 +139,6 @@ namespace Arbor.Model
         public void setCashReceipt (CashReceipt cashReceipt)
         {
             this.setProperty("cashReceipt", cashReceipt);
-        }
-
-        public StripeIncomingCardTransaction getStripeIncomingCardTransaction ()
-        {
-            return (StripeIncomingCardTransaction) this.getProperty("stripeIncomingCardTransaction");
-        }
-
-        public void setStripeIncomingCardTransaction (StripeIncomingCardTransaction stripeIncomingCardTransaction)
-        {
-            this.setProperty("stripeIncomingCardTransaction", stripeIncomingCardTransaction);
         }
 
         public string getPrepaymentAmount ()

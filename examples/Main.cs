@@ -9,7 +9,6 @@ using System.Xml;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Arbor.ChangeLog;
 using Arbor.Tools.Services;
 using Arbor.Service;
 
@@ -25,12 +24,11 @@ namespace ArborSdkExamples
         static string USERNAME = "";
         static string PASSWORD = "";
         static string URL = "";
-        const string USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36";
 
         public static void Main(string[] args)
         {
             XmlDocument conf = new XmlDocument();
-            string confPath = Environment.CurrentDirectory + @"\..\..\config-dist.xml";
+            string confPath = Environment.CurrentDirectory + @"\..\..\config.xml";
             conf.Load(confPath);
             USERNAME = conf["config"]["api"]["auth"]["user"].InnerText;
             PASSWORD = conf["config"]["api"]["auth"]["password"].InnerText;
@@ -109,7 +107,7 @@ namespace ArborSdkExamples
         public static void studentRetrieve(string modelName, string id)
         {
             // Retrieve model
-            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
+            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD);
             ModelBase model = gateway.retrieve(modelName, id);
 
             // Display logic
@@ -122,7 +120,7 @@ namespace ArborSdkExamples
         public static void studentQueryViaStaticMethod()
         {
             // Query model
-            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
+            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD);
             ModelBase.setDefaultGateway(gateway);
 
             // Get ethnicity to be used as search parameter
@@ -146,7 +144,7 @@ namespace ArborSdkExamples
 
         public static void studentListing()
         {
-            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
+            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD);
             ModelCollection<ModelBase> collection = gateway.query(new SimpleQuery(ResourceType.STUDENT));
 
             // Display logic
@@ -162,7 +160,7 @@ namespace ArborSdkExamples
 
         public static void studentQuery()
         {
-            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
+            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD);
 
             // Get ethnicity to be used as search parameter
             Ethnicity ethnicity = (Ethnicity)gateway.retrieve(ResourceType.ETHNICITY, "AAFR");
@@ -185,7 +183,7 @@ namespace ArborSdkExamples
 
         public static void studentUpdateUkdfeFields()
         {
-            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
+            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD);
             Student student = (Student)gateway.retrieve(ResourceType.STUDENT, "137");
 
             int ulnBeforeUpdate = student.getUniqueLearnerNumber();
@@ -203,7 +201,7 @@ namespace ArborSdkExamples
 
         public static void studentUpdateUserTags()
         {
-            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
+            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD);
             Student student = (Student)gateway.retrieve(ResourceType.STUDENT, "137");
 
             student.getPerson().setDateOfBirth(new DateTime(2000, 1, 1));
@@ -228,7 +226,7 @@ namespace ArborSdkExamples
 
         private static void studentRetrieve()
         {
-            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
+            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD);
             Student student = (Student)gateway.retrieve(ResourceType.STUDENT, "137");
 
             // Display logic
@@ -240,7 +238,7 @@ namespace ArborSdkExamples
 
         public static void studentUpdate()
         {
-            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
+            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD);
             Student student = (Student)gateway.retrieve(ResourceType.STUDENT, "137");
 
             student.getPerson().setDateOfBirth(new DateTime(2000, 1, 1));
@@ -268,7 +266,7 @@ namespace ArborSdkExamples
 
         public static void studentCreate()
         {
-            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
+            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD);
 
             Student student = new Student();
             student.setPerson(new Person());
@@ -296,7 +294,7 @@ namespace ArborSdkExamples
 
         public static void studentCreateWithUkdfeFields()
         {
-            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
+            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD);
 
             Student student = new Student();
             student.setPerson(new Person());
@@ -326,7 +324,7 @@ namespace ArborSdkExamples
 
         public static void updateStudentTags()
         {
-            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
+            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD);
             Student student = (Student)gateway.retrieve(ResourceType.STUDENT, "1");
 
             Hashtable tags = new Hashtable();
@@ -349,7 +347,7 @@ namespace ArborSdkExamples
 
         public static void localAuthorityCreate()
         {
-            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
+            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD);
             ModelBase.setDefaultGateway(gateway);
             Country country = (Country) gateway.retrieve(ResourceType.COUNTRY, "GBR");
             LocalAuthority model = new LocalAuthority();
@@ -366,7 +364,7 @@ namespace ArborSdkExamples
 
         public static void localAuthorityQuery()
         {
-            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
+            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD);
             ModelBase.setDefaultGateway(gateway);
 
             SimpleQuery query = new SimpleQuery();
@@ -388,7 +386,7 @@ namespace ArborSdkExamples
 
         public static void localAuthorityRetrieve()
         {
-            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
+            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD);
             ModelBase.setDefaultGateway(gateway);
 
             Arbor.Model.UkDfe.LocalAuthority model =
@@ -403,7 +401,7 @@ namespace ArborSdkExamples
 
         public static void localAuthorityUpdate()
         {
-            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
+            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD);
             ModelBase.setDefaultGateway(gateway);
 
             Arbor.Model.UkDfe.LocalAuthority model =
@@ -422,7 +420,7 @@ namespace ArborSdkExamples
 
         public static void getCurrentStudents()
         {
-            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
+            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD);
             StudentService.setDefaultGateway(gateway);
 
             ModelCollection<Student> studentCollection = StudentService.getCurrentStudents();
@@ -441,7 +439,7 @@ namespace ArborSdkExamples
 
         public static void writeAttendanceMarks()
         {
-            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
+            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD);
             AttendanceRegistration attendanceService = new AttendanceRegistration(gateway);
             ModelBase.setDefaultGateway(gateway);
             AttendanceMark.setDefaultGateway(gateway);
@@ -468,7 +466,7 @@ namespace ArborSdkExamples
 
         public static void staffQueryViaTagging()
         {
-            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
+            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD);
 
             SimpleQuery query = new SimpleQuery(ResourceType.STAFF);
             List<object> taggings = new List<object>();
@@ -493,7 +491,7 @@ namespace ArborSdkExamples
         {
             // Retrieve model
             string userId = "251";
-            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
+            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD);
             Student student = (Student)gateway.retrieve(ResourceType.STUDENT, userId);
 
             // Create tag
@@ -530,7 +528,7 @@ namespace ArborSdkExamples
 
         public static void registrationFormQuery()
         {
-            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
+            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD);
             ModelBase.setDefaultGateway(gateway);
 
             SimpleQuery query = new SimpleQuery("RegistrationForm");
@@ -564,7 +562,7 @@ namespace ArborSdkExamples
 
         public static void getEligibilityRecords()
         {
-            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
+            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD);
             ModelBase.setDefaultGateway(gateway);
 
             SimpleQuery query = new SimpleQuery(ResourceType.ELIGIBILITY_RECORD);
@@ -588,7 +586,7 @@ namespace ArborSdkExamples
 
         public static void getStudentByDemographicTag()
         {
-            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD, USER_AGENT);
+            RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD);
             ModelBase.setDefaultGateway(gateway);
 
             SimpleQuery query = new SimpleQuery();

@@ -16,6 +16,9 @@ namespace Arbor.Model
         public const string ACTION = "action";
         public const string PARAMS = "params";
         public const string HASH = "hash";
+        public const string LABEL = "label";
+        public const string REQUIRES_AUTHENTICATION = "requiresAuthentication";
+        public const string DEFAULT_EXPORT_TYPE = "defaultExportType";
         public const string LAST_EXPORT_DATETIME = "lastExportDatetime";
         public const string LAST_EXPORT_TITLE = "lastExportTitle";
 
@@ -100,9 +103,9 @@ namespace Arbor.Model
             return this.getProperty("params").ToString();
         }
 
-        public void setParams (string params)
+        public void setParams (string paramsData)
         {
-            this.setProperty("params", params);
+            this.setProperty("params", paramsData);
         }
 
         public string getHash ()
@@ -113,6 +116,36 @@ namespace Arbor.Model
         public void setHash (string hash)
         {
             this.setProperty("hash", hash);
+        }
+
+        public string getLabel ()
+        {
+            return this.getProperty("label").ToString();
+        }
+
+        public void setLabel (string label)
+        {
+            this.setProperty("label", label);
+        }
+
+        public bool getRequiresAuthentication ()
+        {
+            return Convert.ToBoolean(this.getProperty("requiresAuthentication"));
+        }
+
+        public void setRequiresAuthentication (bool requiresAuthentication)
+        {
+            this.setProperty("requiresAuthentication", requiresAuthentication);
+        }
+
+        public string getDefaultExportType ()
+        {
+            return this.getProperty("defaultExportType").ToString();
+        }
+
+        public void setDefaultExportType (string defaultExportType)
+        {
+            this.setProperty("defaultExportType", defaultExportType);
         }
 
         public DateTime getLastExportDatetime ()

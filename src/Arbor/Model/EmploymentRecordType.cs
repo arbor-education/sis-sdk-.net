@@ -14,6 +14,8 @@ namespace Arbor.Model
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";
         public const string NAME = "name";
+        public const string IS_EMPLOYED = "isEmployed";
+        public const string EMPLOYER_REQUIRED = "employerRequired";
 
         public EmploymentRecordType ()
         {
@@ -89,6 +91,26 @@ namespace Arbor.Model
         public void setName (string name)
         {
             this.setProperty("name", name);
+        }
+
+        public bool getIsEmployed ()
+        {
+            return Convert.ToBoolean(this.getProperty("isEmployed"));
+        }
+
+        public void setIsEmployed (bool isEmployed)
+        {
+            this.setProperty("isEmployed", isEmployed);
+        }
+
+        public bool getEmployerRequired ()
+        {
+            return Convert.ToBoolean(this.getProperty("employerRequired"));
+        }
+
+        public void setEmployerRequired (bool employerRequired)
+        {
+            this.setProperty("employerRequired", employerRequired);
         }
 
 

@@ -20,6 +20,8 @@ namespace Arbor.Model
         public const string LOCKED = "locked";
         public const string CUSTOM_LABEL = "customLabel";
         public const string SUMMARY_ROW_FORMULA_CLASS = "summaryRowFormulaClass";
+        public const string IS_HIDDEN = "isHidden";
+        public const string IS_SOURCE_UPDATE_PERMITTED = "isSourceUpdatePermitted";
 
         public CustomReportColumn ()
         {
@@ -155,6 +157,26 @@ namespace Arbor.Model
         public void setSummaryRowFormulaClass (string summaryRowFormulaClass)
         {
             this.setProperty("summaryRowFormulaClass", summaryRowFormulaClass);
+        }
+
+        public bool getIsHidden ()
+        {
+            return Convert.ToBoolean(this.getProperty("isHidden"));
+        }
+
+        public void setIsHidden (bool isHidden)
+        {
+            this.setProperty("isHidden", isHidden);
+        }
+
+        public bool getIsSourceUpdatePermitted ()
+        {
+            return Convert.ToBoolean(this.getProperty("isSourceUpdatePermitted"));
+        }
+
+        public void setIsSourceUpdatePermitted (bool isSourceUpdatePermitted)
+        {
+            this.setProperty("isSourceUpdatePermitted", isSourceUpdatePermitted);
         }
 
 

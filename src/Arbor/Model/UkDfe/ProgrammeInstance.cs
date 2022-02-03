@@ -11,6 +11,8 @@ namespace Arbor.Model.UkDfe
     {
         protected string resourceType = ResourceType.UK_DFE_PROGRAMME_INSTANCE;
         public const string PARTNER_UKPRN = "partnerUkprn";
+        public const string PLANNED_LEARNING_HOURS = "plannedLearningHours";
+        public const string PLANNED_LEARNING_HOURS_SECOND_YEAR = "plannedLearningHoursSecondYear";
 
         public ProgrammeInstance ()
         {
@@ -56,6 +58,26 @@ namespace Arbor.Model.UkDfe
         public void setPartnerUkprn (string partnerUkprn)
         {
             this.setProperty("partnerUkprn", partnerUkprn);
+        }
+
+        public int getPlannedLearningHours ()
+        {
+            return Convert.ToInt32(this.getProperty("plannedLearningHours"));
+        }
+
+        public void setPlannedLearningHours (int plannedLearningHours)
+        {
+            this.setProperty("plannedLearningHours", plannedLearningHours);
+        }
+
+        public int getPlannedLearningHoursSecondYear ()
+        {
+            return Convert.ToInt32(this.getProperty("plannedLearningHoursSecondYear"));
+        }
+
+        public void setPlannedLearningHoursSecondYear (int plannedLearningHoursSecondYear)
+        {
+            this.setProperty("plannedLearningHoursSecondYear", plannedLearningHoursSecondYear);
         }
 
 

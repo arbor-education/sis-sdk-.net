@@ -15,7 +15,10 @@ namespace Arbor.Model
         public const string DATA_ORDER = "dataOrder";
         public const string CONSENT_TYPE_NAME = "consentTypeName";
         public const string DESCRIPTION = "description";
+        public const string DEFAULT_DESCRIPTION = "defaultDescription";
         public const string AUTO_REQUEST_FROM_GUARDIANS = "autoRequestFromGuardians";
+        public const string CONSENTED_BY_STUDENT = "consentedByStudent";
+        public const string CONSENTED_BY_GUARDIAN = "consentedByGuardian";
 
         public ConsentType ()
         {
@@ -103,6 +106,16 @@ namespace Arbor.Model
             this.setProperty("description", description);
         }
 
+        public string getDefaultDescription ()
+        {
+            return this.getProperty("defaultDescription").ToString();
+        }
+
+        public void setDefaultDescription (string defaultDescription)
+        {
+            this.setProperty("defaultDescription", defaultDescription);
+        }
+
         public bool getAutoRequestFromGuardians ()
         {
             return Convert.ToBoolean(this.getProperty("autoRequestFromGuardians"));
@@ -111,6 +124,26 @@ namespace Arbor.Model
         public void setAutoRequestFromGuardians (bool autoRequestFromGuardians)
         {
             this.setProperty("autoRequestFromGuardians", autoRequestFromGuardians);
+        }
+
+        public bool getConsentedByStudent ()
+        {
+            return Convert.ToBoolean(this.getProperty("consentedByStudent"));
+        }
+
+        public void setConsentedByStudent (bool consentedByStudent)
+        {
+            this.setProperty("consentedByStudent", consentedByStudent);
+        }
+
+        public bool getConsentedByGuardian ()
+        {
+            return Convert.ToBoolean(this.getProperty("consentedByGuardian"));
+        }
+
+        public void setConsentedByGuardian (bool consentedByGuardian)
+        {
+            this.setProperty("consentedByGuardian", consentedByGuardian);
         }
 
 

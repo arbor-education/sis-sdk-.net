@@ -57,9 +57,9 @@ namespace Arbor.Model
             return this.getProperty("operator").ToString();
         }
 
-        public void setOperator (string operator)
+        public void setOperator (string operatorName)
         {
-            this.setProperty("operator", operator);
+            this.setProperty("operator", operatorName);
         }
 
         public Grade getGrade ()

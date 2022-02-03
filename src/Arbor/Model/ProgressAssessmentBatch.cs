@@ -14,6 +14,8 @@ namespace Arbor.Model
         public const string ASSESSMENT = "assessment";
         public const string PROGRESS_MEASUREMENT_PERIOD_SET = "progressMeasurementPeriodSet";
         public const string ACADEMIC_YEAR = "academicYear";
+        public const string IS_BASELINE_LOCKED = "isBaselineLocked";
+        public const string IS_TARGET_LOCKED = "isTargetLocked";
 
         public ProgressAssessmentBatch ()
         {
@@ -89,6 +91,26 @@ namespace Arbor.Model
         public void setAcademicYear (AcademicYear academicYear)
         {
             this.setProperty("academicYear", academicYear);
+        }
+
+        public bool getIsBaselineLocked ()
+        {
+            return Convert.ToBoolean(this.getProperty("isBaselineLocked"));
+        }
+
+        public void setIsBaselineLocked (bool isBaselineLocked)
+        {
+            this.setProperty("isBaselineLocked", isBaselineLocked);
+        }
+
+        public bool getIsTargetLocked ()
+        {
+            return Convert.ToBoolean(this.getProperty("isTargetLocked"));
+        }
+
+        public void setIsTargetLocked (bool isTargetLocked)
+        {
+            this.setProperty("isTargetLocked", isTargetLocked);
         }
 
 

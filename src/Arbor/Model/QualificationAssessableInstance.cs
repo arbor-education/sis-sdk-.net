@@ -13,7 +13,6 @@ namespace Arbor.Model
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";
-        public const string ASSESSABLE_INSTANCE_IDENTIFIER = "assessableInstanceIdentifier";
         public const string QUALIFICATION_ASSESSABLE = "qualificationAssessable";
         public const string QUALIFICATION_AVAILABILITY_INSTANCE = "qualificationAvailabilityInstance";
         public const string QUALIFICATION_TIMETABLE_SESSION_TYPE = "qualificationTimetableSessionType";
@@ -89,16 +88,6 @@ namespace Arbor.Model
         public void setDataOrder (int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
-        }
-
-        public string getAssessableInstanceIdentifier ()
-        {
-            return this.getProperty("assessableInstanceIdentifier").ToString();
-        }
-
-        public void setAssessableInstanceIdentifier (string assessableInstanceIdentifier)
-        {
-            this.setProperty("assessableInstanceIdentifier", assessableInstanceIdentifier);
         }
 
         public QualificationAssessable getQualificationAssessable ()

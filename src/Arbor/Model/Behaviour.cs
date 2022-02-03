@@ -14,6 +14,7 @@ namespace Arbor.Model
         public const string DESCRIPTION = "description";
         public const string SEVERITY = "severity";
         public const string ACTIVE = "active";
+        public const string IS_MY_CLASSROOM_DEFAULT = "isMyClassroomDefault";
 
         public Behaviour ()
         {
@@ -89,6 +90,16 @@ namespace Arbor.Model
         public void setActive (bool active)
         {
             this.setProperty("active", active);
+        }
+
+        public bool getIsMyClassroomDefault ()
+        {
+            return Convert.ToBoolean(this.getProperty("isMyClassroomDefault"));
+        }
+
+        public void setIsMyClassroomDefault (bool isMyClassroomDefault)
+        {
+            this.setProperty("isMyClassroomDefault", isMyClassroomDefault);
         }
 
 

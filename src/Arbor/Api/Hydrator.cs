@@ -30,7 +30,7 @@ namespace Arbor.Model.Api
 					model.setResourceUrl (new Uri (propertyValue.ToString(), UriKind.Relative));
 					break;
 				case "displayName":
-					model.setDisplayName((string)propertyValue);
+					model.setDisplayName(propertyValue.ToString());
 					break;
 				case "userTags":
 					if (propertyValue is JObject)

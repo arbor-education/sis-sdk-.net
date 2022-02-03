@@ -15,6 +15,7 @@ namespace Arbor.Model
         public const string MARKING_STARTED_DATETIME = "markingStartedDatetime";
         public const string MARKING_COMPLETED_DATETIME = "markingCompletedDatetime";
         public const string MARKING_FINALIZED_DATETIME = "markingFinalizedDatetime";
+        public const string ALL_MARKS_APPROVED = "allMarksApproved";
 
         public ProgressAssessmentBatchTargetMeasurementPeriod ()
         {
@@ -100,6 +101,16 @@ namespace Arbor.Model
         public void setMarkingFinalizedDatetime (DateTime markingFinalizedDatetime)
         {
             this.setProperty("markingFinalizedDatetime", markingFinalizedDatetime);
+        }
+
+        public bool getAllMarksApproved ()
+        {
+            return Convert.ToBoolean(this.getProperty("allMarksApproved"));
+        }
+
+        public void setAllMarksApproved (bool allMarksApproved)
+        {
+            this.setProperty("allMarksApproved", allMarksApproved);
         }
 
 

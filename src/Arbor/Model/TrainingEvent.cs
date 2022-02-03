@@ -15,6 +15,7 @@ namespace Arbor.Model
         public const string LOCATION_TEXT = "locationText";
         public const string LOCATION = "location";
         public const string TRAINING_EVENT_TITLE = "trainingEventTitle";
+        public const string EXPIRY_DATE = "expiryDate";
         public const string TRAINING_COURSE = "trainingCourse";
 
         public TrainingEvent ()
@@ -101,6 +102,16 @@ namespace Arbor.Model
         public void setTrainingEventTitle (string trainingEventTitle)
         {
             this.setProperty("trainingEventTitle", trainingEventTitle);
+        }
+
+        public DateTime getExpiryDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("expiryDate"));
+        }
+
+        public void setExpiryDate (DateTime expiryDate)
+        {
+            this.setProperty("expiryDate", expiryDate);
         }
 
         public TrainingCourse getTrainingCourse ()

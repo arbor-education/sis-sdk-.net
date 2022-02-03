@@ -18,6 +18,7 @@ namespace Arbor.Model
         public const string PERMISSION_NAME = "permissionName";
         public const string PERMISSION_CATEGORY = "permissionCategory";
         public const string DESCRIPTION = "description";
+        public const string IS_EXTERNAL_ADMINISTRATOR_ROLE = "isExternalAdministratorRole";
 
         public UserRole ()
         {
@@ -133,6 +134,16 @@ namespace Arbor.Model
         public void setDescription (string description)
         {
             this.setProperty("description", description);
+        }
+
+        public bool getIsExternalAdministratorRole ()
+        {
+            return Convert.ToBoolean(this.getProperty("isExternalAdministratorRole"));
+        }
+
+        public void setIsExternalAdministratorRole (bool isExternalAdministratorRole)
+        {
+            this.setProperty("isExternalAdministratorRole", isExternalAdministratorRole);
         }
 
 

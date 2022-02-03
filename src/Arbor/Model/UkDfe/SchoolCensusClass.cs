@@ -14,9 +14,11 @@ namespace Arbor.Model.UkDfe
         public const string SESSION = "session";
         public const string TEACHERS = "teachers";
         public const string NON_TEACHERS = "nonTeachers";
+        public const string PPA_TEACHERS = "ppaTeachers";
         public const string ASC_ACTIVITY = "ascActivity";
         public const string HOME_PUPILS = "homePupils";
         public const string GUEST_PUPILS = "guestPupils";
+        public const string INFANT_PUPIL_EXCEPTIONS = "infantPupilExceptions";
 
         public SchoolCensusClass ()
         {
@@ -94,6 +96,16 @@ namespace Arbor.Model.UkDfe
             this.setProperty("nonTeachers", nonTeachers);
         }
 
+        public int getPpaTeachers ()
+        {
+            return Convert.ToInt32(this.getProperty("ppaTeachers"));
+        }
+
+        public void setPpaTeachers (int ppaTeachers)
+        {
+            this.setProperty("ppaTeachers", ppaTeachers);
+        }
+
         public string getAscActivity ()
         {
             return this.getProperty("ascActivity").ToString();
@@ -122,6 +134,16 @@ namespace Arbor.Model.UkDfe
         public void setGuestPupils (int guestPupils)
         {
             this.setProperty("guestPupils", guestPupils);
+        }
+
+        public string getInfantPupilExceptions ()
+        {
+            return this.getProperty("infantPupilExceptions").ToString();
+        }
+
+        public void setInfantPupilExceptions (string infantPupilExceptions)
+        {
+            this.setProperty("infantPupilExceptions", infantPupilExceptions);
         }
 
 

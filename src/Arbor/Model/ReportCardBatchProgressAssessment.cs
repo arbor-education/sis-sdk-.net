@@ -13,6 +13,7 @@ namespace Arbor.Model
         public const string REPORT_CARD_BATCH = "reportCardBatch";
         public const string ORDER = "order";
         public const string ASSESSMENT = "assessment";
+        public const string DISPLAY_GRADE_SET = "displayGradeSet";
         public const string MARKING_COMPLETED_DATETIME = "markingCompletedDatetime";
 
         public ReportCardBatchProgressAssessment ()
@@ -79,6 +80,16 @@ namespace Arbor.Model
         public void setAssessment (Assessment assessment)
         {
             this.setProperty("assessment", assessment);
+        }
+
+        public GradeSet getDisplayGradeSet ()
+        {
+            return (GradeSet) this.getProperty("displayGradeSet");
+        }
+
+        public void setDisplayGradeSet (GradeSet displayGradeSet)
+        {
+            this.setProperty("displayGradeSet", displayGradeSet);
         }
 
         public DateTime getMarkingCompletedDatetime ()

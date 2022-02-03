@@ -17,6 +17,7 @@ namespace Arbor.Model
         public const string CONTAINS_GUARDIANS = "containsGuardians";
         public const string CONTAINS_STAFF = "containsStaff";
         public const string IS_DYNAMIC = "isDynamic";
+        public const string IDENTIFIER = "identifier";
 
         public CustomGroup ()
         {
@@ -122,6 +123,16 @@ namespace Arbor.Model
         public void setIsDynamic (bool isDynamic)
         {
             this.setProperty("isDynamic", isDynamic);
+        }
+
+        public string getIdentifier ()
+        {
+            return this.getProperty("identifier").ToString();
+        }
+
+        public void setIdentifier (string identifier)
+        {
+            this.setProperty("identifier", identifier);
         }
 
 

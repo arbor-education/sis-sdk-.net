@@ -11,6 +11,7 @@ namespace Arbor.Model.UkDfe
     {
         protected string resourceType = ResourceType.UK_DFE_EDUCATIONAL_INSTITUTION_ENROLMENT;
         public const string REMOVAL_GROUNDS = "removalGrounds";
+        public const string ALTERNATIVE_PROVISION_REASON = "alternativeProvisionReason";
 
         public EducationalInstitutionEnrolment ()
         {
@@ -56,6 +57,16 @@ namespace Arbor.Model.UkDfe
         public void setRemovalGrounds (string removalGrounds)
         {
             this.setProperty("removalGrounds", removalGrounds);
+        }
+
+        public AlternativeProvisionReason getAlternativeProvisionReason ()
+        {
+            return (AlternativeProvisionReason) this.getProperty("alternativeProvisionReason");
+        }
+
+        public void setAlternativeProvisionReason (AlternativeProvisionReason alternativeProvisionReason)
+        {
+            this.setProperty("alternativeProvisionReason", alternativeProvisionReason);
         }
 
 

@@ -16,14 +16,17 @@ namespace Arbor.Model
         public const string EARLY_YEARS_TEACHER_STATUS = "earlyYearsTeacherStatus";
         public const string QUALIFIED_TEACHER_ROUTE = "qualifiedTeacherRoute";
         public const string HLTA_STATUS = "hltaStatus";
+        public const string NEWLY_QUALIFIED_TEACHER_DATE = "newlyQualifiedTeacherDate";
         public const string PERSON = "person";
         public const string ETHNICITY = "ethnicity";
         public const string RELIGION = "religion";
         public const string BLOOD_GROUP = "bloodGroup";
         public const string STAFF_NUMBER = "staffNumber";
+        public const string CONTINUOUS_SERVICE_START_DATE = "continuousServiceStartDate";
         public const string ZENDESK_USER = "zendeskUser";
         public const string TIMETABLE_ABBREVIATION = "timetableAbbreviation";
         public const string LEGACY_SYSTEM_ID = "legacySystemId";
+        public const string EXTERNAL_PERSON_ID = "externalPersonId";
 
         public Staff ()
         {
@@ -121,6 +124,16 @@ namespace Arbor.Model
             this.setProperty("hltaStatus", hltaStatus);
         }
 
+        public DateTime getNewlyQualifiedTeacherDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("newlyQualifiedTeacherDate"));
+        }
+
+        public void setNewlyQualifiedTeacherDate (DateTime newlyQualifiedTeacherDate)
+        {
+            this.setProperty("newlyQualifiedTeacherDate", newlyQualifiedTeacherDate);
+        }
+
         public Person getPerson ()
         {
             return (Person) this.getProperty("person");
@@ -171,6 +184,16 @@ namespace Arbor.Model
             this.setProperty("staffNumber", staffNumber);
         }
 
+        public DateTime getContinuousServiceStartDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("continuousServiceStartDate"));
+        }
+
+        public void setContinuousServiceStartDate (DateTime continuousServiceStartDate)
+        {
+            this.setProperty("continuousServiceStartDate", continuousServiceStartDate);
+        }
+
         public string getZendeskUser ()
         {
             return this.getProperty("zendeskUser").ToString();
@@ -199,6 +222,16 @@ namespace Arbor.Model
         public void setLegacySystemId (string legacySystemId)
         {
             this.setProperty("legacySystemId", legacySystemId);
+        }
+
+        public string getExternalPersonId ()
+        {
+            return this.getProperty("externalPersonId").ToString();
+        }
+
+        public void setExternalPersonId (string externalPersonId)
+        {
+            this.setProperty("externalPersonId", externalPersonId);
         }
 
 

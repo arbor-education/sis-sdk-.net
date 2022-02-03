@@ -23,6 +23,7 @@ namespace Arbor.Model
         public const string SHOW_IN_PARENT_PORTAL = "showInParentPortal";
         public const string SHOW_NARRATIVE_IN_PARENT_PORTAL = "showNarrativeInParentPortal";
         public const string SHOW_AWARDED_BY_IN_PARENT_PORTAL = "showAwardedByInParentPortal";
+        public const string SHOW_EVENT_IN_PARENT_PORTAL = "showEventInParentPortal";
 
         public PointAwardScale ()
         {
@@ -188,6 +189,16 @@ namespace Arbor.Model
         public void setShowAwardedByInParentPortal (bool showAwardedByInParentPortal)
         {
             this.setProperty("showAwardedByInParentPortal", showAwardedByInParentPortal);
+        }
+
+        public bool getShowEventInParentPortal ()
+        {
+            return Convert.ToBoolean(this.getProperty("showEventInParentPortal"));
+        }
+
+        public void setShowEventInParentPortal (bool showEventInParentPortal)
+        {
+            this.setProperty("showEventInParentPortal", showEventInParentPortal);
         }
 
 

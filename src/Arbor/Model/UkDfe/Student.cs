@@ -17,8 +17,17 @@ namespace Arbor.Model.UkDfe
         public const string FUNDED_HOURS = "fundedHours";
         public const string ETHNICITY_SOURCE = "ethnicitySource";
         public const string NHS_NUMBER = "nhsNumber";
+        public const string UCAS_PERSONAL_IDENTIFIER = "ucasPersonalIdentifier";
         public const string EXTENDED_HOURS = "extendedHours";
         public const string THIRTY_HOUR_CODE = "thirtyHourCode";
+        public const string GCSE_ENGLISH_GRADE = "gcseEnglishGrade";
+        public const string GCSE_ENGLISH_GRADE_PRIOR = "gcseEnglishGradePrior";
+        public const string GCSE_ENGLISH_ACHIEVEMENT_TYPE = "gcseEnglishAchievementType";
+        public const string GCSE_ENGLISH_FUNDING_EXEMPTION_TYPE = "gcseEnglishFundingExemptionType";
+        public const string GCSE_MATHS_GRADE = "gcseMathsGrade";
+        public const string GCSE_MATHS_GRADE_PRIOR = "gcseMathsGradePrior";
+        public const string GCSE_MATHS_ACHIEVEMENT_TYPE = "gcseMathsAchievementType";
+        public const string GCSE_MATHS_FUNDING_EXEMPTION_TYPE = "gcseMathsFundingExemptionType";
 
         public Student ()
         {
@@ -126,6 +135,16 @@ namespace Arbor.Model.UkDfe
             this.setProperty("nhsNumber", nhsNumber);
         }
 
+        public string getUcasPersonalIdentifier ()
+        {
+            return this.getProperty("ucasPersonalIdentifier").ToString();
+        }
+
+        public void setUcasPersonalIdentifier (string ucasPersonalIdentifier)
+        {
+            this.setProperty("ucasPersonalIdentifier", ucasPersonalIdentifier);
+        }
+
         public string getExtendedHours ()
         {
             return this.getProperty("extendedHours").ToString();
@@ -144,6 +163,86 @@ namespace Arbor.Model.UkDfe
         public void setThirtyHourCode (string thirtyHourCode)
         {
             this.setProperty("thirtyHourCode", thirtyHourCode);
+        }
+
+        public string getGcseEnglishGrade ()
+        {
+            return this.getProperty("gcseEnglishGrade").ToString();
+        }
+
+        public void setGcseEnglishGrade (string gcseEnglishGrade)
+        {
+            this.setProperty("gcseEnglishGrade", gcseEnglishGrade);
+        }
+
+        public string getGcseEnglishGradePrior ()
+        {
+            return this.getProperty("gcseEnglishGradePrior").ToString();
+        }
+
+        public void setGcseEnglishGradePrior (string gcseEnglishGradePrior)
+        {
+            this.setProperty("gcseEnglishGradePrior", gcseEnglishGradePrior);
+        }
+
+        public GcseEnglishAchievementType getGcseEnglishAchievementType ()
+        {
+            return (GcseEnglishAchievementType) this.getProperty("gcseEnglishAchievementType");
+        }
+
+        public void setGcseEnglishAchievementType (GcseEnglishAchievementType gcseEnglishAchievementType)
+        {
+            this.setProperty("gcseEnglishAchievementType", gcseEnglishAchievementType);
+        }
+
+        public GcseEnglishFundingExemptionType getGcseEnglishFundingExemptionType ()
+        {
+            return (GcseEnglishFundingExemptionType) this.getProperty("gcseEnglishFundingExemptionType");
+        }
+
+        public void setGcseEnglishFundingExemptionType (GcseEnglishFundingExemptionType gcseEnglishFundingExemptionType)
+        {
+            this.setProperty("gcseEnglishFundingExemptionType", gcseEnglishFundingExemptionType);
+        }
+
+        public string getGcseMathsGrade ()
+        {
+            return this.getProperty("gcseMathsGrade").ToString();
+        }
+
+        public void setGcseMathsGrade (string gcseMathsGrade)
+        {
+            this.setProperty("gcseMathsGrade", gcseMathsGrade);
+        }
+
+        public string getGcseMathsGradePrior ()
+        {
+            return this.getProperty("gcseMathsGradePrior").ToString();
+        }
+
+        public void setGcseMathsGradePrior (string gcseMathsGradePrior)
+        {
+            this.setProperty("gcseMathsGradePrior", gcseMathsGradePrior);
+        }
+
+        public GcseMathsAchievementType getGcseMathsAchievementType ()
+        {
+            return (GcseMathsAchievementType) this.getProperty("gcseMathsAchievementType");
+        }
+
+        public void setGcseMathsAchievementType (GcseMathsAchievementType gcseMathsAchievementType)
+        {
+            this.setProperty("gcseMathsAchievementType", gcseMathsAchievementType);
+        }
+
+        public GcseMathsFundingExemptionType getGcseMathsFundingExemptionType ()
+        {
+            return (GcseMathsFundingExemptionType) this.getProperty("gcseMathsFundingExemptionType");
+        }
+
+        public void setGcseMathsFundingExemptionType (GcseMathsFundingExemptionType gcseMathsFundingExemptionType)
+        {
+            this.setProperty("gcseMathsFundingExemptionType", gcseMathsFundingExemptionType);
         }
 
 

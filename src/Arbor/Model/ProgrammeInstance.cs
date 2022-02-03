@@ -14,6 +14,9 @@ namespace Arbor.Model
         public const string NAME = "name";
         public const string PLANNED_START_DATE = "plannedStartDate";
         public const string PLANNED_END_DATE = "plannedEndDate";
+        public const string PLACEHOLDER_QUALIFICATION_AWARD_NAME = "placeholderQualificationAwardName";
+        public const string PLACEHOLDER_QUALIFICATION_AWARD_REFERENCE = "placeholderQualificationAwardReference";
+        public const string PROGRAMME_CLASSIFICATION = "programmeClassification";
 
         public ProgrammeInstance ()
         {
@@ -89,6 +92,36 @@ namespace Arbor.Model
         public void setPlannedEndDate (DateTime plannedEndDate)
         {
             this.setProperty("plannedEndDate", plannedEndDate);
+        }
+
+        public string getPlaceholderQualificationAwardName ()
+        {
+            return this.getProperty("placeholderQualificationAwardName").ToString();
+        }
+
+        public void setPlaceholderQualificationAwardName (string placeholderQualificationAwardName)
+        {
+            this.setProperty("placeholderQualificationAwardName", placeholderQualificationAwardName);
+        }
+
+        public string getPlaceholderQualificationAwardReference ()
+        {
+            return this.getProperty("placeholderQualificationAwardReference").ToString();
+        }
+
+        public void setPlaceholderQualificationAwardReference (string placeholderQualificationAwardReference)
+        {
+            this.setProperty("placeholderQualificationAwardReference", placeholderQualificationAwardReference);
+        }
+
+        public ProgrammeClassification getProgrammeClassification ()
+        {
+            return (ProgrammeClassification) this.getProperty("programmeClassification");
+        }
+
+        public void setProgrammeClassification (ProgrammeClassification programmeClassification)
+        {
+            this.setProperty("programmeClassification", programmeClassification);
         }
 
 

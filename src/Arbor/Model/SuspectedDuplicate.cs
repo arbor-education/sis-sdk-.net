@@ -16,6 +16,9 @@ namespace Arbor.Model
         public const string TOTAL_DUPLICATE_SCORE = "totalDuplicateScore";
         public const string DUPLICATE_SCORES = "duplicateScores";
         public const string RESOLVED_DATETIME = "resolvedDatetime";
+        public const string RESOLUTION_APPROVAL_REQUESTED_BY_STAFF = "resolutionApprovalRequestedByStaff";
+        public const string RESOLUTION_APPROVAL_REQUESTED_FROM_STAFF = "resolutionApprovalRequestedFromStaff";
+        public const string RESOLUTION_APPROVED_BY_STAFF = "resolutionApprovedByStaff";
         public const string RESOLVED_BY_STAFF = "resolvedByStaff";
         public const string RESOLUTION = "resolution";
 
@@ -113,6 +116,36 @@ namespace Arbor.Model
         public void setResolvedDatetime (DateTime resolvedDatetime)
         {
             this.setProperty("resolvedDatetime", resolvedDatetime);
+        }
+
+        public Staff getResolutionApprovalRequestedByStaff ()
+        {
+            return (Staff) this.getProperty("resolutionApprovalRequestedByStaff");
+        }
+
+        public void setResolutionApprovalRequestedByStaff (Staff resolutionApprovalRequestedByStaff)
+        {
+            this.setProperty("resolutionApprovalRequestedByStaff", resolutionApprovalRequestedByStaff);
+        }
+
+        public Staff getResolutionApprovalRequestedFromStaff ()
+        {
+            return (Staff) this.getProperty("resolutionApprovalRequestedFromStaff");
+        }
+
+        public void setResolutionApprovalRequestedFromStaff (Staff resolutionApprovalRequestedFromStaff)
+        {
+            this.setProperty("resolutionApprovalRequestedFromStaff", resolutionApprovalRequestedFromStaff);
+        }
+
+        public Staff getResolutionApprovedByStaff ()
+        {
+            return (Staff) this.getProperty("resolutionApprovedByStaff");
+        }
+
+        public void setResolutionApprovedByStaff (Staff resolutionApprovedByStaff)
+        {
+            this.setProperty("resolutionApprovedByStaff", resolutionApprovedByStaff);
         }
 
         public Staff getResolvedByStaff ()

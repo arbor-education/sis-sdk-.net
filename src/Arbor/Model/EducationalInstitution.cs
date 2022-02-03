@@ -18,6 +18,7 @@ namespace Arbor.Model
         public const string GOVERNANCE_TYPE = "governanceType";
         public const string INTAKE_TYPE = "intakeType";
         public const string URN = "urn";
+        public const string UKPRN = "ukprn";
         public const string HAS_CHILD_MOTHER_PROVISION = "hasChildMotherProvision";
         public const string HAS_CHILDCARE_PLACES = "hasChildcarePlaces";
         public const string CENTER_NUMBER = "centerNumber";
@@ -151,6 +152,16 @@ namespace Arbor.Model
         public void setUrn (string urn)
         {
             this.setProperty("urn", urn);
+        }
+
+        public string getUkprn ()
+        {
+            return this.getProperty("ukprn").ToString();
+        }
+
+        public void setUkprn (string ukprn)
+        {
+            this.setProperty("ukprn", ukprn);
         }
 
         public bool getHasChildMotherProvision ()

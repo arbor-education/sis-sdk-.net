@@ -16,6 +16,7 @@ namespace Arbor.Model
         public const string STAFF_ABSENCE_CATEGORY = "staffAbsenceCategory";
         public const string SICKNESS_CATEGORY = "sicknessCategory";
         public const string SICKNESS_SUBCATEGORY = "sicknessSubcategory";
+        public const string INTEGRATIONS_HR_FINANCE_PROVIDER = "integrationsHrFinanceProvider";
         public const string APPROVED_DATETIME = "approvedDatetime";
         public const string APPROVED_BY_STAFF = "approvedByStaff";
         public const string CALCULATED_WORKING_DAYS = "calculatedWorkingDays";
@@ -120,6 +121,16 @@ namespace Arbor.Model
         public void setSicknessSubcategory (StaffAbsenceSicknessSubcategory sicknessSubcategory)
         {
             this.setProperty("sicknessSubcategory", sicknessSubcategory);
+        }
+
+        public IntegrationsHrFinanceProvider getIntegrationsHrFinanceProvider ()
+        {
+            return (IntegrationsHrFinanceProvider) this.getProperty("integrationsHrFinanceProvider");
+        }
+
+        public void setIntegrationsHrFinanceProvider (IntegrationsHrFinanceProvider integrationsHrFinanceProvider)
+        {
+            this.setProperty("integrationsHrFinanceProvider", integrationsHrFinanceProvider);
         }
 
         public DateTime getApprovedDatetime ()

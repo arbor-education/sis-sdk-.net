@@ -11,6 +11,7 @@ namespace Arbor.Model
     {
         protected string resourceType = ResourceType.EMPLOYER;
         public const string NAME = "name";
+        public const string IDENTIFIER = "identifier";
 
         public Employer ()
         {
@@ -56,6 +57,16 @@ namespace Arbor.Model
         public void setName (string name)
         {
             this.setProperty("name", name);
+        }
+
+        public string getIdentifier ()
+        {
+            return this.getProperty("identifier").ToString();
+        }
+
+        public void setIdentifier (string identifier)
+        {
+            this.setProperty("identifier", identifier);
         }
 
 

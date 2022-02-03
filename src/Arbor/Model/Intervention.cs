@@ -10,7 +10,6 @@ namespace Arbor.Model
     public class Intervention : ModelBase
     {
         protected string resourceType = ResourceType.INTERVENTION;
-        public const string INTERVENTION_DEFINITION = "interventionDefinition";
         public const string NAME = "name";
         public const string ACADEMIC_YEAR = "academicYear";
         public const string TERM = "term";
@@ -62,16 +61,6 @@ namespace Arbor.Model
             RestGateway gateway = (RestGateway) Intervention.getDefaultGateway();
         	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
         	return (Intervention) gateway.retrieve(ResourceType.INTERVENTION, id);
-        }
-
-        public InterventionDefinition getInterventionDefinition ()
-        {
-            return (InterventionDefinition) this.getProperty("interventionDefinition");
-        }
-
-        public void setInterventionDefinition (InterventionDefinition interventionDefinition)
-        {
-            this.setProperty("interventionDefinition", interventionDefinition);
         }
 
         public string getName ()

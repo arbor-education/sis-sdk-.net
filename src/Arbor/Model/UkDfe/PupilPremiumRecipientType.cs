@@ -49,12 +49,12 @@ namespace Arbor.Model.UkDfe
         	return (PupilPremiumRecipientType) gateway.retrieve(ResourceType.UK_DFE_PUPIL_PREMIUM_RECIPIENT_TYPE, id);
         }
 
-        public Pupil getPupilPremiumRecipient ()
+        public PupilPremiumRecipient getPupilPremiumRecipient ()
         {
-            return (Pupil) this.getProperty("pupilPremiumRecipient");
+            return (PupilPremiumRecipient) this.getProperty("pupilPremiumRecipient");
         }
 
-        public void setPupilPremiumRecipient (Pupil pupilPremiumRecipient)
+        public void setPupilPremiumRecipient (PupilPremiumRecipient pupilPremiumRecipient)
         {
             this.setProperty("pupilPremiumRecipient", pupilPremiumRecipient);
         }

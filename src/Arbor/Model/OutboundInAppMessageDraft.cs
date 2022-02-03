@@ -15,6 +15,7 @@ namespace Arbor.Model
         public const string COMBINE_MESSAGES_TO_SAME_RECIPIENT = "combineMessagesToSameRecipient";
         public const string COMBINE_MESSAGES_TO_SAME_HOUSEHOLD = "combineMessagesToSameHousehold";
         public const string GENERATED_DATETIME = "generatedDatetime";
+        public const string CONTEXT = "context";
 
         public OutboundInAppMessageDraft ()
         {
@@ -100,6 +101,16 @@ namespace Arbor.Model
         public void setGeneratedDatetime (DateTime generatedDatetime)
         {
             this.setProperty("generatedDatetime", generatedDatetime);
+        }
+
+        public ModelBase getContext ()
+        {
+            return (ModelBase) this.getProperty("context");
+        }
+
+        public void setContext (ModelBase context)
+        {
+            this.setProperty("context", context);
         }
 
 

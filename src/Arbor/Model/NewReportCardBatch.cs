@@ -30,6 +30,7 @@ namespace Arbor.Model
         public const string FINALIZED_DATETIME = "finalizedDatetime";
         public const string FINALIZATION_IN_PROGRESS = "finalizationInProgress";
         public const string SHARED_WITH_GUARDIANS = "sharedWithGuardians";
+        public const string SHARED_WITH_STUDENTS = "sharedWithStudents";
         public const string BEHAVIOUR_FIELDS = "behaviourFields";
         public const string ATTENDANCE_FIELDS = "attendanceFields";
         public const string SHOW_COMMENTS = "showComments";
@@ -269,6 +270,16 @@ namespace Arbor.Model
         public void setSharedWithGuardians (bool sharedWithGuardians)
         {
             this.setProperty("sharedWithGuardians", sharedWithGuardians);
+        }
+
+        public bool getSharedWithStudents ()
+        {
+            return Convert.ToBoolean(this.getProperty("sharedWithStudents"));
+        }
+
+        public void setSharedWithStudents (bool sharedWithStudents)
+        {
+            this.setProperty("sharedWithStudents", sharedWithStudents);
         }
 
         public string getBehaviourFields ()

@@ -12,8 +12,11 @@ namespace Arbor.Model.UkDfe
         protected string resourceType = ResourceType.UK_DFE_STAFF;
         public const string ELIGIBLE_FOR_SCHOOL_WORKFORCE_RETURN = "eligibleForSchoolWorkforceReturn";
         public const string QUALIFIED_TEACHER_STATUS = "qualifiedTeacherStatus";
+        public const string QUALIFIED_TEACHER_LEARNING_AND_SKILLS_STATUS = "qualifiedTeacherLearningAndSkillsStatus";
+        public const string EARLY_YEARS_TEACHER_STATUS = "earlyYearsTeacherStatus";
         public const string QUALIFIED_TEACHER_ROUTE = "qualifiedTeacherRoute";
         public const string HLTA_STATUS = "hltaStatus";
+        public const string NEWLY_QUALIFIED_TEACHER_DATE = "newlyQualifiedTeacherDate";
 
         public Staff ()
         {
@@ -53,7 +56,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getEligibleForSchoolWorkforceReturn ()
         {
-            return (bool) this.getProperty("eligibleForSchoolWorkforceReturn");
+            return Convert.ToBoolean(this.getProperty("eligibleForSchoolWorkforceReturn"));
         }
 
         public void setEligibleForSchoolWorkforceReturn (bool eligibleForSchoolWorkforceReturn)
@@ -63,12 +66,32 @@ namespace Arbor.Model.UkDfe
 
         public bool getQualifiedTeacherStatus ()
         {
-            return (bool) this.getProperty("qualifiedTeacherStatus");
+            return Convert.ToBoolean(this.getProperty("qualifiedTeacherStatus"));
         }
 
         public void setQualifiedTeacherStatus (bool qualifiedTeacherStatus)
         {
             this.setProperty("qualifiedTeacherStatus", qualifiedTeacherStatus);
+        }
+
+        public bool getQualifiedTeacherLearningAndSkillsStatus ()
+        {
+            return Convert.ToBoolean(this.getProperty("qualifiedTeacherLearningAndSkillsStatus"));
+        }
+
+        public void setQualifiedTeacherLearningAndSkillsStatus (bool qualifiedTeacherLearningAndSkillsStatus)
+        {
+            this.setProperty("qualifiedTeacherLearningAndSkillsStatus", qualifiedTeacherLearningAndSkillsStatus);
+        }
+
+        public bool getEarlyYearsTeacherStatus ()
+        {
+            return Convert.ToBoolean(this.getProperty("earlyYearsTeacherStatus"));
+        }
+
+        public void setEarlyYearsTeacherStatus (bool earlyYearsTeacherStatus)
+        {
+            this.setProperty("earlyYearsTeacherStatus", earlyYearsTeacherStatus);
         }
 
         public QualifiedTeacherRoute getQualifiedTeacherRoute ()
@@ -83,12 +106,22 @@ namespace Arbor.Model.UkDfe
 
         public bool getHltaStatus ()
         {
-            return (bool) this.getProperty("hltaStatus");
+            return Convert.ToBoolean(this.getProperty("hltaStatus"));
         }
 
         public void setHltaStatus (bool hltaStatus)
         {
             this.setProperty("hltaStatus", hltaStatus);
+        }
+
+        public DateTime getNewlyQualifiedTeacherDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("newlyQualifiedTeacherDate"));
+        }
+
+        public void setNewlyQualifiedTeacherDate (DateTime newlyQualifiedTeacherDate)
+        {
+            this.setProperty("newlyQualifiedTeacherDate", newlyQualifiedTeacherDate);
         }
 
 
