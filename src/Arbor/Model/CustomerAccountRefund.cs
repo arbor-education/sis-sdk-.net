@@ -14,7 +14,6 @@ namespace Arbor.Model
         public const string REFUND_DATETIME = "refundDatetime";
         public const string REFUND = "refund";
         public const string TRANSACTION = "transaction";
-        public const string STRIPE_REFUND_TRANSACTION = "stripeRefundTransaction";
         public const string REFUND_SUCCEEDED_DATETIME = "refundSucceededDatetime";
         public const string REFUND_FAILED_DATETIME = "refundFailedDatetime";
 
@@ -92,16 +91,6 @@ namespace Arbor.Model
         public void setTransaction (ModelBase transaction)
         {
             this.setProperty("transaction", transaction);
-        }
-
-        public StripeRefundTransaction getStripeRefundTransaction ()
-        {
-            return (StripeRefundTransaction) this.getProperty("stripeRefundTransaction");
-        }
-
-        public void setStripeRefundTransaction (StripeRefundTransaction stripeRefundTransaction)
-        {
-            this.setProperty("stripeRefundTransaction", stripeRefundTransaction);
         }
 
         public DateTime getRefundSucceededDatetime ()

@@ -14,6 +14,7 @@ namespace Arbor.Model
         public const string SCHOOL_EVENT_TYPE = "schoolEventType";
         public const string SCHOOL_EVENT_NAME = "schoolEventName";
         public const string NARRATIVE = "narrative";
+        public const string COVER_REQUIRED = "coverRequired";
 
         public RepeatingSchoolEvent ()
         {
@@ -89,6 +90,16 @@ namespace Arbor.Model
         public void setNarrative (string narrative)
         {
             this.setProperty("narrative", narrative);
+        }
+
+        public bool getCoverRequired ()
+        {
+            return Convert.ToBoolean(this.getProperty("coverRequired"));
+        }
+
+        public void setCoverRequired (bool coverRequired)
+        {
+            this.setProperty("coverRequired", coverRequired);
         }
 
 

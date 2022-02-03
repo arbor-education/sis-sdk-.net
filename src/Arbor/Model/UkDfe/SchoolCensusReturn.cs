@@ -24,6 +24,7 @@ namespace Arbor.Model.UkDfe
         public const string DATA_EXPORT_STARTED_DATETIME = "dataExportStartedDatetime";
         public const string DATA_EXPORT_COMPLETED_DATETIME = "dataExportCompletedDatetime";
         public const string IS_DRY_RUN = "isDryRun";
+        public const string SUBMITTED_DATETIME = "submittedDatetime";
 
         public SchoolCensusReturn ()
         {
@@ -113,7 +114,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getDataError ()
         {
-            return (bool) this.getProperty("dataError");
+            return Convert.ToBoolean(this.getProperty("dataError"));
         }
 
         public void setDataError (bool dataError)
@@ -123,7 +124,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getXsdError ()
         {
-            return (bool) this.getProperty("xsdError");
+            return Convert.ToBoolean(this.getProperty("xsdError"));
         }
 
         public void setXsdError (bool xsdError)
@@ -133,7 +134,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getXsltError ()
         {
-            return (bool) this.getProperty("xsltError");
+            return Convert.ToBoolean(this.getProperty("xsltError"));
         }
 
         public void setXsltError (bool xsltError)
@@ -143,7 +144,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getSummaryError ()
         {
-            return (bool) this.getProperty("summaryError");
+            return Convert.ToBoolean(this.getProperty("summaryError"));
         }
 
         public void setSummaryError (bool summaryError)
@@ -171,7 +172,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("statusDescription", statusDescription);
         }
 
-        public DateTime getDataExportStartedDatetime (){
+        public DateTime getDataExportStartedDatetime ()
+        {
             return Convert.ToDateTime(this.getProperty("dataExportStartedDatetime"));
         }
 
@@ -180,7 +182,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("dataExportStartedDatetime", dataExportStartedDatetime);
         }
 
-        public DateTime getDataExportCompletedDatetime (){
+        public DateTime getDataExportCompletedDatetime ()
+        {
             return Convert.ToDateTime(this.getProperty("dataExportCompletedDatetime"));
         }
 
@@ -191,12 +194,22 @@ namespace Arbor.Model.UkDfe
 
         public bool getIsDryRun ()
         {
-            return (bool) this.getProperty("isDryRun");
+            return Convert.ToBoolean(this.getProperty("isDryRun"));
         }
 
         public void setIsDryRun (bool isDryRun)
         {
             this.setProperty("isDryRun", isDryRun);
+        }
+
+        public DateTime getSubmittedDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("submittedDatetime"));
+        }
+
+        public void setSubmittedDatetime (DateTime submittedDatetime)
+        {
+            this.setProperty("submittedDatetime", submittedDatetime);
         }
 
 

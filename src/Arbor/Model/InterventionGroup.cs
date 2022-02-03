@@ -12,7 +12,6 @@ namespace Arbor.Model
         protected string resourceType = ResourceType.INTERVENTION_GROUP;
         public const string NAME = "name";
         public const string INTERVENTION = "intervention";
-        public const string GROUP = "group";
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
         public const string AIMS = "aims";
@@ -74,16 +73,6 @@ namespace Arbor.Model
         public void setIntervention (Intervention intervention)
         {
             this.setProperty("intervention", intervention);
-        }
-
-        public ModelBase getGroup ()
-        {
-            return (ModelBase) this.getProperty("group");
-        }
-
-        public void setGroup (ModelBase group)
-        {
-            this.setProperty("group", group);
         }
 
         public DateTime getStartDate ()

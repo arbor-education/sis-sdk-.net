@@ -36,6 +36,8 @@ namespace Arbor.Model
         public const string IS_MAIN_ASSESSABLE_UNIT = "isMainAssessableUnit";
         public const string DISPLAY_ORDER = "displayOrder";
         public const string ATTENDANCE_REGISTER_TYPE = "attendanceRegisterType";
+        public const string PROMOTED_ENROLMENT_START_DATE = "promotedEnrolmentStartDate";
+        public const string PROMOTED_ENROLMENT_END_DATE = "promotedEnrolmentEndDate";
 
         public AcademicUnit ()
         {
@@ -321,6 +323,26 @@ namespace Arbor.Model
         public void setAttendanceRegisterType (AttendanceRegisterType attendanceRegisterType)
         {
             this.setProperty("attendanceRegisterType", attendanceRegisterType);
+        }
+
+        public DateTime getPromotedEnrolmentStartDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("promotedEnrolmentStartDate"));
+        }
+
+        public void setPromotedEnrolmentStartDate (DateTime promotedEnrolmentStartDate)
+        {
+            this.setProperty("promotedEnrolmentStartDate", promotedEnrolmentStartDate);
+        }
+
+        public DateTime getPromotedEnrolmentEndDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("promotedEnrolmentEndDate"));
+        }
+
+        public void setPromotedEnrolmentEndDate (DateTime promotedEnrolmentEndDate)
+        {
+            this.setProperty("promotedEnrolmentEndDate", promotedEnrolmentEndDate);
         }
 
         public ModelCollection<AcademicUnitCurriculum> getAcademicUnitCurriculums ()

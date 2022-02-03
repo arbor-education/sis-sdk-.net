@@ -69,7 +69,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getActive ()
         {
-            return (bool) this.getProperty("active");
+            return Convert.ToBoolean(this.getProperty("active"));
         }
 
         public void setActive (bool active)
@@ -117,7 +117,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("schoolCensusTerm", schoolCensusTerm);
         }
 
-        public DateTime getSchoolCensusReferenceDate (){
+        public DateTime getSchoolCensusReferenceDate ()
+        {
             return Convert.ToDateTime(this.getProperty("schoolCensusReferenceDate"));
         }
 
@@ -126,7 +127,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("schoolCensusReferenceDate", schoolCensusReferenceDate);
         }
 
-        public DateTime getSchoolCensusReturnDeadlineDate (){
+        public DateTime getSchoolCensusReturnDeadlineDate ()
+        {
             return Convert.ToDateTime(this.getProperty("schoolCensusReturnDeadlineDate"));
         }
 
@@ -135,8 +137,9 @@ namespace Arbor.Model.UkDfe
             this.setProperty("schoolCensusReturnDeadlineDate", schoolCensusReturnDeadlineDate);
         }
 
-        public DateTime getSchoolCensusDatabaseClosureDate (){
-            return  Convert.ToDateTime(this.getProperty("schoolCensusDatabaseClosureDate"));
+        public DateTime getSchoolCensusDatabaseClosureDate ()
+        {
+            return Convert.ToDateTime(this.getProperty("schoolCensusDatabaseClosureDate"));
         }
 
         public void setSchoolCensusDatabaseClosureDate (DateTime schoolCensusDatabaseClosureDate)
@@ -144,7 +147,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("schoolCensusDatabaseClosureDate", schoolCensusDatabaseClosureDate);
         }
 
-        public DateTime getSchoolCensusSpecificTime (){
+        public DateTime getSchoolCensusSpecificTime ()
+        {
             return Convert.ToDateTime(this.getProperty("schoolCensusSpecificTime"));
         }
 

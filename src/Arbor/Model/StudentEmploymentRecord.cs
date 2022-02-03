@@ -14,8 +14,7 @@ namespace Arbor.Model
         public const string EMPLOYER = "employer";
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
-        public const string MIN_HOURS_PER_WEEK = "minHoursPerWeek";
-        public const string MAX_HOURS_PER_WEEK = "maxHoursPerWeek";
+        public const string HOURS_PER_WEEK = "hoursPerWeek";
         public const string INFORMATION_COLLECTED_DATE = "informationCollectedDate";
         public const string EMPLOYMENT_RECORD_TYPE = "employmentRecordType";
 
@@ -95,24 +94,14 @@ namespace Arbor.Model
             this.setProperty("endDate", endDate);
         }
 
-        public string getMinHoursPerWeek ()
+        public string getHoursPerWeek ()
         {
-            return this.getProperty("minHoursPerWeek").ToString();
+            return this.getProperty("hoursPerWeek").ToString();
         }
 
-        public void setMinHoursPerWeek (string minHoursPerWeek)
+        public void setHoursPerWeek (string hoursPerWeek)
         {
-            this.setProperty("minHoursPerWeek", minHoursPerWeek);
-        }
-
-        public string getMaxHoursPerWeek ()
-        {
-            return this.getProperty("maxHoursPerWeek").ToString();
-        }
-
-        public void setMaxHoursPerWeek (string maxHoursPerWeek)
-        {
-            this.setProperty("maxHoursPerWeek", maxHoursPerWeek);
+            this.setProperty("hoursPerWeek", hoursPerWeek);
         }
 
         public DateTime getInformationCollectedDate ()

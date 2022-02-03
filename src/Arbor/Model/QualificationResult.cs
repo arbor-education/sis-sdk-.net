@@ -16,9 +16,9 @@ namespace Arbor.Model
         public const string STUDENT = "student";
         public const string CANDIDATE_REGISTRATION = "candidateRegistration";
         public const string CANDIDATE_ENTRY = "candidateEntry";
+        public const string CANDIDATE_ASSESSABLE_ENTRY = "candidateAssessableEntry";
         public const string RESULT_DATETIME = "resultDatetime";
         public const string EMBARGO_DATETIME = "embargoDatetime";
-        public const string IMPORT_JOB = "importJob";
         public const string MISSING_RESULT_REASON = "missingResultReason";
         public const string PARTIAL_ABSENCE = "partialAbsence";
         public const string ENDORSEMENT_GRADE = "endorsementGrade";
@@ -119,6 +119,16 @@ namespace Arbor.Model
             this.setProperty("candidateEntry", candidateEntry);
         }
 
+        public CandidateAssessableEntry getCandidateAssessableEntry ()
+        {
+            return (CandidateAssessableEntry) this.getProperty("candidateAssessableEntry");
+        }
+
+        public void setCandidateAssessableEntry (CandidateAssessableEntry candidateAssessableEntry)
+        {
+            this.setProperty("candidateAssessableEntry", candidateAssessableEntry);
+        }
+
         public DateTime getResultDatetime ()
         {
             return Convert.ToDateTime(this.getProperty("resultDatetime"));
@@ -137,16 +147,6 @@ namespace Arbor.Model
         public void setEmbargoDatetime (DateTime embargoDatetime)
         {
             this.setProperty("embargoDatetime", embargoDatetime);
-        }
-
-        public QualificationResultImportJob getImportJob ()
-        {
-            return (QualificationResultImportJob) this.getProperty("importJob");
-        }
-
-        public void setImportJob (QualificationResultImportJob importJob)
-        {
-            this.setProperty("importJob", importJob);
         }
 
         public string getMissingResultReason ()

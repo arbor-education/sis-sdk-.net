@@ -18,6 +18,7 @@ namespace Arbor.Model
         public const string EVENT = "event";
         public const string LOCATION = "location";
         public const string RESOLVED_DATETIME = "resolvedDatetime";
+        public const string LOGGED_BY_STAFF = "loggedByStaff";
 
         public BehaviouralIncident ()
         {
@@ -133,6 +134,16 @@ namespace Arbor.Model
         public void setResolvedDatetime (DateTime resolvedDatetime)
         {
             this.setProperty("resolvedDatetime", resolvedDatetime);
+        }
+
+        public Staff getLoggedByStaff ()
+        {
+            return (Staff) this.getProperty("loggedByStaff");
+        }
+
+        public void setLoggedByStaff (Staff loggedByStaff)
+        {
+            this.setProperty("loggedByStaff", loggedByStaff);
         }
 
 

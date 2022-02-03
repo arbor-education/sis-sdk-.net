@@ -13,6 +13,7 @@ namespace Arbor.Model
         public const string PROGRAMME_INSTANCE = "programmeInstance";
         public const string STUDENT = "student";
         public const string MAIN_PROGRAMME = "mainProgramme";
+        public const string PROGRAMME_CLASSIFICATION = "programmeClassification";
         public const string PLANNED_START_DATE = "plannedStartDate";
         public const string PLANNED_END_DATE = "plannedEndDate";
         public const string ACTUAL_END_DATE = "actualEndDate";
@@ -83,6 +84,16 @@ namespace Arbor.Model
         public void setMainProgramme (bool mainProgramme)
         {
             this.setProperty("mainProgramme", mainProgramme);
+        }
+
+        public ProgrammeClassification getProgrammeClassification ()
+        {
+            return (ProgrammeClassification) this.getProperty("programmeClassification");
+        }
+
+        public void setProgrammeClassification (ProgrammeClassification programmeClassification)
+        {
+            this.setProperty("programmeClassification", programmeClassification);
         }
 
         public DateTime getPlannedStartDate ()

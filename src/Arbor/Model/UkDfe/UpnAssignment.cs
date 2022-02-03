@@ -116,7 +116,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("upn", upn);
         }
 
-        public DateTime getStartDatetime (){
+        public DateTime getStartDatetime ()
+        {
             return Convert.ToDateTime(this.getProperty("startDatetime"));
         }
 
@@ -125,7 +126,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("startDatetime", startDatetime);
         }
 
-        public DateTime getEndDatetime (){
+        public DateTime getEndDatetime ()
+        {
             return Convert.ToDateTime(this.getProperty("endDatetime"));
         }
 
@@ -136,7 +138,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getIsTemporary ()
         {
-            return (bool) this.getProperty("isTemporary");
+            return Convert.ToBoolean(this.getProperty("isTemporary"));
         }
 
         public void setIsTemporary (bool isTemporary)

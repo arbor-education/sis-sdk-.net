@@ -10,7 +10,6 @@ namespace Arbor.Model
     public class Email : ModelBase
     {
         protected string resourceType = ResourceType.EMAIL;
-        public const string EMAIL_MAILBOX = "emailMailbox";
         public const string EMAIL_DRAFT = "emailDraft";
         public const string UID = "uid";
         public const string UID_VALIDITY = "uidValidity";
@@ -60,16 +59,6 @@ namespace Arbor.Model
             RestGateway gateway = (RestGateway) Email.getDefaultGateway();
         	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
         	return (Email) gateway.retrieve(ResourceType.EMAIL, id);
-        }
-
-        public EmailMailbox getEmailMailbox ()
-        {
-            return (EmailMailbox) this.getProperty("emailMailbox");
-        }
-
-        public void setEmailMailbox (EmailMailbox emailMailbox)
-        {
-            this.setProperty("emailMailbox", emailMailbox);
         }
 
         public EmailDraft getEmailDraft ()

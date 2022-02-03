@@ -12,6 +12,7 @@ namespace Arbor.Model
         protected string resourceType = ResourceType.TIMETABLER_IMPORT_RESULT;
         public const string ACADEMIC_YEAR = "academicYear";
         public const string STEPS_COMPLETED = "stepsCompleted";
+        public const string STEP_IN_PROGRESS = "stepInProgress";
         public const string STARTED_DATETIME = "startedDatetime";
         public const string COMPLETED_DATETIME = "completedDatetime";
         public const string FILE_HASH = "fileHash";
@@ -70,6 +71,16 @@ namespace Arbor.Model
         public void setStepsCompleted (int stepsCompleted)
         {
             this.setProperty("stepsCompleted", stepsCompleted);
+        }
+
+        public int getStepInProgress ()
+        {
+            return Convert.ToInt32(this.getProperty("stepInProgress"));
+        }
+
+        public void setStepInProgress (int stepInProgress)
+        {
+            this.setProperty("stepInProgress", stepInProgress);
         }
 
         public DateTime getStartedDatetime ()

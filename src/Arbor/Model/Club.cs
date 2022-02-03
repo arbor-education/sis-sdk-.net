@@ -20,6 +20,10 @@ namespace Arbor.Model
         public const string ATTENDANCE_REGISTER_TYPE = "attendanceRegisterType";
         public const string ATTENDANCE_REGISTER_EFFECTIVE_DATE = "attendanceRegisterEffectiveDate";
         public const string ACCOUNTING_CODE = "accountingCode";
+        public const string CUSTOMER_ACCOUNT_TYPE = "customerAccountType";
+        public const string HAS_MEALS = "hasMeals";
+        public const string IS_WRAPAROUND_CHILDCARE_CLUB = "isWraparoundChildcareClub";
+        public const string CHARGE_STUDENTS_BASED_ON_ATTENDANCE_MARK = "chargeStudentsBasedOnAttendanceMark";
 
         public Club ()
         {
@@ -155,6 +159,46 @@ namespace Arbor.Model
         public void setAccountingCode (string accountingCode)
         {
             this.setProperty("accountingCode", accountingCode);
+        }
+
+        public CustomerAccountType getCustomerAccountType ()
+        {
+            return (CustomerAccountType) this.getProperty("customerAccountType");
+        }
+
+        public void setCustomerAccountType (CustomerAccountType customerAccountType)
+        {
+            this.setProperty("customerAccountType", customerAccountType);
+        }
+
+        public bool getHasMeals ()
+        {
+            return Convert.ToBoolean(this.getProperty("hasMeals"));
+        }
+
+        public void setHasMeals (bool hasMeals)
+        {
+            this.setProperty("hasMeals", hasMeals);
+        }
+
+        public bool getIsWraparoundChildcareClub ()
+        {
+            return Convert.ToBoolean(this.getProperty("isWraparoundChildcareClub"));
+        }
+
+        public void setIsWraparoundChildcareClub (bool isWraparoundChildcareClub)
+        {
+            this.setProperty("isWraparoundChildcareClub", isWraparoundChildcareClub);
+        }
+
+        public bool getChargeStudentsBasedOnAttendanceMark ()
+        {
+            return Convert.ToBoolean(this.getProperty("chargeStudentsBasedOnAttendanceMark"));
+        }
+
+        public void setChargeStudentsBasedOnAttendanceMark (bool chargeStudentsBasedOnAttendanceMark)
+        {
+            this.setProperty("chargeStudentsBasedOnAttendanceMark", chargeStudentsBasedOnAttendanceMark);
         }
 
 

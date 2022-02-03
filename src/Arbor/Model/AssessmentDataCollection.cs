@@ -10,7 +10,6 @@ namespace Arbor.Model
     public class AssessmentDataCollection : ModelBase
     {
         protected string resourceType = ResourceType.ASSESSMENT_DATA_COLLECTION;
-        public const string ASSESSMENT_DATA_COLLECTION_POLICY = "assessmentDataCollectionPolicy";
         public const string DEADLINE_DATE = "deadlineDate";
         public const string COLLECTION_RANGE_START_DATE = "collectionRangeStartDate";
         public const string COLLECTION_RANGE_END_DATE = "collectionRangeEndDate";
@@ -49,16 +48,6 @@ namespace Arbor.Model
             RestGateway gateway = (RestGateway) AssessmentDataCollection.getDefaultGateway();
         	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
         	return (AssessmentDataCollection) gateway.retrieve(ResourceType.ASSESSMENT_DATA_COLLECTION, id);
-        }
-
-        public AssessmentDataCollectionPolicy getAssessmentDataCollectionPolicy ()
-        {
-            return (AssessmentDataCollectionPolicy) this.getProperty("assessmentDataCollectionPolicy");
-        }
-
-        public void setAssessmentDataCollectionPolicy (AssessmentDataCollectionPolicy assessmentDataCollectionPolicy)
-        {
-            this.setProperty("assessmentDataCollectionPolicy", assessmentDataCollectionPolicy);
         }
 
         public DateTime getDeadlineDate ()

@@ -19,6 +19,7 @@ namespace Arbor.Model
         public const string SHARE_CONTACT_DETAILS = "shareContactDetails";
         public const string PREFERRED_CONTACT_METHOD = "preferredContactMethod";
         public const string LEGACY_SYSTEM_ID = "legacySystemId";
+        public const string IS_KEY_WORKER = "isKeyWorker";
 
         public Guardian ()
         {
@@ -144,6 +145,16 @@ namespace Arbor.Model
         public void setLegacySystemId (string legacySystemId)
         {
             this.setProperty("legacySystemId", legacySystemId);
+        }
+
+        public bool getIsKeyWorker ()
+        {
+            return Convert.ToBoolean(this.getProperty("isKeyWorker"));
+        }
+
+        public void setIsKeyWorker (bool isKeyWorker)
+        {
+            this.setProperty("isKeyWorker", isKeyWorker);
         }
 
 

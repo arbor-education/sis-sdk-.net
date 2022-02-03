@@ -15,6 +15,7 @@ namespace Arbor.Model
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
         public const string WORK_PLACEMENT_MODE = "workPlacementMode";
+        public const string PLANNED_HOURS = "plannedHours";
         public const string PROGRAMME_ENROLMENT = "programmeEnrolment";
 
         public WorkPlacement ()
@@ -101,6 +102,16 @@ namespace Arbor.Model
         public void setWorkPlacementMode (string workPlacementMode)
         {
             this.setProperty("workPlacementMode", workPlacementMode);
+        }
+
+        public string getPlannedHours ()
+        {
+            return this.getProperty("plannedHours").ToString();
+        }
+
+        public void setPlannedHours (string plannedHours)
+        {
+            this.setProperty("plannedHours", plannedHours);
         }
 
         public ProgrammeEnrolment getProgrammeEnrolment ()

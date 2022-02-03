@@ -12,6 +12,7 @@ namespace Arbor.Model
         protected string resourceType = ResourceType.ASSESSMENT_METRIC_ASSESSMENT;
         public const string ASSESSMENT_METRIC = "assessmentMetric";
         public const string ASSESSMENT = "assessment";
+        public const string ASSESSMENT_METRIC_ASSESSMENT_BATCH = "assessmentMetricAssessmentBatch";
 
         public AssessmentMetricAssessment ()
         {
@@ -67,6 +68,16 @@ namespace Arbor.Model
         public void setAssessment (Assessment assessment)
         {
             this.setProperty("assessment", assessment);
+        }
+
+        public AssessmentMetricAssessmentBatch getAssessmentMetricAssessmentBatch ()
+        {
+            return (AssessmentMetricAssessmentBatch) this.getProperty("assessmentMetricAssessmentBatch");
+        }
+
+        public void setAssessmentMetricAssessmentBatch (AssessmentMetricAssessmentBatch assessmentMetricAssessmentBatch)
+        {
+            this.setProperty("assessmentMetricAssessmentBatch", assessmentMetricAssessmentBatch);
         }
 
 

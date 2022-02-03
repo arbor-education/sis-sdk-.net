@@ -62,7 +62,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("student", student);
         }
 
-        public DateTime getStartDate (){
+        public DateTime getStartDate ()
+        {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
@@ -71,7 +72,8 @@ namespace Arbor.Model.UkDfe
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate (){
+        public DateTime getEndDate ()
+        {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
@@ -82,7 +84,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getEligibleForEconomicReasons ()
         {
-            return (bool) this.getProperty("eligibleForEconomicReasons");
+            return Convert.ToBoolean(this.getProperty("eligibleForEconomicReasons"));
         }
 
         public void setEligibleForEconomicReasons (bool eligibleForEconomicReasons)
@@ -92,7 +94,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getEligibleForOtherReasons ()
         {
-            return (bool) this.getProperty("eligibleForOtherReasons");
+            return Convert.ToBoolean(this.getProperty("eligibleForOtherReasons"));
         }
 
         public void setEligibleForOtherReasons (bool eligibleForOtherReasons)

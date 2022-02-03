@@ -11,6 +11,7 @@ namespace Arbor.Model
     {
         protected string resourceType = ResourceType.TARGET_JUDGEMENT;
         public const string NAME = "name";
+        public const string COLOR = "color";
         public const string TYPE = "type";
         public const string ORDER = "order";
 
@@ -58,6 +59,16 @@ namespace Arbor.Model
         public void setName (string name)
         {
             this.setProperty("name", name);
+        }
+
+        public string getColor ()
+        {
+            return this.getProperty("color").ToString();
+        }
+
+        public void setColor (string color)
+        {
+            this.setProperty("color", color);
         }
 
         public string getType ()

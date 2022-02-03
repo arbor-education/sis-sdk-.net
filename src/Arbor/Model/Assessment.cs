@@ -21,6 +21,8 @@ namespace Arbor.Model
         public const string CURRICULUM_TIER = "curriculumTier";
         public const string GRADE_POINT_SCALE = "gradePointScale";
         public const string STUDENT_PROGRESS_BASELINE_CALCULATOR_CLASS_NAME = "studentProgressBaselineCalculatorClassName";
+        public const string IS_BASELINE_LOCKED = "isBaselineLocked";
+        public const string IS_TARGET_LOCKED = "isTargetLocked";
 
         public Assessment ()
         {
@@ -166,6 +168,26 @@ namespace Arbor.Model
         public void setStudentProgressBaselineCalculatorClassName (string studentProgressBaselineCalculatorClassName)
         {
             this.setProperty("studentProgressBaselineCalculatorClassName", studentProgressBaselineCalculatorClassName);
+        }
+
+        public bool getIsBaselineLocked ()
+        {
+            return Convert.ToBoolean(this.getProperty("isBaselineLocked"));
+        }
+
+        public void setIsBaselineLocked (bool isBaselineLocked)
+        {
+            this.setProperty("isBaselineLocked", isBaselineLocked);
+        }
+
+        public bool getIsTargetLocked ()
+        {
+            return Convert.ToBoolean(this.getProperty("isTargetLocked"));
+        }
+
+        public void setIsTargetLocked (bool isTargetLocked)
+        {
+            this.setProperty("isTargetLocked", isTargetLocked);
         }
 
 

@@ -11,6 +11,8 @@ namespace Arbor.Model
     {
         protected string resourceType = ResourceType.ROOM_LAYOUT;
         public const string ROOM = "room";
+        public const string STAFF = "staff";
+        public const string NAME = "name";
         public const string MAIN_ENTRANCE_LOCATION = "mainEntranceLocation";
 
         public RoomLayout ()
@@ -57,6 +59,26 @@ namespace Arbor.Model
         public void setRoom (Room room)
         {
             this.setProperty("room", room);
+        }
+
+        public Staff getStaff ()
+        {
+            return (Staff) this.getProperty("staff");
+        }
+
+        public void setStaff (Staff staff)
+        {
+            this.setProperty("staff", staff);
+        }
+
+        public string getName ()
+        {
+            return this.getProperty("name").ToString();
+        }
+
+        public void setName (string name)
+        {
+            this.setProperty("name", name);
         }
 
         public string getMainEntranceLocation ()

@@ -16,6 +16,7 @@ namespace Arbor.Model.UkDfe
         public const string FTE_CASH_AMOUNT = "fteCashAmount";
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
+        public const string LAST_FSM = "lastFsm";
 
         public PupilPremiumRecipient ()
         {
@@ -95,7 +96,7 @@ namespace Arbor.Model.UkDfe
 
         public DateTime getStartDate ()
         {
-            Convert.ToDateTime(this.getProperty("startDate"))
+            return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
         public void setStartDate (DateTime startDate)
@@ -105,12 +106,22 @@ namespace Arbor.Model.UkDfe
 
         public DateTime getEndDate ()
         {
-            Convert.ToDateTime(this.getProperty("endDate"))
+            return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
         public void setEndDate (DateTime endDate)
         {
             this.setProperty("endDate", endDate);
+        }
+
+        public string getLastFsm ()
+        {
+            return this.getProperty("lastFsm").ToString();
+        }
+
+        public void setLastFsm (string lastFsm)
+        {
+            this.setProperty("lastFsm", lastFsm);
         }
 
 
