@@ -18,108 +18,109 @@ namespace Arbor.Model
         public const string OPEN = "open";
         public const string BANK_ACCOUNT = "bankAccount";
 
-        public Book ()
+        public Book()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public Book (string resourceType = "Book", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<Book> query (SimpleQuery query = null)
+        public Book(string resourceType = "Book", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("Book");
-        	RestGateway gateway = (RestGateway) Book.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<Book> bookCollection = new ModelCollection<Book> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    bookCollection.add((Book) model);
-        	}
-        
-        	return bookCollection;
+
         }
 
-        public static Book retrieve (string id)
+
+        public static ModelCollection<Book> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) Book.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (Book) gateway.retrieve(ResourceType.BOOK, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("Book");
+            RestGateway gateway = (RestGateway)Book.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<Book> bookCollection = new ModelCollection<Book>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                bookCollection.add((Book)model);
+            }
+
+            return bookCollection;
         }
 
-        public string getBookType ()
+        public static Book retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)Book.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (Book)gateway.retrieve(ResourceType.BOOK, id);
+        }
+
+        public string getBookType()
         {
             return this.getProperty("bookType").ToString();
         }
 
-        public void setBookType (string bookType)
+        public void setBookType(string bookType)
         {
             this.setProperty("bookType", bookType);
         }
 
-        public string getPrefix ()
+        public string getPrefix()
         {
             return this.getProperty("prefix").ToString();
         }
 
-        public void setPrefix (string prefix)
+        public void setPrefix(string prefix)
         {
             this.setProperty("prefix", prefix);
         }
 
-        public int getFirstNumber ()
+        public int getFirstNumber()
         {
             return Convert.ToInt32(this.getProperty("firstNumber"));
         }
 
-        public void setFirstNumber (int firstNumber)
+        public void setFirstNumber(int firstNumber)
         {
             this.setProperty("firstNumber", firstNumber);
         }
 
-        public int getLastNumber ()
+        public int getLastNumber()
         {
             return Convert.ToInt32(this.getProperty("lastNumber"));
         }
 
-        public void setLastNumber (int lastNumber)
+        public void setLastNumber(int lastNumber)
         {
             this.setProperty("lastNumber", lastNumber);
         }
 
-        public int getNextNumber ()
+        public int getNextNumber()
         {
             return Convert.ToInt32(this.getProperty("nextNumber"));
         }
 
-        public void setNextNumber (int nextNumber)
+        public void setNextNumber(int nextNumber)
         {
             this.setProperty("nextNumber", nextNumber);
         }
 
-        public bool getOpen ()
+        public bool getOpen()
         {
             return Convert.ToBoolean(this.getProperty("open"));
         }
 
-        public void setOpen (bool open)
+        public void setOpen(bool open)
         {
             this.setProperty("open", open);
         }
 
-        public BankAccount getBankAccount ()
+        public BankAccount getBankAccount()
         {
-            return (BankAccount) this.getProperty("bankAccount");
+            return (BankAccount)this.getProperty("bankAccount");
         }
 
-        public void setBankAccount (BankAccount bankAccount)
+        public void setBankAccount(BankAccount bankAccount)
         {
             this.setProperty("bankAccount", bankAccount);
         }

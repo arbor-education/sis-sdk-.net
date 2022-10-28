@@ -16,88 +16,89 @@ namespace Arbor.Model
         public const string TYPE = "type";
         public const string CURRICULUM = "curriculum";
 
-        public AchievementLevelSet ()
+        public AchievementLevelSet()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AchievementLevelSet (string resourceType = "AchievementLevelSet", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AchievementLevelSet> query (SimpleQuery query = null)
+        public AchievementLevelSet(string resourceType = "AchievementLevelSet", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AchievementLevelSet");
-        	RestGateway gateway = (RestGateway) AchievementLevelSet.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AchievementLevelSet> achievementlevelsetCollection = new ModelCollection<AchievementLevelSet> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    achievementlevelsetCollection.add((AchievementLevelSet) model);
-        	}
-        
-        	return achievementlevelsetCollection;
+
         }
 
-        public static AchievementLevelSet retrieve (string id)
+
+        public static ModelCollection<AchievementLevelSet> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AchievementLevelSet.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AchievementLevelSet) gateway.retrieve(ResourceType.ACHIEVEMENT_LEVEL_SET, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AchievementLevelSet");
+            RestGateway gateway = (RestGateway)AchievementLevelSet.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AchievementLevelSet> achievementlevelsetCollection = new ModelCollection<AchievementLevelSet>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                achievementlevelsetCollection.add((AchievementLevelSet)model);
+            }
+
+            return achievementlevelsetCollection;
         }
 
-        public string getCode ()
+        public static AchievementLevelSet retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)AchievementLevelSet.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AchievementLevelSet)gateway.retrieve(ResourceType.ACHIEVEMENT_LEVEL_SET, id);
+        }
+
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public string getName ()
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }
 
-        public float getAchievedThreshold ()
+        public float getAchievedThreshold()
         {
-            return (float) this.getProperty("achievedThreshold");
+            return (float)this.getProperty("achievedThreshold");
         }
 
-        public void setAchievedThreshold (float achievedThreshold)
+        public void setAchievedThreshold(float achievedThreshold)
         {
             this.setProperty("achievedThreshold", achievedThreshold);
         }
 
-        public string getType ()
+        public string getType()
         {
             return this.getProperty("type").ToString();
         }
 
-        public void setType (string type)
+        public void setType(string type)
         {
             this.setProperty("type", type);
         }
 
-        public Curriculum getCurriculum ()
+        public Curriculum getCurriculum()
         {
-            return (Curriculum) this.getProperty("curriculum");
+            return (Curriculum)this.getProperty("curriculum");
         }
 
-        public void setCurriculum (Curriculum curriculum)
+        public void setCurriculum(Curriculum curriculum)
         {
             this.setProperty("curriculum", curriculum);
         }

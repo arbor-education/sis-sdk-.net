@@ -20,128 +20,129 @@ namespace Arbor.Model
         public const string SETUP_COMPLETION_STARTED_DATETIME = "setupCompletionStartedDatetime";
         public const string ALLOW_COMMENTS = "allowComments";
 
-        public AcademicYearAssessment ()
+        public AcademicYearAssessment()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AcademicYearAssessment (string resourceType = "AcademicYearAssessment", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AcademicYearAssessment> query (SimpleQuery query = null)
+        public AcademicYearAssessment(string resourceType = "AcademicYearAssessment", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AcademicYearAssessment");
-        	RestGateway gateway = (RestGateway) AcademicYearAssessment.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AcademicYearAssessment> academicyearassessmentCollection = new ModelCollection<AcademicYearAssessment> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    academicyearassessmentCollection.add((AcademicYearAssessment) model);
-        	}
-        
-        	return academicyearassessmentCollection;
+
         }
 
-        public static AcademicYearAssessment retrieve (string id)
+
+        public static ModelCollection<AcademicYearAssessment> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AcademicYearAssessment.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AcademicYearAssessment) gateway.retrieve(ResourceType.ACADEMIC_YEAR_ASSESSMENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AcademicYearAssessment");
+            RestGateway gateway = (RestGateway)AcademicYearAssessment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AcademicYearAssessment> academicyearassessmentCollection = new ModelCollection<AcademicYearAssessment>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                academicyearassessmentCollection.add((AcademicYearAssessment)model);
+            }
+
+            return academicyearassessmentCollection;
         }
 
-        public AcademicYear getAcademicYear ()
+        public static AcademicYearAssessment retrieve(string id)
         {
-            return (AcademicYear) this.getProperty("academicYear");
+            RestGateway gateway = (RestGateway)AcademicYearAssessment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AcademicYearAssessment)gateway.retrieve(ResourceType.ACADEMIC_YEAR_ASSESSMENT, id);
         }
 
-        public void setAcademicYear (AcademicYear academicYear)
+        public AcademicYear getAcademicYear()
+        {
+            return (AcademicYear)this.getProperty("academicYear");
+        }
+
+        public void setAcademicYear(AcademicYear academicYear)
         {
             this.setProperty("academicYear", academicYear);
         }
 
-        public string getAssessmentName ()
+        public string getAssessmentName()
         {
             return this.getProperty("assessmentName").ToString();
         }
 
-        public void setAssessmentName (string assessmentName)
+        public void setAssessmentName(string assessmentName)
         {
             this.setProperty("assessmentName", assessmentName);
         }
 
-        public CurriculumTier getCurriculumTier ()
+        public CurriculumTier getCurriculumTier()
         {
-            return (CurriculumTier) this.getProperty("curriculumTier");
+            return (CurriculumTier)this.getProperty("curriculumTier");
         }
 
-        public void setCurriculumTier (CurriculumTier curriculumTier)
+        public void setCurriculumTier(CurriculumTier curriculumTier)
         {
             this.setProperty("curriculumTier", curriculumTier);
         }
 
-        public ModelBase getAssessmentEntity ()
+        public ModelBase getAssessmentEntity()
         {
-            return (ModelBase) this.getProperty("assessmentEntity");
+            return (ModelBase)this.getProperty("assessmentEntity");
         }
 
-        public void setAssessmentEntity (ModelBase assessmentEntity)
+        public void setAssessmentEntity(ModelBase assessmentEntity)
         {
             this.setProperty("assessmentEntity", assessmentEntity);
         }
 
-        public ProgressMeasurementPeriodSet getProgressMeasurementPeriodSet ()
+        public ProgressMeasurementPeriodSet getProgressMeasurementPeriodSet()
         {
-            return (ProgressMeasurementPeriodSet) this.getProperty("progressMeasurementPeriodSet");
+            return (ProgressMeasurementPeriodSet)this.getProperty("progressMeasurementPeriodSet");
         }
 
-        public void setProgressMeasurementPeriodSet (ProgressMeasurementPeriodSet progressMeasurementPeriodSet)
+        public void setProgressMeasurementPeriodSet(ProgressMeasurementPeriodSet progressMeasurementPeriodSet)
         {
             this.setProperty("progressMeasurementPeriodSet", progressMeasurementPeriodSet);
         }
 
-        public bool getIsLinkedToSummativeTracking ()
+        public bool getIsLinkedToSummativeTracking()
         {
             return Convert.ToBoolean(this.getProperty("isLinkedToSummativeTracking"));
         }
 
-        public void setIsLinkedToSummativeTracking (bool isLinkedToSummativeTracking)
+        public void setIsLinkedToSummativeTracking(bool isLinkedToSummativeTracking)
         {
             this.setProperty("isLinkedToSummativeTracking", isLinkedToSummativeTracking);
         }
 
-        public DateTime getSetupCompletedDatetime ()
+        public DateTime getSetupCompletedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("setupCompletedDatetime"));
         }
 
-        public void setSetupCompletedDatetime (DateTime setupCompletedDatetime)
+        public void setSetupCompletedDatetime(DateTime setupCompletedDatetime)
         {
             this.setProperty("setupCompletedDatetime", setupCompletedDatetime);
         }
 
-        public DateTime getSetupCompletionStartedDatetime ()
+        public DateTime getSetupCompletionStartedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("setupCompletionStartedDatetime"));
         }
 
-        public void setSetupCompletionStartedDatetime (DateTime setupCompletionStartedDatetime)
+        public void setSetupCompletionStartedDatetime(DateTime setupCompletionStartedDatetime)
         {
             this.setProperty("setupCompletionStartedDatetime", setupCompletionStartedDatetime);
         }
 
-        public bool getAllowComments ()
+        public bool getAllowComments()
         {
             return Convert.ToBoolean(this.getProperty("allowComments"));
         }
 
-        public void setAllowComments (bool allowComments)
+        public void setAllowComments(bool allowComments)
         {
             this.setProperty("allowComments", allowComments);
         }

@@ -23,158 +23,159 @@ namespace Arbor.Model
         public const string EXPECTED_WEEKS_PER_YEAR = "expectedWeeksPerYear";
         public const string FTE_HOURS_PER_WEEK = "fteHoursPerWeek";
 
-        public Position ()
+        public Position()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public Position (string resourceType = "Position", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<Position> query (SimpleQuery query = null)
+        public Position(string resourceType = "Position", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("Position");
-        	RestGateway gateway = (RestGateway) Position.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<Position> positionCollection = new ModelCollection<Position> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    positionCollection.add((Position) model);
-        	}
-        
-        	return positionCollection;
+
         }
 
-        public static Position retrieve (string id)
+
+        public static ModelCollection<Position> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) Position.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (Position) gateway.retrieve(ResourceType.POSITION, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("Position");
+            RestGateway gateway = (RestGateway)Position.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<Position> positionCollection = new ModelCollection<Position>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                positionCollection.add((Position)model);
+            }
+
+            return positionCollection;
         }
 
-        public PositionCategory getPositionCategory ()
+        public static Position retrieve(string id)
         {
-            return (PositionCategory) this.getProperty("positionCategory");
+            RestGateway gateway = (RestGateway)Position.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (Position)gateway.retrieve(ResourceType.POSITION, id);
         }
 
-        public void setPositionCategory (PositionCategory positionCategory)
+        public PositionCategory getPositionCategory()
+        {
+            return (PositionCategory)this.getProperty("positionCategory");
+        }
+
+        public void setPositionCategory(PositionCategory positionCategory)
         {
             this.setProperty("positionCategory", positionCategory);
         }
 
-        public SchoolWorkforceVacancyPost getWorkforceVacancyPost ()
+        public SchoolWorkforceVacancyPost getWorkforceVacancyPost()
         {
-            return (SchoolWorkforceVacancyPost) this.getProperty("workforceVacancyPost");
+            return (SchoolWorkforceVacancyPost)this.getProperty("workforceVacancyPost");
         }
 
-        public void setWorkforceVacancyPost (SchoolWorkforceVacancyPost workforceVacancyPost)
+        public void setWorkforceVacancyPost(SchoolWorkforceVacancyPost workforceVacancyPost)
         {
             this.setProperty("workforceVacancyPost", workforceVacancyPost);
         }
 
-        public string getWorkforceCensusRoleIdentifier ()
+        public string getWorkforceCensusRoleIdentifier()
         {
             return this.getProperty("workforceCensusRoleIdentifier").ToString();
         }
 
-        public void setWorkforceCensusRoleIdentifier (string workforceCensusRoleIdentifier)
+        public void setWorkforceCensusRoleIdentifier(string workforceCensusRoleIdentifier)
         {
             this.setProperty("workforceCensusRoleIdentifier", workforceCensusRoleIdentifier);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDate()
         {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getExpectedEndDate ()
+        public DateTime getExpectedEndDate()
         {
             return Convert.ToDateTime(this.getProperty("expectedEndDate"));
         }
 
-        public void setExpectedEndDate (DateTime expectedEndDate)
+        public void setExpectedEndDate(DateTime expectedEndDate)
         {
             this.setProperty("expectedEndDate", expectedEndDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }
 
-        public string getPositionName ()
+        public string getPositionName()
         {
             return this.getProperty("positionName").ToString();
         }
 
-        public void setPositionName (string positionName)
+        public void setPositionName(string positionName)
         {
             this.setProperty("positionName", positionName);
         }
 
-        public string getPositionReference ()
+        public string getPositionReference()
         {
             return this.getProperty("positionReference").ToString();
         }
 
-        public void setPositionReference (string positionReference)
+        public void setPositionReference(string positionReference)
         {
             this.setProperty("positionReference", positionReference);
         }
 
-        public Position getSupervisorPosition ()
+        public Position getSupervisorPosition()
         {
-            return (Position) this.getProperty("supervisorPosition");
+            return (Position)this.getProperty("supervisorPosition");
         }
 
-        public void setSupervisorPosition (Position supervisorPosition)
+        public void setSupervisorPosition(Position supervisorPosition)
         {
             this.setProperty("supervisorPosition", supervisorPosition);
         }
 
-        public string getExpectedHoursPerWeek ()
+        public string getExpectedHoursPerWeek()
         {
             return this.getProperty("expectedHoursPerWeek").ToString();
         }
 
-        public void setExpectedHoursPerWeek (string expectedHoursPerWeek)
+        public void setExpectedHoursPerWeek(string expectedHoursPerWeek)
         {
             this.setProperty("expectedHoursPerWeek", expectedHoursPerWeek);
         }
 
-        public float getExpectedWeeksPerYear ()
+        public float getExpectedWeeksPerYear()
         {
-            return (float) this.getProperty("expectedWeeksPerYear");
+            return (float)this.getProperty("expectedWeeksPerYear");
         }
 
-        public void setExpectedWeeksPerYear (float expectedWeeksPerYear)
+        public void setExpectedWeeksPerYear(float expectedWeeksPerYear)
         {
             this.setProperty("expectedWeeksPerYear", expectedWeeksPerYear);
         }
 
-        public string getFteHoursPerWeek ()
+        public string getFteHoursPerWeek()
         {
             return this.getProperty("fteHoursPerWeek").ToString();
         }
 
-        public void setFteHoursPerWeek (string fteHoursPerWeek)
+        public void setFteHoursPerWeek(string fteHoursPerWeek)
         {
             this.setProperty("fteHoursPerWeek", fteHoursPerWeek);
         }

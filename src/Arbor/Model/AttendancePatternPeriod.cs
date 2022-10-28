@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string START_TIME = "startTime";
         public const string END_TIME = "endTime";
 
-        public AttendancePatternPeriod ()
+        public AttendancePatternPeriod()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AttendancePatternPeriod (string resourceType = "AttendancePatternPeriod", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AttendancePatternPeriod> query (SimpleQuery query = null)
+        public AttendancePatternPeriod(string resourceType = "AttendancePatternPeriod", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AttendancePatternPeriod");
-        	RestGateway gateway = (RestGateway) AttendancePatternPeriod.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AttendancePatternPeriod> attendancepatternperiodCollection = new ModelCollection<AttendancePatternPeriod> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    attendancepatternperiodCollection.add((AttendancePatternPeriod) model);
-        	}
-        
-        	return attendancepatternperiodCollection;
+
         }
 
-        public static AttendancePatternPeriod retrieve (string id)
+
+        public static ModelCollection<AttendancePatternPeriod> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AttendancePatternPeriod.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AttendancePatternPeriod) gateway.retrieve(ResourceType.ATTENDANCE_PATTERN_PERIOD, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AttendancePatternPeriod");
+            RestGateway gateway = (RestGateway)AttendancePatternPeriod.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AttendancePatternPeriod> attendancepatternperiodCollection = new ModelCollection<AttendancePatternPeriod>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                attendancepatternperiodCollection.add((AttendancePatternPeriod)model);
+            }
+
+            return attendancepatternperiodCollection;
         }
 
-        public AttendancePattern getAttendancePattern ()
+        public static AttendancePatternPeriod retrieve(string id)
         {
-            return (AttendancePattern) this.getProperty("attendancePattern");
+            RestGateway gateway = (RestGateway)AttendancePatternPeriod.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AttendancePatternPeriod)gateway.retrieve(ResourceType.ATTENDANCE_PATTERN_PERIOD, id);
         }
 
-        public void setAttendancePattern (AttendancePattern attendancePattern)
+        public AttendancePattern getAttendancePattern()
+        {
+            return (AttendancePattern)this.getProperty("attendancePattern");
+        }
+
+        public void setAttendancePattern(AttendancePattern attendancePattern)
         {
             this.setProperty("attendancePattern", attendancePattern);
         }
 
-        public int getDayOfCycle ()
+        public int getDayOfCycle()
         {
             return Convert.ToInt32(this.getProperty("dayOfCycle"));
         }
 
-        public void setDayOfCycle (int dayOfCycle)
+        public void setDayOfCycle(int dayOfCycle)
         {
             this.setProperty("dayOfCycle", dayOfCycle);
         }
 
-        public string getStartTime ()
+        public string getStartTime()
         {
             return this.getProperty("startTime").ToString();
         }
 
-        public void setStartTime (string startTime)
+        public void setStartTime(string startTime)
         {
             this.setProperty("startTime", startTime);
         }
 
-        public string getEndTime ()
+        public string getEndTime()
         {
             return this.getProperty("endTime").ToString();
         }
 
-        public void setEndTime (string endTime)
+        public void setEndTime(string endTime)
         {
             this.setProperty("endTime", endTime);
         }

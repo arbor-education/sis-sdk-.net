@@ -17,98 +17,99 @@ namespace Arbor.Model
         public const string FAILED_DATETIME = "failedDatetime";
         public const string PERSON = "person";
 
-        public ThirdPartyLogin ()
+        public ThirdPartyLogin()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public ThirdPartyLogin (string resourceType = "ThirdPartyLogin", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<ThirdPartyLogin> query (SimpleQuery query = null)
+        public ThirdPartyLogin(string resourceType = "ThirdPartyLogin", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("ThirdPartyLogin");
-        	RestGateway gateway = (RestGateway) ThirdPartyLogin.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<ThirdPartyLogin> thirdpartyloginCollection = new ModelCollection<ThirdPartyLogin> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    thirdpartyloginCollection.add((ThirdPartyLogin) model);
-        	}
-        
-        	return thirdpartyloginCollection;
+
         }
 
-        public static ThirdPartyLogin retrieve (string id)
+
+        public static ModelCollection<ThirdPartyLogin> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) ThirdPartyLogin.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (ThirdPartyLogin) gateway.retrieve(ResourceType.THIRD_PARTY_LOGIN, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("ThirdPartyLogin");
+            RestGateway gateway = (RestGateway)ThirdPartyLogin.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<ThirdPartyLogin> thirdpartyloginCollection = new ModelCollection<ThirdPartyLogin>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                thirdpartyloginCollection.add((ThirdPartyLogin)model);
+            }
+
+            return thirdpartyloginCollection;
         }
 
-        public ThirdPartySite getThirdPartySite ()
+        public static ThirdPartyLogin retrieve(string id)
         {
-            return (ThirdPartySite) this.getProperty("thirdPartySite");
+            RestGateway gateway = (RestGateway)ThirdPartyLogin.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (ThirdPartyLogin)gateway.retrieve(ResourceType.THIRD_PARTY_LOGIN, id);
         }
 
-        public void setThirdPartySite (ThirdPartySite thirdPartySite)
+        public ThirdPartySite getThirdPartySite()
+        {
+            return (ThirdPartySite)this.getProperty("thirdPartySite");
+        }
+
+        public void setThirdPartySite(ThirdPartySite thirdPartySite)
         {
             this.setProperty("thirdPartySite", thirdPartySite);
         }
 
-        public string getUsername ()
+        public string getUsername()
         {
             return this.getProperty("username").ToString();
         }
 
-        public void setUsername (string username)
+        public void setUsername(string username)
         {
             this.setProperty("username", username);
         }
 
-        public string getPassword ()
+        public string getPassword()
         {
             return this.getProperty("password").ToString();
         }
 
-        public void setPassword (string password)
+        public void setPassword(string password)
         {
             this.setProperty("password", password);
         }
 
-        public DateTime getVerifiedDatetime ()
+        public DateTime getVerifiedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("verifiedDatetime"));
         }
 
-        public void setVerifiedDatetime (DateTime verifiedDatetime)
+        public void setVerifiedDatetime(DateTime verifiedDatetime)
         {
             this.setProperty("verifiedDatetime", verifiedDatetime);
         }
 
-        public DateTime getFailedDatetime ()
+        public DateTime getFailedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("failedDatetime"));
         }
 
-        public void setFailedDatetime (DateTime failedDatetime)
+        public void setFailedDatetime(DateTime failedDatetime)
         {
             this.setProperty("failedDatetime", failedDatetime);
         }
 
-        public ModelBase getPerson ()
+        public ModelBase getPerson()
         {
-            return (ModelBase) this.getProperty("person");
+            return (ModelBase)this.getProperty("person");
         }
 
-        public void setPerson (ModelBase person)
+        public void setPerson(ModelBase person)
         {
             this.setProperty("person", person);
         }

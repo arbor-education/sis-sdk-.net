@@ -14,68 +14,69 @@ namespace Arbor.Model
         public const string OPERATOR = "operator";
         public const string PARENT_ASSESSMENT_METRIC_ASSESSMENT_BATCH = "parentAssessmentMetricAssessmentBatch";
 
-        public AssessmentMetricAssessmentBatch ()
+        public AssessmentMetricAssessmentBatch()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AssessmentMetricAssessmentBatch (string resourceType = "AssessmentMetricAssessmentBatch", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AssessmentMetricAssessmentBatch> query (SimpleQuery query = null)
+        public AssessmentMetricAssessmentBatch(string resourceType = "AssessmentMetricAssessmentBatch", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AssessmentMetricAssessmentBatch");
-        	RestGateway gateway = (RestGateway) AssessmentMetricAssessmentBatch.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AssessmentMetricAssessmentBatch> assessmentmetricassessmentbatchCollection = new ModelCollection<AssessmentMetricAssessmentBatch> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    assessmentmetricassessmentbatchCollection.add((AssessmentMetricAssessmentBatch) model);
-        	}
-        
-        	return assessmentmetricassessmentbatchCollection;
+
         }
 
-        public static AssessmentMetricAssessmentBatch retrieve (string id)
+
+        public static ModelCollection<AssessmentMetricAssessmentBatch> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AssessmentMetricAssessmentBatch.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AssessmentMetricAssessmentBatch) gateway.retrieve(ResourceType.ASSESSMENT_METRIC_ASSESSMENT_BATCH, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AssessmentMetricAssessmentBatch");
+            RestGateway gateway = (RestGateway)AssessmentMetricAssessmentBatch.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AssessmentMetricAssessmentBatch> assessmentmetricassessmentbatchCollection = new ModelCollection<AssessmentMetricAssessmentBatch>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                assessmentmetricassessmentbatchCollection.add((AssessmentMetricAssessmentBatch)model);
+            }
+
+            return assessmentmetricassessmentbatchCollection;
         }
 
-        public AssessmentMetric getAssessmentMetric ()
+        public static AssessmentMetricAssessmentBatch retrieve(string id)
         {
-            return (AssessmentMetric) this.getProperty("assessmentMetric");
+            RestGateway gateway = (RestGateway)AssessmentMetricAssessmentBatch.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AssessmentMetricAssessmentBatch)gateway.retrieve(ResourceType.ASSESSMENT_METRIC_ASSESSMENT_BATCH, id);
         }
 
-        public void setAssessmentMetric (AssessmentMetric assessmentMetric)
+        public AssessmentMetric getAssessmentMetric()
+        {
+            return (AssessmentMetric)this.getProperty("assessmentMetric");
+        }
+
+        public void setAssessmentMetric(AssessmentMetric assessmentMetric)
         {
             this.setProperty("assessmentMetric", assessmentMetric);
         }
 
-        public string getOperator ()
+        public string getOperator()
         {
             return this.getProperty("operator").ToString();
         }
 
-        public void setOperator (string _operator)
+        public void setOperator(string _operator)
         {
             this.setProperty("operator", _operator);
         }
 
-        public AssessmentMetricAssessmentBatch getParentAssessmentMetricAssessmentBatch ()
+        public AssessmentMetricAssessmentBatch getParentAssessmentMetricAssessmentBatch()
         {
-            return (AssessmentMetricAssessmentBatch) this.getProperty("parentAssessmentMetricAssessmentBatch");
+            return (AssessmentMetricAssessmentBatch)this.getProperty("parentAssessmentMetricAssessmentBatch");
         }
 
-        public void setParentAssessmentMetricAssessmentBatch (AssessmentMetricAssessmentBatch parentAssessmentMetricAssessmentBatch)
+        public void setParentAssessmentMetricAssessmentBatch(AssessmentMetricAssessmentBatch parentAssessmentMetricAssessmentBatch)
         {
             this.setProperty("parentAssessmentMetricAssessmentBatch", parentAssessmentMetricAssessmentBatch);
         }

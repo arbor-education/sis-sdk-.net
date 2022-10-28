@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";
 
-        public InterventionFundingSource ()
+        public InterventionFundingSource()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public InterventionFundingSource (string resourceType = "InterventionFundingSource", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<InterventionFundingSource> query (SimpleQuery query = null)
+        public InterventionFundingSource(string resourceType = "InterventionFundingSource", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("InterventionFundingSource");
-        	RestGateway gateway = (RestGateway) InterventionFundingSource.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<InterventionFundingSource> interventionfundingsourceCollection = new ModelCollection<InterventionFundingSource> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    interventionfundingsourceCollection.add((InterventionFundingSource) model);
-        	}
-        
-        	return interventionfundingsourceCollection;
+
         }
 
-        public static InterventionFundingSource retrieve (string id)
+
+        public static ModelCollection<InterventionFundingSource> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) InterventionFundingSource.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (InterventionFundingSource) gateway.retrieve(ResourceType.INTERVENTION_FUNDING_SOURCE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("InterventionFundingSource");
+            RestGateway gateway = (RestGateway)InterventionFundingSource.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<InterventionFundingSource> interventionfundingsourceCollection = new ModelCollection<InterventionFundingSource>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                interventionfundingsourceCollection.add((InterventionFundingSource)model);
+            }
+
+            return interventionfundingsourceCollection;
         }
 
-        public string getName ()
+        public static InterventionFundingSource retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)InterventionFundingSource.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (InterventionFundingSource)gateway.retrieve(ResourceType.INTERVENTION_FUNDING_SOURCE, id);
+        }
+
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }
 
-        public string getCode ()
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public bool getDataOrder ()
+        public bool getDataOrder()
         {
             return Convert.ToBoolean(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (bool dataOrder)
+        public void setDataOrder(bool dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }

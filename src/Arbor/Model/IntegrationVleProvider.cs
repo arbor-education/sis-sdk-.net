@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string ENABLED = "enabled";
         public const string CODE = "code";
 
-        public IntegrationVleProvider ()
+        public IntegrationVleProvider()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public IntegrationVleProvider (string resourceType = "IntegrationVleProvider", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<IntegrationVleProvider> query (SimpleQuery query = null)
+        public IntegrationVleProvider(string resourceType = "IntegrationVleProvider", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("IntegrationVleProvider");
-        	RestGateway gateway = (RestGateway) IntegrationVleProvider.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<IntegrationVleProvider> integrationvleproviderCollection = new ModelCollection<IntegrationVleProvider> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    integrationvleproviderCollection.add((IntegrationVleProvider) model);
-        	}
-        
-        	return integrationvleproviderCollection;
+
         }
 
-        public static IntegrationVleProvider retrieve (string id)
+
+        public static ModelCollection<IntegrationVleProvider> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) IntegrationVleProvider.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (IntegrationVleProvider) gateway.retrieve(ResourceType.INTEGRATION_VLE_PROVIDER, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("IntegrationVleProvider");
+            RestGateway gateway = (RestGateway)IntegrationVleProvider.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<IntegrationVleProvider> integrationvleproviderCollection = new ModelCollection<IntegrationVleProvider>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                integrationvleproviderCollection.add((IntegrationVleProvider)model);
+            }
+
+            return integrationvleproviderCollection;
         }
 
-        public string getName ()
+        public static IntegrationVleProvider retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)IntegrationVleProvider.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (IntegrationVleProvider)gateway.retrieve(ResourceType.INTEGRATION_VLE_PROVIDER, id);
+        }
+
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }
 
-        public string getConfiguration ()
+        public string getConfiguration()
         {
             return this.getProperty("configuration").ToString();
         }
 
-        public void setConfiguration (string configuration)
+        public void setConfiguration(string configuration)
         {
             this.setProperty("configuration", configuration);
         }
 
-        public bool getEnabled ()
+        public bool getEnabled()
         {
             return Convert.ToBoolean(this.getProperty("enabled"));
         }
 
-        public void setEnabled (bool enabled)
+        public void setEnabled(bool enabled)
         {
             this.setProperty("enabled", enabled);
         }
 
-        public string getCode ()
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }

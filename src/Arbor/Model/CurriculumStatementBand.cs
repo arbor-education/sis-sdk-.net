@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string LOWER_GRADE_POINT_SCALE_VALUE = "lowerGradePointScaleValue";
         public const string UPPER_GRADE_POINT_SCALE_VALUE = "upperGradePointScaleValue";
 
-        public CurriculumStatementBand ()
+        public CurriculumStatementBand()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public CurriculumStatementBand (string resourceType = "CurriculumStatementBand", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<CurriculumStatementBand> query (SimpleQuery query = null)
+        public CurriculumStatementBand(string resourceType = "CurriculumStatementBand", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("CurriculumStatementBand");
-        	RestGateway gateway = (RestGateway) CurriculumStatementBand.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<CurriculumStatementBand> curriculumstatementbandCollection = new ModelCollection<CurriculumStatementBand> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    curriculumstatementbandCollection.add((CurriculumStatementBand) model);
-        	}
-        
-        	return curriculumstatementbandCollection;
+
         }
 
-        public static CurriculumStatementBand retrieve (string id)
+
+        public static ModelCollection<CurriculumStatementBand> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) CurriculumStatementBand.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (CurriculumStatementBand) gateway.retrieve(ResourceType.CURRICULUM_STATEMENT_BAND, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("CurriculumStatementBand");
+            RestGateway gateway = (RestGateway)CurriculumStatementBand.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<CurriculumStatementBand> curriculumstatementbandCollection = new ModelCollection<CurriculumStatementBand>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                curriculumstatementbandCollection.add((CurriculumStatementBand)model);
+            }
+
+            return curriculumstatementbandCollection;
         }
 
-        public Curriculum getCurriculum ()
+        public static CurriculumStatementBand retrieve(string id)
         {
-            return (Curriculum) this.getProperty("curriculum");
+            RestGateway gateway = (RestGateway)CurriculumStatementBand.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (CurriculumStatementBand)gateway.retrieve(ResourceType.CURRICULUM_STATEMENT_BAND, id);
         }
 
-        public void setCurriculum (Curriculum curriculum)
+        public Curriculum getCurriculum()
+        {
+            return (Curriculum)this.getProperty("curriculum");
+        }
+
+        public void setCurriculum(Curriculum curriculum)
         {
             this.setProperty("curriculum", curriculum);
         }
 
-        public string getName ()
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }
 
-        public float getLowerGradePointScaleValue ()
+        public float getLowerGradePointScaleValue()
         {
-            return (float) this.getProperty("lowerGradePointScaleValue");
+            return (float)this.getProperty("lowerGradePointScaleValue");
         }
 
-        public void setLowerGradePointScaleValue (float lowerGradePointScaleValue)
+        public void setLowerGradePointScaleValue(float lowerGradePointScaleValue)
         {
             this.setProperty("lowerGradePointScaleValue", lowerGradePointScaleValue);
         }
 
-        public float getUpperGradePointScaleValue ()
+        public float getUpperGradePointScaleValue()
         {
-            return (float) this.getProperty("upperGradePointScaleValue");
+            return (float)this.getProperty("upperGradePointScaleValue");
         }
 
-        public void setUpperGradePointScaleValue (float upperGradePointScaleValue)
+        public void setUpperGradePointScaleValue(float upperGradePointScaleValue)
         {
             this.setProperty("upperGradePointScaleValue", upperGradePointScaleValue);
         }

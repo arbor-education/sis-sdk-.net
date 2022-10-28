@@ -21,138 +21,139 @@ namespace Arbor.Model
         public const string SHOW_IN_PARENT_PORTAL = "showInParentPortal";
         public const string ACCOUNTING_CODE = "accountingCode";
 
-        public CustomerAccountType ()
+        public CustomerAccountType()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public CustomerAccountType (string resourceType = "CustomerAccountType", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<CustomerAccountType> query (SimpleQuery query = null)
+        public CustomerAccountType(string resourceType = "CustomerAccountType", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("CustomerAccountType");
-        	RestGateway gateway = (RestGateway) CustomerAccountType.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<CustomerAccountType> customeraccounttypeCollection = new ModelCollection<CustomerAccountType> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    customeraccounttypeCollection.add((CustomerAccountType) model);
-        	}
-        
-        	return customeraccounttypeCollection;
+
         }
 
-        public static CustomerAccountType retrieve (string id)
+
+        public static ModelCollection<CustomerAccountType> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) CustomerAccountType.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (CustomerAccountType) gateway.retrieve(ResourceType.CUSTOMER_ACCOUNT_TYPE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("CustomerAccountType");
+            RestGateway gateway = (RestGateway)CustomerAccountType.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<CustomerAccountType> customeraccounttypeCollection = new ModelCollection<CustomerAccountType>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                customeraccounttypeCollection.add((CustomerAccountType)model);
+            }
+
+            return customeraccounttypeCollection;
         }
 
-        public string getAccountTypeName ()
+        public static CustomerAccountType retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)CustomerAccountType.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (CustomerAccountType)gateway.retrieve(ResourceType.CUSTOMER_ACCOUNT_TYPE, id);
+        }
+
+        public string getAccountTypeName()
         {
             return this.getProperty("accountTypeName").ToString();
         }
 
-        public void setAccountTypeName (string accountTypeName)
+        public void setAccountTypeName(string accountTypeName)
         {
             this.setProperty("accountTypeName", accountTypeName);
         }
 
-        public string getAccountTypeDescription ()
+        public string getAccountTypeDescription()
         {
             return this.getProperty("accountTypeDescription").ToString();
         }
 
-        public void setAccountTypeDescription (string accountTypeDescription)
+        public void setAccountTypeDescription(string accountTypeDescription)
         {
             this.setProperty("accountTypeDescription", accountTypeDescription);
         }
 
-        public string getCode ()
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public string getCategory ()
+        public string getCategory()
         {
             return this.getProperty("category").ToString();
         }
 
-        public void setCategory (string category)
+        public void setCategory(string category)
         {
             this.setProperty("category", category);
         }
 
-        public bool getIsPrepayment ()
+        public bool getIsPrepayment()
         {
             return Convert.ToBoolean(this.getProperty("isPrepayment"));
         }
 
-        public void setIsPrepayment (bool isPrepayment)
+        public void setIsPrepayment(bool isPrepayment)
         {
             this.setProperty("isPrepayment", isPrepayment);
         }
 
-        public bool getAutoCreateForStudents ()
+        public bool getAutoCreateForStudents()
         {
             return Convert.ToBoolean(this.getProperty("autoCreateForStudents"));
         }
 
-        public void setAutoCreateForStudents (bool autoCreateForStudents)
+        public void setAutoCreateForStudents(bool autoCreateForStudents)
         {
             this.setProperty("autoCreateForStudents", autoCreateForStudents);
         }
 
-        public bool getAutoCreateForStaff ()
+        public bool getAutoCreateForStaff()
         {
             return Convert.ToBoolean(this.getProperty("autoCreateForStaff"));
         }
 
-        public void setAutoCreateForStaff (bool autoCreateForStaff)
+        public void setAutoCreateForStaff(bool autoCreateForStaff)
         {
             this.setProperty("autoCreateForStaff", autoCreateForStaff);
         }
 
-        public bool getCardPaymentsEnabled ()
+        public bool getCardPaymentsEnabled()
         {
             return Convert.ToBoolean(this.getProperty("cardPaymentsEnabled"));
         }
 
-        public void setCardPaymentsEnabled (bool cardPaymentsEnabled)
+        public void setCardPaymentsEnabled(bool cardPaymentsEnabled)
         {
             this.setProperty("cardPaymentsEnabled", cardPaymentsEnabled);
         }
 
-        public bool getShowInParentPortal ()
+        public bool getShowInParentPortal()
         {
             return Convert.ToBoolean(this.getProperty("showInParentPortal"));
         }
 
-        public void setShowInParentPortal (bool showInParentPortal)
+        public void setShowInParentPortal(bool showInParentPortal)
         {
             this.setProperty("showInParentPortal", showInParentPortal);
         }
 
-        public string getAccountingCode ()
+        public string getAccountingCode()
         {
             return this.getProperty("accountingCode").ToString();
         }
 
-        public void setAccountingCode (string accountingCode)
+        public void setAccountingCode(string accountingCode)
         {
             this.setProperty("accountingCode", accountingCode);
         }

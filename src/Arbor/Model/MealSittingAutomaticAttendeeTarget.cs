@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string MEAL_SITTING = "mealSitting";
         public const string AUTOMATIC_ATTENDEE_TARGET = "automaticAttendeeTarget";
 
-        public MealSittingAutomaticAttendeeTarget ()
+        public MealSittingAutomaticAttendeeTarget()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public MealSittingAutomaticAttendeeTarget (string resourceType = "MealSittingAutomaticAttendeeTarget", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<MealSittingAutomaticAttendeeTarget> query (SimpleQuery query = null)
+        public MealSittingAutomaticAttendeeTarget(string resourceType = "MealSittingAutomaticAttendeeTarget", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("MealSittingAutomaticAttendeeTarget");
-        	RestGateway gateway = (RestGateway) MealSittingAutomaticAttendeeTarget.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<MealSittingAutomaticAttendeeTarget> mealsittingautomaticattendeetargetCollection = new ModelCollection<MealSittingAutomaticAttendeeTarget> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    mealsittingautomaticattendeetargetCollection.add((MealSittingAutomaticAttendeeTarget) model);
-        	}
-        
-        	return mealsittingautomaticattendeetargetCollection;
+
         }
 
-        public static MealSittingAutomaticAttendeeTarget retrieve (string id)
+
+        public static ModelCollection<MealSittingAutomaticAttendeeTarget> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) MealSittingAutomaticAttendeeTarget.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (MealSittingAutomaticAttendeeTarget) gateway.retrieve(ResourceType.MEAL_SITTING_AUTOMATIC_ATTENDEE_TARGET, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("MealSittingAutomaticAttendeeTarget");
+            RestGateway gateway = (RestGateway)MealSittingAutomaticAttendeeTarget.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<MealSittingAutomaticAttendeeTarget> mealsittingautomaticattendeetargetCollection = new ModelCollection<MealSittingAutomaticAttendeeTarget>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                mealsittingautomaticattendeetargetCollection.add((MealSittingAutomaticAttendeeTarget)model);
+            }
+
+            return mealsittingautomaticattendeetargetCollection;
         }
 
-        public MealSitting getMealSitting ()
+        public static MealSittingAutomaticAttendeeTarget retrieve(string id)
         {
-            return (MealSitting) this.getProperty("mealSitting");
+            RestGateway gateway = (RestGateway)MealSittingAutomaticAttendeeTarget.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (MealSittingAutomaticAttendeeTarget)gateway.retrieve(ResourceType.MEAL_SITTING_AUTOMATIC_ATTENDEE_TARGET, id);
         }
 
-        public void setMealSitting (MealSitting mealSitting)
+        public MealSitting getMealSitting()
+        {
+            return (MealSitting)this.getProperty("mealSitting");
+        }
+
+        public void setMealSitting(MealSitting mealSitting)
         {
             this.setProperty("mealSitting", mealSitting);
         }
 
-        public ModelBase getAutomaticAttendeeTarget ()
+        public ModelBase getAutomaticAttendeeTarget()
         {
-            return (ModelBase) this.getProperty("automaticAttendeeTarget");
+            return (ModelBase)this.getProperty("automaticAttendeeTarget");
         }
 
-        public void setAutomaticAttendeeTarget (ModelBase automaticAttendeeTarget)
+        public void setAutomaticAttendeeTarget(ModelBase automaticAttendeeTarget)
         {
             this.setProperty("automaticAttendeeTarget", automaticAttendeeTarget);
         }

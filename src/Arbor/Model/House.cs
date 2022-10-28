@@ -16,88 +16,89 @@ namespace Arbor.Model
         public const string DISPLAY_ORDER = "displayOrder";
         public const string COPIED_TO_HOUSE = "copiedToHouse";
 
-        public House ()
+        public House()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public House (string resourceType = "House", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<House> query (SimpleQuery query = null)
+        public House(string resourceType = "House", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("House");
-        	RestGateway gateway = (RestGateway) House.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<House> houseCollection = new ModelCollection<House> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    houseCollection.add((House) model);
-        	}
-        
-        	return houseCollection;
+
         }
 
-        public static House retrieve (string id)
+
+        public static ModelCollection<House> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) House.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (House) gateway.retrieve(ResourceType.HOUSE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("House");
+            RestGateway gateway = (RestGateway)House.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<House> houseCollection = new ModelCollection<House>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                houseCollection.add((House)model);
+            }
+
+            return houseCollection;
         }
 
-        public string getHouseName ()
+        public static House retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)House.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (House)gateway.retrieve(ResourceType.HOUSE, id);
+        }
+
+        public string getHouseName()
         {
             return this.getProperty("houseName").ToString();
         }
 
-        public void setHouseName (string houseName)
+        public void setHouseName(string houseName)
         {
             this.setProperty("houseName", houseName);
         }
 
-        public string getShortName ()
+        public string getShortName()
         {
             return this.getProperty("shortName").ToString();
         }
 
-        public void setShortName (string shortName)
+        public void setShortName(string shortName)
         {
             this.setProperty("shortName", shortName);
         }
 
-        public AcademicYear getAcademicYear ()
+        public AcademicYear getAcademicYear()
         {
-            return (AcademicYear) this.getProperty("academicYear");
+            return (AcademicYear)this.getProperty("academicYear");
         }
 
-        public void setAcademicYear (AcademicYear academicYear)
+        public void setAcademicYear(AcademicYear academicYear)
         {
             this.setProperty("academicYear", academicYear);
         }
 
-        public int getDisplayOrder ()
+        public int getDisplayOrder()
         {
             return Convert.ToInt32(this.getProperty("displayOrder"));
         }
 
-        public void setDisplayOrder (int displayOrder)
+        public void setDisplayOrder(int displayOrder)
         {
             this.setProperty("displayOrder", displayOrder);
         }
 
-        public House getCopiedToHouse ()
+        public House getCopiedToHouse()
         {
-            return (House) this.getProperty("copiedToHouse");
+            return (House)this.getProperty("copiedToHouse");
         }
 
-        public void setCopiedToHouse (House copiedToHouse)
+        public void setCopiedToHouse(House copiedToHouse)
         {
             this.setProperty("copiedToHouse", copiedToHouse);
         }

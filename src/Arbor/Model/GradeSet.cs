@@ -19,118 +19,119 @@ namespace Arbor.Model
         public const string IS_DISPLAY_GRADE_SET = "isDisplayGradeSet";
         public const string SCALE_DIRECTION = "scaleDirection";
 
-        public GradeSet ()
+        public GradeSet()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public GradeSet (string resourceType = "GradeSet", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<GradeSet> query (SimpleQuery query = null)
+        public GradeSet(string resourceType = "GradeSet", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("GradeSet");
-        	RestGateway gateway = (RestGateway) GradeSet.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<GradeSet> gradesetCollection = new ModelCollection<GradeSet> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    gradesetCollection.add((GradeSet) model);
-        	}
-        
-        	return gradesetCollection;
+
         }
 
-        public static GradeSet retrieve (string id)
+
+        public static ModelCollection<GradeSet> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) GradeSet.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (GradeSet) gateway.retrieve(ResourceType.GRADE_SET, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("GradeSet");
+            RestGateway gateway = (RestGateway)GradeSet.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<GradeSet> gradesetCollection = new ModelCollection<GradeSet>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                gradesetCollection.add((GradeSet)model);
+            }
+
+            return gradesetCollection;
         }
 
-        public string getCode ()
+        public static GradeSet retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)GradeSet.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (GradeSet)gateway.retrieve(ResourceType.GRADE_SET, id);
+        }
+
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }
 
-        public string getGradeSetName ()
+        public string getGradeSetName()
         {
             return this.getProperty("gradeSetName").ToString();
         }
 
-        public void setGradeSetName (string gradeSetName)
+        public void setGradeSetName(string gradeSetName)
         {
             this.setProperty("gradeSetName", gradeSetName);
         }
 
-        public string getShortName ()
+        public string getShortName()
         {
             return this.getProperty("shortName").ToString();
         }
 
-        public void setShortName (string shortName)
+        public void setShortName(string shortName)
         {
             this.setProperty("shortName", shortName);
         }
 
-        public GradePointScale getGradePointScale ()
+        public GradePointScale getGradePointScale()
         {
-            return (GradePointScale) this.getProperty("gradePointScale");
+            return (GradePointScale)this.getProperty("gradePointScale");
         }
 
-        public void setGradePointScale (GradePointScale gradePointScale)
+        public void setGradePointScale(GradePointScale gradePointScale)
         {
             this.setProperty("gradePointScale", gradePointScale);
         }
 
-        public bool getIsDisplayGradeSet ()
+        public bool getIsDisplayGradeSet()
         {
             return Convert.ToBoolean(this.getProperty("isDisplayGradeSet"));
         }
 
-        public void setIsDisplayGradeSet (bool isDisplayGradeSet)
+        public void setIsDisplayGradeSet(bool isDisplayGradeSet)
         {
             this.setProperty("isDisplayGradeSet", isDisplayGradeSet);
         }
 
-        public string getScaleDirection ()
+        public string getScaleDirection()
         {
             return this.getProperty("scaleDirection").ToString();
         }
 
-        public void setScaleDirection (string scaleDirection)
+        public void setScaleDirection(string scaleDirection)
         {
             this.setProperty("scaleDirection", scaleDirection);
         }

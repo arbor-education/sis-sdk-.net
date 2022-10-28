@@ -12,48 +12,49 @@ namespace Arbor.Model
         protected new string resourceType = ResourceType.INVERSE_DEMOGRAPHIC;
         public const string DEMOGRAPHIC = "demographic";
 
-        public InverseDemographic ()
+        public InverseDemographic()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public InverseDemographic (string resourceType = "InverseDemographic", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<InverseDemographic> query (SimpleQuery query = null)
+        public InverseDemographic(string resourceType = "InverseDemographic", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("InverseDemographic");
-        	RestGateway gateway = (RestGateway) InverseDemographic.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<InverseDemographic> inversedemographicCollection = new ModelCollection<InverseDemographic> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    inversedemographicCollection.add((InverseDemographic) model);
-        	}
-        
-        	return inversedemographicCollection;
+
         }
 
-        public static InverseDemographic retrieve (string id)
+
+        public static ModelCollection<InverseDemographic> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) InverseDemographic.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (InverseDemographic) gateway.retrieve(ResourceType.INVERSE_DEMOGRAPHIC, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("InverseDemographic");
+            RestGateway gateway = (RestGateway)InverseDemographic.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<InverseDemographic> inversedemographicCollection = new ModelCollection<InverseDemographic>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                inversedemographicCollection.add((InverseDemographic)model);
+            }
+
+            return inversedemographicCollection;
         }
 
-        public Demographic getDemographic ()
+        public static InverseDemographic retrieve(string id)
         {
-            return (Demographic) this.getProperty("demographic");
+            RestGateway gateway = (RestGateway)InverseDemographic.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (InverseDemographic)gateway.retrieve(ResourceType.INVERSE_DEMOGRAPHIC, id);
         }
 
-        public void setDemographic (Demographic demographic)
+        public Demographic getDemographic()
+        {
+            return (Demographic)this.getProperty("demographic");
+        }
+
+        public void setDemographic(Demographic demographic)
         {
             this.setProperty("demographic", demographic);
         }

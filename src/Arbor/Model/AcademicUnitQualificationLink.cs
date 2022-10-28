@@ -16,88 +16,89 @@ namespace Arbor.Model
         public const string EFFECTIVE_DATE = "effectiveDate";
         public const string END_DATE = "endDate";
 
-        public AcademicUnitQualificationLink ()
+        public AcademicUnitQualificationLink()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AcademicUnitQualificationLink (string resourceType = "AcademicUnitQualificationLink", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AcademicUnitQualificationLink> query (SimpleQuery query = null)
+        public AcademicUnitQualificationLink(string resourceType = "AcademicUnitQualificationLink", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AcademicUnitQualificationLink");
-        	RestGateway gateway = (RestGateway) AcademicUnitQualificationLink.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AcademicUnitQualificationLink> academicunitqualificationlinkCollection = new ModelCollection<AcademicUnitQualificationLink> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    academicunitqualificationlinkCollection.add((AcademicUnitQualificationLink) model);
-        	}
-        
-        	return academicunitqualificationlinkCollection;
+
         }
 
-        public static AcademicUnitQualificationLink retrieve (string id)
+
+        public static ModelCollection<AcademicUnitQualificationLink> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AcademicUnitQualificationLink.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AcademicUnitQualificationLink) gateway.retrieve(ResourceType.ACADEMIC_UNIT_QUALIFICATION_LINK, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AcademicUnitQualificationLink");
+            RestGateway gateway = (RestGateway)AcademicUnitQualificationLink.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AcademicUnitQualificationLink> academicunitqualificationlinkCollection = new ModelCollection<AcademicUnitQualificationLink>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                academicunitqualificationlinkCollection.add((AcademicUnitQualificationLink)model);
+            }
+
+            return academicunitqualificationlinkCollection;
         }
 
-        public AcademicUnit getAcademicUnit ()
+        public static AcademicUnitQualificationLink retrieve(string id)
         {
-            return (AcademicUnit) this.getProperty("academicUnit");
+            RestGateway gateway = (RestGateway)AcademicUnitQualificationLink.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AcademicUnitQualificationLink)gateway.retrieve(ResourceType.ACADEMIC_UNIT_QUALIFICATION_LINK, id);
         }
 
-        public void setAcademicUnit (AcademicUnit academicUnit)
+        public AcademicUnit getAcademicUnit()
+        {
+            return (AcademicUnit)this.getProperty("academicUnit");
+        }
+
+        public void setAcademicUnit(AcademicUnit academicUnit)
         {
             this.setProperty("academicUnit", academicUnit);
         }
 
-        public QualificationAssessable getQualificationAssessable ()
+        public QualificationAssessable getQualificationAssessable()
         {
-            return (QualificationAssessable) this.getProperty("qualificationAssessable");
+            return (QualificationAssessable)this.getProperty("qualificationAssessable");
         }
 
-        public void setQualificationAssessable (QualificationAssessable qualificationAssessable)
+        public void setQualificationAssessable(QualificationAssessable qualificationAssessable)
         {
             this.setProperty("qualificationAssessable", qualificationAssessable);
         }
 
-        public bool getAutomaticEntry ()
+        public bool getAutomaticEntry()
         {
             return Convert.ToBoolean(this.getProperty("automaticEntry"));
         }
 
-        public void setAutomaticEntry (bool automaticEntry)
+        public void setAutomaticEntry(bool automaticEntry)
         {
             this.setProperty("automaticEntry", automaticEntry);
         }
 
-        public DateTime getEffectiveDate ()
+        public DateTime getEffectiveDate()
         {
             return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
-        public void setEffectiveDate (DateTime effectiveDate)
+        public void setEffectiveDate(DateTime effectiveDate)
         {
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }

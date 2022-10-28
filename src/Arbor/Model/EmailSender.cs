@@ -18,108 +18,109 @@ namespace Arbor.Model
         public const string SENDER = "sender";
         public const string SENDER_INDEX = "senderIndex";
 
-        public EmailSender ()
+        public EmailSender()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public EmailSender (string resourceType = "EmailSender", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<EmailSender> query (SimpleQuery query = null)
+        public EmailSender(string resourceType = "EmailSender", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("EmailSender");
-        	RestGateway gateway = (RestGateway) EmailSender.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<EmailSender> emailsenderCollection = new ModelCollection<EmailSender> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    emailsenderCollection.add((EmailSender) model);
-        	}
-        
-        	return emailsenderCollection;
+
         }
 
-        public static EmailSender retrieve (string id)
+
+        public static ModelCollection<EmailSender> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) EmailSender.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (EmailSender) gateway.retrieve(ResourceType.EMAIL_SENDER, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("EmailSender");
+            RestGateway gateway = (RestGateway)EmailSender.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<EmailSender> emailsenderCollection = new ModelCollection<EmailSender>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                emailsenderCollection.add((EmailSender)model);
+            }
+
+            return emailsenderCollection;
         }
 
-        public Email getEmail ()
+        public static EmailSender retrieve(string id)
         {
-            return (Email) this.getProperty("email");
+            RestGateway gateway = (RestGateway)EmailSender.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (EmailSender)gateway.retrieve(ResourceType.EMAIL_SENDER, id);
         }
 
-        public void setEmail (Email email)
+        public Email getEmail()
+        {
+            return (Email)this.getProperty("email");
+        }
+
+        public void setEmail(Email email)
         {
             this.setProperty("email", email);
         }
 
-        public string getSenderType ()
+        public string getSenderType()
         {
             return this.getProperty("senderType").ToString();
         }
 
-        public void setSenderType (string senderType)
+        public void setSenderType(string senderType)
         {
             this.setProperty("senderType", senderType);
         }
 
-        public string getSenderName ()
+        public string getSenderName()
         {
             return this.getProperty("senderName").ToString();
         }
 
-        public void setSenderName (string senderName)
+        public void setSenderName(string senderName)
         {
             this.setProperty("senderName", senderName);
         }
 
-        public string getSenderRawEmail ()
+        public string getSenderRawEmail()
         {
             return this.getProperty("senderRawEmail").ToString();
         }
 
-        public void setSenderRawEmail (string senderRawEmail)
+        public void setSenderRawEmail(string senderRawEmail)
         {
             this.setProperty("senderRawEmail", senderRawEmail);
         }
 
-        public EmailAddress getEmailAddress ()
+        public EmailAddress getEmailAddress()
         {
-            return (EmailAddress) this.getProperty("emailAddress");
+            return (EmailAddress)this.getProperty("emailAddress");
         }
 
-        public void setEmailAddress (EmailAddress emailAddress)
+        public void setEmailAddress(EmailAddress emailAddress)
         {
             this.setProperty("emailAddress", emailAddress);
         }
 
-        public ModelBase getSender ()
+        public ModelBase getSender()
         {
-            return (ModelBase) this.getProperty("sender");
+            return (ModelBase)this.getProperty("sender");
         }
 
-        public void setSender (ModelBase sender)
+        public void setSender(ModelBase sender)
         {
             this.setProperty("sender", sender);
         }
 
-        public int getSenderIndex ()
+        public int getSenderIndex()
         {
             return Convert.ToInt32(this.getProperty("senderIndex"));
         }
 
-        public void setSenderIndex (int senderIndex)
+        public void setSenderIndex(int senderIndex)
         {
             this.setProperty("senderIndex", senderIndex);
         }

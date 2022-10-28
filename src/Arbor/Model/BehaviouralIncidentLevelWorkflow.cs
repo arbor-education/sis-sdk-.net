@@ -40,328 +40,329 @@ namespace Arbor.Model
         public const string EMAIL_ASSIGNEE = "emailAssignee";
         public const string ALLOW_ASSIGN_INTERNAL_EXCLUSION = "allowAssignInternalExclusion";
 
-        public BehaviouralIncidentLevelWorkflow ()
+        public BehaviouralIncidentLevelWorkflow()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public BehaviouralIncidentLevelWorkflow (string resourceType = "BehaviouralIncidentLevelWorkflow", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<BehaviouralIncidentLevelWorkflow> query (SimpleQuery query = null)
+        public BehaviouralIncidentLevelWorkflow(string resourceType = "BehaviouralIncidentLevelWorkflow", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("BehaviouralIncidentLevelWorkflow");
-        	RestGateway gateway = (RestGateway) BehaviouralIncidentLevelWorkflow.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<BehaviouralIncidentLevelWorkflow> behaviouralincidentlevelworkflowCollection = new ModelCollection<BehaviouralIncidentLevelWorkflow> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    behaviouralincidentlevelworkflowCollection.add((BehaviouralIncidentLevelWorkflow) model);
-        	}
-        
-        	return behaviouralincidentlevelworkflowCollection;
+
         }
 
-        public static BehaviouralIncidentLevelWorkflow retrieve (string id)
+
+        public static ModelCollection<BehaviouralIncidentLevelWorkflow> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) BehaviouralIncidentLevelWorkflow.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (BehaviouralIncidentLevelWorkflow) gateway.retrieve(ResourceType.BEHAVIOURAL_INCIDENT_LEVEL_WORKFLOW, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("BehaviouralIncidentLevelWorkflow");
+            RestGateway gateway = (RestGateway)BehaviouralIncidentLevelWorkflow.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<BehaviouralIncidentLevelWorkflow> behaviouralincidentlevelworkflowCollection = new ModelCollection<BehaviouralIncidentLevelWorkflow>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                behaviouralincidentlevelworkflowCollection.add((BehaviouralIncidentLevelWorkflow)model);
+            }
+
+            return behaviouralincidentlevelworkflowCollection;
         }
 
-        public int getLevelOfIncident ()
+        public static BehaviouralIncidentLevelWorkflow retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)BehaviouralIncidentLevelWorkflow.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (BehaviouralIncidentLevelWorkflow)gateway.retrieve(ResourceType.BEHAVIOURAL_INCIDENT_LEVEL_WORKFLOW, id);
+        }
+
+        public int getLevelOfIncident()
         {
             return Convert.ToInt32(this.getProperty("levelOfIncident"));
         }
 
-        public void setLevelOfIncident (int levelOfIncident)
+        public void setLevelOfIncident(int levelOfIncident)
         {
             this.setProperty("levelOfIncident", levelOfIncident);
         }
 
-        public bool getAutoClose ()
+        public bool getAutoClose()
         {
             return Convert.ToBoolean(this.getProperty("autoClose"));
         }
 
-        public void setAutoClose (bool autoClose)
+        public void setAutoClose(bool autoClose)
         {
             this.setProperty("autoClose", autoClose);
         }
 
-        public int getEscalationThresholdCount ()
+        public int getEscalationThresholdCount()
         {
             return Convert.ToInt32(this.getProperty("escalationThresholdCount"));
         }
 
-        public void setEscalationThresholdCount (int escalationThresholdCount)
+        public void setEscalationThresholdCount(int escalationThresholdCount)
         {
             this.setProperty("escalationThresholdCount", escalationThresholdCount);
         }
 
-        public string getEscalationThresholdTimeRange ()
+        public string getEscalationThresholdTimeRange()
         {
             return this.getProperty("escalationThresholdTimeRange").ToString();
         }
 
-        public void setEscalationThresholdTimeRange (string escalationThresholdTimeRange)
+        public void setEscalationThresholdTimeRange(string escalationThresholdTimeRange)
         {
             this.setProperty("escalationThresholdTimeRange", escalationThresholdTimeRange);
         }
 
-        public int getEscalateToLevel ()
+        public int getEscalateToLevel()
         {
             return Convert.ToInt32(this.getProperty("escalateToLevel"));
         }
 
-        public void setEscalateToLevel (int escalateToLevel)
+        public void setEscalateToLevel(int escalateToLevel)
         {
             this.setProperty("escalateToLevel", escalateToLevel);
         }
 
-        public bool getResetToZero ()
+        public bool getResetToZero()
         {
             return Convert.ToBoolean(this.getProperty("resetToZero"));
         }
 
-        public void setResetToZero (bool resetToZero)
+        public void setResetToZero(bool resetToZero)
         {
             this.setProperty("resetToZero", resetToZero);
         }
 
-        public string getGuardianEmailTemplate ()
+        public string getGuardianEmailTemplate()
         {
             return this.getProperty("guardianEmailTemplate").ToString();
         }
 
-        public void setGuardianEmailTemplate (string guardianEmailTemplate)
+        public void setGuardianEmailTemplate(string guardianEmailTemplate)
         {
             this.setProperty("guardianEmailTemplate", guardianEmailTemplate);
         }
 
-        public string getMessageChannel ()
+        public string getMessageChannel()
         {
             return this.getProperty("messageChannel").ToString();
         }
 
-        public void setMessageChannel (string messageChannel)
+        public void setMessageChannel(string messageChannel)
         {
             this.setProperty("messageChannel", messageChannel);
         }
 
-        public bool getBehaviouralIncidentSmsGuardian ()
+        public bool getBehaviouralIncidentSmsGuardian()
         {
             return Convert.ToBoolean(this.getProperty("behaviouralIncidentSmsGuardian"));
         }
 
-        public void setBehaviouralIncidentSmsGuardian (bool behaviouralIncidentSmsGuardian)
+        public void setBehaviouralIncidentSmsGuardian(bool behaviouralIncidentSmsGuardian)
         {
             this.setProperty("behaviouralIncidentSmsGuardian", behaviouralIncidentSmsGuardian);
         }
 
-        public bool getBehaviouralIncidentEmailGuardian ()
+        public bool getBehaviouralIncidentEmailGuardian()
         {
             return Convert.ToBoolean(this.getProperty("behaviouralIncidentEmailGuardian"));
         }
 
-        public void setBehaviouralIncidentEmailGuardian (bool behaviouralIncidentEmailGuardian)
+        public void setBehaviouralIncidentEmailGuardian(bool behaviouralIncidentEmailGuardian)
         {
             this.setProperty("behaviouralIncidentEmailGuardian", behaviouralIncidentEmailGuardian);
         }
 
-        public bool getDetentionSmsGuardian ()
+        public bool getDetentionSmsGuardian()
         {
             return Convert.ToBoolean(this.getProperty("detentionSmsGuardian"));
         }
 
-        public void setDetentionSmsGuardian (bool detentionSmsGuardian)
+        public void setDetentionSmsGuardian(bool detentionSmsGuardian)
         {
             this.setProperty("detentionSmsGuardian", detentionSmsGuardian);
         }
 
-        public bool getDetentionEmailGuardian ()
+        public bool getDetentionEmailGuardian()
         {
             return Convert.ToBoolean(this.getProperty("detentionEmailGuardian"));
         }
 
-        public void setDetentionEmailGuardian (bool detentionEmailGuardian)
+        public void setDetentionEmailGuardian(bool detentionEmailGuardian)
         {
             this.setProperty("detentionEmailGuardian", detentionEmailGuardian);
         }
 
-        public CommunicationTemplate getBehaviouralIncidentSmsTemplate ()
+        public CommunicationTemplate getBehaviouralIncidentSmsTemplate()
         {
-            return (CommunicationTemplate) this.getProperty("behaviouralIncidentSmsTemplate");
+            return (CommunicationTemplate)this.getProperty("behaviouralIncidentSmsTemplate");
         }
 
-        public void setBehaviouralIncidentSmsTemplate (CommunicationTemplate behaviouralIncidentSmsTemplate)
+        public void setBehaviouralIncidentSmsTemplate(CommunicationTemplate behaviouralIncidentSmsTemplate)
         {
             this.setProperty("behaviouralIncidentSmsTemplate", behaviouralIncidentSmsTemplate);
         }
 
-        public CommunicationTemplate getBehaviouralIncidentEmailTemplate ()
+        public CommunicationTemplate getBehaviouralIncidentEmailTemplate()
         {
-            return (CommunicationTemplate) this.getProperty("behaviouralIncidentEmailTemplate");
+            return (CommunicationTemplate)this.getProperty("behaviouralIncidentEmailTemplate");
         }
 
-        public void setBehaviouralIncidentEmailTemplate (CommunicationTemplate behaviouralIncidentEmailTemplate)
+        public void setBehaviouralIncidentEmailTemplate(CommunicationTemplate behaviouralIncidentEmailTemplate)
         {
             this.setProperty("behaviouralIncidentEmailTemplate", behaviouralIncidentEmailTemplate);
         }
 
-        public string getDefaultAssignee ()
+        public string getDefaultAssignee()
         {
             return this.getProperty("defaultAssignee").ToString();
         }
 
-        public void setDefaultAssignee (string defaultAssignee)
+        public void setDefaultAssignee(string defaultAssignee)
         {
             this.setProperty("defaultAssignee", defaultAssignee);
         }
 
-        public Staff getSpecificAssignee ()
+        public Staff getSpecificAssignee()
         {
-            return (Staff) this.getProperty("specificAssignee");
+            return (Staff)this.getProperty("specificAssignee");
         }
 
-        public void setSpecificAssignee (Staff specificAssignee)
+        public void setSpecificAssignee(Staff specificAssignee)
         {
             this.setProperty("specificAssignee", specificAssignee);
         }
 
-        public DetentionType getDetentionType ()
+        public DetentionType getDetentionType()
         {
-            return (DetentionType) this.getProperty("detentionType");
+            return (DetentionType)this.getProperty("detentionType");
         }
 
-        public void setDetentionType (DetentionType detentionType)
+        public void setDetentionType(DetentionType detentionType)
         {
             this.setProperty("detentionType", detentionType);
         }
 
-        public string getDetentionTimeFrame ()
+        public string getDetentionTimeFrame()
         {
             return this.getProperty("detentionTimeFrame").ToString();
         }
 
-        public void setDetentionTimeFrame (string detentionTimeFrame)
+        public void setDetentionTimeFrame(string detentionTimeFrame)
         {
             this.setProperty("detentionTimeFrame", detentionTimeFrame);
         }
 
-        public string getAssignmentPolicy ()
+        public string getAssignmentPolicy()
         {
             return this.getProperty("assignmentPolicy").ToString();
         }
 
-        public void setAssignmentPolicy (string assignmentPolicy)
+        public void setAssignmentPolicy(string assignmentPolicy)
         {
             this.setProperty("assignmentPolicy", assignmentPolicy);
         }
 
-        public InternalExclusionType getInternalExclusionType ()
+        public InternalExclusionType getInternalExclusionType()
         {
-            return (InternalExclusionType) this.getProperty("internalExclusionType");
+            return (InternalExclusionType)this.getProperty("internalExclusionType");
         }
 
-        public void setInternalExclusionType (InternalExclusionType internalExclusionType)
+        public void setInternalExclusionType(InternalExclusionType internalExclusionType)
         {
             this.setProperty("internalExclusionType", internalExclusionType);
         }
 
-        public string getInternalExclusionTimeFrame ()
+        public string getInternalExclusionTimeFrame()
         {
             return this.getProperty("internalExclusionTimeFrame").ToString();
         }
 
-        public void setInternalExclusionTimeFrame (string internalExclusionTimeFrame)
+        public void setInternalExclusionTimeFrame(string internalExclusionTimeFrame)
         {
             this.setProperty("internalExclusionTimeFrame", internalExclusionTimeFrame);
         }
 
-        public int getNumberOfSessions ()
+        public int getNumberOfSessions()
         {
             return Convert.ToInt32(this.getProperty("numberOfSessions"));
         }
 
-        public void setNumberOfSessions (int numberOfSessions)
+        public void setNumberOfSessions(int numberOfSessions)
         {
             this.setProperty("numberOfSessions", numberOfSessions);
         }
 
-        public PointAwardScale getPointAwardScale ()
+        public PointAwardScale getPointAwardScale()
         {
-            return (PointAwardScale) this.getProperty("pointAwardScale");
+            return (PointAwardScale)this.getProperty("pointAwardScale");
         }
 
-        public void setPointAwardScale (PointAwardScale pointAwardScale)
+        public void setPointAwardScale(PointAwardScale pointAwardScale)
         {
             this.setProperty("pointAwardScale", pointAwardScale);
         }
 
-        public float getAddDeductPoints ()
+        public float getAddDeductPoints()
         {
-            return (float) this.getProperty("addDeductPoints");
+            return (float)this.getProperty("addDeductPoints");
         }
 
-        public void setAddDeductPoints (float addDeductPoints)
+        public void setAddDeductPoints(float addDeductPoints)
         {
             this.setProperty("addDeductPoints", addDeductPoints);
         }
 
-        public bool getEditableWatchers ()
+        public bool getEditableWatchers()
         {
             return Convert.ToBoolean(this.getProperty("editableWatchers"));
         }
 
-        public void setEditableWatchers (bool editableWatchers)
+        public void setEditableWatchers(bool editableWatchers)
         {
             this.setProperty("editableWatchers", editableWatchers);
         }
 
-        public bool getAllowAssignDetention ()
+        public bool getAllowAssignDetention()
         {
             return Convert.ToBoolean(this.getProperty("allowAssignDetention"));
         }
 
-        public void setAllowAssignDetention (bool allowAssignDetention)
+        public void setAllowAssignDetention(bool allowAssignDetention)
         {
             this.setProperty("allowAssignDetention", allowAssignDetention);
         }
 
-        public bool getAllowAddDeductPoints ()
+        public bool getAllowAddDeductPoints()
         {
             return Convert.ToBoolean(this.getProperty("allowAddDeductPoints"));
         }
 
-        public void setAllowAddDeductPoints (bool allowAddDeductPoints)
+        public void setAllowAddDeductPoints(bool allowAddDeductPoints)
         {
             this.setProperty("allowAddDeductPoints", allowAddDeductPoints);
         }
 
-        public bool getEmailAssignee ()
+        public bool getEmailAssignee()
         {
             return Convert.ToBoolean(this.getProperty("emailAssignee"));
         }
 
-        public void setEmailAssignee (bool emailAssignee)
+        public void setEmailAssignee(bool emailAssignee)
         {
             this.setProperty("emailAssignee", emailAssignee);
         }
 
-        public bool getAllowAssignInternalExclusion ()
+        public bool getAllowAssignInternalExclusion()
         {
             return Convert.ToBoolean(this.getProperty("allowAssignInternalExclusion"));
         }
 
-        public void setAllowAssignInternalExclusion (bool allowAssignInternalExclusion)
+        public void setAllowAssignInternalExclusion(bool allowAssignInternalExclusion)
         {
             this.setProperty("allowAssignInternalExclusion", allowAssignInternalExclusion);
         }

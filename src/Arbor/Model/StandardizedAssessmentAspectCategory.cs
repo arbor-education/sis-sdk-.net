@@ -16,88 +16,89 @@ namespace Arbor.Model
         public const string ASSESSMENT_PROVIDER = "assessmentProvider";
         public const string NAME = "name";
 
-        public StandardizedAssessmentAspectCategory ()
+        public StandardizedAssessmentAspectCategory()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public StandardizedAssessmentAspectCategory (string resourceType = "StandardizedAssessmentAspectCategory", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<StandardizedAssessmentAspectCategory> query (SimpleQuery query = null)
+        public StandardizedAssessmentAspectCategory(string resourceType = "StandardizedAssessmentAspectCategory", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("StandardizedAssessmentAspectCategory");
-        	RestGateway gateway = (RestGateway) StandardizedAssessmentAspectCategory.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<StandardizedAssessmentAspectCategory> standardizedassessmentaspectcategoryCollection = new ModelCollection<StandardizedAssessmentAspectCategory> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    standardizedassessmentaspectcategoryCollection.add((StandardizedAssessmentAspectCategory) model);
-        	}
-        
-        	return standardizedassessmentaspectcategoryCollection;
+
         }
 
-        public static StandardizedAssessmentAspectCategory retrieve (string id)
+
+        public static ModelCollection<StandardizedAssessmentAspectCategory> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) StandardizedAssessmentAspectCategory.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (StandardizedAssessmentAspectCategory) gateway.retrieve(ResourceType.STANDARDIZED_ASSESSMENT_ASPECT_CATEGORY, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("StandardizedAssessmentAspectCategory");
+            RestGateway gateway = (RestGateway)StandardizedAssessmentAspectCategory.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<StandardizedAssessmentAspectCategory> standardizedassessmentaspectcategoryCollection = new ModelCollection<StandardizedAssessmentAspectCategory>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                standardizedassessmentaspectcategoryCollection.add((StandardizedAssessmentAspectCategory)model);
+            }
+
+            return standardizedassessmentaspectcategoryCollection;
         }
 
-        public string getCode ()
+        public static StandardizedAssessmentAspectCategory retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)StandardizedAssessmentAspectCategory.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (StandardizedAssessmentAspectCategory)gateway.retrieve(ResourceType.STANDARDIZED_ASSESSMENT_ASPECT_CATEGORY, id);
+        }
+
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }
 
-        public AssessmentProvider getAssessmentProvider ()
+        public AssessmentProvider getAssessmentProvider()
         {
-            return (AssessmentProvider) this.getProperty("assessmentProvider");
+            return (AssessmentProvider)this.getProperty("assessmentProvider");
         }
 
-        public void setAssessmentProvider (AssessmentProvider assessmentProvider)
+        public void setAssessmentProvider(AssessmentProvider assessmentProvider)
         {
             this.setProperty("assessmentProvider", assessmentProvider);
         }
 
-        public string getName ()
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }

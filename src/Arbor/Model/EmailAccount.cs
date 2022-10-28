@@ -18,108 +18,109 @@ namespace Arbor.Model
         public const string PASSWORD = "password";
         public const string OWNER = "owner";
 
-        public EmailAccount ()
+        public EmailAccount()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public EmailAccount (string resourceType = "EmailAccount", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<EmailAccount> query (SimpleQuery query = null)
+        public EmailAccount(string resourceType = "EmailAccount", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("EmailAccount");
-        	RestGateway gateway = (RestGateway) EmailAccount.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<EmailAccount> emailaccountCollection = new ModelCollection<EmailAccount> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    emailaccountCollection.add((EmailAccount) model);
-        	}
-        
-        	return emailaccountCollection;
+
         }
 
-        public static EmailAccount retrieve (string id)
+
+        public static ModelCollection<EmailAccount> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) EmailAccount.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (EmailAccount) gateway.retrieve(ResourceType.EMAIL_ACCOUNT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("EmailAccount");
+            RestGateway gateway = (RestGateway)EmailAccount.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<EmailAccount> emailaccountCollection = new ModelCollection<EmailAccount>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                emailaccountCollection.add((EmailAccount)model);
+            }
+
+            return emailaccountCollection;
         }
 
-        public string getServerType ()
+        public static EmailAccount retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)EmailAccount.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (EmailAccount)gateway.retrieve(ResourceType.EMAIL_ACCOUNT, id);
+        }
+
+        public string getServerType()
         {
             return this.getProperty("serverType").ToString();
         }
 
-        public void setServerType (string serverType)
+        public void setServerType(string serverType)
         {
             this.setProperty("serverType", serverType);
         }
 
-        public string getServerHost ()
+        public string getServerHost()
         {
             return this.getProperty("serverHost").ToString();
         }
 
-        public void setServerHost (string serverHost)
+        public void setServerHost(string serverHost)
         {
             this.setProperty("serverHost", serverHost);
         }
 
-        public int getServerPort ()
+        public int getServerPort()
         {
             return Convert.ToInt32(this.getProperty("serverPort"));
         }
 
-        public void setServerPort (int serverPort)
+        public void setServerPort(int serverPort)
         {
             this.setProperty("serverPort", serverPort);
         }
 
-        public string getServerEncryption ()
+        public string getServerEncryption()
         {
             return this.getProperty("serverEncryption").ToString();
         }
 
-        public void setServerEncryption (string serverEncryption)
+        public void setServerEncryption(string serverEncryption)
         {
             this.setProperty("serverEncryption", serverEncryption);
         }
 
-        public string getUsername ()
+        public string getUsername()
         {
             return this.getProperty("username").ToString();
         }
 
-        public void setUsername (string username)
+        public void setUsername(string username)
         {
             this.setProperty("username", username);
         }
 
-        public string getPassword ()
+        public string getPassword()
         {
             return this.getProperty("password").ToString();
         }
 
-        public void setPassword (string password)
+        public void setPassword(string password)
         {
             this.setProperty("password", password);
         }
 
-        public ModelBase getOwner ()
+        public ModelBase getOwner()
         {
-            return (ModelBase) this.getProperty("owner");
+            return (ModelBase)this.getProperty("owner");
         }
 
-        public void setOwner (ModelBase owner)
+        public void setOwner(ModelBase owner)
         {
             this.setProperty("owner", owner);
         }

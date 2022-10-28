@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string EFFECTIVE_DATE = "effectiveDate";
         public const string END_DATE = "endDate";
 
-        public TimetableSlotLocation ()
+        public TimetableSlotLocation()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public TimetableSlotLocation (string resourceType = "TimetableSlotLocation", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<TimetableSlotLocation> query (SimpleQuery query = null)
+        public TimetableSlotLocation(string resourceType = "TimetableSlotLocation", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("TimetableSlotLocation");
-        	RestGateway gateway = (RestGateway) TimetableSlotLocation.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<TimetableSlotLocation> timetableslotlocationCollection = new ModelCollection<TimetableSlotLocation> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    timetableslotlocationCollection.add((TimetableSlotLocation) model);
-        	}
-        
-        	return timetableslotlocationCollection;
+
         }
 
-        public static TimetableSlotLocation retrieve (string id)
+
+        public static ModelCollection<TimetableSlotLocation> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) TimetableSlotLocation.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (TimetableSlotLocation) gateway.retrieve(ResourceType.TIMETABLE_SLOT_LOCATION, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("TimetableSlotLocation");
+            RestGateway gateway = (RestGateway)TimetableSlotLocation.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<TimetableSlotLocation> timetableslotlocationCollection = new ModelCollection<TimetableSlotLocation>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                timetableslotlocationCollection.add((TimetableSlotLocation)model);
+            }
+
+            return timetableslotlocationCollection;
         }
 
-        public TimetableSlot getTimetableSlot ()
+        public static TimetableSlotLocation retrieve(string id)
         {
-            return (TimetableSlot) this.getProperty("timetableSlot");
+            RestGateway gateway = (RestGateway)TimetableSlotLocation.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (TimetableSlotLocation)gateway.retrieve(ResourceType.TIMETABLE_SLOT_LOCATION, id);
         }
 
-        public void setTimetableSlot (TimetableSlot timetableSlot)
+        public TimetableSlot getTimetableSlot()
+        {
+            return (TimetableSlot)this.getProperty("timetableSlot");
+        }
+
+        public void setTimetableSlot(TimetableSlot timetableSlot)
         {
             this.setProperty("timetableSlot", timetableSlot);
         }
 
-        public Room getLocation ()
+        public Room getLocation()
         {
-            return (Room) this.getProperty("location");
+            return (Room)this.getProperty("location");
         }
 
-        public void setLocation (Room location)
+        public void setLocation(Room location)
         {
             this.setProperty("location", location);
         }
 
-        public DateTime getEffectiveDate ()
+        public DateTime getEffectiveDate()
         {
             return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
-        public void setEffectiveDate (DateTime effectiveDate)
+        public void setEffectiveDate(DateTime effectiveDate)
         {
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }

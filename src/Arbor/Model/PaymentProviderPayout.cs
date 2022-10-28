@@ -20,128 +20,129 @@ namespace Arbor.Model
         public const string PAYOUT_FAILED_DATETIME = "payoutFailedDatetime";
         public const string PAYOUT_SOURCE_TYPE = "payoutSourceType";
 
-        public PaymentProviderPayout ()
+        public PaymentProviderPayout()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public PaymentProviderPayout (string resourceType = "PaymentProviderPayout", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<PaymentProviderPayout> query (SimpleQuery query = null)
+        public PaymentProviderPayout(string resourceType = "PaymentProviderPayout", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("PaymentProviderPayout");
-        	RestGateway gateway = (RestGateway) PaymentProviderPayout.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<PaymentProviderPayout> paymentproviderpayoutCollection = new ModelCollection<PaymentProviderPayout> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    paymentproviderpayoutCollection.add((PaymentProviderPayout) model);
-        	}
-        
-        	return paymentproviderpayoutCollection;
+
         }
 
-        public static PaymentProviderPayout retrieve (string id)
+
+        public static ModelCollection<PaymentProviderPayout> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) PaymentProviderPayout.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (PaymentProviderPayout) gateway.retrieve(ResourceType.PAYMENT_PROVIDER_PAYOUT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("PaymentProviderPayout");
+            RestGateway gateway = (RestGateway)PaymentProviderPayout.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<PaymentProviderPayout> paymentproviderpayoutCollection = new ModelCollection<PaymentProviderPayout>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                paymentproviderpayoutCollection.add((PaymentProviderPayout)model);
+            }
+
+            return paymentproviderpayoutCollection;
         }
 
-        public BankAccount getBankAccount ()
+        public static PaymentProviderPayout retrieve(string id)
         {
-            return (BankAccount) this.getProperty("bankAccount");
+            RestGateway gateway = (RestGateway)PaymentProviderPayout.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (PaymentProviderPayout)gateway.retrieve(ResourceType.PAYMENT_PROVIDER_PAYOUT, id);
         }
 
-        public void setBankAccount (BankAccount bankAccount)
+        public BankAccount getBankAccount()
+        {
+            return (BankAccount)this.getProperty("bankAccount");
+        }
+
+        public void setBankAccount(BankAccount bankAccount)
         {
             this.setProperty("bankAccount", bankAccount);
         }
 
-        public PaymentProvider getPaymentProvider ()
+        public PaymentProvider getPaymentProvider()
         {
-            return (PaymentProvider) this.getProperty("paymentProvider");
+            return (PaymentProvider)this.getProperty("paymentProvider");
         }
 
-        public void setPaymentProvider (PaymentProvider paymentProvider)
+        public void setPaymentProvider(PaymentProvider paymentProvider)
         {
             this.setProperty("paymentProvider", paymentProvider);
         }
 
-        public string getPaymentProviderPayoutIdentifier ()
+        public string getPaymentProviderPayoutIdentifier()
         {
             return this.getProperty("paymentProviderPayoutIdentifier").ToString();
         }
 
-        public void setPaymentProviderPayoutIdentifier (string paymentProviderPayoutIdentifier)
+        public void setPaymentProviderPayoutIdentifier(string paymentProviderPayoutIdentifier)
         {
             this.setProperty("paymentProviderPayoutIdentifier", paymentProviderPayoutIdentifier);
         }
 
-        public string getPayoutAmount ()
+        public string getPayoutAmount()
         {
             return this.getProperty("payoutAmount").ToString();
         }
 
-        public void setPayoutAmount (string payoutAmount)
+        public void setPayoutAmount(string payoutAmount)
         {
             this.setProperty("payoutAmount", payoutAmount);
         }
 
-        public string getPayoutReference ()
+        public string getPayoutReference()
         {
             return this.getProperty("payoutReference").ToString();
         }
 
-        public void setPayoutReference (string payoutReference)
+        public void setPayoutReference(string payoutReference)
         {
             this.setProperty("payoutReference", payoutReference);
         }
 
-        public DateTime getPayoutInitiatedDatetime ()
+        public DateTime getPayoutInitiatedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("payoutInitiatedDatetime"));
         }
 
-        public void setPayoutInitiatedDatetime (DateTime payoutInitiatedDatetime)
+        public void setPayoutInitiatedDatetime(DateTime payoutInitiatedDatetime)
         {
             this.setProperty("payoutInitiatedDatetime", payoutInitiatedDatetime);
         }
 
-        public DateTime getPayoutSucceededDatetime ()
+        public DateTime getPayoutSucceededDatetime()
         {
             return Convert.ToDateTime(this.getProperty("payoutSucceededDatetime"));
         }
 
-        public void setPayoutSucceededDatetime (DateTime payoutSucceededDatetime)
+        public void setPayoutSucceededDatetime(DateTime payoutSucceededDatetime)
         {
             this.setProperty("payoutSucceededDatetime", payoutSucceededDatetime);
         }
 
-        public DateTime getPayoutFailedDatetime ()
+        public DateTime getPayoutFailedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("payoutFailedDatetime"));
         }
 
-        public void setPayoutFailedDatetime (DateTime payoutFailedDatetime)
+        public void setPayoutFailedDatetime(DateTime payoutFailedDatetime)
         {
             this.setProperty("payoutFailedDatetime", payoutFailedDatetime);
         }
 
-        public string getPayoutSourceType ()
+        public string getPayoutSourceType()
         {
             return this.getProperty("payoutSourceType").ToString();
         }
 
-        public void setPayoutSourceType (string payoutSourceType)
+        public void setPayoutSourceType(string payoutSourceType)
         {
             this.setProperty("payoutSourceType", payoutSourceType);
         }

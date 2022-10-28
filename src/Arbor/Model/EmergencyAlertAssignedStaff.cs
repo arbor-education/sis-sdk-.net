@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string EMERGENCY_ALERT = "emergencyAlert";
         public const string ASSIGNED_STAFF = "assignedStaff";
 
-        public EmergencyAlertAssignedStaff ()
+        public EmergencyAlertAssignedStaff()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public EmergencyAlertAssignedStaff (string resourceType = "EmergencyAlertAssignedStaff", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<EmergencyAlertAssignedStaff> query (SimpleQuery query = null)
+        public EmergencyAlertAssignedStaff(string resourceType = "EmergencyAlertAssignedStaff", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("EmergencyAlertAssignedStaff");
-        	RestGateway gateway = (RestGateway) EmergencyAlertAssignedStaff.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<EmergencyAlertAssignedStaff> emergencyalertassignedstaffCollection = new ModelCollection<EmergencyAlertAssignedStaff> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    emergencyalertassignedstaffCollection.add((EmergencyAlertAssignedStaff) model);
-        	}
-        
-        	return emergencyalertassignedstaffCollection;
+
         }
 
-        public static EmergencyAlertAssignedStaff retrieve (string id)
+
+        public static ModelCollection<EmergencyAlertAssignedStaff> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) EmergencyAlertAssignedStaff.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (EmergencyAlertAssignedStaff) gateway.retrieve(ResourceType.EMERGENCY_ALERT_ASSIGNED_STAFF, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("EmergencyAlertAssignedStaff");
+            RestGateway gateway = (RestGateway)EmergencyAlertAssignedStaff.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<EmergencyAlertAssignedStaff> emergencyalertassignedstaffCollection = new ModelCollection<EmergencyAlertAssignedStaff>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                emergencyalertassignedstaffCollection.add((EmergencyAlertAssignedStaff)model);
+            }
+
+            return emergencyalertassignedstaffCollection;
         }
 
-        public EmergencyAlert getEmergencyAlert ()
+        public static EmergencyAlertAssignedStaff retrieve(string id)
         {
-            return (EmergencyAlert) this.getProperty("emergencyAlert");
+            RestGateway gateway = (RestGateway)EmergencyAlertAssignedStaff.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (EmergencyAlertAssignedStaff)gateway.retrieve(ResourceType.EMERGENCY_ALERT_ASSIGNED_STAFF, id);
         }
 
-        public void setEmergencyAlert (EmergencyAlert emergencyAlert)
+        public EmergencyAlert getEmergencyAlert()
+        {
+            return (EmergencyAlert)this.getProperty("emergencyAlert");
+        }
+
+        public void setEmergencyAlert(EmergencyAlert emergencyAlert)
         {
             this.setProperty("emergencyAlert", emergencyAlert);
         }
 
-        public Staff getAssignedStaff ()
+        public Staff getAssignedStaff()
         {
-            return (Staff) this.getProperty("assignedStaff");
+            return (Staff)this.getProperty("assignedStaff");
         }
 
-        public void setAssignedStaff (Staff assignedStaff)
+        public void setAssignedStaff(Staff assignedStaff)
         {
             this.setProperty("assignedStaff", assignedStaff);
         }

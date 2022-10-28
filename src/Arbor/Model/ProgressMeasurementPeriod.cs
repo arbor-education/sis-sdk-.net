@@ -17,98 +17,99 @@ namespace Arbor.Model
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
 
-        public ProgressMeasurementPeriod ()
+        public ProgressMeasurementPeriod()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public ProgressMeasurementPeriod (string resourceType = "ProgressMeasurementPeriod", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<ProgressMeasurementPeriod> query (SimpleQuery query = null)
+        public ProgressMeasurementPeriod(string resourceType = "ProgressMeasurementPeriod", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("ProgressMeasurementPeriod");
-        	RestGateway gateway = (RestGateway) ProgressMeasurementPeriod.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<ProgressMeasurementPeriod> progressmeasurementperiodCollection = new ModelCollection<ProgressMeasurementPeriod> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    progressmeasurementperiodCollection.add((ProgressMeasurementPeriod) model);
-        	}
-        
-        	return progressmeasurementperiodCollection;
+
         }
 
-        public static ProgressMeasurementPeriod retrieve (string id)
+
+        public static ModelCollection<ProgressMeasurementPeriod> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) ProgressMeasurementPeriod.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (ProgressMeasurementPeriod) gateway.retrieve(ResourceType.PROGRESS_MEASUREMENT_PERIOD, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("ProgressMeasurementPeriod");
+            RestGateway gateway = (RestGateway)ProgressMeasurementPeriod.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<ProgressMeasurementPeriod> progressmeasurementperiodCollection = new ModelCollection<ProgressMeasurementPeriod>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                progressmeasurementperiodCollection.add((ProgressMeasurementPeriod)model);
+            }
+
+            return progressmeasurementperiodCollection;
         }
 
-        public ProgressMeasurementPeriodSet getProgressMeasurementPeriodSet ()
+        public static ProgressMeasurementPeriod retrieve(string id)
         {
-            return (ProgressMeasurementPeriodSet) this.getProperty("progressMeasurementPeriodSet");
+            RestGateway gateway = (RestGateway)ProgressMeasurementPeriod.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (ProgressMeasurementPeriod)gateway.retrieve(ResourceType.PROGRESS_MEASUREMENT_PERIOD, id);
         }
 
-        public void setProgressMeasurementPeriodSet (ProgressMeasurementPeriodSet progressMeasurementPeriodSet)
+        public ProgressMeasurementPeriodSet getProgressMeasurementPeriodSet()
+        {
+            return (ProgressMeasurementPeriodSet)this.getProperty("progressMeasurementPeriodSet");
+        }
+
+        public void setProgressMeasurementPeriodSet(ProgressMeasurementPeriodSet progressMeasurementPeriodSet)
         {
             this.setProperty("progressMeasurementPeriodSet", progressMeasurementPeriodSet);
         }
 
-        public string getPeriodName ()
+        public string getPeriodName()
         {
             return this.getProperty("periodName").ToString();
         }
 
-        public void setPeriodName (string periodName)
+        public void setPeriodName(string periodName)
         {
             this.setProperty("periodName", periodName);
         }
 
-        public string getShortName ()
+        public string getShortName()
         {
             return this.getProperty("shortName").ToString();
         }
 
-        public void setShortName (string shortName)
+        public void setShortName(string shortName)
         {
             this.setProperty("shortName", shortName);
         }
 
-        public AcademicYear getAcademicYear ()
+        public AcademicYear getAcademicYear()
         {
-            return (AcademicYear) this.getProperty("academicYear");
+            return (AcademicYear)this.getProperty("academicYear");
         }
 
-        public void setAcademicYear (AcademicYear academicYear)
+        public void setAcademicYear(AcademicYear academicYear)
         {
             this.setProperty("academicYear", academicYear);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDate()
         {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }

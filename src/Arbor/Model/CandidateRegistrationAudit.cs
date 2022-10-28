@@ -14,68 +14,69 @@ namespace Arbor.Model
         public const string TYPE = "type";
         public const string ACTION_DATETIME = "actionDatetime";
 
-        public CandidateRegistrationAudit ()
+        public CandidateRegistrationAudit()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public CandidateRegistrationAudit (string resourceType = "CandidateRegistrationAudit", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<CandidateRegistrationAudit> query (SimpleQuery query = null)
+        public CandidateRegistrationAudit(string resourceType = "CandidateRegistrationAudit", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("CandidateRegistrationAudit");
-        	RestGateway gateway = (RestGateway) CandidateRegistrationAudit.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<CandidateRegistrationAudit> candidateregistrationauditCollection = new ModelCollection<CandidateRegistrationAudit> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    candidateregistrationauditCollection.add((CandidateRegistrationAudit) model);
-        	}
-        
-        	return candidateregistrationauditCollection;
+
         }
 
-        public static CandidateRegistrationAudit retrieve (string id)
+
+        public static ModelCollection<CandidateRegistrationAudit> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) CandidateRegistrationAudit.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (CandidateRegistrationAudit) gateway.retrieve(ResourceType.CANDIDATE_REGISTRATION_AUDIT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("CandidateRegistrationAudit");
+            RestGateway gateway = (RestGateway)CandidateRegistrationAudit.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<CandidateRegistrationAudit> candidateregistrationauditCollection = new ModelCollection<CandidateRegistrationAudit>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                candidateregistrationauditCollection.add((CandidateRegistrationAudit)model);
+            }
+
+            return candidateregistrationauditCollection;
         }
 
-        public CandidateRegistration getCandidateRegistration ()
+        public static CandidateRegistrationAudit retrieve(string id)
         {
-            return (CandidateRegistration) this.getProperty("candidateRegistration");
+            RestGateway gateway = (RestGateway)CandidateRegistrationAudit.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (CandidateRegistrationAudit)gateway.retrieve(ResourceType.CANDIDATE_REGISTRATION_AUDIT, id);
         }
 
-        public void setCandidateRegistration (CandidateRegistration candidateRegistration)
+        public CandidateRegistration getCandidateRegistration()
+        {
+            return (CandidateRegistration)this.getProperty("candidateRegistration");
+        }
+
+        public void setCandidateRegistration(CandidateRegistration candidateRegistration)
         {
             this.setProperty("candidateRegistration", candidateRegistration);
         }
 
-        public string getType ()
+        public string getType()
         {
             return this.getProperty("type").ToString();
         }
 
-        public void setType (string type)
+        public void setType(string type)
         {
             this.setProperty("type", type);
         }
 
-        public DateTime getActionDatetime ()
+        public DateTime getActionDatetime()
         {
             return Convert.ToDateTime(this.getProperty("actionDatetime"));
         }
 
-        public void setActionDatetime (DateTime actionDatetime)
+        public void setActionDatetime(DateTime actionDatetime)
         {
             this.setProperty("actionDatetime", actionDatetime);
         }

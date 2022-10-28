@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string TIMETABLER_IMPORT_RESULT = "timetablerImportResult";
         public const string ERROR_MESSAGE = "errorMessage";
 
-        public TimetablerImportResultError ()
+        public TimetablerImportResultError()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public TimetablerImportResultError (string resourceType = "TimetablerImportResultError", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<TimetablerImportResultError> query (SimpleQuery query = null)
+        public TimetablerImportResultError(string resourceType = "TimetablerImportResultError", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("TimetablerImportResultError");
-        	RestGateway gateway = (RestGateway) TimetablerImportResultError.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<TimetablerImportResultError> timetablerimportresulterrorCollection = new ModelCollection<TimetablerImportResultError> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    timetablerimportresulterrorCollection.add((TimetablerImportResultError) model);
-        	}
-        
-        	return timetablerimportresulterrorCollection;
+
         }
 
-        public static TimetablerImportResultError retrieve (string id)
+
+        public static ModelCollection<TimetablerImportResultError> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) TimetablerImportResultError.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (TimetablerImportResultError) gateway.retrieve(ResourceType.TIMETABLER_IMPORT_RESULT_ERROR, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("TimetablerImportResultError");
+            RestGateway gateway = (RestGateway)TimetablerImportResultError.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<TimetablerImportResultError> timetablerimportresulterrorCollection = new ModelCollection<TimetablerImportResultError>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                timetablerimportresulterrorCollection.add((TimetablerImportResultError)model);
+            }
+
+            return timetablerimportresulterrorCollection;
         }
 
-        public TimetablerImportResult getTimetablerImportResult ()
+        public static TimetablerImportResultError retrieve(string id)
         {
-            return (TimetablerImportResult) this.getProperty("timetablerImportResult");
+            RestGateway gateway = (RestGateway)TimetablerImportResultError.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (TimetablerImportResultError)gateway.retrieve(ResourceType.TIMETABLER_IMPORT_RESULT_ERROR, id);
         }
 
-        public void setTimetablerImportResult (TimetablerImportResult timetablerImportResult)
+        public TimetablerImportResult getTimetablerImportResult()
+        {
+            return (TimetablerImportResult)this.getProperty("timetablerImportResult");
+        }
+
+        public void setTimetablerImportResult(TimetablerImportResult timetablerImportResult)
         {
             this.setProperty("timetablerImportResult", timetablerImportResult);
         }
 
-        public string getErrorMessage ()
+        public string getErrorMessage()
         {
             return this.getProperty("errorMessage").ToString();
         }
 
-        public void setErrorMessage (string errorMessage)
+        public void setErrorMessage(string errorMessage)
         {
             this.setProperty("errorMessage", errorMessage);
         }

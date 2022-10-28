@@ -21,138 +21,139 @@ namespace Arbor.Model
         public const string ATTENDANCE_REGISTER_OPENED_DATETIME = "attendanceRegisterOpenedDatetime";
         public const string ATTENDANCE_REGISTER_CLOSED_DATETIME = "attendanceRegisterClosedDatetime";
 
-        public InternalExclusionSession ()
+        public InternalExclusionSession()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public InternalExclusionSession (string resourceType = "InternalExclusionSession", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<InternalExclusionSession> query (SimpleQuery query = null)
+        public InternalExclusionSession(string resourceType = "InternalExclusionSession", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("InternalExclusionSession");
-        	RestGateway gateway = (RestGateway) InternalExclusionSession.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<InternalExclusionSession> internalexclusionsessionCollection = new ModelCollection<InternalExclusionSession> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    internalexclusionsessionCollection.add((InternalExclusionSession) model);
-        	}
-        
-        	return internalexclusionsessionCollection;
+
         }
 
-        public static InternalExclusionSession retrieve (string id)
+
+        public static ModelCollection<InternalExclusionSession> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) InternalExclusionSession.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (InternalExclusionSession) gateway.retrieve(ResourceType.INTERNAL_EXCLUSION_SESSION, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("InternalExclusionSession");
+            RestGateway gateway = (RestGateway)InternalExclusionSession.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<InternalExclusionSession> internalexclusionsessionCollection = new ModelCollection<InternalExclusionSession>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                internalexclusionsessionCollection.add((InternalExclusionSession)model);
+            }
+
+            return internalexclusionsessionCollection;
         }
 
-        public InternalExclusionType getInternalExclusionType ()
+        public static InternalExclusionSession retrieve(string id)
         {
-            return (InternalExclusionType) this.getProperty("internalExclusionType");
+            RestGateway gateway = (RestGateway)InternalExclusionSession.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (InternalExclusionSession)gateway.retrieve(ResourceType.INTERNAL_EXCLUSION_SESSION, id);
         }
 
-        public void setInternalExclusionType (InternalExclusionType internalExclusionType)
+        public InternalExclusionType getInternalExclusionType()
+        {
+            return (InternalExclusionType)this.getProperty("internalExclusionType");
+        }
+
+        public void setInternalExclusionType(InternalExclusionType internalExclusionType)
         {
             this.setProperty("internalExclusionType", internalExclusionType);
         }
 
-        public string getSessionName ()
+        public string getSessionName()
         {
             return this.getProperty("sessionName").ToString();
         }
 
-        public void setSessionName (string sessionName)
+        public void setSessionName(string sessionName)
         {
             this.setProperty("sessionName", sessionName);
         }
 
-        public DateTime getStartDatetime ()
+        public DateTime getStartDatetime()
         {
             return Convert.ToDateTime(this.getProperty("startDatetime"));
         }
 
-        public void setStartDatetime (DateTime startDatetime)
+        public void setStartDatetime(DateTime startDatetime)
         {
             this.setProperty("startDatetime", startDatetime);
         }
 
-        public DateTime getEndDatetime ()
+        public DateTime getEndDatetime()
         {
             return Convert.ToDateTime(this.getProperty("endDatetime"));
         }
 
-        public void setEndDatetime (DateTime endDatetime)
+        public void setEndDatetime(DateTime endDatetime)
         {
             this.setProperty("endDatetime", endDatetime);
         }
 
-        public Room getLocation ()
+        public Room getLocation()
         {
-            return (Room) this.getProperty("location");
+            return (Room)this.getProperty("location");
         }
 
-        public void setLocation (Room location)
+        public void setLocation(Room location)
         {
             this.setProperty("location", location);
         }
 
-        public string getLocationText ()
+        public string getLocationText()
         {
             return this.getProperty("locationText").ToString();
         }
 
-        public void setLocationText (string locationText)
+        public void setLocationText(string locationText)
         {
             this.setProperty("locationText", locationText);
         }
 
-        public TimetableSlot getTimetableSlot ()
+        public TimetableSlot getTimetableSlot()
         {
-            return (TimetableSlot) this.getProperty("timetableSlot");
+            return (TimetableSlot)this.getProperty("timetableSlot");
         }
 
-        public void setTimetableSlot (TimetableSlot timetableSlot)
+        public void setTimetableSlot(TimetableSlot timetableSlot)
         {
             this.setProperty("timetableSlot", timetableSlot);
         }
 
-        public AttendanceRegisterType getAttendanceRegisterType ()
+        public AttendanceRegisterType getAttendanceRegisterType()
         {
-            return (AttendanceRegisterType) this.getProperty("attendanceRegisterType");
+            return (AttendanceRegisterType)this.getProperty("attendanceRegisterType");
         }
 
-        public void setAttendanceRegisterType (AttendanceRegisterType attendanceRegisterType)
+        public void setAttendanceRegisterType(AttendanceRegisterType attendanceRegisterType)
         {
             this.setProperty("attendanceRegisterType", attendanceRegisterType);
         }
 
-        public DateTime getAttendanceRegisterOpenedDatetime ()
+        public DateTime getAttendanceRegisterOpenedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("attendanceRegisterOpenedDatetime"));
         }
 
-        public void setAttendanceRegisterOpenedDatetime (DateTime attendanceRegisterOpenedDatetime)
+        public void setAttendanceRegisterOpenedDatetime(DateTime attendanceRegisterOpenedDatetime)
         {
             this.setProperty("attendanceRegisterOpenedDatetime", attendanceRegisterOpenedDatetime);
         }
 
-        public DateTime getAttendanceRegisterClosedDatetime ()
+        public DateTime getAttendanceRegisterClosedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("attendanceRegisterClosedDatetime"));
         }
 
-        public void setAttendanceRegisterClosedDatetime (DateTime attendanceRegisterClosedDatetime)
+        public void setAttendanceRegisterClosedDatetime(DateTime attendanceRegisterClosedDatetime)
         {
             this.setProperty("attendanceRegisterClosedDatetime", attendanceRegisterClosedDatetime);
         }

@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string STATUS = "status";
         public const string COMMENT = "comment";
 
-        public SchoolShopOrderItem ()
+        public SchoolShopOrderItem()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public SchoolShopOrderItem (string resourceType = "SchoolShopOrderItem", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<SchoolShopOrderItem> query (SimpleQuery query = null)
+        public SchoolShopOrderItem(string resourceType = "SchoolShopOrderItem", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("SchoolShopOrderItem");
-        	RestGateway gateway = (RestGateway) SchoolShopOrderItem.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<SchoolShopOrderItem> schoolshoporderitemCollection = new ModelCollection<SchoolShopOrderItem> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    schoolshoporderitemCollection.add((SchoolShopOrderItem) model);
-        	}
-        
-        	return schoolshoporderitemCollection;
+
         }
 
-        public static SchoolShopOrderItem retrieve (string id)
+
+        public static ModelCollection<SchoolShopOrderItem> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) SchoolShopOrderItem.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (SchoolShopOrderItem) gateway.retrieve(ResourceType.SCHOOL_SHOP_ORDER_ITEM, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("SchoolShopOrderItem");
+            RestGateway gateway = (RestGateway)SchoolShopOrderItem.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<SchoolShopOrderItem> schoolshoporderitemCollection = new ModelCollection<SchoolShopOrderItem>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                schoolshoporderitemCollection.add((SchoolShopOrderItem)model);
+            }
+
+            return schoolshoporderitemCollection;
         }
 
-        public SchoolShopProduct getSchoolShopProduct ()
+        public static SchoolShopOrderItem retrieve(string id)
         {
-            return (SchoolShopProduct) this.getProperty("schoolShopProduct");
+            RestGateway gateway = (RestGateway)SchoolShopOrderItem.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (SchoolShopOrderItem)gateway.retrieve(ResourceType.SCHOOL_SHOP_ORDER_ITEM, id);
         }
 
-        public void setSchoolShopProduct (SchoolShopProduct schoolShopProduct)
+        public SchoolShopProduct getSchoolShopProduct()
+        {
+            return (SchoolShopProduct)this.getProperty("schoolShopProduct");
+        }
+
+        public void setSchoolShopProduct(SchoolShopProduct schoolShopProduct)
         {
             this.setProperty("schoolShopProduct", schoolShopProduct);
         }
 
-        public CustomerInvoiceItem getCustomerInvoiceItem ()
+        public CustomerInvoiceItem getCustomerInvoiceItem()
         {
-            return (CustomerInvoiceItem) this.getProperty("customerInvoiceItem");
+            return (CustomerInvoiceItem)this.getProperty("customerInvoiceItem");
         }
 
-        public void setCustomerInvoiceItem (CustomerInvoiceItem customerInvoiceItem)
+        public void setCustomerInvoiceItem(CustomerInvoiceItem customerInvoiceItem)
         {
             this.setProperty("customerInvoiceItem", customerInvoiceItem);
         }
 
-        public string getStatus ()
+        public string getStatus()
         {
             return this.getProperty("status").ToString();
         }
 
-        public void setStatus (string status)
+        public void setStatus(string status)
         {
             this.setProperty("status", status);
         }
 
-        public string getComment ()
+        public string getComment()
         {
             return this.getProperty("comment").ToString();
         }
 
-        public void setComment (string comment)
+        public void setComment(string comment)
         {
             this.setProperty("comment", comment);
         }

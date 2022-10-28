@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string ACADEMIC_YEAR_ASSESSMENT = "academicYearAssessment";
         public const string STUDENT_GROUP = "studentGroup";
 
-        public AssessmentStudentGroup ()
+        public AssessmentStudentGroup()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AssessmentStudentGroup (string resourceType = "AssessmentStudentGroup", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AssessmentStudentGroup> query (SimpleQuery query = null)
+        public AssessmentStudentGroup(string resourceType = "AssessmentStudentGroup", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AssessmentStudentGroup");
-        	RestGateway gateway = (RestGateway) AssessmentStudentGroup.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AssessmentStudentGroup> assessmentstudentgroupCollection = new ModelCollection<AssessmentStudentGroup> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    assessmentstudentgroupCollection.add((AssessmentStudentGroup) model);
-        	}
-        
-        	return assessmentstudentgroupCollection;
+
         }
 
-        public static AssessmentStudentGroup retrieve (string id)
+
+        public static ModelCollection<AssessmentStudentGroup> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AssessmentStudentGroup.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AssessmentStudentGroup) gateway.retrieve(ResourceType.ASSESSMENT_STUDENT_GROUP, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AssessmentStudentGroup");
+            RestGateway gateway = (RestGateway)AssessmentStudentGroup.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AssessmentStudentGroup> assessmentstudentgroupCollection = new ModelCollection<AssessmentStudentGroup>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                assessmentstudentgroupCollection.add((AssessmentStudentGroup)model);
+            }
+
+            return assessmentstudentgroupCollection;
         }
 
-        public AcademicYearAssessment getAcademicYearAssessment ()
+        public static AssessmentStudentGroup retrieve(string id)
         {
-            return (AcademicYearAssessment) this.getProperty("academicYearAssessment");
+            RestGateway gateway = (RestGateway)AssessmentStudentGroup.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AssessmentStudentGroup)gateway.retrieve(ResourceType.ASSESSMENT_STUDENT_GROUP, id);
         }
 
-        public void setAcademicYearAssessment (AcademicYearAssessment academicYearAssessment)
+        public AcademicYearAssessment getAcademicYearAssessment()
+        {
+            return (AcademicYearAssessment)this.getProperty("academicYearAssessment");
+        }
+
+        public void setAcademicYearAssessment(AcademicYearAssessment academicYearAssessment)
         {
             this.setProperty("academicYearAssessment", academicYearAssessment);
         }
 
-        public ModelBase getStudentGroup ()
+        public ModelBase getStudentGroup()
         {
-            return (ModelBase) this.getProperty("studentGroup");
+            return (ModelBase)this.getProperty("studentGroup");
         }
 
-        public void setStudentGroup (ModelBase studentGroup)
+        public void setStudentGroup(ModelBase studentGroup)
         {
             this.setProperty("studentGroup", studentGroup);
         }

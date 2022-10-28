@@ -17,98 +17,99 @@ namespace Arbor.Model
         public const string LEAVING_DATE = "leavingDate";
         public const string UNENROLMENT_REASON = "unenrolmentReason";
 
-        public StudentEducationalHistory ()
+        public StudentEducationalHistory()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public StudentEducationalHistory (string resourceType = "StudentEducationalHistory", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<StudentEducationalHistory> query (SimpleQuery query = null)
+        public StudentEducationalHistory(string resourceType = "StudentEducationalHistory", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("StudentEducationalHistory");
-        	RestGateway gateway = (RestGateway) StudentEducationalHistory.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<StudentEducationalHistory> studenteducationalhistoryCollection = new ModelCollection<StudentEducationalHistory> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    studenteducationalhistoryCollection.add((StudentEducationalHistory) model);
-        	}
-        
-        	return studenteducationalhistoryCollection;
+
         }
 
-        public static StudentEducationalHistory retrieve (string id)
+
+        public static ModelCollection<StudentEducationalHistory> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) StudentEducationalHistory.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (StudentEducationalHistory) gateway.retrieve(ResourceType.STUDENT_EDUCATIONAL_HISTORY, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("StudentEducationalHistory");
+            RestGateway gateway = (RestGateway)StudentEducationalHistory.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<StudentEducationalHistory> studenteducationalhistoryCollection = new ModelCollection<StudentEducationalHistory>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                studenteducationalhistoryCollection.add((StudentEducationalHistory)model);
+            }
+
+            return studenteducationalhistoryCollection;
         }
 
-        public Student getStudent ()
+        public static StudentEducationalHistory retrieve(string id)
         {
-            return (Student) this.getProperty("student");
+            RestGateway gateway = (RestGateway)StudentEducationalHistory.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (StudentEducationalHistory)gateway.retrieve(ResourceType.STUDENT_EDUCATIONAL_HISTORY, id);
         }
 
-        public void setStudent (Student student)
+        public Student getStudent()
+        {
+            return (Student)this.getProperty("student");
+        }
+
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public EducationalInstitution getEducationalInstitution ()
+        public EducationalInstitution getEducationalInstitution()
         {
-            return (EducationalInstitution) this.getProperty("educationalInstitution");
+            return (EducationalInstitution)this.getProperty("educationalInstitution");
         }
 
-        public void setEducationalInstitution (EducationalInstitution educationalInstitution)
+        public void setEducationalInstitution(EducationalInstitution educationalInstitution)
         {
             this.setProperty("educationalInstitution", educationalInstitution);
         }
 
-        public DateTime getExpectedEntryDate ()
+        public DateTime getExpectedEntryDate()
         {
             return Convert.ToDateTime(this.getProperty("expectedEntryDate"));
         }
 
-        public void setExpectedEntryDate (DateTime expectedEntryDate)
+        public void setExpectedEntryDate(DateTime expectedEntryDate)
         {
             this.setProperty("expectedEntryDate", expectedEntryDate);
         }
 
-        public DateTime getActualEntryDate ()
+        public DateTime getActualEntryDate()
         {
             return Convert.ToDateTime(this.getProperty("actualEntryDate"));
         }
 
-        public void setActualEntryDate (DateTime actualEntryDate)
+        public void setActualEntryDate(DateTime actualEntryDate)
         {
             this.setProperty("actualEntryDate", actualEntryDate);
         }
 
-        public DateTime getLeavingDate ()
+        public DateTime getLeavingDate()
         {
             return Convert.ToDateTime(this.getProperty("leavingDate"));
         }
 
-        public void setLeavingDate (DateTime leavingDate)
+        public void setLeavingDate(DateTime leavingDate)
         {
             this.setProperty("leavingDate", leavingDate);
         }
 
-        public UnenrolmentReason getUnenrolmentReason ()
+        public UnenrolmentReason getUnenrolmentReason()
         {
-            return (UnenrolmentReason) this.getProperty("unenrolmentReason");
+            return (UnenrolmentReason)this.getProperty("unenrolmentReason");
         }
 
-        public void setUnenrolmentReason (UnenrolmentReason unenrolmentReason)
+        public void setUnenrolmentReason(UnenrolmentReason unenrolmentReason)
         {
             this.setProperty("unenrolmentReason", unenrolmentReason);
         }

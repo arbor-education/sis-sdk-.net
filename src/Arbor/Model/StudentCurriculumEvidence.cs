@@ -19,118 +19,119 @@ namespace Arbor.Model
         public const string OBSERVATION_STAFF = "observationStaff";
         public const string EVIDENCE = "evidence";
 
-        public StudentCurriculumEvidence ()
+        public StudentCurriculumEvidence()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public StudentCurriculumEvidence (string resourceType = "StudentCurriculumEvidence", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<StudentCurriculumEvidence> query (SimpleQuery query = null)
+        public StudentCurriculumEvidence(string resourceType = "StudentCurriculumEvidence", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("StudentCurriculumEvidence");
-        	RestGateway gateway = (RestGateway) StudentCurriculumEvidence.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<StudentCurriculumEvidence> studentcurriculumevidenceCollection = new ModelCollection<StudentCurriculumEvidence> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    studentcurriculumevidenceCollection.add((StudentCurriculumEvidence) model);
-        	}
-        
-        	return studentcurriculumevidenceCollection;
+
         }
 
-        public static StudentCurriculumEvidence retrieve (string id)
+
+        public static ModelCollection<StudentCurriculumEvidence> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) StudentCurriculumEvidence.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (StudentCurriculumEvidence) gateway.retrieve(ResourceType.STUDENT_CURRICULUM_EVIDENCE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("StudentCurriculumEvidence");
+            RestGateway gateway = (RestGateway)StudentCurriculumEvidence.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<StudentCurriculumEvidence> studentcurriculumevidenceCollection = new ModelCollection<StudentCurriculumEvidence>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                studentcurriculumevidenceCollection.add((StudentCurriculumEvidence)model);
+            }
+
+            return studentcurriculumevidenceCollection;
         }
 
-        public Student getStudent ()
+        public static StudentCurriculumEvidence retrieve(string id)
         {
-            return (Student) this.getProperty("student");
+            RestGateway gateway = (RestGateway)StudentCurriculumEvidence.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (StudentCurriculumEvidence)gateway.retrieve(ResourceType.STUDENT_CURRICULUM_EVIDENCE, id);
         }
 
-        public void setStudent (Student student)
+        public Student getStudent()
+        {
+            return (Student)this.getProperty("student");
+        }
+
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public CurriculumStatement getCurriculumStatement ()
+        public CurriculumStatement getCurriculumStatement()
         {
-            return (CurriculumStatement) this.getProperty("curriculumStatement");
+            return (CurriculumStatement)this.getProperty("curriculumStatement");
         }
 
-        public void setCurriculumStatement (CurriculumStatement curriculumStatement)
+        public void setCurriculumStatement(CurriculumStatement curriculumStatement)
         {
             this.setProperty("curriculumStatement", curriculumStatement);
         }
 
-        public StudentCurriculumAchievement getStudentCurriculumAchievement ()
+        public StudentCurriculumAchievement getStudentCurriculumAchievement()
         {
-            return (StudentCurriculumAchievement) this.getProperty("studentCurriculumAchievement");
+            return (StudentCurriculumAchievement)this.getProperty("studentCurriculumAchievement");
         }
 
-        public void setStudentCurriculumAchievement (StudentCurriculumAchievement studentCurriculumAchievement)
+        public void setStudentCurriculumAchievement(StudentCurriculumAchievement studentCurriculumAchievement)
         {
             this.setProperty("studentCurriculumAchievement", studentCurriculumAchievement);
         }
 
-        public string getSummary ()
+        public string getSummary()
         {
             return this.getProperty("summary").ToString();
         }
 
-        public void setSummary (string summary)
+        public void setSummary(string summary)
         {
             this.setProperty("summary", summary);
         }
 
-        public string getDetails ()
+        public string getDetails()
         {
             return this.getProperty("details").ToString();
         }
 
-        public void setDetails (string details)
+        public void setDetails(string details)
         {
             this.setProperty("details", details);
         }
 
-        public DateTime getObservationDate ()
+        public DateTime getObservationDate()
         {
             return Convert.ToDateTime(this.getProperty("observationDate"));
         }
 
-        public void setObservationDate (DateTime observationDate)
+        public void setObservationDate(DateTime observationDate)
         {
             this.setProperty("observationDate", observationDate);
         }
 
-        public Staff getObservationStaff ()
+        public Staff getObservationStaff()
         {
-            return (Staff) this.getProperty("observationStaff");
+            return (Staff)this.getProperty("observationStaff");
         }
 
-        public void setObservationStaff (Staff observationStaff)
+        public void setObservationStaff(Staff observationStaff)
         {
             this.setProperty("observationStaff", observationStaff);
         }
 
-        public ModelBase getEvidence ()
+        public ModelBase getEvidence()
         {
-            return (ModelBase) this.getProperty("evidence");
+            return (ModelBase)this.getProperty("evidence");
         }
 
-        public void setEvidence (ModelBase evidence)
+        public void setEvidence(ModelBase evidence)
         {
             this.setProperty("evidence", evidence);
         }

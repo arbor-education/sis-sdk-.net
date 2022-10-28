@@ -19,118 +19,119 @@ namespace Arbor.Model
         public const string CONSENTED_DATETIME = "consentedDatetime";
         public const string RESPONDEE = "respondee";
 
-        public Consent ()
+        public Consent()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public Consent (string resourceType = "Consent", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<Consent> query (SimpleQuery query = null)
+        public Consent(string resourceType = "Consent", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("Consent");
-        	RestGateway gateway = (RestGateway) Consent.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<Consent> consentCollection = new ModelCollection<Consent> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    consentCollection.add((Consent) model);
-        	}
-        
-        	return consentCollection;
+
         }
 
-        public static Consent retrieve (string id)
+
+        public static ModelCollection<Consent> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) Consent.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (Consent) gateway.retrieve(ResourceType.CONSENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("Consent");
+            RestGateway gateway = (RestGateway)Consent.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<Consent> consentCollection = new ModelCollection<Consent>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                consentCollection.add((Consent)model);
+            }
+
+            return consentCollection;
         }
 
-        public Student getStudent ()
+        public static Consent retrieve(string id)
         {
-            return (Student) this.getProperty("student");
+            RestGateway gateway = (RestGateway)Consent.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (Consent)gateway.retrieve(ResourceType.CONSENT, id);
         }
 
-        public void setStudent (Student student)
+        public Student getStudent()
+        {
+            return (Student)this.getProperty("student");
+        }
+
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public ConsentType getConsentType ()
+        public ConsentType getConsentType()
         {
-            return (ConsentType) this.getProperty("consentType");
+            return (ConsentType)this.getProperty("consentType");
         }
 
-        public void setConsentType (ConsentType consentType)
+        public void setConsentType(ConsentType consentType)
         {
             this.setProperty("consentType", consentType);
         }
 
-        public ModelBase getRelated ()
+        public ModelBase getRelated()
         {
-            return (ModelBase) this.getProperty("related");
+            return (ModelBase)this.getProperty("related");
         }
 
-        public void setRelated (ModelBase related)
+        public void setRelated(ModelBase related)
         {
             this.setProperty("related", related);
         }
 
-        public Staff getRequestor ()
+        public Staff getRequestor()
         {
-            return (Staff) this.getProperty("requestor");
+            return (Staff)this.getProperty("requestor");
         }
 
-        public void setRequestor (Staff requestor)
+        public void setRequestor(Staff requestor)
         {
             this.setProperty("requestor", requestor);
         }
 
-        public DateTime getRequestedDatetime ()
+        public DateTime getRequestedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("requestedDatetime"));
         }
 
-        public void setRequestedDatetime (DateTime requestedDatetime)
+        public void setRequestedDatetime(DateTime requestedDatetime)
         {
             this.setProperty("requestedDatetime", requestedDatetime);
         }
 
-        public DateTime getRejectedDatetime ()
+        public DateTime getRejectedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("rejectedDatetime"));
         }
 
-        public void setRejectedDatetime (DateTime rejectedDatetime)
+        public void setRejectedDatetime(DateTime rejectedDatetime)
         {
             this.setProperty("rejectedDatetime", rejectedDatetime);
         }
 
-        public DateTime getConsentedDatetime ()
+        public DateTime getConsentedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("consentedDatetime"));
         }
 
-        public void setConsentedDatetime (DateTime consentedDatetime)
+        public void setConsentedDatetime(DateTime consentedDatetime)
         {
             this.setProperty("consentedDatetime", consentedDatetime);
         }
 
-        public ModelBase getRespondee ()
+        public ModelBase getRespondee()
         {
-            return (ModelBase) this.getProperty("respondee");
+            return (ModelBase)this.getProperty("respondee");
         }
 
-        public void setRespondee (ModelBase respondee)
+        public void setRespondee(ModelBase respondee)
         {
             this.setProperty("respondee", respondee);
         }

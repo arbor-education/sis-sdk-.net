@@ -12,48 +12,49 @@ namespace Arbor.Model
         protected new string resourceType = ResourceType.INBOUND_NOTIFICATION_AUTOMATIC_RECIPIENT;
         public const string AUTOMATIC_RECIPIENT = "automaticRecipient";
 
-        public InboundNotificationAutomaticRecipient ()
+        public InboundNotificationAutomaticRecipient()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public InboundNotificationAutomaticRecipient (string resourceType = "InboundNotificationAutomaticRecipient", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<InboundNotificationAutomaticRecipient> query (SimpleQuery query = null)
+        public InboundNotificationAutomaticRecipient(string resourceType = "InboundNotificationAutomaticRecipient", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("InboundNotificationAutomaticRecipient");
-        	RestGateway gateway = (RestGateway) InboundNotificationAutomaticRecipient.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<InboundNotificationAutomaticRecipient> inboundnotificationautomaticrecipientCollection = new ModelCollection<InboundNotificationAutomaticRecipient> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    inboundnotificationautomaticrecipientCollection.add((InboundNotificationAutomaticRecipient) model);
-        	}
-        
-        	return inboundnotificationautomaticrecipientCollection;
+
         }
 
-        public static InboundNotificationAutomaticRecipient retrieve (string id)
+
+        public static ModelCollection<InboundNotificationAutomaticRecipient> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) InboundNotificationAutomaticRecipient.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (InboundNotificationAutomaticRecipient) gateway.retrieve(ResourceType.INBOUND_NOTIFICATION_AUTOMATIC_RECIPIENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("InboundNotificationAutomaticRecipient");
+            RestGateway gateway = (RestGateway)InboundNotificationAutomaticRecipient.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<InboundNotificationAutomaticRecipient> inboundnotificationautomaticrecipientCollection = new ModelCollection<InboundNotificationAutomaticRecipient>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                inboundnotificationautomaticrecipientCollection.add((InboundNotificationAutomaticRecipient)model);
+            }
+
+            return inboundnotificationautomaticrecipientCollection;
         }
 
-        public ModelBase getAutomaticRecipient ()
+        public static InboundNotificationAutomaticRecipient retrieve(string id)
         {
-            return (ModelBase) this.getProperty("automaticRecipient");
+            RestGateway gateway = (RestGateway)InboundNotificationAutomaticRecipient.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (InboundNotificationAutomaticRecipient)gateway.retrieve(ResourceType.INBOUND_NOTIFICATION_AUTOMATIC_RECIPIENT, id);
         }
 
-        public void setAutomaticRecipient (ModelBase automaticRecipient)
+        public ModelBase getAutomaticRecipient()
+        {
+            return (ModelBase)this.getProperty("automaticRecipient");
+        }
+
+        public void setAutomaticRecipient(ModelBase automaticRecipient)
         {
             this.setProperty("automaticRecipient", automaticRecipient);
         }

@@ -16,88 +16,89 @@ namespace Arbor.Model
         public const string ASSESSMENT_DATE = "assessmentDate";
         public const string SEN_STUDENTS_ONLY = "senStudentsOnly";
 
-        public StandardizedAssessmentBatch ()
+        public StandardizedAssessmentBatch()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public StandardizedAssessmentBatch (string resourceType = "StandardizedAssessmentBatch", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<StandardizedAssessmentBatch> query (SimpleQuery query = null)
+        public StandardizedAssessmentBatch(string resourceType = "StandardizedAssessmentBatch", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("StandardizedAssessmentBatch");
-        	RestGateway gateway = (RestGateway) StandardizedAssessmentBatch.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<StandardizedAssessmentBatch> standardizedassessmentbatchCollection = new ModelCollection<StandardizedAssessmentBatch> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    standardizedassessmentbatchCollection.add((StandardizedAssessmentBatch) model);
-        	}
-        
-        	return standardizedassessmentbatchCollection;
+
         }
 
-        public static StandardizedAssessmentBatch retrieve (string id)
+
+        public static ModelCollection<StandardizedAssessmentBatch> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) StandardizedAssessmentBatch.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (StandardizedAssessmentBatch) gateway.retrieve(ResourceType.STANDARDIZED_ASSESSMENT_BATCH, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("StandardizedAssessmentBatch");
+            RestGateway gateway = (RestGateway)StandardizedAssessmentBatch.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<StandardizedAssessmentBatch> standardizedassessmentbatchCollection = new ModelCollection<StandardizedAssessmentBatch>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                standardizedassessmentbatchCollection.add((StandardizedAssessmentBatch)model);
+            }
+
+            return standardizedassessmentbatchCollection;
         }
 
-        public AcademicYear getAcademicYear ()
+        public static StandardizedAssessmentBatch retrieve(string id)
         {
-            return (AcademicYear) this.getProperty("academicYear");
+            RestGateway gateway = (RestGateway)StandardizedAssessmentBatch.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (StandardizedAssessmentBatch)gateway.retrieve(ResourceType.STANDARDIZED_ASSESSMENT_BATCH, id);
         }
 
-        public void setAcademicYear (AcademicYear academicYear)
+        public AcademicYear getAcademicYear()
+        {
+            return (AcademicYear)this.getProperty("academicYear");
+        }
+
+        public void setAcademicYear(AcademicYear academicYear)
         {
             this.setProperty("academicYear", academicYear);
         }
 
-        public string getBatchName ()
+        public string getBatchName()
         {
             return this.getProperty("batchName").ToString();
         }
 
-        public void setBatchName (string batchName)
+        public void setBatchName(string batchName)
         {
             this.setProperty("batchName", batchName);
         }
 
-        public StandardizedAssessmentTemplate getStandardizedAssessmentTemplate ()
+        public StandardizedAssessmentTemplate getStandardizedAssessmentTemplate()
         {
-            return (StandardizedAssessmentTemplate) this.getProperty("standardizedAssessmentTemplate");
+            return (StandardizedAssessmentTemplate)this.getProperty("standardizedAssessmentTemplate");
         }
 
-        public void setStandardizedAssessmentTemplate (StandardizedAssessmentTemplate standardizedAssessmentTemplate)
+        public void setStandardizedAssessmentTemplate(StandardizedAssessmentTemplate standardizedAssessmentTemplate)
         {
             this.setProperty("standardizedAssessmentTemplate", standardizedAssessmentTemplate);
         }
 
-        public DateTime getAssessmentDate ()
+        public DateTime getAssessmentDate()
         {
             return Convert.ToDateTime(this.getProperty("assessmentDate"));
         }
 
-        public void setAssessmentDate (DateTime assessmentDate)
+        public void setAssessmentDate(DateTime assessmentDate)
         {
             this.setProperty("assessmentDate", assessmentDate);
         }
 
-        public bool getSenStudentsOnly ()
+        public bool getSenStudentsOnly()
         {
             return Convert.ToBoolean(this.getProperty("senStudentsOnly"));
         }
 
-        public void setSenStudentsOnly (bool senStudentsOnly)
+        public void setSenStudentsOnly(bool senStudentsOnly)
         {
             this.setProperty("senStudentsOnly", senStudentsOnly);
         }

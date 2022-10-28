@@ -14,68 +14,69 @@ namespace Arbor.Model
         public const string USER_DEFINED_FIELD = "userDefinedField";
         public const string VALUE = "value";
 
-        public UserDefinedRecord ()
+        public UserDefinedRecord()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public UserDefinedRecord (string resourceType = "UserDefinedRecord", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<UserDefinedRecord> query (SimpleQuery query = null)
+        public UserDefinedRecord(string resourceType = "UserDefinedRecord", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("UserDefinedRecord");
-        	RestGateway gateway = (RestGateway) UserDefinedRecord.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<UserDefinedRecord> userdefinedrecordCollection = new ModelCollection<UserDefinedRecord> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    userdefinedrecordCollection.add((UserDefinedRecord) model);
-        	}
-        
-        	return userdefinedrecordCollection;
+
         }
 
-        public static UserDefinedRecord retrieve (string id)
+
+        public static ModelCollection<UserDefinedRecord> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) UserDefinedRecord.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (UserDefinedRecord) gateway.retrieve(ResourceType.USER_DEFINED_RECORD, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("UserDefinedRecord");
+            RestGateway gateway = (RestGateway)UserDefinedRecord.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<UserDefinedRecord> userdefinedrecordCollection = new ModelCollection<UserDefinedRecord>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                userdefinedrecordCollection.add((UserDefinedRecord)model);
+            }
+
+            return userdefinedrecordCollection;
         }
 
-        public ModelBase getEntity ()
+        public static UserDefinedRecord retrieve(string id)
         {
-            return (ModelBase) this.getProperty("entity");
+            RestGateway gateway = (RestGateway)UserDefinedRecord.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (UserDefinedRecord)gateway.retrieve(ResourceType.USER_DEFINED_RECORD, id);
         }
 
-        public void setEntity (ModelBase entity)
+        public ModelBase getEntity()
+        {
+            return (ModelBase)this.getProperty("entity");
+        }
+
+        public void setEntity(ModelBase entity)
         {
             this.setProperty("entity", entity);
         }
 
-        public UserDefinedField getUserDefinedField ()
+        public UserDefinedField getUserDefinedField()
         {
-            return (UserDefinedField) this.getProperty("userDefinedField");
+            return (UserDefinedField)this.getProperty("userDefinedField");
         }
 
-        public void setUserDefinedField (UserDefinedField userDefinedField)
+        public void setUserDefinedField(UserDefinedField userDefinedField)
         {
             this.setProperty("userDefinedField", userDefinedField);
         }
 
-        public string getValue ()
+        public string getValue()
         {
             return this.getProperty("value").ToString();
         }
 
-        public void setValue (string value)
+        public void setValue(string value)
         {
             this.setProperty("value", value);
         }

@@ -21,138 +21,139 @@ namespace Arbor.Model
         public const string READ_DATETIME = "readDatetime";
         public const string ACTION_REQUIRED_BY_DATETIME = "actionRequiredByDatetime";
 
-        public InboundSmsMessage ()
+        public InboundSmsMessage()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public InboundSmsMessage (string resourceType = "InboundSmsMessage", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<InboundSmsMessage> query (SimpleQuery query = null)
+        public InboundSmsMessage(string resourceType = "InboundSmsMessage", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("InboundSmsMessage");
-        	RestGateway gateway = (RestGateway) InboundSmsMessage.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<InboundSmsMessage> inboundsmsmessageCollection = new ModelCollection<InboundSmsMessage> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    inboundsmsmessageCollection.add((InboundSmsMessage) model);
-        	}
-        
-        	return inboundsmsmessageCollection;
+
         }
 
-        public static InboundSmsMessage retrieve (string id)
+
+        public static ModelCollection<InboundSmsMessage> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) InboundSmsMessage.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (InboundSmsMessage) gateway.retrieve(ResourceType.INBOUND_SMS_MESSAGE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("InboundSmsMessage");
+            RestGateway gateway = (RestGateway)InboundSmsMessage.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<InboundSmsMessage> inboundsmsmessageCollection = new ModelCollection<InboundSmsMessage>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                inboundsmsmessageCollection.add((InboundSmsMessage)model);
+            }
+
+            return inboundsmsmessageCollection;
         }
 
-        public string getMessageType ()
+        public static InboundSmsMessage retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)InboundSmsMessage.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (InboundSmsMessage)gateway.retrieve(ResourceType.INBOUND_SMS_MESSAGE, id);
+        }
+
+        public string getMessageType()
         {
             return this.getProperty("messageType").ToString();
         }
 
-        public void setMessageType (string messageType)
+        public void setMessageType(string messageType)
         {
             this.setProperty("messageType", messageType);
         }
 
-        public string getSenderNumber ()
+        public string getSenderNumber()
         {
             return this.getProperty("senderNumber").ToString();
         }
 
-        public void setSenderNumber (string senderNumber)
+        public void setSenderNumber(string senderNumber)
         {
             this.setProperty("senderNumber", senderNumber);
         }
 
-        public ModelBase getSender ()
+        public ModelBase getSender()
         {
-            return (ModelBase) this.getProperty("sender");
+            return (ModelBase)this.getProperty("sender");
         }
 
-        public void setSender (ModelBase sender)
+        public void setSender(ModelBase sender)
         {
             this.setProperty("sender", sender);
         }
 
-        public string getRecipientNumber ()
+        public string getRecipientNumber()
         {
             return this.getProperty("recipientNumber").ToString();
         }
 
-        public void setRecipientNumber (string recipientNumber)
+        public void setRecipientNumber(string recipientNumber)
         {
             this.setProperty("recipientNumber", recipientNumber);
         }
 
-        public EducationalInstitution getRecipient ()
+        public EducationalInstitution getRecipient()
         {
-            return (EducationalInstitution) this.getProperty("recipient");
+            return (EducationalInstitution)this.getProperty("recipient");
         }
 
-        public void setRecipient (EducationalInstitution recipient)
+        public void setRecipient(EducationalInstitution recipient)
         {
             this.setProperty("recipient", recipient);
         }
 
-        public string getMessageText ()
+        public string getMessageText()
         {
             return this.getProperty("messageText").ToString();
         }
 
-        public void setMessageText (string messageText)
+        public void setMessageText(string messageText)
         {
             this.setProperty("messageText", messageText);
         }
 
-        public string getMessageIdentifier ()
+        public string getMessageIdentifier()
         {
             return this.getProperty("messageIdentifier").ToString();
         }
 
-        public void setMessageIdentifier (string messageIdentifier)
+        public void setMessageIdentifier(string messageIdentifier)
         {
             this.setProperty("messageIdentifier", messageIdentifier);
         }
 
-        public DateTime getReceivedDatetime ()
+        public DateTime getReceivedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("receivedDatetime"));
         }
 
-        public void setReceivedDatetime (DateTime receivedDatetime)
+        public void setReceivedDatetime(DateTime receivedDatetime)
         {
             this.setProperty("receivedDatetime", receivedDatetime);
         }
 
-        public DateTime getReadDatetime ()
+        public DateTime getReadDatetime()
         {
             return Convert.ToDateTime(this.getProperty("readDatetime"));
         }
 
-        public void setReadDatetime (DateTime readDatetime)
+        public void setReadDatetime(DateTime readDatetime)
         {
             this.setProperty("readDatetime", readDatetime);
         }
 
-        public DateTime getActionRequiredByDatetime ()
+        public DateTime getActionRequiredByDatetime()
         {
             return Convert.ToDateTime(this.getProperty("actionRequiredByDatetime"));
         }
 
-        public void setActionRequiredByDatetime (DateTime actionRequiredByDatetime)
+        public void setActionRequiredByDatetime(DateTime actionRequiredByDatetime)
         {
             this.setProperty("actionRequiredByDatetime", actionRequiredByDatetime);
         }

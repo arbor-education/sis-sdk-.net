@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string QUALIFICATION_AVAILABILITY_INSTANCE = "qualificationAvailabilityInstance";
         public const string QUALIFICATION_ELEMENT = "qualificationElement";
 
-        public QualificationElementAvailability ()
+        public QualificationElementAvailability()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public QualificationElementAvailability (string resourceType = "QualificationElementAvailability", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<QualificationElementAvailability> query (SimpleQuery query = null)
+        public QualificationElementAvailability(string resourceType = "QualificationElementAvailability", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("QualificationElementAvailability");
-        	RestGateway gateway = (RestGateway) QualificationElementAvailability.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<QualificationElementAvailability> qualificationelementavailabilityCollection = new ModelCollection<QualificationElementAvailability> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    qualificationelementavailabilityCollection.add((QualificationElementAvailability) model);
-        	}
-        
-        	return qualificationelementavailabilityCollection;
+
         }
 
-        public static QualificationElementAvailability retrieve (string id)
+
+        public static ModelCollection<QualificationElementAvailability> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) QualificationElementAvailability.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (QualificationElementAvailability) gateway.retrieve(ResourceType.QUALIFICATION_ELEMENT_AVAILABILITY, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("QualificationElementAvailability");
+            RestGateway gateway = (RestGateway)QualificationElementAvailability.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<QualificationElementAvailability> qualificationelementavailabilityCollection = new ModelCollection<QualificationElementAvailability>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                qualificationelementavailabilityCollection.add((QualificationElementAvailability)model);
+            }
+
+            return qualificationelementavailabilityCollection;
         }
 
-        public QualificationAvailabilityInstance getQualificationAvailabilityInstance ()
+        public static QualificationElementAvailability retrieve(string id)
         {
-            return (QualificationAvailabilityInstance) this.getProperty("qualificationAvailabilityInstance");
+            RestGateway gateway = (RestGateway)QualificationElementAvailability.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (QualificationElementAvailability)gateway.retrieve(ResourceType.QUALIFICATION_ELEMENT_AVAILABILITY, id);
         }
 
-        public void setQualificationAvailabilityInstance (QualificationAvailabilityInstance qualificationAvailabilityInstance)
+        public QualificationAvailabilityInstance getQualificationAvailabilityInstance()
+        {
+            return (QualificationAvailabilityInstance)this.getProperty("qualificationAvailabilityInstance");
+        }
+
+        public void setQualificationAvailabilityInstance(QualificationAvailabilityInstance qualificationAvailabilityInstance)
         {
             this.setProperty("qualificationAvailabilityInstance", qualificationAvailabilityInstance);
         }
 
-        public ModelBase getQualificationElement ()
+        public ModelBase getQualificationElement()
         {
-            return (ModelBase) this.getProperty("qualificationElement");
+            return (ModelBase)this.getProperty("qualificationElement");
         }
 
-        public void setQualificationElement (ModelBase qualificationElement)
+        public void setQualificationElement(ModelBase qualificationElement)
         {
             this.setProperty("qualificationElement", qualificationElement);
         }

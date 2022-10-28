@@ -18,108 +18,109 @@ namespace Arbor.Model
         public const string SUBMITTED_DATETIME = "submittedDatetime";
         public const string OBSERVATION_FOCUS = "observationFocus";
 
-        public Observation ()
+        public Observation()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public Observation (string resourceType = "Observation", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<Observation> query (SimpleQuery query = null)
+        public Observation(string resourceType = "Observation", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("Observation");
-        	RestGateway gateway = (RestGateway) Observation.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<Observation> observationCollection = new ModelCollection<Observation> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    observationCollection.add((Observation) model);
-        	}
-        
-        	return observationCollection;
+
         }
 
-        public static Observation retrieve (string id)
+
+        public static ModelCollection<Observation> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) Observation.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (Observation) gateway.retrieve(ResourceType.OBSERVATION, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("Observation");
+            RestGateway gateway = (RestGateway)Observation.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<Observation> observationCollection = new ModelCollection<Observation>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                observationCollection.add((Observation)model);
+            }
+
+            return observationCollection;
         }
 
-        public Staff getObservingStaff ()
+        public static Observation retrieve(string id)
         {
-            return (Staff) this.getProperty("observingStaff");
+            RestGateway gateway = (RestGateway)Observation.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (Observation)gateway.retrieve(ResourceType.OBSERVATION, id);
         }
 
-        public void setObservingStaff (Staff observingStaff)
+        public Staff getObservingStaff()
+        {
+            return (Staff)this.getProperty("observingStaff");
+        }
+
+        public void setObservingStaff(Staff observingStaff)
         {
             this.setProperty("observingStaff", observingStaff);
         }
 
-        public Staff getObservedStaff ()
+        public Staff getObservedStaff()
         {
-            return (Staff) this.getProperty("observedStaff");
+            return (Staff)this.getProperty("observedStaff");
         }
 
-        public void setObservedStaff (Staff observedStaff)
+        public void setObservedStaff(Staff observedStaff)
         {
             this.setProperty("observedStaff", observedStaff);
         }
 
-        public Session getSession ()
+        public Session getSession()
         {
-            return (Session) this.getProperty("session");
+            return (Session)this.getProperty("session");
         }
 
-        public void setSession (Session session)
+        public void setSession(Session session)
         {
             this.setProperty("session", session);
         }
 
-        public DateTime getObservationStartDatetime ()
+        public DateTime getObservationStartDatetime()
         {
             return Convert.ToDateTime(this.getProperty("observationStartDatetime"));
         }
 
-        public void setObservationStartDatetime (DateTime observationStartDatetime)
+        public void setObservationStartDatetime(DateTime observationStartDatetime)
         {
             this.setProperty("observationStartDatetime", observationStartDatetime);
         }
 
-        public DateTime getObservationEndDatetime ()
+        public DateTime getObservationEndDatetime()
         {
             return Convert.ToDateTime(this.getProperty("observationEndDatetime"));
         }
 
-        public void setObservationEndDatetime (DateTime observationEndDatetime)
+        public void setObservationEndDatetime(DateTime observationEndDatetime)
         {
             this.setProperty("observationEndDatetime", observationEndDatetime);
         }
 
-        public DateTime getSubmittedDatetime ()
+        public DateTime getSubmittedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("submittedDatetime"));
         }
 
-        public void setSubmittedDatetime (DateTime submittedDatetime)
+        public void setSubmittedDatetime(DateTime submittedDatetime)
         {
             this.setProperty("submittedDatetime", submittedDatetime);
         }
 
-        public string getObservationFocus ()
+        public string getObservationFocus()
         {
             return this.getProperty("observationFocus").ToString();
         }
 
-        public void setObservationFocus (string observationFocus)
+        public void setObservationFocus(string observationFocus)
         {
             this.setProperty("observationFocus", observationFocus);
         }

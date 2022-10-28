@@ -23,158 +23,159 @@ namespace Arbor.Model
         public const string APPLIES_TO_STAFF = "appliesToStaff";
         public const string NOTES = "notes";
 
-        public Ethnicity ()
+        public Ethnicity()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public Ethnicity (string resourceType = "Ethnicity", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<Ethnicity> query (SimpleQuery query = null)
+        public Ethnicity(string resourceType = "Ethnicity", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("Ethnicity");
-        	RestGateway gateway = (RestGateway) Ethnicity.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<Ethnicity> ethnicityCollection = new ModelCollection<Ethnicity> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    ethnicityCollection.add((Ethnicity) model);
-        	}
-        
-        	return ethnicityCollection;
+
         }
 
-        public static Ethnicity retrieve (string id)
+
+        public static ModelCollection<Ethnicity> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) Ethnicity.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (Ethnicity) gateway.retrieve(ResourceType.ETHNICITY, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("Ethnicity");
+            RestGateway gateway = (RestGateway)Ethnicity.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<Ethnicity> ethnicityCollection = new ModelCollection<Ethnicity>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                ethnicityCollection.add((Ethnicity)model);
+            }
+
+            return ethnicityCollection;
         }
 
-        public string getDfesMainCode ()
+        public static Ethnicity retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)Ethnicity.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (Ethnicity)gateway.retrieve(ResourceType.ETHNICITY, id);
+        }
+
+        public string getDfesMainCode()
         {
             return this.getProperty("dfesMainCode").ToString();
         }
 
-        public void setDfesMainCode (string dfesMainCode)
+        public void setDfesMainCode(string dfesMainCode)
         {
             this.setProperty("dfesMainCode", dfesMainCode);
         }
 
-        public string getD00005 ()
+        public string getD00005()
         {
             return this.getProperty("d00005").ToString();
         }
 
-        public void setD00005 (string d00005)
+        public void setD00005(string d00005)
         {
             this.setProperty("d00005", d00005);
         }
 
-        public string getOnsCode ()
+        public string getOnsCode()
         {
             return this.getProperty("onsCode").ToString();
         }
 
-        public void setOnsCode (string onsCode)
+        public void setOnsCode(string onsCode)
         {
             this.setProperty("onsCode", onsCode);
         }
 
-        public string getD00250 ()
+        public string getD00250()
         {
             return this.getProperty("d00250").ToString();
         }
 
-        public void setD00250 (string d00250)
+        public void setD00250(string d00250)
         {
             this.setProperty("d00250", d00250);
         }
 
-        public string getCode ()
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }
 
-        public string getEthnicityName ()
+        public string getEthnicityName()
         {
             return this.getProperty("ethnicityName").ToString();
         }
 
-        public void setEthnicityName (string ethnicityName)
+        public void setEthnicityName(string ethnicityName)
         {
             this.setProperty("ethnicityName", ethnicityName);
         }
 
-        public EthnicityCategory getEthnicityCategory ()
+        public EthnicityCategory getEthnicityCategory()
         {
-            return (EthnicityCategory) this.getProperty("ethnicityCategory");
+            return (EthnicityCategory)this.getProperty("ethnicityCategory");
         }
 
-        public void setEthnicityCategory (EthnicityCategory ethnicityCategory)
+        public void setEthnicityCategory(EthnicityCategory ethnicityCategory)
         {
             this.setProperty("ethnicityCategory", ethnicityCategory);
         }
 
-        public bool getAppliesToStudents ()
+        public bool getAppliesToStudents()
         {
             return Convert.ToBoolean(this.getProperty("appliesToStudents"));
         }
 
-        public void setAppliesToStudents (bool appliesToStudents)
+        public void setAppliesToStudents(bool appliesToStudents)
         {
             this.setProperty("appliesToStudents", appliesToStudents);
         }
 
-        public bool getAppliesToStaff ()
+        public bool getAppliesToStaff()
         {
             return Convert.ToBoolean(this.getProperty("appliesToStaff"));
         }
 
-        public void setAppliesToStaff (bool appliesToStaff)
+        public void setAppliesToStaff(bool appliesToStaff)
         {
             this.setProperty("appliesToStaff", appliesToStaff);
         }
 
-        public string getNotes ()
+        public string getNotes()
         {
             return this.getProperty("notes").ToString();
         }
 
-        public void setNotes (string notes)
+        public void setNotes(string notes)
         {
             this.setProperty("notes", notes);
         }

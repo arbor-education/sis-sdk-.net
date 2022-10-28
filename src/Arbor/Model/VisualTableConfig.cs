@@ -16,88 +16,89 @@ namespace Arbor.Model
         public const string EXTRA_CONTEXT = "extraContext";
         public const string CONFIG = "config";
 
-        public VisualTableConfig ()
+        public VisualTableConfig()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public VisualTableConfig (string resourceType = "VisualTableConfig", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<VisualTableConfig> query (SimpleQuery query = null)
+        public VisualTableConfig(string resourceType = "VisualTableConfig", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("VisualTableConfig");
-        	RestGateway gateway = (RestGateway) VisualTableConfig.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<VisualTableConfig> visualtableconfigCollection = new ModelCollection<VisualTableConfig> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    visualtableconfigCollection.add((VisualTableConfig) model);
-        	}
-        
-        	return visualtableconfigCollection;
+
         }
 
-        public static VisualTableConfig retrieve (string id)
+
+        public static ModelCollection<VisualTableConfig> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) VisualTableConfig.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (VisualTableConfig) gateway.retrieve(ResourceType.VISUAL_TABLE_CONFIG, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("VisualTableConfig");
+            RestGateway gateway = (RestGateway)VisualTableConfig.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<VisualTableConfig> visualtableconfigCollection = new ModelCollection<VisualTableConfig>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                visualtableconfigCollection.add((VisualTableConfig)model);
+            }
+
+            return visualtableconfigCollection;
         }
 
-        public string getPageContext ()
+        public static VisualTableConfig retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)VisualTableConfig.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (VisualTableConfig)gateway.retrieve(ResourceType.VISUAL_TABLE_CONFIG, id);
+        }
+
+        public string getPageContext()
         {
             return this.getProperty("pageContext").ToString();
         }
 
-        public void setPageContext (string pageContext)
+        public void setPageContext(string pageContext)
         {
             this.setProperty("pageContext", pageContext);
         }
 
-        public string getTableUrl ()
+        public string getTableUrl()
         {
             return this.getProperty("tableUrl").ToString();
         }
 
-        public void setTableUrl (string tableUrl)
+        public void setTableUrl(string tableUrl)
         {
             this.setProperty("tableUrl", tableUrl);
         }
 
-        public User getUser ()
+        public User getUser()
         {
-            return (User) this.getProperty("user");
+            return (User)this.getProperty("user");
         }
 
-        public void setUser (User user)
+        public void setUser(User user)
         {
             this.setProperty("user", user);
         }
 
-        public string getExtraContext ()
+        public string getExtraContext()
         {
             return this.getProperty("extraContext").ToString();
         }
 
-        public void setExtraContext (string extraContext)
+        public void setExtraContext(string extraContext)
         {
             this.setProperty("extraContext", extraContext);
         }
 
-        public string getConfig ()
+        public string getConfig()
         {
             return this.getProperty("config").ToString();
         }
 
-        public void setConfig (string config)
+        public void setConfig(string config)
         {
             this.setProperty("config", config);
         }

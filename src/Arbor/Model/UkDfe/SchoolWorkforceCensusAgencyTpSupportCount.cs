@@ -16,88 +16,89 @@ namespace Arbor.Model.UkDfe
         public const string AGENCY_TP_SUPPORT_CATEGORY = "agencyTpSupportCategory";
         public const string SUP_HEAD_COUNT = "supHeadCount";
 
-        public SchoolWorkforceCensusAgencyTpSupportCount ()
+        public SchoolWorkforceCensusAgencyTpSupportCount()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public SchoolWorkforceCensusAgencyTpSupportCount (string resourceType = "SchoolWorkforceCensusAgencyTpSupportCount", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<SchoolWorkforceCensusAgencyTpSupportCount> query (SimpleQuery query = null)
+        public SchoolWorkforceCensusAgencyTpSupportCount(string resourceType = "SchoolWorkforceCensusAgencyTpSupportCount", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("UkDfe_SchoolWorkforceCensusAgencyTpSupportCount");
-        	RestGateway gateway = (RestGateway) SchoolWorkforceCensusAgencyTpSupportCount.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<SchoolWorkforceCensusAgencyTpSupportCount> schoolworkforcecensusagencytpsupportcountCollection = new ModelCollection<SchoolWorkforceCensusAgencyTpSupportCount> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    schoolworkforcecensusagencytpsupportcountCollection.add((SchoolWorkforceCensusAgencyTpSupportCount) model);
-        	}
-        
-        	return schoolworkforcecensusagencytpsupportcountCollection;
+
         }
 
-        public static SchoolWorkforceCensusAgencyTpSupportCount retrieve (string id)
+
+        public static ModelCollection<SchoolWorkforceCensusAgencyTpSupportCount> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) SchoolWorkforceCensusAgencyTpSupportCount.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (SchoolWorkforceCensusAgencyTpSupportCount) gateway.retrieve(ResourceType.UK_DFE_SCHOOL_WORKFORCE_CENSUS_AGENCY_TP_SUPPORT_COUNT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("UkDfe_SchoolWorkforceCensusAgencyTpSupportCount");
+            RestGateway gateway = (RestGateway)SchoolWorkforceCensusAgencyTpSupportCount.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<SchoolWorkforceCensusAgencyTpSupportCount> schoolworkforcecensusagencytpsupportcountCollection = new ModelCollection<SchoolWorkforceCensusAgencyTpSupportCount>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                schoolworkforcecensusagencytpsupportcountCollection.add((SchoolWorkforceCensusAgencyTpSupportCount)model);
+            }
+
+            return schoolworkforcecensusagencytpsupportcountCollection;
         }
 
-        public SchoolWorkforceCensus getSchoolWorkforceCensus ()
+        public static SchoolWorkforceCensusAgencyTpSupportCount retrieve(string id)
         {
-            return (SchoolWorkforceCensus) this.getProperty("schoolWorkforceCensus");
+            RestGateway gateway = (RestGateway)SchoolWorkforceCensusAgencyTpSupportCount.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (SchoolWorkforceCensusAgencyTpSupportCount)gateway.retrieve(ResourceType.UK_DFE_SCHOOL_WORKFORCE_CENSUS_AGENCY_TP_SUPPORT_COUNT, id);
         }
 
-        public void setSchoolWorkforceCensus (SchoolWorkforceCensus schoolWorkforceCensus)
+        public SchoolWorkforceCensus getSchoolWorkforceCensus()
+        {
+            return (SchoolWorkforceCensus)this.getProperty("schoolWorkforceCensus");
+        }
+
+        public void setSchoolWorkforceCensus(SchoolWorkforceCensus schoolWorkforceCensus)
         {
             this.setProperty("schoolWorkforceCensus", schoolWorkforceCensus);
         }
 
-        public EducationalInstitution getEducationalInstitution ()
+        public EducationalInstitution getEducationalInstitution()
         {
-            return (EducationalInstitution) this.getProperty("educationalInstitution");
+            return (EducationalInstitution)this.getProperty("educationalInstitution");
         }
 
-        public void setEducationalInstitution (EducationalInstitution educationalInstitution)
+        public void setEducationalInstitution(EducationalInstitution educationalInstitution)
         {
             this.setProperty("educationalInstitution", educationalInstitution);
         }
 
-        public string getWorkforceCensusRoleIdentifier ()
+        public string getWorkforceCensusRoleIdentifier()
         {
             return this.getProperty("workforceCensusRoleIdentifier").ToString();
         }
 
-        public void setWorkforceCensusRoleIdentifier (string workforceCensusRoleIdentifier)
+        public void setWorkforceCensusRoleIdentifier(string workforceCensusRoleIdentifier)
         {
             this.setProperty("workforceCensusRoleIdentifier", workforceCensusRoleIdentifier);
         }
 
-        public string getAgencyTpSupportCategory ()
+        public string getAgencyTpSupportCategory()
         {
             return this.getProperty("agencyTpSupportCategory").ToString();
         }
 
-        public void setAgencyTpSupportCategory (string agencyTpSupportCategory)
+        public void setAgencyTpSupportCategory(string agencyTpSupportCategory)
         {
             this.setProperty("agencyTpSupportCategory", agencyTpSupportCategory);
         }
 
-        public int getSupHeadCount ()
+        public int getSupHeadCount()
         {
             return Convert.ToInt32(this.getProperty("supHeadCount"));
         }
 
-        public void setSupHeadCount (int supHeadCount)
+        public void setSupHeadCount(int supHeadCount)
         {
             this.setProperty("supHeadCount", supHeadCount);
         }

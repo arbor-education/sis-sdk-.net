@@ -20,128 +20,129 @@ namespace Arbor.Model
         public const string SUBJECT = "subject";
         public const string PARENT_EMAIL_PART = "parentEmailPart";
 
-        public EmailPart ()
+        public EmailPart()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public EmailPart (string resourceType = "EmailPart", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<EmailPart> query (SimpleQuery query = null)
+        public EmailPart(string resourceType = "EmailPart", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("EmailPart");
-        	RestGateway gateway = (RestGateway) EmailPart.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<EmailPart> emailpartCollection = new ModelCollection<EmailPart> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    emailpartCollection.add((EmailPart) model);
-        	}
-        
-        	return emailpartCollection;
+
         }
 
-        public static EmailPart retrieve (string id)
+
+        public static ModelCollection<EmailPart> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) EmailPart.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (EmailPart) gateway.retrieve(ResourceType.EMAIL_PART, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("EmailPart");
+            RestGateway gateway = (RestGateway)EmailPart.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<EmailPart> emailpartCollection = new ModelCollection<EmailPart>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                emailpartCollection.add((EmailPart)model);
+            }
+
+            return emailpartCollection;
         }
 
-        public Email getEmail ()
+        public static EmailPart retrieve(string id)
         {
-            return (Email) this.getProperty("email");
+            RestGateway gateway = (RestGateway)EmailPart.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (EmailPart)gateway.retrieve(ResourceType.EMAIL_PART, id);
         }
 
-        public void setEmail (Email email)
+        public Email getEmail()
+        {
+            return (Email)this.getProperty("email");
+        }
+
+        public void setEmail(Email email)
         {
             this.setProperty("email", email);
         }
 
-        public string getMimeContentId ()
+        public string getMimeContentId()
         {
             return this.getProperty("mimeContentId").ToString();
         }
 
-        public void setMimeContentId (string mimeContentId)
+        public void setMimeContentId(string mimeContentId)
         {
             this.setProperty("mimeContentId", mimeContentId);
         }
 
-        public string getDisposition ()
+        public string getDisposition()
         {
             return this.getProperty("disposition").ToString();
         }
 
-        public void setDisposition (string disposition)
+        public void setDisposition(string disposition)
         {
             this.setProperty("disposition", disposition);
         }
 
-        public string getFilename ()
+        public string getFilename()
         {
             return this.getProperty("filename").ToString();
         }
 
-        public void setFilename (string filename)
+        public void setFilename(string filename)
         {
             this.setProperty("filename", filename);
         }
 
-        public string getTypeMajor ()
+        public string getTypeMajor()
         {
             return this.getProperty("typeMajor").ToString();
         }
 
-        public void setTypeMajor (string typeMajor)
+        public void setTypeMajor(string typeMajor)
         {
             this.setProperty("typeMajor", typeMajor);
         }
 
-        public string getTypeMinor ()
+        public string getTypeMinor()
         {
             return this.getProperty("typeMinor").ToString();
         }
 
-        public void setTypeMinor (string typeMinor)
+        public void setTypeMinor(string typeMinor)
         {
             this.setProperty("typeMinor", typeMinor);
         }
 
-        public string getDescription ()
+        public string getDescription()
         {
             return this.getProperty("description").ToString();
         }
 
-        public void setDescription (string description)
+        public void setDescription(string description)
         {
             this.setProperty("description", description);
         }
 
-        public string getSubject ()
+        public string getSubject()
         {
             return this.getProperty("subject").ToString();
         }
 
-        public void setSubject (string subject)
+        public void setSubject(string subject)
         {
             this.setProperty("subject", subject);
         }
 
-        public EmailPart getParentEmailPart ()
+        public EmailPart getParentEmailPart()
         {
-            return (EmailPart) this.getProperty("parentEmailPart");
+            return (EmailPart)this.getProperty("parentEmailPart");
         }
 
-        public void setParentEmailPart (EmailPart parentEmailPart)
+        public void setParentEmailPart(EmailPart parentEmailPart)
         {
             this.setProperty("parentEmailPart", parentEmailPart);
         }

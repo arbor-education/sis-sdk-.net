@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string TAG_NAME = "tagName";
         public const string TAG_VALUE = "tagValue";
 
-        public ContentTag ()
+        public ContentTag()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public ContentTag (string resourceType = "ContentTag", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<ContentTag> query (SimpleQuery query = null)
+        public ContentTag(string resourceType = "ContentTag", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("ContentTag");
-        	RestGateway gateway = (RestGateway) ContentTag.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<ContentTag> contenttagCollection = new ModelCollection<ContentTag> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    contenttagCollection.add((ContentTag) model);
-        	}
-        
-        	return contenttagCollection;
+
         }
 
-        public static ContentTag retrieve (string id)
+
+        public static ModelCollection<ContentTag> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) ContentTag.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (ContentTag) gateway.retrieve(ResourceType.CONTENT_TAG, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("ContentTag");
+            RestGateway gateway = (RestGateway)ContentTag.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<ContentTag> contenttagCollection = new ModelCollection<ContentTag>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                contenttagCollection.add((ContentTag)model);
+            }
+
+            return contenttagCollection;
         }
 
-        public Content getContent ()
+        public static ContentTag retrieve(string id)
         {
-            return (Content) this.getProperty("content");
+            RestGateway gateway = (RestGateway)ContentTag.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (ContentTag)gateway.retrieve(ResourceType.CONTENT_TAG, id);
         }
 
-        public void setContent (Content content)
+        public Content getContent()
+        {
+            return (Content)this.getProperty("content");
+        }
+
+        public void setContent(Content content)
         {
             this.setProperty("content", content);
         }
 
-        public ModelBase getTagged ()
+        public ModelBase getTagged()
         {
-            return (ModelBase) this.getProperty("tagged");
+            return (ModelBase)this.getProperty("tagged");
         }
 
-        public void setTagged (ModelBase tagged)
+        public void setTagged(ModelBase tagged)
         {
             this.setProperty("tagged", tagged);
         }
 
-        public string getTagName ()
+        public string getTagName()
         {
             return this.getProperty("tagName").ToString();
         }
 
-        public void setTagName (string tagName)
+        public void setTagName(string tagName)
         {
             this.setProperty("tagName", tagName);
         }
 
-        public string getTagValue ()
+        public string getTagValue()
         {
             return this.getProperty("tagValue").ToString();
         }
 
-        public void setTagValue (string tagValue)
+        public void setTagValue(string tagValue)
         {
             this.setProperty("tagValue", tagValue);
         }

@@ -18,108 +18,109 @@ namespace Arbor.Model
         public const string ACCOUNT_NUMBER = "accountNumber";
         public const string SORT_CODE = "sortCode";
 
-        public BankDetail ()
+        public BankDetail()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public BankDetail (string resourceType = "BankDetail", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<BankDetail> query (SimpleQuery query = null)
+        public BankDetail(string resourceType = "BankDetail", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("BankDetail");
-        	RestGateway gateway = (RestGateway) BankDetail.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<BankDetail> bankdetailCollection = new ModelCollection<BankDetail> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    bankdetailCollection.add((BankDetail) model);
-        	}
-        
-        	return bankdetailCollection;
+
         }
 
-        public static BankDetail retrieve (string id)
+
+        public static ModelCollection<BankDetail> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) BankDetail.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (BankDetail) gateway.retrieve(ResourceType.BANK_DETAIL, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("BankDetail");
+            RestGateway gateway = (RestGateway)BankDetail.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<BankDetail> bankdetailCollection = new ModelCollection<BankDetail>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                bankdetailCollection.add((BankDetail)model);
+            }
+
+            return bankdetailCollection;
         }
 
-        public Staff getAccountHolder ()
+        public static BankDetail retrieve(string id)
         {
-            return (Staff) this.getProperty("accountHolder");
+            RestGateway gateway = (RestGateway)BankDetail.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (BankDetail)gateway.retrieve(ResourceType.BANK_DETAIL, id);
         }
 
-        public void setAccountHolder (Staff accountHolder)
+        public Staff getAccountHolder()
+        {
+            return (Staff)this.getProperty("accountHolder");
+        }
+
+        public void setAccountHolder(Staff accountHolder)
         {
             this.setProperty("accountHolder", accountHolder);
         }
 
-        public DateTime getEffectiveDate ()
+        public DateTime getEffectiveDate()
         {
             return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
-        public void setEffectiveDate (DateTime effectiveDate)
+        public void setEffectiveDate(DateTime effectiveDate)
         {
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }
 
-        public Bank getBank ()
+        public Bank getBank()
         {
-            return (Bank) this.getProperty("bank");
+            return (Bank)this.getProperty("bank");
         }
 
-        public void setBank (Bank bank)
+        public void setBank(Bank bank)
         {
             this.setProperty("bank", bank);
         }
 
-        public string getAccountName ()
+        public string getAccountName()
         {
             return this.getProperty("accountName").ToString();
         }
 
-        public void setAccountName (string accountName)
+        public void setAccountName(string accountName)
         {
             this.setProperty("accountName", accountName);
         }
 
-        public string getAccountNumber ()
+        public string getAccountNumber()
         {
             return this.getProperty("accountNumber").ToString();
         }
 
-        public void setAccountNumber (string accountNumber)
+        public void setAccountNumber(string accountNumber)
         {
             this.setProperty("accountNumber", accountNumber);
         }
 
-        public string getSortCode ()
+        public string getSortCode()
         {
             return this.getProperty("sortCode").ToString();
         }
 
-        public void setSortCode (string sortCode)
+        public void setSortCode(string sortCode)
         {
             this.setProperty("sortCode", sortCode);
         }

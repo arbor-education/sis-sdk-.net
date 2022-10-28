@@ -17,98 +17,99 @@ namespace Arbor.Model
         public const string VALIDATED_DATETIME = "validatedDatetime";
         public const string CLOSED_DATETIME = "closedDatetime";
 
-        public AttendanceRegister ()
+        public AttendanceRegister()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AttendanceRegister (string resourceType = "AttendanceRegister", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AttendanceRegister> query (SimpleQuery query = null)
+        public AttendanceRegister(string resourceType = "AttendanceRegister", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AttendanceRegister");
-        	RestGateway gateway = (RestGateway) AttendanceRegister.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AttendanceRegister> attendanceregisterCollection = new ModelCollection<AttendanceRegister> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    attendanceregisterCollection.add((AttendanceRegister) model);
-        	}
-        
-        	return attendanceregisterCollection;
+
         }
 
-        public static AttendanceRegister retrieve (string id)
+
+        public static ModelCollection<AttendanceRegister> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AttendanceRegister.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AttendanceRegister) gateway.retrieve(ResourceType.ATTENDANCE_REGISTER, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AttendanceRegister");
+            RestGateway gateway = (RestGateway)AttendanceRegister.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AttendanceRegister> attendanceregisterCollection = new ModelCollection<AttendanceRegister>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                attendanceregisterCollection.add((AttendanceRegister)model);
+            }
+
+            return attendanceregisterCollection;
         }
 
-        public ModelBase getEvent ()
+        public static AttendanceRegister retrieve(string id)
         {
-            return (ModelBase) this.getProperty("event");
+            RestGateway gateway = (RestGateway)AttendanceRegister.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AttendanceRegister)gateway.retrieve(ResourceType.ATTENDANCE_REGISTER, id);
         }
 
-        public void setEvent (ModelBase _event)
+        public ModelBase getEvent()
+        {
+            return (ModelBase)this.getProperty("event");
+        }
+
+        public void setEvent(ModelBase _event)
         {
             this.setProperty("event", _event);
         }
 
-        public AttendanceRegisterType getAttendanceRegisterType ()
+        public AttendanceRegisterType getAttendanceRegisterType()
         {
-            return (AttendanceRegisterType) this.getProperty("attendanceRegisterType");
+            return (AttendanceRegisterType)this.getProperty("attendanceRegisterType");
         }
 
-        public void setAttendanceRegisterType (AttendanceRegisterType attendanceRegisterType)
+        public void setAttendanceRegisterType(AttendanceRegisterType attendanceRegisterType)
         {
             this.setProperty("attendanceRegisterType", attendanceRegisterType);
         }
 
-        public DateTime getOpenedDatetime ()
+        public DateTime getOpenedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("openedDatetime"));
         }
 
-        public void setOpenedDatetime (DateTime openedDatetime)
+        public void setOpenedDatetime(DateTime openedDatetime)
         {
             this.setProperty("openedDatetime", openedDatetime);
         }
 
-        public DateTime getCompletedDatetime ()
+        public DateTime getCompletedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("completedDatetime"));
         }
 
-        public void setCompletedDatetime (DateTime completedDatetime)
+        public void setCompletedDatetime(DateTime completedDatetime)
         {
             this.setProperty("completedDatetime", completedDatetime);
         }
 
-        public DateTime getValidatedDatetime ()
+        public DateTime getValidatedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("validatedDatetime"));
         }
 
-        public void setValidatedDatetime (DateTime validatedDatetime)
+        public void setValidatedDatetime(DateTime validatedDatetime)
         {
             this.setProperty("validatedDatetime", validatedDatetime);
         }
 
-        public DateTime getClosedDatetime ()
+        public DateTime getClosedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("closedDatetime"));
         }
 
-        public void setClosedDatetime (DateTime closedDatetime)
+        public void setClosedDatetime(DateTime closedDatetime)
         {
             this.setProperty("closedDatetime", closedDatetime);
         }

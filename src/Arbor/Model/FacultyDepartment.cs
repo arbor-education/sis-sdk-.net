@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
 
-        public FacultyDepartment ()
+        public FacultyDepartment()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public FacultyDepartment (string resourceType = "FacultyDepartment", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<FacultyDepartment> query (SimpleQuery query = null)
+        public FacultyDepartment(string resourceType = "FacultyDepartment", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("FacultyDepartment");
-        	RestGateway gateway = (RestGateway) FacultyDepartment.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<FacultyDepartment> facultydepartmentCollection = new ModelCollection<FacultyDepartment> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    facultydepartmentCollection.add((FacultyDepartment) model);
-        	}
-        
-        	return facultydepartmentCollection;
+
         }
 
-        public static FacultyDepartment retrieve (string id)
+
+        public static ModelCollection<FacultyDepartment> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) FacultyDepartment.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (FacultyDepartment) gateway.retrieve(ResourceType.FACULTY_DEPARTMENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("FacultyDepartment");
+            RestGateway gateway = (RestGateway)FacultyDepartment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<FacultyDepartment> facultydepartmentCollection = new ModelCollection<FacultyDepartment>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                facultydepartmentCollection.add((FacultyDepartment)model);
+            }
+
+            return facultydepartmentCollection;
         }
 
-        public Department getDepartment ()
+        public static FacultyDepartment retrieve(string id)
         {
-            return (Department) this.getProperty("department");
+            RestGateway gateway = (RestGateway)FacultyDepartment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (FacultyDepartment)gateway.retrieve(ResourceType.FACULTY_DEPARTMENT, id);
         }
 
-        public void setDepartment (Department department)
+        public Department getDepartment()
+        {
+            return (Department)this.getProperty("department");
+        }
+
+        public void setDepartment(Department department)
         {
             this.setProperty("department", department);
         }
 
-        public Faculty getFaculty ()
+        public Faculty getFaculty()
         {
-            return (Faculty) this.getProperty("faculty");
+            return (Faculty)this.getProperty("faculty");
         }
 
-        public void setFaculty (Faculty faculty)
+        public void setFaculty(Faculty faculty)
         {
             this.setProperty("faculty", faculty);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDate()
         {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }

@@ -29,218 +29,219 @@ namespace Arbor.Model
         public const string RECIPIENT_NETWORK_CODE = "recipientNetworkCode";
         public const string ACTION_REQUIRED_BY_DATETIME = "actionRequiredByDatetime";
 
-        public SmsMessage ()
+        public SmsMessage()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public SmsMessage (string resourceType = "SmsMessage", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<SmsMessage> query (SimpleQuery query = null)
+        public SmsMessage(string resourceType = "SmsMessage", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("SmsMessage");
-        	RestGateway gateway = (RestGateway) SmsMessage.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<SmsMessage> smsmessageCollection = new ModelCollection<SmsMessage> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    smsmessageCollection.add((SmsMessage) model);
-        	}
-        
-        	return smsmessageCollection;
+
         }
 
-        public static SmsMessage retrieve (string id)
+
+        public static ModelCollection<SmsMessage> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) SmsMessage.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (SmsMessage) gateway.retrieve(ResourceType.SMS_MESSAGE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("SmsMessage");
+            RestGateway gateway = (RestGateway)SmsMessage.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<SmsMessage> smsmessageCollection = new ModelCollection<SmsMessage>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                smsmessageCollection.add((SmsMessage)model);
+            }
+
+            return smsmessageCollection;
         }
 
-        public SmsMessageDraft getSmsMessageDraft ()
+        public static SmsMessage retrieve(string id)
         {
-            return (SmsMessageDraft) this.getProperty("smsMessageDraft");
+            RestGateway gateway = (RestGateway)SmsMessage.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (SmsMessage)gateway.retrieve(ResourceType.SMS_MESSAGE, id);
         }
 
-        public void setSmsMessageDraft (SmsMessageDraft smsMessageDraft)
+        public SmsMessageDraft getSmsMessageDraft()
+        {
+            return (SmsMessageDraft)this.getProperty("smsMessageDraft");
+        }
+
+        public void setSmsMessageDraft(SmsMessageDraft smsMessageDraft)
         {
             this.setProperty("smsMessageDraft", smsMessageDraft);
         }
 
-        public string getMessageType ()
+        public string getMessageType()
         {
             return this.getProperty("messageType").ToString();
         }
 
-        public void setMessageType (string messageType)
+        public void setMessageType(string messageType)
         {
             this.setProperty("messageType", messageType);
         }
 
-        public string getSenderNumber ()
+        public string getSenderNumber()
         {
             return this.getProperty("senderNumber").ToString();
         }
 
-        public void setSenderNumber (string senderNumber)
+        public void setSenderNumber(string senderNumber)
         {
             this.setProperty("senderNumber", senderNumber);
         }
 
-        public ModelBase getSender ()
+        public ModelBase getSender()
         {
-            return (ModelBase) this.getProperty("sender");
+            return (ModelBase)this.getProperty("sender");
         }
 
-        public void setSender (ModelBase sender)
+        public void setSender(ModelBase sender)
         {
             this.setProperty("sender", sender);
         }
 
-        public string getRecipientNumber ()
+        public string getRecipientNumber()
         {
             return this.getProperty("recipientNumber").ToString();
         }
 
-        public void setRecipientNumber (string recipientNumber)
+        public void setRecipientNumber(string recipientNumber)
         {
             this.setProperty("recipientNumber", recipientNumber);
         }
 
-        public ModelBase getRecipient ()
+        public ModelBase getRecipient()
         {
-            return (ModelBase) this.getProperty("recipient");
+            return (ModelBase)this.getProperty("recipient");
         }
 
-        public void setRecipient (ModelBase recipient)
+        public void setRecipient(ModelBase recipient)
         {
             this.setProperty("recipient", recipient);
         }
 
-        public MessageDraftRecipient getDraftRecipient ()
+        public MessageDraftRecipient getDraftRecipient()
         {
-            return (MessageDraftRecipient) this.getProperty("draftRecipient");
+            return (MessageDraftRecipient)this.getProperty("draftRecipient");
         }
 
-        public void setDraftRecipient (MessageDraftRecipient draftRecipient)
+        public void setDraftRecipient(MessageDraftRecipient draftRecipient)
         {
             this.setProperty("draftRecipient", draftRecipient);
         }
 
-        public string getMessageText ()
+        public string getMessageText()
         {
             return this.getProperty("messageText").ToString();
         }
 
-        public void setMessageText (string messageText)
+        public void setMessageText(string messageText)
         {
             this.setProperty("messageText", messageText);
         }
 
-        public DateTime getSentDatetime ()
+        public DateTime getSentDatetime()
         {
             return Convert.ToDateTime(this.getProperty("sentDatetime"));
         }
 
-        public void setSentDatetime (DateTime sentDatetime)
+        public void setSentDatetime(DateTime sentDatetime)
         {
             this.setProperty("sentDatetime", sentDatetime);
         }
 
-        public DateTime getReadDatetime ()
+        public DateTime getReadDatetime()
         {
             return Convert.ToDateTime(this.getProperty("readDatetime"));
         }
 
-        public void setReadDatetime (DateTime readDatetime)
+        public void setReadDatetime(DateTime readDatetime)
         {
             this.setProperty("readDatetime", readDatetime);
         }
 
-        public DateTime getReceivedDatetime ()
+        public DateTime getReceivedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("receivedDatetime"));
         }
 
-        public void setReceivedDatetime (DateTime receivedDatetime)
+        public void setReceivedDatetime(DateTime receivedDatetime)
         {
             this.setProperty("receivedDatetime", receivedDatetime);
         }
 
-        public DateTime getFailedDatetime ()
+        public DateTime getFailedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("failedDatetime"));
         }
 
-        public void setFailedDatetime (DateTime failedDatetime)
+        public void setFailedDatetime(DateTime failedDatetime)
         {
             this.setProperty("failedDatetime", failedDatetime);
         }
 
-        public string getTotalCost ()
+        public string getTotalCost()
         {
             return this.getProperty("totalCost").ToString();
         }
 
-        public void setTotalCost (string totalCost)
+        public void setTotalCost(string totalCost)
         {
             this.setProperty("totalCost", totalCost);
         }
 
-        public float getCreditsUsed ()
+        public float getCreditsUsed()
         {
-            return (float) this.getProperty("creditsUsed");
+            return (float)this.getProperty("creditsUsed");
         }
 
-        public void setCreditsUsed (float creditsUsed)
+        public void setCreditsUsed(float creditsUsed)
         {
             this.setProperty("creditsUsed", creditsUsed);
         }
 
-        public bool getFree ()
+        public bool getFree()
         {
             return Convert.ToBoolean(this.getProperty("free"));
         }
 
-        public void setFree (bool free)
+        public void setFree(bool free)
         {
             this.setProperty("free", free);
         }
 
-        public int getMessageParts ()
+        public int getMessageParts()
         {
             return Convert.ToInt32(this.getProperty("messageParts"));
         }
 
-        public void setMessageParts (int messageParts)
+        public void setMessageParts(int messageParts)
         {
             this.setProperty("messageParts", messageParts);
         }
 
-        public string getRecipientNetworkCode ()
+        public string getRecipientNetworkCode()
         {
             return this.getProperty("recipientNetworkCode").ToString();
         }
 
-        public void setRecipientNetworkCode (string recipientNetworkCode)
+        public void setRecipientNetworkCode(string recipientNetworkCode)
         {
             this.setProperty("recipientNetworkCode", recipientNetworkCode);
         }
 
-        public DateTime getActionRequiredByDatetime ()
+        public DateTime getActionRequiredByDatetime()
         {
             return Convert.ToDateTime(this.getProperty("actionRequiredByDatetime"));
         }
 
-        public void setActionRequiredByDatetime (DateTime actionRequiredByDatetime)
+        public void setActionRequiredByDatetime(DateTime actionRequiredByDatetime)
         {
             this.setProperty("actionRequiredByDatetime", actionRequiredByDatetime);
         }

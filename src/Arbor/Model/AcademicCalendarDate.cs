@@ -30,228 +30,229 @@ namespace Arbor.Model
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";
 
-        public AcademicCalendarDate ()
+        public AcademicCalendarDate()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AcademicCalendarDate (string resourceType = "AcademicCalendarDate", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AcademicCalendarDate> query (SimpleQuery query = null)
+        public AcademicCalendarDate(string resourceType = "AcademicCalendarDate", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AcademicCalendarDate");
-        	RestGateway gateway = (RestGateway) AcademicCalendarDate.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AcademicCalendarDate> academiccalendardateCollection = new ModelCollection<AcademicCalendarDate> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    academiccalendardateCollection.add((AcademicCalendarDate) model);
-        	}
-        
-        	return academiccalendardateCollection;
+
         }
 
-        public static AcademicCalendarDate retrieve (string id)
+
+        public static ModelCollection<AcademicCalendarDate> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AcademicCalendarDate.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AcademicCalendarDate) gateway.retrieve(ResourceType.ACADEMIC_CALENDAR_DATE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AcademicCalendarDate");
+            RestGateway gateway = (RestGateway)AcademicCalendarDate.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AcademicCalendarDate> academiccalendardateCollection = new ModelCollection<AcademicCalendarDate>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                academiccalendardateCollection.add((AcademicCalendarDate)model);
+            }
+
+            return academiccalendardateCollection;
         }
 
-        public DateTime getStartDate ()
+        public static AcademicCalendarDate retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)AcademicCalendarDate.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AcademicCalendarDate)gateway.retrieve(ResourceType.ACADEMIC_CALENDAR_DATE, id);
+        }
+
+        public DateTime getStartDate()
         {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }
 
-        public int getCalendarYear ()
+        public int getCalendarYear()
         {
             return Convert.ToInt32(this.getProperty("calendarYear"));
         }
 
-        public void setCalendarYear (int calendarYear)
+        public void setCalendarYear(int calendarYear)
         {
             this.setProperty("calendarYear", calendarYear);
         }
 
-        public int getCalendarMonth ()
+        public int getCalendarMonth()
         {
             return Convert.ToInt32(this.getProperty("calendarMonth"));
         }
 
-        public void setCalendarMonth (int calendarMonth)
+        public void setCalendarMonth(int calendarMonth)
         {
             this.setProperty("calendarMonth", calendarMonth);
         }
 
-        public int getCalendarWeek ()
+        public int getCalendarWeek()
         {
             return Convert.ToInt32(this.getProperty("calendarWeek"));
         }
 
-        public void setCalendarWeek (int calendarWeek)
+        public void setCalendarWeek(int calendarWeek)
         {
             this.setProperty("calendarWeek", calendarWeek);
         }
 
-        public int getCalendarDay ()
+        public int getCalendarDay()
         {
             return Convert.ToInt32(this.getProperty("calendarDay"));
         }
 
-        public void setCalendarDay (int calendarDay)
+        public void setCalendarDay(int calendarDay)
         {
             this.setProperty("calendarDay", calendarDay);
         }
 
-        public int getCalendarDayOfWeek ()
+        public int getCalendarDayOfWeek()
         {
             return Convert.ToInt32(this.getProperty("calendarDayOfWeek"));
         }
 
-        public void setCalendarDayOfWeek (int calendarDayOfWeek)
+        public void setCalendarDayOfWeek(int calendarDayOfWeek)
         {
             this.setProperty("calendarDayOfWeek", calendarDayOfWeek);
         }
 
-        public bool getIsPublicHoliday ()
+        public bool getIsPublicHoliday()
         {
             return Convert.ToBoolean(this.getProperty("isPublicHoliday"));
         }
 
-        public void setIsPublicHoliday (bool isPublicHoliday)
+        public void setIsPublicHoliday(bool isPublicHoliday)
         {
             this.setProperty("isPublicHoliday", isPublicHoliday);
         }
 
-        public string getPublicHolidayName ()
+        public string getPublicHolidayName()
         {
             return this.getProperty("publicHolidayName").ToString();
         }
 
-        public void setPublicHolidayName (string publicHolidayName)
+        public void setPublicHolidayName(string publicHolidayName)
         {
             this.setProperty("publicHolidayName", publicHolidayName);
         }
 
-        public AcademicYear getAcademicYear ()
+        public AcademicYear getAcademicYear()
         {
-            return (AcademicYear) this.getProperty("academicYear");
+            return (AcademicYear)this.getProperty("academicYear");
         }
 
-        public void setAcademicYear (AcademicYear academicYear)
+        public void setAcademicYear(AcademicYear academicYear)
         {
             this.setProperty("academicYear", academicYear);
         }
 
-        public Term getTerm ()
+        public Term getTerm()
         {
-            return (Term) this.getProperty("term");
+            return (Term)this.getProperty("term");
         }
 
-        public void setTerm (Term term)
+        public void setTerm(Term term)
         {
             this.setProperty("term", term);
         }
 
-        public int getDayOfCycle ()
+        public int getDayOfCycle()
         {
             return Convert.ToInt32(this.getProperty("dayOfCycle"));
         }
 
-        public void setDayOfCycle (int dayOfCycle)
+        public void setDayOfCycle(int dayOfCycle)
         {
             this.setProperty("dayOfCycle", dayOfCycle);
         }
 
-        public int getDayOfTerm ()
+        public int getDayOfTerm()
         {
             return Convert.ToInt32(this.getProperty("dayOfTerm"));
         }
 
-        public void setDayOfTerm (int dayOfTerm)
+        public void setDayOfTerm(int dayOfTerm)
         {
             this.setProperty("dayOfTerm", dayOfTerm);
         }
 
-        public int getDayOfAcademicYear ()
+        public int getDayOfAcademicYear()
         {
             return Convert.ToInt32(this.getProperty("dayOfAcademicYear"));
         }
 
-        public void setDayOfAcademicYear (int dayOfAcademicYear)
+        public void setDayOfAcademicYear(int dayOfAcademicYear)
         {
             this.setProperty("dayOfAcademicYear", dayOfAcademicYear);
         }
 
-        public AcademicHoliday getAcademicHoliday ()
+        public AcademicHoliday getAcademicHoliday()
         {
-            return (AcademicHoliday) this.getProperty("academicHoliday");
+            return (AcademicHoliday)this.getProperty("academicHoliday");
         }
 
-        public void setAcademicHoliday (AcademicHoliday academicHoliday)
+        public void setAcademicHoliday(AcademicHoliday academicHoliday)
         {
             this.setProperty("academicHoliday", academicHoliday);
         }
 
-        public bool getIsGoodSchoolDay ()
+        public bool getIsGoodSchoolDay()
         {
             return Convert.ToBoolean(this.getProperty("isGoodSchoolDay"));
         }
 
-        public void setIsGoodSchoolDay (bool isGoodSchoolDay)
+        public void setIsGoodSchoolDay(bool isGoodSchoolDay)
         {
             this.setProperty("isGoodSchoolDay", isGoodSchoolDay);
         }
 
-        public string getCode ()
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }

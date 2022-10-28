@@ -18,108 +18,109 @@ namespace Arbor.Model
         public const string FREE = "free";
         public const string DISPOSABLE = "disposable";
 
-        public EmailAddress ()
+        public EmailAddress()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public EmailAddress (string resourceType = "EmailAddress", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<EmailAddress> query (SimpleQuery query = null)
+        public EmailAddress(string resourceType = "EmailAddress", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("EmailAddress");
-        	RestGateway gateway = (RestGateway) EmailAddress.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<EmailAddress> emailaddressCollection = new ModelCollection<EmailAddress> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    emailaddressCollection.add((EmailAddress) model);
-        	}
-        
-        	return emailaddressCollection;
+
         }
 
-        public static EmailAddress retrieve (string id)
+
+        public static ModelCollection<EmailAddress> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) EmailAddress.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (EmailAddress) gateway.retrieve(ResourceType.EMAIL_ADDRESS, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("EmailAddress");
+            RestGateway gateway = (RestGateway)EmailAddress.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<EmailAddress> emailaddressCollection = new ModelCollection<EmailAddress>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                emailaddressCollection.add((EmailAddress)model);
+            }
+
+            return emailaddressCollection;
         }
 
-        public ModelBase getEmailAddressOwner ()
+        public static EmailAddress retrieve(string id)
         {
-            return (ModelBase) this.getProperty("emailAddressOwner");
+            RestGateway gateway = (RestGateway)EmailAddress.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (EmailAddress)gateway.retrieve(ResourceType.EMAIL_ADDRESS, id);
         }
 
-        public void setEmailAddressOwner (ModelBase emailAddressOwner)
+        public ModelBase getEmailAddressOwner()
+        {
+            return (ModelBase)this.getProperty("emailAddressOwner");
+        }
+
+        public void setEmailAddressOwner(ModelBase emailAddressOwner)
         {
             this.setProperty("emailAddressOwner", emailAddressOwner);
         }
 
-        public string getEmailAddressType ()
+        public string getEmailAddressType()
         {
             return this.getProperty("emailAddressType").ToString();
         }
 
-        public void setEmailAddressType (string emailAddressType)
+        public void setEmailAddressType(string emailAddressType)
         {
             this.setProperty("emailAddressType", emailAddressType);
         }
 
-        public string getEmailAddress ()
+        public string getEmailAddress()
         {
             return this.getProperty("emailAddress").ToString();
         }
 
-        public void setEmailAddress (string emailAddress)
+        public void setEmailAddress(string emailAddress)
         {
             this.setProperty("emailAddress", emailAddress);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }
 
-        public bool getRole ()
+        public bool getRole()
         {
             return Convert.ToBoolean(this.getProperty("role"));
         }
 
-        public void setRole (bool role)
+        public void setRole(bool role)
         {
             this.setProperty("role", role);
         }
 
-        public bool getFree ()
+        public bool getFree()
         {
             return Convert.ToBoolean(this.getProperty("free"));
         }
 
-        public void setFree (bool free)
+        public void setFree(bool free)
         {
             this.setProperty("free", free);
         }
 
-        public bool getDisposable ()
+        public bool getDisposable()
         {
             return Convert.ToBoolean(this.getProperty("disposable"));
         }
 
-        public void setDisposable (bool disposable)
+        public void setDisposable(bool disposable)
         {
             this.setProperty("disposable", disposable);
         }

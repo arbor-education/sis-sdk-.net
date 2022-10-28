@@ -13,58 +13,59 @@ namespace Arbor.Model.UkDfe
         public const string REGIONAL_PAY_SPINE = "regionalPaySpine";
         public const string PAY_SCALE_CATEGORY = "payScaleCategory";
 
-        public PayScale ()
+        public PayScale()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public PayScale (string resourceType = "PayScale", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<PayScale> query (SimpleQuery query = null)
+        public PayScale(string resourceType = "PayScale", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("UkDfe_PayScale");
-        	RestGateway gateway = (RestGateway) PayScale.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<PayScale> payscaleCollection = new ModelCollection<PayScale> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    payscaleCollection.add((PayScale) model);
-        	}
-        
-        	return payscaleCollection;
+
         }
 
-        public static PayScale retrieve (string id)
+
+        public static ModelCollection<PayScale> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) PayScale.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (PayScale) gateway.retrieve(ResourceType.UK_DFE_PAY_SCALE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("UkDfe_PayScale");
+            RestGateway gateway = (RestGateway)PayScale.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<PayScale> payscaleCollection = new ModelCollection<PayScale>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                payscaleCollection.add((PayScale)model);
+            }
+
+            return payscaleCollection;
         }
 
-        public string getRegionalPaySpine ()
+        public static PayScale retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)PayScale.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (PayScale)gateway.retrieve(ResourceType.UK_DFE_PAY_SCALE, id);
+        }
+
+        public string getRegionalPaySpine()
         {
             return this.getProperty("regionalPaySpine").ToString();
         }
 
-        public void setRegionalPaySpine (string regionalPaySpine)
+        public void setRegionalPaySpine(string regionalPaySpine)
         {
             this.setProperty("regionalPaySpine", regionalPaySpine);
         }
 
-        public PayScaleCategory getPayScaleCategory ()
+        public PayScaleCategory getPayScaleCategory()
         {
-            return (PayScaleCategory) this.getProperty("payScaleCategory");
+            return (PayScaleCategory)this.getProperty("payScaleCategory");
         }
 
-        public void setPayScaleCategory (PayScaleCategory payScaleCategory)
+        public void setPayScaleCategory(PayScaleCategory payScaleCategory)
         {
             this.setProperty("payScaleCategory", payScaleCategory);
         }

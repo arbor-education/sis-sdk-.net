@@ -17,98 +17,99 @@ namespace Arbor.Model
         public const string REAL_PUSH_TOKEN = "realPushToken";
         public const string DEVICE_ID = "deviceId";
 
-        public PushNotificationToken ()
+        public PushNotificationToken()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public PushNotificationToken (string resourceType = "PushNotificationToken", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<PushNotificationToken> query (SimpleQuery query = null)
+        public PushNotificationToken(string resourceType = "PushNotificationToken", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("PushNotificationToken");
-        	RestGateway gateway = (RestGateway) PushNotificationToken.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<PushNotificationToken> pushnotificationtokenCollection = new ModelCollection<PushNotificationToken> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    pushnotificationtokenCollection.add((PushNotificationToken) model);
-        	}
-        
-        	return pushnotificationtokenCollection;
+
         }
 
-        public static PushNotificationToken retrieve (string id)
+
+        public static ModelCollection<PushNotificationToken> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) PushNotificationToken.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (PushNotificationToken) gateway.retrieve(ResourceType.PUSH_NOTIFICATION_TOKEN, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("PushNotificationToken");
+            RestGateway gateway = (RestGateway)PushNotificationToken.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<PushNotificationToken> pushnotificationtokenCollection = new ModelCollection<PushNotificationToken>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                pushnotificationtokenCollection.add((PushNotificationToken)model);
+            }
+
+            return pushnotificationtokenCollection;
         }
 
-        public User getUser ()
+        public static PushNotificationToken retrieve(string id)
         {
-            return (User) this.getProperty("user");
+            RestGateway gateway = (RestGateway)PushNotificationToken.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (PushNotificationToken)gateway.retrieve(ResourceType.PUSH_NOTIFICATION_TOKEN, id);
         }
 
-        public void setUser (User user)
+        public User getUser()
+        {
+            return (User)this.getProperty("user");
+        }
+
+        public void setUser(User user)
         {
             this.setProperty("user", user);
         }
 
-        public string getToken ()
+        public string getToken()
         {
             return this.getProperty("token").ToString();
         }
 
-        public void setToken (string token)
+        public void setToken(string token)
         {
             this.setProperty("token", token);
         }
 
-        public string getUniqueIdentifier ()
+        public string getUniqueIdentifier()
         {
             return this.getProperty("uniqueIdentifier").ToString();
         }
 
-        public void setUniqueIdentifier (string uniqueIdentifier)
+        public void setUniqueIdentifier(string uniqueIdentifier)
         {
             this.setProperty("uniqueIdentifier", uniqueIdentifier);
         }
 
-        public string getDeviceOs ()
+        public string getDeviceOs()
         {
             return this.getProperty("deviceOs").ToString();
         }
 
-        public void setDeviceOs (string deviceOs)
+        public void setDeviceOs(string deviceOs)
         {
             this.setProperty("deviceOs", deviceOs);
         }
 
-        public string getRealPushToken ()
+        public string getRealPushToken()
         {
             return this.getProperty("realPushToken").ToString();
         }
 
-        public void setRealPushToken (string realPushToken)
+        public void setRealPushToken(string realPushToken)
         {
             this.setProperty("realPushToken", realPushToken);
         }
 
-        public string getDeviceId ()
+        public string getDeviceId()
         {
             return this.getProperty("deviceId").ToString();
         }
 
-        public void setDeviceId (string deviceId)
+        public void setDeviceId(string deviceId)
         {
             this.setProperty("deviceId", deviceId);
         }

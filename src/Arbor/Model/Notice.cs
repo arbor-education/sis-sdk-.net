@@ -14,68 +14,69 @@ namespace Arbor.Model
         public const string NOTICE_DATETIME = "noticeDatetime";
         public const string END_DATETIME = "endDatetime";
 
-        public Notice ()
+        public Notice()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public Notice (string resourceType = "Notice", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<Notice> query (SimpleQuery query = null)
+        public Notice(string resourceType = "Notice", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("Notice");
-        	RestGateway gateway = (RestGateway) Notice.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<Notice> noticeCollection = new ModelCollection<Notice> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    noticeCollection.add((Notice) model);
-        	}
-        
-        	return noticeCollection;
+
         }
 
-        public static Notice retrieve (string id)
+
+        public static ModelCollection<Notice> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) Notice.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (Notice) gateway.retrieve(ResourceType.NOTICE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("Notice");
+            RestGateway gateway = (RestGateway)Notice.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<Notice> noticeCollection = new ModelCollection<Notice>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                noticeCollection.add((Notice)model);
+            }
+
+            return noticeCollection;
         }
 
-        public string getNoticeHtml ()
+        public static Notice retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)Notice.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (Notice)gateway.retrieve(ResourceType.NOTICE, id);
+        }
+
+        public string getNoticeHtml()
         {
             return this.getProperty("noticeHtml").ToString();
         }
 
-        public void setNoticeHtml (string noticeHtml)
+        public void setNoticeHtml(string noticeHtml)
         {
             this.setProperty("noticeHtml", noticeHtml);
         }
 
-        public DateTime getNoticeDatetime ()
+        public DateTime getNoticeDatetime()
         {
             return Convert.ToDateTime(this.getProperty("noticeDatetime"));
         }
 
-        public void setNoticeDatetime (DateTime noticeDatetime)
+        public void setNoticeDatetime(DateTime noticeDatetime)
         {
             this.setProperty("noticeDatetime", noticeDatetime);
         }
 
-        public DateTime getEndDatetime ()
+        public DateTime getEndDatetime()
         {
             return Convert.ToDateTime(this.getProperty("endDatetime"));
         }
 
-        public void setEndDatetime (DateTime endDatetime)
+        public void setEndDatetime(DateTime endDatetime)
         {
             this.setProperty("endDatetime", endDatetime);
         }

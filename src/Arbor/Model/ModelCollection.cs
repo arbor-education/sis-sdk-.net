@@ -3,16 +3,16 @@ using System.Collections;
 
 namespace Arbor.Model
 {
-	public class ModelCollection<T> : CollectionBase
-	{
-		public ModelCollection ()
-		{
-		}
+    public class ModelCollection<T> : CollectionBase
+    {
+        public ModelCollection()
+        {
+        }
 
-		public void add (T model)
-		{
-			this.List.Add(model);
-		}
-	}
+        public void add(T model)
+        {
+            this.List.Add(model);
+        }
+    }
 }
 

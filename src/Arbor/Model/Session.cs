@@ -21,138 +21,139 @@ namespace Arbor.Model
         public const string LESSON_PLAN = "lessonPlan";
         public const string IS_SUSPENDED = "isSuspended";
 
-        public Session ()
+        public Session()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public Session (string resourceType = "Session", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<Session> query (SimpleQuery query = null)
+        public Session(string resourceType = "Session", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("Session");
-        	RestGateway gateway = (RestGateway) Session.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<Session> sessionCollection = new ModelCollection<Session> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    sessionCollection.add((Session) model);
-        	}
-        
-        	return sessionCollection;
+
         }
 
-        public static Session retrieve (string id)
+
+        public static ModelCollection<Session> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) Session.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (Session) gateway.retrieve(ResourceType.SESSION, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("Session");
+            RestGateway gateway = (RestGateway)Session.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<Session> sessionCollection = new ModelCollection<Session>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                sessionCollection.add((Session)model);
+            }
+
+            return sessionCollection;
         }
 
-        public DateTime getStartDatetime ()
+        public static Session retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)Session.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (Session)gateway.retrieve(ResourceType.SESSION, id);
+        }
+
+        public DateTime getStartDatetime()
         {
             return Convert.ToDateTime(this.getProperty("startDatetime"));
         }
 
-        public void setStartDatetime (DateTime startDatetime)
+        public void setStartDatetime(DateTime startDatetime)
         {
             this.setProperty("startDatetime", startDatetime);
         }
 
-        public DateTime getEndDatetime ()
+        public DateTime getEndDatetime()
         {
             return Convert.ToDateTime(this.getProperty("endDatetime"));
         }
 
-        public void setEndDatetime (DateTime endDatetime)
+        public void setEndDatetime(DateTime endDatetime)
         {
             this.setProperty("endDatetime", endDatetime);
         }
 
-        public string getLocationText ()
+        public string getLocationText()
         {
             return this.getProperty("locationText").ToString();
         }
 
-        public void setLocationText (string locationText)
+        public void setLocationText(string locationText)
         {
             this.setProperty("locationText", locationText);
         }
 
-        public ModelBase getLocation ()
+        public ModelBase getLocation()
         {
-            return (ModelBase) this.getProperty("location");
+            return (ModelBase)this.getProperty("location");
         }
 
-        public void setLocation (ModelBase location)
+        public void setLocation(ModelBase location)
         {
             this.setProperty("location", location);
         }
 
-        public string getSessionName ()
+        public string getSessionName()
         {
             return this.getProperty("sessionName").ToString();
         }
 
-        public void setSessionName (string sessionName)
+        public void setSessionName(string sessionName)
         {
             this.setProperty("sessionName", sessionName);
         }
 
-        public AcademicUnit getAcademicUnit ()
+        public AcademicUnit getAcademicUnit()
         {
-            return (AcademicUnit) this.getProperty("academicUnit");
+            return (AcademicUnit)this.getProperty("academicUnit");
         }
 
-        public void setAcademicUnit (AcademicUnit academicUnit)
+        public void setAcademicUnit(AcademicUnit academicUnit)
         {
             this.setProperty("academicUnit", academicUnit);
         }
 
-        public TimetableSlot getTimetableSlot ()
+        public TimetableSlot getTimetableSlot()
         {
-            return (TimetableSlot) this.getProperty("timetableSlot");
+            return (TimetableSlot)this.getProperty("timetableSlot");
         }
 
-        public void setTimetableSlot (TimetableSlot timetableSlot)
+        public void setTimetableSlot(TimetableSlot timetableSlot)
         {
             this.setProperty("timetableSlot", timetableSlot);
         }
 
-        public AttendanceRegisterType getAttendanceRegisterType ()
+        public AttendanceRegisterType getAttendanceRegisterType()
         {
-            return (AttendanceRegisterType) this.getProperty("attendanceRegisterType");
+            return (AttendanceRegisterType)this.getProperty("attendanceRegisterType");
         }
 
-        public void setAttendanceRegisterType (AttendanceRegisterType attendanceRegisterType)
+        public void setAttendanceRegisterType(AttendanceRegisterType attendanceRegisterType)
         {
             this.setProperty("attendanceRegisterType", attendanceRegisterType);
         }
 
-        public LessonPlan getLessonPlan ()
+        public LessonPlan getLessonPlan()
         {
-            return (LessonPlan) this.getProperty("lessonPlan");
+            return (LessonPlan)this.getProperty("lessonPlan");
         }
 
-        public void setLessonPlan (LessonPlan lessonPlan)
+        public void setLessonPlan(LessonPlan lessonPlan)
         {
             this.setProperty("lessonPlan", lessonPlan);
         }
 
-        public bool getIsSuspended ()
+        public bool getIsSuspended()
         {
             return Convert.ToBoolean(this.getProperty("isSuspended"));
         }
 
-        public void setIsSuspended (bool isSuspended)
+        public void setIsSuspended(bool isSuspended)
         {
             this.setProperty("isSuspended", isSuspended);
         }

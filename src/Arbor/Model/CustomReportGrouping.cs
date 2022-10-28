@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string FIELD_PARAMS = "fieldParams";
         public const string TRANSFORMATION_CLASS = "transformationClass";
 
-        public CustomReportGrouping ()
+        public CustomReportGrouping()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public CustomReportGrouping (string resourceType = "CustomReportGrouping", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<CustomReportGrouping> query (SimpleQuery query = null)
+        public CustomReportGrouping(string resourceType = "CustomReportGrouping", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("CustomReportGrouping");
-        	RestGateway gateway = (RestGateway) CustomReportGrouping.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<CustomReportGrouping> customreportgroupingCollection = new ModelCollection<CustomReportGrouping> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    customreportgroupingCollection.add((CustomReportGrouping) model);
-        	}
-        
-        	return customreportgroupingCollection;
+
         }
 
-        public static CustomReportGrouping retrieve (string id)
+
+        public static ModelCollection<CustomReportGrouping> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) CustomReportGrouping.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (CustomReportGrouping) gateway.retrieve(ResourceType.CUSTOM_REPORT_GROUPING, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("CustomReportGrouping");
+            RestGateway gateway = (RestGateway)CustomReportGrouping.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<CustomReportGrouping> customreportgroupingCollection = new ModelCollection<CustomReportGrouping>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                customreportgroupingCollection.add((CustomReportGrouping)model);
+            }
+
+            return customreportgroupingCollection;
         }
 
-        public CustomReport getCustomReport ()
+        public static CustomReportGrouping retrieve(string id)
         {
-            return (CustomReport) this.getProperty("customReport");
+            RestGateway gateway = (RestGateway)CustomReportGrouping.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (CustomReportGrouping)gateway.retrieve(ResourceType.CUSTOM_REPORT_GROUPING, id);
         }
 
-        public void setCustomReport (CustomReport customReport)
+        public CustomReport getCustomReport()
+        {
+            return (CustomReport)this.getProperty("customReport");
+        }
+
+        public void setCustomReport(CustomReport customReport)
         {
             this.setProperty("customReport", customReport);
         }
 
-        public string getFieldClass ()
+        public string getFieldClass()
         {
             return this.getProperty("fieldClass").ToString();
         }
 
-        public void setFieldClass (string fieldClass)
+        public void setFieldClass(string fieldClass)
         {
             this.setProperty("fieldClass", fieldClass);
         }
 
-        public string getFieldParams ()
+        public string getFieldParams()
         {
             return this.getProperty("fieldParams").ToString();
         }
 
-        public void setFieldParams (string fieldParams)
+        public void setFieldParams(string fieldParams)
         {
             this.setProperty("fieldParams", fieldParams);
         }
 
-        public string getTransformationClass ()
+        public string getTransformationClass()
         {
             return this.getProperty("transformationClass").ToString();
         }
 
-        public void setTransformationClass (string transformationClass)
+        public void setTransformationClass(string transformationClass)
         {
             this.setProperty("transformationClass", transformationClass);
         }

@@ -30,228 +30,229 @@ namespace Arbor.Model
         public const string OPERATIONAL_END_DATE = "operationalEndDate";
         public const string IS_LINEAR_QUALIFICATION = "isLinearQualification";
 
-        public QualificationAward ()
+        public QualificationAward()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public QualificationAward (string resourceType = "QualificationAward", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<QualificationAward> query (SimpleQuery query = null)
+        public QualificationAward(string resourceType = "QualificationAward", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("QualificationAward");
-        	RestGateway gateway = (RestGateway) QualificationAward.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<QualificationAward> qualificationawardCollection = new ModelCollection<QualificationAward> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    qualificationawardCollection.add((QualificationAward) model);
-        	}
-        
-        	return qualificationawardCollection;
+
         }
 
-        public static QualificationAward retrieve (string id)
+
+        public static ModelCollection<QualificationAward> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) QualificationAward.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (QualificationAward) gateway.retrieve(ResourceType.QUALIFICATION_AWARD, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("QualificationAward");
+            RestGateway gateway = (RestGateway)QualificationAward.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<QualificationAward> qualificationawardCollection = new ModelCollection<QualificationAward>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                qualificationawardCollection.add((QualificationAward)model);
+            }
+
+            return qualificationawardCollection;
         }
 
-        public string getCode ()
+        public static QualificationAward retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)QualificationAward.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (QualificationAward)gateway.retrieve(ResourceType.QUALIFICATION_AWARD, id);
+        }
+
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }
 
-        public QualificationScheme getQualificationScheme ()
+        public QualificationScheme getQualificationScheme()
         {
-            return (QualificationScheme) this.getProperty("qualificationScheme");
+            return (QualificationScheme)this.getProperty("qualificationScheme");
         }
 
-        public void setQualificationScheme (QualificationScheme qualificationScheme)
+        public void setQualificationScheme(QualificationScheme qualificationScheme)
         {
             this.setProperty("qualificationScheme", qualificationScheme);
         }
 
-        public QualificationSubject getQualificationSubject ()
+        public QualificationSubject getQualificationSubject()
         {
-            return (QualificationSubject) this.getProperty("qualificationSubject");
+            return (QualificationSubject)this.getProperty("qualificationSubject");
         }
 
-        public void setQualificationSubject (QualificationSubject qualificationSubject)
+        public void setQualificationSubject(QualificationSubject qualificationSubject)
         {
             this.setProperty("qualificationSubject", qualificationSubject);
         }
 
-        public AwardingOrganization getAwardingOrganization ()
+        public AwardingOrganization getAwardingOrganization()
         {
-            return (AwardingOrganization) this.getProperty("awardingOrganization");
+            return (AwardingOrganization)this.getProperty("awardingOrganization");
         }
 
-        public void setAwardingOrganization (AwardingOrganization awardingOrganization)
+        public void setAwardingOrganization(AwardingOrganization awardingOrganization)
         {
             this.setProperty("awardingOrganization", awardingOrganization);
         }
 
-        public string getAwardIdentifier ()
+        public string getAwardIdentifier()
         {
             return this.getProperty("awardIdentifier").ToString();
         }
 
-        public void setAwardIdentifier (string awardIdentifier)
+        public void setAwardIdentifier(string awardIdentifier)
         {
             this.setProperty("awardIdentifier", awardIdentifier);
         }
 
-        public string getTitle ()
+        public string getTitle()
         {
             return this.getProperty("title").ToString();
         }
 
-        public void setTitle (string title)
+        public void setTitle(string title)
         {
             this.setProperty("title", title);
         }
 
-        public string getShortTitle ()
+        public string getShortTitle()
         {
             return this.getProperty("shortTitle").ToString();
         }
 
-        public void setShortTitle (string shortTitle)
+        public void setShortTitle(string shortTitle)
         {
             this.setProperty("shortTitle", shortTitle);
         }
 
-        public QualificationAwardType getQualificationAwardType ()
+        public QualificationAwardType getQualificationAwardType()
         {
-            return (QualificationAwardType) this.getProperty("qualificationAwardType");
+            return (QualificationAwardType)this.getProperty("qualificationAwardType");
         }
 
-        public void setQualificationAwardType (QualificationAwardType qualificationAwardType)
+        public void setQualificationAwardType(QualificationAwardType qualificationAwardType)
         {
             this.setProperty("qualificationAwardType", qualificationAwardType);
         }
 
-        public QualificationAwardSubtype getQualificationAwardSubtype ()
+        public QualificationAwardSubtype getQualificationAwardSubtype()
         {
-            return (QualificationAwardSubtype) this.getProperty("qualificationAwardSubtype");
+            return (QualificationAwardSubtype)this.getProperty("qualificationAwardSubtype");
         }
 
-        public void setQualificationAwardSubtype (QualificationAwardSubtype qualificationAwardSubtype)
+        public void setQualificationAwardSubtype(QualificationAwardSubtype qualificationAwardSubtype)
         {
             this.setProperty("qualificationAwardSubtype", qualificationAwardSubtype);
         }
 
-        public DateTime getAccreditationStartDate ()
+        public DateTime getAccreditationStartDate()
         {
             return Convert.ToDateTime(this.getProperty("accreditationStartDate"));
         }
 
-        public void setAccreditationStartDate (DateTime accreditationStartDate)
+        public void setAccreditationStartDate(DateTime accreditationStartDate)
         {
             this.setProperty("accreditationStartDate", accreditationStartDate);
         }
 
-        public DateTime getAccreditationEndDate ()
+        public DateTime getAccreditationEndDate()
         {
             return Convert.ToDateTime(this.getProperty("accreditationEndDate"));
         }
 
-        public void setAccreditationEndDate (DateTime accreditationEndDate)
+        public void setAccreditationEndDate(DateTime accreditationEndDate)
         {
             this.setProperty("accreditationEndDate", accreditationEndDate);
         }
 
-        public DateTime getEffectiveDate ()
+        public DateTime getEffectiveDate()
         {
             return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
-        public void setEffectiveDate (DateTime effectiveDate)
+        public void setEffectiveDate(DateTime effectiveDate)
         {
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }
 
-        public DateTime getCertificationEndDate ()
+        public DateTime getCertificationEndDate()
         {
             return Convert.ToDateTime(this.getProperty("certificationEndDate"));
         }
 
-        public void setCertificationEndDate (DateTime certificationEndDate)
+        public void setCertificationEndDate(DateTime certificationEndDate)
         {
             this.setProperty("certificationEndDate", certificationEndDate);
         }
 
-        public DateTime getOperationalStartDate ()
+        public DateTime getOperationalStartDate()
         {
             return Convert.ToDateTime(this.getProperty("operationalStartDate"));
         }
 
-        public void setOperationalStartDate (DateTime operationalStartDate)
+        public void setOperationalStartDate(DateTime operationalStartDate)
         {
             this.setProperty("operationalStartDate", operationalStartDate);
         }
 
-        public DateTime getOperationalEndDate ()
+        public DateTime getOperationalEndDate()
         {
             return Convert.ToDateTime(this.getProperty("operationalEndDate"));
         }
 
-        public void setOperationalEndDate (DateTime operationalEndDate)
+        public void setOperationalEndDate(DateTime operationalEndDate)
         {
             this.setProperty("operationalEndDate", operationalEndDate);
         }
 
-        public bool getIsLinearQualification ()
+        public bool getIsLinearQualification()
         {
             return Convert.ToBoolean(this.getProperty("isLinearQualification"));
         }
 
-        public void setIsLinearQualification (bool isLinearQualification)
+        public void setIsLinearQualification(bool isLinearQualification)
         {
             this.setProperty("isLinearQualification", isLinearQualification);
         }

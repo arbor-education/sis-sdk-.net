@@ -28,208 +28,209 @@ namespace Arbor.Model
         public const string SHOW_ADDRESS_ENVELOPE_SIZE = "showAddressEnvelopeSize";
         public const string ARCHIVED = "archived";
 
-        public DocumentLayout ()
+        public DocumentLayout()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public DocumentLayout (string resourceType = "DocumentLayout", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<DocumentLayout> query (SimpleQuery query = null)
+        public DocumentLayout(string resourceType = "DocumentLayout", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("DocumentLayout");
-        	RestGateway gateway = (RestGateway) DocumentLayout.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<DocumentLayout> documentlayoutCollection = new ModelCollection<DocumentLayout> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    documentlayoutCollection.add((DocumentLayout) model);
-        	}
-        
-        	return documentlayoutCollection;
+
         }
 
-        public static DocumentLayout retrieve (string id)
+
+        public static ModelCollection<DocumentLayout> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) DocumentLayout.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (DocumentLayout) gateway.retrieve(ResourceType.DOCUMENT_LAYOUT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("DocumentLayout");
+            RestGateway gateway = (RestGateway)DocumentLayout.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<DocumentLayout> documentlayoutCollection = new ModelCollection<DocumentLayout>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                documentlayoutCollection.add((DocumentLayout)model);
+            }
+
+            return documentlayoutCollection;
         }
 
-        public string getName ()
+        public static DocumentLayout retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)DocumentLayout.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (DocumentLayout)gateway.retrieve(ResourceType.DOCUMENT_LAYOUT, id);
+        }
+
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }
 
-        public string getFirstPageHeaderHtml ()
+        public string getFirstPageHeaderHtml()
         {
             return this.getProperty("firstPageHeaderHtml").ToString();
         }
 
-        public void setFirstPageHeaderHtml (string firstPageHeaderHtml)
+        public void setFirstPageHeaderHtml(string firstPageHeaderHtml)
         {
             this.setProperty("firstPageHeaderHtml", firstPageHeaderHtml);
         }
 
-        public float getFirstPageHeaderHeight ()
+        public float getFirstPageHeaderHeight()
         {
-            return (float) this.getProperty("firstPageHeaderHeight");
+            return (float)this.getProperty("firstPageHeaderHeight");
         }
 
-        public void setFirstPageHeaderHeight (float firstPageHeaderHeight)
+        public void setFirstPageHeaderHeight(float firstPageHeaderHeight)
         {
             this.setProperty("firstPageHeaderHeight", firstPageHeaderHeight);
         }
 
-        public string getFirstPageFooterHtml ()
+        public string getFirstPageFooterHtml()
         {
             return this.getProperty("firstPageFooterHtml").ToString();
         }
 
-        public void setFirstPageFooterHtml (string firstPageFooterHtml)
+        public void setFirstPageFooterHtml(string firstPageFooterHtml)
         {
             this.setProperty("firstPageFooterHtml", firstPageFooterHtml);
         }
 
-        public float getFirstPageFooterHeight ()
+        public float getFirstPageFooterHeight()
         {
-            return (float) this.getProperty("firstPageFooterHeight");
+            return (float)this.getProperty("firstPageFooterHeight");
         }
 
-        public void setFirstPageFooterHeight (float firstPageFooterHeight)
+        public void setFirstPageFooterHeight(float firstPageFooterHeight)
         {
             this.setProperty("firstPageFooterHeight", firstPageFooterHeight);
         }
 
-        public string getOtherPagesHeaderHtml ()
+        public string getOtherPagesHeaderHtml()
         {
             return this.getProperty("otherPagesHeaderHtml").ToString();
         }
 
-        public void setOtherPagesHeaderHtml (string otherPagesHeaderHtml)
+        public void setOtherPagesHeaderHtml(string otherPagesHeaderHtml)
         {
             this.setProperty("otherPagesHeaderHtml", otherPagesHeaderHtml);
         }
 
-        public float getOtherPagesHeaderHeight ()
+        public float getOtherPagesHeaderHeight()
         {
-            return (float) this.getProperty("otherPagesHeaderHeight");
+            return (float)this.getProperty("otherPagesHeaderHeight");
         }
 
-        public void setOtherPagesHeaderHeight (float otherPagesHeaderHeight)
+        public void setOtherPagesHeaderHeight(float otherPagesHeaderHeight)
         {
             this.setProperty("otherPagesHeaderHeight", otherPagesHeaderHeight);
         }
 
-        public string getOtherPagesFooterHtml ()
+        public string getOtherPagesFooterHtml()
         {
             return this.getProperty("otherPagesFooterHtml").ToString();
         }
 
-        public void setOtherPagesFooterHtml (string otherPagesFooterHtml)
+        public void setOtherPagesFooterHtml(string otherPagesFooterHtml)
         {
             this.setProperty("otherPagesFooterHtml", otherPagesFooterHtml);
         }
 
-        public float getOtherPagesFooterHeight ()
+        public float getOtherPagesFooterHeight()
         {
-            return (float) this.getProperty("otherPagesFooterHeight");
+            return (float)this.getProperty("otherPagesFooterHeight");
         }
 
-        public void setOtherPagesFooterHeight (float otherPagesFooterHeight)
+        public void setOtherPagesFooterHeight(float otherPagesFooterHeight)
         {
             this.setProperty("otherPagesFooterHeight", otherPagesFooterHeight);
         }
 
-        public float getLeftMargin ()
+        public float getLeftMargin()
         {
-            return (float) this.getProperty("leftMargin");
+            return (float)this.getProperty("leftMargin");
         }
 
-        public void setLeftMargin (float leftMargin)
+        public void setLeftMargin(float leftMargin)
         {
             this.setProperty("leftMargin", leftMargin);
         }
 
-        public float getRightMargin ()
+        public float getRightMargin()
         {
-            return (float) this.getProperty("rightMargin");
+            return (float)this.getProperty("rightMargin");
         }
 
-        public void setRightMargin (float rightMargin)
+        public void setRightMargin(float rightMargin)
         {
             this.setProperty("rightMargin", rightMargin);
         }
 
-        public string getPaperSize ()
+        public string getPaperSize()
         {
             return this.getProperty("paperSize").ToString();
         }
 
-        public void setPaperSize (string paperSize)
+        public void setPaperSize(string paperSize)
         {
             this.setProperty("paperSize", paperSize);
         }
 
-        public string getOrientation ()
+        public string getOrientation()
         {
             return this.getProperty("orientation").ToString();
         }
 
-        public void setOrientation (string orientation)
+        public void setOrientation(string orientation)
         {
             this.setProperty("orientation", orientation);
         }
 
-        public string getDefaultFontFamily ()
+        public string getDefaultFontFamily()
         {
             return this.getProperty("defaultFontFamily").ToString();
         }
 
-        public void setDefaultFontFamily (string defaultFontFamily)
+        public void setDefaultFontFamily(string defaultFontFamily)
         {
             this.setProperty("defaultFontFamily", defaultFontFamily);
         }
 
-        public float getDefaultFontSize ()
+        public float getDefaultFontSize()
         {
-            return (float) this.getProperty("defaultFontSize");
+            return (float)this.getProperty("defaultFontSize");
         }
 
-        public void setDefaultFontSize (float defaultFontSize)
+        public void setDefaultFontSize(float defaultFontSize)
         {
             this.setProperty("defaultFontSize", defaultFontSize);
         }
 
-        public string getShowAddressEnvelopeSize ()
+        public string getShowAddressEnvelopeSize()
         {
             return this.getProperty("showAddressEnvelopeSize").ToString();
         }
 
-        public void setShowAddressEnvelopeSize (string showAddressEnvelopeSize)
+        public void setShowAddressEnvelopeSize(string showAddressEnvelopeSize)
         {
             this.setProperty("showAddressEnvelopeSize", showAddressEnvelopeSize);
         }
 
-        public bool getArchived ()
+        public bool getArchived()
         {
             return Convert.ToBoolean(this.getProperty("archived"));
         }
 
-        public void setArchived (bool archived)
+        public void setArchived(bool archived)
         {
             this.setProperty("archived", archived);
         }

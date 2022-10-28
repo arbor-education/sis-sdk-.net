@@ -12,48 +12,49 @@ namespace Arbor.Model
         protected new string resourceType = ResourceType.BASKET;
         public const string GUARDIAN = "guardian";
 
-        public Basket ()
+        public Basket()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public Basket (string resourceType = "Basket", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<Basket> query (SimpleQuery query = null)
+        public Basket(string resourceType = "Basket", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("Basket");
-        	RestGateway gateway = (RestGateway) Basket.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<Basket> basketCollection = new ModelCollection<Basket> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    basketCollection.add((Basket) model);
-        	}
-        
-        	return basketCollection;
+
         }
 
-        public static Basket retrieve (string id)
+
+        public static ModelCollection<Basket> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) Basket.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (Basket) gateway.retrieve(ResourceType.BASKET, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("Basket");
+            RestGateway gateway = (RestGateway)Basket.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<Basket> basketCollection = new ModelCollection<Basket>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                basketCollection.add((Basket)model);
+            }
+
+            return basketCollection;
         }
 
-        public Guardian getGuardian ()
+        public static Basket retrieve(string id)
         {
-            return (Guardian) this.getProperty("guardian");
+            RestGateway gateway = (RestGateway)Basket.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (Basket)gateway.retrieve(ResourceType.BASKET, id);
         }
 
-        public void setGuardian (Guardian guardian)
+        public Guardian getGuardian()
+        {
+            return (Guardian)this.getProperty("guardian");
+        }
+
+        public void setGuardian(Guardian guardian)
         {
             this.setProperty("guardian", guardian);
         }

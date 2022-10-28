@@ -18,108 +18,109 @@ namespace Arbor.Model
         public const string REFERENCE_DATE_RANGE_PERIOD_COUNT = "referenceDateRangePeriodCount";
         public const string REFERENCE_DATE_RANGE_PERIOD_OFFSET = "referenceDateRangePeriodOffset";
 
-        public CustomReportScope ()
+        public CustomReportScope()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public CustomReportScope (string resourceType = "CustomReportScope", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<CustomReportScope> query (SimpleQuery query = null)
+        public CustomReportScope(string resourceType = "CustomReportScope", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("CustomReportScope");
-        	RestGateway gateway = (RestGateway) CustomReportScope.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<CustomReportScope> customreportscopeCollection = new ModelCollection<CustomReportScope> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    customreportscopeCollection.add((CustomReportScope) model);
-        	}
-        
-        	return customreportscopeCollection;
+
         }
 
-        public static CustomReportScope retrieve (string id)
+
+        public static ModelCollection<CustomReportScope> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) CustomReportScope.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (CustomReportScope) gateway.retrieve(ResourceType.CUSTOM_REPORT_SCOPE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("CustomReportScope");
+            RestGateway gateway = (RestGateway)CustomReportScope.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<CustomReportScope> customreportscopeCollection = new ModelCollection<CustomReportScope>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                customreportscopeCollection.add((CustomReportScope)model);
+            }
+
+            return customreportscopeCollection;
         }
 
-        public CustomReport getCustomReport ()
+        public static CustomReportScope retrieve(string id)
         {
-            return (CustomReport) this.getProperty("customReport");
+            RestGateway gateway = (RestGateway)CustomReportScope.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (CustomReportScope)gateway.retrieve(ResourceType.CUSTOM_REPORT_SCOPE, id);
         }
 
-        public void setCustomReport (CustomReport customReport)
+        public CustomReport getCustomReport()
+        {
+            return (CustomReport)this.getProperty("customReport");
+        }
+
+        public void setCustomReport(CustomReport customReport)
         {
             this.setProperty("customReport", customReport);
         }
 
-        public int getBaseEntityType ()
+        public int getBaseEntityType()
         {
             return Convert.ToInt32(this.getProperty("baseEntityType"));
         }
 
-        public void setBaseEntityType (int baseEntityType)
+        public void setBaseEntityType(int baseEntityType)
         {
             this.setProperty("baseEntityType", baseEntityType);
         }
 
-        public DateTime getReferenceDateRangeStartDate ()
+        public DateTime getReferenceDateRangeStartDate()
         {
             return Convert.ToDateTime(this.getProperty("referenceDateRangeStartDate"));
         }
 
-        public void setReferenceDateRangeStartDate (DateTime referenceDateRangeStartDate)
+        public void setReferenceDateRangeStartDate(DateTime referenceDateRangeStartDate)
         {
             this.setProperty("referenceDateRangeStartDate", referenceDateRangeStartDate);
         }
 
-        public DateTime getReferenceDateRangeEndDate ()
+        public DateTime getReferenceDateRangeEndDate()
         {
             return Convert.ToDateTime(this.getProperty("referenceDateRangeEndDate"));
         }
 
-        public void setReferenceDateRangeEndDate (DateTime referenceDateRangeEndDate)
+        public void setReferenceDateRangeEndDate(DateTime referenceDateRangeEndDate)
         {
             this.setProperty("referenceDateRangeEndDate", referenceDateRangeEndDate);
         }
 
-        public string getReferenceDateRangePeriodType ()
+        public string getReferenceDateRangePeriodType()
         {
             return this.getProperty("referenceDateRangePeriodType").ToString();
         }
 
-        public void setReferenceDateRangePeriodType (string referenceDateRangePeriodType)
+        public void setReferenceDateRangePeriodType(string referenceDateRangePeriodType)
         {
             this.setProperty("referenceDateRangePeriodType", referenceDateRangePeriodType);
         }
 
-        public int getReferenceDateRangePeriodCount ()
+        public int getReferenceDateRangePeriodCount()
         {
             return Convert.ToInt32(this.getProperty("referenceDateRangePeriodCount"));
         }
 
-        public void setReferenceDateRangePeriodCount (int referenceDateRangePeriodCount)
+        public void setReferenceDateRangePeriodCount(int referenceDateRangePeriodCount)
         {
             this.setProperty("referenceDateRangePeriodCount", referenceDateRangePeriodCount);
         }
 
-        public int getReferenceDateRangePeriodOffset ()
+        public int getReferenceDateRangePeriodOffset()
         {
             return Convert.ToInt32(this.getProperty("referenceDateRangePeriodOffset"));
         }
 
-        public void setReferenceDateRangePeriodOffset (int referenceDateRangePeriodOffset)
+        public void setReferenceDateRangePeriodOffset(int referenceDateRangePeriodOffset)
         {
             this.setProperty("referenceDateRangePeriodOffset", referenceDateRangePeriodOffset);
         }

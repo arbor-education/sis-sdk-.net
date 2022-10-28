@@ -22,148 +22,149 @@ namespace Arbor.Model
         public const string ACADEMIC_YEARS_OFFSET = "academicYearsOffset";
         public const string HAS_SAME_ATTAINMENT_TARGET_FOR_EACH_PERIOD = "hasSameAttainmentTargetForEachPeriod";
 
-        public SchoolProgressTargetRule ()
+        public SchoolProgressTargetRule()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public SchoolProgressTargetRule (string resourceType = "SchoolProgressTargetRule", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<SchoolProgressTargetRule> query (SimpleQuery query = null)
+        public SchoolProgressTargetRule(string resourceType = "SchoolProgressTargetRule", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("SchoolProgressTargetRule");
-        	RestGateway gateway = (RestGateway) SchoolProgressTargetRule.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<SchoolProgressTargetRule> schoolprogresstargetruleCollection = new ModelCollection<SchoolProgressTargetRule> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    schoolprogresstargetruleCollection.add((SchoolProgressTargetRule) model);
-        	}
-        
-        	return schoolprogresstargetruleCollection;
+
         }
 
-        public static SchoolProgressTargetRule retrieve (string id)
+
+        public static ModelCollection<SchoolProgressTargetRule> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) SchoolProgressTargetRule.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (SchoolProgressTargetRule) gateway.retrieve(ResourceType.SCHOOL_PROGRESS_TARGET_RULE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("SchoolProgressTargetRule");
+            RestGateway gateway = (RestGateway)SchoolProgressTargetRule.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<SchoolProgressTargetRule> schoolprogresstargetruleCollection = new ModelCollection<SchoolProgressTargetRule>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                schoolprogresstargetruleCollection.add((SchoolProgressTargetRule)model);
+            }
+
+            return schoolprogresstargetruleCollection;
         }
 
-        public string getRuleName ()
+        public static SchoolProgressTargetRule retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)SchoolProgressTargetRule.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (SchoolProgressTargetRule)gateway.retrieve(ResourceType.SCHOOL_PROGRESS_TARGET_RULE, id);
+        }
+
+        public string getRuleName()
         {
             return this.getProperty("ruleName").ToString();
         }
 
-        public void setRuleName (string ruleName)
+        public void setRuleName(string ruleName)
         {
             this.setProperty("ruleName", ruleName);
         }
 
-        public Assessment getAssessment ()
+        public Assessment getAssessment()
         {
-            return (Assessment) this.getProperty("assessment");
+            return (Assessment)this.getProperty("assessment");
         }
 
-        public void setAssessment (Assessment assessment)
+        public void setAssessment(Assessment assessment)
         {
             this.setProperty("assessment", assessment);
         }
 
-        public DateTime getEffectiveDate ()
+        public DateTime getEffectiveDate()
         {
             return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
-        public void setEffectiveDate (DateTime effectiveDate)
+        public void setEffectiveDate(DateTime effectiveDate)
         {
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }
 
-        public CurriculumGrade getCurriculumGrade ()
+        public CurriculumGrade getCurriculumGrade()
         {
-            return (CurriculumGrade) this.getProperty("curriculumGrade");
+            return (CurriculumGrade)this.getProperty("curriculumGrade");
         }
 
-        public void setCurriculumGrade (CurriculumGrade curriculumGrade)
+        public void setCurriculumGrade(CurriculumGrade curriculumGrade)
         {
             this.setProperty("curriculumGrade", curriculumGrade);
         }
 
-        public int getTermNumber ()
+        public int getTermNumber()
         {
             return Convert.ToInt32(this.getProperty("termNumber"));
         }
 
-        public void setTermNumber (int termNumber)
+        public void setTermNumber(int termNumber)
         {
             this.setProperty("termNumber", termNumber);
         }
 
-        public float getProgressAmount ()
+        public float getProgressAmount()
         {
-            return (float) this.getProperty("progressAmount");
+            return (float)this.getProperty("progressAmount");
         }
 
-        public void setProgressAmount (float progressAmount)
+        public void setProgressAmount(float progressAmount)
         {
             this.setProperty("progressAmount", progressAmount);
         }
 
-        public string getProgressAmountUnit ()
+        public string getProgressAmountUnit()
         {
             return this.getProperty("progressAmountUnit").ToString();
         }
 
-        public void setProgressAmountUnit (string progressAmountUnit)
+        public void setProgressAmountUnit(string progressAmountUnit)
         {
             this.setProperty("progressAmountUnit", progressAmountUnit);
         }
 
-        public string getProgressReferenceMarkType ()
+        public string getProgressReferenceMarkType()
         {
             return this.getProperty("progressReferenceMarkType").ToString();
         }
 
-        public void setProgressReferenceMarkType (string progressReferenceMarkType)
+        public void setProgressReferenceMarkType(string progressReferenceMarkType)
         {
             this.setProperty("progressReferenceMarkType", progressReferenceMarkType);
         }
 
-        public int getAcademicYearsOffset ()
+        public int getAcademicYearsOffset()
         {
             return Convert.ToInt32(this.getProperty("academicYearsOffset"));
         }
 
-        public void setAcademicYearsOffset (int academicYearsOffset)
+        public void setAcademicYearsOffset(int academicYearsOffset)
         {
             this.setProperty("academicYearsOffset", academicYearsOffset);
         }
 
-        public bool getHasSameAttainmentTargetForEachPeriod ()
+        public bool getHasSameAttainmentTargetForEachPeriod()
         {
             return Convert.ToBoolean(this.getProperty("hasSameAttainmentTargetForEachPeriod"));
         }
 
-        public void setHasSameAttainmentTargetForEachPeriod (bool hasSameAttainmentTargetForEachPeriod)
+        public void setHasSameAttainmentTargetForEachPeriod(bool hasSameAttainmentTargetForEachPeriod)
         {
             this.setProperty("hasSameAttainmentTargetForEachPeriod", hasSameAttainmentTargetForEachPeriod);
         }

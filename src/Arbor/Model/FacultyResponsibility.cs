@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
 
-        public FacultyResponsibility ()
+        public FacultyResponsibility()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public FacultyResponsibility (string resourceType = "FacultyResponsibility", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<FacultyResponsibility> query (SimpleQuery query = null)
+        public FacultyResponsibility(string resourceType = "FacultyResponsibility", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("FacultyResponsibility");
-        	RestGateway gateway = (RestGateway) FacultyResponsibility.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<FacultyResponsibility> facultyresponsibilityCollection = new ModelCollection<FacultyResponsibility> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    facultyresponsibilityCollection.add((FacultyResponsibility) model);
-        	}
-        
-        	return facultyresponsibilityCollection;
+
         }
 
-        public static FacultyResponsibility retrieve (string id)
+
+        public static ModelCollection<FacultyResponsibility> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) FacultyResponsibility.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (FacultyResponsibility) gateway.retrieve(ResourceType.FACULTY_RESPONSIBILITY, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("FacultyResponsibility");
+            RestGateway gateway = (RestGateway)FacultyResponsibility.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<FacultyResponsibility> facultyresponsibilityCollection = new ModelCollection<FacultyResponsibility>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                facultyresponsibilityCollection.add((FacultyResponsibility)model);
+            }
+
+            return facultyresponsibilityCollection;
         }
 
-        public FacultyResponsibilityType getFacultyResponsibilityType ()
+        public static FacultyResponsibility retrieve(string id)
         {
-            return (FacultyResponsibilityType) this.getProperty("facultyResponsibilityType");
+            RestGateway gateway = (RestGateway)FacultyResponsibility.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (FacultyResponsibility)gateway.retrieve(ResourceType.FACULTY_RESPONSIBILITY, id);
         }
 
-        public void setFacultyResponsibilityType (FacultyResponsibilityType facultyResponsibilityType)
+        public FacultyResponsibilityType getFacultyResponsibilityType()
+        {
+            return (FacultyResponsibilityType)this.getProperty("facultyResponsibilityType");
+        }
+
+        public void setFacultyResponsibilityType(FacultyResponsibilityType facultyResponsibilityType)
         {
             this.setProperty("facultyResponsibilityType", facultyResponsibilityType);
         }
 
-        public Faculty getFaculty ()
+        public Faculty getFaculty()
         {
-            return (Faculty) this.getProperty("faculty");
+            return (Faculty)this.getProperty("faculty");
         }
 
-        public void setFaculty (Faculty faculty)
+        public void setFaculty(Faculty faculty)
         {
             this.setProperty("faculty", faculty);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDate()
         {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }

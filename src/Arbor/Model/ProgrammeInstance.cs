@@ -18,108 +18,109 @@ namespace Arbor.Model
         public const string PLACEHOLDER_QUALIFICATION_AWARD_REFERENCE = "placeholderQualificationAwardReference";
         public const string PROGRAMME_CLASSIFICATION = "programmeClassification";
 
-        public ProgrammeInstance ()
+        public ProgrammeInstance()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public ProgrammeInstance (string resourceType = "ProgrammeInstance", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<ProgrammeInstance> query (SimpleQuery query = null)
+        public ProgrammeInstance(string resourceType = "ProgrammeInstance", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("ProgrammeInstance");
-        	RestGateway gateway = (RestGateway) ProgrammeInstance.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<ProgrammeInstance> programmeinstanceCollection = new ModelCollection<ProgrammeInstance> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    programmeinstanceCollection.add((ProgrammeInstance) model);
-        	}
-        
-        	return programmeinstanceCollection;
+
         }
 
-        public static ProgrammeInstance retrieve (string id)
+
+        public static ModelCollection<ProgrammeInstance> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) ProgrammeInstance.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (ProgrammeInstance) gateway.retrieve(ResourceType.PROGRAMME_INSTANCE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("ProgrammeInstance");
+            RestGateway gateway = (RestGateway)ProgrammeInstance.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<ProgrammeInstance> programmeinstanceCollection = new ModelCollection<ProgrammeInstance>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                programmeinstanceCollection.add((ProgrammeInstance)model);
+            }
+
+            return programmeinstanceCollection;
         }
 
-        public Programme getProgramme ()
+        public static ProgrammeInstance retrieve(string id)
         {
-            return (Programme) this.getProperty("programme");
+            RestGateway gateway = (RestGateway)ProgrammeInstance.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (ProgrammeInstance)gateway.retrieve(ResourceType.PROGRAMME_INSTANCE, id);
         }
 
-        public void setProgramme (Programme programme)
+        public Programme getProgramme()
+        {
+            return (Programme)this.getProperty("programme");
+        }
+
+        public void setProgramme(Programme programme)
         {
             this.setProperty("programme", programme);
         }
 
-        public string getName ()
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }
 
-        public DateTime getPlannedStartDate ()
+        public DateTime getPlannedStartDate()
         {
             return Convert.ToDateTime(this.getProperty("plannedStartDate"));
         }
 
-        public void setPlannedStartDate (DateTime plannedStartDate)
+        public void setPlannedStartDate(DateTime plannedStartDate)
         {
             this.setProperty("plannedStartDate", plannedStartDate);
         }
 
-        public DateTime getPlannedEndDate ()
+        public DateTime getPlannedEndDate()
         {
             return Convert.ToDateTime(this.getProperty("plannedEndDate"));
         }
 
-        public void setPlannedEndDate (DateTime plannedEndDate)
+        public void setPlannedEndDate(DateTime plannedEndDate)
         {
             this.setProperty("plannedEndDate", plannedEndDate);
         }
 
-        public string getPlaceholderQualificationAwardName ()
+        public string getPlaceholderQualificationAwardName()
         {
             return this.getProperty("placeholderQualificationAwardName").ToString();
         }
 
-        public void setPlaceholderQualificationAwardName (string placeholderQualificationAwardName)
+        public void setPlaceholderQualificationAwardName(string placeholderQualificationAwardName)
         {
             this.setProperty("placeholderQualificationAwardName", placeholderQualificationAwardName);
         }
 
-        public string getPlaceholderQualificationAwardReference ()
+        public string getPlaceholderQualificationAwardReference()
         {
             return this.getProperty("placeholderQualificationAwardReference").ToString();
         }
 
-        public void setPlaceholderQualificationAwardReference (string placeholderQualificationAwardReference)
+        public void setPlaceholderQualificationAwardReference(string placeholderQualificationAwardReference)
         {
             this.setProperty("placeholderQualificationAwardReference", placeholderQualificationAwardReference);
         }
 
-        public ProgrammeClassification getProgrammeClassification ()
+        public ProgrammeClassification getProgrammeClassification()
         {
-            return (ProgrammeClassification) this.getProperty("programmeClassification");
+            return (ProgrammeClassification)this.getProperty("programmeClassification");
         }
 
-        public void setProgrammeClassification (ProgrammeClassification programmeClassification)
+        public void setProgrammeClassification(ProgrammeClassification programmeClassification)
         {
             this.setProperty("programmeClassification", programmeClassification);
         }

@@ -22,148 +22,149 @@ namespace Arbor.Model
         public const string EVIDENCE_RECORDED_DATE = "evidenceRecordedDate";
         public const string COMMENT = "comment";
 
-        public PersonCheck ()
+        public PersonCheck()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public PersonCheck (string resourceType = "PersonCheck", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<PersonCheck> query (SimpleQuery query = null)
+        public PersonCheck(string resourceType = "PersonCheck", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("PersonCheck");
-        	RestGateway gateway = (RestGateway) PersonCheck.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<PersonCheck> personcheckCollection = new ModelCollection<PersonCheck> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    personcheckCollection.add((PersonCheck) model);
-        	}
-        
-        	return personcheckCollection;
+
         }
 
-        public static PersonCheck retrieve (string id)
+
+        public static ModelCollection<PersonCheck> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) PersonCheck.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (PersonCheck) gateway.retrieve(ResourceType.PERSON_CHECK, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("PersonCheck");
+            RestGateway gateway = (RestGateway)PersonCheck.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<PersonCheck> personcheckCollection = new ModelCollection<PersonCheck>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                personcheckCollection.add((PersonCheck)model);
+            }
+
+            return personcheckCollection;
         }
 
-        public ModelBase getPerson ()
+        public static PersonCheck retrieve(string id)
         {
-            return (ModelBase) this.getProperty("person");
+            RestGateway gateway = (RestGateway)PersonCheck.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (PersonCheck)gateway.retrieve(ResourceType.PERSON_CHECK, id);
         }
 
-        public void setPerson (ModelBase person)
+        public ModelBase getPerson()
+        {
+            return (ModelBase)this.getProperty("person");
+        }
+
+        public void setPerson(ModelBase person)
         {
             this.setProperty("person", person);
         }
 
-        public CheckType getCheckType ()
+        public CheckType getCheckType()
         {
-            return (CheckType) this.getProperty("checkType");
+            return (CheckType)this.getProperty("checkType");
         }
 
-        public void setCheckType (CheckType checkType)
+        public void setCheckType(CheckType checkType)
         {
             this.setProperty("checkType", checkType);
         }
 
-        public CheckClearanceLevel getCheckClearanceLevel ()
+        public CheckClearanceLevel getCheckClearanceLevel()
         {
-            return (CheckClearanceLevel) this.getProperty("checkClearanceLevel");
+            return (CheckClearanceLevel)this.getProperty("checkClearanceLevel");
         }
 
-        public void setCheckClearanceLevel (CheckClearanceLevel checkClearanceLevel)
+        public void setCheckClearanceLevel(CheckClearanceLevel checkClearanceLevel)
         {
             this.setProperty("checkClearanceLevel", checkClearanceLevel);
         }
 
-        public DateTime getRequestedDate ()
+        public DateTime getRequestedDate()
         {
             return Convert.ToDateTime(this.getProperty("requestedDate"));
         }
 
-        public void setRequestedDate (DateTime requestedDate)
+        public void setRequestedDate(DateTime requestedDate)
         {
             this.setProperty("requestedDate", requestedDate);
         }
 
-        public DateTime getReturnedDate ()
+        public DateTime getReturnedDate()
         {
             return Convert.ToDateTime(this.getProperty("returnedDate"));
         }
 
-        public void setReturnedDate (DateTime returnedDate)
+        public void setReturnedDate(DateTime returnedDate)
         {
             this.setProperty("returnedDate", returnedDate);
         }
 
-        public DateTime getExpiryDate ()
+        public DateTime getExpiryDate()
         {
             return Convert.ToDateTime(this.getProperty("expiryDate"));
         }
 
-        public void setExpiryDate (DateTime expiryDate)
+        public void setExpiryDate(DateTime expiryDate)
         {
             this.setProperty("expiryDate", expiryDate);
         }
 
-        public string getReferenceNumber ()
+        public string getReferenceNumber()
         {
             return this.getProperty("referenceNumber").ToString();
         }
 
-        public void setReferenceNumber (string referenceNumber)
+        public void setReferenceNumber(string referenceNumber)
         {
             this.setProperty("referenceNumber", referenceNumber);
         }
 
-        public DateTime getAuthenticatedDate ()
+        public DateTime getAuthenticatedDate()
         {
             return Convert.ToDateTime(this.getProperty("authenticatedDate"));
         }
 
-        public void setAuthenticatedDate (DateTime authenticatedDate)
+        public void setAuthenticatedDate(DateTime authenticatedDate)
         {
             this.setProperty("authenticatedDate", authenticatedDate);
         }
 
-        public Staff getAuthenticatedByStaff ()
+        public Staff getAuthenticatedByStaff()
         {
-            return (Staff) this.getProperty("authenticatedByStaff");
+            return (Staff)this.getProperty("authenticatedByStaff");
         }
 
-        public void setAuthenticatedByStaff (Staff authenticatedByStaff)
+        public void setAuthenticatedByStaff(Staff authenticatedByStaff)
         {
             this.setProperty("authenticatedByStaff", authenticatedByStaff);
         }
 
-        public DateTime getEvidenceRecordedDate ()
+        public DateTime getEvidenceRecordedDate()
         {
             return Convert.ToDateTime(this.getProperty("evidenceRecordedDate"));
         }
 
-        public void setEvidenceRecordedDate (DateTime evidenceRecordedDate)
+        public void setEvidenceRecordedDate(DateTime evidenceRecordedDate)
         {
             this.setProperty("evidenceRecordedDate", evidenceRecordedDate);
         }
 
-        public string getComment ()
+        public string getComment()
         {
             return this.getProperty("comment").ToString();
         }
 
-        public void setComment (string comment)
+        public void setComment(string comment)
         {
             this.setProperty("comment", comment);
         }

@@ -16,88 +16,89 @@ namespace Arbor.Model
         public const string REVIEW = "review";
         public const string RECOMMENDATIONS = "recommendations";
 
-        public InterventionReview ()
+        public InterventionReview()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public InterventionReview (string resourceType = "InterventionReview", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<InterventionReview> query (SimpleQuery query = null)
+        public InterventionReview(string resourceType = "InterventionReview", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("InterventionReview");
-        	RestGateway gateway = (RestGateway) InterventionReview.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<InterventionReview> interventionreviewCollection = new ModelCollection<InterventionReview> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    interventionreviewCollection.add((InterventionReview) model);
-        	}
-        
-        	return interventionreviewCollection;
+
         }
 
-        public static InterventionReview retrieve (string id)
+
+        public static ModelCollection<InterventionReview> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) InterventionReview.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (InterventionReview) gateway.retrieve(ResourceType.INTERVENTION_REVIEW, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("InterventionReview");
+            RestGateway gateway = (RestGateway)InterventionReview.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<InterventionReview> interventionreviewCollection = new ModelCollection<InterventionReview>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                interventionreviewCollection.add((InterventionReview)model);
+            }
+
+            return interventionreviewCollection;
         }
 
-        public Intervention getIntervention ()
+        public static InterventionReview retrieve(string id)
         {
-            return (Intervention) this.getProperty("intervention");
+            RestGateway gateway = (RestGateway)InterventionReview.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (InterventionReview)gateway.retrieve(ResourceType.INTERVENTION_REVIEW, id);
         }
 
-        public void setIntervention (Intervention intervention)
+        public Intervention getIntervention()
+        {
+            return (Intervention)this.getProperty("intervention");
+        }
+
+        public void setIntervention(Intervention intervention)
         {
             this.setProperty("intervention", intervention);
         }
 
-        public DateTime getReviewDueDate ()
+        public DateTime getReviewDueDate()
         {
             return Convert.ToDateTime(this.getProperty("reviewDueDate"));
         }
 
-        public void setReviewDueDate (DateTime reviewDueDate)
+        public void setReviewDueDate(DateTime reviewDueDate)
         {
             this.setProperty("reviewDueDate", reviewDueDate);
         }
 
-        public DateTime getReviewCompletedDate ()
+        public DateTime getReviewCompletedDate()
         {
             return Convert.ToDateTime(this.getProperty("reviewCompletedDate"));
         }
 
-        public void setReviewCompletedDate (DateTime reviewCompletedDate)
+        public void setReviewCompletedDate(DateTime reviewCompletedDate)
         {
             this.setProperty("reviewCompletedDate", reviewCompletedDate);
         }
 
-        public string getReview ()
+        public string getReview()
         {
             return this.getProperty("review").ToString();
         }
 
-        public void setReview (string review)
+        public void setReview(string review)
         {
             this.setProperty("review", review);
         }
 
-        public string getRecommendations ()
+        public string getRecommendations()
         {
             return this.getProperty("recommendations").ToString();
         }
 
-        public void setRecommendations (string recommendations)
+        public void setRecommendations(string recommendations)
         {
             this.setProperty("recommendations", recommendations);
         }

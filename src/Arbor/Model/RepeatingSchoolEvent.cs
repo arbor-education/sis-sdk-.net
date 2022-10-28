@@ -16,88 +16,89 @@ namespace Arbor.Model
         public const string NARRATIVE = "narrative";
         public const string COVER_REQUIRED = "coverRequired";
 
-        public RepeatingSchoolEvent ()
+        public RepeatingSchoolEvent()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public RepeatingSchoolEvent (string resourceType = "RepeatingSchoolEvent", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<RepeatingSchoolEvent> query (SimpleQuery query = null)
+        public RepeatingSchoolEvent(string resourceType = "RepeatingSchoolEvent", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("RepeatingSchoolEvent");
-        	RestGateway gateway = (RestGateway) RepeatingSchoolEvent.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<RepeatingSchoolEvent> repeatingschooleventCollection = new ModelCollection<RepeatingSchoolEvent> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    repeatingschooleventCollection.add((RepeatingSchoolEvent) model);
-        	}
-        
-        	return repeatingschooleventCollection;
+
         }
 
-        public static RepeatingSchoolEvent retrieve (string id)
+
+        public static ModelCollection<RepeatingSchoolEvent> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) RepeatingSchoolEvent.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (RepeatingSchoolEvent) gateway.retrieve(ResourceType.REPEATING_SCHOOL_EVENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("RepeatingSchoolEvent");
+            RestGateway gateway = (RestGateway)RepeatingSchoolEvent.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<RepeatingSchoolEvent> repeatingschooleventCollection = new ModelCollection<RepeatingSchoolEvent>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                repeatingschooleventCollection.add((RepeatingSchoolEvent)model);
+            }
+
+            return repeatingschooleventCollection;
         }
 
-        public AcademicYear getAcademicYear ()
+        public static RepeatingSchoolEvent retrieve(string id)
         {
-            return (AcademicYear) this.getProperty("academicYear");
+            RestGateway gateway = (RestGateway)RepeatingSchoolEvent.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (RepeatingSchoolEvent)gateway.retrieve(ResourceType.REPEATING_SCHOOL_EVENT, id);
         }
 
-        public void setAcademicYear (AcademicYear academicYear)
+        public AcademicYear getAcademicYear()
+        {
+            return (AcademicYear)this.getProperty("academicYear");
+        }
+
+        public void setAcademicYear(AcademicYear academicYear)
         {
             this.setProperty("academicYear", academicYear);
         }
 
-        public SchoolEventType getSchoolEventType ()
+        public SchoolEventType getSchoolEventType()
         {
-            return (SchoolEventType) this.getProperty("schoolEventType");
+            return (SchoolEventType)this.getProperty("schoolEventType");
         }
 
-        public void setSchoolEventType (SchoolEventType schoolEventType)
+        public void setSchoolEventType(SchoolEventType schoolEventType)
         {
             this.setProperty("schoolEventType", schoolEventType);
         }
 
-        public string getSchoolEventName ()
+        public string getSchoolEventName()
         {
             return this.getProperty("schoolEventName").ToString();
         }
 
-        public void setSchoolEventName (string schoolEventName)
+        public void setSchoolEventName(string schoolEventName)
         {
             this.setProperty("schoolEventName", schoolEventName);
         }
 
-        public string getNarrative ()
+        public string getNarrative()
         {
             return this.getProperty("narrative").ToString();
         }
 
-        public void setNarrative (string narrative)
+        public void setNarrative(string narrative)
         {
             this.setProperty("narrative", narrative);
         }
 
-        public bool getCoverRequired ()
+        public bool getCoverRequired()
         {
             return Convert.ToBoolean(this.getProperty("coverRequired"));
         }
 
-        public void setCoverRequired (bool coverRequired)
+        public void setCoverRequired(bool coverRequired)
         {
             this.setProperty("coverRequired", coverRequired);
         }

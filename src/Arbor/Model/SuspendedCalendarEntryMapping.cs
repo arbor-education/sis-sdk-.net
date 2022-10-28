@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string SUSPENDED_OBJECT = "suspendedObject";
         public const string SUSPENDED_EVENT = "suspendedEvent";
 
-        public SuspendedCalendarEntryMapping ()
+        public SuspendedCalendarEntryMapping()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public SuspendedCalendarEntryMapping (string resourceType = "SuspendedCalendarEntryMapping", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<SuspendedCalendarEntryMapping> query (SimpleQuery query = null)
+        public SuspendedCalendarEntryMapping(string resourceType = "SuspendedCalendarEntryMapping", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("SuspendedCalendarEntryMapping");
-        	RestGateway gateway = (RestGateway) SuspendedCalendarEntryMapping.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<SuspendedCalendarEntryMapping> suspendedcalendarentrymappingCollection = new ModelCollection<SuspendedCalendarEntryMapping> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    suspendedcalendarentrymappingCollection.add((SuspendedCalendarEntryMapping) model);
-        	}
-        
-        	return suspendedcalendarentrymappingCollection;
+
         }
 
-        public static SuspendedCalendarEntryMapping retrieve (string id)
+
+        public static ModelCollection<SuspendedCalendarEntryMapping> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) SuspendedCalendarEntryMapping.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (SuspendedCalendarEntryMapping) gateway.retrieve(ResourceType.SUSPENDED_CALENDAR_ENTRY_MAPPING, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("SuspendedCalendarEntryMapping");
+            RestGateway gateway = (RestGateway)SuspendedCalendarEntryMapping.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<SuspendedCalendarEntryMapping> suspendedcalendarentrymappingCollection = new ModelCollection<SuspendedCalendarEntryMapping>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                suspendedcalendarentrymappingCollection.add((SuspendedCalendarEntryMapping)model);
+            }
+
+            return suspendedcalendarentrymappingCollection;
         }
 
-        public ModelBase getSuspendedObject ()
+        public static SuspendedCalendarEntryMapping retrieve(string id)
         {
-            return (ModelBase) this.getProperty("suspendedObject");
+            RestGateway gateway = (RestGateway)SuspendedCalendarEntryMapping.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (SuspendedCalendarEntryMapping)gateway.retrieve(ResourceType.SUSPENDED_CALENDAR_ENTRY_MAPPING, id);
         }
 
-        public void setSuspendedObject (ModelBase suspendedObject)
+        public ModelBase getSuspendedObject()
+        {
+            return (ModelBase)this.getProperty("suspendedObject");
+        }
+
+        public void setSuspendedObject(ModelBase suspendedObject)
         {
             this.setProperty("suspendedObject", suspendedObject);
         }
 
-        public ModelBase getSuspendedEvent ()
+        public ModelBase getSuspendedEvent()
         {
-            return (ModelBase) this.getProperty("suspendedEvent");
+            return (ModelBase)this.getProperty("suspendedEvent");
         }
 
-        public void setSuspendedEvent (ModelBase suspendedEvent)
+        public void setSuspendedEvent(ModelBase suspendedEvent)
         {
             this.setProperty("suspendedEvent", suspendedEvent);
         }

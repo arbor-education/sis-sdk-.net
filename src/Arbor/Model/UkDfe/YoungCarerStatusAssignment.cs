@@ -15,78 +15,79 @@ namespace Arbor.Model.UkDfe
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
 
-        public YoungCarerStatusAssignment ()
+        public YoungCarerStatusAssignment()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public YoungCarerStatusAssignment (string resourceType = "YoungCarerStatusAssignment", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<YoungCarerStatusAssignment> query (SimpleQuery query = null)
+        public YoungCarerStatusAssignment(string resourceType = "YoungCarerStatusAssignment", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("UkDfe_YoungCarerStatusAssignment");
-        	RestGateway gateway = (RestGateway) YoungCarerStatusAssignment.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<YoungCarerStatusAssignment> youngcarerstatusassignmentCollection = new ModelCollection<YoungCarerStatusAssignment> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    youngcarerstatusassignmentCollection.add((YoungCarerStatusAssignment) model);
-        	}
-        
-        	return youngcarerstatusassignmentCollection;
+
         }
 
-        public static YoungCarerStatusAssignment retrieve (string id)
+
+        public static ModelCollection<YoungCarerStatusAssignment> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) YoungCarerStatusAssignment.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (YoungCarerStatusAssignment) gateway.retrieve(ResourceType.UK_DFE_YOUNG_CARER_STATUS_ASSIGNMENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("UkDfe_YoungCarerStatusAssignment");
+            RestGateway gateway = (RestGateway)YoungCarerStatusAssignment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<YoungCarerStatusAssignment> youngcarerstatusassignmentCollection = new ModelCollection<YoungCarerStatusAssignment>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                youngcarerstatusassignmentCollection.add((YoungCarerStatusAssignment)model);
+            }
+
+            return youngcarerstatusassignmentCollection;
         }
 
-        public Student getStudent ()
+        public static YoungCarerStatusAssignment retrieve(string id)
         {
-            return (Student) this.getProperty("student");
+            RestGateway gateway = (RestGateway)YoungCarerStatusAssignment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (YoungCarerStatusAssignment)gateway.retrieve(ResourceType.UK_DFE_YOUNG_CARER_STATUS_ASSIGNMENT, id);
         }
 
-        public void setStudent (Student student)
+        public Student getStudent()
+        {
+            return (Student)this.getProperty("student");
+        }
+
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public string getIdentifiedBy ()
+        public string getIdentifiedBy()
         {
             return this.getProperty("identifiedBy").ToString();
         }
 
-        public void setIdentifiedBy (string identifiedBy)
+        public void setIdentifiedBy(string identifiedBy)
         {
             this.setProperty("identifiedBy", identifiedBy);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDate()
         {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }

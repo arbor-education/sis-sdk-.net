@@ -29,218 +29,219 @@ namespace Arbor.Model
         public const string VALID_FROM_DATE = "validFromDate";
         public const string VALID_UNTIL_DATE = "validUntilDate";
 
-        public Curriculum ()
+        public Curriculum()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public Curriculum (string resourceType = "Curriculum", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<Curriculum> query (SimpleQuery query = null)
+        public Curriculum(string resourceType = "Curriculum", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("Curriculum");
-        	RestGateway gateway = (RestGateway) Curriculum.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<Curriculum> curriculumCollection = new ModelCollection<Curriculum> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    curriculumCollection.add((Curriculum) model);
-        	}
-        
-        	return curriculumCollection;
+
         }
 
-        public static Curriculum retrieve (string id)
+
+        public static ModelCollection<Curriculum> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) Curriculum.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (Curriculum) gateway.retrieve(ResourceType.CURRICULUM, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("Curriculum");
+            RestGateway gateway = (RestGateway)Curriculum.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<Curriculum> curriculumCollection = new ModelCollection<Curriculum>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                curriculumCollection.add((Curriculum)model);
+            }
+
+            return curriculumCollection;
         }
 
-        public string getCode ()
+        public static Curriculum retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)Curriculum.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (Curriculum)gateway.retrieve(ResourceType.CURRICULUM, id);
+        }
+
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }
 
-        public string getName ()
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }
 
-        public string getShortName ()
+        public string getShortName()
         {
             return this.getProperty("shortName").ToString();
         }
 
-        public void setShortName (string shortName)
+        public void setShortName(string shortName)
         {
             this.setProperty("shortName", shortName);
         }
 
-        public GradePointScale getGradePointScale ()
+        public GradePointScale getGradePointScale()
         {
-            return (GradePointScale) this.getProperty("gradePointScale");
+            return (GradePointScale)this.getProperty("gradePointScale");
         }
 
-        public void setGradePointScale (GradePointScale gradePointScale)
+        public void setGradePointScale(GradePointScale gradePointScale)
         {
             this.setProperty("gradePointScale", gradePointScale);
         }
 
-        public CurriculumTier getCurriculumTier ()
+        public CurriculumTier getCurriculumTier()
         {
-            return (CurriculumTier) this.getProperty("curriculumTier");
+            return (CurriculumTier)this.getProperty("curriculumTier");
         }
 
-        public void setCurriculumTier (CurriculumTier curriculumTier)
+        public void setCurriculumTier(CurriculumTier curriculumTier)
         {
             this.setProperty("curriculumTier", curriculumTier);
         }
 
-        public CurriculumGrade getLowerCurriculumGrade ()
+        public CurriculumGrade getLowerCurriculumGrade()
         {
-            return (CurriculumGrade) this.getProperty("lowerCurriculumGrade");
+            return (CurriculumGrade)this.getProperty("lowerCurriculumGrade");
         }
 
-        public void setLowerCurriculumGrade (CurriculumGrade lowerCurriculumGrade)
+        public void setLowerCurriculumGrade(CurriculumGrade lowerCurriculumGrade)
         {
             this.setProperty("lowerCurriculumGrade", lowerCurriculumGrade);
         }
 
-        public CurriculumGrade getUpperCurriculumGrade ()
+        public CurriculumGrade getUpperCurriculumGrade()
         {
-            return (CurriculumGrade) this.getProperty("upperCurriculumGrade");
+            return (CurriculumGrade)this.getProperty("upperCurriculumGrade");
         }
 
-        public void setUpperCurriculumGrade (CurriculumGrade upperCurriculumGrade)
+        public void setUpperCurriculumGrade(CurriculumGrade upperCurriculumGrade)
         {
             this.setProperty("upperCurriculumGrade", upperCurriculumGrade);
         }
 
-        public float getLowerGradePointScaleValue ()
+        public float getLowerGradePointScaleValue()
         {
-            return (float) this.getProperty("lowerGradePointScaleValue");
+            return (float)this.getProperty("lowerGradePointScaleValue");
         }
 
-        public void setLowerGradePointScaleValue (float lowerGradePointScaleValue)
+        public void setLowerGradePointScaleValue(float lowerGradePointScaleValue)
         {
             this.setProperty("lowerGradePointScaleValue", lowerGradePointScaleValue);
         }
 
-        public Grade getLowerBenchmarkGrade ()
+        public Grade getLowerBenchmarkGrade()
         {
-            return (Grade) this.getProperty("lowerBenchmarkGrade");
+            return (Grade)this.getProperty("lowerBenchmarkGrade");
         }
 
-        public void setLowerBenchmarkGrade (Grade lowerBenchmarkGrade)
+        public void setLowerBenchmarkGrade(Grade lowerBenchmarkGrade)
         {
             this.setProperty("lowerBenchmarkGrade", lowerBenchmarkGrade);
         }
 
-        public float getUpperGradePointScaleValue ()
+        public float getUpperGradePointScaleValue()
         {
-            return (float) this.getProperty("upperGradePointScaleValue");
+            return (float)this.getProperty("upperGradePointScaleValue");
         }
 
-        public void setUpperGradePointScaleValue (float upperGradePointScaleValue)
+        public void setUpperGradePointScaleValue(float upperGradePointScaleValue)
         {
             this.setProperty("upperGradePointScaleValue", upperGradePointScaleValue);
         }
 
-        public Grade getUpperBenchmarkGrade ()
+        public Grade getUpperBenchmarkGrade()
         {
-            return (Grade) this.getProperty("upperBenchmarkGrade");
+            return (Grade)this.getProperty("upperBenchmarkGrade");
         }
 
-        public void setUpperBenchmarkGrade (Grade upperBenchmarkGrade)
+        public void setUpperBenchmarkGrade(Grade upperBenchmarkGrade)
         {
             this.setProperty("upperBenchmarkGrade", upperBenchmarkGrade);
         }
 
-        public AchievementLevelSet getAchievementLevelSet ()
+        public AchievementLevelSet getAchievementLevelSet()
         {
-            return (AchievementLevelSet) this.getProperty("achievementLevelSet");
+            return (AchievementLevelSet)this.getProperty("achievementLevelSet");
         }
 
-        public void setAchievementLevelSet (AchievementLevelSet achievementLevelSet)
+        public void setAchievementLevelSet(AchievementLevelSet achievementLevelSet)
         {
             this.setProperty("achievementLevelSet", achievementLevelSet);
         }
 
-        public Assessment getAssessment ()
+        public Assessment getAssessment()
         {
-            return (Assessment) this.getProperty("assessment");
+            return (Assessment)this.getProperty("assessment");
         }
 
-        public void setAssessment (Assessment assessment)
+        public void setAssessment(Assessment assessment)
         {
             this.setProperty("assessment", assessment);
         }
 
-        public Subject getSubject ()
+        public Subject getSubject()
         {
-            return (Subject) this.getProperty("subject");
+            return (Subject)this.getProperty("subject");
         }
 
-        public void setSubject (Subject subject)
+        public void setSubject(Subject subject)
         {
             this.setProperty("subject", subject);
         }
 
-        public DateTime getValidFromDate ()
+        public DateTime getValidFromDate()
         {
             return Convert.ToDateTime(this.getProperty("validFromDate"));
         }
 
-        public void setValidFromDate (DateTime validFromDate)
+        public void setValidFromDate(DateTime validFromDate)
         {
             this.setProperty("validFromDate", validFromDate);
         }
 
-        public DateTime getValidUntilDate ()
+        public DateTime getValidUntilDate()
         {
             return Convert.ToDateTime(this.getProperty("validUntilDate"));
         }
 
-        public void setValidUntilDate (DateTime validUntilDate)
+        public void setValidUntilDate(DateTime validUntilDate)
         {
             this.setProperty("validUntilDate", validUntilDate);
         }

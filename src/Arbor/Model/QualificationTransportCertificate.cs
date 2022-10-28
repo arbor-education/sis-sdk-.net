@@ -18,108 +18,109 @@ namespace Arbor.Model
         public const string END_DATE = "endDate";
         public const string LAST_SEQUENCE_NUMBER = "lastSequenceNumber";
 
-        public QualificationTransportCertificate ()
+        public QualificationTransportCertificate()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public QualificationTransportCertificate (string resourceType = "QualificationTransportCertificate", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<QualificationTransportCertificate> query (SimpleQuery query = null)
+        public QualificationTransportCertificate(string resourceType = "QualificationTransportCertificate", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("QualificationTransportCertificate");
-        	RestGateway gateway = (RestGateway) QualificationTransportCertificate.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<QualificationTransportCertificate> qualificationtransportcertificateCollection = new ModelCollection<QualificationTransportCertificate> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    qualificationtransportcertificateCollection.add((QualificationTransportCertificate) model);
-        	}
-        
-        	return qualificationtransportcertificateCollection;
+
         }
 
-        public static QualificationTransportCertificate retrieve (string id)
+
+        public static ModelCollection<QualificationTransportCertificate> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) QualificationTransportCertificate.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (QualificationTransportCertificate) gateway.retrieve(ResourceType.QUALIFICATION_TRANSPORT_CERTIFICATE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("QualificationTransportCertificate");
+            RestGateway gateway = (RestGateway)QualificationTransportCertificate.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<QualificationTransportCertificate> qualificationtransportcertificateCollection = new ModelCollection<QualificationTransportCertificate>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                qualificationtransportcertificateCollection.add((QualificationTransportCertificate)model);
+            }
+
+            return qualificationtransportcertificateCollection;
         }
 
-        public AwardingOrganization getAwardingOrganization ()
+        public static QualificationTransportCertificate retrieve(string id)
         {
-            return (AwardingOrganization) this.getProperty("awardingOrganization");
+            RestGateway gateway = (RestGateway)QualificationTransportCertificate.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (QualificationTransportCertificate)gateway.retrieve(ResourceType.QUALIFICATION_TRANSPORT_CERTIFICATE, id);
         }
 
-        public void setAwardingOrganization (AwardingOrganization awardingOrganization)
+        public AwardingOrganization getAwardingOrganization()
+        {
+            return (AwardingOrganization)this.getProperty("awardingOrganization");
+        }
+
+        public void setAwardingOrganization(AwardingOrganization awardingOrganization)
         {
             this.setProperty("awardingOrganization", awardingOrganization);
         }
 
-        public EducationalInstitution getEducationalInstitution ()
+        public EducationalInstitution getEducationalInstitution()
         {
-            return (EducationalInstitution) this.getProperty("educationalInstitution");
+            return (EducationalInstitution)this.getProperty("educationalInstitution");
         }
 
-        public void setEducationalInstitution (EducationalInstitution educationalInstitution)
+        public void setEducationalInstitution(EducationalInstitution educationalInstitution)
         {
             this.setProperty("educationalInstitution", educationalInstitution);
         }
 
-        public string getPrivateKey ()
+        public string getPrivateKey()
         {
             return this.getProperty("privateKey").ToString();
         }
 
-        public void setPrivateKey (string privateKey)
+        public void setPrivateKey(string privateKey)
         {
             this.setProperty("privateKey", privateKey);
         }
 
-        public string getPublicKey ()
+        public string getPublicKey()
         {
             return this.getProperty("publicKey").ToString();
         }
 
-        public void setPublicKey (string publicKey)
+        public void setPublicKey(string publicKey)
         {
             this.setProperty("publicKey", publicKey);
         }
 
-        public DateTime getEffectiveDate ()
+        public DateTime getEffectiveDate()
         {
             return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
-        public void setEffectiveDate (DateTime effectiveDate)
+        public void setEffectiveDate(DateTime effectiveDate)
         {
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }
 
-        public int getLastSequenceNumber ()
+        public int getLastSequenceNumber()
         {
             return Convert.ToInt32(this.getProperty("lastSequenceNumber"));
         }
 
-        public void setLastSequenceNumber (int lastSequenceNumber)
+        public void setLastSequenceNumber(int lastSequenceNumber)
         {
             this.setProperty("lastSequenceNumber", lastSequenceNumber);
         }

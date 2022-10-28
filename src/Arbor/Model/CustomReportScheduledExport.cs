@@ -23,158 +23,159 @@ namespace Arbor.Model
         public const string SCHEDULED_TIME = "scheduledTime";
         public const string SCHEDULED_FROM_DATE = "scheduledFromDate";
 
-        public CustomReportScheduledExport ()
+        public CustomReportScheduledExport()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public CustomReportScheduledExport (string resourceType = "CustomReportScheduledExport", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<CustomReportScheduledExport> query (SimpleQuery query = null)
+        public CustomReportScheduledExport(string resourceType = "CustomReportScheduledExport", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("CustomReportScheduledExport");
-        	RestGateway gateway = (RestGateway) CustomReportScheduledExport.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<CustomReportScheduledExport> customreportscheduledexportCollection = new ModelCollection<CustomReportScheduledExport> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    customreportscheduledexportCollection.add((CustomReportScheduledExport) model);
-        	}
-        
-        	return customreportscheduledexportCollection;
+
         }
 
-        public static CustomReportScheduledExport retrieve (string id)
+
+        public static ModelCollection<CustomReportScheduledExport> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) CustomReportScheduledExport.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (CustomReportScheduledExport) gateway.retrieve(ResourceType.CUSTOM_REPORT_SCHEDULED_EXPORT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("CustomReportScheduledExport");
+            RestGateway gateway = (RestGateway)CustomReportScheduledExport.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<CustomReportScheduledExport> customreportscheduledexportCollection = new ModelCollection<CustomReportScheduledExport>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                customreportscheduledexportCollection.add((CustomReportScheduledExport)model);
+            }
+
+            return customreportscheduledexportCollection;
         }
 
-        public string getEmailAddress ()
+        public static CustomReportScheduledExport retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)CustomReportScheduledExport.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (CustomReportScheduledExport)gateway.retrieve(ResourceType.CUSTOM_REPORT_SCHEDULED_EXPORT, id);
+        }
+
+        public string getEmailAddress()
         {
             return this.getProperty("emailAddress").ToString();
         }
 
-        public void setEmailAddress (string emailAddress)
+        public void setEmailAddress(string emailAddress)
         {
             this.setProperty("emailAddress", emailAddress);
         }
 
-        public string getSubject ()
+        public string getSubject()
         {
             return this.getProperty("subject").ToString();
         }
 
-        public void setSubject (string subject)
+        public void setSubject(string subject)
         {
             this.setProperty("subject", subject);
         }
 
-        public string getBody ()
+        public string getBody()
         {
             return this.getProperty("body").ToString();
         }
 
-        public void setBody (string body)
+        public void setBody(string body)
         {
             this.setProperty("body", body);
         }
 
-        public bool getExecuteOnMonday ()
+        public bool getExecuteOnMonday()
         {
             return Convert.ToBoolean(this.getProperty("executeOnMonday"));
         }
 
-        public void setExecuteOnMonday (bool executeOnMonday)
+        public void setExecuteOnMonday(bool executeOnMonday)
         {
             this.setProperty("executeOnMonday", executeOnMonday);
         }
 
-        public bool getExecuteOnTuesday ()
+        public bool getExecuteOnTuesday()
         {
             return Convert.ToBoolean(this.getProperty("executeOnTuesday"));
         }
 
-        public void setExecuteOnTuesday (bool executeOnTuesday)
+        public void setExecuteOnTuesday(bool executeOnTuesday)
         {
             this.setProperty("executeOnTuesday", executeOnTuesday);
         }
 
-        public bool getExecuteOnWednesday ()
+        public bool getExecuteOnWednesday()
         {
             return Convert.ToBoolean(this.getProperty("executeOnWednesday"));
         }
 
-        public void setExecuteOnWednesday (bool executeOnWednesday)
+        public void setExecuteOnWednesday(bool executeOnWednesday)
         {
             this.setProperty("executeOnWednesday", executeOnWednesday);
         }
 
-        public bool getExecuteOnThursday ()
+        public bool getExecuteOnThursday()
         {
             return Convert.ToBoolean(this.getProperty("executeOnThursday"));
         }
 
-        public void setExecuteOnThursday (bool executeOnThursday)
+        public void setExecuteOnThursday(bool executeOnThursday)
         {
             this.setProperty("executeOnThursday", executeOnThursday);
         }
 
-        public bool getExecuteOnFriday ()
+        public bool getExecuteOnFriday()
         {
             return Convert.ToBoolean(this.getProperty("executeOnFriday"));
         }
 
-        public void setExecuteOnFriday (bool executeOnFriday)
+        public void setExecuteOnFriday(bool executeOnFriday)
         {
             this.setProperty("executeOnFriday", executeOnFriday);
         }
 
-        public bool getExecuteOnSaturday ()
+        public bool getExecuteOnSaturday()
         {
             return Convert.ToBoolean(this.getProperty("executeOnSaturday"));
         }
 
-        public void setExecuteOnSaturday (bool executeOnSaturday)
+        public void setExecuteOnSaturday(bool executeOnSaturday)
         {
             this.setProperty("executeOnSaturday", executeOnSaturday);
         }
 
-        public bool getExecuteOnSunday ()
+        public bool getExecuteOnSunday()
         {
             return Convert.ToBoolean(this.getProperty("executeOnSunday"));
         }
 
-        public void setExecuteOnSunday (bool executeOnSunday)
+        public void setExecuteOnSunday(bool executeOnSunday)
         {
             this.setProperty("executeOnSunday", executeOnSunday);
         }
 
-        public string getScheduledTime ()
+        public string getScheduledTime()
         {
             return this.getProperty("scheduledTime").ToString();
         }
 
-        public void setScheduledTime (string scheduledTime)
+        public void setScheduledTime(string scheduledTime)
         {
             this.setProperty("scheduledTime", scheduledTime);
         }
 
-        public DateTime getScheduledFromDate ()
+        public DateTime getScheduledFromDate()
         {
             return Convert.ToDateTime(this.getProperty("scheduledFromDate"));
         }
 
-        public void setScheduledFromDate (DateTime scheduledFromDate)
+        public void setScheduledFromDate(DateTime scheduledFromDate)
         {
             this.setProperty("scheduledFromDate", scheduledFromDate);
         }

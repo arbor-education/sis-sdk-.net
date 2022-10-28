@@ -21,138 +21,139 @@ namespace Arbor.Model
         public const string RECEIVED_DATETIME = "receivedDatetime";
         public const string FAILED_DATETIME = "failedDatetime";
 
-        public EmailRecipient ()
+        public EmailRecipient()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public EmailRecipient (string resourceType = "EmailRecipient", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<EmailRecipient> query (SimpleQuery query = null)
+        public EmailRecipient(string resourceType = "EmailRecipient", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("EmailRecipient");
-        	RestGateway gateway = (RestGateway) EmailRecipient.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<EmailRecipient> emailrecipientCollection = new ModelCollection<EmailRecipient> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    emailrecipientCollection.add((EmailRecipient) model);
-        	}
-        
-        	return emailrecipientCollection;
+
         }
 
-        public static EmailRecipient retrieve (string id)
+
+        public static ModelCollection<EmailRecipient> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) EmailRecipient.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (EmailRecipient) gateway.retrieve(ResourceType.EMAIL_RECIPIENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("EmailRecipient");
+            RestGateway gateway = (RestGateway)EmailRecipient.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<EmailRecipient> emailrecipientCollection = new ModelCollection<EmailRecipient>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                emailrecipientCollection.add((EmailRecipient)model);
+            }
+
+            return emailrecipientCollection;
         }
 
-        public Email getEmail ()
+        public static EmailRecipient retrieve(string id)
         {
-            return (Email) this.getProperty("email");
+            RestGateway gateway = (RestGateway)EmailRecipient.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (EmailRecipient)gateway.retrieve(ResourceType.EMAIL_RECIPIENT, id);
         }
 
-        public void setEmail (Email email)
+        public Email getEmail()
+        {
+            return (Email)this.getProperty("email");
+        }
+
+        public void setEmail(Email email)
         {
             this.setProperty("email", email);
         }
 
-        public string getRecipientType ()
+        public string getRecipientType()
         {
             return this.getProperty("recipientType").ToString();
         }
 
-        public void setRecipientType (string recipientType)
+        public void setRecipientType(string recipientType)
         {
             this.setProperty("recipientType", recipientType);
         }
 
-        public string getRecipientName ()
+        public string getRecipientName()
         {
             return this.getProperty("recipientName").ToString();
         }
 
-        public void setRecipientName (string recipientName)
+        public void setRecipientName(string recipientName)
         {
             this.setProperty("recipientName", recipientName);
         }
 
-        public string getRecipientRawEmail ()
+        public string getRecipientRawEmail()
         {
             return this.getProperty("recipientRawEmail").ToString();
         }
 
-        public void setRecipientRawEmail (string recipientRawEmail)
+        public void setRecipientRawEmail(string recipientRawEmail)
         {
             this.setProperty("recipientRawEmail", recipientRawEmail);
         }
 
-        public EmailAddress getEmailAddress ()
+        public EmailAddress getEmailAddress()
         {
-            return (EmailAddress) this.getProperty("emailAddress");
+            return (EmailAddress)this.getProperty("emailAddress");
         }
 
-        public void setEmailAddress (EmailAddress emailAddress)
+        public void setEmailAddress(EmailAddress emailAddress)
         {
             this.setProperty("emailAddress", emailAddress);
         }
 
-        public ModelBase getRecipient ()
+        public ModelBase getRecipient()
         {
-            return (ModelBase) this.getProperty("recipient");
+            return (ModelBase)this.getProperty("recipient");
         }
 
-        public void setRecipient (ModelBase recipient)
+        public void setRecipient(ModelBase recipient)
         {
             this.setProperty("recipient", recipient);
         }
 
-        public MessageDraftRecipient getDraftRecipient ()
+        public MessageDraftRecipient getDraftRecipient()
         {
-            return (MessageDraftRecipient) this.getProperty("draftRecipient");
+            return (MessageDraftRecipient)this.getProperty("draftRecipient");
         }
 
-        public void setDraftRecipient (MessageDraftRecipient draftRecipient)
+        public void setDraftRecipient(MessageDraftRecipient draftRecipient)
         {
             this.setProperty("draftRecipient", draftRecipient);
         }
 
-        public int getRecipientIndex ()
+        public int getRecipientIndex()
         {
             return Convert.ToInt32(this.getProperty("recipientIndex"));
         }
 
-        public void setRecipientIndex (int recipientIndex)
+        public void setRecipientIndex(int recipientIndex)
         {
             this.setProperty("recipientIndex", recipientIndex);
         }
 
-        public DateTime getReceivedDatetime ()
+        public DateTime getReceivedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("receivedDatetime"));
         }
 
-        public void setReceivedDatetime (DateTime receivedDatetime)
+        public void setReceivedDatetime(DateTime receivedDatetime)
         {
             this.setProperty("receivedDatetime", receivedDatetime);
         }
 
-        public DateTime getFailedDatetime ()
+        public DateTime getFailedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("failedDatetime"));
         }
 
-        public void setFailedDatetime (DateTime failedDatetime)
+        public void setFailedDatetime(DateTime failedDatetime)
         {
             this.setProperty("failedDatetime", failedDatetime);
         }

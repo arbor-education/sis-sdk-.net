@@ -16,88 +16,89 @@ namespace Arbor.Model
         public const string END_DATE = "endDate";
         public const string TIMETABLE_CYCLE_LENGTH = "timetableCycleLength";
 
-        public AcademicYear ()
+        public AcademicYear()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AcademicYear (string resourceType = "AcademicYear", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AcademicYear> query (SimpleQuery query = null)
+        public AcademicYear(string resourceType = "AcademicYear", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AcademicYear");
-        	RestGateway gateway = (RestGateway) AcademicYear.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AcademicYear> academicyearCollection = new ModelCollection<AcademicYear> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    academicyearCollection.add((AcademicYear) model);
-        	}
-        
-        	return academicyearCollection;
+
         }
 
-        public static AcademicYear retrieve (string id)
+
+        public static ModelCollection<AcademicYear> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AcademicYear.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AcademicYear) gateway.retrieve(ResourceType.ACADEMIC_YEAR, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AcademicYear");
+            RestGateway gateway = (RestGateway)AcademicYear.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AcademicYear> academicyearCollection = new ModelCollection<AcademicYear>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                academicyearCollection.add((AcademicYear)model);
+            }
+
+            return academicyearCollection;
         }
 
-        public string getAcademicYearName ()
+        public static AcademicYear retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)AcademicYear.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AcademicYear)gateway.retrieve(ResourceType.ACADEMIC_YEAR, id);
+        }
+
+        public string getAcademicYearName()
         {
             return this.getProperty("academicYearName").ToString();
         }
 
-        public void setAcademicYearName (string academicYearName)
+        public void setAcademicYearName(string academicYearName)
         {
             this.setProperty("academicYearName", academicYearName);
         }
 
-        public string getCode ()
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDate()
         {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }
 
-        public int getTimetableCycleLength ()
+        public int getTimetableCycleLength()
         {
             return Convert.ToInt32(this.getProperty("timetableCycleLength"));
         }
 
-        public void setTimetableCycleLength (int timetableCycleLength)
+        public void setTimetableCycleLength(int timetableCycleLength)
         {
             this.setProperty("timetableCycleLength", timetableCycleLength);
         }

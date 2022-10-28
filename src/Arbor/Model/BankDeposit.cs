@@ -18,108 +18,109 @@ namespace Arbor.Model
         public const string DEPOSIT_REFERENCE = "depositReference";
         public const string REFUND_ADJUSTMENT_AMOUNT = "refundAdjustmentAmount";
 
-        public BankDeposit ()
+        public BankDeposit()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public BankDeposit (string resourceType = "BankDeposit", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<BankDeposit> query (SimpleQuery query = null)
+        public BankDeposit(string resourceType = "BankDeposit", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("BankDeposit");
-        	RestGateway gateway = (RestGateway) BankDeposit.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<BankDeposit> bankdepositCollection = new ModelCollection<BankDeposit> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    bankdepositCollection.add((BankDeposit) model);
-        	}
-        
-        	return bankdepositCollection;
+
         }
 
-        public static BankDeposit retrieve (string id)
+
+        public static ModelCollection<BankDeposit> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) BankDeposit.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (BankDeposit) gateway.retrieve(ResourceType.BANK_DEPOSIT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("BankDeposit");
+            RestGateway gateway = (RestGateway)BankDeposit.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<BankDeposit> bankdepositCollection = new ModelCollection<BankDeposit>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                bankdepositCollection.add((BankDeposit)model);
+            }
+
+            return bankdepositCollection;
         }
 
-        public BankAccount getBankAccount ()
+        public static BankDeposit retrieve(string id)
         {
-            return (BankAccount) this.getProperty("bankAccount");
+            RestGateway gateway = (RestGateway)BankDeposit.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (BankDeposit)gateway.retrieve(ResourceType.BANK_DEPOSIT, id);
         }
 
-        public void setBankAccount (BankAccount bankAccount)
+        public BankAccount getBankAccount()
+        {
+            return (BankAccount)this.getProperty("bankAccount");
+        }
+
+        public void setBankAccount(BankAccount bankAccount)
         {
             this.setProperty("bankAccount", bankAccount);
         }
 
-        public Staff getPaidByStaff ()
+        public Staff getPaidByStaff()
         {
-            return (Staff) this.getProperty("paidByStaff");
+            return (Staff)this.getProperty("paidByStaff");
         }
 
-        public void setPaidByStaff (Staff paidByStaff)
+        public void setPaidByStaff(Staff paidByStaff)
         {
             this.setProperty("paidByStaff", paidByStaff);
         }
 
-        public DateTime getDepositDatetime ()
+        public DateTime getDepositDatetime()
         {
             return Convert.ToDateTime(this.getProperty("depositDatetime"));
         }
 
-        public void setDepositDatetime (DateTime depositDatetime)
+        public void setDepositDatetime(DateTime depositDatetime)
         {
             this.setProperty("depositDatetime", depositDatetime);
         }
 
-        public string getTotalChequeAmount ()
+        public string getTotalChequeAmount()
         {
             return this.getProperty("totalChequeAmount").ToString();
         }
 
-        public void setTotalChequeAmount (string totalChequeAmount)
+        public void setTotalChequeAmount(string totalChequeAmount)
         {
             this.setProperty("totalChequeAmount", totalChequeAmount);
         }
 
-        public string getTotalCashAmount ()
+        public string getTotalCashAmount()
         {
             return this.getProperty("totalCashAmount").ToString();
         }
 
-        public void setTotalCashAmount (string totalCashAmount)
+        public void setTotalCashAmount(string totalCashAmount)
         {
             this.setProperty("totalCashAmount", totalCashAmount);
         }
 
-        public string getDepositReference ()
+        public string getDepositReference()
         {
             return this.getProperty("depositReference").ToString();
         }
 
-        public void setDepositReference (string depositReference)
+        public void setDepositReference(string depositReference)
         {
             this.setProperty("depositReference", depositReference);
         }
 
-        public string getRefundAdjustmentAmount ()
+        public string getRefundAdjustmentAmount()
         {
             return this.getProperty("refundAdjustmentAmount").ToString();
         }
 
-        public void setRefundAdjustmentAmount (string refundAdjustmentAmount)
+        public void setRefundAdjustmentAmount(string refundAdjustmentAmount)
         {
             this.setProperty("refundAdjustmentAmount", refundAdjustmentAmount);
         }

@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string DATA_ORDER = "dataOrder";
         public const string DESCRIPTION = "description";
 
-        public StaffContractPostEndReason ()
+        public StaffContractPostEndReason()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public StaffContractPostEndReason (string resourceType = "StaffContractPostEndReason", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<StaffContractPostEndReason> query (SimpleQuery query = null)
+        public StaffContractPostEndReason(string resourceType = "StaffContractPostEndReason", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("StaffContractPostEndReason");
-        	RestGateway gateway = (RestGateway) StaffContractPostEndReason.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<StaffContractPostEndReason> staffcontractpostendreasonCollection = new ModelCollection<StaffContractPostEndReason> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    staffcontractpostendreasonCollection.add((StaffContractPostEndReason) model);
-        	}
-        
-        	return staffcontractpostendreasonCollection;
+
         }
 
-        public static StaffContractPostEndReason retrieve (string id)
+
+        public static ModelCollection<StaffContractPostEndReason> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) StaffContractPostEndReason.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (StaffContractPostEndReason) gateway.retrieve(ResourceType.STAFF_CONTRACT_POST_END_REASON, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("StaffContractPostEndReason");
+            RestGateway gateway = (RestGateway)StaffContractPostEndReason.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<StaffContractPostEndReason> staffcontractpostendreasonCollection = new ModelCollection<StaffContractPostEndReason>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                staffcontractpostendreasonCollection.add((StaffContractPostEndReason)model);
+            }
+
+            return staffcontractpostendreasonCollection;
         }
 
-        public string getCode ()
+        public static StaffContractPostEndReason retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)StaffContractPostEndReason.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (StaffContractPostEndReason)gateway.retrieve(ResourceType.STAFF_CONTRACT_POST_END_REASON, id);
+        }
+
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }
 
-        public string getDescription ()
+        public string getDescription()
         {
             return this.getProperty("description").ToString();
         }
 
-        public void setDescription (string description)
+        public void setDescription(string description)
         {
             this.setProperty("description", description);
         }

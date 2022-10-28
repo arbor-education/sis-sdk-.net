@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
 
-        public BursaryPaymentManualCriterion ()
+        public BursaryPaymentManualCriterion()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public BursaryPaymentManualCriterion (string resourceType = "BursaryPaymentManualCriterion", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<BursaryPaymentManualCriterion> query (SimpleQuery query = null)
+        public BursaryPaymentManualCriterion(string resourceType = "BursaryPaymentManualCriterion", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("BursaryPaymentManualCriterion");
-        	RestGateway gateway = (RestGateway) BursaryPaymentManualCriterion.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<BursaryPaymentManualCriterion> bursarypaymentmanualcriterionCollection = new ModelCollection<BursaryPaymentManualCriterion> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    bursarypaymentmanualcriterionCollection.add((BursaryPaymentManualCriterion) model);
-        	}
-        
-        	return bursarypaymentmanualcriterionCollection;
+
         }
 
-        public static BursaryPaymentManualCriterion retrieve (string id)
+
+        public static ModelCollection<BursaryPaymentManualCriterion> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) BursaryPaymentManualCriterion.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (BursaryPaymentManualCriterion) gateway.retrieve(ResourceType.BURSARY_PAYMENT_MANUAL_CRITERION, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("BursaryPaymentManualCriterion");
+            RestGateway gateway = (RestGateway)BursaryPaymentManualCriterion.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<BursaryPaymentManualCriterion> bursarypaymentmanualcriterionCollection = new ModelCollection<BursaryPaymentManualCriterion>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                bursarypaymentmanualcriterionCollection.add((BursaryPaymentManualCriterion)model);
+            }
+
+            return bursarypaymentmanualcriterionCollection;
         }
 
-        public BursaryType getBursaryType ()
+        public static BursaryPaymentManualCriterion retrieve(string id)
         {
-            return (BursaryType) this.getProperty("bursaryType");
+            RestGateway gateway = (RestGateway)BursaryPaymentManualCriterion.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (BursaryPaymentManualCriterion)gateway.retrieve(ResourceType.BURSARY_PAYMENT_MANUAL_CRITERION, id);
         }
 
-        public void setBursaryType (BursaryType bursaryType)
+        public BursaryType getBursaryType()
+        {
+            return (BursaryType)this.getProperty("bursaryType");
+        }
+
+        public void setBursaryType(BursaryType bursaryType)
         {
             this.setProperty("bursaryType", bursaryType);
         }
 
-        public string getName ()
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDate()
         {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }

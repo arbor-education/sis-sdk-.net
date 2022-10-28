@@ -12,48 +12,49 @@ namespace Arbor.Model.UkDfe
         protected new string resourceType = ResourceType.UK_DFE_IN_CARE_STATUS_ASSIGNMENT;
         public const string RESPONSIBLE_LOCAL_AUTHORITY = "responsibleLocalAuthority";
 
-        public InCareStatusAssignment ()
+        public InCareStatusAssignment()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public InCareStatusAssignment (string resourceType = "InCareStatusAssignment", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<InCareStatusAssignment> query (SimpleQuery query = null)
+        public InCareStatusAssignment(string resourceType = "InCareStatusAssignment", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("UkDfe_InCareStatusAssignment");
-        	RestGateway gateway = (RestGateway) InCareStatusAssignment.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<InCareStatusAssignment> incarestatusassignmentCollection = new ModelCollection<InCareStatusAssignment> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    incarestatusassignmentCollection.add((InCareStatusAssignment) model);
-        	}
-        
-        	return incarestatusassignmentCollection;
+
         }
 
-        public static InCareStatusAssignment retrieve (string id)
+
+        public static ModelCollection<InCareStatusAssignment> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) InCareStatusAssignment.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (InCareStatusAssignment) gateway.retrieve(ResourceType.UK_DFE_IN_CARE_STATUS_ASSIGNMENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("UkDfe_InCareStatusAssignment");
+            RestGateway gateway = (RestGateway)InCareStatusAssignment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<InCareStatusAssignment> incarestatusassignmentCollection = new ModelCollection<InCareStatusAssignment>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                incarestatusassignmentCollection.add((InCareStatusAssignment)model);
+            }
+
+            return incarestatusassignmentCollection;
         }
 
-        public LocalAuthority getResponsibleLocalAuthority ()
+        public static InCareStatusAssignment retrieve(string id)
         {
-            return (LocalAuthority) this.getProperty("responsibleLocalAuthority");
+            RestGateway gateway = (RestGateway)InCareStatusAssignment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (InCareStatusAssignment)gateway.retrieve(ResourceType.UK_DFE_IN_CARE_STATUS_ASSIGNMENT, id);
         }
 
-        public void setResponsibleLocalAuthority (LocalAuthority responsibleLocalAuthority)
+        public LocalAuthority getResponsibleLocalAuthority()
+        {
+            return (LocalAuthority)this.getProperty("responsibleLocalAuthority");
+        }
+
+        public void setResponsibleLocalAuthority(LocalAuthority responsibleLocalAuthority)
         {
             this.setProperty("responsibleLocalAuthority", responsibleLocalAuthority);
         }

@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string EMERGENCY_ALERT = "emergencyAlert";
         public const string STUDENT = "student";
 
-        public EmergencyAlertStudent ()
+        public EmergencyAlertStudent()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public EmergencyAlertStudent (string resourceType = "EmergencyAlertStudent", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<EmergencyAlertStudent> query (SimpleQuery query = null)
+        public EmergencyAlertStudent(string resourceType = "EmergencyAlertStudent", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("EmergencyAlertStudent");
-        	RestGateway gateway = (RestGateway) EmergencyAlertStudent.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<EmergencyAlertStudent> emergencyalertstudentCollection = new ModelCollection<EmergencyAlertStudent> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    emergencyalertstudentCollection.add((EmergencyAlertStudent) model);
-        	}
-        
-        	return emergencyalertstudentCollection;
+
         }
 
-        public static EmergencyAlertStudent retrieve (string id)
+
+        public static ModelCollection<EmergencyAlertStudent> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) EmergencyAlertStudent.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (EmergencyAlertStudent) gateway.retrieve(ResourceType.EMERGENCY_ALERT_STUDENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("EmergencyAlertStudent");
+            RestGateway gateway = (RestGateway)EmergencyAlertStudent.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<EmergencyAlertStudent> emergencyalertstudentCollection = new ModelCollection<EmergencyAlertStudent>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                emergencyalertstudentCollection.add((EmergencyAlertStudent)model);
+            }
+
+            return emergencyalertstudentCollection;
         }
 
-        public EmergencyAlert getEmergencyAlert ()
+        public static EmergencyAlertStudent retrieve(string id)
         {
-            return (EmergencyAlert) this.getProperty("emergencyAlert");
+            RestGateway gateway = (RestGateway)EmergencyAlertStudent.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (EmergencyAlertStudent)gateway.retrieve(ResourceType.EMERGENCY_ALERT_STUDENT, id);
         }
 
-        public void setEmergencyAlert (EmergencyAlert emergencyAlert)
+        public EmergencyAlert getEmergencyAlert()
+        {
+            return (EmergencyAlert)this.getProperty("emergencyAlert");
+        }
+
+        public void setEmergencyAlert(EmergencyAlert emergencyAlert)
         {
             this.setProperty("emergencyAlert", emergencyAlert);
         }
 
-        public Student getStudent ()
+        public Student getStudent()
         {
-            return (Student) this.getProperty("student");
+            return (Student)this.getProperty("student");
         }
 
-        public void setStudent (Student student)
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }

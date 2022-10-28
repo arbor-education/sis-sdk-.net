@@ -14,68 +14,69 @@ namespace Arbor.Model
         public const string SENDER = "sender";
         public const string ALLOW = "allow";
 
-        public EmailPermittedSender ()
+        public EmailPermittedSender()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public EmailPermittedSender (string resourceType = "EmailPermittedSender", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<EmailPermittedSender> query (SimpleQuery query = null)
+        public EmailPermittedSender(string resourceType = "EmailPermittedSender", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("EmailPermittedSender");
-        	RestGateway gateway = (RestGateway) EmailPermittedSender.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<EmailPermittedSender> emailpermittedsenderCollection = new ModelCollection<EmailPermittedSender> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    emailpermittedsenderCollection.add((EmailPermittedSender) model);
-        	}
-        
-        	return emailpermittedsenderCollection;
+
         }
 
-        public static EmailPermittedSender retrieve (string id)
+
+        public static ModelCollection<EmailPermittedSender> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) EmailPermittedSender.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (EmailPermittedSender) gateway.retrieve(ResourceType.EMAIL_PERMITTED_SENDER, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("EmailPermittedSender");
+            RestGateway gateway = (RestGateway)EmailPermittedSender.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<EmailPermittedSender> emailpermittedsenderCollection = new ModelCollection<EmailPermittedSender>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                emailpermittedsenderCollection.add((EmailPermittedSender)model);
+            }
+
+            return emailpermittedsenderCollection;
         }
 
-        public Staff getActionTaker ()
+        public static EmailPermittedSender retrieve(string id)
         {
-            return (Staff) this.getProperty("actionTaker");
+            RestGateway gateway = (RestGateway)EmailPermittedSender.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (EmailPermittedSender)gateway.retrieve(ResourceType.EMAIL_PERMITTED_SENDER, id);
         }
 
-        public void setActionTaker (Staff actionTaker)
+        public Staff getActionTaker()
+        {
+            return (Staff)this.getProperty("actionTaker");
+        }
+
+        public void setActionTaker(Staff actionTaker)
         {
             this.setProperty("actionTaker", actionTaker);
         }
 
-        public ModelBase getSender ()
+        public ModelBase getSender()
         {
-            return (ModelBase) this.getProperty("sender");
+            return (ModelBase)this.getProperty("sender");
         }
 
-        public void setSender (ModelBase sender)
+        public void setSender(ModelBase sender)
         {
             this.setProperty("sender", sender);
         }
 
-        public bool getAllow ()
+        public bool getAllow()
         {
             return Convert.ToBoolean(this.getProperty("allow"));
         }
 
-        public void setAllow (bool allow)
+        public void setAllow(bool allow)
         {
             this.setProperty("allow", allow);
         }

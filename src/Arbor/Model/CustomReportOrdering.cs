@@ -18,108 +18,109 @@ namespace Arbor.Model
         public const string TARGET_GROUPING = "targetGrouping";
         public const string CUSTOM_REPORT_COLUMN = "customReportColumn";
 
-        public CustomReportOrdering ()
+        public CustomReportOrdering()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public CustomReportOrdering (string resourceType = "CustomReportOrdering", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<CustomReportOrdering> query (SimpleQuery query = null)
+        public CustomReportOrdering(string resourceType = "CustomReportOrdering", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("CustomReportOrdering");
-        	RestGateway gateway = (RestGateway) CustomReportOrdering.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<CustomReportOrdering> customreportorderingCollection = new ModelCollection<CustomReportOrdering> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    customreportorderingCollection.add((CustomReportOrdering) model);
-        	}
-        
-        	return customreportorderingCollection;
+
         }
 
-        public static CustomReportOrdering retrieve (string id)
+
+        public static ModelCollection<CustomReportOrdering> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) CustomReportOrdering.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (CustomReportOrdering) gateway.retrieve(ResourceType.CUSTOM_REPORT_ORDERING, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("CustomReportOrdering");
+            RestGateway gateway = (RestGateway)CustomReportOrdering.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<CustomReportOrdering> customreportorderingCollection = new ModelCollection<CustomReportOrdering>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                customreportorderingCollection.add((CustomReportOrdering)model);
+            }
+
+            return customreportorderingCollection;
         }
 
-        public CustomReport getCustomReport ()
+        public static CustomReportOrdering retrieve(string id)
         {
-            return (CustomReport) this.getProperty("customReport");
+            RestGateway gateway = (RestGateway)CustomReportOrdering.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (CustomReportOrdering)gateway.retrieve(ResourceType.CUSTOM_REPORT_ORDERING, id);
         }
 
-        public void setCustomReport (CustomReport customReport)
+        public CustomReport getCustomReport()
+        {
+            return (CustomReport)this.getProperty("customReport");
+        }
+
+        public void setCustomReport(CustomReport customReport)
         {
             this.setProperty("customReport", customReport);
         }
 
-        public string getFieldClass ()
+        public string getFieldClass()
         {
             return this.getProperty("fieldClass").ToString();
         }
 
-        public void setFieldClass (string fieldClass)
+        public void setFieldClass(string fieldClass)
         {
             this.setProperty("fieldClass", fieldClass);
         }
 
-        public string getFieldParams ()
+        public string getFieldParams()
         {
             return this.getProperty("fieldParams").ToString();
         }
 
-        public void setFieldParams (string fieldParams)
+        public void setFieldParams(string fieldParams)
         {
             this.setProperty("fieldParams", fieldParams);
         }
 
-        public string getTransformationClass ()
+        public string getTransformationClass()
         {
             return this.getProperty("transformationClass").ToString();
         }
 
-        public void setTransformationClass (string transformationClass)
+        public void setTransformationClass(string transformationClass)
         {
             this.setProperty("transformationClass", transformationClass);
         }
 
-        public string getDirection ()
+        public string getDirection()
         {
             return this.getProperty("direction").ToString();
         }
 
-        public void setDirection (string direction)
+        public void setDirection(string direction)
         {
             this.setProperty("direction", direction);
         }
 
-        public CustomReportGrouping getTargetGrouping ()
+        public CustomReportGrouping getTargetGrouping()
         {
-            return (CustomReportGrouping) this.getProperty("targetGrouping");
+            return (CustomReportGrouping)this.getProperty("targetGrouping");
         }
 
-        public void setTargetGrouping (CustomReportGrouping targetGrouping)
+        public void setTargetGrouping(CustomReportGrouping targetGrouping)
         {
             this.setProperty("targetGrouping", targetGrouping);
         }
 
-        public CustomReportColumn getCustomReportColumn ()
+        public CustomReportColumn getCustomReportColumn()
         {
-            return (CustomReportColumn) this.getProperty("customReportColumn");
+            return (CustomReportColumn)this.getProperty("customReportColumn");
         }
 
-        public void setCustomReportColumn (CustomReportColumn customReportColumn)
+        public void setCustomReportColumn(CustomReportColumn customReportColumn)
         {
             this.setProperty("customReportColumn", customReportColumn);
         }

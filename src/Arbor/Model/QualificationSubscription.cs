@@ -14,68 +14,69 @@ namespace Arbor.Model
         public const string QUALIFICATION_ELEMENT_CODE = "qualificationElementCode";
         public const string HASH = "hash";
 
-        public QualificationSubscription ()
+        public QualificationSubscription()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public QualificationSubscription (string resourceType = "QualificationSubscription", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<QualificationSubscription> query (SimpleQuery query = null)
+        public QualificationSubscription(string resourceType = "QualificationSubscription", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("QualificationSubscription");
-        	RestGateway gateway = (RestGateway) QualificationSubscription.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<QualificationSubscription> qualificationsubscriptionCollection = new ModelCollection<QualificationSubscription> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    qualificationsubscriptionCollection.add((QualificationSubscription) model);
-        	}
-        
-        	return qualificationsubscriptionCollection;
+
         }
 
-        public static QualificationSubscription retrieve (string id)
+
+        public static ModelCollection<QualificationSubscription> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) QualificationSubscription.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (QualificationSubscription) gateway.retrieve(ResourceType.QUALIFICATION_SUBSCRIPTION, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("QualificationSubscription");
+            RestGateway gateway = (RestGateway)QualificationSubscription.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<QualificationSubscription> qualificationsubscriptionCollection = new ModelCollection<QualificationSubscription>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                qualificationsubscriptionCollection.add((QualificationSubscription)model);
+            }
+
+            return qualificationsubscriptionCollection;
         }
 
-        public string getQualificationElementType ()
+        public static QualificationSubscription retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)QualificationSubscription.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (QualificationSubscription)gateway.retrieve(ResourceType.QUALIFICATION_SUBSCRIPTION, id);
+        }
+
+        public string getQualificationElementType()
         {
             return this.getProperty("qualificationElementType").ToString();
         }
 
-        public void setQualificationElementType (string qualificationElementType)
+        public void setQualificationElementType(string qualificationElementType)
         {
             this.setProperty("qualificationElementType", qualificationElementType);
         }
 
-        public string getQualificationElementCode ()
+        public string getQualificationElementCode()
         {
             return this.getProperty("qualificationElementCode").ToString();
         }
 
-        public void setQualificationElementCode (string qualificationElementCode)
+        public void setQualificationElementCode(string qualificationElementCode)
         {
             this.setProperty("qualificationElementCode", qualificationElementCode);
         }
 
-        public string getHash ()
+        public string getHash()
         {
             return this.getProperty("hash").ToString();
         }
 
-        public void setHash (string hash)
+        public void setHash(string hash)
         {
             this.setProperty("hash", hash);
         }

@@ -17,98 +17,99 @@ namespace Arbor.Model
         public const string MEAL_PROVISION_PRICE_CATEGORY = "mealProvisionPriceCategory";
         public const string SOURCE = "source";
 
-        public MealSessionRegisterRecord ()
+        public MealSessionRegisterRecord()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public MealSessionRegisterRecord (string resourceType = "MealSessionRegisterRecord", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<MealSessionRegisterRecord> query (SimpleQuery query = null)
+        public MealSessionRegisterRecord(string resourceType = "MealSessionRegisterRecord", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("MealSessionRegisterRecord");
-        	RestGateway gateway = (RestGateway) MealSessionRegisterRecord.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<MealSessionRegisterRecord> mealsessionregisterrecordCollection = new ModelCollection<MealSessionRegisterRecord> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    mealsessionregisterrecordCollection.add((MealSessionRegisterRecord) model);
-        	}
-        
-        	return mealsessionregisterrecordCollection;
+
         }
 
-        public static MealSessionRegisterRecord retrieve (string id)
+
+        public static ModelCollection<MealSessionRegisterRecord> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) MealSessionRegisterRecord.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (MealSessionRegisterRecord) gateway.retrieve(ResourceType.MEAL_SESSION_REGISTER_RECORD, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("MealSessionRegisterRecord");
+            RestGateway gateway = (RestGateway)MealSessionRegisterRecord.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<MealSessionRegisterRecord> mealsessionregisterrecordCollection = new ModelCollection<MealSessionRegisterRecord>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                mealsessionregisterrecordCollection.add((MealSessionRegisterRecord)model);
+            }
+
+            return mealsessionregisterrecordCollection;
         }
 
-        public MealSession getMealSession ()
+        public static MealSessionRegisterRecord retrieve(string id)
         {
-            return (MealSession) this.getProperty("mealSession");
+            RestGateway gateway = (RestGateway)MealSessionRegisterRecord.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (MealSessionRegisterRecord)gateway.retrieve(ResourceType.MEAL_SESSION_REGISTER_RECORD, id);
         }
 
-        public void setMealSession (MealSession mealSession)
+        public MealSession getMealSession()
+        {
+            return (MealSession)this.getProperty("mealSession");
+        }
+
+        public void setMealSession(MealSession mealSession)
         {
             this.setProperty("mealSession", mealSession);
         }
 
-        public ModelBase getPerson ()
+        public ModelBase getPerson()
         {
-            return (ModelBase) this.getProperty("person");
+            return (ModelBase)this.getProperty("person");
         }
 
-        public void setPerson (ModelBase person)
+        public void setPerson(ModelBase person)
         {
             this.setProperty("person", person);
         }
 
-        public MealProvision getMealProvision ()
+        public MealProvision getMealProvision()
         {
-            return (MealProvision) this.getProperty("mealProvision");
+            return (MealProvision)this.getProperty("mealProvision");
         }
 
-        public void setMealProvision (MealProvision mealProvision)
+        public void setMealProvision(MealProvision mealProvision)
         {
             this.setProperty("mealProvision", mealProvision);
         }
 
-        public CustomerInvoice getCustomerInvoice ()
+        public CustomerInvoice getCustomerInvoice()
         {
-            return (CustomerInvoice) this.getProperty("customerInvoice");
+            return (CustomerInvoice)this.getProperty("customerInvoice");
         }
 
-        public void setCustomerInvoice (CustomerInvoice customerInvoice)
+        public void setCustomerInvoice(CustomerInvoice customerInvoice)
         {
             this.setProperty("customerInvoice", customerInvoice);
         }
 
-        public MealProvisionPriceCategory getMealProvisionPriceCategory ()
+        public MealProvisionPriceCategory getMealProvisionPriceCategory()
         {
-            return (MealProvisionPriceCategory) this.getProperty("mealProvisionPriceCategory");
+            return (MealProvisionPriceCategory)this.getProperty("mealProvisionPriceCategory");
         }
 
-        public void setMealProvisionPriceCategory (MealProvisionPriceCategory mealProvisionPriceCategory)
+        public void setMealProvisionPriceCategory(MealProvisionPriceCategory mealProvisionPriceCategory)
         {
             this.setProperty("mealProvisionPriceCategory", mealProvisionPriceCategory);
         }
 
-        public string getSource ()
+        public string getSource()
         {
             return this.getProperty("source").ToString();
         }
 
-        public void setSource (string source)
+        public void setSource(string source)
         {
             this.setProperty("source", source);
         }

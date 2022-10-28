@@ -14,68 +14,69 @@ namespace Arbor.Model
         public const string IS_ELIGIBLE = "isEligible";
         public const string IS_ENABLED = "isEnabled";
 
-        public UserBeta ()
+        public UserBeta()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public UserBeta (string resourceType = "UserBeta", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<UserBeta> query (SimpleQuery query = null)
+        public UserBeta(string resourceType = "UserBeta", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("UserBeta");
-        	RestGateway gateway = (RestGateway) UserBeta.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<UserBeta> userbetaCollection = new ModelCollection<UserBeta> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    userbetaCollection.add((UserBeta) model);
-        	}
-        
-        	return userbetaCollection;
+
         }
 
-        public static UserBeta retrieve (string id)
+
+        public static ModelCollection<UserBeta> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) UserBeta.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (UserBeta) gateway.retrieve(ResourceType.USER_BETA, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("UserBeta");
+            RestGateway gateway = (RestGateway)UserBeta.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<UserBeta> userbetaCollection = new ModelCollection<UserBeta>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                userbetaCollection.add((UserBeta)model);
+            }
+
+            return userbetaCollection;
         }
 
-        public User getUser ()
+        public static UserBeta retrieve(string id)
         {
-            return (User) this.getProperty("user");
+            RestGateway gateway = (RestGateway)UserBeta.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (UserBeta)gateway.retrieve(ResourceType.USER_BETA, id);
         }
 
-        public void setUser (User user)
+        public User getUser()
+        {
+            return (User)this.getProperty("user");
+        }
+
+        public void setUser(User user)
         {
             this.setProperty("user", user);
         }
 
-        public bool getIsEligible ()
+        public bool getIsEligible()
         {
             return Convert.ToBoolean(this.getProperty("isEligible"));
         }
 
-        public void setIsEligible (bool isEligible)
+        public void setIsEligible(bool isEligible)
         {
             this.setProperty("isEligible", isEligible);
         }
 
-        public bool getIsEnabled ()
+        public bool getIsEnabled()
         {
             return Convert.ToBoolean(this.getProperty("isEnabled"));
         }
 
-        public void setIsEnabled (bool isEnabled)
+        public void setIsEnabled(bool isEnabled)
         {
             this.setProperty("isEnabled", isEnabled);
         }

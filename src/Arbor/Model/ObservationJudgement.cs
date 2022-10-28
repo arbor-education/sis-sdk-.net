@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string OBSERVATION_GRADE = "observationGrade";
         public const string COMMENT = "comment";
 
-        public ObservationJudgement ()
+        public ObservationJudgement()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public ObservationJudgement (string resourceType = "ObservationJudgement", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<ObservationJudgement> query (SimpleQuery query = null)
+        public ObservationJudgement(string resourceType = "ObservationJudgement", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("ObservationJudgement");
-        	RestGateway gateway = (RestGateway) ObservationJudgement.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<ObservationJudgement> observationjudgementCollection = new ModelCollection<ObservationJudgement> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    observationjudgementCollection.add((ObservationJudgement) model);
-        	}
-        
-        	return observationjudgementCollection;
+
         }
 
-        public static ObservationJudgement retrieve (string id)
+
+        public static ModelCollection<ObservationJudgement> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) ObservationJudgement.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (ObservationJudgement) gateway.retrieve(ResourceType.OBSERVATION_JUDGEMENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("ObservationJudgement");
+            RestGateway gateway = (RestGateway)ObservationJudgement.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<ObservationJudgement> observationjudgementCollection = new ModelCollection<ObservationJudgement>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                observationjudgementCollection.add((ObservationJudgement)model);
+            }
+
+            return observationjudgementCollection;
         }
 
-        public Observation getObservation ()
+        public static ObservationJudgement retrieve(string id)
         {
-            return (Observation) this.getProperty("observation");
+            RestGateway gateway = (RestGateway)ObservationJudgement.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (ObservationJudgement)gateway.retrieve(ResourceType.OBSERVATION_JUDGEMENT, id);
         }
 
-        public void setObservation (Observation observation)
+        public Observation getObservation()
+        {
+            return (Observation)this.getProperty("observation");
+        }
+
+        public void setObservation(Observation observation)
         {
             this.setProperty("observation", observation);
         }
 
-        public ObservationStrand getObservationStrand ()
+        public ObservationStrand getObservationStrand()
         {
-            return (ObservationStrand) this.getProperty("observationStrand");
+            return (ObservationStrand)this.getProperty("observationStrand");
         }
 
-        public void setObservationStrand (ObservationStrand observationStrand)
+        public void setObservationStrand(ObservationStrand observationStrand)
         {
             this.setProperty("observationStrand", observationStrand);
         }
 
-        public ObservationGrade getObservationGrade ()
+        public ObservationGrade getObservationGrade()
         {
-            return (ObservationGrade) this.getProperty("observationGrade");
+            return (ObservationGrade)this.getProperty("observationGrade");
         }
 
-        public void setObservationGrade (ObservationGrade observationGrade)
+        public void setObservationGrade(ObservationGrade observationGrade)
         {
             this.setProperty("observationGrade", observationGrade);
         }
 
-        public string getComment ()
+        public string getComment()
         {
             return this.getProperty("comment").ToString();
         }
 
-        public void setComment (string comment)
+        public void setComment(string comment)
         {
             this.setProperty("comment", comment);
         }

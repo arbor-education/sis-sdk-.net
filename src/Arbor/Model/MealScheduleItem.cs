@@ -26,188 +26,189 @@ namespace Arbor.Model
         public const string SUN_PROVISION = "sunProvision";
         public const string SUN_LABEL = "sunLabel";
 
-        public MealScheduleItem ()
+        public MealScheduleItem()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public MealScheduleItem (string resourceType = "MealScheduleItem", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<MealScheduleItem> query (SimpleQuery query = null)
+        public MealScheduleItem(string resourceType = "MealScheduleItem", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("MealScheduleItem");
-        	RestGateway gateway = (RestGateway) MealScheduleItem.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<MealScheduleItem> mealscheduleitemCollection = new ModelCollection<MealScheduleItem> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    mealscheduleitemCollection.add((MealScheduleItem) model);
-        	}
-        
-        	return mealscheduleitemCollection;
+
         }
 
-        public static MealScheduleItem retrieve (string id)
+
+        public static ModelCollection<MealScheduleItem> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) MealScheduleItem.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (MealScheduleItem) gateway.retrieve(ResourceType.MEAL_SCHEDULE_ITEM, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("MealScheduleItem");
+            RestGateway gateway = (RestGateway)MealScheduleItem.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<MealScheduleItem> mealscheduleitemCollection = new ModelCollection<MealScheduleItem>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                mealscheduleitemCollection.add((MealScheduleItem)model);
+            }
+
+            return mealscheduleitemCollection;
         }
 
-        public MealSchedule getMealSchedule ()
+        public static MealScheduleItem retrieve(string id)
         {
-            return (MealSchedule) this.getProperty("mealSchedule");
+            RestGateway gateway = (RestGateway)MealScheduleItem.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (MealScheduleItem)gateway.retrieve(ResourceType.MEAL_SCHEDULE_ITEM, id);
         }
 
-        public void setMealSchedule (MealSchedule mealSchedule)
+        public MealSchedule getMealSchedule()
+        {
+            return (MealSchedule)this.getProperty("mealSchedule");
+        }
+
+        public void setMealSchedule(MealSchedule mealSchedule)
         {
             this.setProperty("mealSchedule", mealSchedule);
         }
 
-        public MealProvision getMonProvision ()
+        public MealProvision getMonProvision()
         {
-            return (MealProvision) this.getProperty("monProvision");
+            return (MealProvision)this.getProperty("monProvision");
         }
 
-        public void setMonProvision (MealProvision monProvision)
+        public void setMonProvision(MealProvision monProvision)
         {
             this.setProperty("monProvision", monProvision);
         }
 
-        public string getMonLabel ()
+        public string getMonLabel()
         {
             return this.getProperty("monLabel").ToString();
         }
 
-        public void setMonLabel (string monLabel)
+        public void setMonLabel(string monLabel)
         {
             this.setProperty("monLabel", monLabel);
         }
 
-        public MealProvision getTueProvision ()
+        public MealProvision getTueProvision()
         {
-            return (MealProvision) this.getProperty("tueProvision");
+            return (MealProvision)this.getProperty("tueProvision");
         }
 
-        public void setTueProvision (MealProvision tueProvision)
+        public void setTueProvision(MealProvision tueProvision)
         {
             this.setProperty("tueProvision", tueProvision);
         }
 
-        public string getTueLabel ()
+        public string getTueLabel()
         {
             return this.getProperty("tueLabel").ToString();
         }
 
-        public void setTueLabel (string tueLabel)
+        public void setTueLabel(string tueLabel)
         {
             this.setProperty("tueLabel", tueLabel);
         }
 
-        public MealProvision getWedProvision ()
+        public MealProvision getWedProvision()
         {
-            return (MealProvision) this.getProperty("wedProvision");
+            return (MealProvision)this.getProperty("wedProvision");
         }
 
-        public void setWedProvision (MealProvision wedProvision)
+        public void setWedProvision(MealProvision wedProvision)
         {
             this.setProperty("wedProvision", wedProvision);
         }
 
-        public string getWedLabel ()
+        public string getWedLabel()
         {
             return this.getProperty("wedLabel").ToString();
         }
 
-        public void setWedLabel (string wedLabel)
+        public void setWedLabel(string wedLabel)
         {
             this.setProperty("wedLabel", wedLabel);
         }
 
-        public MealProvision getThuProvision ()
+        public MealProvision getThuProvision()
         {
-            return (MealProvision) this.getProperty("thuProvision");
+            return (MealProvision)this.getProperty("thuProvision");
         }
 
-        public void setThuProvision (MealProvision thuProvision)
+        public void setThuProvision(MealProvision thuProvision)
         {
             this.setProperty("thuProvision", thuProvision);
         }
 
-        public string getThuLabel ()
+        public string getThuLabel()
         {
             return this.getProperty("thuLabel").ToString();
         }
 
-        public void setThuLabel (string thuLabel)
+        public void setThuLabel(string thuLabel)
         {
             this.setProperty("thuLabel", thuLabel);
         }
 
-        public MealProvision getFriProvision ()
+        public MealProvision getFriProvision()
         {
-            return (MealProvision) this.getProperty("friProvision");
+            return (MealProvision)this.getProperty("friProvision");
         }
 
-        public void setFriProvision (MealProvision friProvision)
+        public void setFriProvision(MealProvision friProvision)
         {
             this.setProperty("friProvision", friProvision);
         }
 
-        public string getFriLabel ()
+        public string getFriLabel()
         {
             return this.getProperty("friLabel").ToString();
         }
 
-        public void setFriLabel (string friLabel)
+        public void setFriLabel(string friLabel)
         {
             this.setProperty("friLabel", friLabel);
         }
 
-        public MealProvision getSatProvision ()
+        public MealProvision getSatProvision()
         {
-            return (MealProvision) this.getProperty("satProvision");
+            return (MealProvision)this.getProperty("satProvision");
         }
 
-        public void setSatProvision (MealProvision satProvision)
+        public void setSatProvision(MealProvision satProvision)
         {
             this.setProperty("satProvision", satProvision);
         }
 
-        public string getSatLabel ()
+        public string getSatLabel()
         {
             return this.getProperty("satLabel").ToString();
         }
 
-        public void setSatLabel (string satLabel)
+        public void setSatLabel(string satLabel)
         {
             this.setProperty("satLabel", satLabel);
         }
 
-        public MealProvision getSunProvision ()
+        public MealProvision getSunProvision()
         {
-            return (MealProvision) this.getProperty("sunProvision");
+            return (MealProvision)this.getProperty("sunProvision");
         }
 
-        public void setSunProvision (MealProvision sunProvision)
+        public void setSunProvision(MealProvision sunProvision)
         {
             this.setProperty("sunProvision", sunProvision);
         }
 
-        public string getSunLabel ()
+        public string getSunLabel()
         {
             return this.getProperty("sunLabel").ToString();
         }
 
-        public void setSunLabel (string sunLabel)
+        public void setSunLabel(string sunLabel)
         {
             this.setProperty("sunLabel", sunLabel);
         }

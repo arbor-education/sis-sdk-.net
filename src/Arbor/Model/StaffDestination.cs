@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string DATA_ORDER = "dataOrder";
         public const string DESCRIPTION = "description";
 
-        public StaffDestination ()
+        public StaffDestination()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public StaffDestination (string resourceType = "StaffDestination", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<StaffDestination> query (SimpleQuery query = null)
+        public StaffDestination(string resourceType = "StaffDestination", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("StaffDestination");
-        	RestGateway gateway = (RestGateway) StaffDestination.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<StaffDestination> staffdestinationCollection = new ModelCollection<StaffDestination> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    staffdestinationCollection.add((StaffDestination) model);
-        	}
-        
-        	return staffdestinationCollection;
+
         }
 
-        public static StaffDestination retrieve (string id)
+
+        public static ModelCollection<StaffDestination> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) StaffDestination.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (StaffDestination) gateway.retrieve(ResourceType.STAFF_DESTINATION, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("StaffDestination");
+            RestGateway gateway = (RestGateway)StaffDestination.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<StaffDestination> staffdestinationCollection = new ModelCollection<StaffDestination>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                staffdestinationCollection.add((StaffDestination)model);
+            }
+
+            return staffdestinationCollection;
         }
 
-        public string getCode ()
+        public static StaffDestination retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)StaffDestination.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (StaffDestination)gateway.retrieve(ResourceType.STAFF_DESTINATION, id);
+        }
+
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }
 
-        public string getDescription ()
+        public string getDescription()
         {
             return this.getProperty("description").ToString();
         }
 
-        public void setDescription (string description)
+        public void setDescription(string description)
         {
             this.setProperty("description", description);
         }

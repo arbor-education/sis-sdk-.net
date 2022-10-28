@@ -19,118 +19,119 @@ namespace Arbor.Model
         public const string EFFECTIVE_DATE = "effectiveDate";
         public const string END_DATE = "endDate";
 
-        public StandardizedAssessmentThreshold ()
+        public StandardizedAssessmentThreshold()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public StandardizedAssessmentThreshold (string resourceType = "StandardizedAssessmentThreshold", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<StandardizedAssessmentThreshold> query (SimpleQuery query = null)
+        public StandardizedAssessmentThreshold(string resourceType = "StandardizedAssessmentThreshold", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("StandardizedAssessmentThreshold");
-        	RestGateway gateway = (RestGateway) StandardizedAssessmentThreshold.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<StandardizedAssessmentThreshold> standardizedassessmentthresholdCollection = new ModelCollection<StandardizedAssessmentThreshold> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    standardizedassessmentthresholdCollection.add((StandardizedAssessmentThreshold) model);
-        	}
-        
-        	return standardizedassessmentthresholdCollection;
+
         }
 
-        public static StandardizedAssessmentThreshold retrieve (string id)
+
+        public static ModelCollection<StandardizedAssessmentThreshold> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) StandardizedAssessmentThreshold.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (StandardizedAssessmentThreshold) gateway.retrieve(ResourceType.STANDARDIZED_ASSESSMENT_THRESHOLD, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("StandardizedAssessmentThreshold");
+            RestGateway gateway = (RestGateway)StandardizedAssessmentThreshold.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<StandardizedAssessmentThreshold> standardizedassessmentthresholdCollection = new ModelCollection<StandardizedAssessmentThreshold>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                standardizedassessmentthresholdCollection.add((StandardizedAssessmentThreshold)model);
+            }
+
+            return standardizedassessmentthresholdCollection;
         }
 
-        public string getCode ()
+        public static StandardizedAssessmentThreshold retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)StandardizedAssessmentThreshold.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (StandardizedAssessmentThreshold)gateway.retrieve(ResourceType.STANDARDIZED_ASSESSMENT_THRESHOLD, id);
+        }
+
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }
 
-        public string getName ()
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }
 
-        public StandardizedAssessment getMarkStandardizedAssessment ()
+        public StandardizedAssessment getMarkStandardizedAssessment()
         {
-            return (StandardizedAssessment) this.getProperty("markStandardizedAssessment");
+            return (StandardizedAssessment)this.getProperty("markStandardizedAssessment");
         }
 
-        public void setMarkStandardizedAssessment (StandardizedAssessment markStandardizedAssessment)
+        public void setMarkStandardizedAssessment(StandardizedAssessment markStandardizedAssessment)
         {
             this.setProperty("markStandardizedAssessment", markStandardizedAssessment);
         }
 
-        public StandardizedAssessment getOutcomeStandardizedAssessment ()
+        public StandardizedAssessment getOutcomeStandardizedAssessment()
         {
-            return (StandardizedAssessment) this.getProperty("outcomeStandardizedAssessment");
+            return (StandardizedAssessment)this.getProperty("outcomeStandardizedAssessment");
         }
 
-        public void setOutcomeStandardizedAssessment (StandardizedAssessment outcomeStandardizedAssessment)
+        public void setOutcomeStandardizedAssessment(StandardizedAssessment outcomeStandardizedAssessment)
         {
             this.setProperty("outcomeStandardizedAssessment", outcomeStandardizedAssessment);
         }
 
-        public DateTime getEffectiveDate ()
+        public DateTime getEffectiveDate()
         {
             return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
-        public void setEffectiveDate (DateTime effectiveDate)
+        public void setEffectiveDate(DateTime effectiveDate)
         {
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }

@@ -21,136 +21,137 @@ namespace Arbor.Model
         public const string DISPLAY_ORDER = "displayOrder";
         public const string TARGET_ENROLMENT = "targetEnrolment";
 
-        public AcademicLevel ()
+        public AcademicLevel()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AcademicLevel (string resourceType = "AcademicLevel", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AcademicLevel> query (SimpleQuery query = null)
+        public AcademicLevel(string resourceType = "AcademicLevel", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AcademicLevel");
-        	RestGateway gateway = (RestGateway) AcademicLevel.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AcademicLevel> academiclevelCollection = new ModelCollection<AcademicLevel> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    academiclevelCollection.add((AcademicLevel) model);
-        	}
-        
-        	return academiclevelCollection;
+
         }
 
-        public static AcademicLevel retrieve (string id)
+
+        public static ModelCollection<AcademicLevel> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AcademicLevel.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AcademicLevel) gateway.retrieve(ResourceType.ACADEMIC_LEVEL, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AcademicLevel");
+            RestGateway gateway = (RestGateway)AcademicLevel.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AcademicLevel> academiclevelCollection = new ModelCollection<AcademicLevel>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                academiclevelCollection.add((AcademicLevel)model);
+            }
+
+            return academiclevelCollection;
         }
 
-        public string getAcademicLevelName ()
+        public static AcademicLevel retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)AcademicLevel.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AcademicLevel)gateway.retrieve(ResourceType.ACADEMIC_LEVEL, id);
+        }
+
+        public string getAcademicLevelName()
         {
             return this.getProperty("academicLevelName").ToString();
         }
 
-        public void setAcademicLevelName (string academicLevelName)
+        public void setAcademicLevelName(string academicLevelName)
         {
             this.setProperty("academicLevelName", academicLevelName);
         }
 
-        public string getShortName ()
+        public string getShortName()
         {
             return this.getProperty("shortName").ToString();
         }
 
-        public void setShortName (string shortName)
+        public void setShortName(string shortName)
         {
             this.setProperty("shortName", shortName);
         }
 
-        public CurriculumGrade getCurriculumGrade ()
+        public CurriculumGrade getCurriculumGrade()
         {
-            return (CurriculumGrade) this.getProperty("curriculumGrade");
+            return (CurriculumGrade)this.getProperty("curriculumGrade");
         }
 
-        public void setCurriculumGrade (CurriculumGrade curriculumGrade)
+        public void setCurriculumGrade(CurriculumGrade curriculumGrade)
         {
             this.setProperty("curriculumGrade", curriculumGrade);
         }
 
-        public AcademicYear getAcademicYear ()
+        public AcademicYear getAcademicYear()
         {
-            return (AcademicYear) this.getProperty("academicYear");
+            return (AcademicYear)this.getProperty("academicYear");
         }
 
-        public void setAcademicYear (AcademicYear academicYear)
+        public void setAcademicYear(AcademicYear academicYear)
         {
             this.setProperty("academicYear", academicYear);
         }
 
-        public AcademicLevel getPromotedToAcademicLevel ()
+        public AcademicLevel getPromotedToAcademicLevel()
         {
-            return (AcademicLevel) this.getProperty("promotedToAcademicLevel");
+            return (AcademicLevel)this.getProperty("promotedToAcademicLevel");
         }
 
-        public void setPromotedToAcademicLevel (AcademicLevel promotedToAcademicLevel)
+        public void setPromotedToAcademicLevel(AcademicLevel promotedToAcademicLevel)
         {
             this.setProperty("promotedToAcademicLevel", promotedToAcademicLevel);
         }
 
-        public DateTime getPromotedDatetime ()
+        public DateTime getPromotedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("promotedDatetime"));
         }
 
-        public void setPromotedDatetime (DateTime promotedDatetime)
+        public void setPromotedDatetime(DateTime promotedDatetime)
         {
             this.setProperty("promotedDatetime", promotedDatetime);
         }
 
-        public AcademicLevel getCopiedToAcademicLevel ()
+        public AcademicLevel getCopiedToAcademicLevel()
         {
-            return (AcademicLevel) this.getProperty("copiedToAcademicLevel");
+            return (AcademicLevel)this.getProperty("copiedToAcademicLevel");
         }
 
-        public void setCopiedToAcademicLevel (AcademicLevel copiedToAcademicLevel)
+        public void setCopiedToAcademicLevel(AcademicLevel copiedToAcademicLevel)
         {
             this.setProperty("copiedToAcademicLevel", copiedToAcademicLevel);
         }
 
-        public int getDisplayOrder ()
+        public int getDisplayOrder()
         {
             return Convert.ToInt32(this.getProperty("displayOrder"));
         }
 
-        public void setDisplayOrder (int displayOrder)
+        public void setDisplayOrder(int displayOrder)
         {
             this.setProperty("displayOrder", displayOrder);
         }
 
-        public int getTargetEnrolment ()
+        public int getTargetEnrolment()
         {
             return Convert.ToInt32(this.getProperty("targetEnrolment"));
         }
 
-        public void setTargetEnrolment (int targetEnrolment)
+        public void setTargetEnrolment(int targetEnrolment)
         {
             this.setProperty("targetEnrolment", targetEnrolment);
         }
 
-        public ModelCollection<AcademicLevelTutor> getTutorMemberships ()
+        public ModelCollection<AcademicLevelTutor> getTutorMemberships()
         {
-            ModelCollection<ModelBase> collection = (ModelCollection<ModelBase>) this.getCollectionProperty("tutorMemberships");
-        	return (ModelCollection<AcademicLevelTutor>) this.getApiGateway().castCollection<AcademicLevelTutor>(collection);
+            ModelCollection<ModelBase> collection = (ModelCollection<ModelBase>)this.getCollectionProperty("tutorMemberships");
+            return (ModelCollection<AcademicLevelTutor>)this.getApiGateway().castCollection<AcademicLevelTutor>(collection);
         }
 
 

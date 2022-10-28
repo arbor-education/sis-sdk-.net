@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string EFFECTIVE_DATE = "effectiveDate";
         public const string END_DATE = "endDate";
 
-        public TimetableSlotStudentException ()
+        public TimetableSlotStudentException()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public TimetableSlotStudentException (string resourceType = "TimetableSlotStudentException", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<TimetableSlotStudentException> query (SimpleQuery query = null)
+        public TimetableSlotStudentException(string resourceType = "TimetableSlotStudentException", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("TimetableSlotStudentException");
-        	RestGateway gateway = (RestGateway) TimetableSlotStudentException.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<TimetableSlotStudentException> timetableslotstudentexceptionCollection = new ModelCollection<TimetableSlotStudentException> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    timetableslotstudentexceptionCollection.add((TimetableSlotStudentException) model);
-        	}
-        
-        	return timetableslotstudentexceptionCollection;
+
         }
 
-        public static TimetableSlotStudentException retrieve (string id)
+
+        public static ModelCollection<TimetableSlotStudentException> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) TimetableSlotStudentException.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (TimetableSlotStudentException) gateway.retrieve(ResourceType.TIMETABLE_SLOT_STUDENT_EXCEPTION, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("TimetableSlotStudentException");
+            RestGateway gateway = (RestGateway)TimetableSlotStudentException.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<TimetableSlotStudentException> timetableslotstudentexceptionCollection = new ModelCollection<TimetableSlotStudentException>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                timetableslotstudentexceptionCollection.add((TimetableSlotStudentException)model);
+            }
+
+            return timetableslotstudentexceptionCollection;
         }
 
-        public TimetableSlot getTimetableSlot ()
+        public static TimetableSlotStudentException retrieve(string id)
         {
-            return (TimetableSlot) this.getProperty("timetableSlot");
+            RestGateway gateway = (RestGateway)TimetableSlotStudentException.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (TimetableSlotStudentException)gateway.retrieve(ResourceType.TIMETABLE_SLOT_STUDENT_EXCEPTION, id);
         }
 
-        public void setTimetableSlot (TimetableSlot timetableSlot)
+        public TimetableSlot getTimetableSlot()
+        {
+            return (TimetableSlot)this.getProperty("timetableSlot");
+        }
+
+        public void setTimetableSlot(TimetableSlot timetableSlot)
         {
             this.setProperty("timetableSlot", timetableSlot);
         }
 
-        public Student getStudent ()
+        public Student getStudent()
         {
-            return (Student) this.getProperty("student");
+            return (Student)this.getProperty("student");
         }
 
-        public void setStudent (Student student)
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public DateTime getEffectiveDate ()
+        public DateTime getEffectiveDate()
         {
             return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
-        public void setEffectiveDate (DateTime effectiveDate)
+        public void setEffectiveDate(DateTime effectiveDate)
         {
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }

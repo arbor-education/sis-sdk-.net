@@ -14,68 +14,69 @@ namespace Arbor.Model.UkDfe
         public const string WORKFORCE_VACANCY_POST = "workforceVacancyPost";
         public const string WORKFORCE_CENSUS_ROLE_IDENTIFIER = "workforceCensusRoleIdentifier";
 
-        public Position ()
+        public Position()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public Position (string resourceType = "Position", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<Position> query (SimpleQuery query = null)
+        public Position(string resourceType = "Position", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("UkDfe_Position");
-        	RestGateway gateway = (RestGateway) Position.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<Position> positionCollection = new ModelCollection<Position> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    positionCollection.add((Position) model);
-        	}
-        
-        	return positionCollection;
+
         }
 
-        public static Position retrieve (string id)
+
+        public static ModelCollection<Position> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) Position.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (Position) gateway.retrieve(ResourceType.UK_DFE_POSITION, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("UkDfe_Position");
+            RestGateway gateway = (RestGateway)Position.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<Position> positionCollection = new ModelCollection<Position>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                positionCollection.add((Position)model);
+            }
+
+            return positionCollection;
         }
 
-        public PositionCategory getPositionCategory ()
+        public static Position retrieve(string id)
         {
-            return (PositionCategory) this.getProperty("positionCategory");
+            RestGateway gateway = (RestGateway)Position.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (Position)gateway.retrieve(ResourceType.UK_DFE_POSITION, id);
         }
 
-        public void setPositionCategory (PositionCategory positionCategory)
+        public PositionCategory getPositionCategory()
+        {
+            return (PositionCategory)this.getProperty("positionCategory");
+        }
+
+        public void setPositionCategory(PositionCategory positionCategory)
         {
             this.setProperty("positionCategory", positionCategory);
         }
 
-        public SchoolWorkforceVacancyPost getWorkforceVacancyPost ()
+        public SchoolWorkforceVacancyPost getWorkforceVacancyPost()
         {
-            return (SchoolWorkforceVacancyPost) this.getProperty("workforceVacancyPost");
+            return (SchoolWorkforceVacancyPost)this.getProperty("workforceVacancyPost");
         }
 
-        public void setWorkforceVacancyPost (SchoolWorkforceVacancyPost workforceVacancyPost)
+        public void setWorkforceVacancyPost(SchoolWorkforceVacancyPost workforceVacancyPost)
         {
             this.setProperty("workforceVacancyPost", workforceVacancyPost);
         }
 
-        public string getWorkforceCensusRoleIdentifier ()
+        public string getWorkforceCensusRoleIdentifier()
         {
             return this.getProperty("workforceCensusRoleIdentifier").ToString();
         }
 
-        public void setWorkforceCensusRoleIdentifier (string workforceCensusRoleIdentifier)
+        public void setWorkforceCensusRoleIdentifier(string workforceCensusRoleIdentifier)
         {
             this.setProperty("workforceCensusRoleIdentifier", workforceCensusRoleIdentifier);
         }

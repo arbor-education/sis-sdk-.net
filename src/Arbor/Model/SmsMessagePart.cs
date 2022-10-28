@@ -17,98 +17,99 @@ namespace Arbor.Model
         public const string RECIPIENT_NETWORK_CODE = "recipientNetworkCode";
         public const string COST = "cost";
 
-        public SmsMessagePart ()
+        public SmsMessagePart()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public SmsMessagePart (string resourceType = "SmsMessagePart", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<SmsMessagePart> query (SimpleQuery query = null)
+        public SmsMessagePart(string resourceType = "SmsMessagePart", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("SmsMessagePart");
-        	RestGateway gateway = (RestGateway) SmsMessagePart.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<SmsMessagePart> smsmessagepartCollection = new ModelCollection<SmsMessagePart> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    smsmessagepartCollection.add((SmsMessagePart) model);
-        	}
-        
-        	return smsmessagepartCollection;
+
         }
 
-        public static SmsMessagePart retrieve (string id)
+
+        public static ModelCollection<SmsMessagePart> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) SmsMessagePart.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (SmsMessagePart) gateway.retrieve(ResourceType.SMS_MESSAGE_PART, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("SmsMessagePart");
+            RestGateway gateway = (RestGateway)SmsMessagePart.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<SmsMessagePart> smsmessagepartCollection = new ModelCollection<SmsMessagePart>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                smsmessagepartCollection.add((SmsMessagePart)model);
+            }
+
+            return smsmessagepartCollection;
         }
 
-        public SmsMessage getSmsMessage ()
+        public static SmsMessagePart retrieve(string id)
         {
-            return (SmsMessage) this.getProperty("smsMessage");
+            RestGateway gateway = (RestGateway)SmsMessagePart.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (SmsMessagePart)gateway.retrieve(ResourceType.SMS_MESSAGE_PART, id);
         }
 
-        public void setSmsMessage (SmsMessage smsMessage)
+        public SmsMessage getSmsMessage()
+        {
+            return (SmsMessage)this.getProperty("smsMessage");
+        }
+
+        public void setSmsMessage(SmsMessage smsMessage)
         {
             this.setProperty("smsMessage", smsMessage);
         }
 
-        public string getPartIdentifier ()
+        public string getPartIdentifier()
         {
             return this.getProperty("partIdentifier").ToString();
         }
 
-        public void setPartIdentifier (string partIdentifier)
+        public void setPartIdentifier(string partIdentifier)
         {
             this.setProperty("partIdentifier", partIdentifier);
         }
 
-        public DateTime getReceivedDatetime ()
+        public DateTime getReceivedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("receivedDatetime"));
         }
 
-        public void setReceivedDatetime (DateTime receivedDatetime)
+        public void setReceivedDatetime(DateTime receivedDatetime)
         {
             this.setProperty("receivedDatetime", receivedDatetime);
         }
 
-        public DateTime getFailedDatetime ()
+        public DateTime getFailedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("failedDatetime"));
         }
 
-        public void setFailedDatetime (DateTime failedDatetime)
+        public void setFailedDatetime(DateTime failedDatetime)
         {
             this.setProperty("failedDatetime", failedDatetime);
         }
 
-        public string getRecipientNetworkCode ()
+        public string getRecipientNetworkCode()
         {
             return this.getProperty("recipientNetworkCode").ToString();
         }
 
-        public void setRecipientNetworkCode (string recipientNetworkCode)
+        public void setRecipientNetworkCode(string recipientNetworkCode)
         {
             this.setProperty("recipientNetworkCode", recipientNetworkCode);
         }
 
-        public string getCost ()
+        public string getCost()
         {
             return this.getProperty("cost").ToString();
         }
 
-        public void setCost (string cost)
+        public void setCost(string cost)
         {
             this.setProperty("cost", cost);
         }

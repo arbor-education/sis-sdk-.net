@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string STAFF = "staff";
         public const string ROOM_FEATURE = "roomFeature";
 
-        public StaffRoomFeatureRequirement ()
+        public StaffRoomFeatureRequirement()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public StaffRoomFeatureRequirement (string resourceType = "StaffRoomFeatureRequirement", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<StaffRoomFeatureRequirement> query (SimpleQuery query = null)
+        public StaffRoomFeatureRequirement(string resourceType = "StaffRoomFeatureRequirement", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("StaffRoomFeatureRequirement");
-        	RestGateway gateway = (RestGateway) StaffRoomFeatureRequirement.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<StaffRoomFeatureRequirement> staffroomfeaturerequirementCollection = new ModelCollection<StaffRoomFeatureRequirement> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    staffroomfeaturerequirementCollection.add((StaffRoomFeatureRequirement) model);
-        	}
-        
-        	return staffroomfeaturerequirementCollection;
+
         }
 
-        public static StaffRoomFeatureRequirement retrieve (string id)
+
+        public static ModelCollection<StaffRoomFeatureRequirement> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) StaffRoomFeatureRequirement.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (StaffRoomFeatureRequirement) gateway.retrieve(ResourceType.STAFF_ROOM_FEATURE_REQUIREMENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("StaffRoomFeatureRequirement");
+            RestGateway gateway = (RestGateway)StaffRoomFeatureRequirement.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<StaffRoomFeatureRequirement> staffroomfeaturerequirementCollection = new ModelCollection<StaffRoomFeatureRequirement>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                staffroomfeaturerequirementCollection.add((StaffRoomFeatureRequirement)model);
+            }
+
+            return staffroomfeaturerequirementCollection;
         }
 
-        public Staff getStaff ()
+        public static StaffRoomFeatureRequirement retrieve(string id)
         {
-            return (Staff) this.getProperty("staff");
+            RestGateway gateway = (RestGateway)StaffRoomFeatureRequirement.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (StaffRoomFeatureRequirement)gateway.retrieve(ResourceType.STAFF_ROOM_FEATURE_REQUIREMENT, id);
         }
 
-        public void setStaff (Staff staff)
+        public Staff getStaff()
+        {
+            return (Staff)this.getProperty("staff");
+        }
+
+        public void setStaff(Staff staff)
         {
             this.setProperty("staff", staff);
         }
 
-        public RoomFeature getRoomFeature ()
+        public RoomFeature getRoomFeature()
         {
-            return (RoomFeature) this.getProperty("roomFeature");
+            return (RoomFeature)this.getProperty("roomFeature");
         }
 
-        public void setRoomFeature (RoomFeature roomFeature)
+        public void setRoomFeature(RoomFeature roomFeature)
         {
             this.setProperty("roomFeature", roomFeature);
         }

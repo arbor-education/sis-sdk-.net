@@ -19,118 +19,119 @@ namespace Arbor.Model
         public const string WEIGHTING = "weighting";
         public const string MAX_GRADE_POINT_SCALE_VALUE = "maxGradePointScaleValue";
 
-        public AssessmentDerivationDependant ()
+        public AssessmentDerivationDependant()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AssessmentDerivationDependant (string resourceType = "AssessmentDerivationDependant", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AssessmentDerivationDependant> query (SimpleQuery query = null)
+        public AssessmentDerivationDependant(string resourceType = "AssessmentDerivationDependant", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AssessmentDerivationDependant");
-        	RestGateway gateway = (RestGateway) AssessmentDerivationDependant.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AssessmentDerivationDependant> assessmentderivationdependantCollection = new ModelCollection<AssessmentDerivationDependant> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    assessmentderivationdependantCollection.add((AssessmentDerivationDependant) model);
-        	}
-        
-        	return assessmentderivationdependantCollection;
+
         }
 
-        public static AssessmentDerivationDependant retrieve (string id)
+
+        public static ModelCollection<AssessmentDerivationDependant> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AssessmentDerivationDependant.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AssessmentDerivationDependant) gateway.retrieve(ResourceType.ASSESSMENT_DERIVATION_DEPENDANT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AssessmentDerivationDependant");
+            RestGateway gateway = (RestGateway)AssessmentDerivationDependant.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AssessmentDerivationDependant> assessmentderivationdependantCollection = new ModelCollection<AssessmentDerivationDependant>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                assessmentderivationdependantCollection.add((AssessmentDerivationDependant)model);
+            }
+
+            return assessmentderivationdependantCollection;
         }
 
-        public string getCode ()
+        public static AssessmentDerivationDependant retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)AssessmentDerivationDependant.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AssessmentDerivationDependant)gateway.retrieve(ResourceType.ASSESSMENT_DERIVATION_DEPENDANT, id);
+        }
+
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }
 
-        public AssessmentDerivation getAssessmentDerivation ()
+        public AssessmentDerivation getAssessmentDerivation()
         {
-            return (AssessmentDerivation) this.getProperty("assessmentDerivation");
+            return (AssessmentDerivation)this.getProperty("assessmentDerivation");
         }
 
-        public void setAssessmentDerivation (AssessmentDerivation assessmentDerivation)
+        public void setAssessmentDerivation(AssessmentDerivation assessmentDerivation)
         {
             this.setProperty("assessmentDerivation", assessmentDerivation);
         }
 
-        public string getDescription ()
+        public string getDescription()
         {
             return this.getProperty("description").ToString();
         }
 
-        public void setDescription (string description)
+        public void setDescription(string description)
         {
             this.setProperty("description", description);
         }
 
-        public ModelBase getDependantAssessment ()
+        public ModelBase getDependantAssessment()
         {
-            return (ModelBase) this.getProperty("dependantAssessment");
+            return (ModelBase)this.getProperty("dependantAssessment");
         }
 
-        public void setDependantAssessment (ModelBase dependantAssessment)
+        public void setDependantAssessment(ModelBase dependantAssessment)
         {
             this.setProperty("dependantAssessment", dependantAssessment);
         }
 
-        public int getWeighting ()
+        public int getWeighting()
         {
             return Convert.ToInt32(this.getProperty("weighting"));
         }
 
-        public void setWeighting (int weighting)
+        public void setWeighting(int weighting)
         {
             this.setProperty("weighting", weighting);
         }
 
-        public float getMaxGradePointScaleValue ()
+        public float getMaxGradePointScaleValue()
         {
-            return (float) this.getProperty("maxGradePointScaleValue");
+            return (float)this.getProperty("maxGradePointScaleValue");
         }
 
-        public void setMaxGradePointScaleValue (float maxGradePointScaleValue)
+        public void setMaxGradePointScaleValue(float maxGradePointScaleValue)
         {
             this.setProperty("maxGradePointScaleValue", maxGradePointScaleValue);
         }

@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string MEAL_PROVISION_PRICE_CATEGORY = "mealProvisionPriceCategory";
         public const string GROUP = "group";
 
-        public MealProvisionPriceCategoryGroup ()
+        public MealProvisionPriceCategoryGroup()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public MealProvisionPriceCategoryGroup (string resourceType = "MealProvisionPriceCategoryGroup", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<MealProvisionPriceCategoryGroup> query (SimpleQuery query = null)
+        public MealProvisionPriceCategoryGroup(string resourceType = "MealProvisionPriceCategoryGroup", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("MealProvisionPriceCategoryGroup");
-        	RestGateway gateway = (RestGateway) MealProvisionPriceCategoryGroup.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<MealProvisionPriceCategoryGroup> mealprovisionpricecategorygroupCollection = new ModelCollection<MealProvisionPriceCategoryGroup> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    mealprovisionpricecategorygroupCollection.add((MealProvisionPriceCategoryGroup) model);
-        	}
-        
-        	return mealprovisionpricecategorygroupCollection;
+
         }
 
-        public static MealProvisionPriceCategoryGroup retrieve (string id)
+
+        public static ModelCollection<MealProvisionPriceCategoryGroup> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) MealProvisionPriceCategoryGroup.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (MealProvisionPriceCategoryGroup) gateway.retrieve(ResourceType.MEAL_PROVISION_PRICE_CATEGORY_GROUP, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("MealProvisionPriceCategoryGroup");
+            RestGateway gateway = (RestGateway)MealProvisionPriceCategoryGroup.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<MealProvisionPriceCategoryGroup> mealprovisionpricecategorygroupCollection = new ModelCollection<MealProvisionPriceCategoryGroup>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                mealprovisionpricecategorygroupCollection.add((MealProvisionPriceCategoryGroup)model);
+            }
+
+            return mealprovisionpricecategorygroupCollection;
         }
 
-        public MealProvisionPriceCategory getMealProvisionPriceCategory ()
+        public static MealProvisionPriceCategoryGroup retrieve(string id)
         {
-            return (MealProvisionPriceCategory) this.getProperty("mealProvisionPriceCategory");
+            RestGateway gateway = (RestGateway)MealProvisionPriceCategoryGroup.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (MealProvisionPriceCategoryGroup)gateway.retrieve(ResourceType.MEAL_PROVISION_PRICE_CATEGORY_GROUP, id);
         }
 
-        public void setMealProvisionPriceCategory (MealProvisionPriceCategory mealProvisionPriceCategory)
+        public MealProvisionPriceCategory getMealProvisionPriceCategory()
+        {
+            return (MealProvisionPriceCategory)this.getProperty("mealProvisionPriceCategory");
+        }
+
+        public void setMealProvisionPriceCategory(MealProvisionPriceCategory mealProvisionPriceCategory)
         {
             this.setProperty("mealProvisionPriceCategory", mealProvisionPriceCategory);
         }
 
-        public ModelBase getGroup ()
+        public ModelBase getGroup()
         {
-            return (ModelBase) this.getProperty("group");
+            return (ModelBase)this.getProperty("group");
         }
 
-        public void setGroup (ModelBase group)
+        public void setGroup(ModelBase group)
         {
             this.setProperty("group", group);
         }

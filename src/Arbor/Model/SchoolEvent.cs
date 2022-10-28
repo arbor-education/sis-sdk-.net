@@ -21,138 +21,139 @@ namespace Arbor.Model
         public const string NARRATIVE = "narrative";
         public const string COVER_REQUIRED = "coverRequired";
 
-        public SchoolEvent ()
+        public SchoolEvent()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public SchoolEvent (string resourceType = "SchoolEvent", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<SchoolEvent> query (SimpleQuery query = null)
+        public SchoolEvent(string resourceType = "SchoolEvent", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("SchoolEvent");
-        	RestGateway gateway = (RestGateway) SchoolEvent.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<SchoolEvent> schooleventCollection = new ModelCollection<SchoolEvent> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    schooleventCollection.add((SchoolEvent) model);
-        	}
-        
-        	return schooleventCollection;
+
         }
 
-        public static SchoolEvent retrieve (string id)
+
+        public static ModelCollection<SchoolEvent> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) SchoolEvent.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (SchoolEvent) gateway.retrieve(ResourceType.SCHOOL_EVENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("SchoolEvent");
+            RestGateway gateway = (RestGateway)SchoolEvent.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<SchoolEvent> schooleventCollection = new ModelCollection<SchoolEvent>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                schooleventCollection.add((SchoolEvent)model);
+            }
+
+            return schooleventCollection;
         }
 
-        public DateTime getStartDatetime ()
+        public static SchoolEvent retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)SchoolEvent.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (SchoolEvent)gateway.retrieve(ResourceType.SCHOOL_EVENT, id);
+        }
+
+        public DateTime getStartDatetime()
         {
             return Convert.ToDateTime(this.getProperty("startDatetime"));
         }
 
-        public void setStartDatetime (DateTime startDatetime)
+        public void setStartDatetime(DateTime startDatetime)
         {
             this.setProperty("startDatetime", startDatetime);
         }
 
-        public DateTime getEndDatetime ()
+        public DateTime getEndDatetime()
         {
             return Convert.ToDateTime(this.getProperty("endDatetime"));
         }
 
-        public void setEndDatetime (DateTime endDatetime)
+        public void setEndDatetime(DateTime endDatetime)
         {
             this.setProperty("endDatetime", endDatetime);
         }
 
-        public string getLocationText ()
+        public string getLocationText()
         {
             return this.getProperty("locationText").ToString();
         }
 
-        public void setLocationText (string locationText)
+        public void setLocationText(string locationText)
         {
             this.setProperty("locationText", locationText);
         }
 
-        public ModelBase getLocation ()
+        public ModelBase getLocation()
         {
-            return (ModelBase) this.getProperty("location");
+            return (ModelBase)this.getProperty("location");
         }
 
-        public void setLocation (ModelBase location)
+        public void setLocation(ModelBase location)
         {
             this.setProperty("location", location);
         }
 
-        public SchoolEventType getSchoolEventType ()
+        public SchoolEventType getSchoolEventType()
         {
-            return (SchoolEventType) this.getProperty("schoolEventType");
+            return (SchoolEventType)this.getProperty("schoolEventType");
         }
 
-        public void setSchoolEventType (SchoolEventType schoolEventType)
+        public void setSchoolEventType(SchoolEventType schoolEventType)
         {
             this.setProperty("schoolEventType", schoolEventType);
         }
 
-        public RepeatingSchoolEvent getRepeatingSchoolEvent ()
+        public RepeatingSchoolEvent getRepeatingSchoolEvent()
         {
-            return (RepeatingSchoolEvent) this.getProperty("repeatingSchoolEvent");
+            return (RepeatingSchoolEvent)this.getProperty("repeatingSchoolEvent");
         }
 
-        public void setRepeatingSchoolEvent (RepeatingSchoolEvent repeatingSchoolEvent)
+        public void setRepeatingSchoolEvent(RepeatingSchoolEvent repeatingSchoolEvent)
         {
             this.setProperty("repeatingSchoolEvent", repeatingSchoolEvent);
         }
 
-        public string getSchoolEventName ()
+        public string getSchoolEventName()
         {
             return this.getProperty("schoolEventName").ToString();
         }
 
-        public void setSchoolEventName (string schoolEventName)
+        public void setSchoolEventName(string schoolEventName)
         {
             this.setProperty("schoolEventName", schoolEventName);
         }
 
-        public TimetableSlot getTimetableSlot ()
+        public TimetableSlot getTimetableSlot()
         {
-            return (TimetableSlot) this.getProperty("timetableSlot");
+            return (TimetableSlot)this.getProperty("timetableSlot");
         }
 
-        public void setTimetableSlot (TimetableSlot timetableSlot)
+        public void setTimetableSlot(TimetableSlot timetableSlot)
         {
             this.setProperty("timetableSlot", timetableSlot);
         }
 
-        public string getNarrative ()
+        public string getNarrative()
         {
             return this.getProperty("narrative").ToString();
         }
 
-        public void setNarrative (string narrative)
+        public void setNarrative(string narrative)
         {
             this.setProperty("narrative", narrative);
         }
 
-        public bool getCoverRequired ()
+        public bool getCoverRequired()
         {
             return Convert.ToBoolean(this.getProperty("coverRequired"));
         }
 
-        public void setCoverRequired (bool coverRequired)
+        public void setCoverRequired(bool coverRequired)
         {
             this.setProperty("coverRequired", coverRequired);
         }

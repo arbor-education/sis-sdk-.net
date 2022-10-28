@@ -17,98 +17,99 @@ namespace Arbor.Model
         public const string POSTAL_ADDRESS_TYPE = "postalAddressType";
         public const string IS_CORRESPONDENCE_ADDRESS = "isCorrespondenceAddress";
 
-        public PostalAddressOccupancy ()
+        public PostalAddressOccupancy()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public PostalAddressOccupancy (string resourceType = "PostalAddressOccupancy", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<PostalAddressOccupancy> query (SimpleQuery query = null)
+        public PostalAddressOccupancy(string resourceType = "PostalAddressOccupancy", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("PostalAddressOccupancy");
-        	RestGateway gateway = (RestGateway) PostalAddressOccupancy.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<PostalAddressOccupancy> postaladdressoccupancyCollection = new ModelCollection<PostalAddressOccupancy> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    postaladdressoccupancyCollection.add((PostalAddressOccupancy) model);
-        	}
-        
-        	return postaladdressoccupancyCollection;
+
         }
 
-        public static PostalAddressOccupancy retrieve (string id)
+
+        public static ModelCollection<PostalAddressOccupancy> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) PostalAddressOccupancy.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (PostalAddressOccupancy) gateway.retrieve(ResourceType.POSTAL_ADDRESS_OCCUPANCY, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("PostalAddressOccupancy");
+            RestGateway gateway = (RestGateway)PostalAddressOccupancy.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<PostalAddressOccupancy> postaladdressoccupancyCollection = new ModelCollection<PostalAddressOccupancy>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                postaladdressoccupancyCollection.add((PostalAddressOccupancy)model);
+            }
+
+            return postaladdressoccupancyCollection;
         }
 
-        public PostalAddress getPostalAddress ()
+        public static PostalAddressOccupancy retrieve(string id)
         {
-            return (PostalAddress) this.getProperty("postalAddress");
+            RestGateway gateway = (RestGateway)PostalAddressOccupancy.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (PostalAddressOccupancy)gateway.retrieve(ResourceType.POSTAL_ADDRESS_OCCUPANCY, id);
         }
 
-        public void setPostalAddress (PostalAddress postalAddress)
+        public PostalAddress getPostalAddress()
+        {
+            return (PostalAddress)this.getProperty("postalAddress");
+        }
+
+        public void setPostalAddress(PostalAddress postalAddress)
         {
             this.setProperty("postalAddress", postalAddress);
         }
 
-        public ModelBase getOccupant ()
+        public ModelBase getOccupant()
         {
-            return (ModelBase) this.getProperty("occupant");
+            return (ModelBase)this.getProperty("occupant");
         }
 
-        public void setOccupant (ModelBase occupant)
+        public void setOccupant(ModelBase occupant)
         {
             this.setProperty("occupant", occupant);
         }
 
-        public DateTime getEffectiveDate ()
+        public DateTime getEffectiveDate()
         {
             return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
-        public void setEffectiveDate (DateTime effectiveDate)
+        public void setEffectiveDate(DateTime effectiveDate)
         {
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }
 
-        public string getPostalAddressType ()
+        public string getPostalAddressType()
         {
             return this.getProperty("postalAddressType").ToString();
         }
 
-        public void setPostalAddressType (string postalAddressType)
+        public void setPostalAddressType(string postalAddressType)
         {
             this.setProperty("postalAddressType", postalAddressType);
         }
 
-        public bool getIsCorrespondenceAddress ()
+        public bool getIsCorrespondenceAddress()
         {
             return Convert.ToBoolean(this.getProperty("isCorrespondenceAddress"));
         }
 
-        public void setIsCorrespondenceAddress (bool isCorrespondenceAddress)
+        public void setIsCorrespondenceAddress(bool isCorrespondenceAddress)
         {
             this.setProperty("isCorrespondenceAddress", isCorrespondenceAddress);
         }

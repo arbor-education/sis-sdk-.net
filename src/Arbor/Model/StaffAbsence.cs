@@ -27,198 +27,199 @@ namespace Arbor.Model
         public const string WORKING_HOURS = "workingHours";
         public const string NARRATIVE = "narrative";
 
-        public StaffAbsence ()
+        public StaffAbsence()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public StaffAbsence (string resourceType = "StaffAbsence", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<StaffAbsence> query (SimpleQuery query = null)
+        public StaffAbsence(string resourceType = "StaffAbsence", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("StaffAbsence");
-        	RestGateway gateway = (RestGateway) StaffAbsence.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<StaffAbsence> staffabsenceCollection = new ModelCollection<StaffAbsence> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    staffabsenceCollection.add((StaffAbsence) model);
-        	}
-        
-        	return staffabsenceCollection;
+
         }
 
-        public static StaffAbsence retrieve (string id)
+
+        public static ModelCollection<StaffAbsence> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) StaffAbsence.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (StaffAbsence) gateway.retrieve(ResourceType.STAFF_ABSENCE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("StaffAbsence");
+            RestGateway gateway = (RestGateway)StaffAbsence.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<StaffAbsence> staffabsenceCollection = new ModelCollection<StaffAbsence>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                staffabsenceCollection.add((StaffAbsence)model);
+            }
+
+            return staffabsenceCollection;
         }
 
-        public Staff getStaff ()
+        public static StaffAbsence retrieve(string id)
         {
-            return (Staff) this.getProperty("staff");
+            RestGateway gateway = (RestGateway)StaffAbsence.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (StaffAbsence)gateway.retrieve(ResourceType.STAFF_ABSENCE, id);
         }
 
-        public void setStaff (Staff staff)
+        public Staff getStaff()
+        {
+            return (Staff)this.getProperty("staff");
+        }
+
+        public void setStaff(Staff staff)
         {
             this.setProperty("staff", staff);
         }
 
-        public DateTime getStartDatetime ()
+        public DateTime getStartDatetime()
         {
             return Convert.ToDateTime(this.getProperty("startDatetime"));
         }
 
-        public void setStartDatetime (DateTime startDatetime)
+        public void setStartDatetime(DateTime startDatetime)
         {
             this.setProperty("startDatetime", startDatetime);
         }
 
-        public DateTime getEndDatetime ()
+        public DateTime getEndDatetime()
         {
             return Convert.ToDateTime(this.getProperty("endDatetime"));
         }
 
-        public void setEndDatetime (DateTime endDatetime)
+        public void setEndDatetime(DateTime endDatetime)
         {
             this.setProperty("endDatetime", endDatetime);
         }
 
-        public StaffAbsenceCategory getStaffAbsenceCategory ()
+        public StaffAbsenceCategory getStaffAbsenceCategory()
         {
-            return (StaffAbsenceCategory) this.getProperty("staffAbsenceCategory");
+            return (StaffAbsenceCategory)this.getProperty("staffAbsenceCategory");
         }
 
-        public void setStaffAbsenceCategory (StaffAbsenceCategory staffAbsenceCategory)
+        public void setStaffAbsenceCategory(StaffAbsenceCategory staffAbsenceCategory)
         {
             this.setProperty("staffAbsenceCategory", staffAbsenceCategory);
         }
 
-        public StaffAbsenceSicknessCategory getSicknessCategory ()
+        public StaffAbsenceSicknessCategory getSicknessCategory()
         {
-            return (StaffAbsenceSicknessCategory) this.getProperty("sicknessCategory");
+            return (StaffAbsenceSicknessCategory)this.getProperty("sicknessCategory");
         }
 
-        public void setSicknessCategory (StaffAbsenceSicknessCategory sicknessCategory)
+        public void setSicknessCategory(StaffAbsenceSicknessCategory sicknessCategory)
         {
             this.setProperty("sicknessCategory", sicknessCategory);
         }
 
-        public StaffAbsenceSicknessSubcategory getSicknessSubcategory ()
+        public StaffAbsenceSicknessSubcategory getSicknessSubcategory()
         {
-            return (StaffAbsenceSicknessSubcategory) this.getProperty("sicknessSubcategory");
+            return (StaffAbsenceSicknessSubcategory)this.getProperty("sicknessSubcategory");
         }
 
-        public void setSicknessSubcategory (StaffAbsenceSicknessSubcategory sicknessSubcategory)
+        public void setSicknessSubcategory(StaffAbsenceSicknessSubcategory sicknessSubcategory)
         {
             this.setProperty("sicknessSubcategory", sicknessSubcategory);
         }
 
-        public IntegrationsHrFinanceProvider getIntegrationsHrFinanceProvider ()
+        public IntegrationsHrFinanceProvider getIntegrationsHrFinanceProvider()
         {
-            return (IntegrationsHrFinanceProvider) this.getProperty("integrationsHrFinanceProvider");
+            return (IntegrationsHrFinanceProvider)this.getProperty("integrationsHrFinanceProvider");
         }
 
-        public void setIntegrationsHrFinanceProvider (IntegrationsHrFinanceProvider integrationsHrFinanceProvider)
+        public void setIntegrationsHrFinanceProvider(IntegrationsHrFinanceProvider integrationsHrFinanceProvider)
         {
             this.setProperty("integrationsHrFinanceProvider", integrationsHrFinanceProvider);
         }
 
-        public DateTime getApprovedDatetime ()
+        public DateTime getApprovedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("approvedDatetime"));
         }
 
-        public void setApprovedDatetime (DateTime approvedDatetime)
+        public void setApprovedDatetime(DateTime approvedDatetime)
         {
             this.setProperty("approvedDatetime", approvedDatetime);
         }
 
-        public Staff getApprovedByStaff ()
+        public Staff getApprovedByStaff()
         {
-            return (Staff) this.getProperty("approvedByStaff");
+            return (Staff)this.getProperty("approvedByStaff");
         }
 
-        public void setApprovedByStaff (Staff approvedByStaff)
+        public void setApprovedByStaff(Staff approvedByStaff)
         {
             this.setProperty("approvedByStaff", approvedByStaff);
         }
 
-        public float getCalculatedWorkingDays ()
+        public float getCalculatedWorkingDays()
         {
-            return (float) this.getProperty("calculatedWorkingDays");
+            return (float)this.getProperty("calculatedWorkingDays");
         }
 
-        public void setCalculatedWorkingDays (float calculatedWorkingDays)
+        public void setCalculatedWorkingDays(float calculatedWorkingDays)
         {
             this.setProperty("calculatedWorkingDays", calculatedWorkingDays);
         }
 
-        public float getActualWorkingDays ()
+        public float getActualWorkingDays()
         {
-            return (float) this.getProperty("actualWorkingDays");
+            return (float)this.getProperty("actualWorkingDays");
         }
 
-        public void setActualWorkingDays (float actualWorkingDays)
+        public void setActualWorkingDays(float actualWorkingDays)
         {
             this.setProperty("actualWorkingDays", actualWorkingDays);
         }
 
-        public float getWorkingDays ()
+        public float getWorkingDays()
         {
-            return (float) this.getProperty("workingDays");
+            return (float)this.getProperty("workingDays");
         }
 
-        public void setWorkingDays (float workingDays)
+        public void setWorkingDays(float workingDays)
         {
             this.setProperty("workingDays", workingDays);
         }
 
-        public float getCalculatedWorkingHours ()
+        public float getCalculatedWorkingHours()
         {
-            return (float) this.getProperty("calculatedWorkingHours");
+            return (float)this.getProperty("calculatedWorkingHours");
         }
 
-        public void setCalculatedWorkingHours (float calculatedWorkingHours)
+        public void setCalculatedWorkingHours(float calculatedWorkingHours)
         {
             this.setProperty("calculatedWorkingHours", calculatedWorkingHours);
         }
 
-        public float getActualWorkingHours ()
+        public float getActualWorkingHours()
         {
-            return (float) this.getProperty("actualWorkingHours");
+            return (float)this.getProperty("actualWorkingHours");
         }
 
-        public void setActualWorkingHours (float actualWorkingHours)
+        public void setActualWorkingHours(float actualWorkingHours)
         {
             this.setProperty("actualWorkingHours", actualWorkingHours);
         }
 
-        public float getWorkingHours ()
+        public float getWorkingHours()
         {
-            return (float) this.getProperty("workingHours");
+            return (float)this.getProperty("workingHours");
         }
 
-        public void setWorkingHours (float workingHours)
+        public void setWorkingHours(float workingHours)
         {
             this.setProperty("workingHours", workingHours);
         }
 
-        public string getNarrative ()
+        public string getNarrative()
         {
             return this.getProperty("narrative").ToString();
         }
 
-        public void setNarrative (string narrative)
+        public void setNarrative(string narrative)
         {
             this.setProperty("narrative", narrative);
         }

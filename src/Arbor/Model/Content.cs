@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string CONTENT_NAME = "contentName";
         public const string DESCRIPTION = "description";
 
-        public Content ()
+        public Content()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public Content (string resourceType = "Content", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<Content> query (SimpleQuery query = null)
+        public Content(string resourceType = "Content", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("Content");
-        	RestGateway gateway = (RestGateway) Content.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<Content> contentCollection = new ModelCollection<Content> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    contentCollection.add((Content) model);
-        	}
-        
-        	return contentCollection;
+
         }
 
-        public static Content retrieve (string id)
+
+        public static ModelCollection<Content> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) Content.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (Content) gateway.retrieve(ResourceType.CONTENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("Content");
+            RestGateway gateway = (RestGateway)Content.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<Content> contentCollection = new ModelCollection<Content>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                contentCollection.add((Content)model);
+            }
+
+            return contentCollection;
         }
 
-        public string getContentName ()
+        public static Content retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)Content.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (Content)gateway.retrieve(ResourceType.CONTENT, id);
+        }
+
+        public string getContentName()
         {
             return this.getProperty("contentName").ToString();
         }
 
-        public void setContentName (string contentName)
+        public void setContentName(string contentName)
         {
             this.setProperty("contentName", contentName);
         }
 
-        public string getDescription ()
+        public string getDescription()
         {
             return this.getProperty("description").ToString();
         }
 
-        public void setDescription (string description)
+        public void setDescription(string description)
         {
             this.setProperty("description", description);
         }

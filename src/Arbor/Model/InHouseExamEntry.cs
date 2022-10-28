@@ -20,128 +20,129 @@ namespace Arbor.Model
         public const string ATTENDANCE_MARK = "attendanceMark";
         public const string MINUTES_LATE = "minutesLate";
 
-        public InHouseExamEntry ()
+        public InHouseExamEntry()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public InHouseExamEntry (string resourceType = "InHouseExamEntry", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<InHouseExamEntry> query (SimpleQuery query = null)
+        public InHouseExamEntry(string resourceType = "InHouseExamEntry", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("InHouseExamEntry");
-        	RestGateway gateway = (RestGateway) InHouseExamEntry.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<InHouseExamEntry> inhouseexamentryCollection = new ModelCollection<InHouseExamEntry> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    inhouseexamentryCollection.add((InHouseExamEntry) model);
-        	}
-        
-        	return inhouseexamentryCollection;
+
         }
 
-        public static InHouseExamEntry retrieve (string id)
+
+        public static ModelCollection<InHouseExamEntry> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) InHouseExamEntry.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (InHouseExamEntry) gateway.retrieve(ResourceType.IN_HOUSE_EXAM_ENTRY, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("InHouseExamEntry");
+            RestGateway gateway = (RestGateway)InHouseExamEntry.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<InHouseExamEntry> inhouseexamentryCollection = new ModelCollection<InHouseExamEntry>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                inhouseexamentryCollection.add((InHouseExamEntry)model);
+            }
+
+            return inhouseexamentryCollection;
         }
 
-        public InHouseExam getInHouseExam ()
+        public static InHouseExamEntry retrieve(string id)
         {
-            return (InHouseExam) this.getProperty("inHouseExam");
+            RestGateway gateway = (RestGateway)InHouseExamEntry.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (InHouseExamEntry)gateway.retrieve(ResourceType.IN_HOUSE_EXAM_ENTRY, id);
         }
 
-        public void setInHouseExam (InHouseExam inHouseExam)
+        public InHouseExam getInHouseExam()
+        {
+            return (InHouseExam)this.getProperty("inHouseExam");
+        }
+
+        public void setInHouseExam(InHouseExam inHouseExam)
         {
             this.setProperty("inHouseExam", inHouseExam);
         }
 
-        public InHouseExamInstance getInHouseExamInstance ()
+        public InHouseExamInstance getInHouseExamInstance()
         {
-            return (InHouseExamInstance) this.getProperty("inHouseExamInstance");
+            return (InHouseExamInstance)this.getProperty("inHouseExamInstance");
         }
 
-        public void setInHouseExamInstance (InHouseExamInstance inHouseExamInstance)
+        public void setInHouseExamInstance(InHouseExamInstance inHouseExamInstance)
         {
             this.setProperty("inHouseExamInstance", inHouseExamInstance);
         }
 
-        public InHouseCandidate getInHouseCandidate ()
+        public InHouseCandidate getInHouseCandidate()
         {
-            return (InHouseCandidate) this.getProperty("inHouseCandidate");
+            return (InHouseCandidate)this.getProperty("inHouseCandidate");
         }
 
-        public void setInHouseCandidate (InHouseCandidate inHouseCandidate)
+        public void setInHouseCandidate(InHouseCandidate inHouseCandidate)
         {
             this.setProperty("inHouseCandidate", inHouseCandidate);
         }
 
-        public InvigilationSession getInvigilationSession ()
+        public InvigilationSession getInvigilationSession()
         {
-            return (InvigilationSession) this.getProperty("invigilationSession");
+            return (InvigilationSession)this.getProperty("invigilationSession");
         }
 
-        public void setInvigilationSession (InvigilationSession invigilationSession)
+        public void setInvigilationSession(InvigilationSession invigilationSession)
         {
             this.setProperty("invigilationSession", invigilationSession);
         }
 
-        public RoomLayoutSeat getSeat ()
+        public RoomLayoutSeat getSeat()
         {
-            return (RoomLayoutSeat) this.getProperty("seat");
+            return (RoomLayoutSeat)this.getProperty("seat");
         }
 
-        public void setSeat (RoomLayoutSeat seat)
+        public void setSeat(RoomLayoutSeat seat)
         {
             this.setProperty("seat", seat);
         }
 
-        public DateTime getStartDatetime ()
+        public DateTime getStartDatetime()
         {
             return Convert.ToDateTime(this.getProperty("startDatetime"));
         }
 
-        public void setStartDatetime (DateTime startDatetime)
+        public void setStartDatetime(DateTime startDatetime)
         {
             this.setProperty("startDatetime", startDatetime);
         }
 
-        public float getExtraTimePercentage ()
+        public float getExtraTimePercentage()
         {
-            return (float) this.getProperty("extraTimePercentage");
+            return (float)this.getProperty("extraTimePercentage");
         }
 
-        public void setExtraTimePercentage (float extraTimePercentage)
+        public void setExtraTimePercentage(float extraTimePercentage)
         {
             this.setProperty("extraTimePercentage", extraTimePercentage);
         }
 
-        public string getAttendanceMark ()
+        public string getAttendanceMark()
         {
             return this.getProperty("attendanceMark").ToString();
         }
 
-        public void setAttendanceMark (string attendanceMark)
+        public void setAttendanceMark(string attendanceMark)
         {
             this.setProperty("attendanceMark", attendanceMark);
         }
 
-        public int getMinutesLate ()
+        public int getMinutesLate()
         {
             return Convert.ToInt32(this.getProperty("minutesLate"));
         }
 
-        public void setMinutesLate (int minutesLate)
+        public void setMinutesLate(int minutesLate)
         {
             this.setProperty("minutesLate", minutesLate);
         }

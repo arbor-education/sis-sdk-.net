@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string ENROLMENT_REQUESTED_DATETIME = "enrolmentRequestedDatetime";
         public const string ENROLMENT_CONFIRMED_DATETIME = "enrolmentConfirmedDatetime";
 
-        public CandidateEnrolment ()
+        public CandidateEnrolment()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public CandidateEnrolment (string resourceType = "CandidateEnrolment", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<CandidateEnrolment> query (SimpleQuery query = null)
+        public CandidateEnrolment(string resourceType = "CandidateEnrolment", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("CandidateEnrolment");
-        	RestGateway gateway = (RestGateway) CandidateEnrolment.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<CandidateEnrolment> candidateenrolmentCollection = new ModelCollection<CandidateEnrolment> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    candidateenrolmentCollection.add((CandidateEnrolment) model);
-        	}
-        
-        	return candidateenrolmentCollection;
+
         }
 
-        public static CandidateEnrolment retrieve (string id)
+
+        public static ModelCollection<CandidateEnrolment> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) CandidateEnrolment.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (CandidateEnrolment) gateway.retrieve(ResourceType.CANDIDATE_ENROLMENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("CandidateEnrolment");
+            RestGateway gateway = (RestGateway)CandidateEnrolment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<CandidateEnrolment> candidateenrolmentCollection = new ModelCollection<CandidateEnrolment>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                candidateenrolmentCollection.add((CandidateEnrolment)model);
+            }
+
+            return candidateenrolmentCollection;
         }
 
-        public Candidate getCandidate ()
+        public static CandidateEnrolment retrieve(string id)
         {
-            return (Candidate) this.getProperty("candidate");
+            RestGateway gateway = (RestGateway)CandidateEnrolment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (CandidateEnrolment)gateway.retrieve(ResourceType.CANDIDATE_ENROLMENT, id);
         }
 
-        public void setCandidate (Candidate candidate)
+        public Candidate getCandidate()
+        {
+            return (Candidate)this.getProperty("candidate");
+        }
+
+        public void setCandidate(Candidate candidate)
         {
             this.setProperty("candidate", candidate);
         }
 
-        public string getEnrolmentNumber ()
+        public string getEnrolmentNumber()
         {
             return this.getProperty("enrolmentNumber").ToString();
         }
 
-        public void setEnrolmentNumber (string enrolmentNumber)
+        public void setEnrolmentNumber(string enrolmentNumber)
         {
             this.setProperty("enrolmentNumber", enrolmentNumber);
         }
 
-        public DateTime getEnrolmentRequestedDatetime ()
+        public DateTime getEnrolmentRequestedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("enrolmentRequestedDatetime"));
         }
 
-        public void setEnrolmentRequestedDatetime (DateTime enrolmentRequestedDatetime)
+        public void setEnrolmentRequestedDatetime(DateTime enrolmentRequestedDatetime)
         {
             this.setProperty("enrolmentRequestedDatetime", enrolmentRequestedDatetime);
         }
 
-        public DateTime getEnrolmentConfirmedDatetime ()
+        public DateTime getEnrolmentConfirmedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("enrolmentConfirmedDatetime"));
         }
 
-        public void setEnrolmentConfirmedDatetime (DateTime enrolmentConfirmedDatetime)
+        public void setEnrolmentConfirmedDatetime(DateTime enrolmentConfirmedDatetime)
         {
             this.setProperty("enrolmentConfirmedDatetime", enrolmentConfirmedDatetime);
         }

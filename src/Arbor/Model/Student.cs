@@ -43,358 +43,359 @@ namespace Arbor.Model
         public const string IS_ACTIVE_OUTGOING_SYNC = "isActiveOutgoingSync";
         public const string IS_ACTIVE_INCOMING_SYNC = "isActiveIncomingSync";
 
-        public Student ()
+        public Student()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public Student (string resourceType = "Student", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<Student> query (SimpleQuery query = null)
+        public Student(string resourceType = "Student", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("Student");
-        	RestGateway gateway = (RestGateway) Student.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<Student> studentCollection = new ModelCollection<Student> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    studentCollection.add((Student) model);
-        	}
-        
-        	return studentCollection;
+
         }
 
-        public static Student retrieve (string id)
+
+        public static ModelCollection<Student> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) Student.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (Student) gateway.retrieve(ResourceType.STUDENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("Student");
+            RestGateway gateway = (RestGateway)Student.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<Student> studentCollection = new ModelCollection<Student>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                studentCollection.add((Student)model);
+            }
+
+            return studentCollection;
         }
 
-        public int getUniqueLearnerNumber ()
+        public static Student retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)Student.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (Student)gateway.retrieve(ResourceType.STUDENT, id);
+        }
+
+        public int getUniqueLearnerNumber()
         {
             return Convert.ToInt32(this.getProperty("uniqueLearnerNumber"));
         }
 
-        public void setUniqueLearnerNumber (int uniqueLearnerNumber)
+        public void setUniqueLearnerNumber(int uniqueLearnerNumber)
         {
             this.setProperty("uniqueLearnerNumber", uniqueLearnerNumber);
         }
 
-        public LocalAuthority getHomeLocalAuthority ()
+        public LocalAuthority getHomeLocalAuthority()
         {
-            return (LocalAuthority) this.getProperty("homeLocalAuthority");
+            return (LocalAuthority)this.getProperty("homeLocalAuthority");
         }
 
-        public void setHomeLocalAuthority (LocalAuthority homeLocalAuthority)
+        public void setHomeLocalAuthority(LocalAuthority homeLocalAuthority)
         {
             this.setProperty("homeLocalAuthority", homeLocalAuthority);
         }
 
-        public string getYouthSupportServicesAgreement ()
+        public string getYouthSupportServicesAgreement()
         {
             return this.getProperty("youthSupportServicesAgreement").ToString();
         }
 
-        public void setYouthSupportServicesAgreement (string youthSupportServicesAgreement)
+        public void setYouthSupportServicesAgreement(string youthSupportServicesAgreement)
         {
             this.setProperty("youthSupportServicesAgreement", youthSupportServicesAgreement);
         }
 
-        public string getHoursAtSetting ()
+        public string getHoursAtSetting()
         {
             return this.getProperty("hoursAtSetting").ToString();
         }
 
-        public void setHoursAtSetting (string hoursAtSetting)
+        public void setHoursAtSetting(string hoursAtSetting)
         {
             this.setProperty("hoursAtSetting", hoursAtSetting);
         }
 
-        public string getFundedHours ()
+        public string getFundedHours()
         {
             return this.getProperty("fundedHours").ToString();
         }
 
-        public void setFundedHours (string fundedHours)
+        public void setFundedHours(string fundedHours)
         {
             this.setProperty("fundedHours", fundedHours);
         }
 
-        public string getEthnicitySource ()
+        public string getEthnicitySource()
         {
             return this.getProperty("ethnicitySource").ToString();
         }
 
-        public void setEthnicitySource (string ethnicitySource)
+        public void setEthnicitySource(string ethnicitySource)
         {
             this.setProperty("ethnicitySource", ethnicitySource);
         }
 
-        public string getNhsNumber ()
+        public string getNhsNumber()
         {
             return this.getProperty("nhsNumber").ToString();
         }
 
-        public void setNhsNumber (string nhsNumber)
+        public void setNhsNumber(string nhsNumber)
         {
             this.setProperty("nhsNumber", nhsNumber);
         }
 
-        public string getUcasPersonalIdentifier ()
+        public string getUcasPersonalIdentifier()
         {
             return this.getProperty("ucasPersonalIdentifier").ToString();
         }
 
-        public void setUcasPersonalIdentifier (string ucasPersonalIdentifier)
+        public void setUcasPersonalIdentifier(string ucasPersonalIdentifier)
         {
             this.setProperty("ucasPersonalIdentifier", ucasPersonalIdentifier);
         }
 
-        public string getExtendedHours ()
+        public string getExtendedHours()
         {
             return this.getProperty("extendedHours").ToString();
         }
 
-        public void setExtendedHours (string extendedHours)
+        public void setExtendedHours(string extendedHours)
         {
             this.setProperty("extendedHours", extendedHours);
         }
 
-        public string getThirtyHourCode ()
+        public string getThirtyHourCode()
         {
             return this.getProperty("thirtyHourCode").ToString();
         }
 
-        public void setThirtyHourCode (string thirtyHourCode)
+        public void setThirtyHourCode(string thirtyHourCode)
         {
             this.setProperty("thirtyHourCode", thirtyHourCode);
         }
 
-        public string getGcseEnglishGrade ()
+        public string getGcseEnglishGrade()
         {
             return this.getProperty("gcseEnglishGrade").ToString();
         }
 
-        public void setGcseEnglishGrade (string gcseEnglishGrade)
+        public void setGcseEnglishGrade(string gcseEnglishGrade)
         {
             this.setProperty("gcseEnglishGrade", gcseEnglishGrade);
         }
 
-        public string getGcseEnglishGradePrior ()
+        public string getGcseEnglishGradePrior()
         {
             return this.getProperty("gcseEnglishGradePrior").ToString();
         }
 
-        public void setGcseEnglishGradePrior (string gcseEnglishGradePrior)
+        public void setGcseEnglishGradePrior(string gcseEnglishGradePrior)
         {
             this.setProperty("gcseEnglishGradePrior", gcseEnglishGradePrior);
         }
 
-        public GcseEnglishAchievementType getGcseEnglishAchievementType ()
+        public GcseEnglishAchievementType getGcseEnglishAchievementType()
         {
-            return (GcseEnglishAchievementType) this.getProperty("gcseEnglishAchievementType");
+            return (GcseEnglishAchievementType)this.getProperty("gcseEnglishAchievementType");
         }
 
-        public void setGcseEnglishAchievementType (GcseEnglishAchievementType gcseEnglishAchievementType)
+        public void setGcseEnglishAchievementType(GcseEnglishAchievementType gcseEnglishAchievementType)
         {
             this.setProperty("gcseEnglishAchievementType", gcseEnglishAchievementType);
         }
 
-        public GcseEnglishFundingExemptionType getGcseEnglishFundingExemptionType ()
+        public GcseEnglishFundingExemptionType getGcseEnglishFundingExemptionType()
         {
-            return (GcseEnglishFundingExemptionType) this.getProperty("gcseEnglishFundingExemptionType");
+            return (GcseEnglishFundingExemptionType)this.getProperty("gcseEnglishFundingExemptionType");
         }
 
-        public void setGcseEnglishFundingExemptionType (GcseEnglishFundingExemptionType gcseEnglishFundingExemptionType)
+        public void setGcseEnglishFundingExemptionType(GcseEnglishFundingExemptionType gcseEnglishFundingExemptionType)
         {
             this.setProperty("gcseEnglishFundingExemptionType", gcseEnglishFundingExemptionType);
         }
 
-        public string getGcseMathsGrade ()
+        public string getGcseMathsGrade()
         {
             return this.getProperty("gcseMathsGrade").ToString();
         }
 
-        public void setGcseMathsGrade (string gcseMathsGrade)
+        public void setGcseMathsGrade(string gcseMathsGrade)
         {
             this.setProperty("gcseMathsGrade", gcseMathsGrade);
         }
 
-        public string getGcseMathsGradePrior ()
+        public string getGcseMathsGradePrior()
         {
             return this.getProperty("gcseMathsGradePrior").ToString();
         }
 
-        public void setGcseMathsGradePrior (string gcseMathsGradePrior)
+        public void setGcseMathsGradePrior(string gcseMathsGradePrior)
         {
             this.setProperty("gcseMathsGradePrior", gcseMathsGradePrior);
         }
 
-        public GcseMathsAchievementType getGcseMathsAchievementType ()
+        public GcseMathsAchievementType getGcseMathsAchievementType()
         {
-            return (GcseMathsAchievementType) this.getProperty("gcseMathsAchievementType");
+            return (GcseMathsAchievementType)this.getProperty("gcseMathsAchievementType");
         }
 
-        public void setGcseMathsAchievementType (GcseMathsAchievementType gcseMathsAchievementType)
+        public void setGcseMathsAchievementType(GcseMathsAchievementType gcseMathsAchievementType)
         {
             this.setProperty("gcseMathsAchievementType", gcseMathsAchievementType);
         }
 
-        public GcseMathsFundingExemptionType getGcseMathsFundingExemptionType ()
+        public GcseMathsFundingExemptionType getGcseMathsFundingExemptionType()
         {
-            return (GcseMathsFundingExemptionType) this.getProperty("gcseMathsFundingExemptionType");
+            return (GcseMathsFundingExemptionType)this.getProperty("gcseMathsFundingExemptionType");
         }
 
-        public void setGcseMathsFundingExemptionType (GcseMathsFundingExemptionType gcseMathsFundingExemptionType)
+        public void setGcseMathsFundingExemptionType(GcseMathsFundingExemptionType gcseMathsFundingExemptionType)
         {
             this.setProperty("gcseMathsFundingExemptionType", gcseMathsFundingExemptionType);
         }
 
-        public int getTLevelPlannedEepHours ()
+        public int getTLevelPlannedEepHours()
         {
             return Convert.ToInt32(this.getProperty("tLevelPlannedEepHours"));
         }
 
-        public void setTLevelPlannedEepHours (int tLevelPlannedEepHours)
+        public void setTLevelPlannedEepHours(int tLevelPlannedEepHours)
         {
             this.setProperty("tLevelPlannedEepHours", tLevelPlannedEepHours);
         }
 
-        public Person getPerson ()
+        public Person getPerson()
         {
-            return (Person) this.getProperty("person");
+            return (Person)this.getProperty("person");
         }
 
-        public void setPerson (Person person)
+        public void setPerson(Person person)
         {
             this.setProperty("person", person);
         }
 
-        public Religion getReligion ()
+        public Religion getReligion()
         {
-            return (Religion) this.getProperty("religion");
+            return (Religion)this.getProperty("religion");
         }
 
-        public void setReligion (Religion religion)
+        public void setReligion(Religion religion)
         {
             this.setProperty("religion", religion);
         }
 
-        public Ethnicity getEthnicity ()
+        public Ethnicity getEthnicity()
         {
-            return (Ethnicity) this.getProperty("ethnicity");
+            return (Ethnicity)this.getProperty("ethnicity");
         }
 
-        public void setEthnicity (Ethnicity ethnicity)
+        public void setEthnicity(Ethnicity ethnicity)
         {
             this.setProperty("ethnicity", ethnicity);
         }
 
-        public string getBloodGroup ()
+        public string getBloodGroup()
         {
             return this.getProperty("bloodGroup").ToString();
         }
 
-        public void setBloodGroup (string bloodGroup)
+        public void setBloodGroup(string bloodGroup)
         {
             this.setProperty("bloodGroup", bloodGroup);
         }
 
-        public string getPregnancyLength ()
+        public string getPregnancyLength()
         {
             return this.getProperty("pregnancyLength").ToString();
         }
 
-        public void setPregnancyLength (string pregnancyLength)
+        public void setPregnancyLength(string pregnancyLength)
         {
             this.setProperty("pregnancyLength", pregnancyLength);
         }
 
-        public string getBirthDelivery ()
+        public string getBirthDelivery()
         {
             return this.getProperty("birthDelivery").ToString();
         }
 
-        public void setBirthDelivery (string birthDelivery)
+        public void setBirthDelivery(string birthDelivery)
         {
             this.setProperty("birthDelivery", birthDelivery);
         }
 
-        public string getHandedness ()
+        public string getHandedness()
         {
             return this.getProperty("handedness").ToString();
         }
 
-        public void setHandedness (string handedness)
+        public void setHandedness(string handedness)
         {
             this.setProperty("handedness", handedness);
         }
 
-        public string getStudentNumber ()
+        public string getStudentNumber()
         {
             return this.getProperty("studentNumber").ToString();
         }
 
-        public void setStudentNumber (string studentNumber)
+        public void setStudentNumber(string studentNumber)
         {
             this.setProperty("studentNumber", studentNumber);
         }
 
-        public string getLegacySystemId ()
+        public string getLegacySystemId()
         {
             return this.getProperty("legacySystemId").ToString();
         }
 
-        public void setLegacySystemId (string legacySystemId)
+        public void setLegacySystemId(string legacySystemId)
         {
             this.setProperty("legacySystemId", legacySystemId);
         }
 
-        public DateTime getMinimumDataRetentionDate ()
+        public DateTime getMinimumDataRetentionDate()
         {
             return Convert.ToDateTime(this.getProperty("minimumDataRetentionDate"));
         }
 
-        public void setMinimumDataRetentionDate (DateTime minimumDataRetentionDate)
+        public void setMinimumDataRetentionDate(DateTime minimumDataRetentionDate)
         {
             this.setProperty("minimumDataRetentionDate", minimumDataRetentionDate);
         }
 
-        public bool getSuspendCalendarEntryMappings ()
+        public bool getSuspendCalendarEntryMappings()
         {
             return Convert.ToBoolean(this.getProperty("suspendCalendarEntryMappings"));
         }
 
-        public void setSuspendCalendarEntryMappings (bool suspendCalendarEntryMappings)
+        public void setSuspendCalendarEntryMappings(bool suspendCalendarEntryMappings)
         {
             this.setProperty("suspendCalendarEntryMappings", suspendCalendarEntryMappings);
         }
 
-        public bool getIsActiveOutgoingSync ()
+        public bool getIsActiveOutgoingSync()
         {
             return Convert.ToBoolean(this.getProperty("isActiveOutgoingSync"));
         }
 
-        public void setIsActiveOutgoingSync (bool isActiveOutgoingSync)
+        public void setIsActiveOutgoingSync(bool isActiveOutgoingSync)
         {
             this.setProperty("isActiveOutgoingSync", isActiveOutgoingSync);
         }
 
-        public bool getIsActiveIncomingSync ()
+        public bool getIsActiveIncomingSync()
         {
             return Convert.ToBoolean(this.getProperty("isActiveIncomingSync"));
         }
 
-        public void setIsActiveIncomingSync (bool isActiveIncomingSync)
+        public void setIsActiveIncomingSync(bool isActiveIncomingSync)
         {
             this.setProperty("isActiveIncomingSync", isActiveIncomingSync);
         }

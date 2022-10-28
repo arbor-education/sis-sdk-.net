@@ -16,88 +16,89 @@ namespace Arbor.Model
         public const string MAPPING_ACTION = "mappingAction";
         public const string MAPPED_STUDENT = "mappedStudent";
 
-        public OptionsImportStudentMapping ()
+        public OptionsImportStudentMapping()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public OptionsImportStudentMapping (string resourceType = "OptionsImportStudentMapping", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<OptionsImportStudentMapping> query (SimpleQuery query = null)
+        public OptionsImportStudentMapping(string resourceType = "OptionsImportStudentMapping", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("OptionsImportStudentMapping");
-        	RestGateway gateway = (RestGateway) OptionsImportStudentMapping.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<OptionsImportStudentMapping> optionsimportstudentmappingCollection = new ModelCollection<OptionsImportStudentMapping> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    optionsimportstudentmappingCollection.add((OptionsImportStudentMapping) model);
-        	}
-        
-        	return optionsimportstudentmappingCollection;
+
         }
 
-        public static OptionsImportStudentMapping retrieve (string id)
+
+        public static ModelCollection<OptionsImportStudentMapping> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) OptionsImportStudentMapping.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (OptionsImportStudentMapping) gateway.retrieve(ResourceType.OPTIONS_IMPORT_STUDENT_MAPPING, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("OptionsImportStudentMapping");
+            RestGateway gateway = (RestGateway)OptionsImportStudentMapping.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<OptionsImportStudentMapping> optionsimportstudentmappingCollection = new ModelCollection<OptionsImportStudentMapping>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                optionsimportstudentmappingCollection.add((OptionsImportStudentMapping)model);
+            }
+
+            return optionsimportstudentmappingCollection;
         }
 
-        public OptionsImportResult getOptionsImportResult ()
+        public static OptionsImportStudentMapping retrieve(string id)
         {
-            return (OptionsImportResult) this.getProperty("optionsImportResult");
+            RestGateway gateway = (RestGateway)OptionsImportStudentMapping.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (OptionsImportStudentMapping)gateway.retrieve(ResourceType.OPTIONS_IMPORT_STUDENT_MAPPING, id);
         }
 
-        public void setOptionsImportResult (OptionsImportResult optionsImportResult)
+        public OptionsImportResult getOptionsImportResult()
+        {
+            return (OptionsImportResult)this.getProperty("optionsImportResult");
+        }
+
+        public void setOptionsImportResult(OptionsImportResult optionsImportResult)
         {
             this.setProperty("optionsImportResult", optionsImportResult);
         }
 
-        public string getStudentName ()
+        public string getStudentName()
         {
             return this.getProperty("studentName").ToString();
         }
 
-        public void setStudentName (string studentName)
+        public void setStudentName(string studentName)
         {
             this.setProperty("studentName", studentName);
         }
 
-        public string getStudentIdentifier ()
+        public string getStudentIdentifier()
         {
             return this.getProperty("studentIdentifier").ToString();
         }
 
-        public void setStudentIdentifier (string studentIdentifier)
+        public void setStudentIdentifier(string studentIdentifier)
         {
             this.setProperty("studentIdentifier", studentIdentifier);
         }
 
-        public string getMappingAction ()
+        public string getMappingAction()
         {
             return this.getProperty("mappingAction").ToString();
         }
 
-        public void setMappingAction (string mappingAction)
+        public void setMappingAction(string mappingAction)
         {
             this.setProperty("mappingAction", mappingAction);
         }
 
-        public Student getMappedStudent ()
+        public Student getMappedStudent()
         {
-            return (Student) this.getProperty("mappedStudent");
+            return (Student)this.getProperty("mappedStudent");
         }
 
-        public void setMappedStudent (Student mappedStudent)
+        public void setMappedStudent(Student mappedStudent)
         {
             this.setProperty("mappedStudent", mappedStudent);
         }

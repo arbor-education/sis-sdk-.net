@@ -16,88 +16,89 @@ namespace Arbor.Model
         public const string END_DATE = "endDate";
         public const string OTHER_EDUCATIONAL_INSTITUTION = "otherEducationalInstitution";
 
-        public EnrolmentModeAssignment ()
+        public EnrolmentModeAssignment()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public EnrolmentModeAssignment (string resourceType = "EnrolmentModeAssignment", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<EnrolmentModeAssignment> query (SimpleQuery query = null)
+        public EnrolmentModeAssignment(string resourceType = "EnrolmentModeAssignment", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("EnrolmentModeAssignment");
-        	RestGateway gateway = (RestGateway) EnrolmentModeAssignment.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<EnrolmentModeAssignment> enrolmentmodeassignmentCollection = new ModelCollection<EnrolmentModeAssignment> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    enrolmentmodeassignmentCollection.add((EnrolmentModeAssignment) model);
-        	}
-        
-        	return enrolmentmodeassignmentCollection;
+
         }
 
-        public static EnrolmentModeAssignment retrieve (string id)
+
+        public static ModelCollection<EnrolmentModeAssignment> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) EnrolmentModeAssignment.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (EnrolmentModeAssignment) gateway.retrieve(ResourceType.ENROLMENT_MODE_ASSIGNMENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("EnrolmentModeAssignment");
+            RestGateway gateway = (RestGateway)EnrolmentModeAssignment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<EnrolmentModeAssignment> enrolmentmodeassignmentCollection = new ModelCollection<EnrolmentModeAssignment>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                enrolmentmodeassignmentCollection.add((EnrolmentModeAssignment)model);
+            }
+
+            return enrolmentmodeassignmentCollection;
         }
 
-        public AcademicYearEnrolment getAcademicYearEnrolment ()
+        public static EnrolmentModeAssignment retrieve(string id)
         {
-            return (AcademicYearEnrolment) this.getProperty("academicYearEnrolment");
+            RestGateway gateway = (RestGateway)EnrolmentModeAssignment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (EnrolmentModeAssignment)gateway.retrieve(ResourceType.ENROLMENT_MODE_ASSIGNMENT, id);
         }
 
-        public void setAcademicYearEnrolment (AcademicYearEnrolment academicYearEnrolment)
+        public AcademicYearEnrolment getAcademicYearEnrolment()
+        {
+            return (AcademicYearEnrolment)this.getProperty("academicYearEnrolment");
+        }
+
+        public void setAcademicYearEnrolment(AcademicYearEnrolment academicYearEnrolment)
         {
             this.setProperty("academicYearEnrolment", academicYearEnrolment);
         }
 
-        public EnrolmentMode getEnrolmentMode ()
+        public EnrolmentMode getEnrolmentMode()
         {
-            return (EnrolmentMode) this.getProperty("enrolmentMode");
+            return (EnrolmentMode)this.getProperty("enrolmentMode");
         }
 
-        public void setEnrolmentMode (EnrolmentMode enrolmentMode)
+        public void setEnrolmentMode(EnrolmentMode enrolmentMode)
         {
             this.setProperty("enrolmentMode", enrolmentMode);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDate()
         {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }
 
-        public EducationalInstitution getOtherEducationalInstitution ()
+        public EducationalInstitution getOtherEducationalInstitution()
         {
-            return (EducationalInstitution) this.getProperty("otherEducationalInstitution");
+            return (EducationalInstitution)this.getProperty("otherEducationalInstitution");
         }
 
-        public void setOtherEducationalInstitution (EducationalInstitution otherEducationalInstitution)
+        public void setOtherEducationalInstitution(EducationalInstitution otherEducationalInstitution)
         {
             this.setProperty("otherEducationalInstitution", otherEducationalInstitution);
         }

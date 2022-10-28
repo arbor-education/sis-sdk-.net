@@ -28,208 +28,209 @@ namespace Arbor.Model
         public const string LEGACY_SYSTEM_ID = "legacySystemId";
         public const string EXTERNAL_PERSON_ID = "externalPersonId";
 
-        public Staff ()
+        public Staff()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public Staff (string resourceType = "Staff", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<Staff> query (SimpleQuery query = null)
+        public Staff(string resourceType = "Staff", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("Staff");
-        	RestGateway gateway = (RestGateway) Staff.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<Staff> staffCollection = new ModelCollection<Staff> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    staffCollection.add((Staff) model);
-        	}
-        
-        	return staffCollection;
+
         }
 
-        public static Staff retrieve (string id)
+
+        public static ModelCollection<Staff> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) Staff.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (Staff) gateway.retrieve(ResourceType.STAFF, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("Staff");
+            RestGateway gateway = (RestGateway)Staff.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<Staff> staffCollection = new ModelCollection<Staff>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                staffCollection.add((Staff)model);
+            }
+
+            return staffCollection;
         }
 
-        public bool getEligibleForSchoolWorkforceReturn ()
+        public static Staff retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)Staff.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (Staff)gateway.retrieve(ResourceType.STAFF, id);
+        }
+
+        public bool getEligibleForSchoolWorkforceReturn()
         {
             return Convert.ToBoolean(this.getProperty("eligibleForSchoolWorkforceReturn"));
         }
 
-        public void setEligibleForSchoolWorkforceReturn (bool eligibleForSchoolWorkforceReturn)
+        public void setEligibleForSchoolWorkforceReturn(bool eligibleForSchoolWorkforceReturn)
         {
             this.setProperty("eligibleForSchoolWorkforceReturn", eligibleForSchoolWorkforceReturn);
         }
 
-        public bool getQualifiedTeacherStatus ()
+        public bool getQualifiedTeacherStatus()
         {
             return Convert.ToBoolean(this.getProperty("qualifiedTeacherStatus"));
         }
 
-        public void setQualifiedTeacherStatus (bool qualifiedTeacherStatus)
+        public void setQualifiedTeacherStatus(bool qualifiedTeacherStatus)
         {
             this.setProperty("qualifiedTeacherStatus", qualifiedTeacherStatus);
         }
 
-        public bool getQualifiedTeacherLearningAndSkillsStatus ()
+        public bool getQualifiedTeacherLearningAndSkillsStatus()
         {
             return Convert.ToBoolean(this.getProperty("qualifiedTeacherLearningAndSkillsStatus"));
         }
 
-        public void setQualifiedTeacherLearningAndSkillsStatus (bool qualifiedTeacherLearningAndSkillsStatus)
+        public void setQualifiedTeacherLearningAndSkillsStatus(bool qualifiedTeacherLearningAndSkillsStatus)
         {
             this.setProperty("qualifiedTeacherLearningAndSkillsStatus", qualifiedTeacherLearningAndSkillsStatus);
         }
 
-        public bool getEarlyYearsTeacherStatus ()
+        public bool getEarlyYearsTeacherStatus()
         {
             return Convert.ToBoolean(this.getProperty("earlyYearsTeacherStatus"));
         }
 
-        public void setEarlyYearsTeacherStatus (bool earlyYearsTeacherStatus)
+        public void setEarlyYearsTeacherStatus(bool earlyYearsTeacherStatus)
         {
             this.setProperty("earlyYearsTeacherStatus", earlyYearsTeacherStatus);
         }
 
-        public QualifiedTeacherRoute getQualifiedTeacherRoute ()
+        public QualifiedTeacherRoute getQualifiedTeacherRoute()
         {
-            return (QualifiedTeacherRoute) this.getProperty("qualifiedTeacherRoute");
+            return (QualifiedTeacherRoute)this.getProperty("qualifiedTeacherRoute");
         }
 
-        public void setQualifiedTeacherRoute (QualifiedTeacherRoute qualifiedTeacherRoute)
+        public void setQualifiedTeacherRoute(QualifiedTeacherRoute qualifiedTeacherRoute)
         {
             this.setProperty("qualifiedTeacherRoute", qualifiedTeacherRoute);
         }
 
-        public bool getHltaStatus ()
+        public bool getHltaStatus()
         {
             return Convert.ToBoolean(this.getProperty("hltaStatus"));
         }
 
-        public void setHltaStatus (bool hltaStatus)
+        public void setHltaStatus(bool hltaStatus)
         {
             this.setProperty("hltaStatus", hltaStatus);
         }
 
-        public DateTime getNewlyQualifiedTeacherDate ()
+        public DateTime getNewlyQualifiedTeacherDate()
         {
             return Convert.ToDateTime(this.getProperty("newlyQualifiedTeacherDate"));
         }
 
-        public void setNewlyQualifiedTeacherDate (DateTime newlyQualifiedTeacherDate)
+        public void setNewlyQualifiedTeacherDate(DateTime newlyQualifiedTeacherDate)
         {
             this.setProperty("newlyQualifiedTeacherDate", newlyQualifiedTeacherDate);
         }
 
-        public Person getPerson ()
+        public Person getPerson()
         {
-            return (Person) this.getProperty("person");
+            return (Person)this.getProperty("person");
         }
 
-        public void setPerson (Person person)
+        public void setPerson(Person person)
         {
             this.setProperty("person", person);
         }
 
-        public Ethnicity getEthnicity ()
+        public Ethnicity getEthnicity()
         {
-            return (Ethnicity) this.getProperty("ethnicity");
+            return (Ethnicity)this.getProperty("ethnicity");
         }
 
-        public void setEthnicity (Ethnicity ethnicity)
+        public void setEthnicity(Ethnicity ethnicity)
         {
             this.setProperty("ethnicity", ethnicity);
         }
 
-        public Religion getReligion ()
+        public Religion getReligion()
         {
-            return (Religion) this.getProperty("religion");
+            return (Religion)this.getProperty("religion");
         }
 
-        public void setReligion (Religion religion)
+        public void setReligion(Religion religion)
         {
             this.setProperty("religion", religion);
         }
 
-        public string getBloodGroup ()
+        public string getBloodGroup()
         {
             return this.getProperty("bloodGroup").ToString();
         }
 
-        public void setBloodGroup (string bloodGroup)
+        public void setBloodGroup(string bloodGroup)
         {
             this.setProperty("bloodGroup", bloodGroup);
         }
 
-        public string getStaffNumber ()
+        public string getStaffNumber()
         {
             return this.getProperty("staffNumber").ToString();
         }
 
-        public void setStaffNumber (string staffNumber)
+        public void setStaffNumber(string staffNumber)
         {
             this.setProperty("staffNumber", staffNumber);
         }
 
-        public DateTime getContinuousServiceStartDate ()
+        public DateTime getContinuousServiceStartDate()
         {
             return Convert.ToDateTime(this.getProperty("continuousServiceStartDate"));
         }
 
-        public void setContinuousServiceStartDate (DateTime continuousServiceStartDate)
+        public void setContinuousServiceStartDate(DateTime continuousServiceStartDate)
         {
             this.setProperty("continuousServiceStartDate", continuousServiceStartDate);
         }
 
-        public string getZendeskUser ()
+        public string getZendeskUser()
         {
             return this.getProperty("zendeskUser").ToString();
         }
 
-        public void setZendeskUser (string zendeskUser)
+        public void setZendeskUser(string zendeskUser)
         {
             this.setProperty("zendeskUser", zendeskUser);
         }
 
-        public string getTimetableAbbreviation ()
+        public string getTimetableAbbreviation()
         {
             return this.getProperty("timetableAbbreviation").ToString();
         }
 
-        public void setTimetableAbbreviation (string timetableAbbreviation)
+        public void setTimetableAbbreviation(string timetableAbbreviation)
         {
             this.setProperty("timetableAbbreviation", timetableAbbreviation);
         }
 
-        public string getLegacySystemId ()
+        public string getLegacySystemId()
         {
             return this.getProperty("legacySystemId").ToString();
         }
 
-        public void setLegacySystemId (string legacySystemId)
+        public void setLegacySystemId(string legacySystemId)
         {
             this.setProperty("legacySystemId", legacySystemId);
         }
 
-        public string getExternalPersonId ()
+        public string getExternalPersonId()
         {
             return this.getProperty("externalPersonId").ToString();
         }
 
-        public void setExternalPersonId (string externalPersonId)
+        public void setExternalPersonId(string externalPersonId)
         {
             this.setProperty("externalPersonId", externalPersonId);
         }

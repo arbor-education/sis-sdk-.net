@@ -14,68 +14,69 @@ namespace Arbor.Model
         public const string START_DATETIME = "startDatetime";
         public const string END_DATETIME = "endDatetime";
 
-        public BookableResourcePeriod ()
+        public BookableResourcePeriod()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public BookableResourcePeriod (string resourceType = "BookableResourcePeriod", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<BookableResourcePeriod> query (SimpleQuery query = null)
+        public BookableResourcePeriod(string resourceType = "BookableResourcePeriod", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("BookableResourcePeriod");
-        	RestGateway gateway = (RestGateway) BookableResourcePeriod.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<BookableResourcePeriod> bookableresourceperiodCollection = new ModelCollection<BookableResourcePeriod> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    bookableresourceperiodCollection.add((BookableResourcePeriod) model);
-        	}
-        
-        	return bookableresourceperiodCollection;
+
         }
 
-        public static BookableResourcePeriod retrieve (string id)
+
+        public static ModelCollection<BookableResourcePeriod> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) BookableResourcePeriod.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (BookableResourcePeriod) gateway.retrieve(ResourceType.BOOKABLE_RESOURCE_PERIOD, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("BookableResourcePeriod");
+            RestGateway gateway = (RestGateway)BookableResourcePeriod.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<BookableResourcePeriod> bookableresourceperiodCollection = new ModelCollection<BookableResourcePeriod>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                bookableresourceperiodCollection.add((BookableResourcePeriod)model);
+            }
+
+            return bookableresourceperiodCollection;
         }
 
-        public Staff getResource ()
+        public static BookableResourcePeriod retrieve(string id)
         {
-            return (Staff) this.getProperty("resource");
+            RestGateway gateway = (RestGateway)BookableResourcePeriod.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (BookableResourcePeriod)gateway.retrieve(ResourceType.BOOKABLE_RESOURCE_PERIOD, id);
         }
 
-        public void setResource (Staff resource)
+        public Staff getResource()
+        {
+            return (Staff)this.getProperty("resource");
+        }
+
+        public void setResource(Staff resource)
         {
             this.setProperty("resource", resource);
         }
 
-        public DateTime getStartDatetime ()
+        public DateTime getStartDatetime()
         {
             return Convert.ToDateTime(this.getProperty("startDatetime"));
         }
 
-        public void setStartDatetime (DateTime startDatetime)
+        public void setStartDatetime(DateTime startDatetime)
         {
             this.setProperty("startDatetime", startDatetime);
         }
 
-        public DateTime getEndDatetime ()
+        public DateTime getEndDatetime()
         {
             return Convert.ToDateTime(this.getProperty("endDatetime"));
         }
 
-        public void setEndDatetime (DateTime endDatetime)
+        public void setEndDatetime(DateTime endDatetime)
         {
             this.setProperty("endDatetime", endDatetime);
         }

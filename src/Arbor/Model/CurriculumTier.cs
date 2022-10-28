@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string DATA_ORDER = "dataOrder";
         public const string CURRICULUM_TIER_NAME = "curriculumTierName";
 
-        public CurriculumTier ()
+        public CurriculumTier()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public CurriculumTier (string resourceType = "CurriculumTier", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<CurriculumTier> query (SimpleQuery query = null)
+        public CurriculumTier(string resourceType = "CurriculumTier", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("CurriculumTier");
-        	RestGateway gateway = (RestGateway) CurriculumTier.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<CurriculumTier> curriculumtierCollection = new ModelCollection<CurriculumTier> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    curriculumtierCollection.add((CurriculumTier) model);
-        	}
-        
-        	return curriculumtierCollection;
+
         }
 
-        public static CurriculumTier retrieve (string id)
+
+        public static ModelCollection<CurriculumTier> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) CurriculumTier.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (CurriculumTier) gateway.retrieve(ResourceType.CURRICULUM_TIER, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("CurriculumTier");
+            RestGateway gateway = (RestGateway)CurriculumTier.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<CurriculumTier> curriculumtierCollection = new ModelCollection<CurriculumTier>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                curriculumtierCollection.add((CurriculumTier)model);
+            }
+
+            return curriculumtierCollection;
         }
 
-        public string getCode ()
+        public static CurriculumTier retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)CurriculumTier.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (CurriculumTier)gateway.retrieve(ResourceType.CURRICULUM_TIER, id);
+        }
+
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }
 
-        public string getCurriculumTierName ()
+        public string getCurriculumTierName()
         {
             return this.getProperty("curriculumTierName").ToString();
         }
 
-        public void setCurriculumTierName (string curriculumTierName)
+        public void setCurriculumTierName(string curriculumTierName)
         {
             this.setProperty("curriculumTierName", curriculumTierName);
         }

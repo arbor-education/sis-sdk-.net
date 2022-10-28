@@ -13,58 +13,59 @@ namespace Arbor.Model.UkDfe
         public const string PUPIL_PREMIUM_RECIPIENT = "pupilPremiumRecipient";
         public const string PUPIL_PREMIUM_TYPE = "pupilPremiumType";
 
-        public PupilPremiumRecipientType ()
+        public PupilPremiumRecipientType()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public PupilPremiumRecipientType (string resourceType = "PupilPremiumRecipientType", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<PupilPremiumRecipientType> query (SimpleQuery query = null)
+        public PupilPremiumRecipientType(string resourceType = "PupilPremiumRecipientType", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("UkDfe_PupilPremiumRecipientType");
-        	RestGateway gateway = (RestGateway) PupilPremiumRecipientType.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<PupilPremiumRecipientType> pupilpremiumrecipienttypeCollection = new ModelCollection<PupilPremiumRecipientType> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    pupilpremiumrecipienttypeCollection.add((PupilPremiumRecipientType) model);
-        	}
-        
-        	return pupilpremiumrecipienttypeCollection;
+
         }
 
-        public static PupilPremiumRecipientType retrieve (string id)
+
+        public static ModelCollection<PupilPremiumRecipientType> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) PupilPremiumRecipientType.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (PupilPremiumRecipientType) gateway.retrieve(ResourceType.UK_DFE_PUPIL_PREMIUM_RECIPIENT_TYPE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("UkDfe_PupilPremiumRecipientType");
+            RestGateway gateway = (RestGateway)PupilPremiumRecipientType.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<PupilPremiumRecipientType> pupilpremiumrecipienttypeCollection = new ModelCollection<PupilPremiumRecipientType>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                pupilpremiumrecipienttypeCollection.add((PupilPremiumRecipientType)model);
+            }
+
+            return pupilpremiumrecipienttypeCollection;
         }
 
-        public PupilPremiumRecipient getPupilPremiumRecipient ()
+        public static PupilPremiumRecipientType retrieve(string id)
         {
-            return (PupilPremiumRecipient) this.getProperty("pupilPremiumRecipient");
+            RestGateway gateway = (RestGateway)PupilPremiumRecipientType.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (PupilPremiumRecipientType)gateway.retrieve(ResourceType.UK_DFE_PUPIL_PREMIUM_RECIPIENT_TYPE, id);
         }
 
-        public void setPupilPremiumRecipient (PupilPremiumRecipient pupilPremiumRecipient)
+        public PupilPremiumRecipient getPupilPremiumRecipient()
+        {
+            return (PupilPremiumRecipient)this.getProperty("pupilPremiumRecipient");
+        }
+
+        public void setPupilPremiumRecipient(PupilPremiumRecipient pupilPremiumRecipient)
         {
             this.setProperty("pupilPremiumRecipient", pupilPremiumRecipient);
         }
 
-        public string getPupilPremiumType ()
+        public string getPupilPremiumType()
         {
             return this.getProperty("pupilPremiumType").ToString();
         }
 
-        public void setPupilPremiumType (string pupilPremiumType)
+        public void setPupilPremiumType(string pupilPremiumType)
         {
             this.setProperty("pupilPremiumType", pupilPremiumType);
         }

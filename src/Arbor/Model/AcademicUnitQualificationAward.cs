@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string ACADEMIC_UNIT = "academicUnit";
         public const string QUALIFICATION_AWARD = "qualificationAward";
 
-        public AcademicUnitQualificationAward ()
+        public AcademicUnitQualificationAward()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AcademicUnitQualificationAward (string resourceType = "AcademicUnitQualificationAward", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AcademicUnitQualificationAward> query (SimpleQuery query = null)
+        public AcademicUnitQualificationAward(string resourceType = "AcademicUnitQualificationAward", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AcademicUnitQualificationAward");
-        	RestGateway gateway = (RestGateway) AcademicUnitQualificationAward.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AcademicUnitQualificationAward> academicunitqualificationawardCollection = new ModelCollection<AcademicUnitQualificationAward> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    academicunitqualificationawardCollection.add((AcademicUnitQualificationAward) model);
-        	}
-        
-        	return academicunitqualificationawardCollection;
+
         }
 
-        public static AcademicUnitQualificationAward retrieve (string id)
+
+        public static ModelCollection<AcademicUnitQualificationAward> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AcademicUnitQualificationAward.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AcademicUnitQualificationAward) gateway.retrieve(ResourceType.ACADEMIC_UNIT_QUALIFICATION_AWARD, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AcademicUnitQualificationAward");
+            RestGateway gateway = (RestGateway)AcademicUnitQualificationAward.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AcademicUnitQualificationAward> academicunitqualificationawardCollection = new ModelCollection<AcademicUnitQualificationAward>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                academicunitqualificationawardCollection.add((AcademicUnitQualificationAward)model);
+            }
+
+            return academicunitqualificationawardCollection;
         }
 
-        public AcademicUnit getAcademicUnit ()
+        public static AcademicUnitQualificationAward retrieve(string id)
         {
-            return (AcademicUnit) this.getProperty("academicUnit");
+            RestGateway gateway = (RestGateway)AcademicUnitQualificationAward.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AcademicUnitQualificationAward)gateway.retrieve(ResourceType.ACADEMIC_UNIT_QUALIFICATION_AWARD, id);
         }
 
-        public void setAcademicUnit (AcademicUnit academicUnit)
+        public AcademicUnit getAcademicUnit()
+        {
+            return (AcademicUnit)this.getProperty("academicUnit");
+        }
+
+        public void setAcademicUnit(AcademicUnit academicUnit)
         {
             this.setProperty("academicUnit", academicUnit);
         }
 
-        public QualificationAward getQualificationAward ()
+        public QualificationAward getQualificationAward()
         {
-            return (QualificationAward) this.getProperty("qualificationAward");
+            return (QualificationAward)this.getProperty("qualificationAward");
         }
 
-        public void setQualificationAward (QualificationAward qualificationAward)
+        public void setQualificationAward(QualificationAward qualificationAward)
         {
             this.setProperty("qualificationAward", qualificationAward);
         }

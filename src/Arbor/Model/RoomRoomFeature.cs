@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string ROOM = "room";
         public const string ROOM_FEATURE = "roomFeature";
 
-        public RoomRoomFeature ()
+        public RoomRoomFeature()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public RoomRoomFeature (string resourceType = "RoomRoomFeature", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<RoomRoomFeature> query (SimpleQuery query = null)
+        public RoomRoomFeature(string resourceType = "RoomRoomFeature", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("RoomRoomFeature");
-        	RestGateway gateway = (RestGateway) RoomRoomFeature.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<RoomRoomFeature> roomroomfeatureCollection = new ModelCollection<RoomRoomFeature> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    roomroomfeatureCollection.add((RoomRoomFeature) model);
-        	}
-        
-        	return roomroomfeatureCollection;
+
         }
 
-        public static RoomRoomFeature retrieve (string id)
+
+        public static ModelCollection<RoomRoomFeature> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) RoomRoomFeature.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (RoomRoomFeature) gateway.retrieve(ResourceType.ROOM_ROOM_FEATURE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("RoomRoomFeature");
+            RestGateway gateway = (RestGateway)RoomRoomFeature.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<RoomRoomFeature> roomroomfeatureCollection = new ModelCollection<RoomRoomFeature>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                roomroomfeatureCollection.add((RoomRoomFeature)model);
+            }
+
+            return roomroomfeatureCollection;
         }
 
-        public Room getRoom ()
+        public static RoomRoomFeature retrieve(string id)
         {
-            return (Room) this.getProperty("room");
+            RestGateway gateway = (RestGateway)RoomRoomFeature.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (RoomRoomFeature)gateway.retrieve(ResourceType.ROOM_ROOM_FEATURE, id);
         }
 
-        public void setRoom (Room room)
+        public Room getRoom()
+        {
+            return (Room)this.getProperty("room");
+        }
+
+        public void setRoom(Room room)
         {
             this.setProperty("room", room);
         }
 
-        public RoomFeature getRoomFeature ()
+        public RoomFeature getRoomFeature()
         {
-            return (RoomFeature) this.getProperty("roomFeature");
+            return (RoomFeature)this.getProperty("roomFeature");
         }
 
-        public void setRoomFeature (RoomFeature roomFeature)
+        public void setRoomFeature(RoomFeature roomFeature)
         {
             this.setProperty("roomFeature", roomFeature);
         }

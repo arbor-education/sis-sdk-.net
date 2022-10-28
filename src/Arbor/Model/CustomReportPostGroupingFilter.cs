@@ -18,108 +18,109 @@ namespace Arbor.Model
         public const string TARGET_GROUPING = "targetGrouping";
         public const string FILTER_GROUP_INDEX = "filterGroupIndex";
 
-        public CustomReportPostGroupingFilter ()
+        public CustomReportPostGroupingFilter()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public CustomReportPostGroupingFilter (string resourceType = "CustomReportPostGroupingFilter", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<CustomReportPostGroupingFilter> query (SimpleQuery query = null)
+        public CustomReportPostGroupingFilter(string resourceType = "CustomReportPostGroupingFilter", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("CustomReportPostGroupingFilter");
-        	RestGateway gateway = (RestGateway) CustomReportPostGroupingFilter.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<CustomReportPostGroupingFilter> customreportpostgroupingfilterCollection = new ModelCollection<CustomReportPostGroupingFilter> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    customreportpostgroupingfilterCollection.add((CustomReportPostGroupingFilter) model);
-        	}
-        
-        	return customreportpostgroupingfilterCollection;
+
         }
 
-        public static CustomReportPostGroupingFilter retrieve (string id)
+
+        public static ModelCollection<CustomReportPostGroupingFilter> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) CustomReportPostGroupingFilter.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (CustomReportPostGroupingFilter) gateway.retrieve(ResourceType.CUSTOM_REPORT_POST_GROUPING_FILTER, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("CustomReportPostGroupingFilter");
+            RestGateway gateway = (RestGateway)CustomReportPostGroupingFilter.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<CustomReportPostGroupingFilter> customreportpostgroupingfilterCollection = new ModelCollection<CustomReportPostGroupingFilter>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                customreportpostgroupingfilterCollection.add((CustomReportPostGroupingFilter)model);
+            }
+
+            return customreportpostgroupingfilterCollection;
         }
 
-        public CustomReport getCustomReport ()
+        public static CustomReportPostGroupingFilter retrieve(string id)
         {
-            return (CustomReport) this.getProperty("customReport");
+            RestGateway gateway = (RestGateway)CustomReportPostGroupingFilter.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (CustomReportPostGroupingFilter)gateway.retrieve(ResourceType.CUSTOM_REPORT_POST_GROUPING_FILTER, id);
         }
 
-        public void setCustomReport (CustomReport customReport)
+        public CustomReport getCustomReport()
+        {
+            return (CustomReport)this.getProperty("customReport");
+        }
+
+        public void setCustomReport(CustomReport customReport)
         {
             this.setProperty("customReport", customReport);
         }
 
-        public string getFieldClass ()
+        public string getFieldClass()
         {
             return this.getProperty("fieldClass").ToString();
         }
 
-        public void setFieldClass (string fieldClass)
+        public void setFieldClass(string fieldClass)
         {
             this.setProperty("fieldClass", fieldClass);
         }
 
-        public string getFieldParams ()
+        public string getFieldParams()
         {
             return this.getProperty("fieldParams").ToString();
         }
 
-        public void setFieldParams (string fieldParams)
+        public void setFieldParams(string fieldParams)
         {
             this.setProperty("fieldParams", fieldParams);
         }
 
-        public string getConditionClass ()
+        public string getConditionClass()
         {
             return this.getProperty("conditionClass").ToString();
         }
 
-        public void setConditionClass (string conditionClass)
+        public void setConditionClass(string conditionClass)
         {
             this.setProperty("conditionClass", conditionClass);
         }
 
-        public string getConditionParams ()
+        public string getConditionParams()
         {
             return this.getProperty("conditionParams").ToString();
         }
 
-        public void setConditionParams (string conditionParams)
+        public void setConditionParams(string conditionParams)
         {
             this.setProperty("conditionParams", conditionParams);
         }
 
-        public CustomReportGrouping getTargetGrouping ()
+        public CustomReportGrouping getTargetGrouping()
         {
-            return (CustomReportGrouping) this.getProperty("targetGrouping");
+            return (CustomReportGrouping)this.getProperty("targetGrouping");
         }
 
-        public void setTargetGrouping (CustomReportGrouping targetGrouping)
+        public void setTargetGrouping(CustomReportGrouping targetGrouping)
         {
             this.setProperty("targetGrouping", targetGrouping);
         }
 
-        public int getFilterGroupIndex ()
+        public int getFilterGroupIndex()
         {
             return Convert.ToInt32(this.getProperty("filterGroupIndex"));
         }
 
-        public void setFilterGroupIndex (int filterGroupIndex)
+        public void setFilterGroupIndex(int filterGroupIndex)
         {
             this.setProperty("filterGroupIndex", filterGroupIndex);
         }

@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string EFFECTIVE_DATE = "effectiveDate";
         public const string END_DATE = "endDate";
 
-        public TimetableSlotStaff ()
+        public TimetableSlotStaff()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public TimetableSlotStaff (string resourceType = "TimetableSlotStaff", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<TimetableSlotStaff> query (SimpleQuery query = null)
+        public TimetableSlotStaff(string resourceType = "TimetableSlotStaff", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("TimetableSlotStaff");
-        	RestGateway gateway = (RestGateway) TimetableSlotStaff.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<TimetableSlotStaff> timetableslotstaffCollection = new ModelCollection<TimetableSlotStaff> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    timetableslotstaffCollection.add((TimetableSlotStaff) model);
-        	}
-        
-        	return timetableslotstaffCollection;
+
         }
 
-        public static TimetableSlotStaff retrieve (string id)
+
+        public static ModelCollection<TimetableSlotStaff> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) TimetableSlotStaff.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (TimetableSlotStaff) gateway.retrieve(ResourceType.TIMETABLE_SLOT_STAFF, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("TimetableSlotStaff");
+            RestGateway gateway = (RestGateway)TimetableSlotStaff.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<TimetableSlotStaff> timetableslotstaffCollection = new ModelCollection<TimetableSlotStaff>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                timetableslotstaffCollection.add((TimetableSlotStaff)model);
+            }
+
+            return timetableslotstaffCollection;
         }
 
-        public TimetableSlot getTimetableSlot ()
+        public static TimetableSlotStaff retrieve(string id)
         {
-            return (TimetableSlot) this.getProperty("timetableSlot");
+            RestGateway gateway = (RestGateway)TimetableSlotStaff.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (TimetableSlotStaff)gateway.retrieve(ResourceType.TIMETABLE_SLOT_STAFF, id);
         }
 
-        public void setTimetableSlot (TimetableSlot timetableSlot)
+        public TimetableSlot getTimetableSlot()
+        {
+            return (TimetableSlot)this.getProperty("timetableSlot");
+        }
+
+        public void setTimetableSlot(TimetableSlot timetableSlot)
         {
             this.setProperty("timetableSlot", timetableSlot);
         }
 
-        public Staff getStaff ()
+        public Staff getStaff()
         {
-            return (Staff) this.getProperty("staff");
+            return (Staff)this.getProperty("staff");
         }
 
-        public void setStaff (Staff staff)
+        public void setStaff(Staff staff)
         {
             this.setProperty("staff", staff);
         }
 
-        public DateTime getEffectiveDate ()
+        public DateTime getEffectiveDate()
         {
             return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
-        public void setEffectiveDate (DateTime effectiveDate)
+        public void setEffectiveDate(DateTime effectiveDate)
         {
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }

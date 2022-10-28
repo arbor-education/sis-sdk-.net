@@ -24,168 +24,169 @@ namespace Arbor.Model.UkDfe
         public const string QUALIFICATION_RESULTS_JSON = "qualificationResultsJson";
         public const string PREVIOUS_YEAR_QUALIFICATION_RESULTS_JSON = "previousYearQualificationResultsJson";
 
-        public SchoolCensusSchoolDetail ()
+        public SchoolCensusSchoolDetail()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public SchoolCensusSchoolDetail (string resourceType = "SchoolCensusSchoolDetail", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<SchoolCensusSchoolDetail> query (SimpleQuery query = null)
+        public SchoolCensusSchoolDetail(string resourceType = "SchoolCensusSchoolDetail", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("UkDfe_SchoolCensusSchoolDetail");
-        	RestGateway gateway = (RestGateway) SchoolCensusSchoolDetail.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<SchoolCensusSchoolDetail> schoolcensusschooldetailCollection = new ModelCollection<SchoolCensusSchoolDetail> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    schoolcensusschooldetailCollection.add((SchoolCensusSchoolDetail) model);
-        	}
-        
-        	return schoolcensusschooldetailCollection;
+
         }
 
-        public static SchoolCensusSchoolDetail retrieve (string id)
+
+        public static ModelCollection<SchoolCensusSchoolDetail> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) SchoolCensusSchoolDetail.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (SchoolCensusSchoolDetail) gateway.retrieve(ResourceType.UK_DFE_SCHOOL_CENSUS_SCHOOL_DETAIL, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("UkDfe_SchoolCensusSchoolDetail");
+            RestGateway gateway = (RestGateway)SchoolCensusSchoolDetail.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<SchoolCensusSchoolDetail> schoolcensusschooldetailCollection = new ModelCollection<SchoolCensusSchoolDetail>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                schoolcensusschooldetailCollection.add((SchoolCensusSchoolDetail)model);
+            }
+
+            return schoolcensusschooldetailCollection;
         }
 
-        public SchoolCensus getSchoolCensus ()
+        public static SchoolCensusSchoolDetail retrieve(string id)
         {
-            return (SchoolCensus) this.getProperty("schoolCensus");
+            RestGateway gateway = (RestGateway)SchoolCensusSchoolDetail.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (SchoolCensusSchoolDetail)gateway.retrieve(ResourceType.UK_DFE_SCHOOL_CENSUS_SCHOOL_DETAIL, id);
         }
 
-        public void setSchoolCensus (SchoolCensus schoolCensus)
+        public SchoolCensus getSchoolCensus()
+        {
+            return (SchoolCensus)this.getProperty("schoolCensus");
+        }
+
+        public void setSchoolCensus(SchoolCensus schoolCensus)
         {
             this.setProperty("schoolCensus", schoolCensus);
         }
 
-        public int getTeenMotherPlaces ()
+        public int getTeenMotherPlaces()
         {
             return Convert.ToInt32(this.getProperty("teenMotherPlaces"));
         }
 
-        public void setTeenMotherPlaces (int teenMotherPlaces)
+        public void setTeenMotherPlaces(int teenMotherPlaces)
         {
             this.setProperty("teenMotherPlaces", teenMotherPlaces);
         }
 
-        public int getFreeSchoolMealsTaken ()
+        public int getFreeSchoolMealsTaken()
         {
             return Convert.ToInt32(this.getProperty("freeSchoolMealsTaken"));
         }
 
-        public void setFreeSchoolMealsTaken (int freeSchoolMealsTaken)
+        public void setFreeSchoolMealsTaken(int freeSchoolMealsTaken)
         {
             this.setProperty("freeSchoolMealsTaken", freeSchoolMealsTaken);
         }
 
-        public string getAdmissionsAppealsJson ()
+        public string getAdmissionsAppealsJson()
         {
             return this.getProperty("admissionsAppealsJson").ToString();
         }
 
-        public void setAdmissionsAppealsJson (string admissionsAppealsJson)
+        public void setAdmissionsAppealsJson(string admissionsAppealsJson)
         {
             this.setProperty("admissionsAppealsJson", admissionsAppealsJson);
         }
 
-        public int getAdmissionsAppealsLodged ()
+        public int getAdmissionsAppealsLodged()
         {
             return Convert.ToInt32(this.getProperty("admissionsAppealsLodged"));
         }
 
-        public void setAdmissionsAppealsLodged (int admissionsAppealsLodged)
+        public void setAdmissionsAppealsLodged(int admissionsAppealsLodged)
         {
             this.setProperty("admissionsAppealsLodged", admissionsAppealsLodged);
         }
 
-        public int getAdmissionsAppealsWithdrawn ()
+        public int getAdmissionsAppealsWithdrawn()
         {
             return Convert.ToInt32(this.getProperty("admissionsAppealsWithdrawn"));
         }
 
-        public void setAdmissionsAppealsWithdrawn (int admissionsAppealsWithdrawn)
+        public void setAdmissionsAppealsWithdrawn(int admissionsAppealsWithdrawn)
         {
             this.setProperty("admissionsAppealsWithdrawn", admissionsAppealsWithdrawn);
         }
 
-        public int getAdmissionsAppealsHeard ()
+        public int getAdmissionsAppealsHeard()
         {
             return Convert.ToInt32(this.getProperty("admissionsAppealsHeard"));
         }
 
-        public void setAdmissionsAppealsHeard (int admissionsAppealsHeard)
+        public void setAdmissionsAppealsHeard(int admissionsAppealsHeard)
         {
             this.setProperty("admissionsAppealsHeard", admissionsAppealsHeard);
         }
 
-        public int getAdmissionsAppealsUpheld ()
+        public int getAdmissionsAppealsUpheld()
         {
             return Convert.ToInt32(this.getProperty("admissionsAppealsUpheld"));
         }
 
-        public void setAdmissionsAppealsUpheld (int admissionsAppealsUpheld)
+        public void setAdmissionsAppealsUpheld(int admissionsAppealsUpheld)
         {
             this.setProperty("admissionsAppealsUpheld", admissionsAppealsUpheld);
         }
 
-        public int getAdmissionsAppealsRejected ()
+        public int getAdmissionsAppealsRejected()
         {
             return Convert.ToInt32(this.getProperty("admissionsAppealsRejected"));
         }
 
-        public void setAdmissionsAppealsRejected (int admissionsAppealsRejected)
+        public void setAdmissionsAppealsRejected(int admissionsAppealsRejected)
         {
             this.setProperty("admissionsAppealsRejected", admissionsAppealsRejected);
         }
 
-        public string getSchoolLunchTakenStudentIds ()
+        public string getSchoolLunchTakenStudentIds()
         {
             return this.getProperty("schoolLunchTakenStudentIds").ToString();
         }
 
-        public void setSchoolLunchTakenStudentIds (string schoolLunchTakenStudentIds)
+        public void setSchoolLunchTakenStudentIds(string schoolLunchTakenStudentIds)
         {
             this.setProperty("schoolLunchTakenStudentIds", schoolLunchTakenStudentIds);
         }
 
-        public string getPartTimeStudentJson ()
+        public string getPartTimeStudentJson()
         {
             return this.getProperty("partTimeStudentJson").ToString();
         }
 
-        public void setPartTimeStudentJson (string partTimeStudentJson)
+        public void setPartTimeStudentJson(string partTimeStudentJson)
         {
             this.setProperty("partTimeStudentJson", partTimeStudentJson);
         }
 
-        public string getQualificationResultsJson ()
+        public string getQualificationResultsJson()
         {
             return this.getProperty("qualificationResultsJson").ToString();
         }
 
-        public void setQualificationResultsJson (string qualificationResultsJson)
+        public void setQualificationResultsJson(string qualificationResultsJson)
         {
             this.setProperty("qualificationResultsJson", qualificationResultsJson);
         }
 
-        public string getPreviousYearQualificationResultsJson ()
+        public string getPreviousYearQualificationResultsJson()
         {
             return this.getProperty("previousYearQualificationResultsJson").ToString();
         }
 
-        public void setPreviousYearQualificationResultsJson (string previousYearQualificationResultsJson)
+        public void setPreviousYearQualificationResultsJson(string previousYearQualificationResultsJson)
         {
             this.setProperty("previousYearQualificationResultsJson", previousYearQualificationResultsJson);
         }

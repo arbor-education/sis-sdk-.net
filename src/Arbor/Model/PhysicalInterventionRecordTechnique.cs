@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string PHYSICAL_INTERVENTION_RECORD = "physicalInterventionRecord";
         public const string PHYSICAL_INTERVENTION_TECHNIQUE = "physicalInterventionTechnique";
 
-        public PhysicalInterventionRecordTechnique ()
+        public PhysicalInterventionRecordTechnique()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public PhysicalInterventionRecordTechnique (string resourceType = "PhysicalInterventionRecordTechnique", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<PhysicalInterventionRecordTechnique> query (SimpleQuery query = null)
+        public PhysicalInterventionRecordTechnique(string resourceType = "PhysicalInterventionRecordTechnique", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("PhysicalInterventionRecordTechnique");
-        	RestGateway gateway = (RestGateway) PhysicalInterventionRecordTechnique.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<PhysicalInterventionRecordTechnique> physicalinterventionrecordtechniqueCollection = new ModelCollection<PhysicalInterventionRecordTechnique> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    physicalinterventionrecordtechniqueCollection.add((PhysicalInterventionRecordTechnique) model);
-        	}
-        
-        	return physicalinterventionrecordtechniqueCollection;
+
         }
 
-        public static PhysicalInterventionRecordTechnique retrieve (string id)
+
+        public static ModelCollection<PhysicalInterventionRecordTechnique> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) PhysicalInterventionRecordTechnique.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (PhysicalInterventionRecordTechnique) gateway.retrieve(ResourceType.PHYSICAL_INTERVENTION_RECORD_TECHNIQUE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("PhysicalInterventionRecordTechnique");
+            RestGateway gateway = (RestGateway)PhysicalInterventionRecordTechnique.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<PhysicalInterventionRecordTechnique> physicalinterventionrecordtechniqueCollection = new ModelCollection<PhysicalInterventionRecordTechnique>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                physicalinterventionrecordtechniqueCollection.add((PhysicalInterventionRecordTechnique)model);
+            }
+
+            return physicalinterventionrecordtechniqueCollection;
         }
 
-        public PhysicalInterventionRecord getPhysicalInterventionRecord ()
+        public static PhysicalInterventionRecordTechnique retrieve(string id)
         {
-            return (PhysicalInterventionRecord) this.getProperty("physicalInterventionRecord");
+            RestGateway gateway = (RestGateway)PhysicalInterventionRecordTechnique.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (PhysicalInterventionRecordTechnique)gateway.retrieve(ResourceType.PHYSICAL_INTERVENTION_RECORD_TECHNIQUE, id);
         }
 
-        public void setPhysicalInterventionRecord (PhysicalInterventionRecord physicalInterventionRecord)
+        public PhysicalInterventionRecord getPhysicalInterventionRecord()
+        {
+            return (PhysicalInterventionRecord)this.getProperty("physicalInterventionRecord");
+        }
+
+        public void setPhysicalInterventionRecord(PhysicalInterventionRecord physicalInterventionRecord)
         {
             this.setProperty("physicalInterventionRecord", physicalInterventionRecord);
         }
 
-        public PhysicalInterventionTechnique getPhysicalInterventionTechnique ()
+        public PhysicalInterventionTechnique getPhysicalInterventionTechnique()
         {
-            return (PhysicalInterventionTechnique) this.getProperty("physicalInterventionTechnique");
+            return (PhysicalInterventionTechnique)this.getProperty("physicalInterventionTechnique");
         }
 
-        public void setPhysicalInterventionTechnique (PhysicalInterventionTechnique physicalInterventionTechnique)
+        public void setPhysicalInterventionTechnique(PhysicalInterventionTechnique physicalInterventionTechnique)
         {
             this.setProperty("physicalInterventionTechnique", physicalInterventionTechnique);
         }

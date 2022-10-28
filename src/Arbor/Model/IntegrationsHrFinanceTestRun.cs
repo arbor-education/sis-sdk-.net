@@ -14,68 +14,69 @@ namespace Arbor.Model
         public const string REQUESTED_DATETIME = "requestedDatetime";
         public const string COMPLETED_DATETIME = "completedDatetime";
 
-        public IntegrationsHrFinanceTestRun ()
+        public IntegrationsHrFinanceTestRun()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public IntegrationsHrFinanceTestRun (string resourceType = "IntegrationsHrFinanceTestRun", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<IntegrationsHrFinanceTestRun> query (SimpleQuery query = null)
+        public IntegrationsHrFinanceTestRun(string resourceType = "IntegrationsHrFinanceTestRun", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("IntegrationsHrFinanceTestRun");
-        	RestGateway gateway = (RestGateway) IntegrationsHrFinanceTestRun.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<IntegrationsHrFinanceTestRun> integrationshrfinancetestrunCollection = new ModelCollection<IntegrationsHrFinanceTestRun> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    integrationshrfinancetestrunCollection.add((IntegrationsHrFinanceTestRun) model);
-        	}
-        
-        	return integrationshrfinancetestrunCollection;
+
         }
 
-        public static IntegrationsHrFinanceTestRun retrieve (string id)
+
+        public static ModelCollection<IntegrationsHrFinanceTestRun> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) IntegrationsHrFinanceTestRun.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (IntegrationsHrFinanceTestRun) gateway.retrieve(ResourceType.INTEGRATIONS_HR_FINANCE_TEST_RUN, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("IntegrationsHrFinanceTestRun");
+            RestGateway gateway = (RestGateway)IntegrationsHrFinanceTestRun.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<IntegrationsHrFinanceTestRun> integrationshrfinancetestrunCollection = new ModelCollection<IntegrationsHrFinanceTestRun>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                integrationshrfinancetestrunCollection.add((IntegrationsHrFinanceTestRun)model);
+            }
+
+            return integrationshrfinancetestrunCollection;
         }
 
-        public IntegrationsHrFinanceProvider getIntegrationsHrFinanceProvider ()
+        public static IntegrationsHrFinanceTestRun retrieve(string id)
         {
-            return (IntegrationsHrFinanceProvider) this.getProperty("integrationsHrFinanceProvider");
+            RestGateway gateway = (RestGateway)IntegrationsHrFinanceTestRun.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (IntegrationsHrFinanceTestRun)gateway.retrieve(ResourceType.INTEGRATIONS_HR_FINANCE_TEST_RUN, id);
         }
 
-        public void setIntegrationsHrFinanceProvider (IntegrationsHrFinanceProvider integrationsHrFinanceProvider)
+        public IntegrationsHrFinanceProvider getIntegrationsHrFinanceProvider()
+        {
+            return (IntegrationsHrFinanceProvider)this.getProperty("integrationsHrFinanceProvider");
+        }
+
+        public void setIntegrationsHrFinanceProvider(IntegrationsHrFinanceProvider integrationsHrFinanceProvider)
         {
             this.setProperty("integrationsHrFinanceProvider", integrationsHrFinanceProvider);
         }
 
-        public DateTime getRequestedDatetime ()
+        public DateTime getRequestedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("requestedDatetime"));
         }
 
-        public void setRequestedDatetime (DateTime requestedDatetime)
+        public void setRequestedDatetime(DateTime requestedDatetime)
         {
             this.setProperty("requestedDatetime", requestedDatetime);
         }
 
-        public DateTime getCompletedDatetime ()
+        public DateTime getCompletedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("completedDatetime"));
         }
 
-        public void setCompletedDatetime (DateTime completedDatetime)
+        public void setCompletedDatetime(DateTime completedDatetime)
         {
             this.setProperty("completedDatetime", completedDatetime);
         }

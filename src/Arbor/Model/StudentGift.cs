@@ -16,88 +16,89 @@ namespace Arbor.Model
         public const string END_DATE = "endDate";
         public const string NARRATIVE = "narrative";
 
-        public StudentGift ()
+        public StudentGift()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public StudentGift (string resourceType = "StudentGift", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<StudentGift> query (SimpleQuery query = null)
+        public StudentGift(string resourceType = "StudentGift", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("StudentGift");
-        	RestGateway gateway = (RestGateway) StudentGift.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<StudentGift> studentgiftCollection = new ModelCollection<StudentGift> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    studentgiftCollection.add((StudentGift) model);
-        	}
-        
-        	return studentgiftCollection;
+
         }
 
-        public static StudentGift retrieve (string id)
+
+        public static ModelCollection<StudentGift> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) StudentGift.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (StudentGift) gateway.retrieve(ResourceType.STUDENT_GIFT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("StudentGift");
+            RestGateway gateway = (RestGateway)StudentGift.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<StudentGift> studentgiftCollection = new ModelCollection<StudentGift>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                studentgiftCollection.add((StudentGift)model);
+            }
+
+            return studentgiftCollection;
         }
 
-        public Student getStudent ()
+        public static StudentGift retrieve(string id)
         {
-            return (Student) this.getProperty("student");
+            RestGateway gateway = (RestGateway)StudentGift.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (StudentGift)gateway.retrieve(ResourceType.STUDENT_GIFT, id);
         }
 
-        public void setStudent (Student student)
+        public Student getStudent()
+        {
+            return (Student)this.getProperty("student");
+        }
+
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public Subject getSubject ()
+        public Subject getSubject()
         {
-            return (Subject) this.getProperty("subject");
+            return (Subject)this.getProperty("subject");
         }
 
-        public void setSubject (Subject subject)
+        public void setSubject(Subject subject)
         {
             this.setProperty("subject", subject);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDate()
         {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }
 
-        public string getNarrative ()
+        public string getNarrative()
         {
             return this.getProperty("narrative").ToString();
         }
 
-        public void setNarrative (string narrative)
+        public void setNarrative(string narrative)
         {
             this.setProperty("narrative", narrative);
         }

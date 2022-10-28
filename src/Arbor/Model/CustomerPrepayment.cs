@@ -26,188 +26,189 @@ namespace Arbor.Model
         public const string NARRATIVE = "narrative";
         public const string PREPAYMENT_CANCELLED_DATETIME = "prepaymentCancelledDatetime";
 
-        public CustomerPrepayment ()
+        public CustomerPrepayment()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public CustomerPrepayment (string resourceType = "CustomerPrepayment", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<CustomerPrepayment> query (SimpleQuery query = null)
+        public CustomerPrepayment(string resourceType = "CustomerPrepayment", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("CustomerPrepayment");
-        	RestGateway gateway = (RestGateway) CustomerPrepayment.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<CustomerPrepayment> customerprepaymentCollection = new ModelCollection<CustomerPrepayment> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    customerprepaymentCollection.add((CustomerPrepayment) model);
-        	}
-        
-        	return customerprepaymentCollection;
+
         }
 
-        public static CustomerPrepayment retrieve (string id)
+
+        public static ModelCollection<CustomerPrepayment> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) CustomerPrepayment.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (CustomerPrepayment) gateway.retrieve(ResourceType.CUSTOMER_PREPAYMENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("CustomerPrepayment");
+            RestGateway gateway = (RestGateway)CustomerPrepayment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<CustomerPrepayment> customerprepaymentCollection = new ModelCollection<CustomerPrepayment>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                customerprepaymentCollection.add((CustomerPrepayment)model);
+            }
+
+            return customerprepaymentCollection;
         }
 
-        public CustomerAccount getCustomerAccount ()
+        public static CustomerPrepayment retrieve(string id)
         {
-            return (CustomerAccount) this.getProperty("customerAccount");
+            RestGateway gateway = (RestGateway)CustomerPrepayment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (CustomerPrepayment)gateway.retrieve(ResourceType.CUSTOMER_PREPAYMENT, id);
         }
 
-        public void setCustomerAccount (CustomerAccount customerAccount)
+        public CustomerAccount getCustomerAccount()
+        {
+            return (CustomerAccount)this.getProperty("customerAccount");
+        }
+
+        public void setCustomerAccount(CustomerAccount customerAccount)
         {
             this.setProperty("customerAccount", customerAccount);
         }
 
-        public BillPayer getBillPayer ()
+        public BillPayer getBillPayer()
         {
-            return (BillPayer) this.getProperty("billPayer");
+            return (BillPayer)this.getProperty("billPayer");
         }
 
-        public void setBillPayer (BillPayer billPayer)
+        public void setBillPayer(BillPayer billPayer)
         {
             this.setProperty("billPayer", billPayer);
         }
 
-        public IncomingDirectDebitTransaction getIncomingDirectDebitTransaction ()
+        public IncomingDirectDebitTransaction getIncomingDirectDebitTransaction()
         {
-            return (IncomingDirectDebitTransaction) this.getProperty("incomingDirectDebitTransaction");
+            return (IncomingDirectDebitTransaction)this.getProperty("incomingDirectDebitTransaction");
         }
 
-        public void setIncomingDirectDebitTransaction (IncomingDirectDebitTransaction incomingDirectDebitTransaction)
+        public void setIncomingDirectDebitTransaction(IncomingDirectDebitTransaction incomingDirectDebitTransaction)
         {
             this.setProperty("incomingDirectDebitTransaction", incomingDirectDebitTransaction);
         }
 
-        public IncomingCardTransaction getIncomingCardTransaction ()
+        public IncomingCardTransaction getIncomingCardTransaction()
         {
-            return (IncomingCardTransaction) this.getProperty("incomingCardTransaction");
+            return (IncomingCardTransaction)this.getProperty("incomingCardTransaction");
         }
 
-        public void setIncomingCardTransaction (IncomingCardTransaction incomingCardTransaction)
+        public void setIncomingCardTransaction(IncomingCardTransaction incomingCardTransaction)
         {
             this.setProperty("incomingCardTransaction", incomingCardTransaction);
         }
 
-        public IncomingBankTransaction getIncomingBankTransaction ()
+        public IncomingBankTransaction getIncomingBankTransaction()
         {
-            return (IncomingBankTransaction) this.getProperty("incomingBankTransaction");
+            return (IncomingBankTransaction)this.getProperty("incomingBankTransaction");
         }
 
-        public void setIncomingBankTransaction (IncomingBankTransaction incomingBankTransaction)
+        public void setIncomingBankTransaction(IncomingBankTransaction incomingBankTransaction)
         {
             this.setProperty("incomingBankTransaction", incomingBankTransaction);
         }
 
-        public IncomingCashlessCateringSystemTransaction getIncomingCashlessCateringSystemTransaction ()
+        public IncomingCashlessCateringSystemTransaction getIncomingCashlessCateringSystemTransaction()
         {
-            return (IncomingCashlessCateringSystemTransaction) this.getProperty("incomingCashlessCateringSystemTransaction");
+            return (IncomingCashlessCateringSystemTransaction)this.getProperty("incomingCashlessCateringSystemTransaction");
         }
 
-        public void setIncomingCashlessCateringSystemTransaction (IncomingCashlessCateringSystemTransaction incomingCashlessCateringSystemTransaction)
+        public void setIncomingCashlessCateringSystemTransaction(IncomingCashlessCateringSystemTransaction incomingCashlessCateringSystemTransaction)
         {
             this.setProperty("incomingCashlessCateringSystemTransaction", incomingCashlessCateringSystemTransaction);
         }
 
-        public ReceivedCheque getReceivedCheque ()
+        public ReceivedCheque getReceivedCheque()
         {
-            return (ReceivedCheque) this.getProperty("receivedCheque");
+            return (ReceivedCheque)this.getProperty("receivedCheque");
         }
 
-        public void setReceivedCheque (ReceivedCheque receivedCheque)
+        public void setReceivedCheque(ReceivedCheque receivedCheque)
         {
             this.setProperty("receivedCheque", receivedCheque);
         }
 
-        public CashReceipt getCashReceipt ()
+        public CashReceipt getCashReceipt()
         {
-            return (CashReceipt) this.getProperty("cashReceipt");
+            return (CashReceipt)this.getProperty("cashReceipt");
         }
 
-        public void setCashReceipt (CashReceipt cashReceipt)
+        public void setCashReceipt(CashReceipt cashReceipt)
         {
             this.setProperty("cashReceipt", cashReceipt);
         }
 
-        public Voucher getVoucher ()
+        public Voucher getVoucher()
         {
-            return (Voucher) this.getProperty("voucher");
+            return (Voucher)this.getProperty("voucher");
         }
 
-        public void setVoucher (Voucher voucher)
+        public void setVoucher(Voucher voucher)
         {
             this.setProperty("voucher", voucher);
         }
 
-        public string getPrepaymentAmount ()
+        public string getPrepaymentAmount()
         {
             return this.getProperty("prepaymentAmount").ToString();
         }
 
-        public void setPrepaymentAmount (string prepaymentAmount)
+        public void setPrepaymentAmount(string prepaymentAmount)
         {
             this.setProperty("prepaymentAmount", prepaymentAmount);
         }
 
-        public DateTime getPrepaymentDatetime ()
+        public DateTime getPrepaymentDatetime()
         {
             return Convert.ToDateTime(this.getProperty("prepaymentDatetime"));
         }
 
-        public void setPrepaymentDatetime (DateTime prepaymentDatetime)
+        public void setPrepaymentDatetime(DateTime prepaymentDatetime)
         {
             this.setProperty("prepaymentDatetime", prepaymentDatetime);
         }
 
-        public DateTime getPrepaymentSucceededDatetime ()
+        public DateTime getPrepaymentSucceededDatetime()
         {
             return Convert.ToDateTime(this.getProperty("prepaymentSucceededDatetime"));
         }
 
-        public void setPrepaymentSucceededDatetime (DateTime prepaymentSucceededDatetime)
+        public void setPrepaymentSucceededDatetime(DateTime prepaymentSucceededDatetime)
         {
             this.setProperty("prepaymentSucceededDatetime", prepaymentSucceededDatetime);
         }
 
-        public DateTime getPrepaymentFailedDatetime ()
+        public DateTime getPrepaymentFailedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("prepaymentFailedDatetime"));
         }
 
-        public void setPrepaymentFailedDatetime (DateTime prepaymentFailedDatetime)
+        public void setPrepaymentFailedDatetime(DateTime prepaymentFailedDatetime)
         {
             this.setProperty("prepaymentFailedDatetime", prepaymentFailedDatetime);
         }
 
-        public string getNarrative ()
+        public string getNarrative()
         {
             return this.getProperty("narrative").ToString();
         }
 
-        public void setNarrative (string narrative)
+        public void setNarrative(string narrative)
         {
             this.setProperty("narrative", narrative);
         }
 
-        public DateTime getPrepaymentCancelledDatetime ()
+        public DateTime getPrepaymentCancelledDatetime()
         {
             return Convert.ToDateTime(this.getProperty("prepaymentCancelledDatetime"));
         }
 
-        public void setPrepaymentCancelledDatetime (DateTime prepaymentCancelledDatetime)
+        public void setPrepaymentCancelledDatetime(DateTime prepaymentCancelledDatetime)
         {
             this.setProperty("prepaymentCancelledDatetime", prepaymentCancelledDatetime);
         }

@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string STUDENT = "student";
         public const string CANDIDATE_NUMBER = "candidateNumber";
 
-        public InHouseCandidate ()
+        public InHouseCandidate()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public InHouseCandidate (string resourceType = "InHouseCandidate", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<InHouseCandidate> query (SimpleQuery query = null)
+        public InHouseCandidate(string resourceType = "InHouseCandidate", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("InHouseCandidate");
-        	RestGateway gateway = (RestGateway) InHouseCandidate.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<InHouseCandidate> inhousecandidateCollection = new ModelCollection<InHouseCandidate> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    inhousecandidateCollection.add((InHouseCandidate) model);
-        	}
-        
-        	return inhousecandidateCollection;
+
         }
 
-        public static InHouseCandidate retrieve (string id)
+
+        public static ModelCollection<InHouseCandidate> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) InHouseCandidate.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (InHouseCandidate) gateway.retrieve(ResourceType.IN_HOUSE_CANDIDATE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("InHouseCandidate");
+            RestGateway gateway = (RestGateway)InHouseCandidate.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<InHouseCandidate> inhousecandidateCollection = new ModelCollection<InHouseCandidate>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                inhousecandidateCollection.add((InHouseCandidate)model);
+            }
+
+            return inhousecandidateCollection;
         }
 
-        public Student getStudent ()
+        public static InHouseCandidate retrieve(string id)
         {
-            return (Student) this.getProperty("student");
+            RestGateway gateway = (RestGateway)InHouseCandidate.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (InHouseCandidate)gateway.retrieve(ResourceType.IN_HOUSE_CANDIDATE, id);
         }
 
-        public void setStudent (Student student)
+        public Student getStudent()
+        {
+            return (Student)this.getProperty("student");
+        }
+
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public int getCandidateNumber ()
+        public int getCandidateNumber()
         {
             return Convert.ToInt32(this.getProperty("candidateNumber"));
         }
 
-        public void setCandidateNumber (int candidateNumber)
+        public void setCandidateNumber(int candidateNumber)
         {
             this.setProperty("candidateNumber", candidateNumber);
         }

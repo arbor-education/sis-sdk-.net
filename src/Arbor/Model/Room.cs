@@ -17,98 +17,99 @@ namespace Arbor.Model
         public const string IS_INVIGILATION_ROOM = "isInvigilationRoom";
         public const string INVIGILATION_CAPACITY = "invigilationCapacity";
 
-        public Room ()
+        public Room()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public Room (string resourceType = "Room", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<Room> query (SimpleQuery query = null)
+        public Room(string resourceType = "Room", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("Room");
-        	RestGateway gateway = (RestGateway) Room.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<Room> roomCollection = new ModelCollection<Room> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    roomCollection.add((Room) model);
-        	}
-        
-        	return roomCollection;
+
         }
 
-        public static Room retrieve (string id)
+
+        public static ModelCollection<Room> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) Room.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (Room) gateway.retrieve(ResourceType.ROOM, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("Room");
+            RestGateway gateway = (RestGateway)Room.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<Room> roomCollection = new ModelCollection<Room>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                roomCollection.add((Room)model);
+            }
+
+            return roomCollection;
         }
 
-        public Site getSite ()
+        public static Room retrieve(string id)
         {
-            return (Site) this.getProperty("site");
+            RestGateway gateway = (RestGateway)Room.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (Room)gateway.retrieve(ResourceType.ROOM, id);
         }
 
-        public void setSite (Site site)
+        public Site getSite()
+        {
+            return (Site)this.getProperty("site");
+        }
+
+        public void setSite(Site site)
         {
             this.setProperty("site", site);
         }
 
-        public string getRoomName ()
+        public string getRoomName()
         {
             return this.getProperty("roomName").ToString();
         }
 
-        public void setRoomName (string roomName)
+        public void setRoomName(string roomName)
         {
             this.setProperty("roomName", roomName);
         }
 
-        public string getShortName ()
+        public string getShortName()
         {
             return this.getProperty("shortName").ToString();
         }
 
-        public void setShortName (string shortName)
+        public void setShortName(string shortName)
         {
             this.setProperty("shortName", shortName);
         }
 
-        public int getStudentCapacity ()
+        public int getStudentCapacity()
         {
             return Convert.ToInt32(this.getProperty("studentCapacity"));
         }
 
-        public void setStudentCapacity (int studentCapacity)
+        public void setStudentCapacity(int studentCapacity)
         {
             this.setProperty("studentCapacity", studentCapacity);
         }
 
-        public bool getIsInvigilationRoom ()
+        public bool getIsInvigilationRoom()
         {
             return Convert.ToBoolean(this.getProperty("isInvigilationRoom"));
         }
 
-        public void setIsInvigilationRoom (bool isInvigilationRoom)
+        public void setIsInvigilationRoom(bool isInvigilationRoom)
         {
             this.setProperty("isInvigilationRoom", isInvigilationRoom);
         }
 
-        public int getInvigilationCapacity ()
+        public int getInvigilationCapacity()
         {
             return Convert.ToInt32(this.getProperty("invigilationCapacity"));
         }
 
-        public void setInvigilationCapacity (int invigilationCapacity)
+        public void setInvigilationCapacity(int invigilationCapacity)
         {
             this.setProperty("invigilationCapacity", invigilationCapacity);
         }

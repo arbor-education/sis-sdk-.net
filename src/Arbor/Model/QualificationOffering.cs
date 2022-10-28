@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string QUALIFICATION_ELEMENT = "qualificationElement";
         public const string ACADEMIC_YEAR = "academicYear";
 
-        public QualificationOffering ()
+        public QualificationOffering()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public QualificationOffering (string resourceType = "QualificationOffering", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<QualificationOffering> query (SimpleQuery query = null)
+        public QualificationOffering(string resourceType = "QualificationOffering", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("QualificationOffering");
-        	RestGateway gateway = (RestGateway) QualificationOffering.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<QualificationOffering> qualificationofferingCollection = new ModelCollection<QualificationOffering> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    qualificationofferingCollection.add((QualificationOffering) model);
-        	}
-        
-        	return qualificationofferingCollection;
+
         }
 
-        public static QualificationOffering retrieve (string id)
+
+        public static ModelCollection<QualificationOffering> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) QualificationOffering.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (QualificationOffering) gateway.retrieve(ResourceType.QUALIFICATION_OFFERING, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("QualificationOffering");
+            RestGateway gateway = (RestGateway)QualificationOffering.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<QualificationOffering> qualificationofferingCollection = new ModelCollection<QualificationOffering>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                qualificationofferingCollection.add((QualificationOffering)model);
+            }
+
+            return qualificationofferingCollection;
         }
 
-        public ModelBase getQualificationElement ()
+        public static QualificationOffering retrieve(string id)
         {
-            return (ModelBase) this.getProperty("qualificationElement");
+            RestGateway gateway = (RestGateway)QualificationOffering.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (QualificationOffering)gateway.retrieve(ResourceType.QUALIFICATION_OFFERING, id);
         }
 
-        public void setQualificationElement (ModelBase qualificationElement)
+        public ModelBase getQualificationElement()
+        {
+            return (ModelBase)this.getProperty("qualificationElement");
+        }
+
+        public void setQualificationElement(ModelBase qualificationElement)
         {
             this.setProperty("qualificationElement", qualificationElement);
         }
 
-        public AcademicYear getAcademicYear ()
+        public AcademicYear getAcademicYear()
         {
-            return (AcademicYear) this.getProperty("academicYear");
+            return (AcademicYear)this.getProperty("academicYear");
         }
 
-        public void setAcademicYear (AcademicYear academicYear)
+        public void setAcademicYear(AcademicYear academicYear)
         {
             this.setProperty("academicYear", academicYear);
         }

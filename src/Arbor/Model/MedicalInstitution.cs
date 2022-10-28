@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string NAME = "name";
         public const string SHORT_NAME = "shortName";
 
-        public MedicalInstitution ()
+        public MedicalInstitution()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public MedicalInstitution (string resourceType = "MedicalInstitution", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<MedicalInstitution> query (SimpleQuery query = null)
+        public MedicalInstitution(string resourceType = "MedicalInstitution", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("MedicalInstitution");
-        	RestGateway gateway = (RestGateway) MedicalInstitution.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<MedicalInstitution> medicalinstitutionCollection = new ModelCollection<MedicalInstitution> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    medicalinstitutionCollection.add((MedicalInstitution) model);
-        	}
-        
-        	return medicalinstitutionCollection;
+
         }
 
-        public static MedicalInstitution retrieve (string id)
+
+        public static ModelCollection<MedicalInstitution> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) MedicalInstitution.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (MedicalInstitution) gateway.retrieve(ResourceType.MEDICAL_INSTITUTION, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("MedicalInstitution");
+            RestGateway gateway = (RestGateway)MedicalInstitution.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<MedicalInstitution> medicalinstitutionCollection = new ModelCollection<MedicalInstitution>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                medicalinstitutionCollection.add((MedicalInstitution)model);
+            }
+
+            return medicalinstitutionCollection;
         }
 
-        public string getName ()
+        public static MedicalInstitution retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)MedicalInstitution.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (MedicalInstitution)gateway.retrieve(ResourceType.MEDICAL_INSTITUTION, id);
+        }
+
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }
 
-        public string getShortName ()
+        public string getShortName()
         {
             return this.getProperty("shortName").ToString();
         }
 
-        public void setShortName (string shortName)
+        public void setShortName(string shortName)
         {
             this.setProperty("shortName", shortName);
         }

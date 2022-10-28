@@ -19,118 +19,119 @@ namespace Arbor.Model
         public const string SETUP_COMPLETED_DATETIME = "setupCompletedDatetime";
         public const string TRANSIENT = "transient";
 
-        public CustomReport ()
+        public CustomReport()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public CustomReport (string resourceType = "CustomReport", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<CustomReport> query (SimpleQuery query = null)
+        public CustomReport(string resourceType = "CustomReport", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("CustomReport");
-        	RestGateway gateway = (RestGateway) CustomReport.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<CustomReport> customreportCollection = new ModelCollection<CustomReport> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    customreportCollection.add((CustomReport) model);
-        	}
-        
-        	return customreportCollection;
+
         }
 
-        public static CustomReport retrieve (string id)
+
+        public static ModelCollection<CustomReport> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) CustomReport.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (CustomReport) gateway.retrieve(ResourceType.CUSTOM_REPORT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("CustomReport");
+            RestGateway gateway = (RestGateway)CustomReport.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<CustomReport> customreportCollection = new ModelCollection<CustomReport>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                customreportCollection.add((CustomReport)model);
+            }
+
+            return customreportCollection;
         }
 
-        public string getTitle ()
+        public static CustomReport retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)CustomReport.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (CustomReport)gateway.retrieve(ResourceType.CUSTOM_REPORT, id);
+        }
+
+        public string getTitle()
         {
             return this.getProperty("title").ToString();
         }
 
-        public void setTitle (string title)
+        public void setTitle(string title)
         {
             this.setProperty("title", title);
         }
 
-        public string getReportClass ()
+        public string getReportClass()
         {
             return this.getProperty("reportClass").ToString();
         }
 
-        public void setReportClass (string reportClass)
+        public void setReportClass(string reportClass)
         {
             this.setProperty("reportClass", reportClass);
         }
 
-        public DateTime getLastAccessDatetime ()
+        public DateTime getLastAccessDatetime()
         {
             return Convert.ToDateTime(this.getProperty("lastAccessDatetime"));
         }
 
-        public void setLastAccessDatetime (DateTime lastAccessDatetime)
+        public void setLastAccessDatetime(DateTime lastAccessDatetime)
         {
             this.setProperty("lastAccessDatetime", lastAccessDatetime);
         }
 
-        public int getLastDbQueries ()
+        public int getLastDbQueries()
         {
             return Convert.ToInt32(this.getProperty("lastDbQueries"));
         }
 
-        public void setLastDbQueries (int lastDbQueries)
+        public void setLastDbQueries(int lastDbQueries)
         {
             this.setProperty("lastDbQueries", lastDbQueries);
         }
 
-        public float getLastDbTime ()
+        public float getLastDbTime()
         {
-            return (float) this.getProperty("lastDbTime");
+            return (float)this.getProperty("lastDbTime");
         }
 
-        public void setLastDbTime (float lastDbTime)
+        public void setLastDbTime(float lastDbTime)
         {
             this.setProperty("lastDbTime", lastDbTime);
         }
 
-        public float getLastTotalTime ()
+        public float getLastTotalTime()
         {
-            return (float) this.getProperty("lastTotalTime");
+            return (float)this.getProperty("lastTotalTime");
         }
 
-        public void setLastTotalTime (float lastTotalTime)
+        public void setLastTotalTime(float lastTotalTime)
         {
             this.setProperty("lastTotalTime", lastTotalTime);
         }
 
-        public DateTime getSetupCompletedDatetime ()
+        public DateTime getSetupCompletedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("setupCompletedDatetime"));
         }
 
-        public void setSetupCompletedDatetime (DateTime setupCompletedDatetime)
+        public void setSetupCompletedDatetime(DateTime setupCompletedDatetime)
         {
             this.setProperty("setupCompletedDatetime", setupCompletedDatetime);
         }
 
-        public bool getTransient ()
+        public bool getTransient()
         {
             return Convert.ToBoolean(this.getProperty("transient"));
         }
 
-        public void setTransient (bool transient)
+        public void setTransient(bool transient)
         {
             this.setProperty("transient", transient);
         }

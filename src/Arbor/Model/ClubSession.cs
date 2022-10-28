@@ -19,118 +19,119 @@ namespace Arbor.Model
         public const string TIMETABLE_SLOT = "timetableSlot";
         public const string ATTENDANCE_REGISTER_TYPE = "attendanceRegisterType";
 
-        public ClubSession ()
+        public ClubSession()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public ClubSession (string resourceType = "ClubSession", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<ClubSession> query (SimpleQuery query = null)
+        public ClubSession(string resourceType = "ClubSession", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("ClubSession");
-        	RestGateway gateway = (RestGateway) ClubSession.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<ClubSession> clubsessionCollection = new ModelCollection<ClubSession> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    clubsessionCollection.add((ClubSession) model);
-        	}
-        
-        	return clubsessionCollection;
+
         }
 
-        public static ClubSession retrieve (string id)
+
+        public static ModelCollection<ClubSession> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) ClubSession.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (ClubSession) gateway.retrieve(ResourceType.CLUB_SESSION, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("ClubSession");
+            RestGateway gateway = (RestGateway)ClubSession.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<ClubSession> clubsessionCollection = new ModelCollection<ClubSession>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                clubsessionCollection.add((ClubSession)model);
+            }
+
+            return clubsessionCollection;
         }
 
-        public DateTime getStartDatetime ()
+        public static ClubSession retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)ClubSession.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (ClubSession)gateway.retrieve(ResourceType.CLUB_SESSION, id);
+        }
+
+        public DateTime getStartDatetime()
         {
             return Convert.ToDateTime(this.getProperty("startDatetime"));
         }
 
-        public void setStartDatetime (DateTime startDatetime)
+        public void setStartDatetime(DateTime startDatetime)
         {
             this.setProperty("startDatetime", startDatetime);
         }
 
-        public DateTime getEndDatetime ()
+        public DateTime getEndDatetime()
         {
             return Convert.ToDateTime(this.getProperty("endDatetime"));
         }
 
-        public void setEndDatetime (DateTime endDatetime)
+        public void setEndDatetime(DateTime endDatetime)
         {
             this.setProperty("endDatetime", endDatetime);
         }
 
-        public string getLocationText ()
+        public string getLocationText()
         {
             return this.getProperty("locationText").ToString();
         }
 
-        public void setLocationText (string locationText)
+        public void setLocationText(string locationText)
         {
             this.setProperty("locationText", locationText);
         }
 
-        public ModelBase getLocation ()
+        public ModelBase getLocation()
         {
-            return (ModelBase) this.getProperty("location");
+            return (ModelBase)this.getProperty("location");
         }
 
-        public void setLocation (ModelBase location)
+        public void setLocation(ModelBase location)
         {
             this.setProperty("location", location);
         }
 
-        public Club getClub ()
+        public Club getClub()
         {
-            return (Club) this.getProperty("club");
+            return (Club)this.getProperty("club");
         }
 
-        public void setClub (Club club)
+        public void setClub(Club club)
         {
             this.setProperty("club", club);
         }
 
-        public string getName ()
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }
 
-        public TimetableSlot getTimetableSlot ()
+        public TimetableSlot getTimetableSlot()
         {
-            return (TimetableSlot) this.getProperty("timetableSlot");
+            return (TimetableSlot)this.getProperty("timetableSlot");
         }
 
-        public void setTimetableSlot (TimetableSlot timetableSlot)
+        public void setTimetableSlot(TimetableSlot timetableSlot)
         {
             this.setProperty("timetableSlot", timetableSlot);
         }
 
-        public AttendanceRegisterType getAttendanceRegisterType ()
+        public AttendanceRegisterType getAttendanceRegisterType()
         {
-            return (AttendanceRegisterType) this.getProperty("attendanceRegisterType");
+            return (AttendanceRegisterType)this.getProperty("attendanceRegisterType");
         }
 
-        public void setAttendanceRegisterType (AttendanceRegisterType attendanceRegisterType)
+        public void setAttendanceRegisterType(AttendanceRegisterType attendanceRegisterType)
         {
             this.setProperty("attendanceRegisterType", attendanceRegisterType);
         }

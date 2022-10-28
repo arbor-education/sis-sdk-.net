@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string BUSINESS_ROLE = "businessRole";
         public const string USER_ROLE = "userRole";
 
-        public BusinessRoleDefaultUserRole ()
+        public BusinessRoleDefaultUserRole()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public BusinessRoleDefaultUserRole (string resourceType = "BusinessRoleDefaultUserRole", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<BusinessRoleDefaultUserRole> query (SimpleQuery query = null)
+        public BusinessRoleDefaultUserRole(string resourceType = "BusinessRoleDefaultUserRole", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("BusinessRoleDefaultUserRole");
-        	RestGateway gateway = (RestGateway) BusinessRoleDefaultUserRole.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<BusinessRoleDefaultUserRole> businessroledefaultuserroleCollection = new ModelCollection<BusinessRoleDefaultUserRole> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    businessroledefaultuserroleCollection.add((BusinessRoleDefaultUserRole) model);
-        	}
-        
-        	return businessroledefaultuserroleCollection;
+
         }
 
-        public static BusinessRoleDefaultUserRole retrieve (string id)
+
+        public static ModelCollection<BusinessRoleDefaultUserRole> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) BusinessRoleDefaultUserRole.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (BusinessRoleDefaultUserRole) gateway.retrieve(ResourceType.BUSINESS_ROLE_DEFAULT_USER_ROLE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("BusinessRoleDefaultUserRole");
+            RestGateway gateway = (RestGateway)BusinessRoleDefaultUserRole.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<BusinessRoleDefaultUserRole> businessroledefaultuserroleCollection = new ModelCollection<BusinessRoleDefaultUserRole>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                businessroledefaultuserroleCollection.add((BusinessRoleDefaultUserRole)model);
+            }
+
+            return businessroledefaultuserroleCollection;
         }
 
-        public BusinessRole getBusinessRole ()
+        public static BusinessRoleDefaultUserRole retrieve(string id)
         {
-            return (BusinessRole) this.getProperty("businessRole");
+            RestGateway gateway = (RestGateway)BusinessRoleDefaultUserRole.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (BusinessRoleDefaultUserRole)gateway.retrieve(ResourceType.BUSINESS_ROLE_DEFAULT_USER_ROLE, id);
         }
 
-        public void setBusinessRole (BusinessRole businessRole)
+        public BusinessRole getBusinessRole()
+        {
+            return (BusinessRole)this.getProperty("businessRole");
+        }
+
+        public void setBusinessRole(BusinessRole businessRole)
         {
             this.setProperty("businessRole", businessRole);
         }
 
-        public UserRole getUserRole ()
+        public UserRole getUserRole()
         {
-            return (UserRole) this.getProperty("userRole");
+            return (UserRole)this.getProperty("userRole");
         }
 
-        public void setUserRole (UserRole userRole)
+        public void setUserRole(UserRole userRole)
         {
             this.setProperty("userRole", userRole);
         }

@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string REPEATING_SCHOOL_EVENT = "repeatingSchoolEvent";
         public const string PARTICIPANT = "participant";
 
-        public RepeatingSchoolEventParticipant ()
+        public RepeatingSchoolEventParticipant()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public RepeatingSchoolEventParticipant (string resourceType = "RepeatingSchoolEventParticipant", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<RepeatingSchoolEventParticipant> query (SimpleQuery query = null)
+        public RepeatingSchoolEventParticipant(string resourceType = "RepeatingSchoolEventParticipant", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("RepeatingSchoolEventParticipant");
-        	RestGateway gateway = (RestGateway) RepeatingSchoolEventParticipant.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<RepeatingSchoolEventParticipant> repeatingschooleventparticipantCollection = new ModelCollection<RepeatingSchoolEventParticipant> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    repeatingschooleventparticipantCollection.add((RepeatingSchoolEventParticipant) model);
-        	}
-        
-        	return repeatingschooleventparticipantCollection;
+
         }
 
-        public static RepeatingSchoolEventParticipant retrieve (string id)
+
+        public static ModelCollection<RepeatingSchoolEventParticipant> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) RepeatingSchoolEventParticipant.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (RepeatingSchoolEventParticipant) gateway.retrieve(ResourceType.REPEATING_SCHOOL_EVENT_PARTICIPANT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("RepeatingSchoolEventParticipant");
+            RestGateway gateway = (RestGateway)RepeatingSchoolEventParticipant.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<RepeatingSchoolEventParticipant> repeatingschooleventparticipantCollection = new ModelCollection<RepeatingSchoolEventParticipant>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                repeatingschooleventparticipantCollection.add((RepeatingSchoolEventParticipant)model);
+            }
+
+            return repeatingschooleventparticipantCollection;
         }
 
-        public RepeatingSchoolEvent getRepeatingSchoolEvent ()
+        public static RepeatingSchoolEventParticipant retrieve(string id)
         {
-            return (RepeatingSchoolEvent) this.getProperty("repeatingSchoolEvent");
+            RestGateway gateway = (RestGateway)RepeatingSchoolEventParticipant.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (RepeatingSchoolEventParticipant)gateway.retrieve(ResourceType.REPEATING_SCHOOL_EVENT_PARTICIPANT, id);
         }
 
-        public void setRepeatingSchoolEvent (RepeatingSchoolEvent repeatingSchoolEvent)
+        public RepeatingSchoolEvent getRepeatingSchoolEvent()
+        {
+            return (RepeatingSchoolEvent)this.getProperty("repeatingSchoolEvent");
+        }
+
+        public void setRepeatingSchoolEvent(RepeatingSchoolEvent repeatingSchoolEvent)
         {
             this.setProperty("repeatingSchoolEvent", repeatingSchoolEvent);
         }
 
-        public ModelBase getParticipant ()
+        public ModelBase getParticipant()
         {
-            return (ModelBase) this.getProperty("participant");
+            return (ModelBase)this.getProperty("participant");
         }
 
-        public void setParticipant (ModelBase participant)
+        public void setParticipant(ModelBase participant)
         {
             this.setProperty("participant", participant);
         }

@@ -19,118 +19,119 @@ namespace Arbor.Model
         public const string MINIMUM_SALARY = "minimumSalary";
         public const string MAXIMUM_SALARY = "maximumSalary";
 
-        public PayScale ()
+        public PayScale()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public PayScale (string resourceType = "PayScale", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<PayScale> query (SimpleQuery query = null)
+        public PayScale(string resourceType = "PayScale", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("PayScale");
-        	RestGateway gateway = (RestGateway) PayScale.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<PayScale> payscaleCollection = new ModelCollection<PayScale> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    payscaleCollection.add((PayScale) model);
-        	}
-        
-        	return payscaleCollection;
+
         }
 
-        public static PayScale retrieve (string id)
+
+        public static ModelCollection<PayScale> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) PayScale.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (PayScale) gateway.retrieve(ResourceType.PAY_SCALE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("PayScale");
+            RestGateway gateway = (RestGateway)PayScale.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<PayScale> payscaleCollection = new ModelCollection<PayScale>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                payscaleCollection.add((PayScale)model);
+            }
+
+            return payscaleCollection;
         }
 
-        public string getRegionalPaySpine ()
+        public static PayScale retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)PayScale.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (PayScale)gateway.retrieve(ResourceType.PAY_SCALE, id);
+        }
+
+        public string getRegionalPaySpine()
         {
             return this.getProperty("regionalPaySpine").ToString();
         }
 
-        public void setRegionalPaySpine (string regionalPaySpine)
+        public void setRegionalPaySpine(string regionalPaySpine)
         {
             this.setProperty("regionalPaySpine", regionalPaySpine);
         }
 
-        public PayScaleCategory getPayScaleCategory ()
+        public PayScaleCategory getPayScaleCategory()
         {
-            return (PayScaleCategory) this.getProperty("payScaleCategory");
+            return (PayScaleCategory)this.getProperty("payScaleCategory");
         }
 
-        public void setPayScaleCategory (PayScaleCategory payScaleCategory)
+        public void setPayScaleCategory(PayScaleCategory payScaleCategory)
         {
             this.setProperty("payScaleCategory", payScaleCategory);
         }
 
-        public string getPayScaleCode ()
+        public string getPayScaleCode()
         {
             return this.getProperty("payScaleCode").ToString();
         }
 
-        public void setPayScaleCode (string payScaleCode)
+        public void setPayScaleCode(string payScaleCode)
         {
             this.setProperty("payScaleCode", payScaleCode);
         }
 
-        public string getPayScaleName ()
+        public string getPayScaleName()
         {
             return this.getProperty("payScaleName").ToString();
         }
 
-        public void setPayScaleName (string payScaleName)
+        public void setPayScaleName(string payScaleName)
         {
             this.setProperty("payScaleName", payScaleName);
         }
 
-        public DateTime getEffectiveDate ()
+        public DateTime getEffectiveDate()
         {
             return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
-        public void setEffectiveDate (DateTime effectiveDate)
+        public void setEffectiveDate(DateTime effectiveDate)
         {
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }
 
-        public string getMinimumSalary ()
+        public string getMinimumSalary()
         {
             return this.getProperty("minimumSalary").ToString();
         }
 
-        public void setMinimumSalary (string minimumSalary)
+        public void setMinimumSalary(string minimumSalary)
         {
             this.setProperty("minimumSalary", minimumSalary);
         }
 
-        public string getMaximumSalary ()
+        public string getMaximumSalary()
         {
             return this.getProperty("maximumSalary").ToString();
         }
 
-        public void setMaximumSalary (string maximumSalary)
+        public void setMaximumSalary(string maximumSalary)
         {
             this.setProperty("maximumSalary", maximumSalary);
         }

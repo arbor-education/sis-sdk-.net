@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string ACADEMIC_UNIT = "academicUnit";
         public const string BLOCK_NAME = "blockName";
 
-        public AcademicUnitBlockAssignment ()
+        public AcademicUnitBlockAssignment()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AcademicUnitBlockAssignment (string resourceType = "AcademicUnitBlockAssignment", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AcademicUnitBlockAssignment> query (SimpleQuery query = null)
+        public AcademicUnitBlockAssignment(string resourceType = "AcademicUnitBlockAssignment", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AcademicUnitBlockAssignment");
-        	RestGateway gateway = (RestGateway) AcademicUnitBlockAssignment.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AcademicUnitBlockAssignment> academicunitblockassignmentCollection = new ModelCollection<AcademicUnitBlockAssignment> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    academicunitblockassignmentCollection.add((AcademicUnitBlockAssignment) model);
-        	}
-        
-        	return academicunitblockassignmentCollection;
+
         }
 
-        public static AcademicUnitBlockAssignment retrieve (string id)
+
+        public static ModelCollection<AcademicUnitBlockAssignment> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AcademicUnitBlockAssignment.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AcademicUnitBlockAssignment) gateway.retrieve(ResourceType.ACADEMIC_UNIT_BLOCK_ASSIGNMENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AcademicUnitBlockAssignment");
+            RestGateway gateway = (RestGateway)AcademicUnitBlockAssignment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AcademicUnitBlockAssignment> academicunitblockassignmentCollection = new ModelCollection<AcademicUnitBlockAssignment>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                academicunitblockassignmentCollection.add((AcademicUnitBlockAssignment)model);
+            }
+
+            return academicunitblockassignmentCollection;
         }
 
-        public AcademicUnit getAcademicUnit ()
+        public static AcademicUnitBlockAssignment retrieve(string id)
         {
-            return (AcademicUnit) this.getProperty("academicUnit");
+            RestGateway gateway = (RestGateway)AcademicUnitBlockAssignment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AcademicUnitBlockAssignment)gateway.retrieve(ResourceType.ACADEMIC_UNIT_BLOCK_ASSIGNMENT, id);
         }
 
-        public void setAcademicUnit (AcademicUnit academicUnit)
+        public AcademicUnit getAcademicUnit()
+        {
+            return (AcademicUnit)this.getProperty("academicUnit");
+        }
+
+        public void setAcademicUnit(AcademicUnit academicUnit)
         {
             this.setProperty("academicUnit", academicUnit);
         }
 
-        public string getBlockName ()
+        public string getBlockName()
         {
             return this.getProperty("blockName").ToString();
         }
 
-        public void setBlockName (string blockName)
+        public void setBlockName(string blockName)
         {
             this.setProperty("blockName", blockName);
         }

@@ -18,108 +18,109 @@ namespace Arbor.Model
         public const string MARK_MAX_VALUE = "markMaxValue";
         public const string SCALE_DIRECTION = "scaleDirection";
 
-        public SchoolworkAspect ()
+        public SchoolworkAspect()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public SchoolworkAspect (string resourceType = "SchoolworkAspect", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<SchoolworkAspect> query (SimpleQuery query = null)
+        public SchoolworkAspect(string resourceType = "SchoolworkAspect", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("SchoolworkAspect");
-        	RestGateway gateway = (RestGateway) SchoolworkAspect.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<SchoolworkAspect> schoolworkaspectCollection = new ModelCollection<SchoolworkAspect> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    schoolworkaspectCollection.add((SchoolworkAspect) model);
-        	}
-        
-        	return schoolworkaspectCollection;
+
         }
 
-        public static SchoolworkAspect retrieve (string id)
+
+        public static ModelCollection<SchoolworkAspect> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) SchoolworkAspect.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (SchoolworkAspect) gateway.retrieve(ResourceType.SCHOOLWORK_ASPECT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("SchoolworkAspect");
+            RestGateway gateway = (RestGateway)SchoolworkAspect.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<SchoolworkAspect> schoolworkaspectCollection = new ModelCollection<SchoolworkAspect>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                schoolworkaspectCollection.add((SchoolworkAspect)model);
+            }
+
+            return schoolworkaspectCollection;
         }
 
-        public Schoolwork getSchoolwork ()
+        public static SchoolworkAspect retrieve(string id)
         {
-            return (Schoolwork) this.getProperty("schoolwork");
+            RestGateway gateway = (RestGateway)SchoolworkAspect.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (SchoolworkAspect)gateway.retrieve(ResourceType.SCHOOLWORK_ASPECT, id);
         }
 
-        public void setSchoolwork (Schoolwork schoolwork)
+        public Schoolwork getSchoolwork()
+        {
+            return (Schoolwork)this.getProperty("schoolwork");
+        }
+
+        public void setSchoolwork(Schoolwork schoolwork)
         {
             this.setProperty("schoolwork", schoolwork);
         }
 
-        public string getAspectName ()
+        public string getAspectName()
         {
             return this.getProperty("aspectName").ToString();
         }
 
-        public void setAspectName (string aspectName)
+        public void setAspectName(string aspectName)
         {
             this.setProperty("aspectName", aspectName);
         }
 
-        public string getAspectDataType ()
+        public string getAspectDataType()
         {
             return this.getProperty("aspectDataType").ToString();
         }
 
-        public void setAspectDataType (string aspectDataType)
+        public void setAspectDataType(string aspectDataType)
         {
             this.setProperty("aspectDataType", aspectDataType);
         }
 
-        public GradeSet getGradeSet ()
+        public GradeSet getGradeSet()
         {
-            return (GradeSet) this.getProperty("gradeSet");
+            return (GradeSet)this.getProperty("gradeSet");
         }
 
-        public void setGradeSet (GradeSet gradeSet)
+        public void setGradeSet(GradeSet gradeSet)
         {
             this.setProperty("gradeSet", gradeSet);
         }
 
-        public float getMarkMinValue ()
+        public float getMarkMinValue()
         {
-            return (float) this.getProperty("markMinValue");
+            return (float)this.getProperty("markMinValue");
         }
 
-        public void setMarkMinValue (float markMinValue)
+        public void setMarkMinValue(float markMinValue)
         {
             this.setProperty("markMinValue", markMinValue);
         }
 
-        public float getMarkMaxValue ()
+        public float getMarkMaxValue()
         {
-            return (float) this.getProperty("markMaxValue");
+            return (float)this.getProperty("markMaxValue");
         }
 
-        public void setMarkMaxValue (float markMaxValue)
+        public void setMarkMaxValue(float markMaxValue)
         {
             this.setProperty("markMaxValue", markMaxValue);
         }
 
-        public string getScaleDirection ()
+        public string getScaleDirection()
         {
             return this.getProperty("scaleDirection").ToString();
         }
 
-        public void setScaleDirection (string scaleDirection)
+        public void setScaleDirection(string scaleDirection)
         {
             this.setProperty("scaleDirection", scaleDirection);
         }

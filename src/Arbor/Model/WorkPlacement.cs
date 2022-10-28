@@ -18,108 +18,109 @@ namespace Arbor.Model
         public const string PLANNED_HOURS = "plannedHours";
         public const string PROGRAMME_ENROLMENT = "programmeEnrolment";
 
-        public WorkPlacement ()
+        public WorkPlacement()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public WorkPlacement (string resourceType = "WorkPlacement", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<WorkPlacement> query (SimpleQuery query = null)
+        public WorkPlacement(string resourceType = "WorkPlacement", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("WorkPlacement");
-        	RestGateway gateway = (RestGateway) WorkPlacement.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<WorkPlacement> workplacementCollection = new ModelCollection<WorkPlacement> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    workplacementCollection.add((WorkPlacement) model);
-        	}
-        
-        	return workplacementCollection;
+
         }
 
-        public static WorkPlacement retrieve (string id)
+
+        public static ModelCollection<WorkPlacement> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) WorkPlacement.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (WorkPlacement) gateway.retrieve(ResourceType.WORK_PLACEMENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("WorkPlacement");
+            RestGateway gateway = (RestGateway)WorkPlacement.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<WorkPlacement> workplacementCollection = new ModelCollection<WorkPlacement>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                workplacementCollection.add((WorkPlacement)model);
+            }
+
+            return workplacementCollection;
         }
 
-        public Student getStudent ()
+        public static WorkPlacement retrieve(string id)
         {
-            return (Student) this.getProperty("student");
+            RestGateway gateway = (RestGateway)WorkPlacement.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (WorkPlacement)gateway.retrieve(ResourceType.WORK_PLACEMENT, id);
         }
 
-        public void setStudent (Student student)
+        public Student getStudent()
+        {
+            return (Student)this.getProperty("student");
+        }
+
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public Employer getEmployer ()
+        public Employer getEmployer()
         {
-            return (Employer) this.getProperty("employer");
+            return (Employer)this.getProperty("employer");
         }
 
-        public void setEmployer (Employer employer)
+        public void setEmployer(Employer employer)
         {
             this.setProperty("employer", employer);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDate()
         {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }
 
-        public string getWorkPlacementMode ()
+        public string getWorkPlacementMode()
         {
             return this.getProperty("workPlacementMode").ToString();
         }
 
-        public void setWorkPlacementMode (string workPlacementMode)
+        public void setWorkPlacementMode(string workPlacementMode)
         {
             this.setProperty("workPlacementMode", workPlacementMode);
         }
 
-        public string getPlannedHours ()
+        public string getPlannedHours()
         {
             return this.getProperty("plannedHours").ToString();
         }
 
-        public void setPlannedHours (string plannedHours)
+        public void setPlannedHours(string plannedHours)
         {
             this.setProperty("plannedHours", plannedHours);
         }
 
-        public ProgrammeEnrolment getProgrammeEnrolment ()
+        public ProgrammeEnrolment getProgrammeEnrolment()
         {
-            return (ProgrammeEnrolment) this.getProperty("programmeEnrolment");
+            return (ProgrammeEnrolment)this.getProperty("programmeEnrolment");
         }
 
-        public void setProgrammeEnrolment (ProgrammeEnrolment programmeEnrolment)
+        public void setProgrammeEnrolment(ProgrammeEnrolment programmeEnrolment)
         {
             this.setProperty("programmeEnrolment", programmeEnrolment);
         }

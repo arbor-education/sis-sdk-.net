@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
 
-        public AcademicUnitDepartment ()
+        public AcademicUnitDepartment()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AcademicUnitDepartment (string resourceType = "AcademicUnitDepartment", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AcademicUnitDepartment> query (SimpleQuery query = null)
+        public AcademicUnitDepartment(string resourceType = "AcademicUnitDepartment", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AcademicUnitDepartment");
-        	RestGateway gateway = (RestGateway) AcademicUnitDepartment.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AcademicUnitDepartment> academicunitdepartmentCollection = new ModelCollection<AcademicUnitDepartment> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    academicunitdepartmentCollection.add((AcademicUnitDepartment) model);
-        	}
-        
-        	return academicunitdepartmentCollection;
+
         }
 
-        public static AcademicUnitDepartment retrieve (string id)
+
+        public static ModelCollection<AcademicUnitDepartment> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AcademicUnitDepartment.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AcademicUnitDepartment) gateway.retrieve(ResourceType.ACADEMIC_UNIT_DEPARTMENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AcademicUnitDepartment");
+            RestGateway gateway = (RestGateway)AcademicUnitDepartment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AcademicUnitDepartment> academicunitdepartmentCollection = new ModelCollection<AcademicUnitDepartment>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                academicunitdepartmentCollection.add((AcademicUnitDepartment)model);
+            }
+
+            return academicunitdepartmentCollection;
         }
 
-        public Department getDepartment ()
+        public static AcademicUnitDepartment retrieve(string id)
         {
-            return (Department) this.getProperty("department");
+            RestGateway gateway = (RestGateway)AcademicUnitDepartment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AcademicUnitDepartment)gateway.retrieve(ResourceType.ACADEMIC_UNIT_DEPARTMENT, id);
         }
 
-        public void setDepartment (Department department)
+        public Department getDepartment()
+        {
+            return (Department)this.getProperty("department");
+        }
+
+        public void setDepartment(Department department)
         {
             this.setProperty("department", department);
         }
 
-        public AcademicUnit getAcademicUnit ()
+        public AcademicUnit getAcademicUnit()
         {
-            return (AcademicUnit) this.getProperty("academicUnit");
+            return (AcademicUnit)this.getProperty("academicUnit");
         }
 
-        public void setAcademicUnit (AcademicUnit academicUnit)
+        public void setAcademicUnit(AcademicUnit academicUnit)
         {
             this.setProperty("academicUnit", academicUnit);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDate()
         {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }

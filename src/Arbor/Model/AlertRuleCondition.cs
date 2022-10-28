@@ -16,88 +16,89 @@ namespace Arbor.Model
         public const string CONDITION = "condition";
         public const string CONDITION_RESOLVER = "conditionResolver";
 
-        public AlertRuleCondition ()
+        public AlertRuleCondition()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AlertRuleCondition (string resourceType = "AlertRuleCondition", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AlertRuleCondition> query (SimpleQuery query = null)
+        public AlertRuleCondition(string resourceType = "AlertRuleCondition", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AlertRuleCondition");
-        	RestGateway gateway = (RestGateway) AlertRuleCondition.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AlertRuleCondition> alertruleconditionCollection = new ModelCollection<AlertRuleCondition> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    alertruleconditionCollection.add((AlertRuleCondition) model);
-        	}
-        
-        	return alertruleconditionCollection;
+
         }
 
-        public static AlertRuleCondition retrieve (string id)
+
+        public static ModelCollection<AlertRuleCondition> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AlertRuleCondition.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AlertRuleCondition) gateway.retrieve(ResourceType.ALERT_RULE_CONDITION, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AlertRuleCondition");
+            RestGateway gateway = (RestGateway)AlertRuleCondition.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AlertRuleCondition> alertruleconditionCollection = new ModelCollection<AlertRuleCondition>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                alertruleconditionCollection.add((AlertRuleCondition)model);
+            }
+
+            return alertruleconditionCollection;
         }
 
-        public AlertRule getAlertRule ()
+        public static AlertRuleCondition retrieve(string id)
         {
-            return (AlertRule) this.getProperty("alertRule");
+            RestGateway gateway = (RestGateway)AlertRuleCondition.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AlertRuleCondition)gateway.retrieve(ResourceType.ALERT_RULE_CONDITION, id);
         }
 
-        public void setAlertRule (AlertRule alertRule)
+        public AlertRule getAlertRule()
+        {
+            return (AlertRule)this.getProperty("alertRule");
+        }
+
+        public void setAlertRule(AlertRule alertRule)
         {
             this.setProperty("alertRule", alertRule);
         }
 
-        public string getTriggerField ()
+        public string getTriggerField()
         {
             return this.getProperty("triggerField").ToString();
         }
 
-        public void setTriggerField (string triggerField)
+        public void setTriggerField(string triggerField)
         {
             this.setProperty("triggerField", triggerField);
         }
 
-        public bool getConditionGroup ()
+        public bool getConditionGroup()
         {
             return Convert.ToBoolean(this.getProperty("conditionGroup"));
         }
 
-        public void setConditionGroup (bool conditionGroup)
+        public void setConditionGroup(bool conditionGroup)
         {
             this.setProperty("conditionGroup", conditionGroup);
         }
 
-        public ModelBase getCondition ()
+        public ModelBase getCondition()
         {
-            return (ModelBase) this.getProperty("condition");
+            return (ModelBase)this.getProperty("condition");
         }
 
-        public void setCondition (ModelBase condition)
+        public void setCondition(ModelBase condition)
         {
             this.setProperty("condition", condition);
         }
 
-        public string getConditionResolver ()
+        public string getConditionResolver()
         {
             return this.getProperty("conditionResolver").ToString();
         }
 
-        public void setConditionResolver (string conditionResolver)
+        public void setConditionResolver(string conditionResolver)
         {
             this.setProperty("conditionResolver", conditionResolver);
         }

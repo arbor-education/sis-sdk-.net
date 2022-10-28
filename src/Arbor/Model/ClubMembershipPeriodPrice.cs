@@ -17,98 +17,99 @@ namespace Arbor.Model
         public const string APPLICABLE = "applicable";
         public const string VARIABLE_CONTRIBUTION = "variableContribution";
 
-        public ClubMembershipPeriodPrice ()
+        public ClubMembershipPeriodPrice()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public ClubMembershipPeriodPrice (string resourceType = "ClubMembershipPeriodPrice", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<ClubMembershipPeriodPrice> query (SimpleQuery query = null)
+        public ClubMembershipPeriodPrice(string resourceType = "ClubMembershipPeriodPrice", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("ClubMembershipPeriodPrice");
-        	RestGateway gateway = (RestGateway) ClubMembershipPeriodPrice.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<ClubMembershipPeriodPrice> clubmembershipperiodpriceCollection = new ModelCollection<ClubMembershipPeriodPrice> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    clubmembershipperiodpriceCollection.add((ClubMembershipPeriodPrice) model);
-        	}
-        
-        	return clubmembershipperiodpriceCollection;
+
         }
 
-        public static ClubMembershipPeriodPrice retrieve (string id)
+
+        public static ModelCollection<ClubMembershipPeriodPrice> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) ClubMembershipPeriodPrice.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (ClubMembershipPeriodPrice) gateway.retrieve(ResourceType.CLUB_MEMBERSHIP_PERIOD_PRICE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("ClubMembershipPeriodPrice");
+            RestGateway gateway = (RestGateway)ClubMembershipPeriodPrice.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<ClubMembershipPeriodPrice> clubmembershipperiodpriceCollection = new ModelCollection<ClubMembershipPeriodPrice>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                clubmembershipperiodpriceCollection.add((ClubMembershipPeriodPrice)model);
+            }
+
+            return clubmembershipperiodpriceCollection;
         }
 
-        public ClubMembershipPeriod getClubMembershipPeriod ()
+        public static ClubMembershipPeriodPrice retrieve(string id)
         {
-            return (ClubMembershipPeriod) this.getProperty("clubMembershipPeriod");
+            RestGateway gateway = (RestGateway)ClubMembershipPeriodPrice.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (ClubMembershipPeriodPrice)gateway.retrieve(ResourceType.CLUB_MEMBERSHIP_PERIOD_PRICE, id);
         }
 
-        public void setClubMembershipPeriod (ClubMembershipPeriod clubMembershipPeriod)
+        public ClubMembershipPeriod getClubMembershipPeriod()
+        {
+            return (ClubMembershipPeriod)this.getProperty("clubMembershipPeriod");
+        }
+
+        public void setClubMembershipPeriod(ClubMembershipPeriod clubMembershipPeriod)
         {
             this.setProperty("clubMembershipPeriod", clubMembershipPeriod);
         }
 
-        public string getPricingBasis ()
+        public string getPricingBasis()
         {
             return this.getProperty("pricingBasis").ToString();
         }
 
-        public void setPricingBasis (string pricingBasis)
+        public void setPricingBasis(string pricingBasis)
         {
             this.setProperty("pricingBasis", pricingBasis);
         }
 
-        public string getPriceExVat ()
+        public string getPriceExVat()
         {
             return this.getProperty("priceExVat").ToString();
         }
 
-        public void setPriceExVat (string priceExVat)
+        public void setPriceExVat(string priceExVat)
         {
             this.setProperty("priceExVat", priceExVat);
         }
 
-        public VatRate getVatRate ()
+        public VatRate getVatRate()
         {
-            return (VatRate) this.getProperty("vatRate");
+            return (VatRate)this.getProperty("vatRate");
         }
 
-        public void setVatRate (VatRate vatRate)
+        public void setVatRate(VatRate vatRate)
         {
             this.setProperty("vatRate", vatRate);
         }
 
-        public ModelBase getApplicable ()
+        public ModelBase getApplicable()
         {
-            return (ModelBase) this.getProperty("applicable");
+            return (ModelBase)this.getProperty("applicable");
         }
 
-        public void setApplicable (ModelBase applicable)
+        public void setApplicable(ModelBase applicable)
         {
             this.setProperty("applicable", applicable);
         }
 
-        public bool getVariableContribution ()
+        public bool getVariableContribution()
         {
             return Convert.ToBoolean(this.getProperty("variableContribution"));
         }
 
-        public void setVariableContribution (bool variableContribution)
+        public void setVariableContribution(bool variableContribution)
         {
             this.setProperty("variableContribution", variableContribution);
         }

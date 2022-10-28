@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string ACADEMIC_UNIT = "academicUnit";
         public const string BAND_NAME = "bandName";
 
-        public AcademicUnitBandAssignment ()
+        public AcademicUnitBandAssignment()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AcademicUnitBandAssignment (string resourceType = "AcademicUnitBandAssignment", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AcademicUnitBandAssignment> query (SimpleQuery query = null)
+        public AcademicUnitBandAssignment(string resourceType = "AcademicUnitBandAssignment", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AcademicUnitBandAssignment");
-        	RestGateway gateway = (RestGateway) AcademicUnitBandAssignment.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AcademicUnitBandAssignment> academicunitbandassignmentCollection = new ModelCollection<AcademicUnitBandAssignment> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    academicunitbandassignmentCollection.add((AcademicUnitBandAssignment) model);
-        	}
-        
-        	return academicunitbandassignmentCollection;
+
         }
 
-        public static AcademicUnitBandAssignment retrieve (string id)
+
+        public static ModelCollection<AcademicUnitBandAssignment> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AcademicUnitBandAssignment.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AcademicUnitBandAssignment) gateway.retrieve(ResourceType.ACADEMIC_UNIT_BAND_ASSIGNMENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AcademicUnitBandAssignment");
+            RestGateway gateway = (RestGateway)AcademicUnitBandAssignment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AcademicUnitBandAssignment> academicunitbandassignmentCollection = new ModelCollection<AcademicUnitBandAssignment>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                academicunitbandassignmentCollection.add((AcademicUnitBandAssignment)model);
+            }
+
+            return academicunitbandassignmentCollection;
         }
 
-        public AcademicUnit getAcademicUnit ()
+        public static AcademicUnitBandAssignment retrieve(string id)
         {
-            return (AcademicUnit) this.getProperty("academicUnit");
+            RestGateway gateway = (RestGateway)AcademicUnitBandAssignment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AcademicUnitBandAssignment)gateway.retrieve(ResourceType.ACADEMIC_UNIT_BAND_ASSIGNMENT, id);
         }
 
-        public void setAcademicUnit (AcademicUnit academicUnit)
+        public AcademicUnit getAcademicUnit()
+        {
+            return (AcademicUnit)this.getProperty("academicUnit");
+        }
+
+        public void setAcademicUnit(AcademicUnit academicUnit)
         {
             this.setProperty("academicUnit", academicUnit);
         }
 
-        public string getBandName ()
+        public string getBandName()
         {
             return this.getProperty("bandName").ToString();
         }
 
-        public void setBandName (string bandName)
+        public void setBandName(string bandName)
         {
             this.setProperty("bandName", bandName);
         }

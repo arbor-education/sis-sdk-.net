@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string ACTION = "action";
         public const string IS_AUTOMATIC = "isAutomatic";
 
-        public BehaviouralIncidentAction ()
+        public BehaviouralIncidentAction()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public BehaviouralIncidentAction (string resourceType = "BehaviouralIncidentAction", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<BehaviouralIncidentAction> query (SimpleQuery query = null)
+        public BehaviouralIncidentAction(string resourceType = "BehaviouralIncidentAction", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("BehaviouralIncidentAction");
-        	RestGateway gateway = (RestGateway) BehaviouralIncidentAction.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<BehaviouralIncidentAction> behaviouralincidentactionCollection = new ModelCollection<BehaviouralIncidentAction> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    behaviouralincidentactionCollection.add((BehaviouralIncidentAction) model);
-        	}
-        
-        	return behaviouralincidentactionCollection;
+
         }
 
-        public static BehaviouralIncidentAction retrieve (string id)
+
+        public static ModelCollection<BehaviouralIncidentAction> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) BehaviouralIncidentAction.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (BehaviouralIncidentAction) gateway.retrieve(ResourceType.BEHAVIOURAL_INCIDENT_ACTION, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("BehaviouralIncidentAction");
+            RestGateway gateway = (RestGateway)BehaviouralIncidentAction.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<BehaviouralIncidentAction> behaviouralincidentactionCollection = new ModelCollection<BehaviouralIncidentAction>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                behaviouralincidentactionCollection.add((BehaviouralIncidentAction)model);
+            }
+
+            return behaviouralincidentactionCollection;
         }
 
-        public BehaviouralIncident getBehaviouralIncident ()
+        public static BehaviouralIncidentAction retrieve(string id)
         {
-            return (BehaviouralIncident) this.getProperty("behaviouralIncident");
+            RestGateway gateway = (RestGateway)BehaviouralIncidentAction.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (BehaviouralIncidentAction)gateway.retrieve(ResourceType.BEHAVIOURAL_INCIDENT_ACTION, id);
         }
 
-        public void setBehaviouralIncident (BehaviouralIncident behaviouralIncident)
+        public BehaviouralIncident getBehaviouralIncident()
+        {
+            return (BehaviouralIncident)this.getProperty("behaviouralIncident");
+        }
+
+        public void setBehaviouralIncident(BehaviouralIncident behaviouralIncident)
         {
             this.setProperty("behaviouralIncident", behaviouralIncident);
         }
 
-        public Student getStudent ()
+        public Student getStudent()
         {
-            return (Student) this.getProperty("student");
+            return (Student)this.getProperty("student");
         }
 
-        public void setStudent (Student student)
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public ModelBase getAction ()
+        public ModelBase getAction()
         {
-            return (ModelBase) this.getProperty("action");
+            return (ModelBase)this.getProperty("action");
         }
 
-        public void setAction (ModelBase action)
+        public void setAction(ModelBase action)
         {
             this.setProperty("action", action);
         }
 
-        public bool getIsAutomatic ()
+        public bool getIsAutomatic()
         {
             return Convert.ToBoolean(this.getProperty("isAutomatic"));
         }
 
-        public void setIsAutomatic (bool isAutomatic)
+        public void setIsAutomatic(bool isAutomatic)
         {
             this.setProperty("isAutomatic", isAutomatic);
         }

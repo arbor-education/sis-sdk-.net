@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string PROGRAMME_INSTANCE = "programmeInstance";
         public const string QUALIFICATION_AWARD = "qualificationAward";
 
-        public ProgrammeQualificationAward ()
+        public ProgrammeQualificationAward()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public ProgrammeQualificationAward (string resourceType = "ProgrammeQualificationAward", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<ProgrammeQualificationAward> query (SimpleQuery query = null)
+        public ProgrammeQualificationAward(string resourceType = "ProgrammeQualificationAward", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("ProgrammeQualificationAward");
-        	RestGateway gateway = (RestGateway) ProgrammeQualificationAward.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<ProgrammeQualificationAward> programmequalificationawardCollection = new ModelCollection<ProgrammeQualificationAward> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    programmequalificationawardCollection.add((ProgrammeQualificationAward) model);
-        	}
-        
-        	return programmequalificationawardCollection;
+
         }
 
-        public static ProgrammeQualificationAward retrieve (string id)
+
+        public static ModelCollection<ProgrammeQualificationAward> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) ProgrammeQualificationAward.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (ProgrammeQualificationAward) gateway.retrieve(ResourceType.PROGRAMME_QUALIFICATION_AWARD, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("ProgrammeQualificationAward");
+            RestGateway gateway = (RestGateway)ProgrammeQualificationAward.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<ProgrammeQualificationAward> programmequalificationawardCollection = new ModelCollection<ProgrammeQualificationAward>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                programmequalificationawardCollection.add((ProgrammeQualificationAward)model);
+            }
+
+            return programmequalificationawardCollection;
         }
 
-        public ProgrammeInstance getProgrammeInstance ()
+        public static ProgrammeQualificationAward retrieve(string id)
         {
-            return (ProgrammeInstance) this.getProperty("programmeInstance");
+            RestGateway gateway = (RestGateway)ProgrammeQualificationAward.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (ProgrammeQualificationAward)gateway.retrieve(ResourceType.PROGRAMME_QUALIFICATION_AWARD, id);
         }
 
-        public void setProgrammeInstance (ProgrammeInstance programmeInstance)
+        public ProgrammeInstance getProgrammeInstance()
+        {
+            return (ProgrammeInstance)this.getProperty("programmeInstance");
+        }
+
+        public void setProgrammeInstance(ProgrammeInstance programmeInstance)
         {
             this.setProperty("programmeInstance", programmeInstance);
         }
 
-        public QualificationAward getQualificationAward ()
+        public QualificationAward getQualificationAward()
         {
-            return (QualificationAward) this.getProperty("qualificationAward");
+            return (QualificationAward)this.getProperty("qualificationAward");
         }
 
-        public void setQualificationAward (QualificationAward qualificationAward)
+        public void setQualificationAward(QualificationAward qualificationAward)
         {
             this.setProperty("qualificationAward", qualificationAward);
         }

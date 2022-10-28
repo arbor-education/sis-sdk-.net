@@ -25,178 +25,179 @@ namespace Arbor.Model
         public const string APPROVED_DATETIME = "approvedDatetime";
         public const string APPROVED_STAFF = "approvedStaff";
 
-        public StudentProgressAssessmentMark ()
+        public StudentProgressAssessmentMark()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public StudentProgressAssessmentMark (string resourceType = "StudentProgressAssessmentMark", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<StudentProgressAssessmentMark> query (SimpleQuery query = null)
+        public StudentProgressAssessmentMark(string resourceType = "StudentProgressAssessmentMark", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("StudentProgressAssessmentMark");
-        	RestGateway gateway = (RestGateway) StudentProgressAssessmentMark.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<StudentProgressAssessmentMark> studentprogressassessmentmarkCollection = new ModelCollection<StudentProgressAssessmentMark> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    studentprogressassessmentmarkCollection.add((StudentProgressAssessmentMark) model);
-        	}
-        
-        	return studentprogressassessmentmarkCollection;
+
         }
 
-        public static StudentProgressAssessmentMark retrieve (string id)
+
+        public static ModelCollection<StudentProgressAssessmentMark> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) StudentProgressAssessmentMark.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (StudentProgressAssessmentMark) gateway.retrieve(ResourceType.STUDENT_PROGRESS_ASSESSMENT_MARK, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("StudentProgressAssessmentMark");
+            RestGateway gateway = (RestGateway)StudentProgressAssessmentMark.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<StudentProgressAssessmentMark> studentprogressassessmentmarkCollection = new ModelCollection<StudentProgressAssessmentMark>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                studentprogressassessmentmarkCollection.add((StudentProgressAssessmentMark)model);
+            }
+
+            return studentprogressassessmentmarkCollection;
         }
 
-        public Student getStudent ()
+        public static StudentProgressAssessmentMark retrieve(string id)
         {
-            return (Student) this.getProperty("student");
+            RestGateway gateway = (RestGateway)StudentProgressAssessmentMark.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (StudentProgressAssessmentMark)gateway.retrieve(ResourceType.STUDENT_PROGRESS_ASSESSMENT_MARK, id);
         }
 
-        public void setStudent (Student student)
+        public Student getStudent()
+        {
+            return (Student)this.getProperty("student");
+        }
+
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public Assessment getAssessment ()
+        public Assessment getAssessment()
         {
-            return (Assessment) this.getProperty("assessment");
+            return (Assessment)this.getProperty("assessment");
         }
 
-        public void setAssessment (Assessment assessment)
+        public void setAssessment(Assessment assessment)
         {
             this.setProperty("assessment", assessment);
         }
 
-        public ProgressMeasurementPeriod getProgressMeasurementPeriod ()
+        public ProgressMeasurementPeriod getProgressMeasurementPeriod()
         {
-            return (ProgressMeasurementPeriod) this.getProperty("progressMeasurementPeriod");
+            return (ProgressMeasurementPeriod)this.getProperty("progressMeasurementPeriod");
         }
 
-        public void setProgressMeasurementPeriod (ProgressMeasurementPeriod progressMeasurementPeriod)
+        public void setProgressMeasurementPeriod(ProgressMeasurementPeriod progressMeasurementPeriod)
         {
             this.setProperty("progressMeasurementPeriod", progressMeasurementPeriod);
         }
 
-        public Grade getGrade ()
+        public Grade getGrade()
         {
-            return (Grade) this.getProperty("grade");
+            return (Grade)this.getProperty("grade");
         }
 
-        public void setGrade (Grade grade)
+        public void setGrade(Grade grade)
         {
             this.setProperty("grade", grade);
         }
 
-        public float getLowerGradePointScaleValue ()
+        public float getLowerGradePointScaleValue()
         {
-            return (float) this.getProperty("lowerGradePointScaleValue");
+            return (float)this.getProperty("lowerGradePointScaleValue");
         }
 
-        public void setLowerGradePointScaleValue (float lowerGradePointScaleValue)
+        public void setLowerGradePointScaleValue(float lowerGradePointScaleValue)
         {
             this.setProperty("lowerGradePointScaleValue", lowerGradePointScaleValue);
         }
 
-        public float getUpperGradePointScaleValue ()
+        public float getUpperGradePointScaleValue()
         {
-            return (float) this.getProperty("upperGradePointScaleValue");
+            return (float)this.getProperty("upperGradePointScaleValue");
         }
 
-        public void setUpperGradePointScaleValue (float upperGradePointScaleValue)
+        public void setUpperGradePointScaleValue(float upperGradePointScaleValue)
         {
             this.setProperty("upperGradePointScaleValue", upperGradePointScaleValue);
         }
 
-        public float getStatisticalGradePointScaleValue ()
+        public float getStatisticalGradePointScaleValue()
         {
-            return (float) this.getProperty("statisticalGradePointScaleValue");
+            return (float)this.getProperty("statisticalGradePointScaleValue");
         }
 
-        public void setStatisticalGradePointScaleValue (float statisticalGradePointScaleValue)
+        public void setStatisticalGradePointScaleValue(float statisticalGradePointScaleValue)
         {
             this.setProperty("statisticalGradePointScaleValue", statisticalGradePointScaleValue);
         }
 
-        public AssessmentMarkNonSubmissionReason getAssessmentMarkNonSubmissionReason ()
+        public AssessmentMarkNonSubmissionReason getAssessmentMarkNonSubmissionReason()
         {
-            return (AssessmentMarkNonSubmissionReason) this.getProperty("assessmentMarkNonSubmissionReason");
+            return (AssessmentMarkNonSubmissionReason)this.getProperty("assessmentMarkNonSubmissionReason");
         }
 
-        public void setAssessmentMarkNonSubmissionReason (AssessmentMarkNonSubmissionReason assessmentMarkNonSubmissionReason)
+        public void setAssessmentMarkNonSubmissionReason(AssessmentMarkNonSubmissionReason assessmentMarkNonSubmissionReason)
         {
             this.setProperty("assessmentMarkNonSubmissionReason", assessmentMarkNonSubmissionReason);
         }
 
-        public DateTime getAssessmentDate ()
+        public DateTime getAssessmentDate()
         {
             return Convert.ToDateTime(this.getProperty("assessmentDate"));
         }
 
-        public void setAssessmentDate (DateTime assessmentDate)
+        public void setAssessmentDate(DateTime assessmentDate)
         {
             this.setProperty("assessmentDate", assessmentDate);
         }
 
-        public Staff getMarkingStaff ()
+        public Staff getMarkingStaff()
         {
-            return (Staff) this.getProperty("markingStaff");
+            return (Staff)this.getProperty("markingStaff");
         }
 
-        public void setMarkingStaff (Staff markingStaff)
+        public void setMarkingStaff(Staff markingStaff)
         {
             this.setProperty("markingStaff", markingStaff);
         }
 
-        public DateTime getCompletedDatetime ()
+        public DateTime getCompletedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("completedDatetime"));
         }
 
-        public void setCompletedDatetime (DateTime completedDatetime)
+        public void setCompletedDatetime(DateTime completedDatetime)
         {
             this.setProperty("completedDatetime", completedDatetime);
         }
 
-        public Staff getCompletedStaff ()
+        public Staff getCompletedStaff()
         {
-            return (Staff) this.getProperty("completedStaff");
+            return (Staff)this.getProperty("completedStaff");
         }
 
-        public void setCompletedStaff (Staff completedStaff)
+        public void setCompletedStaff(Staff completedStaff)
         {
             this.setProperty("completedStaff", completedStaff);
         }
 
-        public DateTime getApprovedDatetime ()
+        public DateTime getApprovedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("approvedDatetime"));
         }
 
-        public void setApprovedDatetime (DateTime approvedDatetime)
+        public void setApprovedDatetime(DateTime approvedDatetime)
         {
             this.setProperty("approvedDatetime", approvedDatetime);
         }
 
-        public Staff getApprovedStaff ()
+        public Staff getApprovedStaff()
         {
-            return (Staff) this.getProperty("approvedStaff");
+            return (Staff)this.getProperty("approvedStaff");
         }
 
-        public void setApprovedStaff (Staff approvedStaff)
+        public void setApprovedStaff(Staff approvedStaff)
         {
             this.setProperty("approvedStaff", approvedStaff);
         }

@@ -18,108 +18,109 @@ namespace Arbor.Model
         public const string REPEATING_TYPE = "repeatingType";
         public const string MAX_OCCURRENCE = "maxOccurrence";
 
-        public StudentRepeatingAbsenceNote ()
+        public StudentRepeatingAbsenceNote()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public StudentRepeatingAbsenceNote (string resourceType = "StudentRepeatingAbsenceNote", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<StudentRepeatingAbsenceNote> query (SimpleQuery query = null)
+        public StudentRepeatingAbsenceNote(string resourceType = "StudentRepeatingAbsenceNote", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("StudentRepeatingAbsenceNote");
-        	RestGateway gateway = (RestGateway) StudentRepeatingAbsenceNote.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<StudentRepeatingAbsenceNote> studentrepeatingabsencenoteCollection = new ModelCollection<StudentRepeatingAbsenceNote> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    studentrepeatingabsencenoteCollection.add((StudentRepeatingAbsenceNote) model);
-        	}
-        
-        	return studentrepeatingabsencenoteCollection;
+
         }
 
-        public static StudentRepeatingAbsenceNote retrieve (string id)
+
+        public static ModelCollection<StudentRepeatingAbsenceNote> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) StudentRepeatingAbsenceNote.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (StudentRepeatingAbsenceNote) gateway.retrieve(ResourceType.STUDENT_REPEATING_ABSENCE_NOTE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("StudentRepeatingAbsenceNote");
+            RestGateway gateway = (RestGateway)StudentRepeatingAbsenceNote.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<StudentRepeatingAbsenceNote> studentrepeatingabsencenoteCollection = new ModelCollection<StudentRepeatingAbsenceNote>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                studentrepeatingabsencenoteCollection.add((StudentRepeatingAbsenceNote)model);
+            }
+
+            return studentrepeatingabsencenoteCollection;
         }
 
-        public Student getStudent ()
+        public static StudentRepeatingAbsenceNote retrieve(string id)
         {
-            return (Student) this.getProperty("student");
+            RestGateway gateway = (RestGateway)StudentRepeatingAbsenceNote.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (StudentRepeatingAbsenceNote)gateway.retrieve(ResourceType.STUDENT_REPEATING_ABSENCE_NOTE, id);
         }
 
-        public void setStudent (Student student)
+        public Student getStudent()
+        {
+            return (Student)this.getProperty("student");
+        }
+
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDate()
         {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }
 
-        public string getStartTime ()
+        public string getStartTime()
         {
             return this.getProperty("startTime").ToString();
         }
 
-        public void setStartTime (string startTime)
+        public void setStartTime(string startTime)
         {
             this.setProperty("startTime", startTime);
         }
 
-        public string getEndTime ()
+        public string getEndTime()
         {
             return this.getProperty("endTime").ToString();
         }
 
-        public void setEndTime (string endTime)
+        public void setEndTime(string endTime)
         {
             this.setProperty("endTime", endTime);
         }
 
-        public string getRepeatingType ()
+        public string getRepeatingType()
         {
             return this.getProperty("repeatingType").ToString();
         }
 
-        public void setRepeatingType (string repeatingType)
+        public void setRepeatingType(string repeatingType)
         {
             this.setProperty("repeatingType", repeatingType);
         }
 
-        public int getMaxOccurrence ()
+        public int getMaxOccurrence()
         {
             return Convert.ToInt32(this.getProperty("maxOccurrence"));
         }
 
-        public void setMaxOccurrence (int maxOccurrence)
+        public void setMaxOccurrence(int maxOccurrence)
         {
             this.setProperty("maxOccurrence", maxOccurrence);
         }

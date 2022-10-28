@@ -16,88 +16,89 @@ namespace Arbor.Model
         public const string ASSESSMENT_METRIC_ASSESSMENT = "assessmentMetricAssessment";
         public const string ASSESSMENT = "assessment";
 
-        public AssessmentMetricRuleTargetItem ()
+        public AssessmentMetricRuleTargetItem()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AssessmentMetricRuleTargetItem (string resourceType = "AssessmentMetricRuleTargetItem", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AssessmentMetricRuleTargetItem> query (SimpleQuery query = null)
+        public AssessmentMetricRuleTargetItem(string resourceType = "AssessmentMetricRuleTargetItem", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AssessmentMetricRuleTargetItem");
-        	RestGateway gateway = (RestGateway) AssessmentMetricRuleTargetItem.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AssessmentMetricRuleTargetItem> assessmentmetricruletargetitemCollection = new ModelCollection<AssessmentMetricRuleTargetItem> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    assessmentmetricruletargetitemCollection.add((AssessmentMetricRuleTargetItem) model);
-        	}
-        
-        	return assessmentmetricruletargetitemCollection;
+
         }
 
-        public static AssessmentMetricRuleTargetItem retrieve (string id)
+
+        public static ModelCollection<AssessmentMetricRuleTargetItem> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AssessmentMetricRuleTargetItem.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AssessmentMetricRuleTargetItem) gateway.retrieve(ResourceType.ASSESSMENT_METRIC_RULE_TARGET_ITEM, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AssessmentMetricRuleTargetItem");
+            RestGateway gateway = (RestGateway)AssessmentMetricRuleTargetItem.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AssessmentMetricRuleTargetItem> assessmentmetricruletargetitemCollection = new ModelCollection<AssessmentMetricRuleTargetItem>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                assessmentmetricruletargetitemCollection.add((AssessmentMetricRuleTargetItem)model);
+            }
+
+            return assessmentmetricruletargetitemCollection;
         }
 
-        public string getOperator ()
+        public static AssessmentMetricRuleTargetItem retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)AssessmentMetricRuleTargetItem.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AssessmentMetricRuleTargetItem)gateway.retrieve(ResourceType.ASSESSMENT_METRIC_RULE_TARGET_ITEM, id);
+        }
+
+        public string getOperator()
         {
             return this.getProperty("operator").ToString();
         }
 
-        public void setOperator (string _operator)
+        public void setOperator(string _operator)
         {
             this.setProperty("operator", _operator);
         }
 
-        public string getTargetType ()
+        public string getTargetType()
         {
             return this.getProperty("targetType").ToString();
         }
 
-        public void setTargetType (string targetType)
+        public void setTargetType(string targetType)
         {
             this.setProperty("targetType", targetType);
         }
 
-        public AssessmentMetricRule getAssessmentMetricRule ()
+        public AssessmentMetricRule getAssessmentMetricRule()
         {
-            return (AssessmentMetricRule) this.getProperty("assessmentMetricRule");
+            return (AssessmentMetricRule)this.getProperty("assessmentMetricRule");
         }
 
-        public void setAssessmentMetricRule (AssessmentMetricRule assessmentMetricRule)
+        public void setAssessmentMetricRule(AssessmentMetricRule assessmentMetricRule)
         {
             this.setProperty("assessmentMetricRule", assessmentMetricRule);
         }
 
-        public AssessmentMetricAssessment getAssessmentMetricAssessment ()
+        public AssessmentMetricAssessment getAssessmentMetricAssessment()
         {
-            return (AssessmentMetricAssessment) this.getProperty("assessmentMetricAssessment");
+            return (AssessmentMetricAssessment)this.getProperty("assessmentMetricAssessment");
         }
 
-        public void setAssessmentMetricAssessment (AssessmentMetricAssessment assessmentMetricAssessment)
+        public void setAssessmentMetricAssessment(AssessmentMetricAssessment assessmentMetricAssessment)
         {
             this.setProperty("assessmentMetricAssessment", assessmentMetricAssessment);
         }
 
-        public Assessment getAssessment ()
+        public Assessment getAssessment()
         {
-            return (Assessment) this.getProperty("assessment");
+            return (Assessment)this.getProperty("assessment");
         }
 
-        public void setAssessment (Assessment assessment)
+        public void setAssessment(Assessment assessment)
         {
             this.setProperty("assessment", assessment);
         }

@@ -18,108 +18,109 @@ namespace Arbor.Model
         public const string FIRST_READ_BY = "firstReadBy";
         public const string OUTBOUND_IN_APP_MESSAGE_REPLIED_TO = "outboundInAppMessageRepliedTo";
 
-        public InboundInAppMessage ()
+        public InboundInAppMessage()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public InboundInAppMessage (string resourceType = "InboundInAppMessage", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<InboundInAppMessage> query (SimpleQuery query = null)
+        public InboundInAppMessage(string resourceType = "InboundInAppMessage", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("InboundInAppMessage");
-        	RestGateway gateway = (RestGateway) InboundInAppMessage.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<InboundInAppMessage> inboundinappmessageCollection = new ModelCollection<InboundInAppMessage> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    inboundinappmessageCollection.add((InboundInAppMessage) model);
-        	}
-        
-        	return inboundinappmessageCollection;
+
         }
 
-        public static InboundInAppMessage retrieve (string id)
+
+        public static ModelCollection<InboundInAppMessage> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) InboundInAppMessage.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (InboundInAppMessage) gateway.retrieve(ResourceType.INBOUND_IN_APP_MESSAGE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("InboundInAppMessage");
+            RestGateway gateway = (RestGateway)InboundInAppMessage.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<InboundInAppMessage> inboundinappmessageCollection = new ModelCollection<InboundInAppMessage>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                inboundinappmessageCollection.add((InboundInAppMessage)model);
+            }
+
+            return inboundinappmessageCollection;
         }
 
-        public ModelBase getSender ()
+        public static InboundInAppMessage retrieve(string id)
         {
-            return (ModelBase) this.getProperty("sender");
+            RestGateway gateway = (RestGateway)InboundInAppMessage.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (InboundInAppMessage)gateway.retrieve(ResourceType.INBOUND_IN_APP_MESSAGE, id);
         }
 
-        public void setSender (ModelBase sender)
+        public ModelBase getSender()
+        {
+            return (ModelBase)this.getProperty("sender");
+        }
+
+        public void setSender(ModelBase sender)
         {
             this.setProperty("sender", sender);
         }
 
-        public ModelBase getRecipient ()
+        public ModelBase getRecipient()
         {
-            return (ModelBase) this.getProperty("recipient");
+            return (ModelBase)this.getProperty("recipient");
         }
 
-        public void setRecipient (ModelBase recipient)
+        public void setRecipient(ModelBase recipient)
         {
             this.setProperty("recipient", recipient);
         }
 
-        public string getMessage ()
+        public string getMessage()
         {
             return this.getProperty("message").ToString();
         }
 
-        public void setMessage (string message)
+        public void setMessage(string message)
         {
             this.setProperty("message", message);
         }
 
-        public DateTime getReadDatetime ()
+        public DateTime getReadDatetime()
         {
             return Convert.ToDateTime(this.getProperty("readDatetime"));
         }
 
-        public void setReadDatetime (DateTime readDatetime)
+        public void setReadDatetime(DateTime readDatetime)
         {
             this.setProperty("readDatetime", readDatetime);
         }
 
-        public DateTime getReceivedDatetime ()
+        public DateTime getReceivedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("receivedDatetime"));
         }
 
-        public void setReceivedDatetime (DateTime receivedDatetime)
+        public void setReceivedDatetime(DateTime receivedDatetime)
         {
             this.setProperty("receivedDatetime", receivedDatetime);
         }
 
-        public Staff getFirstReadBy ()
+        public Staff getFirstReadBy()
         {
-            return (Staff) this.getProperty("firstReadBy");
+            return (Staff)this.getProperty("firstReadBy");
         }
 
-        public void setFirstReadBy (Staff firstReadBy)
+        public void setFirstReadBy(Staff firstReadBy)
         {
             this.setProperty("firstReadBy", firstReadBy);
         }
 
-        public OutboundInAppMessage getOutboundInAppMessageRepliedTo ()
+        public OutboundInAppMessage getOutboundInAppMessageRepliedTo()
         {
-            return (OutboundInAppMessage) this.getProperty("outboundInAppMessageRepliedTo");
+            return (OutboundInAppMessage)this.getProperty("outboundInAppMessageRepliedTo");
         }
 
-        public void setOutboundInAppMessageRepliedTo (OutboundInAppMessage outboundInAppMessageRepliedTo)
+        public void setOutboundInAppMessageRepliedTo(OutboundInAppMessage outboundInAppMessageRepliedTo)
         {
             this.setProperty("outboundInAppMessageRepliedTo", outboundInAppMessageRepliedTo);
         }

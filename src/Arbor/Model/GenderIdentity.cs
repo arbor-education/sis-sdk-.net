@@ -16,88 +16,89 @@ namespace Arbor.Model
         public const string SHORT_NAME = "shortName";
         public const string LONG_NAME = "longName";
 
-        public GenderIdentity ()
+        public GenderIdentity()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public GenderIdentity (string resourceType = "GenderIdentity", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<GenderIdentity> query (SimpleQuery query = null)
+        public GenderIdentity(string resourceType = "GenderIdentity", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("GenderIdentity");
-        	RestGateway gateway = (RestGateway) GenderIdentity.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<GenderIdentity> genderidentityCollection = new ModelCollection<GenderIdentity> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    genderidentityCollection.add((GenderIdentity) model);
-        	}
-        
-        	return genderidentityCollection;
+
         }
 
-        public static GenderIdentity retrieve (string id)
+
+        public static ModelCollection<GenderIdentity> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) GenderIdentity.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (GenderIdentity) gateway.retrieve(ResourceType.GENDER_IDENTITY, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("GenderIdentity");
+            RestGateway gateway = (RestGateway)GenderIdentity.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<GenderIdentity> genderidentityCollection = new ModelCollection<GenderIdentity>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                genderidentityCollection.add((GenderIdentity)model);
+            }
+
+            return genderidentityCollection;
         }
 
-        public string getCode ()
+        public static GenderIdentity retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)GenderIdentity.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (GenderIdentity)gateway.retrieve(ResourceType.GENDER_IDENTITY, id);
+        }
+
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }
 
-        public string getShortName ()
+        public string getShortName()
         {
             return this.getProperty("shortName").ToString();
         }
 
-        public void setShortName (string shortName)
+        public void setShortName(string shortName)
         {
             this.setProperty("shortName", shortName);
         }
 
-        public string getLongName ()
+        public string getLongName()
         {
             return this.getProperty("longName").ToString();
         }
 
-        public void setLongName (string longName)
+        public void setLongName(string longName)
         {
             this.setProperty("longName", longName);
         }

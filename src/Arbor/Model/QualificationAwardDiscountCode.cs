@@ -18,108 +18,109 @@ namespace Arbor.Model
         public const string EFFECTIVE_DATE = "effectiveDate";
         public const string END_DATE = "endDate";
 
-        public QualificationAwardDiscountCode ()
+        public QualificationAwardDiscountCode()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public QualificationAwardDiscountCode (string resourceType = "QualificationAwardDiscountCode", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<QualificationAwardDiscountCode> query (SimpleQuery query = null)
+        public QualificationAwardDiscountCode(string resourceType = "QualificationAwardDiscountCode", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("QualificationAwardDiscountCode");
-        	RestGateway gateway = (RestGateway) QualificationAwardDiscountCode.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<QualificationAwardDiscountCode> qualificationawarddiscountcodeCollection = new ModelCollection<QualificationAwardDiscountCode> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    qualificationawarddiscountcodeCollection.add((QualificationAwardDiscountCode) model);
-        	}
-        
-        	return qualificationawarddiscountcodeCollection;
+
         }
 
-        public static QualificationAwardDiscountCode retrieve (string id)
+
+        public static ModelCollection<QualificationAwardDiscountCode> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) QualificationAwardDiscountCode.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (QualificationAwardDiscountCode) gateway.retrieve(ResourceType.QUALIFICATION_AWARD_DISCOUNT_CODE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("QualificationAwardDiscountCode");
+            RestGateway gateway = (RestGateway)QualificationAwardDiscountCode.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<QualificationAwardDiscountCode> qualificationawarddiscountcodeCollection = new ModelCollection<QualificationAwardDiscountCode>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                qualificationawarddiscountcodeCollection.add((QualificationAwardDiscountCode)model);
+            }
+
+            return qualificationawarddiscountcodeCollection;
         }
 
-        public string getCode ()
+        public static QualificationAwardDiscountCode retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)QualificationAwardDiscountCode.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (QualificationAwardDiscountCode)gateway.retrieve(ResourceType.QUALIFICATION_AWARD_DISCOUNT_CODE, id);
+        }
+
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }
 
-        public QualificationAward getQualificationAward ()
+        public QualificationAward getQualificationAward()
         {
-            return (QualificationAward) this.getProperty("qualificationAward");
+            return (QualificationAward)this.getProperty("qualificationAward");
         }
 
-        public void setQualificationAward (QualificationAward qualificationAward)
+        public void setQualificationAward(QualificationAward qualificationAward)
         {
             this.setProperty("qualificationAward", qualificationAward);
         }
 
-        public string getDiscountCode ()
+        public string getDiscountCode()
         {
             return this.getProperty("discountCode").ToString();
         }
 
-        public void setDiscountCode (string discountCode)
+        public void setDiscountCode(string discountCode)
         {
             this.setProperty("discountCode", discountCode);
         }
 
-        public DateTime getEffectiveDate ()
+        public DateTime getEffectiveDate()
         {
             return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
-        public void setEffectiveDate (DateTime effectiveDate)
+        public void setEffectiveDate(DateTime effectiveDate)
         {
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }

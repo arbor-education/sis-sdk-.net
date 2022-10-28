@@ -16,88 +16,89 @@ namespace Arbor.Model
         public const string CANCELLED_DATETIME = "cancelledDatetime";
         public const string RECEIVED_PAYMENT = "receivedPayment";
 
-        public CashReceipt ()
+        public CashReceipt()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public CashReceipt (string resourceType = "CashReceipt", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<CashReceipt> query (SimpleQuery query = null)
+        public CashReceipt(string resourceType = "CashReceipt", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("CashReceipt");
-        	RestGateway gateway = (RestGateway) CashReceipt.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<CashReceipt> cashreceiptCollection = new ModelCollection<CashReceipt> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    cashreceiptCollection.add((CashReceipt) model);
-        	}
-        
-        	return cashreceiptCollection;
+
         }
 
-        public static CashReceipt retrieve (string id)
+
+        public static ModelCollection<CashReceipt> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) CashReceipt.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (CashReceipt) gateway.retrieve(ResourceType.CASH_RECEIPT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("CashReceipt");
+            RestGateway gateway = (RestGateway)CashReceipt.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<CashReceipt> cashreceiptCollection = new ModelCollection<CashReceipt>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                cashreceiptCollection.add((CashReceipt)model);
+            }
+
+            return cashreceiptCollection;
         }
 
-        public BillPayer getBillPayer ()
+        public static CashReceipt retrieve(string id)
         {
-            return (BillPayer) this.getProperty("billPayer");
+            RestGateway gateway = (RestGateway)CashReceipt.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (CashReceipt)gateway.retrieve(ResourceType.CASH_RECEIPT, id);
         }
 
-        public void setBillPayer (BillPayer billPayer)
+        public BillPayer getBillPayer()
+        {
+            return (BillPayer)this.getProperty("billPayer");
+        }
+
+        public void setBillPayer(BillPayer billPayer)
         {
             this.setProperty("billPayer", billPayer);
         }
 
-        public BankDeposit getBankDeposit ()
+        public BankDeposit getBankDeposit()
         {
-            return (BankDeposit) this.getProperty("bankDeposit");
+            return (BankDeposit)this.getProperty("bankDeposit");
         }
 
-        public void setBankDeposit (BankDeposit bankDeposit)
+        public void setBankDeposit(BankDeposit bankDeposit)
         {
             this.setProperty("bankDeposit", bankDeposit);
         }
 
-        public DateTime getReceivedDate ()
+        public DateTime getReceivedDate()
         {
             return Convert.ToDateTime(this.getProperty("receivedDate"));
         }
 
-        public void setReceivedDate (DateTime receivedDate)
+        public void setReceivedDate(DateTime receivedDate)
         {
             this.setProperty("receivedDate", receivedDate);
         }
 
-        public DateTime getCancelledDatetime ()
+        public DateTime getCancelledDatetime()
         {
             return Convert.ToDateTime(this.getProperty("cancelledDatetime"));
         }
 
-        public void setCancelledDatetime (DateTime cancelledDatetime)
+        public void setCancelledDatetime(DateTime cancelledDatetime)
         {
             this.setProperty("cancelledDatetime", cancelledDatetime);
         }
 
-        public string getReceivedPayment ()
+        public string getReceivedPayment()
         {
             return this.getProperty("receivedPayment").ToString();
         }
 
-        public void setReceivedPayment (string receivedPayment)
+        public void setReceivedPayment(string receivedPayment)
         {
             this.setProperty("receivedPayment", receivedPayment);
         }

@@ -21,138 +21,139 @@ namespace Arbor.Model
         public const string COMMENTS = "comments";
         public const string OUTCOME = "outcome";
 
-        public StaffObjective ()
+        public StaffObjective()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public StaffObjective (string resourceType = "StaffObjective", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<StaffObjective> query (SimpleQuery query = null)
+        public StaffObjective(string resourceType = "StaffObjective", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("StaffObjective");
-        	RestGateway gateway = (RestGateway) StaffObjective.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<StaffObjective> staffobjectiveCollection = new ModelCollection<StaffObjective> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    staffobjectiveCollection.add((StaffObjective) model);
-        	}
-        
-        	return staffobjectiveCollection;
+
         }
 
-        public static StaffObjective retrieve (string id)
+
+        public static ModelCollection<StaffObjective> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) StaffObjective.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (StaffObjective) gateway.retrieve(ResourceType.STAFF_OBJECTIVE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("StaffObjective");
+            RestGateway gateway = (RestGateway)StaffObjective.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<StaffObjective> staffobjectiveCollection = new ModelCollection<StaffObjective>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                staffobjectiveCollection.add((StaffObjective)model);
+            }
+
+            return staffobjectiveCollection;
         }
 
-        public Staff getStaff ()
+        public static StaffObjective retrieve(string id)
         {
-            return (Staff) this.getProperty("staff");
+            RestGateway gateway = (RestGateway)StaffObjective.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (StaffObjective)gateway.retrieve(ResourceType.STAFF_OBJECTIVE, id);
         }
 
-        public void setStaff (Staff staff)
+        public Staff getStaff()
+        {
+            return (Staff)this.getProperty("staff");
+        }
+
+        public void setStaff(Staff staff)
         {
             this.setProperty("staff", staff);
         }
 
-        public Appraisal getAppraisal ()
+        public Appraisal getAppraisal()
         {
-            return (Appraisal) this.getProperty("appraisal");
+            return (Appraisal)this.getProperty("appraisal");
         }
 
-        public void setAppraisal (Appraisal appraisal)
+        public void setAppraisal(Appraisal appraisal)
         {
             this.setProperty("appraisal", appraisal);
         }
 
-        public string getDescription ()
+        public string getDescription()
         {
             return this.getProperty("description").ToString();
         }
 
-        public void setDescription (string description)
+        public void setDescription(string description)
         {
             this.setProperty("description", description);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDate()
         {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }
 
-        public string getCriteria ()
+        public string getCriteria()
         {
             return this.getProperty("criteria").ToString();
         }
 
-        public void setCriteria (string criteria)
+        public void setCriteria(string criteria)
         {
             this.setProperty("criteria", criteria);
         }
 
-        public string getWeighting ()
+        public string getWeighting()
         {
             return this.getProperty("weighting").ToString();
         }
 
-        public void setWeighting (string weighting)
+        public void setWeighting(string weighting)
         {
             this.setProperty("weighting", weighting);
         }
 
-        public string getEvidence ()
+        public string getEvidence()
         {
             return this.getProperty("evidence").ToString();
         }
 
-        public void setEvidence (string evidence)
+        public void setEvidence(string evidence)
         {
             this.setProperty("evidence", evidence);
         }
 
-        public string getComments ()
+        public string getComments()
         {
             return this.getProperty("comments").ToString();
         }
 
-        public void setComments (string comments)
+        public void setComments(string comments)
         {
             this.setProperty("comments", comments);
         }
 
-        public string getOutcome ()
+        public string getOutcome()
         {
             return this.getProperty("outcome").ToString();
         }
 
-        public void setOutcome (string outcome)
+        public void setOutcome(string outcome)
         {
             this.setProperty("outcome", outcome);
         }

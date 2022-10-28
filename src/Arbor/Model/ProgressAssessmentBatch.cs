@@ -19,118 +19,119 @@ namespace Arbor.Model
         public const string SHOW_RANK_ORDER = "showRankOrder";
         public const string SHOW_CURRENT_VS_BASELINE = "showCurrentVsBaseline";
 
-        public ProgressAssessmentBatch ()
+        public ProgressAssessmentBatch()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public ProgressAssessmentBatch (string resourceType = "ProgressAssessmentBatch", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<ProgressAssessmentBatch> query (SimpleQuery query = null)
+        public ProgressAssessmentBatch(string resourceType = "ProgressAssessmentBatch", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("ProgressAssessmentBatch");
-        	RestGateway gateway = (RestGateway) ProgressAssessmentBatch.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<ProgressAssessmentBatch> progressassessmentbatchCollection = new ModelCollection<ProgressAssessmentBatch> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    progressassessmentbatchCollection.add((ProgressAssessmentBatch) model);
-        	}
-        
-        	return progressassessmentbatchCollection;
+
         }
 
-        public static ProgressAssessmentBatch retrieve (string id)
+
+        public static ModelCollection<ProgressAssessmentBatch> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) ProgressAssessmentBatch.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (ProgressAssessmentBatch) gateway.retrieve(ResourceType.PROGRESS_ASSESSMENT_BATCH, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("ProgressAssessmentBatch");
+            RestGateway gateway = (RestGateway)ProgressAssessmentBatch.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<ProgressAssessmentBatch> progressassessmentbatchCollection = new ModelCollection<ProgressAssessmentBatch>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                progressassessmentbatchCollection.add((ProgressAssessmentBatch)model);
+            }
+
+            return progressassessmentbatchCollection;
         }
 
-        public string getBatchName ()
+        public static ProgressAssessmentBatch retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)ProgressAssessmentBatch.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (ProgressAssessmentBatch)gateway.retrieve(ResourceType.PROGRESS_ASSESSMENT_BATCH, id);
+        }
+
+        public string getBatchName()
         {
             return this.getProperty("batchName").ToString();
         }
 
-        public void setBatchName (string batchName)
+        public void setBatchName(string batchName)
         {
             this.setProperty("batchName", batchName);
         }
 
-        public Assessment getAssessment ()
+        public Assessment getAssessment()
         {
-            return (Assessment) this.getProperty("assessment");
+            return (Assessment)this.getProperty("assessment");
         }
 
-        public void setAssessment (Assessment assessment)
+        public void setAssessment(Assessment assessment)
         {
             this.setProperty("assessment", assessment);
         }
 
-        public ProgressMeasurementPeriodSet getProgressMeasurementPeriodSet ()
+        public ProgressMeasurementPeriodSet getProgressMeasurementPeriodSet()
         {
-            return (ProgressMeasurementPeriodSet) this.getProperty("progressMeasurementPeriodSet");
+            return (ProgressMeasurementPeriodSet)this.getProperty("progressMeasurementPeriodSet");
         }
 
-        public void setProgressMeasurementPeriodSet (ProgressMeasurementPeriodSet progressMeasurementPeriodSet)
+        public void setProgressMeasurementPeriodSet(ProgressMeasurementPeriodSet progressMeasurementPeriodSet)
         {
             this.setProperty("progressMeasurementPeriodSet", progressMeasurementPeriodSet);
         }
 
-        public AcademicYear getAcademicYear ()
+        public AcademicYear getAcademicYear()
         {
-            return (AcademicYear) this.getProperty("academicYear");
+            return (AcademicYear)this.getProperty("academicYear");
         }
 
-        public void setAcademicYear (AcademicYear academicYear)
+        public void setAcademicYear(AcademicYear academicYear)
         {
             this.setProperty("academicYear", academicYear);
         }
 
-        public bool getIsBaselineLocked ()
+        public bool getIsBaselineLocked()
         {
             return Convert.ToBoolean(this.getProperty("isBaselineLocked"));
         }
 
-        public void setIsBaselineLocked (bool isBaselineLocked)
+        public void setIsBaselineLocked(bool isBaselineLocked)
         {
             this.setProperty("isBaselineLocked", isBaselineLocked);
         }
 
-        public bool getIsTargetLocked ()
+        public bool getIsTargetLocked()
         {
             return Convert.ToBoolean(this.getProperty("isTargetLocked"));
         }
 
-        public void setIsTargetLocked (bool isTargetLocked)
+        public void setIsTargetLocked(bool isTargetLocked)
         {
             this.setProperty("isTargetLocked", isTargetLocked);
         }
 
-        public bool getShowRankOrder ()
+        public bool getShowRankOrder()
         {
             return Convert.ToBoolean(this.getProperty("showRankOrder"));
         }
 
-        public void setShowRankOrder (bool showRankOrder)
+        public void setShowRankOrder(bool showRankOrder)
         {
             this.setProperty("showRankOrder", showRankOrder);
         }
 
-        public bool getShowCurrentVsBaseline ()
+        public bool getShowCurrentVsBaseline()
         {
             return Convert.ToBoolean(this.getProperty("showCurrentVsBaseline"));
         }
 
-        public void setShowCurrentVsBaseline (bool showCurrentVsBaseline)
+        public void setShowCurrentVsBaseline(bool showCurrentVsBaseline)
         {
             this.setProperty("showCurrentVsBaseline", showCurrentVsBaseline);
         }

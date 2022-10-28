@@ -27,198 +27,199 @@ namespace Arbor.Model
         public const string ATTENDANCE_REGISTER_TYPE = "attendanceRegisterType";
         public const string ACCOUNTING_CODE = "accountingCode";
 
-        public Trip ()
+        public Trip()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public Trip (string resourceType = "Trip", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<Trip> query (SimpleQuery query = null)
+        public Trip(string resourceType = "Trip", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("Trip");
-        	RestGateway gateway = (RestGateway) Trip.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<Trip> tripCollection = new ModelCollection<Trip> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    tripCollection.add((Trip) model);
-        	}
-        
-        	return tripCollection;
+
         }
 
-        public static Trip retrieve (string id)
+
+        public static ModelCollection<Trip> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) Trip.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (Trip) gateway.retrieve(ResourceType.TRIP, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("Trip");
+            RestGateway gateway = (RestGateway)Trip.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<Trip> tripCollection = new ModelCollection<Trip>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                tripCollection.add((Trip)model);
+            }
+
+            return tripCollection;
         }
 
-        public DateTime getStartDatetime ()
+        public static Trip retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)Trip.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (Trip)gateway.retrieve(ResourceType.TRIP, id);
+        }
+
+        public DateTime getStartDatetime()
         {
             return Convert.ToDateTime(this.getProperty("startDatetime"));
         }
 
-        public void setStartDatetime (DateTime startDatetime)
+        public void setStartDatetime(DateTime startDatetime)
         {
             this.setProperty("startDatetime", startDatetime);
         }
 
-        public DateTime getEndDatetime ()
+        public DateTime getEndDatetime()
         {
             return Convert.ToDateTime(this.getProperty("endDatetime"));
         }
 
-        public void setEndDatetime (DateTime endDatetime)
+        public void setEndDatetime(DateTime endDatetime)
         {
             this.setProperty("endDatetime", endDatetime);
         }
 
-        public string getLocationText ()
+        public string getLocationText()
         {
             return this.getProperty("locationText").ToString();
         }
 
-        public void setLocationText (string locationText)
+        public void setLocationText(string locationText)
         {
             this.setProperty("locationText", locationText);
         }
 
-        public ModelBase getLocation ()
+        public ModelBase getLocation()
         {
-            return (ModelBase) this.getProperty("location");
+            return (ModelBase)this.getProperty("location");
         }
 
-        public void setLocation (ModelBase location)
+        public void setLocation(ModelBase location)
         {
             this.setProperty("location", location);
         }
 
-        public string getName ()
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }
 
-        public string getDescription ()
+        public string getDescription()
         {
             return this.getProperty("description").ToString();
         }
 
-        public void setDescription (string description)
+        public void setDescription(string description)
         {
             this.setProperty("description", description);
         }
 
-        public AcademicYear getAcademicYear ()
+        public AcademicYear getAcademicYear()
         {
-            return (AcademicYear) this.getProperty("academicYear");
+            return (AcademicYear)this.getProperty("academicYear");
         }
 
-        public void setAcademicYear (AcademicYear academicYear)
+        public void setAcademicYear(AcademicYear academicYear)
         {
             this.setProperty("academicYear", academicYear);
         }
 
-        public ModelBase getLinkTo ()
+        public ModelBase getLinkTo()
         {
-            return (ModelBase) this.getProperty("linkTo");
+            return (ModelBase)this.getProperty("linkTo");
         }
 
-        public void setLinkTo (ModelBase linkTo)
+        public void setLinkTo(ModelBase linkTo)
         {
             this.setProperty("linkTo", linkTo);
         }
 
-        public Trip getCopiedToTrip ()
+        public Trip getCopiedToTrip()
         {
-            return (Trip) this.getProperty("copiedToTrip");
+            return (Trip)this.getProperty("copiedToTrip");
         }
 
-        public void setCopiedToTrip (Trip copiedToTrip)
+        public void setCopiedToTrip(Trip copiedToTrip)
         {
             this.setProperty("copiedToTrip", copiedToTrip);
         }
 
-        public int getMaxParticipants ()
+        public int getMaxParticipants()
         {
             return Convert.ToInt32(this.getProperty("maxParticipants"));
         }
 
-        public void setMaxParticipants (int maxParticipants)
+        public void setMaxParticipants(int maxParticipants)
         {
             this.setProperty("maxParticipants", maxParticipants);
         }
 
-        public bool getRequireConsent ()
+        public bool getRequireConsent()
         {
             return Convert.ToBoolean(this.getProperty("requireConsent"));
         }
 
-        public void setRequireConsent (bool requireConsent)
+        public void setRequireConsent(bool requireConsent)
         {
             this.setProperty("requireConsent", requireConsent);
         }
 
-        public DateTime getGuardianSignupStartDatetime ()
+        public DateTime getGuardianSignupStartDatetime()
         {
             return Convert.ToDateTime(this.getProperty("guardianSignupStartDatetime"));
         }
 
-        public void setGuardianSignupStartDatetime (DateTime guardianSignupStartDatetime)
+        public void setGuardianSignupStartDatetime(DateTime guardianSignupStartDatetime)
         {
             this.setProperty("guardianSignupStartDatetime", guardianSignupStartDatetime);
         }
 
-        public DateTime getGuardianSignupEndDatetime ()
+        public DateTime getGuardianSignupEndDatetime()
         {
             return Convert.ToDateTime(this.getProperty("guardianSignupEndDatetime"));
         }
 
-        public void setGuardianSignupEndDatetime (DateTime guardianSignupEndDatetime)
+        public void setGuardianSignupEndDatetime(DateTime guardianSignupEndDatetime)
         {
             this.setProperty("guardianSignupEndDatetime", guardianSignupEndDatetime);
         }
 
-        public bool getFree ()
+        public bool getFree()
         {
             return Convert.ToBoolean(this.getProperty("free"));
         }
 
-        public void setFree (bool free)
+        public void setFree(bool free)
         {
             this.setProperty("free", free);
         }
 
-        public AttendanceRegisterType getAttendanceRegisterType ()
+        public AttendanceRegisterType getAttendanceRegisterType()
         {
-            return (AttendanceRegisterType) this.getProperty("attendanceRegisterType");
+            return (AttendanceRegisterType)this.getProperty("attendanceRegisterType");
         }
 
-        public void setAttendanceRegisterType (AttendanceRegisterType attendanceRegisterType)
+        public void setAttendanceRegisterType(AttendanceRegisterType attendanceRegisterType)
         {
             this.setProperty("attendanceRegisterType", attendanceRegisterType);
         }
 
-        public string getAccountingCode ()
+        public string getAccountingCode()
         {
             return this.getProperty("accountingCode").ToString();
         }
 
-        public void setAccountingCode (string accountingCode)
+        public void setAccountingCode(string accountingCode)
         {
             this.setProperty("accountingCode", accountingCode);
         }

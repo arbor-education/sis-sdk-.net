@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string CLUB = "club";
         public const string ELIGIBLE = "eligible";
 
-        public ClubEligibility ()
+        public ClubEligibility()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public ClubEligibility (string resourceType = "ClubEligibility", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<ClubEligibility> query (SimpleQuery query = null)
+        public ClubEligibility(string resourceType = "ClubEligibility", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("ClubEligibility");
-        	RestGateway gateway = (RestGateway) ClubEligibility.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<ClubEligibility> clubeligibilityCollection = new ModelCollection<ClubEligibility> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    clubeligibilityCollection.add((ClubEligibility) model);
-        	}
-        
-        	return clubeligibilityCollection;
+
         }
 
-        public static ClubEligibility retrieve (string id)
+
+        public static ModelCollection<ClubEligibility> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) ClubEligibility.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (ClubEligibility) gateway.retrieve(ResourceType.CLUB_ELIGIBILITY, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("ClubEligibility");
+            RestGateway gateway = (RestGateway)ClubEligibility.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<ClubEligibility> clubeligibilityCollection = new ModelCollection<ClubEligibility>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                clubeligibilityCollection.add((ClubEligibility)model);
+            }
+
+            return clubeligibilityCollection;
         }
 
-        public Club getClub ()
+        public static ClubEligibility retrieve(string id)
         {
-            return (Club) this.getProperty("club");
+            RestGateway gateway = (RestGateway)ClubEligibility.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (ClubEligibility)gateway.retrieve(ResourceType.CLUB_ELIGIBILITY, id);
         }
 
-        public void setClub (Club club)
+        public Club getClub()
+        {
+            return (Club)this.getProperty("club");
+        }
+
+        public void setClub(Club club)
         {
             this.setProperty("club", club);
         }
 
-        public ModelBase getEligible ()
+        public ModelBase getEligible()
         {
-            return (ModelBase) this.getProperty("eligible");
+            return (ModelBase)this.getProperty("eligible");
         }
 
-        public void setEligible (ModelBase eligible)
+        public void setEligible(ModelBase eligible)
         {
             this.setProperty("eligible", eligible);
         }

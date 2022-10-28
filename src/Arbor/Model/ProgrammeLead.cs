@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
 
-        public ProgrammeLead ()
+        public ProgrammeLead()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public ProgrammeLead (string resourceType = "ProgrammeLead", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<ProgrammeLead> query (SimpleQuery query = null)
+        public ProgrammeLead(string resourceType = "ProgrammeLead", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("ProgrammeLead");
-        	RestGateway gateway = (RestGateway) ProgrammeLead.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<ProgrammeLead> programmeleadCollection = new ModelCollection<ProgrammeLead> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    programmeleadCollection.add((ProgrammeLead) model);
-        	}
-        
-        	return programmeleadCollection;
+
         }
 
-        public static ProgrammeLead retrieve (string id)
+
+        public static ModelCollection<ProgrammeLead> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) ProgrammeLead.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (ProgrammeLead) gateway.retrieve(ResourceType.PROGRAMME_LEAD, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("ProgrammeLead");
+            RestGateway gateway = (RestGateway)ProgrammeLead.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<ProgrammeLead> programmeleadCollection = new ModelCollection<ProgrammeLead>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                programmeleadCollection.add((ProgrammeLead)model);
+            }
+
+            return programmeleadCollection;
         }
 
-        public Programme getProgramme ()
+        public static ProgrammeLead retrieve(string id)
         {
-            return (Programme) this.getProperty("programme");
+            RestGateway gateway = (RestGateway)ProgrammeLead.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (ProgrammeLead)gateway.retrieve(ResourceType.PROGRAMME_LEAD, id);
         }
 
-        public void setProgramme (Programme programme)
+        public Programme getProgramme()
+        {
+            return (Programme)this.getProperty("programme");
+        }
+
+        public void setProgramme(Programme programme)
         {
             this.setProperty("programme", programme);
         }
 
-        public Staff getStaff ()
+        public Staff getStaff()
         {
-            return (Staff) this.getProperty("staff");
+            return (Staff)this.getProperty("staff");
         }
 
-        public void setStaff (Staff staff)
+        public void setStaff(Staff staff)
         {
             this.setProperty("staff", staff);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDate()
         {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }

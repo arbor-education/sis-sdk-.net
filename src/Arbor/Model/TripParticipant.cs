@@ -16,88 +16,89 @@ namespace Arbor.Model
         public const string CONSENT_RECEIVED = "consentReceived";
         public const string STATUS = "status";
 
-        public TripParticipant ()
+        public TripParticipant()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public TripParticipant (string resourceType = "TripParticipant", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<TripParticipant> query (SimpleQuery query = null)
+        public TripParticipant(string resourceType = "TripParticipant", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("TripParticipant");
-        	RestGateway gateway = (RestGateway) TripParticipant.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<TripParticipant> tripparticipantCollection = new ModelCollection<TripParticipant> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    tripparticipantCollection.add((TripParticipant) model);
-        	}
-        
-        	return tripparticipantCollection;
+
         }
 
-        public static TripParticipant retrieve (string id)
+
+        public static ModelCollection<TripParticipant> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) TripParticipant.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (TripParticipant) gateway.retrieve(ResourceType.TRIP_PARTICIPANT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("TripParticipant");
+            RestGateway gateway = (RestGateway)TripParticipant.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<TripParticipant> tripparticipantCollection = new ModelCollection<TripParticipant>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                tripparticipantCollection.add((TripParticipant)model);
+            }
+
+            return tripparticipantCollection;
         }
 
-        public Trip getTrip ()
+        public static TripParticipant retrieve(string id)
         {
-            return (Trip) this.getProperty("trip");
+            RestGateway gateway = (RestGateway)TripParticipant.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (TripParticipant)gateway.retrieve(ResourceType.TRIP_PARTICIPANT, id);
         }
 
-        public void setTrip (Trip trip)
+        public Trip getTrip()
+        {
+            return (Trip)this.getProperty("trip");
+        }
+
+        public void setTrip(Trip trip)
         {
             this.setProperty("trip", trip);
         }
 
-        public Student getStudent ()
+        public Student getStudent()
         {
-            return (Student) this.getProperty("student");
+            return (Student)this.getProperty("student");
         }
 
-        public void setStudent (Student student)
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public CustomerInvoice getCustomerInvoice ()
+        public CustomerInvoice getCustomerInvoice()
         {
-            return (CustomerInvoice) this.getProperty("customerInvoice");
+            return (CustomerInvoice)this.getProperty("customerInvoice");
         }
 
-        public void setCustomerInvoice (CustomerInvoice customerInvoice)
+        public void setCustomerInvoice(CustomerInvoice customerInvoice)
         {
             this.setProperty("customerInvoice", customerInvoice);
         }
 
-        public bool getConsentReceived ()
+        public bool getConsentReceived()
         {
             return Convert.ToBoolean(this.getProperty("consentReceived"));
         }
 
-        public void setConsentReceived (bool consentReceived)
+        public void setConsentReceived(bool consentReceived)
         {
             this.setProperty("consentReceived", consentReceived);
         }
 
-        public string getStatus ()
+        public string getStatus()
         {
             return this.getProperty("status").ToString();
         }
 
-        public void setStatus (string status)
+        public void setStatus(string status)
         {
             this.setProperty("status", status);
         }

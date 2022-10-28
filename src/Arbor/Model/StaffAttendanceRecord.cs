@@ -20,128 +20,129 @@ namespace Arbor.Model
         public const string NARRATIVE = "narrative";
         public const string STAFF_ABSENCE = "staffAbsence";
 
-        public StaffAttendanceRecord ()
+        public StaffAttendanceRecord()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public StaffAttendanceRecord (string resourceType = "StaffAttendanceRecord", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<StaffAttendanceRecord> query (SimpleQuery query = null)
+        public StaffAttendanceRecord(string resourceType = "StaffAttendanceRecord", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("StaffAttendanceRecord");
-        	RestGateway gateway = (RestGateway) StaffAttendanceRecord.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<StaffAttendanceRecord> staffattendancerecordCollection = new ModelCollection<StaffAttendanceRecord> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    staffattendancerecordCollection.add((StaffAttendanceRecord) model);
-        	}
-        
-        	return staffattendancerecordCollection;
+
         }
 
-        public static StaffAttendanceRecord retrieve (string id)
+
+        public static ModelCollection<StaffAttendanceRecord> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) StaffAttendanceRecord.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (StaffAttendanceRecord) gateway.retrieve(ResourceType.STAFF_ATTENDANCE_RECORD, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("StaffAttendanceRecord");
+            RestGateway gateway = (RestGateway)StaffAttendanceRecord.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<StaffAttendanceRecord> staffattendancerecordCollection = new ModelCollection<StaffAttendanceRecord>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                staffattendancerecordCollection.add((StaffAttendanceRecord)model);
+            }
+
+            return staffattendancerecordCollection;
         }
 
-        public Staff getStaff ()
+        public static StaffAttendanceRecord retrieve(string id)
         {
-            return (Staff) this.getProperty("staff");
+            RestGateway gateway = (RestGateway)StaffAttendanceRecord.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (StaffAttendanceRecord)gateway.retrieve(ResourceType.STAFF_ATTENDANCE_RECORD, id);
         }
 
-        public void setStaff (Staff staff)
+        public Staff getStaff()
+        {
+            return (Staff)this.getProperty("staff");
+        }
+
+        public void setStaff(Staff staff)
         {
             this.setProperty("staff", staff);
         }
 
-        public DateTime getAttendancePeriodDate ()
+        public DateTime getAttendancePeriodDate()
         {
             return Convert.ToDateTime(this.getProperty("attendancePeriodDate"));
         }
 
-        public void setAttendancePeriodDate (DateTime attendancePeriodDate)
+        public void setAttendancePeriodDate(DateTime attendancePeriodDate)
         {
             this.setProperty("attendancePeriodDate", attendancePeriodDate);
         }
 
-        public string getAttendancePeriodStartTime ()
+        public string getAttendancePeriodStartTime()
         {
             return this.getProperty("attendancePeriodStartTime").ToString();
         }
 
-        public void setAttendancePeriodStartTime (string attendancePeriodStartTime)
+        public void setAttendancePeriodStartTime(string attendancePeriodStartTime)
         {
             this.setProperty("attendancePeriodStartTime", attendancePeriodStartTime);
         }
 
-        public string getAttendancePeriodEndTime ()
+        public string getAttendancePeriodEndTime()
         {
             return this.getProperty("attendancePeriodEndTime").ToString();
         }
 
-        public void setAttendancePeriodEndTime (string attendancePeriodEndTime)
+        public void setAttendancePeriodEndTime(string attendancePeriodEndTime)
         {
             this.setProperty("attendancePeriodEndTime", attendancePeriodEndTime);
         }
 
-        public string getActualStartTime ()
+        public string getActualStartTime()
         {
             return this.getProperty("actualStartTime").ToString();
         }
 
-        public void setActualStartTime (string actualStartTime)
+        public void setActualStartTime(string actualStartTime)
         {
             this.setProperty("actualStartTime", actualStartTime);
         }
 
-        public string getActualEndTime ()
+        public string getActualEndTime()
         {
             return this.getProperty("actualEndTime").ToString();
         }
 
-        public void setActualEndTime (string actualEndTime)
+        public void setActualEndTime(string actualEndTime)
         {
             this.setProperty("actualEndTime", actualEndTime);
         }
 
-        public StaffAttendanceMark getStaffAttendanceMark ()
+        public StaffAttendanceMark getStaffAttendanceMark()
         {
-            return (StaffAttendanceMark) this.getProperty("staffAttendanceMark");
+            return (StaffAttendanceMark)this.getProperty("staffAttendanceMark");
         }
 
-        public void setStaffAttendanceMark (StaffAttendanceMark staffAttendanceMark)
+        public void setStaffAttendanceMark(StaffAttendanceMark staffAttendanceMark)
         {
             this.setProperty("staffAttendanceMark", staffAttendanceMark);
         }
 
-        public string getNarrative ()
+        public string getNarrative()
         {
             return this.getProperty("narrative").ToString();
         }
 
-        public void setNarrative (string narrative)
+        public void setNarrative(string narrative)
         {
             this.setProperty("narrative", narrative);
         }
 
-        public StaffAbsence getStaffAbsence ()
+        public StaffAbsence getStaffAbsence()
         {
-            return (StaffAbsence) this.getProperty("staffAbsence");
+            return (StaffAbsence)this.getProperty("staffAbsence");
         }
 
-        public void setStaffAbsence (StaffAbsence staffAbsence)
+        public void setStaffAbsence(StaffAbsence staffAbsence)
         {
             this.setProperty("staffAbsence", staffAbsence);
         }

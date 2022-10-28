@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string SCHOOL_SHOP_PRODUCT = "schoolShopProduct";
         public const string ELIGIBLE = "eligible";
 
-        public SchoolShopProductEligibility ()
+        public SchoolShopProductEligibility()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public SchoolShopProductEligibility (string resourceType = "SchoolShopProductEligibility", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<SchoolShopProductEligibility> query (SimpleQuery query = null)
+        public SchoolShopProductEligibility(string resourceType = "SchoolShopProductEligibility", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("SchoolShopProductEligibility");
-        	RestGateway gateway = (RestGateway) SchoolShopProductEligibility.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<SchoolShopProductEligibility> schoolshopproducteligibilityCollection = new ModelCollection<SchoolShopProductEligibility> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    schoolshopproducteligibilityCollection.add((SchoolShopProductEligibility) model);
-        	}
-        
-        	return schoolshopproducteligibilityCollection;
+
         }
 
-        public static SchoolShopProductEligibility retrieve (string id)
+
+        public static ModelCollection<SchoolShopProductEligibility> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) SchoolShopProductEligibility.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (SchoolShopProductEligibility) gateway.retrieve(ResourceType.SCHOOL_SHOP_PRODUCT_ELIGIBILITY, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("SchoolShopProductEligibility");
+            RestGateway gateway = (RestGateway)SchoolShopProductEligibility.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<SchoolShopProductEligibility> schoolshopproducteligibilityCollection = new ModelCollection<SchoolShopProductEligibility>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                schoolshopproducteligibilityCollection.add((SchoolShopProductEligibility)model);
+            }
+
+            return schoolshopproducteligibilityCollection;
         }
 
-        public SchoolShopProduct getSchoolShopProduct ()
+        public static SchoolShopProductEligibility retrieve(string id)
         {
-            return (SchoolShopProduct) this.getProperty("schoolShopProduct");
+            RestGateway gateway = (RestGateway)SchoolShopProductEligibility.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (SchoolShopProductEligibility)gateway.retrieve(ResourceType.SCHOOL_SHOP_PRODUCT_ELIGIBILITY, id);
         }
 
-        public void setSchoolShopProduct (SchoolShopProduct schoolShopProduct)
+        public SchoolShopProduct getSchoolShopProduct()
+        {
+            return (SchoolShopProduct)this.getProperty("schoolShopProduct");
+        }
+
+        public void setSchoolShopProduct(SchoolShopProduct schoolShopProduct)
         {
             this.setProperty("schoolShopProduct", schoolShopProduct);
         }
 
-        public ModelBase getEligible ()
+        public ModelBase getEligible()
         {
-            return (ModelBase) this.getProperty("eligible");
+            return (ModelBase)this.getProperty("eligible");
         }
 
-        public void setEligible (ModelBase eligible)
+        public void setEligible(ModelBase eligible)
         {
             this.setProperty("eligible", eligible);
         }

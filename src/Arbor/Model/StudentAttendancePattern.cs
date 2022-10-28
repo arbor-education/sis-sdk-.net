@@ -16,88 +16,89 @@ namespace Arbor.Model
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
 
-        public StudentAttendancePattern ()
+        public StudentAttendancePattern()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public StudentAttendancePattern (string resourceType = "StudentAttendancePattern", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<StudentAttendancePattern> query (SimpleQuery query = null)
+        public StudentAttendancePattern(string resourceType = "StudentAttendancePattern", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("StudentAttendancePattern");
-        	RestGateway gateway = (RestGateway) StudentAttendancePattern.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<StudentAttendancePattern> studentattendancepatternCollection = new ModelCollection<StudentAttendancePattern> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    studentattendancepatternCollection.add((StudentAttendancePattern) model);
-        	}
-        
-        	return studentattendancepatternCollection;
+
         }
 
-        public static StudentAttendancePattern retrieve (string id)
+
+        public static ModelCollection<StudentAttendancePattern> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) StudentAttendancePattern.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (StudentAttendancePattern) gateway.retrieve(ResourceType.STUDENT_ATTENDANCE_PATTERN, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("StudentAttendancePattern");
+            RestGateway gateway = (RestGateway)StudentAttendancePattern.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<StudentAttendancePattern> studentattendancepatternCollection = new ModelCollection<StudentAttendancePattern>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                studentattendancepatternCollection.add((StudentAttendancePattern)model);
+            }
+
+            return studentattendancepatternCollection;
         }
 
-        public AcademicYear getAcademicYear ()
+        public static StudentAttendancePattern retrieve(string id)
         {
-            return (AcademicYear) this.getProperty("academicYear");
+            RestGateway gateway = (RestGateway)StudentAttendancePattern.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (StudentAttendancePattern)gateway.retrieve(ResourceType.STUDENT_ATTENDANCE_PATTERN, id);
         }
 
-        public void setAcademicYear (AcademicYear academicYear)
+        public AcademicYear getAcademicYear()
+        {
+            return (AcademicYear)this.getProperty("academicYear");
+        }
+
+        public void setAcademicYear(AcademicYear academicYear)
         {
             this.setProperty("academicYear", academicYear);
         }
 
-        public Student getStudent ()
+        public Student getStudent()
         {
-            return (Student) this.getProperty("student");
+            return (Student)this.getProperty("student");
         }
 
-        public void setStudent (Student student)
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public AttendancePattern getAttendancePattern ()
+        public AttendancePattern getAttendancePattern()
         {
-            return (AttendancePattern) this.getProperty("attendancePattern");
+            return (AttendancePattern)this.getProperty("attendancePattern");
         }
 
-        public void setAttendancePattern (AttendancePattern attendancePattern)
+        public void setAttendancePattern(AttendancePattern attendancePattern)
         {
             this.setProperty("attendancePattern", attendancePattern);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDate()
         {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }

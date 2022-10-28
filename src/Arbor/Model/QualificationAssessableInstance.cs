@@ -24,168 +24,169 @@ namespace Arbor.Model
         public const string CENTRE_SPECIFIED_DURATION = "centreSpecifiedDuration";
         public const string IS_PROVISIONAL = "isProvisional";
 
-        public QualificationAssessableInstance ()
+        public QualificationAssessableInstance()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public QualificationAssessableInstance (string resourceType = "QualificationAssessableInstance", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<QualificationAssessableInstance> query (SimpleQuery query = null)
+        public QualificationAssessableInstance(string resourceType = "QualificationAssessableInstance", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("QualificationAssessableInstance");
-        	RestGateway gateway = (RestGateway) QualificationAssessableInstance.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<QualificationAssessableInstance> qualificationassessableinstanceCollection = new ModelCollection<QualificationAssessableInstance> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    qualificationassessableinstanceCollection.add((QualificationAssessableInstance) model);
-        	}
-        
-        	return qualificationassessableinstanceCollection;
+
         }
 
-        public static QualificationAssessableInstance retrieve (string id)
+
+        public static ModelCollection<QualificationAssessableInstance> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) QualificationAssessableInstance.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (QualificationAssessableInstance) gateway.retrieve(ResourceType.QUALIFICATION_ASSESSABLE_INSTANCE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("QualificationAssessableInstance");
+            RestGateway gateway = (RestGateway)QualificationAssessableInstance.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<QualificationAssessableInstance> qualificationassessableinstanceCollection = new ModelCollection<QualificationAssessableInstance>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                qualificationassessableinstanceCollection.add((QualificationAssessableInstance)model);
+            }
+
+            return qualificationassessableinstanceCollection;
         }
 
-        public string getCode ()
+        public static QualificationAssessableInstance retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)QualificationAssessableInstance.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (QualificationAssessableInstance)gateway.retrieve(ResourceType.QUALIFICATION_ASSESSABLE_INSTANCE, id);
+        }
+
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }
 
-        public QualificationAssessable getQualificationAssessable ()
+        public QualificationAssessable getQualificationAssessable()
         {
-            return (QualificationAssessable) this.getProperty("qualificationAssessable");
+            return (QualificationAssessable)this.getProperty("qualificationAssessable");
         }
 
-        public void setQualificationAssessable (QualificationAssessable qualificationAssessable)
+        public void setQualificationAssessable(QualificationAssessable qualificationAssessable)
         {
             this.setProperty("qualificationAssessable", qualificationAssessable);
         }
 
-        public QualificationAvailabilityInstance getQualificationAvailabilityInstance ()
+        public QualificationAvailabilityInstance getQualificationAvailabilityInstance()
         {
-            return (QualificationAvailabilityInstance) this.getProperty("qualificationAvailabilityInstance");
+            return (QualificationAvailabilityInstance)this.getProperty("qualificationAvailabilityInstance");
         }
 
-        public void setQualificationAvailabilityInstance (QualificationAvailabilityInstance qualificationAvailabilityInstance)
+        public void setQualificationAvailabilityInstance(QualificationAvailabilityInstance qualificationAvailabilityInstance)
         {
             this.setProperty("qualificationAvailabilityInstance", qualificationAvailabilityInstance);
         }
 
-        public QualificationTimetableSessionType getQualificationTimetableSessionType ()
+        public QualificationTimetableSessionType getQualificationTimetableSessionType()
         {
-            return (QualificationTimetableSessionType) this.getProperty("qualificationTimetableSessionType");
+            return (QualificationTimetableSessionType)this.getProperty("qualificationTimetableSessionType");
         }
 
-        public void setQualificationTimetableSessionType (QualificationTimetableSessionType qualificationTimetableSessionType)
+        public void setQualificationTimetableSessionType(QualificationTimetableSessionType qualificationTimetableSessionType)
         {
             this.setProperty("qualificationTimetableSessionType", qualificationTimetableSessionType);
         }
 
-        public DateTime getStartDateRangeFrom ()
+        public DateTime getStartDateRangeFrom()
         {
             return Convert.ToDateTime(this.getProperty("startDateRangeFrom"));
         }
 
-        public void setStartDateRangeFrom (DateTime startDateRangeFrom)
+        public void setStartDateRangeFrom(DateTime startDateRangeFrom)
         {
             this.setProperty("startDateRangeFrom", startDateRangeFrom);
         }
 
-        public DateTime getStartDateRangeUntil ()
+        public DateTime getStartDateRangeUntil()
         {
             return Convert.ToDateTime(this.getProperty("startDateRangeUntil"));
         }
 
-        public void setStartDateRangeUntil (DateTime startDateRangeUntil)
+        public void setStartDateRangeUntil(DateTime startDateRangeUntil)
         {
             this.setProperty("startDateRangeUntil", startDateRangeUntil);
         }
 
-        public string getDuration ()
+        public string getDuration()
         {
             return this.getProperty("duration").ToString();
         }
 
-        public void setDuration (string duration)
+        public void setDuration(string duration)
         {
             this.setProperty("duration", duration);
         }
 
-        public bool getIsCentreSpecifiedTimetable ()
+        public bool getIsCentreSpecifiedTimetable()
         {
             return Convert.ToBoolean(this.getProperty("isCentreSpecifiedTimetable"));
         }
 
-        public void setIsCentreSpecifiedTimetable (bool isCentreSpecifiedTimetable)
+        public void setIsCentreSpecifiedTimetable(bool isCentreSpecifiedTimetable)
         {
             this.setProperty("isCentreSpecifiedTimetable", isCentreSpecifiedTimetable);
         }
 
-        public DateTime getCentreSpecifiedDatetime ()
+        public DateTime getCentreSpecifiedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("centreSpecifiedDatetime"));
         }
 
-        public void setCentreSpecifiedDatetime (DateTime centreSpecifiedDatetime)
+        public void setCentreSpecifiedDatetime(DateTime centreSpecifiedDatetime)
         {
             this.setProperty("centreSpecifiedDatetime", centreSpecifiedDatetime);
         }
 
-        public string getCentreSpecifiedDuration ()
+        public string getCentreSpecifiedDuration()
         {
             return this.getProperty("centreSpecifiedDuration").ToString();
         }
 
-        public void setCentreSpecifiedDuration (string centreSpecifiedDuration)
+        public void setCentreSpecifiedDuration(string centreSpecifiedDuration)
         {
             this.setProperty("centreSpecifiedDuration", centreSpecifiedDuration);
         }
 
-        public bool getIsProvisional ()
+        public bool getIsProvisional()
         {
             return Convert.ToBoolean(this.getProperty("isProvisional"));
         }
 
-        public void setIsProvisional (bool isProvisional)
+        public void setIsProvisional(bool isProvisional)
         {
             this.setProperty("isProvisional", isProvisional);
         }

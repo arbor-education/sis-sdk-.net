@@ -16,88 +16,89 @@ namespace Arbor.Model
         public const string ENTRY_STATUS = "entryStatus";
         public const string WITHDRAWAL_STATUS = "withdrawalStatus";
 
-        public CandidateEntry ()
+        public CandidateEntry()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public CandidateEntry (string resourceType = "CandidateEntry", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<CandidateEntry> query (SimpleQuery query = null)
+        public CandidateEntry(string resourceType = "CandidateEntry", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("CandidateEntry");
-        	RestGateway gateway = (RestGateway) CandidateEntry.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<CandidateEntry> candidateentryCollection = new ModelCollection<CandidateEntry> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    candidateentryCollection.add((CandidateEntry) model);
-        	}
-        
-        	return candidateentryCollection;
+
         }
 
-        public static CandidateEntry retrieve (string id)
+
+        public static ModelCollection<CandidateEntry> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) CandidateEntry.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (CandidateEntry) gateway.retrieve(ResourceType.CANDIDATE_ENTRY, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("CandidateEntry");
+            RestGateway gateway = (RestGateway)CandidateEntry.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<CandidateEntry> candidateentryCollection = new ModelCollection<CandidateEntry>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                candidateentryCollection.add((CandidateEntry)model);
+            }
+
+            return candidateentryCollection;
         }
 
-        public Candidate getCandidate ()
+        public static CandidateEntry retrieve(string id)
         {
-            return (Candidate) this.getProperty("candidate");
+            RestGateway gateway = (RestGateway)CandidateEntry.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (CandidateEntry)gateway.retrieve(ResourceType.CANDIDATE_ENTRY, id);
         }
 
-        public void setCandidate (Candidate candidate)
+        public Candidate getCandidate()
+        {
+            return (Candidate)this.getProperty("candidate");
+        }
+
+        public void setCandidate(Candidate candidate)
         {
             this.setProperty("candidate", candidate);
         }
 
-        public QualificationLearningUnit getQualificationLearningUnit ()
+        public QualificationLearningUnit getQualificationLearningUnit()
         {
-            return (QualificationLearningUnit) this.getProperty("qualificationLearningUnit");
+            return (QualificationLearningUnit)this.getProperty("qualificationLearningUnit");
         }
 
-        public void setQualificationLearningUnit (QualificationLearningUnit qualificationLearningUnit)
+        public void setQualificationLearningUnit(QualificationLearningUnit qualificationLearningUnit)
         {
             this.setProperty("qualificationLearningUnit", qualificationLearningUnit);
         }
 
-        public QualificationAvailabilityInstance getQualificationAvailabilityInstance ()
+        public QualificationAvailabilityInstance getQualificationAvailabilityInstance()
         {
-            return (QualificationAvailabilityInstance) this.getProperty("qualificationAvailabilityInstance");
+            return (QualificationAvailabilityInstance)this.getProperty("qualificationAvailabilityInstance");
         }
 
-        public void setQualificationAvailabilityInstance (QualificationAvailabilityInstance qualificationAvailabilityInstance)
+        public void setQualificationAvailabilityInstance(QualificationAvailabilityInstance qualificationAvailabilityInstance)
         {
             this.setProperty("qualificationAvailabilityInstance", qualificationAvailabilityInstance);
         }
 
-        public string getEntryStatus ()
+        public string getEntryStatus()
         {
             return this.getProperty("entryStatus").ToString();
         }
 
-        public void setEntryStatus (string entryStatus)
+        public void setEntryStatus(string entryStatus)
         {
             this.setProperty("entryStatus", entryStatus);
         }
 
-        public string getWithdrawalStatus ()
+        public string getWithdrawalStatus()
         {
             return this.getProperty("withdrawalStatus").ToString();
         }
 
-        public void setWithdrawalStatus (string withdrawalStatus)
+        public void setWithdrawalStatus(string withdrawalStatus)
         {
             this.setProperty("withdrawalStatus", withdrawalStatus);
         }

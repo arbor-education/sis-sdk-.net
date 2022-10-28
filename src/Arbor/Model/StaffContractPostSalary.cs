@@ -24,168 +24,169 @@ namespace Arbor.Model
         public const string SAFEGUARDED_PERIOD_START_DATE = "safeguardedPeriodStartDate";
         public const string SAFEGUARDED_PERIOD_END_DATE = "safeguardedPeriodEndDate";
 
-        public StaffContractPostSalary ()
+        public StaffContractPostSalary()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public StaffContractPostSalary (string resourceType = "StaffContractPostSalary", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<StaffContractPostSalary> query (SimpleQuery query = null)
+        public StaffContractPostSalary(string resourceType = "StaffContractPostSalary", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("StaffContractPostSalary");
-        	RestGateway gateway = (RestGateway) StaffContractPostSalary.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<StaffContractPostSalary> staffcontractpostsalaryCollection = new ModelCollection<StaffContractPostSalary> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    staffcontractpostsalaryCollection.add((StaffContractPostSalary) model);
-        	}
-        
-        	return staffcontractpostsalaryCollection;
+
         }
 
-        public static StaffContractPostSalary retrieve (string id)
+
+        public static ModelCollection<StaffContractPostSalary> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) StaffContractPostSalary.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (StaffContractPostSalary) gateway.retrieve(ResourceType.STAFF_CONTRACT_POST_SALARY, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("StaffContractPostSalary");
+            RestGateway gateway = (RestGateway)StaffContractPostSalary.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<StaffContractPostSalary> staffcontractpostsalaryCollection = new ModelCollection<StaffContractPostSalary>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                staffcontractpostsalaryCollection.add((StaffContractPostSalary)model);
+            }
+
+            return staffcontractpostsalaryCollection;
         }
 
-        public StaffContractPost getStaffContractPost ()
+        public static StaffContractPostSalary retrieve(string id)
         {
-            return (StaffContractPost) this.getProperty("staffContractPost");
+            RestGateway gateway = (RestGateway)StaffContractPostSalary.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (StaffContractPostSalary)gateway.retrieve(ResourceType.STAFF_CONTRACT_POST_SALARY, id);
         }
 
-        public void setStaffContractPost (StaffContractPost staffContractPost)
+        public StaffContractPost getStaffContractPost()
+        {
+            return (StaffContractPost)this.getProperty("staffContractPost");
+        }
+
+        public void setStaffContractPost(StaffContractPost staffContractPost)
         {
             this.setProperty("staffContractPost", staffContractPost);
         }
 
-        public string getGrossSalary ()
+        public string getGrossSalary()
         {
             return this.getProperty("grossSalary").ToString();
         }
 
-        public void setGrossSalary (string grossSalary)
+        public void setGrossSalary(string grossSalary)
         {
             this.setProperty("grossSalary", grossSalary);
         }
 
-        public PayScale getPayScale ()
+        public PayScale getPayScale()
         {
-            return (PayScale) this.getProperty("payScale");
+            return (PayScale)this.getProperty("payScale");
         }
 
-        public void setPayScale (PayScale payScale)
+        public void setPayScale(PayScale payScale)
         {
             this.setProperty("payScale", payScale);
         }
 
-        public PayScaleGrade getPayScaleGrade ()
+        public PayScaleGrade getPayScaleGrade()
         {
-            return (PayScaleGrade) this.getProperty("payScaleGrade");
+            return (PayScaleGrade)this.getProperty("payScaleGrade");
         }
 
-        public void setPayScaleGrade (PayScaleGrade payScaleGrade)
+        public void setPayScaleGrade(PayScaleGrade payScaleGrade)
         {
             this.setProperty("payScaleGrade", payScaleGrade);
         }
 
-        public PayScaleSpinalPoint getPayScaleSpinalPoint ()
+        public PayScaleSpinalPoint getPayScaleSpinalPoint()
         {
-            return (PayScaleSpinalPoint) this.getProperty("payScaleSpinalPoint");
+            return (PayScaleSpinalPoint)this.getProperty("payScaleSpinalPoint");
         }
 
-        public void setPayScaleSpinalPoint (PayScaleSpinalPoint payScaleSpinalPoint)
+        public void setPayScaleSpinalPoint(PayScaleSpinalPoint payScaleSpinalPoint)
         {
             this.setProperty("payScaleSpinalPoint", payScaleSpinalPoint);
         }
 
-        public string getHoursPerWeek ()
+        public string getHoursPerWeek()
         {
             return this.getProperty("hoursPerWeek").ToString();
         }
 
-        public void setHoursPerWeek (string hoursPerWeek)
+        public void setHoursPerWeek(string hoursPerWeek)
         {
             this.setProperty("hoursPerWeek", hoursPerWeek);
         }
 
-        public float getWeeksPerYear ()
+        public float getWeeksPerYear()
         {
-            return (float) this.getProperty("weeksPerYear");
+            return (float)this.getProperty("weeksPerYear");
         }
 
-        public void setWeeksPerYear (float weeksPerYear)
+        public void setWeeksPerYear(float weeksPerYear)
         {
             this.setProperty("weeksPerYear", weeksPerYear);
         }
 
-        public string getFteHoursPerWeek ()
+        public string getFteHoursPerWeek()
         {
             return this.getProperty("fteHoursPerWeek").ToString();
         }
 
-        public void setFteHoursPerWeek (string fteHoursPerWeek)
+        public void setFteHoursPerWeek(string fteHoursPerWeek)
         {
             this.setProperty("fteHoursPerWeek", fteHoursPerWeek);
         }
 
-        public float getFteWeeksPerYear ()
+        public float getFteWeeksPerYear()
         {
-            return (float) this.getProperty("fteWeeksPerYear");
+            return (float)this.getProperty("fteWeeksPerYear");
         }
 
-        public void setFteWeeksPerYear (float fteWeeksPerYear)
+        public void setFteWeeksPerYear(float fteWeeksPerYear)
         {
             this.setProperty("fteWeeksPerYear", fteWeeksPerYear);
         }
 
-        public DateTime getEffectiveDate ()
+        public DateTime getEffectiveDate()
         {
             return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
-        public void setEffectiveDate (DateTime effectiveDate)
+        public void setEffectiveDate(DateTime effectiveDate)
         {
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }
 
-        public DateTime getSafeguardedPeriodStartDate ()
+        public DateTime getSafeguardedPeriodStartDate()
         {
             return Convert.ToDateTime(this.getProperty("safeguardedPeriodStartDate"));
         }
 
-        public void setSafeguardedPeriodStartDate (DateTime safeguardedPeriodStartDate)
+        public void setSafeguardedPeriodStartDate(DateTime safeguardedPeriodStartDate)
         {
             this.setProperty("safeguardedPeriodStartDate", safeguardedPeriodStartDate);
         }
 
-        public DateTime getSafeguardedPeriodEndDate ()
+        public DateTime getSafeguardedPeriodEndDate()
         {
             return Convert.ToDateTime(this.getProperty("safeguardedPeriodEndDate"));
         }
 
-        public void setSafeguardedPeriodEndDate (DateTime safeguardedPeriodEndDate)
+        public void setSafeguardedPeriodEndDate(DateTime safeguardedPeriodEndDate)
         {
             this.setProperty("safeguardedPeriodEndDate", safeguardedPeriodEndDate);
         }

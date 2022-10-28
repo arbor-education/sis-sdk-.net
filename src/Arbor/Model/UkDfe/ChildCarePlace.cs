@@ -21,138 +21,139 @@ namespace Arbor.Model.UkDfe
         public const string CHILD_CARE_OTHER_SCHOOLS = "childCareOtherSchools";
         public const string CHILD_CARE_WEEKS_OPEN = "childCareWeeksOpen";
 
-        public ChildCarePlace ()
+        public ChildCarePlace()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public ChildCarePlace (string resourceType = "ChildCarePlace", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<ChildCarePlace> query (SimpleQuery query = null)
+        public ChildCarePlace(string resourceType = "ChildCarePlace", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("UkDfe_ChildCarePlace");
-        	RestGateway gateway = (RestGateway) ChildCarePlace.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<ChildCarePlace> childcareplaceCollection = new ModelCollection<ChildCarePlace> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    childcareplaceCollection.add((ChildCarePlace) model);
-        	}
-        
-        	return childcareplaceCollection;
+
         }
 
-        public static ChildCarePlace retrieve (string id)
+
+        public static ModelCollection<ChildCarePlace> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) ChildCarePlace.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (ChildCarePlace) gateway.retrieve(ResourceType.UK_DFE_CHILD_CARE_PLACE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("UkDfe_ChildCarePlace");
+            RestGateway gateway = (RestGateway)ChildCarePlace.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<ChildCarePlace> childcareplaceCollection = new ModelCollection<ChildCarePlace>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                childcareplaceCollection.add((ChildCarePlace)model);
+            }
+
+            return childcareplaceCollection;
         }
 
-        public string getName ()
+        public static ChildCarePlace retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)ChildCarePlace.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (ChildCarePlace)gateway.retrieve(ResourceType.UK_DFE_CHILD_CARE_PLACE, id);
+        }
+
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }
 
-        public bool getChildCareOnSite ()
+        public bool getChildCareOnSite()
         {
             return Convert.ToBoolean(this.getProperty("childCareOnSite"));
         }
 
-        public void setChildCareOnSite (bool childCareOnSite)
+        public void setChildCareOnSite(bool childCareOnSite)
         {
             this.setProperty("childCareOnSite", childCareOnSite);
         }
 
-        public string getChildCareSignposting ()
+        public string getChildCareSignposting()
         {
             return this.getProperty("childCareSignposting").ToString();
         }
 
-        public void setChildCareSignposting (string childCareSignposting)
+        public void setChildCareSignposting(string childCareSignposting)
         {
             this.setProperty("childCareSignposting", childCareSignposting);
         }
 
-        public string getChildCareType ()
+        public string getChildCareType()
         {
             return this.getProperty("childCareType").ToString();
         }
 
-        public void setChildCareType (string childCareType)
+        public void setChildCareType(string childCareType)
         {
             this.setProperty("childCareType", childCareType);
         }
 
-        public string getChildCareOpeningTime ()
+        public string getChildCareOpeningTime()
         {
             return this.getProperty("childCareOpeningTime").ToString();
         }
 
-        public void setChildCareOpeningTime (string childCareOpeningTime)
+        public void setChildCareOpeningTime(string childCareOpeningTime)
         {
             this.setProperty("childCareOpeningTime", childCareOpeningTime);
         }
 
-        public string getChildCareClosingTime ()
+        public string getChildCareClosingTime()
         {
             return this.getProperty("childCareClosingTime").ToString();
         }
 
-        public void setChildCareClosingTime (string childCareClosingTime)
+        public void setChildCareClosingTime(string childCareClosingTime)
         {
             this.setProperty("childCareClosingTime", childCareClosingTime);
         }
 
-        public int getChildCareNumberOfPlaces ()
+        public int getChildCareNumberOfPlaces()
         {
             return Convert.ToInt32(this.getProperty("childCareNumberOfPlaces"));
         }
 
-        public void setChildCareNumberOfPlaces (int childCareNumberOfPlaces)
+        public void setChildCareNumberOfPlaces(int childCareNumberOfPlaces)
         {
             this.setProperty("childCareNumberOfPlaces", childCareNumberOfPlaces);
         }
 
-        public string getChildCareProvider ()
+        public string getChildCareProvider()
         {
             return this.getProperty("childCareProvider").ToString();
         }
 
-        public void setChildCareProvider (string childCareProvider)
+        public void setChildCareProvider(string childCareProvider)
         {
             this.setProperty("childCareProvider", childCareProvider);
         }
 
-        public string getChildCareOtherSchools ()
+        public string getChildCareOtherSchools()
         {
             return this.getProperty("childCareOtherSchools").ToString();
         }
 
-        public void setChildCareOtherSchools (string childCareOtherSchools)
+        public void setChildCareOtherSchools(string childCareOtherSchools)
         {
             this.setProperty("childCareOtherSchools", childCareOtherSchools);
         }
 
-        public int getChildCareWeeksOpen ()
+        public int getChildCareWeeksOpen()
         {
             return Convert.ToInt32(this.getProperty("childCareWeeksOpen"));
         }
 
-        public void setChildCareWeeksOpen (int childCareWeeksOpen)
+        public void setChildCareWeeksOpen(int childCareWeeksOpen)
         {
             this.setProperty("childCareWeeksOpen", childCareWeeksOpen);
         }

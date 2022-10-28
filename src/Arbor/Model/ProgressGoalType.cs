@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string CODE = "code";
         public const string NAME = "name";
 
-        public ProgressGoalType ()
+        public ProgressGoalType()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public ProgressGoalType (string resourceType = "ProgressGoalType", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<ProgressGoalType> query (SimpleQuery query = null)
+        public ProgressGoalType(string resourceType = "ProgressGoalType", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("ProgressGoalType");
-        	RestGateway gateway = (RestGateway) ProgressGoalType.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<ProgressGoalType> progressgoaltypeCollection = new ModelCollection<ProgressGoalType> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    progressgoaltypeCollection.add((ProgressGoalType) model);
-        	}
-        
-        	return progressgoaltypeCollection;
+
         }
 
-        public static ProgressGoalType retrieve (string id)
+
+        public static ModelCollection<ProgressGoalType> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) ProgressGoalType.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (ProgressGoalType) gateway.retrieve(ResourceType.PROGRESS_GOAL_TYPE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("ProgressGoalType");
+            RestGateway gateway = (RestGateway)ProgressGoalType.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<ProgressGoalType> progressgoaltypeCollection = new ModelCollection<ProgressGoalType>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                progressgoaltypeCollection.add((ProgressGoalType)model);
+            }
+
+            return progressgoaltypeCollection;
         }
 
-        public string getCode ()
+        public static ProgressGoalType retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)ProgressGoalType.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (ProgressGoalType)gateway.retrieve(ResourceType.PROGRESS_GOAL_TYPE, id);
+        }
+
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public string getName ()
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }

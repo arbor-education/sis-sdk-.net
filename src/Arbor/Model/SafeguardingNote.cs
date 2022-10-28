@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string SUMMARY = "summary";
         public const string CONTENT = "content";
 
-        public SafeguardingNote ()
+        public SafeguardingNote()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public SafeguardingNote (string resourceType = "SafeguardingNote", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<SafeguardingNote> query (SimpleQuery query = null)
+        public SafeguardingNote(string resourceType = "SafeguardingNote", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("SafeguardingNote");
-        	RestGateway gateway = (RestGateway) SafeguardingNote.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<SafeguardingNote> safeguardingnoteCollection = new ModelCollection<SafeguardingNote> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    safeguardingnoteCollection.add((SafeguardingNote) model);
-        	}
-        
-        	return safeguardingnoteCollection;
+
         }
 
-        public static SafeguardingNote retrieve (string id)
+
+        public static ModelCollection<SafeguardingNote> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) SafeguardingNote.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (SafeguardingNote) gateway.retrieve(ResourceType.SAFEGUARDING_NOTE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("SafeguardingNote");
+            RestGateway gateway = (RestGateway)SafeguardingNote.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<SafeguardingNote> safeguardingnoteCollection = new ModelCollection<SafeguardingNote>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                safeguardingnoteCollection.add((SafeguardingNote)model);
+            }
+
+            return safeguardingnoteCollection;
         }
 
-        public Student getStudent ()
+        public static SafeguardingNote retrieve(string id)
         {
-            return (Student) this.getProperty("student");
+            RestGateway gateway = (RestGateway)SafeguardingNote.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (SafeguardingNote)gateway.retrieve(ResourceType.SAFEGUARDING_NOTE, id);
         }
 
-        public void setStudent (Student student)
+        public Student getStudent()
+        {
+            return (Student)this.getProperty("student");
+        }
+
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public DateTime getDateLogged ()
+        public DateTime getDateLogged()
         {
             return Convert.ToDateTime(this.getProperty("dateLogged"));
         }
 
-        public void setDateLogged (DateTime dateLogged)
+        public void setDateLogged(DateTime dateLogged)
         {
             this.setProperty("dateLogged", dateLogged);
         }
 
-        public string getSummary ()
+        public string getSummary()
         {
             return this.getProperty("summary").ToString();
         }
 
-        public void setSummary (string summary)
+        public void setSummary(string summary)
         {
             this.setProperty("summary", summary);
         }
 
-        public string getContent ()
+        public string getContent()
         {
             return this.getProperty("content").ToString();
         }
 
-        public void setContent (string content)
+        public void setContent(string content)
         {
             this.setProperty("content", content);
         }

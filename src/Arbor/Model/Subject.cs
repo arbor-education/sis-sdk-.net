@@ -20,128 +20,129 @@ namespace Arbor.Model
         public const string SUBJECT_NAME = "subjectName";
         public const string PARENT_SUBJECT = "parentSubject";
 
-        public Subject ()
+        public Subject()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public Subject (string resourceType = "Subject", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<Subject> query (SimpleQuery query = null)
+        public Subject(string resourceType = "Subject", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("Subject");
-        	RestGateway gateway = (RestGateway) Subject.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<Subject> subjectCollection = new ModelCollection<Subject> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    subjectCollection.add((Subject) model);
-        	}
-        
-        	return subjectCollection;
+
         }
 
-        public static Subject retrieve (string id)
+
+        public static ModelCollection<Subject> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) Subject.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (Subject) gateway.retrieve(ResourceType.SUBJECT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("Subject");
+            RestGateway gateway = (RestGateway)Subject.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<Subject> subjectCollection = new ModelCollection<Subject>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                subjectCollection.add((Subject)model);
+            }
+
+            return subjectCollection;
         }
 
-        public bool getUsedInSwfOnly ()
+        public static Subject retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)Subject.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (Subject)gateway.retrieve(ResourceType.SUBJECT, id);
+        }
+
+        public bool getUsedInSwfOnly()
         {
             return Convert.ToBoolean(this.getProperty("usedInSwfOnly"));
         }
 
-        public void setUsedInSwfOnly (bool usedInSwfOnly)
+        public void setUsedInSwfOnly(bool usedInSwfOnly)
         {
             this.setProperty("usedInSwfOnly", usedInSwfOnly);
         }
 
-        public bool getUsedInCbdsOnly ()
+        public bool getUsedInCbdsOnly()
         {
             return Convert.ToBoolean(this.getProperty("usedInCbdsOnly"));
         }
 
-        public void setUsedInCbdsOnly (bool usedInCbdsOnly)
+        public void setUsedInCbdsOnly(bool usedInCbdsOnly)
         {
             this.setProperty("usedInCbdsOnly", usedInCbdsOnly);
         }
 
-        public string getD00115 ()
+        public string getD00115()
         {
             return this.getProperty("d00115").ToString();
         }
 
-        public void setD00115 (string d00115)
+        public void setD00115(string d00115)
         {
             this.setProperty("d00115", d00115);
         }
 
-        public string getD00220 ()
+        public string getD00220()
         {
             return this.getProperty("d00220").ToString();
         }
 
-        public void setD00220 (string d00220)
+        public void setD00220(string d00220)
         {
             this.setProperty("d00220", d00220);
         }
 
-        public string getCode ()
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }
 
-        public string getSubjectName ()
+        public string getSubjectName()
         {
             return this.getProperty("subjectName").ToString();
         }
 
-        public void setSubjectName (string subjectName)
+        public void setSubjectName(string subjectName)
         {
             this.setProperty("subjectName", subjectName);
         }
 
-        public Subject getParentSubject ()
+        public Subject getParentSubject()
         {
-            return (Subject) this.getProperty("parentSubject");
+            return (Subject)this.getProperty("parentSubject");
         }
 
-        public void setParentSubject (Subject parentSubject)
+        public void setParentSubject(Subject parentSubject)
         {
             this.setProperty("parentSubject", parentSubject);
         }

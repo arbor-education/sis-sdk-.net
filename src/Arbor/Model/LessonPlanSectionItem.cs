@@ -16,88 +16,89 @@ namespace Arbor.Model
         public const string TEACHER_NOTES = "teacherNotes";
         public const string DISPLAY_ORDER = "displayOrder";
 
-        public LessonPlanSectionItem ()
+        public LessonPlanSectionItem()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public LessonPlanSectionItem (string resourceType = "LessonPlanSectionItem", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<LessonPlanSectionItem> query (SimpleQuery query = null)
+        public LessonPlanSectionItem(string resourceType = "LessonPlanSectionItem", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("LessonPlanSectionItem");
-        	RestGateway gateway = (RestGateway) LessonPlanSectionItem.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<LessonPlanSectionItem> lessonplansectionitemCollection = new ModelCollection<LessonPlanSectionItem> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    lessonplansectionitemCollection.add((LessonPlanSectionItem) model);
-        	}
-        
-        	return lessonplansectionitemCollection;
+
         }
 
-        public static LessonPlanSectionItem retrieve (string id)
+
+        public static ModelCollection<LessonPlanSectionItem> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) LessonPlanSectionItem.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (LessonPlanSectionItem) gateway.retrieve(ResourceType.LESSON_PLAN_SECTION_ITEM, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("LessonPlanSectionItem");
+            RestGateway gateway = (RestGateway)LessonPlanSectionItem.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<LessonPlanSectionItem> lessonplansectionitemCollection = new ModelCollection<LessonPlanSectionItem>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                lessonplansectionitemCollection.add((LessonPlanSectionItem)model);
+            }
+
+            return lessonplansectionitemCollection;
         }
 
-        public LessonPlanSection getLessonPlanSection ()
+        public static LessonPlanSectionItem retrieve(string id)
         {
-            return (LessonPlanSection) this.getProperty("lessonPlanSection");
+            RestGateway gateway = (RestGateway)LessonPlanSectionItem.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (LessonPlanSectionItem)gateway.retrieve(ResourceType.LESSON_PLAN_SECTION_ITEM, id);
         }
 
-        public void setLessonPlanSection (LessonPlanSection lessonPlanSection)
+        public LessonPlanSection getLessonPlanSection()
+        {
+            return (LessonPlanSection)this.getProperty("lessonPlanSection");
+        }
+
+        public void setLessonPlanSection(LessonPlanSection lessonPlanSection)
         {
             this.setProperty("lessonPlanSection", lessonPlanSection);
         }
 
-        public ModelBase getLinkedItem ()
+        public ModelBase getLinkedItem()
         {
-            return (ModelBase) this.getProperty("linkedItem");
+            return (ModelBase)this.getProperty("linkedItem");
         }
 
-        public void setLinkedItem (ModelBase linkedItem)
+        public void setLinkedItem(ModelBase linkedItem)
         {
             this.setProperty("linkedItem", linkedItem);
         }
 
-        public string getNarrative ()
+        public string getNarrative()
         {
             return this.getProperty("narrative").ToString();
         }
 
-        public void setNarrative (string narrative)
+        public void setNarrative(string narrative)
         {
             this.setProperty("narrative", narrative);
         }
 
-        public string getTeacherNotes ()
+        public string getTeacherNotes()
         {
             return this.getProperty("teacherNotes").ToString();
         }
 
-        public void setTeacherNotes (string teacherNotes)
+        public void setTeacherNotes(string teacherNotes)
         {
             this.setProperty("teacherNotes", teacherNotes);
         }
 
-        public int getDisplayOrder ()
+        public int getDisplayOrder()
         {
             return Convert.ToInt32(this.getProperty("displayOrder"));
         }
 
-        public void setDisplayOrder (int displayOrder)
+        public void setDisplayOrder(int displayOrder)
         {
             this.setProperty("displayOrder", displayOrder);
         }

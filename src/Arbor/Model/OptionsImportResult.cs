@@ -18,108 +18,109 @@ namespace Arbor.Model
         public const string ENROLMENT_START_DATE = "enrolmentStartDate";
         public const string ENROLMENT_END_DATE = "enrolmentEndDate";
 
-        public OptionsImportResult ()
+        public OptionsImportResult()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public OptionsImportResult (string resourceType = "OptionsImportResult", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<OptionsImportResult> query (SimpleQuery query = null)
+        public OptionsImportResult(string resourceType = "OptionsImportResult", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("OptionsImportResult");
-        	RestGateway gateway = (RestGateway) OptionsImportResult.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<OptionsImportResult> optionsimportresultCollection = new ModelCollection<OptionsImportResult> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    optionsimportresultCollection.add((OptionsImportResult) model);
-        	}
-        
-        	return optionsimportresultCollection;
+
         }
 
-        public static OptionsImportResult retrieve (string id)
+
+        public static ModelCollection<OptionsImportResult> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) OptionsImportResult.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (OptionsImportResult) gateway.retrieve(ResourceType.OPTIONS_IMPORT_RESULT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("OptionsImportResult");
+            RestGateway gateway = (RestGateway)OptionsImportResult.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<OptionsImportResult> optionsimportresultCollection = new ModelCollection<OptionsImportResult>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                optionsimportresultCollection.add((OptionsImportResult)model);
+            }
+
+            return optionsimportresultCollection;
         }
 
-        public AcademicYear getAcademicYear ()
+        public static OptionsImportResult retrieve(string id)
         {
-            return (AcademicYear) this.getProperty("academicYear");
+            RestGateway gateway = (RestGateway)OptionsImportResult.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (OptionsImportResult)gateway.retrieve(ResourceType.OPTIONS_IMPORT_RESULT, id);
         }
 
-        public void setAcademicYear (AcademicYear academicYear)
+        public AcademicYear getAcademicYear()
+        {
+            return (AcademicYear)this.getProperty("academicYear");
+        }
+
+        public void setAcademicYear(AcademicYear academicYear)
         {
             this.setProperty("academicYear", academicYear);
         }
 
-        public int getStepsCompleted ()
+        public int getStepsCompleted()
         {
             return Convert.ToInt32(this.getProperty("stepsCompleted"));
         }
 
-        public void setStepsCompleted (int stepsCompleted)
+        public void setStepsCompleted(int stepsCompleted)
         {
             this.setProperty("stepsCompleted", stepsCompleted);
         }
 
-        public int getStepInProgress ()
+        public int getStepInProgress()
         {
             return Convert.ToInt32(this.getProperty("stepInProgress"));
         }
 
-        public void setStepInProgress (int stepInProgress)
+        public void setStepInProgress(int stepInProgress)
         {
             this.setProperty("stepInProgress", stepInProgress);
         }
 
-        public DateTime getStartedDatetime ()
+        public DateTime getStartedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("startedDatetime"));
         }
 
-        public void setStartedDatetime (DateTime startedDatetime)
+        public void setStartedDatetime(DateTime startedDatetime)
         {
             this.setProperty("startedDatetime", startedDatetime);
         }
 
-        public DateTime getCompletedDatetime ()
+        public DateTime getCompletedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("completedDatetime"));
         }
 
-        public void setCompletedDatetime (DateTime completedDatetime)
+        public void setCompletedDatetime(DateTime completedDatetime)
         {
             this.setProperty("completedDatetime", completedDatetime);
         }
 
-        public DateTime getEnrolmentStartDate ()
+        public DateTime getEnrolmentStartDate()
         {
             return Convert.ToDateTime(this.getProperty("enrolmentStartDate"));
         }
 
-        public void setEnrolmentStartDate (DateTime enrolmentStartDate)
+        public void setEnrolmentStartDate(DateTime enrolmentStartDate)
         {
             this.setProperty("enrolmentStartDate", enrolmentStartDate);
         }
 
-        public DateTime getEnrolmentEndDate ()
+        public DateTime getEnrolmentEndDate()
         {
             return Convert.ToDateTime(this.getProperty("enrolmentEndDate"));
         }
 
-        public void setEnrolmentEndDate (DateTime enrolmentEndDate)
+        public void setEnrolmentEndDate(DateTime enrolmentEndDate)
         {
             this.setProperty("enrolmentEndDate", enrolmentEndDate);
         }

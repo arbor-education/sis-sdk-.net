@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string END_DATE = "endDate";
         public const string HOLIDAY_LABEL = "holidayLabel";
 
-        public AcademicHoliday ()
+        public AcademicHoliday()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AcademicHoliday (string resourceType = "AcademicHoliday", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AcademicHoliday> query (SimpleQuery query = null)
+        public AcademicHoliday(string resourceType = "AcademicHoliday", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AcademicHoliday");
-        	RestGateway gateway = (RestGateway) AcademicHoliday.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AcademicHoliday> academicholidayCollection = new ModelCollection<AcademicHoliday> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    academicholidayCollection.add((AcademicHoliday) model);
-        	}
-        
-        	return academicholidayCollection;
+
         }
 
-        public static AcademicHoliday retrieve (string id)
+
+        public static ModelCollection<AcademicHoliday> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AcademicHoliday.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AcademicHoliday) gateway.retrieve(ResourceType.ACADEMIC_HOLIDAY, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AcademicHoliday");
+            RestGateway gateway = (RestGateway)AcademicHoliday.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AcademicHoliday> academicholidayCollection = new ModelCollection<AcademicHoliday>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                academicholidayCollection.add((AcademicHoliday)model);
+            }
+
+            return academicholidayCollection;
         }
 
-        public string getAcademicHolidayType ()
+        public static AcademicHoliday retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)AcademicHoliday.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AcademicHoliday)gateway.retrieve(ResourceType.ACADEMIC_HOLIDAY, id);
+        }
+
+        public string getAcademicHolidayType()
         {
             return this.getProperty("academicHolidayType").ToString();
         }
 
-        public void setAcademicHolidayType (string academicHolidayType)
+        public void setAcademicHolidayType(string academicHolidayType)
         {
             this.setProperty("academicHolidayType", academicHolidayType);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDate()
         {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }
 
-        public string getHolidayLabel ()
+        public string getHolidayLabel()
         {
             return this.getProperty("holidayLabel").ToString();
         }
 
-        public void setHolidayLabel (string holidayLabel)
+        public void setHolidayLabel(string holidayLabel)
         {
             this.setProperty("holidayLabel", holidayLabel);
         }

@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string ACADEMIC_YEAR_POINT = "academicYearPoint";
         public const string TARGET = "target";
 
-        public CurriculumTarget ()
+        public CurriculumTarget()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public CurriculumTarget (string resourceType = "CurriculumTarget", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<CurriculumTarget> query (SimpleQuery query = null)
+        public CurriculumTarget(string resourceType = "CurriculumTarget", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("CurriculumTarget");
-        	RestGateway gateway = (RestGateway) CurriculumTarget.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<CurriculumTarget> curriculumtargetCollection = new ModelCollection<CurriculumTarget> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    curriculumtargetCollection.add((CurriculumTarget) model);
-        	}
-        
-        	return curriculumtargetCollection;
+
         }
 
-        public static CurriculumTarget retrieve (string id)
+
+        public static ModelCollection<CurriculumTarget> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) CurriculumTarget.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (CurriculumTarget) gateway.retrieve(ResourceType.CURRICULUM_TARGET, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("CurriculumTarget");
+            RestGateway gateway = (RestGateway)CurriculumTarget.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<CurriculumTarget> curriculumtargetCollection = new ModelCollection<CurriculumTarget>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                curriculumtargetCollection.add((CurriculumTarget)model);
+            }
+
+            return curriculumtargetCollection;
         }
 
-        public CurriculumTargetSet getCurriculumTargetSet ()
+        public static CurriculumTarget retrieve(string id)
         {
-            return (CurriculumTargetSet) this.getProperty("curriculumTargetSet");
+            RestGateway gateway = (RestGateway)CurriculumTarget.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (CurriculumTarget)gateway.retrieve(ResourceType.CURRICULUM_TARGET, id);
         }
 
-        public void setCurriculumTargetSet (CurriculumTargetSet curriculumTargetSet)
+        public CurriculumTargetSet getCurriculumTargetSet()
+        {
+            return (CurriculumTargetSet)this.getProperty("curriculumTargetSet");
+        }
+
+        public void setCurriculumTargetSet(CurriculumTargetSet curriculumTargetSet)
         {
             this.setProperty("curriculumTargetSet", curriculumTargetSet);
         }
 
-        public int getAcademicYearIndex ()
+        public int getAcademicYearIndex()
         {
             return Convert.ToInt32(this.getProperty("academicYearIndex"));
         }
 
-        public void setAcademicYearIndex (int academicYearIndex)
+        public void setAcademicYearIndex(int academicYearIndex)
         {
             this.setProperty("academicYearIndex", academicYearIndex);
         }
 
-        public float getAcademicYearPoint ()
+        public float getAcademicYearPoint()
         {
-            return (float) this.getProperty("academicYearPoint");
+            return (float)this.getProperty("academicYearPoint");
         }
 
-        public void setAcademicYearPoint (float academicYearPoint)
+        public void setAcademicYearPoint(float academicYearPoint)
         {
             this.setProperty("academicYearPoint", academicYearPoint);
         }
 
-        public float getTarget ()
+        public float getTarget()
         {
-            return (float) this.getProperty("target");
+            return (float)this.getProperty("target");
         }
 
-        public void setTarget (float target)
+        public void setTarget(float target)
         {
             this.setProperty("target", target);
         }

@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string CODE = "code";
         public const string ACTIVE = "active";
 
-        public UserDefinedFieldOption ()
+        public UserDefinedFieldOption()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public UserDefinedFieldOption (string resourceType = "UserDefinedFieldOption", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<UserDefinedFieldOption> query (SimpleQuery query = null)
+        public UserDefinedFieldOption(string resourceType = "UserDefinedFieldOption", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("UserDefinedFieldOption");
-        	RestGateway gateway = (RestGateway) UserDefinedFieldOption.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<UserDefinedFieldOption> userdefinedfieldoptionCollection = new ModelCollection<UserDefinedFieldOption> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    userdefinedfieldoptionCollection.add((UserDefinedFieldOption) model);
-        	}
-        
-        	return userdefinedfieldoptionCollection;
+
         }
 
-        public static UserDefinedFieldOption retrieve (string id)
+
+        public static ModelCollection<UserDefinedFieldOption> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) UserDefinedFieldOption.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (UserDefinedFieldOption) gateway.retrieve(ResourceType.USER_DEFINED_FIELD_OPTION, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("UserDefinedFieldOption");
+            RestGateway gateway = (RestGateway)UserDefinedFieldOption.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<UserDefinedFieldOption> userdefinedfieldoptionCollection = new ModelCollection<UserDefinedFieldOption>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                userdefinedfieldoptionCollection.add((UserDefinedFieldOption)model);
+            }
+
+            return userdefinedfieldoptionCollection;
         }
 
-        public UserDefinedField getUserDefinedField ()
+        public static UserDefinedFieldOption retrieve(string id)
         {
-            return (UserDefinedField) this.getProperty("userDefinedField");
+            RestGateway gateway = (RestGateway)UserDefinedFieldOption.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (UserDefinedFieldOption)gateway.retrieve(ResourceType.USER_DEFINED_FIELD_OPTION, id);
         }
 
-        public void setUserDefinedField (UserDefinedField userDefinedField)
+        public UserDefinedField getUserDefinedField()
+        {
+            return (UserDefinedField)this.getProperty("userDefinedField");
+        }
+
+        public void setUserDefinedField(UserDefinedField userDefinedField)
         {
             this.setProperty("userDefinedField", userDefinedField);
         }
 
-        public string getName ()
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }
 
-        public string getCode ()
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }

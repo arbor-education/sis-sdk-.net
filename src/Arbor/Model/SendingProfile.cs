@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string MOBILE_TELEPHONE_NUMBER = "mobileTelephoneNumber";
         public const string PERMITTED_SENDER = "permittedSender";
 
-        public SendingProfile ()
+        public SendingProfile()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public SendingProfile (string resourceType = "SendingProfile", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<SendingProfile> query (SimpleQuery query = null)
+        public SendingProfile(string resourceType = "SendingProfile", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("SendingProfile");
-        	RestGateway gateway = (RestGateway) SendingProfile.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<SendingProfile> sendingprofileCollection = new ModelCollection<SendingProfile> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    sendingprofileCollection.add((SendingProfile) model);
-        	}
-        
-        	return sendingprofileCollection;
+
         }
 
-        public static SendingProfile retrieve (string id)
+
+        public static ModelCollection<SendingProfile> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) SendingProfile.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (SendingProfile) gateway.retrieve(ResourceType.SENDING_PROFILE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("SendingProfile");
+            RestGateway gateway = (RestGateway)SendingProfile.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<SendingProfile> sendingprofileCollection = new ModelCollection<SendingProfile>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                sendingprofileCollection.add((SendingProfile)model);
+            }
+
+            return sendingprofileCollection;
         }
 
-        public ModelBase getOwner ()
+        public static SendingProfile retrieve(string id)
         {
-            return (ModelBase) this.getProperty("owner");
+            RestGateway gateway = (RestGateway)SendingProfile.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (SendingProfile)gateway.retrieve(ResourceType.SENDING_PROFILE, id);
         }
 
-        public void setOwner (ModelBase owner)
+        public ModelBase getOwner()
+        {
+            return (ModelBase)this.getProperty("owner");
+        }
+
+        public void setOwner(ModelBase owner)
         {
             this.setProperty("owner", owner);
         }
 
-        public EmailAddress getEmailAddress ()
+        public EmailAddress getEmailAddress()
         {
-            return (EmailAddress) this.getProperty("emailAddress");
+            return (EmailAddress)this.getProperty("emailAddress");
         }
 
-        public void setEmailAddress (EmailAddress emailAddress)
+        public void setEmailAddress(EmailAddress emailAddress)
         {
             this.setProperty("emailAddress", emailAddress);
         }
 
-        public TelephoneNumber getMobileTelephoneNumber ()
+        public TelephoneNumber getMobileTelephoneNumber()
         {
-            return (TelephoneNumber) this.getProperty("mobileTelephoneNumber");
+            return (TelephoneNumber)this.getProperty("mobileTelephoneNumber");
         }
 
-        public void setMobileTelephoneNumber (TelephoneNumber mobileTelephoneNumber)
+        public void setMobileTelephoneNumber(TelephoneNumber mobileTelephoneNumber)
         {
             this.setProperty("mobileTelephoneNumber", mobileTelephoneNumber);
         }
 
-        public Staff getPermittedSender ()
+        public Staff getPermittedSender()
         {
-            return (Staff) this.getProperty("permittedSender");
+            return (Staff)this.getProperty("permittedSender");
         }
 
-        public void setPermittedSender (Staff permittedSender)
+        public void setPermittedSender(Staff permittedSender)
         {
             this.setProperty("permittedSender", permittedSender);
         }

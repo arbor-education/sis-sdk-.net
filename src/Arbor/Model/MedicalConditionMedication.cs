@@ -17,98 +17,99 @@ namespace Arbor.Model
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
 
-        public MedicalConditionMedication ()
+        public MedicalConditionMedication()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public MedicalConditionMedication (string resourceType = "MedicalConditionMedication", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<MedicalConditionMedication> query (SimpleQuery query = null)
+        public MedicalConditionMedication(string resourceType = "MedicalConditionMedication", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("MedicalConditionMedication");
-        	RestGateway gateway = (RestGateway) MedicalConditionMedication.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<MedicalConditionMedication> medicalconditionmedicationCollection = new ModelCollection<MedicalConditionMedication> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    medicalconditionmedicationCollection.add((MedicalConditionMedication) model);
-        	}
-        
-        	return medicalconditionmedicationCollection;
+
         }
 
-        public static MedicalConditionMedication retrieve (string id)
+
+        public static ModelCollection<MedicalConditionMedication> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) MedicalConditionMedication.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (MedicalConditionMedication) gateway.retrieve(ResourceType.MEDICAL_CONDITION_MEDICATION, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("MedicalConditionMedication");
+            RestGateway gateway = (RestGateway)MedicalConditionMedication.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<MedicalConditionMedication> medicalconditionmedicationCollection = new ModelCollection<MedicalConditionMedication>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                medicalconditionmedicationCollection.add((MedicalConditionMedication)model);
+            }
+
+            return medicalconditionmedicationCollection;
         }
 
-        public MedicalCondition getMedicalCondition ()
+        public static MedicalConditionMedication retrieve(string id)
         {
-            return (MedicalCondition) this.getProperty("medicalCondition");
+            RestGateway gateway = (RestGateway)MedicalConditionMedication.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (MedicalConditionMedication)gateway.retrieve(ResourceType.MEDICAL_CONDITION_MEDICATION, id);
         }
 
-        public void setMedicalCondition (MedicalCondition medicalCondition)
+        public MedicalCondition getMedicalCondition()
+        {
+            return (MedicalCondition)this.getProperty("medicalCondition");
+        }
+
+        public void setMedicalCondition(MedicalCondition medicalCondition)
         {
             this.setProperty("medicalCondition", medicalCondition);
         }
 
-        public Medication getMedication ()
+        public Medication getMedication()
         {
-            return (Medication) this.getProperty("medication");
+            return (Medication)this.getProperty("medication");
         }
 
-        public void setMedication (Medication medication)
+        public void setMedication(Medication medication)
         {
             this.setProperty("medication", medication);
         }
 
-        public string getDosage ()
+        public string getDosage()
         {
             return this.getProperty("dosage").ToString();
         }
 
-        public void setDosage (string dosage)
+        public void setDosage(string dosage)
         {
             this.setProperty("dosage", dosage);
         }
 
-        public string getFrequency ()
+        public string getFrequency()
         {
             return this.getProperty("frequency").ToString();
         }
 
-        public void setFrequency (string frequency)
+        public void setFrequency(string frequency)
         {
             this.setProperty("frequency", frequency);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDate()
         {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }

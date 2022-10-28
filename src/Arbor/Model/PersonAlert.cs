@@ -16,88 +16,89 @@ namespace Arbor.Model
         public const string TYPE = "type";
         public const string ALERT_DATETIME = "alertDatetime";
 
-        public PersonAlert ()
+        public PersonAlert()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public PersonAlert (string resourceType = "PersonAlert", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<PersonAlert> query (SimpleQuery query = null)
+        public PersonAlert(string resourceType = "PersonAlert", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("PersonAlert");
-        	RestGateway gateway = (RestGateway) PersonAlert.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<PersonAlert> personalertCollection = new ModelCollection<PersonAlert> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    personalertCollection.add((PersonAlert) model);
-        	}
-        
-        	return personalertCollection;
+
         }
 
-        public static PersonAlert retrieve (string id)
+
+        public static ModelCollection<PersonAlert> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) PersonAlert.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (PersonAlert) gateway.retrieve(ResourceType.PERSON_ALERT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("PersonAlert");
+            RestGateway gateway = (RestGateway)PersonAlert.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<PersonAlert> personalertCollection = new ModelCollection<PersonAlert>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                personalertCollection.add((PersonAlert)model);
+            }
+
+            return personalertCollection;
         }
 
-        public ModelBase getPerson ()
+        public static PersonAlert retrieve(string id)
         {
-            return (ModelBase) this.getProperty("person");
+            RestGateway gateway = (RestGateway)PersonAlert.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (PersonAlert)gateway.retrieve(ResourceType.PERSON_ALERT, id);
         }
 
-        public void setPerson (ModelBase person)
+        public ModelBase getPerson()
+        {
+            return (ModelBase)this.getProperty("person");
+        }
+
+        public void setPerson(ModelBase person)
         {
             this.setProperty("person", person);
         }
 
-        public ModelBase getContextPerson ()
+        public ModelBase getContextPerson()
         {
-            return (ModelBase) this.getProperty("contextPerson");
+            return (ModelBase)this.getProperty("contextPerson");
         }
 
-        public void setContextPerson (ModelBase contextPerson)
+        public void setContextPerson(ModelBase contextPerson)
         {
             this.setProperty("contextPerson", contextPerson);
         }
 
-        public ModelBase getContextObject ()
+        public ModelBase getContextObject()
         {
-            return (ModelBase) this.getProperty("contextObject");
+            return (ModelBase)this.getProperty("contextObject");
         }
 
-        public void setContextObject (ModelBase contextObject)
+        public void setContextObject(ModelBase contextObject)
         {
             this.setProperty("contextObject", contextObject);
         }
 
-        public string getType ()
+        public string getType()
         {
             return this.getProperty("type").ToString();
         }
 
-        public void setType (string type)
+        public void setType(string type)
         {
             this.setProperty("type", type);
         }
 
-        public DateTime getAlertDatetime ()
+        public DateTime getAlertDatetime()
         {
             return Convert.ToDateTime(this.getProperty("alertDatetime"));
         }
 
-        public void setAlertDatetime (DateTime alertDatetime)
+        public void setAlertDatetime(DateTime alertDatetime)
         {
             this.setProperty("alertDatetime", alertDatetime);
         }

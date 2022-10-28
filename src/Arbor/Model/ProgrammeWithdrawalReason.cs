@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string DATA_ORDER = "dataOrder";
         public const string NAME = "name";
 
-        public ProgrammeWithdrawalReason ()
+        public ProgrammeWithdrawalReason()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public ProgrammeWithdrawalReason (string resourceType = "ProgrammeWithdrawalReason", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<ProgrammeWithdrawalReason> query (SimpleQuery query = null)
+        public ProgrammeWithdrawalReason(string resourceType = "ProgrammeWithdrawalReason", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("ProgrammeWithdrawalReason");
-        	RestGateway gateway = (RestGateway) ProgrammeWithdrawalReason.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<ProgrammeWithdrawalReason> programmewithdrawalreasonCollection = new ModelCollection<ProgrammeWithdrawalReason> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    programmewithdrawalreasonCollection.add((ProgrammeWithdrawalReason) model);
-        	}
-        
-        	return programmewithdrawalreasonCollection;
+
         }
 
-        public static ProgrammeWithdrawalReason retrieve (string id)
+
+        public static ModelCollection<ProgrammeWithdrawalReason> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) ProgrammeWithdrawalReason.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (ProgrammeWithdrawalReason) gateway.retrieve(ResourceType.PROGRAMME_WITHDRAWAL_REASON, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("ProgrammeWithdrawalReason");
+            RestGateway gateway = (RestGateway)ProgrammeWithdrawalReason.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<ProgrammeWithdrawalReason> programmewithdrawalreasonCollection = new ModelCollection<ProgrammeWithdrawalReason>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                programmewithdrawalreasonCollection.add((ProgrammeWithdrawalReason)model);
+            }
+
+            return programmewithdrawalreasonCollection;
         }
 
-        public string getCode ()
+        public static ProgrammeWithdrawalReason retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)ProgrammeWithdrawalReason.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (ProgrammeWithdrawalReason)gateway.retrieve(ResourceType.PROGRAMME_WITHDRAWAL_REASON, id);
+        }
+
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }
 
-        public string getName ()
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }

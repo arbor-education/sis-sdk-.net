@@ -14,68 +14,69 @@ namespace Arbor.Model
         public const string PROGRESS_MEASUREMENT_PERIOD = "progressMeasurementPeriod";
         public const string ASSESSMENT_REFERENCE_DATE = "assessmentReferenceDate";
 
-        public AdHocAssessmentBatch ()
+        public AdHocAssessmentBatch()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AdHocAssessmentBatch (string resourceType = "AdHocAssessmentBatch", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AdHocAssessmentBatch> query (SimpleQuery query = null)
+        public AdHocAssessmentBatch(string resourceType = "AdHocAssessmentBatch", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AdHocAssessmentBatch");
-        	RestGateway gateway = (RestGateway) AdHocAssessmentBatch.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AdHocAssessmentBatch> adhocassessmentbatchCollection = new ModelCollection<AdHocAssessmentBatch> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    adhocassessmentbatchCollection.add((AdHocAssessmentBatch) model);
-        	}
-        
-        	return adhocassessmentbatchCollection;
+
         }
 
-        public static AdHocAssessmentBatch retrieve (string id)
+
+        public static ModelCollection<AdHocAssessmentBatch> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AdHocAssessmentBatch.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AdHocAssessmentBatch) gateway.retrieve(ResourceType.AD_HOC_ASSESSMENT_BATCH, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AdHocAssessmentBatch");
+            RestGateway gateway = (RestGateway)AdHocAssessmentBatch.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AdHocAssessmentBatch> adhocassessmentbatchCollection = new ModelCollection<AdHocAssessmentBatch>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                adhocassessmentbatchCollection.add((AdHocAssessmentBatch)model);
+            }
+
+            return adhocassessmentbatchCollection;
         }
 
-        public AdHocAssessment getAdHocAssessment ()
+        public static AdHocAssessmentBatch retrieve(string id)
         {
-            return (AdHocAssessment) this.getProperty("adHocAssessment");
+            RestGateway gateway = (RestGateway)AdHocAssessmentBatch.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AdHocAssessmentBatch)gateway.retrieve(ResourceType.AD_HOC_ASSESSMENT_BATCH, id);
         }
 
-        public void setAdHocAssessment (AdHocAssessment adHocAssessment)
+        public AdHocAssessment getAdHocAssessment()
+        {
+            return (AdHocAssessment)this.getProperty("adHocAssessment");
+        }
+
+        public void setAdHocAssessment(AdHocAssessment adHocAssessment)
         {
             this.setProperty("adHocAssessment", adHocAssessment);
         }
 
-        public ProgressMeasurementPeriod getProgressMeasurementPeriod ()
+        public ProgressMeasurementPeriod getProgressMeasurementPeriod()
         {
-            return (ProgressMeasurementPeriod) this.getProperty("progressMeasurementPeriod");
+            return (ProgressMeasurementPeriod)this.getProperty("progressMeasurementPeriod");
         }
 
-        public void setProgressMeasurementPeriod (ProgressMeasurementPeriod progressMeasurementPeriod)
+        public void setProgressMeasurementPeriod(ProgressMeasurementPeriod progressMeasurementPeriod)
         {
             this.setProperty("progressMeasurementPeriod", progressMeasurementPeriod);
         }
 
-        public DateTime getAssessmentReferenceDate ()
+        public DateTime getAssessmentReferenceDate()
         {
             return Convert.ToDateTime(this.getProperty("assessmentReferenceDate"));
         }
 
-        public void setAssessmentReferenceDate (DateTime assessmentReferenceDate)
+        public void setAssessmentReferenceDate(DateTime assessmentReferenceDate)
         {
             this.setProperty("assessmentReferenceDate", assessmentReferenceDate);
         }

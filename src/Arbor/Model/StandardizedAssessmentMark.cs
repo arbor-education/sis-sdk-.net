@@ -19,118 +19,119 @@ namespace Arbor.Model
         public const string ASSESSMENT_DATE = "assessmentDate";
         public const string ASSESSMENT_IMPORT_ITEM = "assessmentImportItem";
 
-        public StandardizedAssessmentMark ()
+        public StandardizedAssessmentMark()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public StandardizedAssessmentMark (string resourceType = "StandardizedAssessmentMark", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<StandardizedAssessmentMark> query (SimpleQuery query = null)
+        public StandardizedAssessmentMark(string resourceType = "StandardizedAssessmentMark", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("StandardizedAssessmentMark");
-        	RestGateway gateway = (RestGateway) StandardizedAssessmentMark.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<StandardizedAssessmentMark> standardizedassessmentmarkCollection = new ModelCollection<StandardizedAssessmentMark> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    standardizedassessmentmarkCollection.add((StandardizedAssessmentMark) model);
-        	}
-        
-        	return standardizedassessmentmarkCollection;
+
         }
 
-        public static StandardizedAssessmentMark retrieve (string id)
+
+        public static ModelCollection<StandardizedAssessmentMark> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) StandardizedAssessmentMark.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (StandardizedAssessmentMark) gateway.retrieve(ResourceType.STANDARDIZED_ASSESSMENT_MARK, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("StandardizedAssessmentMark");
+            RestGateway gateway = (RestGateway)StandardizedAssessmentMark.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<StandardizedAssessmentMark> standardizedassessmentmarkCollection = new ModelCollection<StandardizedAssessmentMark>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                standardizedassessmentmarkCollection.add((StandardizedAssessmentMark)model);
+            }
+
+            return standardizedassessmentmarkCollection;
         }
 
-        public Student getStudent ()
+        public static StandardizedAssessmentMark retrieve(string id)
         {
-            return (Student) this.getProperty("student");
+            RestGateway gateway = (RestGateway)StandardizedAssessmentMark.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (StandardizedAssessmentMark)gateway.retrieve(ResourceType.STANDARDIZED_ASSESSMENT_MARK, id);
         }
 
-        public void setStudent (Student student)
+        public Student getStudent()
+        {
+            return (Student)this.getProperty("student");
+        }
+
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public StandardizedAssessmentAspect getStandardizedAssessmentAspect ()
+        public StandardizedAssessmentAspect getStandardizedAssessmentAspect()
         {
-            return (StandardizedAssessmentAspect) this.getProperty("standardizedAssessmentAspect");
+            return (StandardizedAssessmentAspect)this.getProperty("standardizedAssessmentAspect");
         }
 
-        public void setStandardizedAssessmentAspect (StandardizedAssessmentAspect standardizedAssessmentAspect)
+        public void setStandardizedAssessmentAspect(StandardizedAssessmentAspect standardizedAssessmentAspect)
         {
             this.setProperty("standardizedAssessmentAspect", standardizedAssessmentAspect);
         }
 
-        public Grade getMarkGrade ()
+        public Grade getMarkGrade()
         {
-            return (Grade) this.getProperty("markGrade");
+            return (Grade)this.getProperty("markGrade");
         }
 
-        public void setMarkGrade (Grade markGrade)
+        public void setMarkGrade(Grade markGrade)
         {
             this.setProperty("markGrade", markGrade);
         }
 
-        public int getMarkInteger ()
+        public int getMarkInteger()
         {
             return Convert.ToInt32(this.getProperty("markInteger"));
         }
 
-        public void setMarkInteger (int markInteger)
+        public void setMarkInteger(int markInteger)
         {
             this.setProperty("markInteger", markInteger);
         }
 
-        public float getMarkDecimal ()
+        public float getMarkDecimal()
         {
-            return (float) this.getProperty("markDecimal");
+            return (float)this.getProperty("markDecimal");
         }
 
-        public void setMarkDecimal (float markDecimal)
+        public void setMarkDecimal(float markDecimal)
         {
             this.setProperty("markDecimal", markDecimal);
         }
 
-        public string getMarkComment ()
+        public string getMarkComment()
         {
             return this.getProperty("markComment").ToString();
         }
 
-        public void setMarkComment (string markComment)
+        public void setMarkComment(string markComment)
         {
             this.setProperty("markComment", markComment);
         }
 
-        public DateTime getAssessmentDate ()
+        public DateTime getAssessmentDate()
         {
             return Convert.ToDateTime(this.getProperty("assessmentDate"));
         }
 
-        public void setAssessmentDate (DateTime assessmentDate)
+        public void setAssessmentDate(DateTime assessmentDate)
         {
             this.setProperty("assessmentDate", assessmentDate);
         }
 
-        public AssessmentImportItem getAssessmentImportItem ()
+        public AssessmentImportItem getAssessmentImportItem()
         {
-            return (AssessmentImportItem) this.getProperty("assessmentImportItem");
+            return (AssessmentImportItem)this.getProperty("assessmentImportItem");
         }
 
-        public void setAssessmentImportItem (AssessmentImportItem assessmentImportItem)
+        public void setAssessmentImportItem(AssessmentImportItem assessmentImportItem)
         {
             this.setProperty("assessmentImportItem", assessmentImportItem);
         }

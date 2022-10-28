@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string OBSERVATION_TYPE = "observationType";
         public const string NAME = "name";
 
-        public ObservationTheme ()
+        public ObservationTheme()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public ObservationTheme (string resourceType = "ObservationTheme", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<ObservationTheme> query (SimpleQuery query = null)
+        public ObservationTheme(string resourceType = "ObservationTheme", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("ObservationTheme");
-        	RestGateway gateway = (RestGateway) ObservationTheme.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<ObservationTheme> observationthemeCollection = new ModelCollection<ObservationTheme> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    observationthemeCollection.add((ObservationTheme) model);
-        	}
-        
-        	return observationthemeCollection;
+
         }
 
-        public static ObservationTheme retrieve (string id)
+
+        public static ModelCollection<ObservationTheme> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) ObservationTheme.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (ObservationTheme) gateway.retrieve(ResourceType.OBSERVATION_THEME, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("ObservationTheme");
+            RestGateway gateway = (RestGateway)ObservationTheme.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<ObservationTheme> observationthemeCollection = new ModelCollection<ObservationTheme>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                observationthemeCollection.add((ObservationTheme)model);
+            }
+
+            return observationthemeCollection;
         }
 
-        public ObservationType getObservationType ()
+        public static ObservationTheme retrieve(string id)
         {
-            return (ObservationType) this.getProperty("observationType");
+            RestGateway gateway = (RestGateway)ObservationTheme.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (ObservationTheme)gateway.retrieve(ResourceType.OBSERVATION_THEME, id);
         }
 
-        public void setObservationType (ObservationType observationType)
+        public ObservationType getObservationType()
+        {
+            return (ObservationType)this.getProperty("observationType");
+        }
+
+        public void setObservationType(ObservationType observationType)
         {
             this.setProperty("observationType", observationType);
         }
 
-        public string getName ()
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }

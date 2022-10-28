@@ -17,98 +17,99 @@ namespace Arbor.Model
         public const string COVER_ARRANGED_DATETIME = "coverArrangedDatetime";
         public const string COVER_NOT_REQUIRED_DATETIME = "coverNotRequiredDatetime";
 
-        public CoverRequirement ()
+        public CoverRequirement()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public CoverRequirement (string resourceType = "CoverRequirement", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<CoverRequirement> query (SimpleQuery query = null)
+        public CoverRequirement(string resourceType = "CoverRequirement", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("CoverRequirement");
-        	RestGateway gateway = (RestGateway) CoverRequirement.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<CoverRequirement> coverrequirementCollection = new ModelCollection<CoverRequirement> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    coverrequirementCollection.add((CoverRequirement) model);
-        	}
-        
-        	return coverrequirementCollection;
+
         }
 
-        public static CoverRequirement retrieve (string id)
+
+        public static ModelCollection<CoverRequirement> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) CoverRequirement.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (CoverRequirement) gateway.retrieve(ResourceType.COVER_REQUIREMENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("CoverRequirement");
+            RestGateway gateway = (RestGateway)CoverRequirement.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<CoverRequirement> coverrequirementCollection = new ModelCollection<CoverRequirement>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                coverrequirementCollection.add((CoverRequirement)model);
+            }
+
+            return coverrequirementCollection;
         }
 
-        public ModelBase getCoverEvent ()
+        public static CoverRequirement retrieve(string id)
         {
-            return (ModelBase) this.getProperty("coverEvent");
+            RestGateway gateway = (RestGateway)CoverRequirement.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (CoverRequirement)gateway.retrieve(ResourceType.COVER_REQUIREMENT, id);
         }
 
-        public void setCoverEvent (ModelBase coverEvent)
+        public ModelBase getCoverEvent()
+        {
+            return (ModelBase)this.getProperty("coverEvent");
+        }
+
+        public void setCoverEvent(ModelBase coverEvent)
         {
             this.setProperty("coverEvent", coverEvent);
         }
 
-        public Staff getAbsentStaff ()
+        public Staff getAbsentStaff()
         {
-            return (Staff) this.getProperty("absentStaff");
+            return (Staff)this.getProperty("absentStaff");
         }
 
-        public void setAbsentStaff (Staff absentStaff)
+        public void setAbsentStaff(Staff absentStaff)
         {
             this.setProperty("absentStaff", absentStaff);
         }
 
-        public ModelBase getAbsenceEvent ()
+        public ModelBase getAbsenceEvent()
         {
-            return (ModelBase) this.getProperty("absenceEvent");
+            return (ModelBase)this.getProperty("absenceEvent");
         }
 
-        public void setAbsenceEvent (ModelBase absenceEvent)
+        public void setAbsenceEvent(ModelBase absenceEvent)
         {
             this.setProperty("absenceEvent", absenceEvent);
         }
 
-        public DateTime getCoverProposedDatetime ()
+        public DateTime getCoverProposedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("coverProposedDatetime"));
         }
 
-        public void setCoverProposedDatetime (DateTime coverProposedDatetime)
+        public void setCoverProposedDatetime(DateTime coverProposedDatetime)
         {
             this.setProperty("coverProposedDatetime", coverProposedDatetime);
         }
 
-        public DateTime getCoverArrangedDatetime ()
+        public DateTime getCoverArrangedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("coverArrangedDatetime"));
         }
 
-        public void setCoverArrangedDatetime (DateTime coverArrangedDatetime)
+        public void setCoverArrangedDatetime(DateTime coverArrangedDatetime)
         {
             this.setProperty("coverArrangedDatetime", coverArrangedDatetime);
         }
 
-        public DateTime getCoverNotRequiredDatetime ()
+        public DateTime getCoverNotRequiredDatetime()
         {
             return Convert.ToDateTime(this.getProperty("coverNotRequiredDatetime"));
         }
 
-        public void setCoverNotRequiredDatetime (DateTime coverNotRequiredDatetime)
+        public void setCoverNotRequiredDatetime(DateTime coverNotRequiredDatetime)
         {
             this.setProperty("coverNotRequiredDatetime", coverNotRequiredDatetime);
         }

@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string MAPPING_ACTION = "mappingAction";
         public const string MAPPED_ACADEMIC_UNIT = "mappedAcademicUnit";
 
-        public OptionsImportAcademicUnitMapping ()
+        public OptionsImportAcademicUnitMapping()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public OptionsImportAcademicUnitMapping (string resourceType = "OptionsImportAcademicUnitMapping", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<OptionsImportAcademicUnitMapping> query (SimpleQuery query = null)
+        public OptionsImportAcademicUnitMapping(string resourceType = "OptionsImportAcademicUnitMapping", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("OptionsImportAcademicUnitMapping");
-        	RestGateway gateway = (RestGateway) OptionsImportAcademicUnitMapping.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<OptionsImportAcademicUnitMapping> optionsimportacademicunitmappingCollection = new ModelCollection<OptionsImportAcademicUnitMapping> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    optionsimportacademicunitmappingCollection.add((OptionsImportAcademicUnitMapping) model);
-        	}
-        
-        	return optionsimportacademicunitmappingCollection;
+
         }
 
-        public static OptionsImportAcademicUnitMapping retrieve (string id)
+
+        public static ModelCollection<OptionsImportAcademicUnitMapping> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) OptionsImportAcademicUnitMapping.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (OptionsImportAcademicUnitMapping) gateway.retrieve(ResourceType.OPTIONS_IMPORT_ACADEMIC_UNIT_MAPPING, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("OptionsImportAcademicUnitMapping");
+            RestGateway gateway = (RestGateway)OptionsImportAcademicUnitMapping.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<OptionsImportAcademicUnitMapping> optionsimportacademicunitmappingCollection = new ModelCollection<OptionsImportAcademicUnitMapping>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                optionsimportacademicunitmappingCollection.add((OptionsImportAcademicUnitMapping)model);
+            }
+
+            return optionsimportacademicunitmappingCollection;
         }
 
-        public OptionsImportResult getOptionsImportResult ()
+        public static OptionsImportAcademicUnitMapping retrieve(string id)
         {
-            return (OptionsImportResult) this.getProperty("optionsImportResult");
+            RestGateway gateway = (RestGateway)OptionsImportAcademicUnitMapping.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (OptionsImportAcademicUnitMapping)gateway.retrieve(ResourceType.OPTIONS_IMPORT_ACADEMIC_UNIT_MAPPING, id);
         }
 
-        public void setOptionsImportResult (OptionsImportResult optionsImportResult)
+        public OptionsImportResult getOptionsImportResult()
+        {
+            return (OptionsImportResult)this.getProperty("optionsImportResult");
+        }
+
+        public void setOptionsImportResult(OptionsImportResult optionsImportResult)
         {
             this.setProperty("optionsImportResult", optionsImportResult);
         }
 
-        public string getAcademicUnitName ()
+        public string getAcademicUnitName()
         {
             return this.getProperty("academicUnitName").ToString();
         }
 
-        public void setAcademicUnitName (string academicUnitName)
+        public void setAcademicUnitName(string academicUnitName)
         {
             this.setProperty("academicUnitName", academicUnitName);
         }
 
-        public string getMappingAction ()
+        public string getMappingAction()
         {
             return this.getProperty("mappingAction").ToString();
         }
 
-        public void setMappingAction (string mappingAction)
+        public void setMappingAction(string mappingAction)
         {
             this.setProperty("mappingAction", mappingAction);
         }
 
-        public AcademicUnit getMappedAcademicUnit ()
+        public AcademicUnit getMappedAcademicUnit()
         {
-            return (AcademicUnit) this.getProperty("mappedAcademicUnit");
+            return (AcademicUnit)this.getProperty("mappedAcademicUnit");
         }
 
-        public void setMappedAcademicUnit (AcademicUnit mappedAcademicUnit)
+        public void setMappedAcademicUnit(AcademicUnit mappedAcademicUnit)
         {
             this.setProperty("mappedAcademicUnit", mappedAcademicUnit);
         }

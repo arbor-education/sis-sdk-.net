@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string PARENT_LEARNING_MATERIAL_FOLDER = "parentLearningMaterialFolder";
         public const string NAME = "name";
 
-        public LearningMaterialFolder ()
+        public LearningMaterialFolder()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public LearningMaterialFolder (string resourceType = "LearningMaterialFolder", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<LearningMaterialFolder> query (SimpleQuery query = null)
+        public LearningMaterialFolder(string resourceType = "LearningMaterialFolder", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("LearningMaterialFolder");
-        	RestGateway gateway = (RestGateway) LearningMaterialFolder.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<LearningMaterialFolder> learningmaterialfolderCollection = new ModelCollection<LearningMaterialFolder> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    learningmaterialfolderCollection.add((LearningMaterialFolder) model);
-        	}
-        
-        	return learningmaterialfolderCollection;
+
         }
 
-        public static LearningMaterialFolder retrieve (string id)
+
+        public static ModelCollection<LearningMaterialFolder> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) LearningMaterialFolder.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (LearningMaterialFolder) gateway.retrieve(ResourceType.LEARNING_MATERIAL_FOLDER, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("LearningMaterialFolder");
+            RestGateway gateway = (RestGateway)LearningMaterialFolder.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<LearningMaterialFolder> learningmaterialfolderCollection = new ModelCollection<LearningMaterialFolder>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                learningmaterialfolderCollection.add((LearningMaterialFolder)model);
+            }
+
+            return learningmaterialfolderCollection;
         }
 
-        public LearningMaterialFolder getParentLearningMaterialFolder ()
+        public static LearningMaterialFolder retrieve(string id)
         {
-            return (LearningMaterialFolder) this.getProperty("parentLearningMaterialFolder");
+            RestGateway gateway = (RestGateway)LearningMaterialFolder.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (LearningMaterialFolder)gateway.retrieve(ResourceType.LEARNING_MATERIAL_FOLDER, id);
         }
 
-        public void setParentLearningMaterialFolder (LearningMaterialFolder parentLearningMaterialFolder)
+        public LearningMaterialFolder getParentLearningMaterialFolder()
+        {
+            return (LearningMaterialFolder)this.getProperty("parentLearningMaterialFolder");
+        }
+
+        public void setParentLearningMaterialFolder(LearningMaterialFolder parentLearningMaterialFolder)
         {
             this.setProperty("parentLearningMaterialFolder", parentLearningMaterialFolder);
         }
 
-        public string getName ()
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }

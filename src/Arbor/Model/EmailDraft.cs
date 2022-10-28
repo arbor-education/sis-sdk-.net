@@ -22,148 +22,149 @@ namespace Arbor.Model
         public const string SENDING_COMPLETED_DATETIME = "sendingCompletedDatetime";
         public const string CONTEXT = "context";
 
-        public EmailDraft ()
+        public EmailDraft()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public EmailDraft (string resourceType = "EmailDraft", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<EmailDraft> query (SimpleQuery query = null)
+        public EmailDraft(string resourceType = "EmailDraft", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("EmailDraft");
-        	RestGateway gateway = (RestGateway) EmailDraft.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<EmailDraft> emaildraftCollection = new ModelCollection<EmailDraft> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    emaildraftCollection.add((EmailDraft) model);
-        	}
-        
-        	return emaildraftCollection;
+
         }
 
-        public static EmailDraft retrieve (string id)
+
+        public static ModelCollection<EmailDraft> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) EmailDraft.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (EmailDraft) gateway.retrieve(ResourceType.EMAIL_DRAFT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("EmailDraft");
+            RestGateway gateway = (RestGateway)EmailDraft.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<EmailDraft> emaildraftCollection = new ModelCollection<EmailDraft>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                emaildraftCollection.add((EmailDraft)model);
+            }
+
+            return emaildraftCollection;
         }
 
-        public ModelBase getSender ()
+        public static EmailDraft retrieve(string id)
         {
-            return (ModelBase) this.getProperty("sender");
+            RestGateway gateway = (RestGateway)EmailDraft.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (EmailDraft)gateway.retrieve(ResourceType.EMAIL_DRAFT, id);
         }
 
-        public void setSender (ModelBase sender)
+        public ModelBase getSender()
+        {
+            return (ModelBase)this.getProperty("sender");
+        }
+
+        public void setSender(ModelBase sender)
         {
             this.setProperty("sender", sender);
         }
 
-        public string getSubject ()
+        public string getSubject()
         {
             return this.getProperty("subject").ToString();
         }
 
-        public void setSubject (string subject)
+        public void setSubject(string subject)
         {
             this.setProperty("subject", subject);
         }
 
-        public string getBody ()
+        public string getBody()
         {
             return this.getProperty("body").ToString();
         }
 
-        public void setBody (string body)
+        public void setBody(string body)
         {
             this.setProperty("body", body);
         }
 
-        public CustomReport getCustomReport ()
+        public CustomReport getCustomReport()
         {
-            return (CustomReport) this.getProperty("customReport");
+            return (CustomReport)this.getProperty("customReport");
         }
 
-        public void setCustomReport (CustomReport customReport)
+        public void setCustomReport(CustomReport customReport)
         {
             this.setProperty("customReport", customReport);
         }
 
-        public bool getCombineMessagesToSameRecipient ()
+        public bool getCombineMessagesToSameRecipient()
         {
             return Convert.ToBoolean(this.getProperty("combineMessagesToSameRecipient"));
         }
 
-        public void setCombineMessagesToSameRecipient (bool combineMessagesToSameRecipient)
+        public void setCombineMessagesToSameRecipient(bool combineMessagesToSameRecipient)
         {
             this.setProperty("combineMessagesToSameRecipient", combineMessagesToSameRecipient);
         }
 
-        public bool getCombineMessagesToSameHousehold ()
+        public bool getCombineMessagesToSameHousehold()
         {
             return Convert.ToBoolean(this.getProperty("combineMessagesToSameHousehold"));
         }
 
-        public void setCombineMessagesToSameHousehold (bool combineMessagesToSameHousehold)
+        public void setCombineMessagesToSameHousehold(bool combineMessagesToSameHousehold)
         {
             this.setProperty("combineMessagesToSameHousehold", combineMessagesToSameHousehold);
         }
 
-        public DateTime getSendingQueuedDatetime ()
+        public DateTime getSendingQueuedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("sendingQueuedDatetime"));
         }
 
-        public void setSendingQueuedDatetime (DateTime sendingQueuedDatetime)
+        public void setSendingQueuedDatetime(DateTime sendingQueuedDatetime)
         {
             this.setProperty("sendingQueuedDatetime", sendingQueuedDatetime);
         }
 
-        public DateTime getSendingStartedDatetime ()
+        public DateTime getSendingStartedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("sendingStartedDatetime"));
         }
 
-        public void setSendingStartedDatetime (DateTime sendingStartedDatetime)
+        public void setSendingStartedDatetime(DateTime sendingStartedDatetime)
         {
             this.setProperty("sendingStartedDatetime", sendingStartedDatetime);
         }
 
-        public DateTime getRecipientsResolvedDatetime ()
+        public DateTime getRecipientsResolvedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("recipientsResolvedDatetime"));
         }
 
-        public void setRecipientsResolvedDatetime (DateTime recipientsResolvedDatetime)
+        public void setRecipientsResolvedDatetime(DateTime recipientsResolvedDatetime)
         {
             this.setProperty("recipientsResolvedDatetime", recipientsResolvedDatetime);
         }
 
-        public DateTime getSendingCompletedDatetime ()
+        public DateTime getSendingCompletedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("sendingCompletedDatetime"));
         }
 
-        public void setSendingCompletedDatetime (DateTime sendingCompletedDatetime)
+        public void setSendingCompletedDatetime(DateTime sendingCompletedDatetime)
         {
             this.setProperty("sendingCompletedDatetime", sendingCompletedDatetime);
         }
 
-        public ModelBase getContext ()
+        public ModelBase getContext()
         {
-            return (ModelBase) this.getProperty("context");
+            return (ModelBase)this.getProperty("context");
         }
 
-        public void setContext (ModelBase context)
+        public void setContext(ModelBase context)
         {
             this.setProperty("context", context);
         }

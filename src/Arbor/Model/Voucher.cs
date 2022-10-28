@@ -16,88 +16,89 @@ namespace Arbor.Model
         public const string PAYMENT_AMOUNT = "paymentAmount";
         public const string CANCELLED_DATETIME = "cancelledDatetime";
 
-        public Voucher ()
+        public Voucher()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public Voucher (string resourceType = "Voucher", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<Voucher> query (SimpleQuery query = null)
+        public Voucher(string resourceType = "Voucher", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("Voucher");
-        	RestGateway gateway = (RestGateway) Voucher.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<Voucher> voucherCollection = new ModelCollection<Voucher> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    voucherCollection.add((Voucher) model);
-        	}
-        
-        	return voucherCollection;
+
         }
 
-        public static Voucher retrieve (string id)
+
+        public static ModelCollection<Voucher> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) Voucher.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (Voucher) gateway.retrieve(ResourceType.VOUCHER, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("Voucher");
+            RestGateway gateway = (RestGateway)Voucher.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<Voucher> voucherCollection = new ModelCollection<Voucher>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                voucherCollection.add((Voucher)model);
+            }
+
+            return voucherCollection;
         }
 
-        public BillPayer getBillPayer ()
+        public static Voucher retrieve(string id)
         {
-            return (BillPayer) this.getProperty("billPayer");
+            RestGateway gateway = (RestGateway)Voucher.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (Voucher)gateway.retrieve(ResourceType.VOUCHER, id);
         }
 
-        public void setBillPayer (BillPayer billPayer)
+        public BillPayer getBillPayer()
+        {
+            return (BillPayer)this.getProperty("billPayer");
+        }
+
+        public void setBillPayer(BillPayer billPayer)
         {
             this.setProperty("billPayer", billPayer);
         }
 
-        public DateTime getPaymentReceivedDate ()
+        public DateTime getPaymentReceivedDate()
         {
             return Convert.ToDateTime(this.getProperty("paymentReceivedDate"));
         }
 
-        public void setPaymentReceivedDate (DateTime paymentReceivedDate)
+        public void setPaymentReceivedDate(DateTime paymentReceivedDate)
         {
             this.setProperty("paymentReceivedDate", paymentReceivedDate);
         }
 
-        public string getNarrative ()
+        public string getNarrative()
         {
             return this.getProperty("narrative").ToString();
         }
 
-        public void setNarrative (string narrative)
+        public void setNarrative(string narrative)
         {
             this.setProperty("narrative", narrative);
         }
 
-        public string getPaymentAmount ()
+        public string getPaymentAmount()
         {
             return this.getProperty("paymentAmount").ToString();
         }
 
-        public void setPaymentAmount (string paymentAmount)
+        public void setPaymentAmount(string paymentAmount)
         {
             this.setProperty("paymentAmount", paymentAmount);
         }
 
-        public DateTime getCancelledDatetime ()
+        public DateTime getCancelledDatetime()
         {
             return Convert.ToDateTime(this.getProperty("cancelledDatetime"));
         }
 
-        public void setCancelledDatetime (DateTime cancelledDatetime)
+        public void setCancelledDatetime(DateTime cancelledDatetime)
         {
             this.setProperty("cancelledDatetime", cancelledDatetime);
         }

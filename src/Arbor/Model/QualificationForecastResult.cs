@@ -18,108 +18,109 @@ namespace Arbor.Model
         public const string CANDIDATE_REGISTRATION = "candidateRegistration";
         public const string INPUT_DATETIME = "inputDatetime";
 
-        public QualificationForecastResult ()
+        public QualificationForecastResult()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public QualificationForecastResult (string resourceType = "QualificationForecastResult", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<QualificationForecastResult> query (SimpleQuery query = null)
+        public QualificationForecastResult(string resourceType = "QualificationForecastResult", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("QualificationForecastResult");
-        	RestGateway gateway = (RestGateway) QualificationForecastResult.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<QualificationForecastResult> qualificationforecastresultCollection = new ModelCollection<QualificationForecastResult> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    qualificationforecastresultCollection.add((QualificationForecastResult) model);
-        	}
-        
-        	return qualificationforecastresultCollection;
+
         }
 
-        public static QualificationForecastResult retrieve (string id)
+
+        public static ModelCollection<QualificationForecastResult> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) QualificationForecastResult.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (QualificationForecastResult) gateway.retrieve(ResourceType.QUALIFICATION_FORECAST_RESULT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("QualificationForecastResult");
+            RestGateway gateway = (RestGateway)QualificationForecastResult.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<QualificationForecastResult> qualificationforecastresultCollection = new ModelCollection<QualificationForecastResult>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                qualificationforecastresultCollection.add((QualificationForecastResult)model);
+            }
+
+            return qualificationforecastresultCollection;
         }
 
-        public QualificationAspect getQualificationAspect ()
+        public static QualificationForecastResult retrieve(string id)
         {
-            return (QualificationAspect) this.getProperty("qualificationAspect");
+            RestGateway gateway = (RestGateway)QualificationForecastResult.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (QualificationForecastResult)gateway.retrieve(ResourceType.QUALIFICATION_FORECAST_RESULT, id);
         }
 
-        public void setQualificationAspect (QualificationAspect qualificationAspect)
+        public QualificationAspect getQualificationAspect()
+        {
+            return (QualificationAspect)this.getProperty("qualificationAspect");
+        }
+
+        public void setQualificationAspect(QualificationAspect qualificationAspect)
         {
             this.setProperty("qualificationAspect", qualificationAspect);
         }
 
-        public QualificationGrade getQualificationGrade ()
+        public QualificationGrade getQualificationGrade()
         {
-            return (QualificationGrade) this.getProperty("qualificationGrade");
+            return (QualificationGrade)this.getProperty("qualificationGrade");
         }
 
-        public void setQualificationGrade (QualificationGrade qualificationGrade)
+        public void setQualificationGrade(QualificationGrade qualificationGrade)
         {
             this.setProperty("qualificationGrade", qualificationGrade);
         }
 
-        public float getNumericValue ()
+        public float getNumericValue()
         {
-            return (float) this.getProperty("numericValue");
+            return (float)this.getProperty("numericValue");
         }
 
-        public void setNumericValue (float numericValue)
+        public void setNumericValue(float numericValue)
         {
             this.setProperty("numericValue", numericValue);
         }
 
-        public Student getStudent ()
+        public Student getStudent()
         {
-            return (Student) this.getProperty("student");
+            return (Student)this.getProperty("student");
         }
 
-        public void setStudent (Student student)
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public CandidateEntry getCandidateEntry ()
+        public CandidateEntry getCandidateEntry()
         {
-            return (CandidateEntry) this.getProperty("candidateEntry");
+            return (CandidateEntry)this.getProperty("candidateEntry");
         }
 
-        public void setCandidateEntry (CandidateEntry candidateEntry)
+        public void setCandidateEntry(CandidateEntry candidateEntry)
         {
             this.setProperty("candidateEntry", candidateEntry);
         }
 
-        public CandidateRegistration getCandidateRegistration ()
+        public CandidateRegistration getCandidateRegistration()
         {
-            return (CandidateRegistration) this.getProperty("candidateRegistration");
+            return (CandidateRegistration)this.getProperty("candidateRegistration");
         }
 
-        public void setCandidateRegistration (CandidateRegistration candidateRegistration)
+        public void setCandidateRegistration(CandidateRegistration candidateRegistration)
         {
             this.setProperty("candidateRegistration", candidateRegistration);
         }
 
-        public DateTime getInputDatetime ()
+        public DateTime getInputDatetime()
         {
             return Convert.ToDateTime(this.getProperty("inputDatetime"));
         }
 
-        public void setInputDatetime (DateTime inputDatetime)
+        public void setInputDatetime(DateTime inputDatetime)
         {
             this.setProperty("inputDatetime", inputDatetime);
         }

@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string CLUB = "club";
         public const string GROUP = "group";
 
-        public ClubVoucherEligibility ()
+        public ClubVoucherEligibility()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public ClubVoucherEligibility (string resourceType = "ClubVoucherEligibility", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<ClubVoucherEligibility> query (SimpleQuery query = null)
+        public ClubVoucherEligibility(string resourceType = "ClubVoucherEligibility", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("ClubVoucherEligibility");
-        	RestGateway gateway = (RestGateway) ClubVoucherEligibility.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<ClubVoucherEligibility> clubvouchereligibilityCollection = new ModelCollection<ClubVoucherEligibility> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    clubvouchereligibilityCollection.add((ClubVoucherEligibility) model);
-        	}
-        
-        	return clubvouchereligibilityCollection;
+
         }
 
-        public static ClubVoucherEligibility retrieve (string id)
+
+        public static ModelCollection<ClubVoucherEligibility> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) ClubVoucherEligibility.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (ClubVoucherEligibility) gateway.retrieve(ResourceType.CLUB_VOUCHER_ELIGIBILITY, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("ClubVoucherEligibility");
+            RestGateway gateway = (RestGateway)ClubVoucherEligibility.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<ClubVoucherEligibility> clubvouchereligibilityCollection = new ModelCollection<ClubVoucherEligibility>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                clubvouchereligibilityCollection.add((ClubVoucherEligibility)model);
+            }
+
+            return clubvouchereligibilityCollection;
         }
 
-        public Club getClub ()
+        public static ClubVoucherEligibility retrieve(string id)
         {
-            return (Club) this.getProperty("club");
+            RestGateway gateway = (RestGateway)ClubVoucherEligibility.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (ClubVoucherEligibility)gateway.retrieve(ResourceType.CLUB_VOUCHER_ELIGIBILITY, id);
         }
 
-        public void setClub (Club club)
+        public Club getClub()
+        {
+            return (Club)this.getProperty("club");
+        }
+
+        public void setClub(Club club)
         {
             this.setProperty("club", club);
         }
 
-        public ModelBase getGroup ()
+        public ModelBase getGroup()
         {
-            return (ModelBase) this.getProperty("group");
+            return (ModelBase)this.getProperty("group");
         }
 
-        public void setGroup (ModelBase group)
+        public void setGroup(ModelBase group)
         {
             this.setProperty("group", group);
         }

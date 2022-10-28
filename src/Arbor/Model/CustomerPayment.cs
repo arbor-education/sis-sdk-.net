@@ -26,188 +26,189 @@ namespace Arbor.Model
         public const string NARRATIVE = "narrative";
         public const string PAYMENT_CANCELLED_DATETIME = "paymentCancelledDatetime";
 
-        public CustomerPayment ()
+        public CustomerPayment()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public CustomerPayment (string resourceType = "CustomerPayment", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<CustomerPayment> query (SimpleQuery query = null)
+        public CustomerPayment(string resourceType = "CustomerPayment", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("CustomerPayment");
-        	RestGateway gateway = (RestGateway) CustomerPayment.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<CustomerPayment> customerpaymentCollection = new ModelCollection<CustomerPayment> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    customerpaymentCollection.add((CustomerPayment) model);
-        	}
-        
-        	return customerpaymentCollection;
+
         }
 
-        public static CustomerPayment retrieve (string id)
+
+        public static ModelCollection<CustomerPayment> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) CustomerPayment.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (CustomerPayment) gateway.retrieve(ResourceType.CUSTOMER_PAYMENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("CustomerPayment");
+            RestGateway gateway = (RestGateway)CustomerPayment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<CustomerPayment> customerpaymentCollection = new ModelCollection<CustomerPayment>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                customerpaymentCollection.add((CustomerPayment)model);
+            }
+
+            return customerpaymentCollection;
         }
 
-        public CustomerInvoice getCustomerInvoice ()
+        public static CustomerPayment retrieve(string id)
         {
-            return (CustomerInvoice) this.getProperty("customerInvoice");
+            RestGateway gateway = (RestGateway)CustomerPayment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (CustomerPayment)gateway.retrieve(ResourceType.CUSTOMER_PAYMENT, id);
         }
 
-        public void setCustomerInvoice (CustomerInvoice customerInvoice)
+        public CustomerInvoice getCustomerInvoice()
+        {
+            return (CustomerInvoice)this.getProperty("customerInvoice");
+        }
+
+        public void setCustomerInvoice(CustomerInvoice customerInvoice)
         {
             this.setProperty("customerInvoice", customerInvoice);
         }
 
-        public BillPayer getBillPayer ()
+        public BillPayer getBillPayer()
         {
-            return (BillPayer) this.getProperty("billPayer");
+            return (BillPayer)this.getProperty("billPayer");
         }
 
-        public void setBillPayer (BillPayer billPayer)
+        public void setBillPayer(BillPayer billPayer)
         {
             this.setProperty("billPayer", billPayer);
         }
 
-        public IncomingDirectDebitTransaction getIncomingDirectDebitTransaction ()
+        public IncomingDirectDebitTransaction getIncomingDirectDebitTransaction()
         {
-            return (IncomingDirectDebitTransaction) this.getProperty("incomingDirectDebitTransaction");
+            return (IncomingDirectDebitTransaction)this.getProperty("incomingDirectDebitTransaction");
         }
 
-        public void setIncomingDirectDebitTransaction (IncomingDirectDebitTransaction incomingDirectDebitTransaction)
+        public void setIncomingDirectDebitTransaction(IncomingDirectDebitTransaction incomingDirectDebitTransaction)
         {
             this.setProperty("incomingDirectDebitTransaction", incomingDirectDebitTransaction);
         }
 
-        public IncomingCardTransaction getIncomingCardTransaction ()
+        public IncomingCardTransaction getIncomingCardTransaction()
         {
-            return (IncomingCardTransaction) this.getProperty("incomingCardTransaction");
+            return (IncomingCardTransaction)this.getProperty("incomingCardTransaction");
         }
 
-        public void setIncomingCardTransaction (IncomingCardTransaction incomingCardTransaction)
+        public void setIncomingCardTransaction(IncomingCardTransaction incomingCardTransaction)
         {
             this.setProperty("incomingCardTransaction", incomingCardTransaction);
         }
 
-        public IncomingCashlessCateringSystemTransaction getIncomingCashlessCateringSystemTransaction ()
+        public IncomingCashlessCateringSystemTransaction getIncomingCashlessCateringSystemTransaction()
         {
-            return (IncomingCashlessCateringSystemTransaction) this.getProperty("incomingCashlessCateringSystemTransaction");
+            return (IncomingCashlessCateringSystemTransaction)this.getProperty("incomingCashlessCateringSystemTransaction");
         }
 
-        public void setIncomingCashlessCateringSystemTransaction (IncomingCashlessCateringSystemTransaction incomingCashlessCateringSystemTransaction)
+        public void setIncomingCashlessCateringSystemTransaction(IncomingCashlessCateringSystemTransaction incomingCashlessCateringSystemTransaction)
         {
             this.setProperty("incomingCashlessCateringSystemTransaction", incomingCashlessCateringSystemTransaction);
         }
 
-        public IncomingBankTransaction getIncomingBankTransaction ()
+        public IncomingBankTransaction getIncomingBankTransaction()
         {
-            return (IncomingBankTransaction) this.getProperty("incomingBankTransaction");
+            return (IncomingBankTransaction)this.getProperty("incomingBankTransaction");
         }
 
-        public void setIncomingBankTransaction (IncomingBankTransaction incomingBankTransaction)
+        public void setIncomingBankTransaction(IncomingBankTransaction incomingBankTransaction)
         {
             this.setProperty("incomingBankTransaction", incomingBankTransaction);
         }
 
-        public ReceivedCheque getReceivedCheque ()
+        public ReceivedCheque getReceivedCheque()
         {
-            return (ReceivedCheque) this.getProperty("receivedCheque");
+            return (ReceivedCheque)this.getProperty("receivedCheque");
         }
 
-        public void setReceivedCheque (ReceivedCheque receivedCheque)
+        public void setReceivedCheque(ReceivedCheque receivedCheque)
         {
             this.setProperty("receivedCheque", receivedCheque);
         }
 
-        public CashReceipt getCashReceipt ()
+        public CashReceipt getCashReceipt()
         {
-            return (CashReceipt) this.getProperty("cashReceipt");
+            return (CashReceipt)this.getProperty("cashReceipt");
         }
 
-        public void setCashReceipt (CashReceipt cashReceipt)
+        public void setCashReceipt(CashReceipt cashReceipt)
         {
             this.setProperty("cashReceipt", cashReceipt);
         }
 
-        public Voucher getVoucher ()
+        public Voucher getVoucher()
         {
-            return (Voucher) this.getProperty("voucher");
+            return (Voucher)this.getProperty("voucher");
         }
 
-        public void setVoucher (Voucher voucher)
+        public void setVoucher(Voucher voucher)
         {
             this.setProperty("voucher", voucher);
         }
 
-        public string getPaymentAmount ()
+        public string getPaymentAmount()
         {
             return this.getProperty("paymentAmount").ToString();
         }
 
-        public void setPaymentAmount (string paymentAmount)
+        public void setPaymentAmount(string paymentAmount)
         {
             this.setProperty("paymentAmount", paymentAmount);
         }
 
-        public DateTime getPaymentDatetime ()
+        public DateTime getPaymentDatetime()
         {
             return Convert.ToDateTime(this.getProperty("paymentDatetime"));
         }
 
-        public void setPaymentDatetime (DateTime paymentDatetime)
+        public void setPaymentDatetime(DateTime paymentDatetime)
         {
             this.setProperty("paymentDatetime", paymentDatetime);
         }
 
-        public DateTime getPaymentSucceededDatetime ()
+        public DateTime getPaymentSucceededDatetime()
         {
             return Convert.ToDateTime(this.getProperty("paymentSucceededDatetime"));
         }
 
-        public void setPaymentSucceededDatetime (DateTime paymentSucceededDatetime)
+        public void setPaymentSucceededDatetime(DateTime paymentSucceededDatetime)
         {
             this.setProperty("paymentSucceededDatetime", paymentSucceededDatetime);
         }
 
-        public DateTime getPaymentFailedDatetime ()
+        public DateTime getPaymentFailedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("paymentFailedDatetime"));
         }
 
-        public void setPaymentFailedDatetime (DateTime paymentFailedDatetime)
+        public void setPaymentFailedDatetime(DateTime paymentFailedDatetime)
         {
             this.setProperty("paymentFailedDatetime", paymentFailedDatetime);
         }
 
-        public string getNarrative ()
+        public string getNarrative()
         {
             return this.getProperty("narrative").ToString();
         }
 
-        public void setNarrative (string narrative)
+        public void setNarrative(string narrative)
         {
             this.setProperty("narrative", narrative);
         }
 
-        public DateTime getPaymentCancelledDatetime ()
+        public DateTime getPaymentCancelledDatetime()
         {
             return Convert.ToDateTime(this.getProperty("paymentCancelledDatetime"));
         }
 
-        public void setPaymentCancelledDatetime (DateTime paymentCancelledDatetime)
+        public void setPaymentCancelledDatetime(DateTime paymentCancelledDatetime)
         {
             this.setProperty("paymentCancelledDatetime", paymentCancelledDatetime);
         }

@@ -14,68 +14,69 @@ namespace Arbor.Model
         public const string SEN_EVENT_OUTCOME_TYPE = "senEventOutcomeType";
         public const string COMMENTS = "comments";
 
-        public SenEventOutcome ()
+        public SenEventOutcome()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public SenEventOutcome (string resourceType = "SenEventOutcome", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<SenEventOutcome> query (SimpleQuery query = null)
+        public SenEventOutcome(string resourceType = "SenEventOutcome", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("SenEventOutcome");
-        	RestGateway gateway = (RestGateway) SenEventOutcome.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<SenEventOutcome> seneventoutcomeCollection = new ModelCollection<SenEventOutcome> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    seneventoutcomeCollection.add((SenEventOutcome) model);
-        	}
-        
-        	return seneventoutcomeCollection;
+
         }
 
-        public static SenEventOutcome retrieve (string id)
+
+        public static ModelCollection<SenEventOutcome> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) SenEventOutcome.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (SenEventOutcome) gateway.retrieve(ResourceType.SEN_EVENT_OUTCOME, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("SenEventOutcome");
+            RestGateway gateway = (RestGateway)SenEventOutcome.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<SenEventOutcome> seneventoutcomeCollection = new ModelCollection<SenEventOutcome>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                seneventoutcomeCollection.add((SenEventOutcome)model);
+            }
+
+            return seneventoutcomeCollection;
         }
 
-        public SenEvent getSenEvent ()
+        public static SenEventOutcome retrieve(string id)
         {
-            return (SenEvent) this.getProperty("senEvent");
+            RestGateway gateway = (RestGateway)SenEventOutcome.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (SenEventOutcome)gateway.retrieve(ResourceType.SEN_EVENT_OUTCOME, id);
         }
 
-        public void setSenEvent (SenEvent senEvent)
+        public SenEvent getSenEvent()
+        {
+            return (SenEvent)this.getProperty("senEvent");
+        }
+
+        public void setSenEvent(SenEvent senEvent)
         {
             this.setProperty("senEvent", senEvent);
         }
 
-        public SenEventOutcomeType getSenEventOutcomeType ()
+        public SenEventOutcomeType getSenEventOutcomeType()
         {
-            return (SenEventOutcomeType) this.getProperty("senEventOutcomeType");
+            return (SenEventOutcomeType)this.getProperty("senEventOutcomeType");
         }
 
-        public void setSenEventOutcomeType (SenEventOutcomeType senEventOutcomeType)
+        public void setSenEventOutcomeType(SenEventOutcomeType senEventOutcomeType)
         {
             this.setProperty("senEventOutcomeType", senEventOutcomeType);
         }
 
-        public string getComments ()
+        public string getComments()
         {
             return this.getProperty("comments").ToString();
         }
 
-        public void setComments (string comments)
+        public void setComments(string comments)
         {
             this.setProperty("comments", comments);
         }

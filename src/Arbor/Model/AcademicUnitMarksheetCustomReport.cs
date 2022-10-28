@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string ACADEMIC_UNIT = "academicUnit";
         public const string CUSTOM_REPORT = "customReport";
 
-        public AcademicUnitMarksheetCustomReport ()
+        public AcademicUnitMarksheetCustomReport()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AcademicUnitMarksheetCustomReport (string resourceType = "AcademicUnitMarksheetCustomReport", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AcademicUnitMarksheetCustomReport> query (SimpleQuery query = null)
+        public AcademicUnitMarksheetCustomReport(string resourceType = "AcademicUnitMarksheetCustomReport", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AcademicUnitMarksheetCustomReport");
-        	RestGateway gateway = (RestGateway) AcademicUnitMarksheetCustomReport.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AcademicUnitMarksheetCustomReport> academicunitmarksheetcustomreportCollection = new ModelCollection<AcademicUnitMarksheetCustomReport> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    academicunitmarksheetcustomreportCollection.add((AcademicUnitMarksheetCustomReport) model);
-        	}
-        
-        	return academicunitmarksheetcustomreportCollection;
+
         }
 
-        public static AcademicUnitMarksheetCustomReport retrieve (string id)
+
+        public static ModelCollection<AcademicUnitMarksheetCustomReport> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AcademicUnitMarksheetCustomReport.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AcademicUnitMarksheetCustomReport) gateway.retrieve(ResourceType.ACADEMIC_UNIT_MARKSHEET_CUSTOM_REPORT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AcademicUnitMarksheetCustomReport");
+            RestGateway gateway = (RestGateway)AcademicUnitMarksheetCustomReport.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AcademicUnitMarksheetCustomReport> academicunitmarksheetcustomreportCollection = new ModelCollection<AcademicUnitMarksheetCustomReport>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                academicunitmarksheetcustomreportCollection.add((AcademicUnitMarksheetCustomReport)model);
+            }
+
+            return academicunitmarksheetcustomreportCollection;
         }
 
-        public AcademicUnit getAcademicUnit ()
+        public static AcademicUnitMarksheetCustomReport retrieve(string id)
         {
-            return (AcademicUnit) this.getProperty("academicUnit");
+            RestGateway gateway = (RestGateway)AcademicUnitMarksheetCustomReport.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AcademicUnitMarksheetCustomReport)gateway.retrieve(ResourceType.ACADEMIC_UNIT_MARKSHEET_CUSTOM_REPORT, id);
         }
 
-        public void setAcademicUnit (AcademicUnit academicUnit)
+        public AcademicUnit getAcademicUnit()
+        {
+            return (AcademicUnit)this.getProperty("academicUnit");
+        }
+
+        public void setAcademicUnit(AcademicUnit academicUnit)
         {
             this.setProperty("academicUnit", academicUnit);
         }
 
-        public CustomReport getCustomReport ()
+        public CustomReport getCustomReport()
         {
-            return (CustomReport) this.getProperty("customReport");
+            return (CustomReport)this.getProperty("customReport");
         }
 
-        public void setCustomReport (CustomReport customReport)
+        public void setCustomReport(CustomReport customReport)
         {
             this.setProperty("customReport", customReport);
         }

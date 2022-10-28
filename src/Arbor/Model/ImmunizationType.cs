@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string DATA_ORDER = "dataOrder";
         public const string IMMUNIZATION_TYPE_NAME = "immunizationTypeName";
 
-        public ImmunizationType ()
+        public ImmunizationType()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public ImmunizationType (string resourceType = "ImmunizationType", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<ImmunizationType> query (SimpleQuery query = null)
+        public ImmunizationType(string resourceType = "ImmunizationType", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("ImmunizationType");
-        	RestGateway gateway = (RestGateway) ImmunizationType.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<ImmunizationType> immunizationtypeCollection = new ModelCollection<ImmunizationType> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    immunizationtypeCollection.add((ImmunizationType) model);
-        	}
-        
-        	return immunizationtypeCollection;
+
         }
 
-        public static ImmunizationType retrieve (string id)
+
+        public static ModelCollection<ImmunizationType> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) ImmunizationType.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (ImmunizationType) gateway.retrieve(ResourceType.IMMUNIZATION_TYPE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("ImmunizationType");
+            RestGateway gateway = (RestGateway)ImmunizationType.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<ImmunizationType> immunizationtypeCollection = new ModelCollection<ImmunizationType>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                immunizationtypeCollection.add((ImmunizationType)model);
+            }
+
+            return immunizationtypeCollection;
         }
 
-        public string getCode ()
+        public static ImmunizationType retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)ImmunizationType.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (ImmunizationType)gateway.retrieve(ResourceType.IMMUNIZATION_TYPE, id);
+        }
+
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }
 
-        public string getImmunizationTypeName ()
+        public string getImmunizationTypeName()
         {
             return this.getProperty("immunizationTypeName").ToString();
         }
 
-        public void setImmunizationTypeName (string immunizationTypeName)
+        public void setImmunizationTypeName(string immunizationTypeName)
         {
             this.setProperty("immunizationTypeName", immunizationTypeName);
         }

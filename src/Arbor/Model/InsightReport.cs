@@ -18,108 +18,109 @@ namespace Arbor.Model
         public const string QUEUED_DATETIME = "queuedDatetime";
         public const string REPORT_FILE = "reportFile";
 
-        public InsightReport ()
+        public InsightReport()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public InsightReport (string resourceType = "InsightReport", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<InsightReport> query (SimpleQuery query = null)
+        public InsightReport(string resourceType = "InsightReport", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("InsightReport");
-        	RestGateway gateway = (RestGateway) InsightReport.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<InsightReport> insightreportCollection = new ModelCollection<InsightReport> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    insightreportCollection.add((InsightReport) model);
-        	}
-        
-        	return insightreportCollection;
+
         }
 
-        public static InsightReport retrieve (string id)
+
+        public static ModelCollection<InsightReport> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) InsightReport.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (InsightReport) gateway.retrieve(ResourceType.INSIGHT_REPORT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("InsightReport");
+            RestGateway gateway = (RestGateway)InsightReport.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<InsightReport> insightreportCollection = new ModelCollection<InsightReport>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                insightreportCollection.add((InsightReport)model);
+            }
+
+            return insightreportCollection;
         }
 
-        public string getReportType ()
+        public static InsightReport retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)InsightReport.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (InsightReport)gateway.retrieve(ResourceType.INSIGHT_REPORT, id);
+        }
+
+        public string getReportType()
         {
             return this.getProperty("reportType").ToString();
         }
 
-        public void setReportType (string reportType)
+        public void setReportType(string reportType)
         {
             this.setProperty("reportType", reportType);
         }
 
-        public string getSubReportType ()
+        public string getSubReportType()
         {
             return this.getProperty("subReportType").ToString();
         }
 
-        public void setSubReportType (string subReportType)
+        public void setSubReportType(string subReportType)
         {
             this.setProperty("subReportType", subReportType);
         }
 
-        public string getPeriod ()
+        public string getPeriod()
         {
             return this.getProperty("period").ToString();
         }
 
-        public void setPeriod (string period)
+        public void setPeriod(string period)
         {
             this.setProperty("period", period);
         }
 
-        public string getReportTitle ()
+        public string getReportTitle()
         {
             return this.getProperty("reportTitle").ToString();
         }
 
-        public void setReportTitle (string reportTitle)
+        public void setReportTitle(string reportTitle)
         {
             this.setProperty("reportTitle", reportTitle);
         }
 
-        public DateTime getGeneratedDatetime ()
+        public DateTime getGeneratedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("generatedDatetime"));
         }
 
-        public void setGeneratedDatetime (DateTime generatedDatetime)
+        public void setGeneratedDatetime(DateTime generatedDatetime)
         {
             this.setProperty("generatedDatetime", generatedDatetime);
         }
 
-        public DateTime getQueuedDatetime ()
+        public DateTime getQueuedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("queuedDatetime"));
         }
 
-        public void setQueuedDatetime (DateTime queuedDatetime)
+        public void setQueuedDatetime(DateTime queuedDatetime)
         {
             this.setProperty("queuedDatetime", queuedDatetime);
         }
 
-        public File getReportFile ()
+        public File getReportFile()
         {
-            return (File) this.getProperty("reportFile");
+            return (File)this.getProperty("reportFile");
         }
 
-        public void setReportFile (File reportFile)
+        public void setReportFile(File reportFile)
         {
             this.setProperty("reportFile", reportFile);
         }

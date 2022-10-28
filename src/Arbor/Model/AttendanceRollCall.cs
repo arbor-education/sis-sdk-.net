@@ -18,108 +18,109 @@ namespace Arbor.Model
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";
 
-        public AttendanceRollCall ()
+        public AttendanceRollCall()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AttendanceRollCall (string resourceType = "AttendanceRollCall", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AttendanceRollCall> query (SimpleQuery query = null)
+        public AttendanceRollCall(string resourceType = "AttendanceRollCall", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AttendanceRollCall");
-        	RestGateway gateway = (RestGateway) AttendanceRollCall.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AttendanceRollCall> attendancerollcallCollection = new ModelCollection<AttendanceRollCall> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    attendancerollcallCollection.add((AttendanceRollCall) model);
-        	}
-        
-        	return attendancerollcallCollection;
+
         }
 
-        public static AttendanceRollCall retrieve (string id)
+
+        public static ModelCollection<AttendanceRollCall> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AttendanceRollCall.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AttendanceRollCall) gateway.retrieve(ResourceType.ATTENDANCE_ROLL_CALL, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AttendanceRollCall");
+            RestGateway gateway = (RestGateway)AttendanceRollCall.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AttendanceRollCall> attendancerollcallCollection = new ModelCollection<AttendanceRollCall>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                attendancerollcallCollection.add((AttendanceRollCall)model);
+            }
+
+            return attendancerollcallCollection;
         }
 
-        public string getName ()
+        public static AttendanceRollCall retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)AttendanceRollCall.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AttendanceRollCall)gateway.retrieve(ResourceType.ATTENDANCE_ROLL_CALL, id);
+        }
+
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }
 
-        public string getShortName ()
+        public string getShortName()
         {
             return this.getProperty("shortName").ToString();
         }
 
-        public void setShortName (string shortName)
+        public void setShortName(string shortName)
         {
             this.setProperty("shortName", shortName);
         }
 
-        public string getAutoFillClass ()
+        public string getAutoFillClass()
         {
             return this.getProperty("autoFillClass").ToString();
         }
 
-        public void setAutoFillClass (string autoFillClass)
+        public void setAutoFillClass(string autoFillClass)
         {
             this.setProperty("autoFillClass", autoFillClass);
         }
 
-        public AttendanceRegisterType getAttendanceRegisterType ()
+        public AttendanceRegisterType getAttendanceRegisterType()
         {
-            return (AttendanceRegisterType) this.getProperty("attendanceRegisterType");
+            return (AttendanceRegisterType)this.getProperty("attendanceRegisterType");
         }
 
-        public void setAttendanceRegisterType (AttendanceRegisterType attendanceRegisterType)
+        public void setAttendanceRegisterType(AttendanceRegisterType attendanceRegisterType)
         {
             this.setProperty("attendanceRegisterType", attendanceRegisterType);
         }
 
-        public string getCode ()
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }

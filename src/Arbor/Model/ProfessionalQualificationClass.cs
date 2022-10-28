@@ -16,88 +16,89 @@ namespace Arbor.Model
         public const string PROFESSIONAL_QUALIFICATION_TYPE = "professionalQualificationType";
         public const string DESCRIPTION = "description";
 
-        public ProfessionalQualificationClass ()
+        public ProfessionalQualificationClass()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public ProfessionalQualificationClass (string resourceType = "ProfessionalQualificationClass", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<ProfessionalQualificationClass> query (SimpleQuery query = null)
+        public ProfessionalQualificationClass(string resourceType = "ProfessionalQualificationClass", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("ProfessionalQualificationClass");
-        	RestGateway gateway = (RestGateway) ProfessionalQualificationClass.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<ProfessionalQualificationClass> professionalqualificationclassCollection = new ModelCollection<ProfessionalQualificationClass> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    professionalqualificationclassCollection.add((ProfessionalQualificationClass) model);
-        	}
-        
-        	return professionalqualificationclassCollection;
+
         }
 
-        public static ProfessionalQualificationClass retrieve (string id)
+
+        public static ModelCollection<ProfessionalQualificationClass> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) ProfessionalQualificationClass.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (ProfessionalQualificationClass) gateway.retrieve(ResourceType.PROFESSIONAL_QUALIFICATION_CLASS, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("ProfessionalQualificationClass");
+            RestGateway gateway = (RestGateway)ProfessionalQualificationClass.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<ProfessionalQualificationClass> professionalqualificationclassCollection = new ModelCollection<ProfessionalQualificationClass>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                professionalqualificationclassCollection.add((ProfessionalQualificationClass)model);
+            }
+
+            return professionalqualificationclassCollection;
         }
 
-        public string getCode ()
+        public static ProfessionalQualificationClass retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)ProfessionalQualificationClass.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (ProfessionalQualificationClass)gateway.retrieve(ResourceType.PROFESSIONAL_QUALIFICATION_CLASS, id);
+        }
+
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }
 
-        public ProfessionalQualificationType getProfessionalQualificationType ()
+        public ProfessionalQualificationType getProfessionalQualificationType()
         {
-            return (ProfessionalQualificationType) this.getProperty("professionalQualificationType");
+            return (ProfessionalQualificationType)this.getProperty("professionalQualificationType");
         }
 
-        public void setProfessionalQualificationType (ProfessionalQualificationType professionalQualificationType)
+        public void setProfessionalQualificationType(ProfessionalQualificationType professionalQualificationType)
         {
             this.setProperty("professionalQualificationType", professionalQualificationType);
         }
 
-        public string getDescription ()
+        public string getDescription()
         {
             return this.getProperty("description").ToString();
         }
 
-        public void setDescription (string description)
+        public void setDescription(string description)
         {
             this.setProperty("description", description);
         }

@@ -17,98 +17,99 @@ namespace Arbor.Model
         public const string QUANTITY = "quantity";
         public const string STUDENT = "student";
 
-        public BasketItem ()
+        public BasketItem()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public BasketItem (string resourceType = "BasketItem", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<BasketItem> query (SimpleQuery query = null)
+        public BasketItem(string resourceType = "BasketItem", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("BasketItem");
-        	RestGateway gateway = (RestGateway) BasketItem.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<BasketItem> basketitemCollection = new ModelCollection<BasketItem> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    basketitemCollection.add((BasketItem) model);
-        	}
-        
-        	return basketitemCollection;
+
         }
 
-        public static BasketItem retrieve (string id)
+
+        public static ModelCollection<BasketItem> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) BasketItem.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (BasketItem) gateway.retrieve(ResourceType.BASKET_ITEM, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("BasketItem");
+            RestGateway gateway = (RestGateway)BasketItem.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<BasketItem> basketitemCollection = new ModelCollection<BasketItem>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                basketitemCollection.add((BasketItem)model);
+            }
+
+            return basketitemCollection;
         }
 
-        public Basket getBasket ()
+        public static BasketItem retrieve(string id)
         {
-            return (Basket) this.getProperty("basket");
+            RestGateway gateway = (RestGateway)BasketItem.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (BasketItem)gateway.retrieve(ResourceType.BASKET_ITEM, id);
         }
 
-        public void setBasket (Basket basket)
+        public Basket getBasket()
+        {
+            return (Basket)this.getProperty("basket");
+        }
+
+        public void setBasket(Basket basket)
         {
             this.setProperty("basket", basket);
         }
 
-        public string getPaymentAmount ()
+        public string getPaymentAmount()
         {
             return this.getProperty("paymentAmount").ToString();
         }
 
-        public void setPaymentAmount (string paymentAmount)
+        public void setPaymentAmount(string paymentAmount)
         {
             this.setProperty("paymentAmount", paymentAmount);
         }
 
-        public DateTime getAddedDatetime ()
+        public DateTime getAddedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("addedDatetime"));
         }
 
-        public void setAddedDatetime (DateTime addedDatetime)
+        public void setAddedDatetime(DateTime addedDatetime)
         {
             this.setProperty("addedDatetime", addedDatetime);
         }
 
-        public ModelBase getPayingFor ()
+        public ModelBase getPayingFor()
         {
-            return (ModelBase) this.getProperty("payingFor");
+            return (ModelBase)this.getProperty("payingFor");
         }
 
-        public void setPayingFor (ModelBase payingFor)
+        public void setPayingFor(ModelBase payingFor)
         {
             this.setProperty("payingFor", payingFor);
         }
 
-        public int getQuantity ()
+        public int getQuantity()
         {
             return Convert.ToInt32(this.getProperty("quantity"));
         }
 
-        public void setQuantity (int quantity)
+        public void setQuantity(int quantity)
         {
             this.setProperty("quantity", quantity);
         }
 
-        public Student getStudent ()
+        public Student getStudent()
         {
-            return (Student) this.getProperty("student");
+            return (Student)this.getProperty("student");
         }
 
-        public void setStudent (Student student)
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }

@@ -14,68 +14,69 @@ namespace Arbor.Model
         public const string INTAKE_SEASON = "intakeSeason";
         public const string EXPECTED_ADMISSION_DATE = "expectedAdmissionDate";
 
-        public IntakeSeasonGroup ()
+        public IntakeSeasonGroup()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public IntakeSeasonGroup (string resourceType = "IntakeSeasonGroup", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<IntakeSeasonGroup> query (SimpleQuery query = null)
+        public IntakeSeasonGroup(string resourceType = "IntakeSeasonGroup", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("IntakeSeasonGroup");
-        	RestGateway gateway = (RestGateway) IntakeSeasonGroup.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<IntakeSeasonGroup> intakeseasongroupCollection = new ModelCollection<IntakeSeasonGroup> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    intakeseasongroupCollection.add((IntakeSeasonGroup) model);
-        	}
-        
-        	return intakeseasongroupCollection;
+
         }
 
-        public static IntakeSeasonGroup retrieve (string id)
+
+        public static ModelCollection<IntakeSeasonGroup> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) IntakeSeasonGroup.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (IntakeSeasonGroup) gateway.retrieve(ResourceType.INTAKE_SEASON_GROUP, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("IntakeSeasonGroup");
+            RestGateway gateway = (RestGateway)IntakeSeasonGroup.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<IntakeSeasonGroup> intakeseasongroupCollection = new ModelCollection<IntakeSeasonGroup>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                intakeseasongroupCollection.add((IntakeSeasonGroup)model);
+            }
+
+            return intakeseasongroupCollection;
         }
 
-        public string getGroupName ()
+        public static IntakeSeasonGroup retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)IntakeSeasonGroup.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (IntakeSeasonGroup)gateway.retrieve(ResourceType.INTAKE_SEASON_GROUP, id);
+        }
+
+        public string getGroupName()
         {
             return this.getProperty("groupName").ToString();
         }
 
-        public void setGroupName (string groupName)
+        public void setGroupName(string groupName)
         {
             this.setProperty("groupName", groupName);
         }
 
-        public IntakeSeason getIntakeSeason ()
+        public IntakeSeason getIntakeSeason()
         {
-            return (IntakeSeason) this.getProperty("intakeSeason");
+            return (IntakeSeason)this.getProperty("intakeSeason");
         }
 
-        public void setIntakeSeason (IntakeSeason intakeSeason)
+        public void setIntakeSeason(IntakeSeason intakeSeason)
         {
             this.setProperty("intakeSeason", intakeSeason);
         }
 
-        public DateTime getExpectedAdmissionDate ()
+        public DateTime getExpectedAdmissionDate()
         {
             return Convert.ToDateTime(this.getProperty("expectedAdmissionDate"));
         }
 
-        public void setExpectedAdmissionDate (DateTime expectedAdmissionDate)
+        public void setExpectedAdmissionDate(DateTime expectedAdmissionDate)
         {
             this.setProperty("expectedAdmissionDate", expectedAdmissionDate);
         }

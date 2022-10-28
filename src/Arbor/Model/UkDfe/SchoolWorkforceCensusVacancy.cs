@@ -18,108 +18,109 @@ namespace Arbor.Model.UkDfe
         public const string VACANCY_TEMPORARILY_FILLED = "vacancyTemporarilyFilled";
         public const string VACANCY_ADVERTISED = "vacancyAdvertised";
 
-        public SchoolWorkforceCensusVacancy ()
+        public SchoolWorkforceCensusVacancy()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public SchoolWorkforceCensusVacancy (string resourceType = "SchoolWorkforceCensusVacancy", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<SchoolWorkforceCensusVacancy> query (SimpleQuery query = null)
+        public SchoolWorkforceCensusVacancy(string resourceType = "SchoolWorkforceCensusVacancy", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("UkDfe_SchoolWorkforceCensusVacancy");
-        	RestGateway gateway = (RestGateway) SchoolWorkforceCensusVacancy.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<SchoolWorkforceCensusVacancy> schoolworkforcecensusvacancyCollection = new ModelCollection<SchoolWorkforceCensusVacancy> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    schoolworkforcecensusvacancyCollection.add((SchoolWorkforceCensusVacancy) model);
-        	}
-        
-        	return schoolworkforcecensusvacancyCollection;
+
         }
 
-        public static SchoolWorkforceCensusVacancy retrieve (string id)
+
+        public static ModelCollection<SchoolWorkforceCensusVacancy> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) SchoolWorkforceCensusVacancy.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (SchoolWorkforceCensusVacancy) gateway.retrieve(ResourceType.UK_DFE_SCHOOL_WORKFORCE_CENSUS_VACANCY, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("UkDfe_SchoolWorkforceCensusVacancy");
+            RestGateway gateway = (RestGateway)SchoolWorkforceCensusVacancy.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<SchoolWorkforceCensusVacancy> schoolworkforcecensusvacancyCollection = new ModelCollection<SchoolWorkforceCensusVacancy>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                schoolworkforcecensusvacancyCollection.add((SchoolWorkforceCensusVacancy)model);
+            }
+
+            return schoolworkforcecensusvacancyCollection;
         }
 
-        public SchoolWorkforceCensus getSchoolWorkforceCensus ()
+        public static SchoolWorkforceCensusVacancy retrieve(string id)
         {
-            return (SchoolWorkforceCensus) this.getProperty("schoolWorkforceCensus");
+            RestGateway gateway = (RestGateway)SchoolWorkforceCensusVacancy.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (SchoolWorkforceCensusVacancy)gateway.retrieve(ResourceType.UK_DFE_SCHOOL_WORKFORCE_CENSUS_VACANCY, id);
         }
 
-        public void setSchoolWorkforceCensus (SchoolWorkforceCensus schoolWorkforceCensus)
+        public SchoolWorkforceCensus getSchoolWorkforceCensus()
+        {
+            return (SchoolWorkforceCensus)this.getProperty("schoolWorkforceCensus");
+        }
+
+        public void setSchoolWorkforceCensus(SchoolWorkforceCensus schoolWorkforceCensus)
         {
             this.setProperty("schoolWorkforceCensus", schoolWorkforceCensus);
         }
 
-        public EducationalInstitution getEducationalInstitution ()
+        public EducationalInstitution getEducationalInstitution()
         {
-            return (EducationalInstitution) this.getProperty("educationalInstitution");
+            return (EducationalInstitution)this.getProperty("educationalInstitution");
         }
 
-        public void setEducationalInstitution (EducationalInstitution educationalInstitution)
+        public void setEducationalInstitution(EducationalInstitution educationalInstitution)
         {
             this.setProperty("educationalInstitution", educationalInstitution);
         }
 
-        public SchoolWorkforceVacancyPost getSchoolWorkforceVacancyPost ()
+        public SchoolWorkforceVacancyPost getSchoolWorkforceVacancyPost()
         {
-            return (SchoolWorkforceVacancyPost) this.getProperty("schoolWorkforceVacancyPost");
+            return (SchoolWorkforceVacancyPost)this.getProperty("schoolWorkforceVacancyPost");
         }
 
-        public void setSchoolWorkforceVacancyPost (SchoolWorkforceVacancyPost schoolWorkforceVacancyPost)
+        public void setSchoolWorkforceVacancyPost(SchoolWorkforceVacancyPost schoolWorkforceVacancyPost)
         {
             this.setProperty("schoolWorkforceVacancyPost", schoolWorkforceVacancyPost);
         }
 
-        public Subject getSubject ()
+        public Subject getSubject()
         {
-            return (Subject) this.getProperty("subject");
+            return (Subject)this.getProperty("subject");
         }
 
-        public void setSubject (Subject subject)
+        public void setSubject(Subject subject)
         {
             this.setProperty("subject", subject);
         }
 
-        public string getTenure ()
+        public string getTenure()
         {
             return this.getProperty("tenure").ToString();
         }
 
-        public void setTenure (string tenure)
+        public void setTenure(string tenure)
         {
             this.setProperty("tenure", tenure);
         }
 
-        public string getVacancyTemporarilyFilled ()
+        public string getVacancyTemporarilyFilled()
         {
             return this.getProperty("vacancyTemporarilyFilled").ToString();
         }
 
-        public void setVacancyTemporarilyFilled (string vacancyTemporarilyFilled)
+        public void setVacancyTemporarilyFilled(string vacancyTemporarilyFilled)
         {
             this.setProperty("vacancyTemporarilyFilled", vacancyTemporarilyFilled);
         }
 
-        public string getVacancyAdvertised ()
+        public string getVacancyAdvertised()
         {
             return this.getProperty("vacancyAdvertised").ToString();
         }
 
-        public void setVacancyAdvertised (string vacancyAdvertised)
+        public void setVacancyAdvertised(string vacancyAdvertised)
         {
             this.setProperty("vacancyAdvertised", vacancyAdvertised);
         }

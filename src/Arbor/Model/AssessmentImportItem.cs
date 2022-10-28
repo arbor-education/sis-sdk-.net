@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string DATA_VALUE = "dataValue";
         public const string IMPORTED_DATETIME = "importedDatetime";
 
-        public AssessmentImportItem ()
+        public AssessmentImportItem()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AssessmentImportItem (string resourceType = "AssessmentImportItem", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AssessmentImportItem> query (SimpleQuery query = null)
+        public AssessmentImportItem(string resourceType = "AssessmentImportItem", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AssessmentImportItem");
-        	RestGateway gateway = (RestGateway) AssessmentImportItem.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AssessmentImportItem> assessmentimportitemCollection = new ModelCollection<AssessmentImportItem> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    assessmentimportitemCollection.add((AssessmentImportItem) model);
-        	}
-        
-        	return assessmentimportitemCollection;
+
         }
 
-        public static AssessmentImportItem retrieve (string id)
+
+        public static ModelCollection<AssessmentImportItem> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AssessmentImportItem.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AssessmentImportItem) gateway.retrieve(ResourceType.ASSESSMENT_IMPORT_ITEM, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AssessmentImportItem");
+            RestGateway gateway = (RestGateway)AssessmentImportItem.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AssessmentImportItem> assessmentimportitemCollection = new ModelCollection<AssessmentImportItem>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                assessmentimportitemCollection.add((AssessmentImportItem)model);
+            }
+
+            return assessmentimportitemCollection;
         }
 
-        public AssessmentImportColumn getAssessmentImportColumn ()
+        public static AssessmentImportItem retrieve(string id)
         {
-            return (AssessmentImportColumn) this.getProperty("assessmentImportColumn");
+            RestGateway gateway = (RestGateway)AssessmentImportItem.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AssessmentImportItem)gateway.retrieve(ResourceType.ASSESSMENT_IMPORT_ITEM, id);
         }
 
-        public void setAssessmentImportColumn (AssessmentImportColumn assessmentImportColumn)
+        public AssessmentImportColumn getAssessmentImportColumn()
+        {
+            return (AssessmentImportColumn)this.getProperty("assessmentImportColumn");
+        }
+
+        public void setAssessmentImportColumn(AssessmentImportColumn assessmentImportColumn)
         {
             this.setProperty("assessmentImportColumn", assessmentImportColumn);
         }
 
-        public AssessmentImportRow getAssessmentImportRow ()
+        public AssessmentImportRow getAssessmentImportRow()
         {
-            return (AssessmentImportRow) this.getProperty("assessmentImportRow");
+            return (AssessmentImportRow)this.getProperty("assessmentImportRow");
         }
 
-        public void setAssessmentImportRow (AssessmentImportRow assessmentImportRow)
+        public void setAssessmentImportRow(AssessmentImportRow assessmentImportRow)
         {
             this.setProperty("assessmentImportRow", assessmentImportRow);
         }
 
-        public string getDataValue ()
+        public string getDataValue()
         {
             return this.getProperty("dataValue").ToString();
         }
 
-        public void setDataValue (string dataValue)
+        public void setDataValue(string dataValue)
         {
             this.setProperty("dataValue", dataValue);
         }
 
-        public DateTime getImportedDatetime ()
+        public DateTime getImportedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("importedDatetime"));
         }
 
-        public void setImportedDatetime (DateTime importedDatetime)
+        public void setImportedDatetime(DateTime importedDatetime)
         {
             this.setProperty("importedDatetime", importedDatetime);
         }

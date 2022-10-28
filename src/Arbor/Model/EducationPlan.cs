@@ -18,108 +18,109 @@ namespace Arbor.Model
         public const string SCHEDULED_REVIEW_DATE = "scheduledReviewDate";
         public const string END_DATE = "endDate";
 
-        public EducationPlan ()
+        public EducationPlan()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public EducationPlan (string resourceType = "EducationPlan", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<EducationPlan> query (SimpleQuery query = null)
+        public EducationPlan(string resourceType = "EducationPlan", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("EducationPlan");
-        	RestGateway gateway = (RestGateway) EducationPlan.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<EducationPlan> educationplanCollection = new ModelCollection<EducationPlan> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    educationplanCollection.add((EducationPlan) model);
-        	}
-        
-        	return educationplanCollection;
+
         }
 
-        public static EducationPlan retrieve (string id)
+
+        public static ModelCollection<EducationPlan> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) EducationPlan.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (EducationPlan) gateway.retrieve(ResourceType.EDUCATION_PLAN, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("EducationPlan");
+            RestGateway gateway = (RestGateway)EducationPlan.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<EducationPlan> educationplanCollection = new ModelCollection<EducationPlan>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                educationplanCollection.add((EducationPlan)model);
+            }
+
+            return educationplanCollection;
         }
 
-        public Student getStudent ()
+        public static EducationPlan retrieve(string id)
         {
-            return (Student) this.getProperty("student");
+            RestGateway gateway = (RestGateway)EducationPlan.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (EducationPlan)gateway.retrieve(ResourceType.EDUCATION_PLAN, id);
         }
 
-        public void setStudent (Student student)
+        public Student getStudent()
+        {
+            return (Student)this.getProperty("student");
+        }
+
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public string getEducationPlanType ()
+        public string getEducationPlanType()
         {
             return this.getProperty("educationPlanType").ToString();
         }
 
-        public void setEducationPlanType (string educationPlanType)
+        public void setEducationPlanType(string educationPlanType)
         {
             this.setProperty("educationPlanType", educationPlanType);
         }
 
-        public string getSummary ()
+        public string getSummary()
         {
             return this.getProperty("summary").ToString();
         }
 
-        public void setSummary (string summary)
+        public void setSummary(string summary)
         {
             this.setProperty("summary", summary);
         }
 
-        public string getContent ()
+        public string getContent()
         {
             return this.getProperty("content").ToString();
         }
 
-        public void setContent (string content)
+        public void setContent(string content)
         {
             this.setProperty("content", content);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDate()
         {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getScheduledReviewDate ()
+        public DateTime getScheduledReviewDate()
         {
             return Convert.ToDateTime(this.getProperty("scheduledReviewDate"));
         }
 
-        public void setScheduledReviewDate (DateTime scheduledReviewDate)
+        public void setScheduledReviewDate(DateTime scheduledReviewDate)
         {
             this.setProperty("scheduledReviewDate", scheduledReviewDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }

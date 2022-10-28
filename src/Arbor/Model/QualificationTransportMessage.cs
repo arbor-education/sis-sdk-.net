@@ -19,118 +19,119 @@ namespace Arbor.Model
         public const string DATETIME = "datetime";
         public const string RAW_CONTENT = "rawContent";
 
-        public QualificationTransportMessage ()
+        public QualificationTransportMessage()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public QualificationTransportMessage (string resourceType = "QualificationTransportMessage", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<QualificationTransportMessage> query (SimpleQuery query = null)
+        public QualificationTransportMessage(string resourceType = "QualificationTransportMessage", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("QualificationTransportMessage");
-        	RestGateway gateway = (RestGateway) QualificationTransportMessage.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<QualificationTransportMessage> qualificationtransportmessageCollection = new ModelCollection<QualificationTransportMessage> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    qualificationtransportmessageCollection.add((QualificationTransportMessage) model);
-        	}
-        
-        	return qualificationtransportmessageCollection;
+
         }
 
-        public static QualificationTransportMessage retrieve (string id)
+
+        public static ModelCollection<QualificationTransportMessage> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) QualificationTransportMessage.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (QualificationTransportMessage) gateway.retrieve(ResourceType.QUALIFICATION_TRANSPORT_MESSAGE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("QualificationTransportMessage");
+            RestGateway gateway = (RestGateway)QualificationTransportMessage.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<QualificationTransportMessage> qualificationtransportmessageCollection = new ModelCollection<QualificationTransportMessage>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                qualificationtransportmessageCollection.add((QualificationTransportMessage)model);
+            }
+
+            return qualificationtransportmessageCollection;
         }
 
-        public QualificationTransportCertificate getQualificationTransportCertificate ()
+        public static QualificationTransportMessage retrieve(string id)
         {
-            return (QualificationTransportCertificate) this.getProperty("qualificationTransportCertificate");
+            RestGateway gateway = (RestGateway)QualificationTransportMessage.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (QualificationTransportMessage)gateway.retrieve(ResourceType.QUALIFICATION_TRANSPORT_MESSAGE, id);
         }
 
-        public void setQualificationTransportCertificate (QualificationTransportCertificate qualificationTransportCertificate)
+        public QualificationTransportCertificate getQualificationTransportCertificate()
+        {
+            return (QualificationTransportCertificate)this.getProperty("qualificationTransportCertificate");
+        }
+
+        public void setQualificationTransportCertificate(QualificationTransportCertificate qualificationTransportCertificate)
         {
             this.setProperty("qualificationTransportCertificate", qualificationTransportCertificate);
         }
 
-        public Content getContent ()
+        public Content getContent()
         {
-            return (Content) this.getProperty("content");
+            return (Content)this.getProperty("content");
         }
 
-        public void setContent (Content content)
+        public void setContent(Content content)
         {
             this.setProperty("content", content);
         }
 
-        public string getType ()
+        public string getType()
         {
             return this.getProperty("type").ToString();
         }
 
-        public void setType (string type)
+        public void setType(string type)
         {
             this.setProperty("type", type);
         }
 
-        public string getMessageId ()
+        public string getMessageId()
         {
             return this.getProperty("messageId").ToString();
         }
 
-        public void setMessageId (string messageId)
+        public void setMessageId(string messageId)
         {
             this.setProperty("messageId", messageId);
         }
 
-        public string getDirection ()
+        public string getDirection()
         {
             return this.getProperty("direction").ToString();
         }
 
-        public void setDirection (string direction)
+        public void setDirection(string direction)
         {
             this.setProperty("direction", direction);
         }
 
-        public string getRefToMessageId ()
+        public string getRefToMessageId()
         {
             return this.getProperty("refToMessageId").ToString();
         }
 
-        public void setRefToMessageId (string refToMessageId)
+        public void setRefToMessageId(string refToMessageId)
         {
             this.setProperty("refToMessageId", refToMessageId);
         }
 
-        public DateTime getDatetime ()
+        public DateTime getDatetime()
         {
             return Convert.ToDateTime(this.getProperty("datetime"));
         }
 
-        public void setDatetime (DateTime datetime)
+        public void setDatetime(DateTime datetime)
         {
             this.setProperty("datetime", datetime);
         }
 
-        public string getRawContent ()
+        public string getRawContent()
         {
             return this.getProperty("rawContent").ToString();
         }
 
-        public void setRawContent (string rawContent)
+        public void setRawContent(string rawContent)
         {
             this.setProperty("rawContent", rawContent);
         }

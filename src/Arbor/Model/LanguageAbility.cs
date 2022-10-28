@@ -19,118 +19,119 @@ namespace Arbor.Model
         public const string LANGUAGE_PROFICIENCY = "languageProficiency";
         public const string NOTES = "notes";
 
-        public LanguageAbility ()
+        public LanguageAbility()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public LanguageAbility (string resourceType = "LanguageAbility", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<LanguageAbility> query (SimpleQuery query = null)
+        public LanguageAbility(string resourceType = "LanguageAbility", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("LanguageAbility");
-        	RestGateway gateway = (RestGateway) LanguageAbility.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<LanguageAbility> languageabilityCollection = new ModelCollection<LanguageAbility> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    languageabilityCollection.add((LanguageAbility) model);
-        	}
-        
-        	return languageabilityCollection;
+
         }
 
-        public static LanguageAbility retrieve (string id)
+
+        public static ModelCollection<LanguageAbility> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) LanguageAbility.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (LanguageAbility) gateway.retrieve(ResourceType.LANGUAGE_ABILITY, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("LanguageAbility");
+            RestGateway gateway = (RestGateway)LanguageAbility.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<LanguageAbility> languageabilityCollection = new ModelCollection<LanguageAbility>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                languageabilityCollection.add((LanguageAbility)model);
+            }
+
+            return languageabilityCollection;
         }
 
-        public ModelBase getPerson ()
+        public static LanguageAbility retrieve(string id)
         {
-            return (ModelBase) this.getProperty("person");
+            RestGateway gateway = (RestGateway)LanguageAbility.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (LanguageAbility)gateway.retrieve(ResourceType.LANGUAGE_ABILITY, id);
         }
 
-        public void setPerson (ModelBase person)
+        public ModelBase getPerson()
+        {
+            return (ModelBase)this.getProperty("person");
+        }
+
+        public void setPerson(ModelBase person)
         {
             this.setProperty("person", person);
         }
 
-        public Language getLanguage ()
+        public Language getLanguage()
         {
-            return (Language) this.getProperty("language");
+            return (Language)this.getProperty("language");
         }
 
-        public void setLanguage (Language language)
+        public void setLanguage(Language language)
         {
             this.setProperty("language", language);
         }
 
-        public bool getIsNativeLanguage ()
+        public bool getIsNativeLanguage()
         {
             return Convert.ToBoolean(this.getProperty("isNativeLanguage"));
         }
 
-        public void setIsNativeLanguage (bool isNativeLanguage)
+        public void setIsNativeLanguage(bool isNativeLanguage)
         {
             this.setProperty("isNativeLanguage", isNativeLanguage);
         }
 
-        public bool getSpeaksLanguage ()
+        public bool getSpeaksLanguage()
         {
             return Convert.ToBoolean(this.getProperty("speaksLanguage"));
         }
 
-        public void setSpeaksLanguage (bool speaksLanguage)
+        public void setSpeaksLanguage(bool speaksLanguage)
         {
             this.setProperty("speaksLanguage", speaksLanguage);
         }
 
-        public bool getUnderstandsLanguage ()
+        public bool getUnderstandsLanguage()
         {
             return Convert.ToBoolean(this.getProperty("understandsLanguage"));
         }
 
-        public void setUnderstandsLanguage (bool understandsLanguage)
+        public void setUnderstandsLanguage(bool understandsLanguage)
         {
             this.setProperty("understandsLanguage", understandsLanguage);
         }
 
-        public bool getIsSpokenAtHome ()
+        public bool getIsSpokenAtHome()
         {
             return Convert.ToBoolean(this.getProperty("isSpokenAtHome"));
         }
 
-        public void setIsSpokenAtHome (bool isSpokenAtHome)
+        public void setIsSpokenAtHome(bool isSpokenAtHome)
         {
             this.setProperty("isSpokenAtHome", isSpokenAtHome);
         }
 
-        public string getLanguageProficiency ()
+        public string getLanguageProficiency()
         {
             return this.getProperty("languageProficiency").ToString();
         }
 
-        public void setLanguageProficiency (string languageProficiency)
+        public void setLanguageProficiency(string languageProficiency)
         {
             this.setProperty("languageProficiency", languageProficiency);
         }
 
-        public string getNotes ()
+        public string getNotes()
         {
             return this.getProperty("notes").ToString();
         }
 
-        public void setNotes (string notes)
+        public void setNotes(string notes)
         {
             this.setProperty("notes", notes);
         }

@@ -19,118 +19,119 @@ namespace Arbor.Model
         public const string VALIDATION_ERROR = "validationError";
         public const string SOURCE = "source";
 
-        public AttendanceRollCallRecord ()
+        public AttendanceRollCallRecord()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AttendanceRollCallRecord (string resourceType = "AttendanceRollCallRecord", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AttendanceRollCallRecord> query (SimpleQuery query = null)
+        public AttendanceRollCallRecord(string resourceType = "AttendanceRollCallRecord", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AttendanceRollCallRecord");
-        	RestGateway gateway = (RestGateway) AttendanceRollCallRecord.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AttendanceRollCallRecord> attendancerollcallrecordCollection = new ModelCollection<AttendanceRollCallRecord> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    attendancerollcallrecordCollection.add((AttendanceRollCallRecord) model);
-        	}
-        
-        	return attendancerollcallrecordCollection;
+
         }
 
-        public static AttendanceRollCallRecord retrieve (string id)
+
+        public static ModelCollection<AttendanceRollCallRecord> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AttendanceRollCallRecord.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AttendanceRollCallRecord) gateway.retrieve(ResourceType.ATTENDANCE_ROLL_CALL_RECORD, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AttendanceRollCallRecord");
+            RestGateway gateway = (RestGateway)AttendanceRollCallRecord.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AttendanceRollCallRecord> attendancerollcallrecordCollection = new ModelCollection<AttendanceRollCallRecord>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                attendancerollcallrecordCollection.add((AttendanceRollCallRecord)model);
+            }
+
+            return attendancerollcallrecordCollection;
         }
 
-        public AttendanceRollCall getAttendanceRollCall ()
+        public static AttendanceRollCallRecord retrieve(string id)
         {
-            return (AttendanceRollCall) this.getProperty("attendanceRollCall");
+            RestGateway gateway = (RestGateway)AttendanceRollCallRecord.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AttendanceRollCallRecord)gateway.retrieve(ResourceType.ATTENDANCE_ROLL_CALL_RECORD, id);
         }
 
-        public void setAttendanceRollCall (AttendanceRollCall attendanceRollCall)
+        public AttendanceRollCall getAttendanceRollCall()
+        {
+            return (AttendanceRollCall)this.getProperty("attendanceRollCall");
+        }
+
+        public void setAttendanceRollCall(AttendanceRollCall attendanceRollCall)
         {
             this.setProperty("attendanceRollCall", attendanceRollCall);
         }
 
-        public DateTime getRecordDate ()
+        public DateTime getRecordDate()
         {
             return Convert.ToDateTime(this.getProperty("recordDate"));
         }
 
-        public void setRecordDate (DateTime recordDate)
+        public void setRecordDate(DateTime recordDate)
         {
             this.setProperty("recordDate", recordDate);
         }
 
-        public Student getStudent ()
+        public Student getStudent()
         {
-            return (Student) this.getProperty("student");
+            return (Student)this.getProperty("student");
         }
 
-        public void setStudent (Student student)
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public AttendanceMark getAttendanceMark ()
+        public AttendanceMark getAttendanceMark()
         {
-            return (AttendanceMark) this.getProperty("attendanceMark");
+            return (AttendanceMark)this.getProperty("attendanceMark");
         }
 
-        public void setAttendanceMark (AttendanceMark attendanceMark)
+        public void setAttendanceMark(AttendanceMark attendanceMark)
         {
             this.setProperty("attendanceMark", attendanceMark);
         }
 
-        public int getMinutesLate ()
+        public int getMinutesLate()
         {
             return Convert.ToInt32(this.getProperty("minutesLate"));
         }
 
-        public void setMinutesLate (int minutesLate)
+        public void setMinutesLate(int minutesLate)
         {
             this.setProperty("minutesLate", minutesLate);
         }
 
-        public AttendanceRecord getSourceAttendanceRecord ()
+        public AttendanceRecord getSourceAttendanceRecord()
         {
-            return (AttendanceRecord) this.getProperty("sourceAttendanceRecord");
+            return (AttendanceRecord)this.getProperty("sourceAttendanceRecord");
         }
 
-        public void setSourceAttendanceRecord (AttendanceRecord sourceAttendanceRecord)
+        public void setSourceAttendanceRecord(AttendanceRecord sourceAttendanceRecord)
         {
             this.setProperty("sourceAttendanceRecord", sourceAttendanceRecord);
         }
 
-        public string getValidationError ()
+        public string getValidationError()
         {
             return this.getProperty("validationError").ToString();
         }
 
-        public void setValidationError (string validationError)
+        public void setValidationError(string validationError)
         {
             this.setProperty("validationError", validationError);
         }
 
-        public string getSource ()
+        public string getSource()
         {
             return this.getProperty("source").ToString();
         }
 
-        public void setSource (string source)
+        public void setSource(string source)
         {
             this.setProperty("source", source);
         }

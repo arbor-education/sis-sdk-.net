@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string AD_HOC_ASSESSMENT_BATCH_TARGET = "adHocAssessmentBatchTarget";
         public const string SUBJECT = "subject";
 
-        public AdHocAssessmentBatchTargetSubject ()
+        public AdHocAssessmentBatchTargetSubject()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AdHocAssessmentBatchTargetSubject (string resourceType = "AdHocAssessmentBatchTargetSubject", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AdHocAssessmentBatchTargetSubject> query (SimpleQuery query = null)
+        public AdHocAssessmentBatchTargetSubject(string resourceType = "AdHocAssessmentBatchTargetSubject", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AdHocAssessmentBatchTargetSubject");
-        	RestGateway gateway = (RestGateway) AdHocAssessmentBatchTargetSubject.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AdHocAssessmentBatchTargetSubject> adhocassessmentbatchtargetsubjectCollection = new ModelCollection<AdHocAssessmentBatchTargetSubject> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    adhocassessmentbatchtargetsubjectCollection.add((AdHocAssessmentBatchTargetSubject) model);
-        	}
-        
-        	return adhocassessmentbatchtargetsubjectCollection;
+
         }
 
-        public static AdHocAssessmentBatchTargetSubject retrieve (string id)
+
+        public static ModelCollection<AdHocAssessmentBatchTargetSubject> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AdHocAssessmentBatchTargetSubject.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AdHocAssessmentBatchTargetSubject) gateway.retrieve(ResourceType.AD_HOC_ASSESSMENT_BATCH_TARGET_SUBJECT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AdHocAssessmentBatchTargetSubject");
+            RestGateway gateway = (RestGateway)AdHocAssessmentBatchTargetSubject.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AdHocAssessmentBatchTargetSubject> adhocassessmentbatchtargetsubjectCollection = new ModelCollection<AdHocAssessmentBatchTargetSubject>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                adhocassessmentbatchtargetsubjectCollection.add((AdHocAssessmentBatchTargetSubject)model);
+            }
+
+            return adhocassessmentbatchtargetsubjectCollection;
         }
 
-        public AdHocAssessmentBatchTarget getAdHocAssessmentBatchTarget ()
+        public static AdHocAssessmentBatchTargetSubject retrieve(string id)
         {
-            return (AdHocAssessmentBatchTarget) this.getProperty("adHocAssessmentBatchTarget");
+            RestGateway gateway = (RestGateway)AdHocAssessmentBatchTargetSubject.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AdHocAssessmentBatchTargetSubject)gateway.retrieve(ResourceType.AD_HOC_ASSESSMENT_BATCH_TARGET_SUBJECT, id);
         }
 
-        public void setAdHocAssessmentBatchTarget (AdHocAssessmentBatchTarget adHocAssessmentBatchTarget)
+        public AdHocAssessmentBatchTarget getAdHocAssessmentBatchTarget()
+        {
+            return (AdHocAssessmentBatchTarget)this.getProperty("adHocAssessmentBatchTarget");
+        }
+
+        public void setAdHocAssessmentBatchTarget(AdHocAssessmentBatchTarget adHocAssessmentBatchTarget)
         {
             this.setProperty("adHocAssessmentBatchTarget", adHocAssessmentBatchTarget);
         }
 
-        public Subject getSubject ()
+        public Subject getSubject()
         {
-            return (Subject) this.getProperty("subject");
+            return (Subject)this.getProperty("subject");
         }
 
-        public void setSubject (Subject subject)
+        public void setSubject(Subject subject)
         {
             this.setProperty("subject", subject);
         }

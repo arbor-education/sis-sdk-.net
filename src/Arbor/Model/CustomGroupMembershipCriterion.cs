@@ -17,98 +17,99 @@ namespace Arbor.Model
         public const string CONDITION_CLASS = "conditionClass";
         public const string CONDITION_PARAMS = "conditionParams";
 
-        public CustomGroupMembershipCriterion ()
+        public CustomGroupMembershipCriterion()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public CustomGroupMembershipCriterion (string resourceType = "CustomGroupMembershipCriterion", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<CustomGroupMembershipCriterion> query (SimpleQuery query = null)
+        public CustomGroupMembershipCriterion(string resourceType = "CustomGroupMembershipCriterion", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("CustomGroupMembershipCriterion");
-        	RestGateway gateway = (RestGateway) CustomGroupMembershipCriterion.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<CustomGroupMembershipCriterion> customgroupmembershipcriterionCollection = new ModelCollection<CustomGroupMembershipCriterion> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    customgroupmembershipcriterionCollection.add((CustomGroupMembershipCriterion) model);
-        	}
-        
-        	return customgroupmembershipcriterionCollection;
+
         }
 
-        public static CustomGroupMembershipCriterion retrieve (string id)
+
+        public static ModelCollection<CustomGroupMembershipCriterion> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) CustomGroupMembershipCriterion.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (CustomGroupMembershipCriterion) gateway.retrieve(ResourceType.CUSTOM_GROUP_MEMBERSHIP_CRITERION, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("CustomGroupMembershipCriterion");
+            RestGateway gateway = (RestGateway)CustomGroupMembershipCriterion.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<CustomGroupMembershipCriterion> customgroupmembershipcriterionCollection = new ModelCollection<CustomGroupMembershipCriterion>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                customgroupmembershipcriterionCollection.add((CustomGroupMembershipCriterion)model);
+            }
+
+            return customgroupmembershipcriterionCollection;
         }
 
-        public CustomGroup getCustomGroup ()
+        public static CustomGroupMembershipCriterion retrieve(string id)
         {
-            return (CustomGroup) this.getProperty("customGroup");
+            RestGateway gateway = (RestGateway)CustomGroupMembershipCriterion.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (CustomGroupMembershipCriterion)gateway.retrieve(ResourceType.CUSTOM_GROUP_MEMBERSHIP_CRITERION, id);
         }
 
-        public void setCustomGroup (CustomGroup customGroup)
+        public CustomGroup getCustomGroup()
+        {
+            return (CustomGroup)this.getProperty("customGroup");
+        }
+
+        public void setCustomGroup(CustomGroup customGroup)
         {
             this.setProperty("customGroup", customGroup);
         }
 
-        public string getFieldClass ()
+        public string getFieldClass()
         {
             return this.getProperty("fieldClass").ToString();
         }
 
-        public void setFieldClass (string fieldClass)
+        public void setFieldClass(string fieldClass)
         {
             this.setProperty("fieldClass", fieldClass);
         }
 
-        public string getFieldParams ()
+        public string getFieldParams()
         {
             return this.getProperty("fieldParams").ToString();
         }
 
-        public void setFieldParams (string fieldParams)
+        public void setFieldParams(string fieldParams)
         {
             this.setProperty("fieldParams", fieldParams);
         }
 
-        public string getTransformationClass ()
+        public string getTransformationClass()
         {
             return this.getProperty("transformationClass").ToString();
         }
 
-        public void setTransformationClass (string transformationClass)
+        public void setTransformationClass(string transformationClass)
         {
             this.setProperty("transformationClass", transformationClass);
         }
 
-        public string getConditionClass ()
+        public string getConditionClass()
         {
             return this.getProperty("conditionClass").ToString();
         }
 
-        public void setConditionClass (string conditionClass)
+        public void setConditionClass(string conditionClass)
         {
             this.setProperty("conditionClass", conditionClass);
         }
 
-        public string getConditionParams ()
+        public string getConditionParams()
         {
             return this.getProperty("conditionParams").ToString();
         }
 
-        public void setConditionParams (string conditionParams)
+        public void setConditionParams(string conditionParams)
         {
             this.setProperty("conditionParams", conditionParams);
         }

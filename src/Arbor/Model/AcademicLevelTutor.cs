@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
 
-        public AcademicLevelTutor ()
+        public AcademicLevelTutor()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AcademicLevelTutor (string resourceType = "AcademicLevelTutor", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AcademicLevelTutor> query (SimpleQuery query = null)
+        public AcademicLevelTutor(string resourceType = "AcademicLevelTutor", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AcademicLevelTutor");
-        	RestGateway gateway = (RestGateway) AcademicLevelTutor.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AcademicLevelTutor> academicleveltutorCollection = new ModelCollection<AcademicLevelTutor> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    academicleveltutorCollection.add((AcademicLevelTutor) model);
-        	}
-        
-        	return academicleveltutorCollection;
+
         }
 
-        public static AcademicLevelTutor retrieve (string id)
+
+        public static ModelCollection<AcademicLevelTutor> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AcademicLevelTutor.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AcademicLevelTutor) gateway.retrieve(ResourceType.ACADEMIC_LEVEL_TUTOR, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AcademicLevelTutor");
+            RestGateway gateway = (RestGateway)AcademicLevelTutor.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AcademicLevelTutor> academicleveltutorCollection = new ModelCollection<AcademicLevelTutor>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                academicleveltutorCollection.add((AcademicLevelTutor)model);
+            }
+
+            return academicleveltutorCollection;
         }
 
-        public AcademicLevel getAcademicLevel ()
+        public static AcademicLevelTutor retrieve(string id)
         {
-            return (AcademicLevel) this.getProperty("academicLevel");
+            RestGateway gateway = (RestGateway)AcademicLevelTutor.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AcademicLevelTutor)gateway.retrieve(ResourceType.ACADEMIC_LEVEL_TUTOR, id);
         }
 
-        public void setAcademicLevel (AcademicLevel academicLevel)
+        public AcademicLevel getAcademicLevel()
+        {
+            return (AcademicLevel)this.getProperty("academicLevel");
+        }
+
+        public void setAcademicLevel(AcademicLevel academicLevel)
         {
             this.setProperty("academicLevel", academicLevel);
         }
 
-        public Staff getStaff ()
+        public Staff getStaff()
         {
-            return (Staff) this.getProperty("staff");
+            return (Staff)this.getProperty("staff");
         }
 
-        public void setStaff (Staff staff)
+        public void setStaff(Staff staff)
         {
             this.setProperty("staff", staff);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDate()
         {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }

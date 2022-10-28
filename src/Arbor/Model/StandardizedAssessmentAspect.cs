@@ -22,148 +22,149 @@ namespace Arbor.Model
         public const string EFFECTIVE_DATE = "effectiveDate";
         public const string END_DATE = "endDate";
 
-        public StandardizedAssessmentAspect ()
+        public StandardizedAssessmentAspect()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public StandardizedAssessmentAspect (string resourceType = "StandardizedAssessmentAspect", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<StandardizedAssessmentAspect> query (SimpleQuery query = null)
+        public StandardizedAssessmentAspect(string resourceType = "StandardizedAssessmentAspect", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("StandardizedAssessmentAspect");
-        	RestGateway gateway = (RestGateway) StandardizedAssessmentAspect.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<StandardizedAssessmentAspect> standardizedassessmentaspectCollection = new ModelCollection<StandardizedAssessmentAspect> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    standardizedassessmentaspectCollection.add((StandardizedAssessmentAspect) model);
-        	}
-        
-        	return standardizedassessmentaspectCollection;
+
         }
 
-        public static StandardizedAssessmentAspect retrieve (string id)
+
+        public static ModelCollection<StandardizedAssessmentAspect> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) StandardizedAssessmentAspect.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (StandardizedAssessmentAspect) gateway.retrieve(ResourceType.STANDARDIZED_ASSESSMENT_ASPECT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("StandardizedAssessmentAspect");
+            RestGateway gateway = (RestGateway)StandardizedAssessmentAspect.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<StandardizedAssessmentAspect> standardizedassessmentaspectCollection = new ModelCollection<StandardizedAssessmentAspect>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                standardizedassessmentaspectCollection.add((StandardizedAssessmentAspect)model);
+            }
+
+            return standardizedassessmentaspectCollection;
         }
 
-        public string getCode ()
+        public static StandardizedAssessmentAspect retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)StandardizedAssessmentAspect.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (StandardizedAssessmentAspect)gateway.retrieve(ResourceType.STANDARDIZED_ASSESSMENT_ASPECT, id);
+        }
+
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }
 
-        public StandardizedAssessmentAspectCategory getStandardizedAssessmentAspectCategory ()
+        public StandardizedAssessmentAspectCategory getStandardizedAssessmentAspectCategory()
         {
-            return (StandardizedAssessmentAspectCategory) this.getProperty("standardizedAssessmentAspectCategory");
+            return (StandardizedAssessmentAspectCategory)this.getProperty("standardizedAssessmentAspectCategory");
         }
 
-        public void setStandardizedAssessmentAspectCategory (StandardizedAssessmentAspectCategory standardizedAssessmentAspectCategory)
+        public void setStandardizedAssessmentAspectCategory(StandardizedAssessmentAspectCategory standardizedAssessmentAspectCategory)
         {
             this.setProperty("standardizedAssessmentAspectCategory", standardizedAssessmentAspectCategory);
         }
 
-        public StandardizedAssessmentComponent getStandardizedAssessmentComponent ()
+        public StandardizedAssessmentComponent getStandardizedAssessmentComponent()
         {
-            return (StandardizedAssessmentComponent) this.getProperty("standardizedAssessmentComponent");
+            return (StandardizedAssessmentComponent)this.getProperty("standardizedAssessmentComponent");
         }
 
-        public void setStandardizedAssessmentComponent (StandardizedAssessmentComponent standardizedAssessmentComponent)
+        public void setStandardizedAssessmentComponent(StandardizedAssessmentComponent standardizedAssessmentComponent)
         {
             this.setProperty("standardizedAssessmentComponent", standardizedAssessmentComponent);
         }
 
-        public string getMarkType ()
+        public string getMarkType()
         {
             return this.getProperty("markType").ToString();
         }
 
-        public void setMarkType (string markType)
+        public void setMarkType(string markType)
         {
             this.setProperty("markType", markType);
         }
 
-        public float getMarkMinValue ()
+        public float getMarkMinValue()
         {
-            return (float) this.getProperty("markMinValue");
+            return (float)this.getProperty("markMinValue");
         }
 
-        public void setMarkMinValue (float markMinValue)
+        public void setMarkMinValue(float markMinValue)
         {
             this.setProperty("markMinValue", markMinValue);
         }
 
-        public float getMarkMaxValue ()
+        public float getMarkMaxValue()
         {
-            return (float) this.getProperty("markMaxValue");
+            return (float)this.getProperty("markMaxValue");
         }
 
-        public void setMarkMaxValue (float markMaxValue)
+        public void setMarkMaxValue(float markMaxValue)
         {
             this.setProperty("markMaxValue", markMaxValue);
         }
 
-        public GradeSet getGradeSet ()
+        public GradeSet getGradeSet()
         {
-            return (GradeSet) this.getProperty("gradeSet");
+            return (GradeSet)this.getProperty("gradeSet");
         }
 
-        public void setGradeSet (GradeSet gradeSet)
+        public void setGradeSet(GradeSet gradeSet)
         {
             this.setProperty("gradeSet", gradeSet);
         }
 
-        public DateTime getEffectiveDate ()
+        public DateTime getEffectiveDate()
         {
             return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
-        public void setEffectiveDate (DateTime effectiveDate)
+        public void setEffectiveDate(DateTime effectiveDate)
         {
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }

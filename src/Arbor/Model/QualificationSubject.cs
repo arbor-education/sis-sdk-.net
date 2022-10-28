@@ -17,98 +17,99 @@ namespace Arbor.Model
         public const string EFFECTIVE_DATE = "effectiveDate";
         public const string END_DATE = "endDate";
 
-        public QualificationSubject ()
+        public QualificationSubject()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public QualificationSubject (string resourceType = "QualificationSubject", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<QualificationSubject> query (SimpleQuery query = null)
+        public QualificationSubject(string resourceType = "QualificationSubject", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("QualificationSubject");
-        	RestGateway gateway = (RestGateway) QualificationSubject.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<QualificationSubject> qualificationsubjectCollection = new ModelCollection<QualificationSubject> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    qualificationsubjectCollection.add((QualificationSubject) model);
-        	}
-        
-        	return qualificationsubjectCollection;
+
         }
 
-        public static QualificationSubject retrieve (string id)
+
+        public static ModelCollection<QualificationSubject> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) QualificationSubject.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (QualificationSubject) gateway.retrieve(ResourceType.QUALIFICATION_SUBJECT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("QualificationSubject");
+            RestGateway gateway = (RestGateway)QualificationSubject.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<QualificationSubject> qualificationsubjectCollection = new ModelCollection<QualificationSubject>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                qualificationsubjectCollection.add((QualificationSubject)model);
+            }
+
+            return qualificationsubjectCollection;
         }
 
-        public string getCode ()
+        public static QualificationSubject retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)QualificationSubject.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (QualificationSubject)gateway.retrieve(ResourceType.QUALIFICATION_SUBJECT, id);
+        }
+
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }
 
-        public string getName ()
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }
 
-        public DateTime getEffectiveDate ()
+        public DateTime getEffectiveDate()
         {
             return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
-        public void setEffectiveDate (DateTime effectiveDate)
+        public void setEffectiveDate(DateTime effectiveDate)
         {
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }

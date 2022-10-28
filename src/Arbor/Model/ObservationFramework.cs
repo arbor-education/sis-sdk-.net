@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string OBSERVATION_TYPE = "observationType";
         public const string NAME = "name";
 
-        public ObservationFramework ()
+        public ObservationFramework()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public ObservationFramework (string resourceType = "ObservationFramework", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<ObservationFramework> query (SimpleQuery query = null)
+        public ObservationFramework(string resourceType = "ObservationFramework", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("ObservationFramework");
-        	RestGateway gateway = (RestGateway) ObservationFramework.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<ObservationFramework> observationframeworkCollection = new ModelCollection<ObservationFramework> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    observationframeworkCollection.add((ObservationFramework) model);
-        	}
-        
-        	return observationframeworkCollection;
+
         }
 
-        public static ObservationFramework retrieve (string id)
+
+        public static ModelCollection<ObservationFramework> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) ObservationFramework.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (ObservationFramework) gateway.retrieve(ResourceType.OBSERVATION_FRAMEWORK, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("ObservationFramework");
+            RestGateway gateway = (RestGateway)ObservationFramework.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<ObservationFramework> observationframeworkCollection = new ModelCollection<ObservationFramework>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                observationframeworkCollection.add((ObservationFramework)model);
+            }
+
+            return observationframeworkCollection;
         }
 
-        public ObservationType getObservationType ()
+        public static ObservationFramework retrieve(string id)
         {
-            return (ObservationType) this.getProperty("observationType");
+            RestGateway gateway = (RestGateway)ObservationFramework.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (ObservationFramework)gateway.retrieve(ResourceType.OBSERVATION_FRAMEWORK, id);
         }
 
-        public void setObservationType (ObservationType observationType)
+        public ObservationType getObservationType()
+        {
+            return (ObservationType)this.getProperty("observationType");
+        }
+
+        public void setObservationType(ObservationType observationType)
         {
             this.setProperty("observationType", observationType);
         }
 
-        public string getName ()
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }

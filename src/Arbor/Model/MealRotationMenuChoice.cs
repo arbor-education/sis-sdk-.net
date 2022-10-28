@@ -14,68 +14,69 @@ namespace Arbor.Model
         public const string MEAL_PROVISION = "mealProvision";
         public const string MEAL_CHOICE_DATE = "mealChoiceDate";
 
-        public MealRotationMenuChoice ()
+        public MealRotationMenuChoice()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public MealRotationMenuChoice (string resourceType = "MealRotationMenuChoice", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<MealRotationMenuChoice> query (SimpleQuery query = null)
+        public MealRotationMenuChoice(string resourceType = "MealRotationMenuChoice", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("MealRotationMenuChoice");
-        	RestGateway gateway = (RestGateway) MealRotationMenuChoice.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<MealRotationMenuChoice> mealrotationmenuchoiceCollection = new ModelCollection<MealRotationMenuChoice> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    mealrotationmenuchoiceCollection.add((MealRotationMenuChoice) model);
-        	}
-        
-        	return mealrotationmenuchoiceCollection;
+
         }
 
-        public static MealRotationMenuChoice retrieve (string id)
+
+        public static ModelCollection<MealRotationMenuChoice> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) MealRotationMenuChoice.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (MealRotationMenuChoice) gateway.retrieve(ResourceType.MEAL_ROTATION_MENU_CHOICE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("MealRotationMenuChoice");
+            RestGateway gateway = (RestGateway)MealRotationMenuChoice.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<MealRotationMenuChoice> mealrotationmenuchoiceCollection = new ModelCollection<MealRotationMenuChoice>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                mealrotationmenuchoiceCollection.add((MealRotationMenuChoice)model);
+            }
+
+            return mealrotationmenuchoiceCollection;
         }
 
-        public ModelBase getAttendee ()
+        public static MealRotationMenuChoice retrieve(string id)
         {
-            return (ModelBase) this.getProperty("attendee");
+            RestGateway gateway = (RestGateway)MealRotationMenuChoice.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (MealRotationMenuChoice)gateway.retrieve(ResourceType.MEAL_ROTATION_MENU_CHOICE, id);
         }
 
-        public void setAttendee (ModelBase attendee)
+        public ModelBase getAttendee()
+        {
+            return (ModelBase)this.getProperty("attendee");
+        }
+
+        public void setAttendee(ModelBase attendee)
         {
             this.setProperty("attendee", attendee);
         }
 
-        public MealProvision getMealProvision ()
+        public MealProvision getMealProvision()
         {
-            return (MealProvision) this.getProperty("mealProvision");
+            return (MealProvision)this.getProperty("mealProvision");
         }
 
-        public void setMealProvision (MealProvision mealProvision)
+        public void setMealProvision(MealProvision mealProvision)
         {
             this.setProperty("mealProvision", mealProvision);
         }
 
-        public DateTime getMealChoiceDate ()
+        public DateTime getMealChoiceDate()
         {
             return Convert.ToDateTime(this.getProperty("mealChoiceDate"));
         }
 
-        public void setMealChoiceDate (DateTime mealChoiceDate)
+        public void setMealChoiceDate(DateTime mealChoiceDate)
         {
             this.setProperty("mealChoiceDate", mealChoiceDate);
         }

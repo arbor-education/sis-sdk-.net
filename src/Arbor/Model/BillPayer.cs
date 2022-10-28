@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string STRIPE_CUSTOMER_ID = "stripeCustomerId";
         public const string NEW_STRIPE_CUSTOMER_ID = "newStripeCustomerId";
 
-        public BillPayer ()
+        public BillPayer()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public BillPayer (string resourceType = "BillPayer", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<BillPayer> query (SimpleQuery query = null)
+        public BillPayer(string resourceType = "BillPayer", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("BillPayer");
-        	RestGateway gateway = (RestGateway) BillPayer.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<BillPayer> billpayerCollection = new ModelCollection<BillPayer> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    billpayerCollection.add((BillPayer) model);
-        	}
-        
-        	return billpayerCollection;
+
         }
 
-        public static BillPayer retrieve (string id)
+
+        public static ModelCollection<BillPayer> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) BillPayer.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (BillPayer) gateway.retrieve(ResourceType.BILL_PAYER, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("BillPayer");
+            RestGateway gateway = (RestGateway)BillPayer.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<BillPayer> billpayerCollection = new ModelCollection<BillPayer>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                billpayerCollection.add((BillPayer)model);
+            }
+
+            return billpayerCollection;
         }
 
-        public ModelBase getLegalEntity ()
+        public static BillPayer retrieve(string id)
         {
-            return (ModelBase) this.getProperty("legalEntity");
+            RestGateway gateway = (RestGateway)BillPayer.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (BillPayer)gateway.retrieve(ResourceType.BILL_PAYER, id);
         }
 
-        public void setLegalEntity (ModelBase legalEntity)
+        public ModelBase getLegalEntity()
+        {
+            return (ModelBase)this.getProperty("legalEntity");
+        }
+
+        public void setLegalEntity(ModelBase legalEntity)
         {
             this.setProperty("legalEntity", legalEntity);
         }
 
-        public string getDeletedLegalEntityName ()
+        public string getDeletedLegalEntityName()
         {
             return this.getProperty("deletedLegalEntityName").ToString();
         }
 
-        public void setDeletedLegalEntityName (string deletedLegalEntityName)
+        public void setDeletedLegalEntityName(string deletedLegalEntityName)
         {
             this.setProperty("deletedLegalEntityName", deletedLegalEntityName);
         }
 
-        public string getStripeCustomerId ()
+        public string getStripeCustomerId()
         {
             return this.getProperty("stripeCustomerId").ToString();
         }
 
-        public void setStripeCustomerId (string stripeCustomerId)
+        public void setStripeCustomerId(string stripeCustomerId)
         {
             this.setProperty("stripeCustomerId", stripeCustomerId);
         }
 
-        public string getNewStripeCustomerId ()
+        public string getNewStripeCustomerId()
         {
             return this.getProperty("newStripeCustomerId").ToString();
         }
 
-        public void setNewStripeCustomerId (string newStripeCustomerId)
+        public void setNewStripeCustomerId(string newStripeCustomerId)
         {
             this.setProperty("newStripeCustomerId", newStripeCustomerId);
         }

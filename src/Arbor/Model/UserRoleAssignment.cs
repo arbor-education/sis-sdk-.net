@@ -16,88 +16,89 @@ namespace Arbor.Model
         public const string START_DATETIME = "startDatetime";
         public const string END_DATETIME = "endDatetime";
 
-        public UserRoleAssignment ()
+        public UserRoleAssignment()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public UserRoleAssignment (string resourceType = "UserRoleAssignment", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<UserRoleAssignment> query (SimpleQuery query = null)
+        public UserRoleAssignment(string resourceType = "UserRoleAssignment", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("UserRoleAssignment");
-        	RestGateway gateway = (RestGateway) UserRoleAssignment.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<UserRoleAssignment> userroleassignmentCollection = new ModelCollection<UserRoleAssignment> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    userroleassignmentCollection.add((UserRoleAssignment) model);
-        	}
-        
-        	return userroleassignmentCollection;
+
         }
 
-        public static UserRoleAssignment retrieve (string id)
+
+        public static ModelCollection<UserRoleAssignment> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) UserRoleAssignment.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (UserRoleAssignment) gateway.retrieve(ResourceType.USER_ROLE_ASSIGNMENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("UserRoleAssignment");
+            RestGateway gateway = (RestGateway)UserRoleAssignment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<UserRoleAssignment> userroleassignmentCollection = new ModelCollection<UserRoleAssignment>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                userroleassignmentCollection.add((UserRoleAssignment)model);
+            }
+
+            return userroleassignmentCollection;
         }
 
-        public User getUser ()
+        public static UserRoleAssignment retrieve(string id)
         {
-            return (User) this.getProperty("user");
+            RestGateway gateway = (RestGateway)UserRoleAssignment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (UserRoleAssignment)gateway.retrieve(ResourceType.USER_ROLE_ASSIGNMENT, id);
         }
 
-        public void setUser (User user)
+        public User getUser()
+        {
+            return (User)this.getProperty("user");
+        }
+
+        public void setUser(User user)
         {
             this.setProperty("user", user);
         }
 
-        public UserRole getUserRole ()
+        public UserRole getUserRole()
         {
-            return (UserRole) this.getProperty("userRole");
+            return (UserRole)this.getProperty("userRole");
         }
 
-        public void setUserRole (UserRole userRole)
+        public void setUserRole(UserRole userRole)
         {
             this.setProperty("userRole", userRole);
         }
 
-        public BusinessRoleAssignment getBusinessRoleAssignment ()
+        public BusinessRoleAssignment getBusinessRoleAssignment()
         {
-            return (BusinessRoleAssignment) this.getProperty("businessRoleAssignment");
+            return (BusinessRoleAssignment)this.getProperty("businessRoleAssignment");
         }
 
-        public void setBusinessRoleAssignment (BusinessRoleAssignment businessRoleAssignment)
+        public void setBusinessRoleAssignment(BusinessRoleAssignment businessRoleAssignment)
         {
             this.setProperty("businessRoleAssignment", businessRoleAssignment);
         }
 
-        public DateTime getStartDatetime ()
+        public DateTime getStartDatetime()
         {
             return Convert.ToDateTime(this.getProperty("startDatetime"));
         }
 
-        public void setStartDatetime (DateTime startDatetime)
+        public void setStartDatetime(DateTime startDatetime)
         {
             this.setProperty("startDatetime", startDatetime);
         }
 
-        public DateTime getEndDatetime ()
+        public DateTime getEndDatetime()
         {
             return Convert.ToDateTime(this.getProperty("endDatetime"));
         }
 
-        public void setEndDatetime (DateTime endDatetime)
+        public void setEndDatetime(DateTime endDatetime)
         {
             this.setProperty("endDatetime", endDatetime);
         }

@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string SUPERANNUATION_SCHEME_NAME = "superannuationSchemeName";
         public const string CODE = "code";
 
-        public SuperannuationScheme ()
+        public SuperannuationScheme()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public SuperannuationScheme (string resourceType = "SuperannuationScheme", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<SuperannuationScheme> query (SimpleQuery query = null)
+        public SuperannuationScheme(string resourceType = "SuperannuationScheme", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("SuperannuationScheme");
-        	RestGateway gateway = (RestGateway) SuperannuationScheme.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<SuperannuationScheme> superannuationschemeCollection = new ModelCollection<SuperannuationScheme> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    superannuationschemeCollection.add((SuperannuationScheme) model);
-        	}
-        
-        	return superannuationschemeCollection;
+
         }
 
-        public static SuperannuationScheme retrieve (string id)
+
+        public static ModelCollection<SuperannuationScheme> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) SuperannuationScheme.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (SuperannuationScheme) gateway.retrieve(ResourceType.SUPERANNUATION_SCHEME, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("SuperannuationScheme");
+            RestGateway gateway = (RestGateway)SuperannuationScheme.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<SuperannuationScheme> superannuationschemeCollection = new ModelCollection<SuperannuationScheme>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                superannuationschemeCollection.add((SuperannuationScheme)model);
+            }
+
+            return superannuationschemeCollection;
         }
 
-        public string getSuperannuationSchemeName ()
+        public static SuperannuationScheme retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)SuperannuationScheme.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (SuperannuationScheme)gateway.retrieve(ResourceType.SUPERANNUATION_SCHEME, id);
+        }
+
+        public string getSuperannuationSchemeName()
         {
             return this.getProperty("superannuationSchemeName").ToString();
         }
 
-        public void setSuperannuationSchemeName (string superannuationSchemeName)
+        public void setSuperannuationSchemeName(string superannuationSchemeName)
         {
             this.setProperty("superannuationSchemeName", superannuationSchemeName);
         }
 
-        public string getCode ()
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
