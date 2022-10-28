@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class SenStatement : ModelBase
     {
-        protected string resourceType = ResourceType.SEN_STATEMENT;
+        protected new string resourceType = ResourceType.SEN_STATEMENT;
         public const string STUDENT = "student";
         public const string DATE_REQUESTED = "dateRequested";
         public const string DATE_PARENT_CONSULTED = "dateParentConsulted";

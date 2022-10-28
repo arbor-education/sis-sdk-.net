@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class InAppMessageNotification : ModelBase
     {
-        protected string resourceType = ResourceType.IN_APP_MESSAGE_NOTIFICATION;
+        protected new string resourceType = ResourceType.IN_APP_MESSAGE_NOTIFICATION;
         public const string IN_APP_MESSAGE = "inAppMessage";
         public const string NOTIFICATION_CHANNEL = "notificationChannel";
 

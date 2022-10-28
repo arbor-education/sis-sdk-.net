@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class TransportationMethod : ModelBase
     {
-        protected string resourceType = ResourceType.TRANSPORTATION_METHOD;
+        protected new string resourceType = ResourceType.TRANSPORTATION_METHOD;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

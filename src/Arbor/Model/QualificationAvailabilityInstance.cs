@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class QualificationAvailabilityInstance : ModelBase
     {
-        protected string resourceType = ResourceType.QUALIFICATION_AVAILABILITY_INSTANCE;
+        protected new string resourceType = ResourceType.QUALIFICATION_AVAILABILITY_INSTANCE;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

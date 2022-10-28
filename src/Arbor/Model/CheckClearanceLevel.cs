@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CheckClearanceLevel : ModelBase
     {
-        protected string resourceType = ResourceType.CHECK_CLEARANCE_LEVEL;
+        protected new string resourceType = ResourceType.CHECK_CLEARANCE_LEVEL;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

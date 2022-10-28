@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class SenStatus : ModelBase
     {
-        protected string resourceType = ResourceType.SEN_STATUS;
+        protected new string resourceType = ResourceType.SEN_STATUS;
         public const string D00229 = "d00229";
         public const string CODE = "code";
         public const string ACTIVE = "active";

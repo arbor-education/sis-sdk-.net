@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Detention : ModelBase
     {
-        protected string resourceType = ResourceType.DETENTION;
+        protected new string resourceType = ResourceType.DETENTION;
         public const string STUDENT = "student";
         public const string ISSUED_BY_STAFF = "issuedByStaff";
         public const string DETENTION_SESSION = "detentionSession";

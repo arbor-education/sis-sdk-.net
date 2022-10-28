@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class LocalAuthority : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_LOCAL_AUTHORITY;
+        protected new string resourceType = ResourceType.UK_DFE_LOCAL_AUTHORITY;
         public const string AUTHORITY_CODE = "authorityCode";
         public const string AUTHORITY_CODE_PRE2011 = "authorityCodePre2011";
 

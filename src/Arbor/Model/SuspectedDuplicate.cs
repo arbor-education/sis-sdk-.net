@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class SuspectedDuplicate : ModelBase
     {
-        protected string resourceType = ResourceType.SUSPECTED_DUPLICATE;
+        protected new string resourceType = ResourceType.SUSPECTED_DUPLICATE;
         public const string SUSPECT_ONE = "suspectOne";
         public const string SUSPECT_TWO = "suspectTwo";
         public const string UNIQUE_KEY = "uniqueKey";

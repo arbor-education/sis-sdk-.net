@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class TimetableSlot : ModelBase
     {
-        protected string resourceType = ResourceType.TIMETABLE_SLOT;
+        protected new string resourceType = ResourceType.TIMETABLE_SLOT;
         public const string ACADEMIC_YEAR = "academicYear";
         public const string TIMETABLED_OBJECT = "timetabledObject";
         public const string DAY_OF_CYCLE = "dayOfCycle";

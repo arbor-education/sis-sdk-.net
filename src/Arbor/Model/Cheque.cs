@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Cheque : ModelBase
     {
-        protected string resourceType = ResourceType.CHEQUE;
+        protected new string resourceType = ResourceType.CHEQUE;
         public const string CHEQUE_BOOK = "chequeBook";
         public const string CHEQUE_NUMBER = "chequeNumber";
 

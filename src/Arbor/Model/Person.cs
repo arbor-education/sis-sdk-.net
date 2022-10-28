@@ -9,8 +9,10 @@ namespace Arbor.Model
 {
     public class Person : ModelBase
     {
-        protected string resourceType = ResourceType.PERSON;
+        protected new string resourceType = ResourceType.PERSON;
         public const string GENDER = "gender";
+        public const string GENDER_IDENTITY = "genderIdentity";
+        public const string GENDER_IDENTITY_PREFERRED_TERM = "genderIdentityPreferredTerm";
         public const string TITLE = "title";
         public const string MARITAL_STATUS = "maritalStatus";
         public const string LEGAL_FIRST_NAME = "legalFirstName";
@@ -67,6 +69,26 @@ namespace Arbor.Model
         public void setGender (Gender gender)
         {
             this.setProperty("gender", gender);
+        }
+
+        public GenderIdentity getGenderIdentity ()
+        {
+            return (GenderIdentity) this.getProperty("genderIdentity");
+        }
+
+        public void setGenderIdentity (GenderIdentity genderIdentity)
+        {
+            this.setProperty("genderIdentity", genderIdentity);
+        }
+
+        public string getGenderIdentityPreferredTerm ()
+        {
+            return this.getProperty("genderIdentityPreferredTerm").ToString();
+        }
+
+        public void setGenderIdentityPreferredTerm (string genderIdentityPreferredTerm)
+        {
+            this.setProperty("genderIdentityPreferredTerm", genderIdentityPreferredTerm);
         }
 
         public Title getTitle ()

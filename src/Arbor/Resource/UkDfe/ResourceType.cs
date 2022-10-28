@@ -75,6 +75,7 @@ namespace Arbor.Resource.UkDfe
 		public const string UK_DFE_UCI_ASSIGNMENT = "UkDfe_UciAssignment";
 		public const string UK_DFE_UNENROLMENT_REASON = "UkDfe_UnenrolmentReason";
 		public const string UK_DFE_UPN_ASSIGNMENT = "UkDfe_UpnAssignment";
+		public const string UK_DFE_YOUNG_CARER_STATUS_ASSIGNMENT = "UkDfe_YoungCarerStatusAssignment";
 	}
 }
 

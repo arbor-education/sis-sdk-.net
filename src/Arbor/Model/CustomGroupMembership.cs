@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CustomGroupMembership : ModelBase
     {
-        protected string resourceType = ResourceType.CUSTOM_GROUP_MEMBERSHIP;
+        protected new string resourceType = ResourceType.CUSTOM_GROUP_MEMBERSHIP;
         public const string CUSTOM_GROUP = "customGroup";
         public const string PERSON = "person";
         public const string START_DATE = "startDate";

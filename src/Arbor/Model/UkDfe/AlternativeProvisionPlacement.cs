@@ -9,9 +9,10 @@ namespace Arbor.Model.UkDfe
 {
     public class AlternativeProvisionPlacement : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_ALTERNATIVE_PROVISION_PLACEMENT;
+        protected new string resourceType = ResourceType.UK_DFE_ALTERNATIVE_PROVISION_PLACEMENT;
         public const string STUDENT = "student";
         public const string EDUCATIONAL_INSTITUTION = "educationalInstitution";
+        public const string COMPANY = "company";
         public const string ALTERNATIVE_PROVISION_PLACEMENT_REASON = "alternativeProvisionPlacementReason";
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
@@ -73,6 +74,16 @@ namespace Arbor.Model.UkDfe
         public void setEducationalInstitution (EducationalInstitution educationalInstitution)
         {
             this.setProperty("educationalInstitution", educationalInstitution);
+        }
+
+        public Company getCompany ()
+        {
+            return (Company) this.getProperty("company");
+        }
+
+        public void setCompany (Company company)
+        {
+            this.setProperty("company", company);
         }
 
         public AlternativeProvisionPlacementReason getAlternativeProvisionPlacementReason ()

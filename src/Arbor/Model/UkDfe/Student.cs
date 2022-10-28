@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class Student : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_STUDENT;
+        protected new string resourceType = ResourceType.UK_DFE_STUDENT;
         public const string UNIQUE_LEARNER_NUMBER = "uniqueLearnerNumber";
         public const string HOME_LOCAL_AUTHORITY = "homeLocalAuthority";
         public const string YOUTH_SUPPORT_SERVICES_AGREEMENT = "youthSupportServicesAgreement";
@@ -28,6 +28,7 @@ namespace Arbor.Model.UkDfe
         public const string GCSE_MATHS_GRADE_PRIOR = "gcseMathsGradePrior";
         public const string GCSE_MATHS_ACHIEVEMENT_TYPE = "gcseMathsAchievementType";
         public const string GCSE_MATHS_FUNDING_EXEMPTION_TYPE = "gcseMathsFundingExemptionType";
+        public const string T_LEVEL_PLANNED_EEP_HOURS = "tLevelPlannedEepHours";
 
         public Student ()
         {
@@ -243,6 +244,16 @@ namespace Arbor.Model.UkDfe
         public void setGcseMathsFundingExemptionType (GcseMathsFundingExemptionType gcseMathsFundingExemptionType)
         {
             this.setProperty("gcseMathsFundingExemptionType", gcseMathsFundingExemptionType);
+        }
+
+        public int getTLevelPlannedEepHours ()
+        {
+            return Convert.ToInt32(this.getProperty("tLevelPlannedEepHours"));
+        }
+
+        public void setTLevelPlannedEepHours (int tLevelPlannedEepHours)
+        {
+            this.setProperty("tLevelPlannedEepHours", tLevelPlannedEepHours);
         }
 
 

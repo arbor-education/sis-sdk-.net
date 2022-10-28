@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class PersonAlert : ModelBase
     {
-        protected string resourceType = ResourceType.PERSON_ALERT;
+        protected new string resourceType = ResourceType.PERSON_ALERT;
         public const string PERSON = "person";
         public const string CONTEXT_PERSON = "contextPerson";
         public const string CONTEXT_OBJECT = "contextObject";

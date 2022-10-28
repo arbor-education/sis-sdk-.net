@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class BookableResourcePeriod : ModelBase
     {
-        protected string resourceType = ResourceType.BOOKABLE_RESOURCE_PERIOD;
+        protected new string resourceType = ResourceType.BOOKABLE_RESOURCE_PERIOD;
         public const string RESOURCE = "resource";
         public const string START_DATETIME = "startDatetime";
         public const string END_DATETIME = "endDatetime";

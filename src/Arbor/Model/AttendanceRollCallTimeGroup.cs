@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AttendanceRollCallTimeGroup : ModelBase
     {
-        protected string resourceType = ResourceType.ATTENDANCE_ROLL_CALL_TIME_GROUP;
+        protected new string resourceType = ResourceType.ATTENDANCE_ROLL_CALL_TIME_GROUP;
         public const string ATTENDANCE_ROLL_CALL_TIME = "attendanceRollCallTime";
         public const string STUDENT_GROUP = "studentGroup";
 

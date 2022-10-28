@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ThirdPartyLogin : ModelBase
     {
-        protected string resourceType = ResourceType.THIRD_PARTY_LOGIN;
+        protected new string resourceType = ResourceType.THIRD_PARTY_LOGIN;
         public const string THIRD_PARTY_SITE = "thirdPartySite";
         public const string USERNAME = "username";
         public const string PASSWORD = "password";

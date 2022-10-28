@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class UserDefinedFieldOption : ModelBase
     {
-        protected string resourceType = ResourceType.USER_DEFINED_FIELD_OPTION;
+        protected new string resourceType = ResourceType.USER_DEFINED_FIELD_OPTION;
         public const string USER_DEFINED_FIELD = "userDefinedField";
         public const string NAME = "name";
         public const string CODE = "code";

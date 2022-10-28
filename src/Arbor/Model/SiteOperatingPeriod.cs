@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class SiteOperatingPeriod : ModelBase
     {
-        protected string resourceType = ResourceType.SITE_OPERATING_PERIOD;
+        protected new string resourceType = ResourceType.SITE_OPERATING_PERIOD;
         public const string SITE = "site";
         public const string EFFECTIVE_DATE = "effectiveDate";
         public const string END_DATE = "endDate";

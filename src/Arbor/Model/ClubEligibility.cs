@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ClubEligibility : ModelBase
     {
-        protected string resourceType = ResourceType.CLUB_ELIGIBILITY;
+        protected new string resourceType = ResourceType.CLUB_ELIGIBILITY;
         public const string CLUB = "club";
         public const string ELIGIBLE = "eligible";
 

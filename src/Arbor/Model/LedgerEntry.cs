@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class LedgerEntry : ModelBase
     {
-        protected string resourceType = ResourceType.LEDGER_ENTRY;
+        protected new string resourceType = ResourceType.LEDGER_ENTRY;
         public const string AMOUNT = "amount";
         public const string CUSTOMER_ACCOUNT = "customerAccount";
         public const string TRANSACTION = "transaction";

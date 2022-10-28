@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class EnrolmentMode : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_ENROLMENT_MODE;
+        protected new string resourceType = ResourceType.UK_DFE_ENROLMENT_MODE;
         public const string D00018 = "d00018";
 
         public EnrolmentMode ()

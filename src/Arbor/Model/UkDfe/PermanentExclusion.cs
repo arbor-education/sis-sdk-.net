@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class PermanentExclusion : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_PERMANENT_EXCLUSION;
+        protected new string resourceType = ResourceType.UK_DFE_PERMANENT_EXCLUSION;
         public const string EXCLUDE_FROM_SCHOOL_CENSUS = "excludeFromSchoolCensus";
 
         public PermanentExclusion ()

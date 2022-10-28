@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class Subject : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_SUBJECT;
+        protected new string resourceType = ResourceType.UK_DFE_SUBJECT;
         public const string USED_IN_SWF_ONLY = "usedInSwfOnly";
         public const string USED_IN_CBDS_ONLY = "usedInCbdsOnly";
         public const string D00115 = "d00115";

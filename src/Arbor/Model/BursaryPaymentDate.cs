@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class BursaryPaymentDate : ModelBase
     {
-        protected string resourceType = ResourceType.BURSARY_PAYMENT_DATE;
+        protected new string resourceType = ResourceType.BURSARY_PAYMENT_DATE;
         public const string NAME = "name";
         public const string BURSARY_TYPE = "bursaryType";
         public const string PAYMENT_DATE = "paymentDate";

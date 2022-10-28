@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CovidTestingTest : ModelBase
     {
-        protected string resourceType = ResourceType.COVID_TESTING_TEST;
+        protected new string resourceType = ResourceType.COVID_TESTING_TEST;
         public const string PERSON = "person";
         public const string TEST_TYPE = "testType";
         public const string BARCODE = "barcode";

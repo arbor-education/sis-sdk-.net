@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class SchoolProgressTargetRule : ModelBase
     {
-        protected string resourceType = ResourceType.SCHOOL_PROGRESS_TARGET_RULE;
+        protected new string resourceType = ResourceType.SCHOOL_PROGRESS_TARGET_RULE;
         public const string RULE_NAME = "ruleName";
         public const string ASSESSMENT = "assessment";
         public const string EFFECTIVE_DATE = "effectiveDate";
@@ -20,6 +20,7 @@ namespace Arbor.Model
         public const string PROGRESS_AMOUNT_UNIT = "progressAmountUnit";
         public const string PROGRESS_REFERENCE_MARK_TYPE = "progressReferenceMarkType";
         public const string ACADEMIC_YEARS_OFFSET = "academicYearsOffset";
+        public const string HAS_SAME_ATTAINMENT_TARGET_FOR_EACH_PERIOD = "hasSameAttainmentTargetForEachPeriod";
 
         public SchoolProgressTargetRule ()
         {
@@ -155,6 +156,16 @@ namespace Arbor.Model
         public void setAcademicYearsOffset (int academicYearsOffset)
         {
             this.setProperty("academicYearsOffset", academicYearsOffset);
+        }
+
+        public bool getHasSameAttainmentTargetForEachPeriod ()
+        {
+            return Convert.ToBoolean(this.getProperty("hasSameAttainmentTargetForEachPeriod"));
+        }
+
+        public void setHasSameAttainmentTargetForEachPeriod (bool hasSameAttainmentTargetForEachPeriod)
+        {
+            this.setProperty("hasSameAttainmentTargetForEachPeriod", hasSameAttainmentTargetForEachPeriod);
         }
 
 

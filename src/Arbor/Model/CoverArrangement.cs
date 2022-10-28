@@ -9,13 +9,14 @@ namespace Arbor.Model
 {
     public class CoverArrangement : ModelBase
     {
-        protected string resourceType = ResourceType.COVER_ARRANGEMENT;
+        protected new string resourceType = ResourceType.COVER_ARRANGEMENT;
         public const string COVER_REQUIREMENT = "coverRequirement";
         public const string COVERING_STAFF = "coveringStaff";
         public const string COVER_START_DATETIME = "coverStartDatetime";
         public const string COVER_END_DATETIME = "coverEndDatetime";
         public const string AGREED_DATETIME = "agreedDatetime";
         public const string NOT_AGREED_DATETIME = "notAgreedDatetime";
+        public const string IS_SEND_CREATION_NOTIFICATION = "isSendCreationNotification";
 
         public CoverArrangement ()
         {
@@ -111,6 +112,16 @@ namespace Arbor.Model
         public void setNotAgreedDatetime (DateTime notAgreedDatetime)
         {
             this.setProperty("notAgreedDatetime", notAgreedDatetime);
+        }
+
+        public bool getIsSendCreationNotification ()
+        {
+            return Convert.ToBoolean(this.getProperty("isSendCreationNotification"));
+        }
+
+        public void setIsSendCreationNotification (bool isSendCreationNotification)
+        {
+            this.setProperty("isSendCreationNotification", isSendCreationNotification);
         }
 
 

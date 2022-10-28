@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AcademicUnitQualificationAward : ModelBase
     {
-        protected string resourceType = ResourceType.ACADEMIC_UNIT_QUALIFICATION_AWARD;
+        protected new string resourceType = ResourceType.ACADEMIC_UNIT_QUALIFICATION_AWARD;
         public const string ACADEMIC_UNIT = "academicUnit";
         public const string QUALIFICATION_AWARD = "qualificationAward";
 

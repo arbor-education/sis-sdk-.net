@@ -9,13 +9,14 @@ namespace Arbor.Model
 {
     public class TimetablerImportStepOutcome : ModelBase
     {
-        protected string resourceType = ResourceType.TIMETABLER_IMPORT_STEP_OUTCOME;
+        protected new string resourceType = ResourceType.TIMETABLER_IMPORT_STEP_OUTCOME;
         public const string TIMETABLER_IMPORT_RESULT = "timetablerImportResult";
         public const string IDENTIFIER = "identifier";
         public const string DESCRIPTION = "description";
         public const string OPTION_TYPE = "optionType";
         public const string LINKED_OBJECT = "linkedObject";
         public const string STEP_TYPE = "stepType";
+        public const string IS_DRAFT = "isDraft";
 
         public TimetablerImportStepOutcome ()
         {
@@ -111,6 +112,16 @@ namespace Arbor.Model
         public void setStepType (string stepType)
         {
             this.setProperty("stepType", stepType);
+        }
+
+        public bool getIsDraft ()
+        {
+            return Convert.ToBoolean(this.getProperty("isDraft"));
+        }
+
+        public void setIsDraft (bool isDraft)
+        {
+            this.setProperty("isDraft", isDraft);
         }
 
 

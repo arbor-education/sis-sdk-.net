@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class SenStatus : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_SEN_STATUS;
+        protected new string resourceType = ResourceType.UK_DFE_SEN_STATUS;
         public const string D00229 = "d00229";
 
         public SenStatus ()

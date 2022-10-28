@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ProgressAssessmentBatchTarget : ModelBase
     {
-        protected string resourceType = ResourceType.PROGRESS_ASSESSMENT_BATCH_TARGET;
+        protected new string resourceType = ResourceType.PROGRESS_ASSESSMENT_BATCH_TARGET;
         public const string PROGRESS_ASSESSMENT_BATCH = "progressAssessmentBatch";
         public const string TARGET = "target";
 

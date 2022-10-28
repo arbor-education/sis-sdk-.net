@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class BusinessRoleDefaultUserRole : ModelBase
     {
-        protected string resourceType = ResourceType.BUSINESS_ROLE_DEFAULT_USER_ROLE;
+        protected new string resourceType = ResourceType.BUSINESS_ROLE_DEFAULT_USER_ROLE;
         public const string BUSINESS_ROLE = "businessRole";
         public const string USER_ROLE = "userRole";
 

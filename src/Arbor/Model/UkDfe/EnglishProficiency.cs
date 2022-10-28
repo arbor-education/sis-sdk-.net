@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class EnglishProficiency : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_ENGLISH_PROFICIENCY;
+        protected new string resourceType = ResourceType.UK_DFE_ENGLISH_PROFICIENCY;
         public const string STUDENT = "student";
         public const string PROFICIENCY = "proficiency";
         public const string PROFICIENCY_DATE = "proficiencyDate";

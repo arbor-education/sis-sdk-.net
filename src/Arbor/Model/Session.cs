@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Session : ModelBase
     {
-        protected string resourceType = ResourceType.SESSION;
+        protected new string resourceType = ResourceType.SESSION;
         public const string START_DATETIME = "startDatetime";
         public const string END_DATETIME = "endDatetime";
         public const string LOCATION_TEXT = "locationText";
@@ -19,6 +19,7 @@ namespace Arbor.Model
         public const string TIMETABLE_SLOT = "timetableSlot";
         public const string ATTENDANCE_REGISTER_TYPE = "attendanceRegisterType";
         public const string LESSON_PLAN = "lessonPlan";
+        public const string IS_SUSPENDED = "isSuspended";
 
         public Session ()
         {
@@ -144,6 +145,16 @@ namespace Arbor.Model
         public void setLessonPlan (LessonPlan lessonPlan)
         {
             this.setProperty("lessonPlan", lessonPlan);
+        }
+
+        public bool getIsSuspended ()
+        {
+            return Convert.ToBoolean(this.getProperty("isSuspended"));
+        }
+
+        public void setIsSuspended (bool isSuspended)
+        {
+            this.setProperty("isSuspended", isSuspended);
         }
 
 

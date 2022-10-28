@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class File : ModelBase
     {
-        protected string resourceType = ResourceType.FILE;
+        protected new string resourceType = ResourceType.FILE;
         public const string CONTENT = "content";
         public const string URL = "url";
         public const string FILE_SIZE = "fileSize";

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class UserNotification : ModelBase
     {
-        protected string resourceType = ResourceType.USER_NOTIFICATION;
+        protected new string resourceType = ResourceType.USER_NOTIFICATION;
         public const string USER = "user";
         public const string IS_READ = "isRead";
         public const string STATUS = "status";

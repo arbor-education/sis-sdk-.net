@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class MeetingNote : ModelBase
     {
-        protected string resourceType = ResourceType.MEETING_NOTE;
+        protected new string resourceType = ResourceType.MEETING_NOTE;
         public const string MEETING = "meeting";
         public const string NOTE_TEXT = "noteText";
         public const string NOTE_CREATED_DATETIME = "noteCreatedDatetime";

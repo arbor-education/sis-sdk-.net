@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Letter : ModelBase
     {
-        protected string resourceType = ResourceType.LETTER;
+        protected new string resourceType = ResourceType.LETTER;
         public const string LETTER_DATE = "letterDate";
         public const string RECEIVED_DATE = "receivedDate";
         public const string PREPARED_DATETIME = "preparedDatetime";

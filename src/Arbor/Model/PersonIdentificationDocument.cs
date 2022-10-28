@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class PersonIdentificationDocument : ModelBase
     {
-        protected string resourceType = ResourceType.PERSON_IDENTIFICATION_DOCUMENT;
+        protected new string resourceType = ResourceType.PERSON_IDENTIFICATION_DOCUMENT;
         public const string PERSON = "person";
         public const string DOCUMENT_TYPE = "documentType";
         public const string DOCUMENT_NUMBER = "documentNumber";

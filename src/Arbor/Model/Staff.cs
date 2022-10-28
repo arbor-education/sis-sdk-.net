@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Staff : ModelBase
     {
-        protected string resourceType = ResourceType.STAFF;
+        protected new string resourceType = ResourceType.STAFF;
         public const string ELIGIBLE_FOR_SCHOOL_WORKFORCE_RETURN = "eligibleForSchoolWorkforceReturn";
         public const string QUALIFIED_TEACHER_STATUS = "qualifiedTeacherStatus";
         public const string QUALIFIED_TEACHER_LEARNING_AND_SKILLS_STATUS = "qualifiedTeacherLearningAndSkillsStatus";

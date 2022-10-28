@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CustomReportEmailLog : ModelBase
     {
-        protected string resourceType = ResourceType.CUSTOM_REPORT_EMAIL_LOG;
+        protected new string resourceType = ResourceType.CUSTOM_REPORT_EMAIL_LOG;
         public const string CUSTOM_REPORT = "customReport";
         public const string EMAIL_ADDRESS = "emailAddress";
         public const string SENT_DATETIME = "sentDatetime";

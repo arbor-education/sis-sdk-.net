@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AssessmentDerivation : ModelBase
     {
-        protected string resourceType = ResourceType.ASSESSMENT_DERIVATION;
+        protected new string resourceType = ResourceType.ASSESSMENT_DERIVATION;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

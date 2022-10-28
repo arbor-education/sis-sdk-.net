@@ -9,11 +9,12 @@ namespace Arbor.Model
 {
     public class BasketItem : ModelBase
     {
-        protected string resourceType = ResourceType.BASKET_ITEM;
+        protected new string resourceType = ResourceType.BASKET_ITEM;
         public const string BASKET = "basket";
         public const string PAYMENT_AMOUNT = "paymentAmount";
         public const string ADDED_DATETIME = "addedDatetime";
         public const string PAYING_FOR = "payingFor";
+        public const string QUANTITY = "quantity";
         public const string STUDENT = "student";
 
         public BasketItem ()
@@ -90,6 +91,16 @@ namespace Arbor.Model
         public void setPayingFor (ModelBase payingFor)
         {
             this.setProperty("payingFor", payingFor);
+        }
+
+        public int getQuantity ()
+        {
+            return Convert.ToInt32(this.getProperty("quantity"));
+        }
+
+        public void setQuantity (int quantity)
+        {
+            this.setProperty("quantity", quantity);
         }
 
         public Student getStudent ()

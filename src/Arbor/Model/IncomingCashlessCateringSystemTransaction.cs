@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class IncomingCashlessCateringSystemTransaction : ModelBase
     {
-        protected string resourceType = ResourceType.INCOMING_CASHLESS_CATERING_SYSTEM_TRANSACTION;
+        protected new string resourceType = ResourceType.INCOMING_CASHLESS_CATERING_SYSTEM_TRANSACTION;
         public const string BILL_PAYER = "billPayer";
         public const string SOURCE = "source";
         public const string TRANSACTION_IDENTIFIER = "transactionIdentifier";
@@ -19,7 +19,7 @@ namespace Arbor.Model
         public const string TRANSACTION_FEE_AMOUNT = "transactionFeeAmount";
         public const string VAT_AMOUNT = "vatAmount";
         public const string TRANSACTION_DATE = "transactionDate";
-        public const string RELATED_ENTITY = "related_entity";
+        public const string RELATED_ENTITY = "relatedEntity";
 
         public IncomingCashlessCateringSystemTransaction ()
         {
@@ -147,14 +147,14 @@ namespace Arbor.Model
             this.setProperty("transactionDate", transactionDate);
         }
 
-        public ModelBase getRelated_entity ()
+        public ModelBase getRelatedEntity ()
         {
-            return (ModelBase) this.getProperty("related_entity");
+            return (ModelBase) this.getProperty("relatedEntity");
         }
 
-        public void setRelated_entity (ModelBase related_entity)
+        public void setRelatedEntity (ModelBase relatedEntity)
         {
-            this.setProperty("related_entity", related_entity);
+            this.setProperty("relatedEntity", relatedEntity);
         }
 
 

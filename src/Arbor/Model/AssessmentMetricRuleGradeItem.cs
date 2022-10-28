@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AssessmentMetricRuleGradeItem : ModelBase
     {
-        protected string resourceType = ResourceType.ASSESSMENT_METRIC_RULE_GRADE_ITEM;
+        protected new string resourceType = ResourceType.ASSESSMENT_METRIC_RULE_GRADE_ITEM;
         public const string OPERATOR = "operator";
         public const string GRADE = "grade";
         public const string ASSESSMENT_METRIC_RULE = "assessmentMetricRule";
@@ -57,9 +57,9 @@ namespace Arbor.Model
             return this.getProperty("operator").ToString();
         }
 
-        public void setOperator (string operatorName)
+        public void setOperator (string _operator)
         {
-            this.setProperty("operator", operatorName);
+            this.setProperty("operator", _operator);
         }
 
         public Grade getGrade ()

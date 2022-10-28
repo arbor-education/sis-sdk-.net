@@ -413,11 +413,9 @@ namespace Arbor.Api.Gateway
 				case HttpStatusCode.NotFound:
 				case HttpStatusCode.InternalServerError:
 					throw new ServerErrorException(message);
-					break;
 				default:
 
 				throw new ServerErrorException(message);
-					break;
 			}
 
 			return responsePayload;

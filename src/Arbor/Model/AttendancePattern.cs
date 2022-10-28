@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AttendancePattern : ModelBase
     {
-        protected string resourceType = ResourceType.ATTENDANCE_PATTERN;
+        protected new string resourceType = ResourceType.ATTENDANCE_PATTERN;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

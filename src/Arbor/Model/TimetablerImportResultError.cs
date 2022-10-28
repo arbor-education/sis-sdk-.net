@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class TimetablerImportResultError : ModelBase
     {
-        protected string resourceType = ResourceType.TIMETABLER_IMPORT_RESULT_ERROR;
+        protected new string resourceType = ResourceType.TIMETABLER_IMPORT_RESULT_ERROR;
         public const string TIMETABLER_IMPORT_RESULT = "timetablerImportResult";
         public const string ERROR_MESSAGE = "errorMessage";
 

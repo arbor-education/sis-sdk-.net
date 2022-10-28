@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CurriculumStatement : ModelBase
     {
-        protected string resourceType = ResourceType.CURRICULUM_STATEMENT;
+        protected new string resourceType = ResourceType.CURRICULUM_STATEMENT;
         public const string CURRICULUM_SECTION = "curriculumSection";
         public const string CURRICULUM_STATEMENT_BAND = "curriculumStatementBand";
         public const string CODE = "code";

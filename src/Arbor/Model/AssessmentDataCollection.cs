@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AssessmentDataCollection : ModelBase
     {
-        protected string resourceType = ResourceType.ASSESSMENT_DATA_COLLECTION;
+        protected new string resourceType = ResourceType.ASSESSMENT_DATA_COLLECTION;
         public const string DEADLINE_DATE = "deadlineDate";
         public const string COLLECTION_RANGE_START_DATE = "collectionRangeStartDate";
         public const string COLLECTION_RANGE_END_DATE = "collectionRangeEndDate";

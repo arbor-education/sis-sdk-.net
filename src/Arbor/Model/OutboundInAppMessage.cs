@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class OutboundInAppMessage : ModelBase
     {
-        protected string resourceType = ResourceType.OUTBOUND_IN_APP_MESSAGE;
+        protected new string resourceType = ResourceType.OUTBOUND_IN_APP_MESSAGE;
         public const string SENDER = "sender";
         public const string RECIPIENT = "recipient";
         public const string MESSAGE = "message";

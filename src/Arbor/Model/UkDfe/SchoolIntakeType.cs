@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class SchoolIntakeType : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_SCHOOL_INTAKE_TYPE;
+        protected new string resourceType = ResourceType.UK_DFE_SCHOOL_INTAKE_TYPE;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

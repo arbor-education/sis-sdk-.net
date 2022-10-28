@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ApplicationApplicantImport : ModelBase
     {
-        protected string resourceType = ResourceType.APPLICATION_APPLICANT_IMPORT;
+        protected new string resourceType = ResourceType.APPLICATION_APPLICANT_IMPORT;
         public const string APPLICATION = "application";
         public const string ROW_INDEX = "rowIndex";
         public const string ERRORS = "errors";

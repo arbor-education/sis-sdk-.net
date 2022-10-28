@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class IdentityCardReader : ModelBase
     {
-        protected string resourceType = ResourceType.IDENTITY_CARD_READER;
+        protected new string resourceType = ResourceType.IDENTITY_CARD_READER;
         public const string READER_NUMBER = "readerNumber";
         public const string ROOM = "room";
 

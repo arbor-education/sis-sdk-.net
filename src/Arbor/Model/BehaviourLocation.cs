@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class BehaviourLocation : ModelBase
     {
-        protected string resourceType = ResourceType.BEHAVIOUR_LOCATION;
+        protected new string resourceType = ResourceType.BEHAVIOUR_LOCATION;
         public const string NAME = "name";
 
         public BehaviourLocation ()

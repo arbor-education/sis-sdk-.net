@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CustomReport : ModelBase
     {
-        protected string resourceType = ResourceType.CUSTOM_REPORT;
+        protected new string resourceType = ResourceType.CUSTOM_REPORT;
         public const string TITLE = "title";
         public const string REPORT_CLASS = "reportClass";
         public const string LAST_ACCESS_DATETIME = "lastAccessDatetime";

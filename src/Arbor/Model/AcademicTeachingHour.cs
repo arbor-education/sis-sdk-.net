@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AcademicTeachingHour : ModelBase
     {
-        protected string resourceType = ResourceType.ACADEMIC_TEACHING_HOUR;
+        protected new string resourceType = ResourceType.ACADEMIC_TEACHING_HOUR;
         public const string EFFECTIVE_DATE = "effectiveDate";
         public const string END_DATE = "endDate";
         public const string START_TIME = "startTime";

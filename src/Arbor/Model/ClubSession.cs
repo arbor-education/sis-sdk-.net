@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ClubSession : ModelBase
     {
-        protected string resourceType = ResourceType.CLUB_SESSION;
+        protected new string resourceType = ResourceType.CLUB_SESSION;
         public const string START_DATETIME = "startDatetime";
         public const string END_DATETIME = "endDatetime";
         public const string LOCATION_TEXT = "locationText";

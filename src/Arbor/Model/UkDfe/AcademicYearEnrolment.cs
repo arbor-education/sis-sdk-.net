@@ -9,9 +9,10 @@ namespace Arbor.Model.UkDfe
 {
     public class AcademicYearEnrolment : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_ACADEMIC_YEAR_ENROLMENT;
+        protected new string resourceType = ResourceType.UK_DFE_ACADEMIC_YEAR_ENROLMENT;
         public const string PLANNED_LEARNING_HOURS = "plannedLearningHours";
         public const string PLANNED_EEP_HOURS = "plannedEepHours";
+        public const string T_LEVEL_PLANNED_LEARNING_HOURS = "tLevelPlannedLearningHours";
 
         public AcademicYearEnrolment ()
         {
@@ -67,6 +68,16 @@ namespace Arbor.Model.UkDfe
         public void setPlannedEepHours (int plannedEepHours)
         {
             this.setProperty("plannedEepHours", plannedEepHours);
+        }
+
+        public int getTLevelPlannedLearningHours ()
+        {
+            return Convert.ToInt32(this.getProperty("tLevelPlannedLearningHours"));
+        }
+
+        public void setTLevelPlannedLearningHours (int tLevelPlannedLearningHours)
+        {
+            this.setProperty("tLevelPlannedLearningHours", tLevelPlannedLearningHours);
         }
 
 

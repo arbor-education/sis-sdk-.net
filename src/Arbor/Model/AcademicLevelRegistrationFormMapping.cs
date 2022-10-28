@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AcademicLevelRegistrationFormMapping : ModelBase
     {
-        protected string resourceType = ResourceType.ACADEMIC_LEVEL_REGISTRATION_FORM_MAPPING;
+        protected new string resourceType = ResourceType.ACADEMIC_LEVEL_REGISTRATION_FORM_MAPPING;
         public const string ACADEMIC_LEVEL = "academicLevel";
         public const string REGISTRATION_FORM = "registrationForm";
 

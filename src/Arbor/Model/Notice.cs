@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Notice : ModelBase
     {
-        protected string resourceType = ResourceType.NOTICE;
+        protected new string resourceType = ResourceType.NOTICE;
         public const string NOTICE_HTML = "noticeHtml";
         public const string NOTICE_DATETIME = "noticeDatetime";
         public const string END_DATETIME = "endDatetime";

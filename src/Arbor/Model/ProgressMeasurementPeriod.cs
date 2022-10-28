@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ProgressMeasurementPeriod : ModelBase
     {
-        protected string resourceType = ResourceType.PROGRESS_MEASUREMENT_PERIOD;
+        protected new string resourceType = ResourceType.PROGRESS_MEASUREMENT_PERIOD;
         public const string PROGRESS_MEASUREMENT_PERIOD_SET = "progressMeasurementPeriodSet";
         public const string PERIOD_NAME = "periodName";
         public const string SHORT_NAME = "shortName";

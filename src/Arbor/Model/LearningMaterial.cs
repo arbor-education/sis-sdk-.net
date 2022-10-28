@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class LearningMaterial : ModelBase
     {
-        protected string resourceType = ResourceType.LEARNING_MATERIAL;
+        protected new string resourceType = ResourceType.LEARNING_MATERIAL;
         public const string LEARNING_MATERIAL_FOLDER = "learningMaterialFolder";
         public const string TITLE = "title";
         public const string SUMMARY = "summary";

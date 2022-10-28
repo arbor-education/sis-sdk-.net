@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CustomReportOrdering : ModelBase
     {
-        protected string resourceType = ResourceType.CUSTOM_REPORT_ORDERING;
+        protected new string resourceType = ResourceType.CUSTOM_REPORT_ORDERING;
         public const string CUSTOM_REPORT = "customReport";
         public const string FIELD_CLASS = "fieldClass";
         public const string FIELD_PARAMS = "fieldParams";

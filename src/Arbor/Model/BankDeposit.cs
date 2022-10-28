@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class BankDeposit : ModelBase
     {
-        protected string resourceType = ResourceType.BANK_DEPOSIT;
+        protected new string resourceType = ResourceType.BANK_DEPOSIT;
         public const string BANK_ACCOUNT = "bankAccount";
         public const string PAID_BY_STAFF = "paidByStaff";
         public const string DEPOSIT_DATETIME = "depositDatetime";

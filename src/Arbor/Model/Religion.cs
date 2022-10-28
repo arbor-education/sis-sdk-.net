@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Religion : ModelBase
     {
-        protected string resourceType = ResourceType.RELIGION;
+        protected new string resourceType = ResourceType.RELIGION;
         public const string D00009 = "d00009";
         public const string D00195 = "d00195";
         public const string CODE = "code";

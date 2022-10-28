@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Language : ModelBase
     {
-        protected string resourceType = ResourceType.LANGUAGE;
+        protected new string resourceType = ResourceType.LANGUAGE;
         public const string D00011_ALPHA3 = "d00011Alpha3";
         public const string D00011_ALPHA4 = "d00011Alpha4";
         public const string CODE = "code";

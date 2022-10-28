@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class AttendanceApiSubmission : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_ATTENDANCE_API_SUBMISSION;
+        protected new string resourceType = ResourceType.UK_DFE_ATTENDANCE_API_SUBMISSION;
         public const string PAYLOAD = "payload";
         public const string PAYLOAD_SENT_DATETIME = "payloadSentDatetime";
         public const string RESPONSE = "response";

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class SenEventOutcomeType : ModelBase
     {
-        protected string resourceType = ResourceType.SEN_EVENT_OUTCOME_TYPE;
+        protected new string resourceType = ResourceType.SEN_EVENT_OUTCOME_TYPE;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

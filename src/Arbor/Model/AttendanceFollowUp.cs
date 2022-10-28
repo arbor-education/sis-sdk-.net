@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AttendanceFollowUp : ModelBase
     {
-        protected string resourceType = ResourceType.ATTENDANCE_FOLLOW_UP;
+        protected new string resourceType = ResourceType.ATTENDANCE_FOLLOW_UP;
         public const string STUDENT = "student";
         public const string ATTENDANCE_DATE = "attendanceDate";
         public const string SENDING_STARTED_DATETIME = "sendingStartedDatetime";

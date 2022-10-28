@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CustomerPrepayment : ModelBase
     {
-        protected string resourceType = ResourceType.CUSTOMER_PREPAYMENT;
+        protected new string resourceType = ResourceType.CUSTOMER_PREPAYMENT;
         public const string CUSTOMER_ACCOUNT = "customerAccount";
         public const string BILL_PAYER = "billPayer";
         public const string INCOMING_DIRECT_DEBIT_TRANSACTION = "incomingDirectDebitTransaction";
@@ -18,6 +18,7 @@ namespace Arbor.Model
         public const string INCOMING_CASHLESS_CATERING_SYSTEM_TRANSACTION = "incomingCashlessCateringSystemTransaction";
         public const string RECEIVED_CHEQUE = "receivedCheque";
         public const string CASH_RECEIPT = "cashReceipt";
+        public const string VOUCHER = "voucher";
         public const string PREPAYMENT_AMOUNT = "prepaymentAmount";
         public const string PREPAYMENT_DATETIME = "prepaymentDatetime";
         public const string PREPAYMENT_SUCCEEDED_DATETIME = "prepaymentSucceededDatetime";
@@ -139,6 +140,16 @@ namespace Arbor.Model
         public void setCashReceipt (CashReceipt cashReceipt)
         {
             this.setProperty("cashReceipt", cashReceipt);
+        }
+
+        public Voucher getVoucher ()
+        {
+            return (Voucher) this.getProperty("voucher");
+        }
+
+        public void setVoucher (Voucher voucher)
+        {
+            this.setProperty("voucher", voucher);
         }
 
         public string getPrepaymentAmount ()

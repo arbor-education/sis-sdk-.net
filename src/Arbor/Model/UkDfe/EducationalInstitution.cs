@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class EducationalInstitution : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_EDUCATIONAL_INSTITUTION;
+        protected new string resourceType = ResourceType.UK_DFE_EDUCATIONAL_INSTITUTION;
         public const string LOCAL_AUTHORITY = "localAuthority";
         public const string ESTABLISHMENT_NUMBER = "establishmentNumber";
         public const string CENSUS_SCHOOL_PHASE = "censusSchoolPhase";
@@ -31,6 +31,7 @@ namespace Arbor.Model.UkDfe
         public const string SPECIAL_SCHOOL_MAX_FEMALE_AGE = "specialSchoolMaxFemaleAge";
         public const string SPECIAL_SCHOOL_SEN_PROVISIONS = "specialSchoolSenProvisions";
         public const string CENSUS_SCHOOL_OPENING_DATE = "censusSchoolOpeningDate";
+        public const string WEEKLY_HOURS_OPEN = "weeklyHoursOpen";
 
         public EducationalInstitution ()
         {
@@ -276,6 +277,16 @@ namespace Arbor.Model.UkDfe
         public void setCensusSchoolOpeningDate (DateTime censusSchoolOpeningDate)
         {
             this.setProperty("censusSchoolOpeningDate", censusSchoolOpeningDate);
+        }
+
+        public string getWeeklyHoursOpen ()
+        {
+            return this.getProperty("weeklyHoursOpen").ToString();
+        }
+
+        public void setWeeklyHoursOpen (string weeklyHoursOpen)
+        {
+            this.setProperty("weeklyHoursOpen", weeklyHoursOpen);
         }
 
 

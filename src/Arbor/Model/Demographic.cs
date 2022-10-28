@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Demographic : ModelBase
     {
-        protected string resourceType = ResourceType.DEMOGRAPHIC;
+        protected new string resourceType = ResourceType.DEMOGRAPHIC;
         public const string LABEL = "label";
         public const string SHORT_NAME = "shortName";
         public const string TYPE = "type";

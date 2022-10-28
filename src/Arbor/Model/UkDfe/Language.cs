@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class Language : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_LANGUAGE;
+        protected new string resourceType = ResourceType.UK_DFE_LANGUAGE;
         public const string D00011_ALPHA3 = "d00011Alpha3";
         public const string D00011_ALPHA4 = "d00011Alpha4";
 

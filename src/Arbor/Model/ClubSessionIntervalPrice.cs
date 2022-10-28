@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ClubSessionIntervalPrice : ModelBase
     {
-        protected string resourceType = ResourceType.CLUB_SESSION_INTERVAL_PRICE;
+        protected new string resourceType = ResourceType.CLUB_SESSION_INTERVAL_PRICE;
         public const string CLUB_SESSION_INTERVAL = "clubSessionInterval";
         public const string GROUP = "group";
         public const string PRICE_EX_VAT = "priceExVat";

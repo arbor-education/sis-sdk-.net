@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class SuspendedCalendarEntryMapping : ModelBase
     {
-        protected string resourceType = ResourceType.SUSPENDED_CALENDAR_ENTRY_MAPPING;
+        protected new string resourceType = ResourceType.SUSPENDED_CALENDAR_ENTRY_MAPPING;
         public const string SUSPENDED_OBJECT = "suspendedObject";
         public const string SUSPENDED_EVENT = "suspendedEvent";
 

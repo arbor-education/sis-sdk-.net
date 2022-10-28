@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class TripPrice : ModelBase
     {
-        protected string resourceType = ResourceType.TRIP_PRICE;
+        protected new string resourceType = ResourceType.TRIP_PRICE;
         public const string TRIP = "trip";
         public const string APPLICABLE = "applicable";
         public const string PRICE_EX_VAT = "priceExVat";

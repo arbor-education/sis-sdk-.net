@@ -9,13 +9,14 @@ namespace Arbor.Model
 {
     public class CommunicationTemplate : ModelBase
     {
-        protected string resourceType = ResourceType.COMMUNICATION_TEMPLATE;
+        protected new string resourceType = ResourceType.COMMUNICATION_TEMPLATE;
         public const string NAME = "name";
         public const string IDENTIFIER = "identifier";
         public const string EMAIL_SUBJECT = "emailSubject";
         public const string EMAIL_BODY = "emailBody";
         public const string SMS_BODY = "smsBody";
         public const string LETTER_BODY = "letterBody";
+        public const string IN_APP_MESSAGE_BODY = "inAppMessageBody";
         public const string COMMUNICATION_TEMPLATE_DEFINITION_CLASS = "communicationTemplateDefinitionClass";
         public const string CUSTOM_REPORT = "customReport";
 
@@ -113,6 +114,16 @@ namespace Arbor.Model
         public void setLetterBody (string letterBody)
         {
             this.setProperty("letterBody", letterBody);
+        }
+
+        public string getInAppMessageBody ()
+        {
+            return this.getProperty("inAppMessageBody").ToString();
+        }
+
+        public void setInAppMessageBody (string inAppMessageBody)
+        {
+            this.setProperty("inAppMessageBody", inAppMessageBody);
         }
 
         public string getCommunicationTemplateDefinitionClass ()

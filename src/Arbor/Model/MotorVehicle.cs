@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class MotorVehicle : ModelBase
     {
-        protected string resourceType = ResourceType.MOTOR_VEHICLE;
+        protected new string resourceType = ResourceType.MOTOR_VEHICLE;
         public const string OWNER = "owner";
         public const string MOTOR_VEHICLE_TYPE = "motorVehicleType";
         public const string MOTOR_VEHICLE_MAKE = "motorVehicleMake";

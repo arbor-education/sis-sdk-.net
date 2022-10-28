@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class StaffContractPostRate : ModelBase
     {
-        protected string resourceType = ResourceType.STAFF_CONTRACT_POST_RATE;
+        protected new string resourceType = ResourceType.STAFF_CONTRACT_POST_RATE;
         public const string STAFF_CONTRACT_POST = "staffContractPost";
         public const string RATE = "rate";
         public const string RATE_FREQUENCY = "rateFrequency";

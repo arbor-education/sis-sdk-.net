@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class StudentRecordChange : ModelBase
     {
-        protected string resourceType = ResourceType.STUDENT_RECORD_CHANGE;
+        protected new string resourceType = ResourceType.STUDENT_RECORD_CHANGE;
         public const string STUDENT = "student";
         public const string CHANGER_CLASS_NAME = "changerClassName";
         public const string CHANGE_TYPE = "changeType";

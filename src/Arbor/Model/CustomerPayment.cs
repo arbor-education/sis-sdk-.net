@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CustomerPayment : ModelBase
     {
-        protected string resourceType = ResourceType.CUSTOMER_PAYMENT;
+        protected new string resourceType = ResourceType.CUSTOMER_PAYMENT;
         public const string CUSTOMER_INVOICE = "customerInvoice";
         public const string BILL_PAYER = "billPayer";
         public const string INCOMING_DIRECT_DEBIT_TRANSACTION = "incomingDirectDebitTransaction";
@@ -18,6 +18,7 @@ namespace Arbor.Model
         public const string INCOMING_BANK_TRANSACTION = "incomingBankTransaction";
         public const string RECEIVED_CHEQUE = "receivedCheque";
         public const string CASH_RECEIPT = "cashReceipt";
+        public const string VOUCHER = "voucher";
         public const string PAYMENT_AMOUNT = "paymentAmount";
         public const string PAYMENT_DATETIME = "paymentDatetime";
         public const string PAYMENT_SUCCEEDED_DATETIME = "paymentSucceededDatetime";
@@ -139,6 +140,16 @@ namespace Arbor.Model
         public void setCashReceipt (CashReceipt cashReceipt)
         {
             this.setProperty("cashReceipt", cashReceipt);
+        }
+
+        public Voucher getVoucher ()
+        {
+            return (Voucher) this.getProperty("voucher");
+        }
+
+        public void setVoucher (Voucher voucher)
+        {
+            this.setProperty("voucher", voucher);
         }
 
         public string getPaymentAmount ()

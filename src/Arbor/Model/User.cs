@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class User : ModelBase
     {
-        protected string resourceType = ResourceType.USER;
+        protected new string resourceType = ResourceType.USER;
         public const string STAFF = "staff";
         public const string STUDENT = "student";
         public const string GUARDIAN = "guardian";
@@ -26,7 +26,7 @@ namespace Arbor.Model
         public const string PASSWORD_LAST_CHANGED_DATETIME = "passwordLastChangedDatetime";
         public const string ENABLED = "enabled";
         public const string VERIFIED_DATETIME = "verifiedDatetime";
-        public const string TERMS_ACCEPTED_DATETIME = "termsAcceptedDatetime";
+        public const string TERMS_OF_USE_ACCEPTED_DATETIME = "termsOfUseAcceptedDatetime";
         public const string WELCOME_MESSAGE_DATETIME = "welcomeMessageDatetime";
         public const string TWO_FACTOR_AUTH_METHOD = "twoFactorAuthMethod";
         public const string TWO_FACTOR_DEVICE_IDENTIFIER = "twoFactorDeviceIdentifier";
@@ -35,6 +35,7 @@ namespace Arbor.Model
         public const string DELETED_DISPLAY_NAME = "deletedDisplayName";
         public const string GOOGLE_TWO_FACTOR_SECRET = "googleTwoFactorSecret";
         public const string SSO_TWO_FACTOR_ACTIVATED = "ssoTwoFactorActivated";
+        public const string ACCEPT_SAAS_TERMS_AND_CONDITIONS_BY_DATETIME = "acceptSaasTermsAndConditionsByDatetime";
 
         public User ()
         {
@@ -232,14 +233,14 @@ namespace Arbor.Model
             this.setProperty("verifiedDatetime", verifiedDatetime);
         }
 
-        public DateTime getTermsAcceptedDatetime ()
+        public DateTime getTermsOfUseAcceptedDatetime ()
         {
-            return Convert.ToDateTime(this.getProperty("termsAcceptedDatetime"));
+            return Convert.ToDateTime(this.getProperty("termsOfUseAcceptedDatetime"));
         }
 
-        public void setTermsAcceptedDatetime (DateTime termsAcceptedDatetime)
+        public void setTermsOfUseAcceptedDatetime (DateTime termsOfUseAcceptedDatetime)
         {
-            this.setProperty("termsAcceptedDatetime", termsAcceptedDatetime);
+            this.setProperty("termsOfUseAcceptedDatetime", termsOfUseAcceptedDatetime);
         }
 
         public DateTime getWelcomeMessageDatetime ()
@@ -320,6 +321,16 @@ namespace Arbor.Model
         public void setSsoTwoFactorActivated (bool ssoTwoFactorActivated)
         {
             this.setProperty("ssoTwoFactorActivated", ssoTwoFactorActivated);
+        }
+
+        public DateTime getAcceptSaasTermsAndConditionsByDatetime ()
+        {
+            return Convert.ToDateTime(this.getProperty("acceptSaasTermsAndConditionsByDatetime"));
+        }
+
+        public void setAcceptSaasTermsAndConditionsByDatetime (DateTime acceptSaasTermsAndConditionsByDatetime)
+        {
+            this.setProperty("acceptSaasTermsAndConditionsByDatetime", acceptSaasTermsAndConditionsByDatetime);
         }
 
 

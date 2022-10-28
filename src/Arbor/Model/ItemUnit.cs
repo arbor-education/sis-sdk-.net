@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ItemUnit : ModelBase
     {
-        protected string resourceType = ResourceType.ITEM_UNIT;
+        protected new string resourceType = ResourceType.ITEM_UNIT;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

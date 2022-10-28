@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class StudentRepeatingAbsenceNote : ModelBase
     {
-        protected string resourceType = ResourceType.STUDENT_REPEATING_ABSENCE_NOTE;
+        protected new string resourceType = ResourceType.STUDENT_REPEATING_ABSENCE_NOTE;
         public const string STUDENT = "student";
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";

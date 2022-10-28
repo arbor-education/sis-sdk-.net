@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class EducationPlan : ModelBase
     {
-        protected string resourceType = ResourceType.EDUCATION_PLAN;
+        protected new string resourceType = ResourceType.EDUCATION_PLAN;
         public const string STUDENT = "student";
         public const string EDUCATION_PLAN_TYPE = "educationPlanType";
         public const string SUMMARY = "summary";

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class VisualTableConfig : ModelBase
     {
-        protected string resourceType = ResourceType.VISUAL_TABLE_CONFIG;
+        protected new string resourceType = ResourceType.VISUAL_TABLE_CONFIG;
         public const string PAGE_CONTEXT = "pageContext";
         public const string TABLE_URL = "tableUrl";
         public const string USER = "user";

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class IntakeSeasonApplicantBucket : ModelBase
     {
-        protected string resourceType = ResourceType.INTAKE_SEASON_APPLICANT_BUCKET;
+        protected new string resourceType = ResourceType.INTAKE_SEASON_APPLICANT_BUCKET;
         public const string APPLICANT_BUCKET_NAME = "applicantBucketName";
         public const string INTAKE_SEASON = "intakeSeason";
 

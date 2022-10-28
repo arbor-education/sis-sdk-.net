@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class StudentRoomFeatureRequirement : ModelBase
     {
-        protected string resourceType = ResourceType.STUDENT_ROOM_FEATURE_REQUIREMENT;
+        protected new string resourceType = ResourceType.STUDENT_ROOM_FEATURE_REQUIREMENT;
         public const string STUDENT = "student";
         public const string ROOM_FEATURE = "roomFeature";
 

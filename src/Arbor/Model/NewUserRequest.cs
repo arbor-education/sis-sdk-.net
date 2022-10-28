@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class NewUserRequest : ModelBase
     {
-        protected string resourceType = ResourceType.NEW_USER_REQUEST;
+        protected new string resourceType = ResourceType.NEW_USER_REQUEST;
         public const string BUSINESS_ROLE = "businessRole";
         public const string TITLE = "title";
         public const string FIRST_NAME = "firstName";

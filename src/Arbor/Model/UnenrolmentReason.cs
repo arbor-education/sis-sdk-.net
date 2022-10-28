@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class UnenrolmentReason : ModelBase
     {
-        protected string resourceType = ResourceType.UNENROLMENT_REASON;
+        protected new string resourceType = ResourceType.UNENROLMENT_REASON;
         public const string D00206 = "d00206";
         public const string CODE = "code";
         public const string ACTIVE = "active";

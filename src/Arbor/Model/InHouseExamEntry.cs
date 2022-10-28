@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class InHouseExamEntry : ModelBase
     {
-        protected string resourceType = ResourceType.IN_HOUSE_EXAM_ENTRY;
+        protected new string resourceType = ResourceType.IN_HOUSE_EXAM_ENTRY;
         public const string IN_HOUSE_EXAM = "inHouseExam";
         public const string IN_HOUSE_EXAM_INSTANCE = "inHouseExamInstance";
         public const string IN_HOUSE_CANDIDATE = "inHouseCandidate";

@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class GuardianRelationshipType : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_GUARDIAN_RELATIONSHIP_TYPE;
+        protected new string resourceType = ResourceType.UK_DFE_GUARDIAN_RELATIONSHIP_TYPE;
         public const string D00033 = "d00033";
         public const string D00034 = "d00034";
         public const string CTF_EXPORT_CODE = "ctfExportCode";

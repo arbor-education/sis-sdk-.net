@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class EducationalInstitution : ModelBase
     {
-        protected string resourceType = ResourceType.EDUCATIONAL_INSTITUTION;
+        protected new string resourceType = ResourceType.EDUCATIONAL_INSTITUTION;
         public const string LOCAL_AUTHORITY = "localAuthority";
         public const string ESTABLISHMENT_NUMBER = "establishmentNumber";
         public const string CENSUS_SCHOOL_PHASE = "censusSchoolPhase";
@@ -31,12 +31,14 @@ namespace Arbor.Model
         public const string SPECIAL_SCHOOL_MAX_FEMALE_AGE = "specialSchoolMaxFemaleAge";
         public const string SPECIAL_SCHOOL_SEN_PROVISIONS = "specialSchoolSenProvisions";
         public const string CENSUS_SCHOOL_OPENING_DATE = "censusSchoolOpeningDate";
+        public const string WEEKLY_HOURS_OPEN = "weeklyHoursOpen";
         public const string EDUCATIONAL_INSTITUTION_NAME = "educationalInstitutionName";
         public const string SHORT_NAME = "shortName";
         public const string OPENING_DATE = "openingDate";
         public const string CLOSING_DATE = "closingDate";
         public const string ARBOR_IDENTIFIER = "arborIdentifier";
         public const string WEBSITE = "website";
+        public const string PREVIOUS_EDUCATIONAL_INSTITUTION = "previousEducationalInstitution";
 
         public EducationalInstitution ()
         {
@@ -284,6 +286,16 @@ namespace Arbor.Model
             this.setProperty("censusSchoolOpeningDate", censusSchoolOpeningDate);
         }
 
+        public string getWeeklyHoursOpen ()
+        {
+            return this.getProperty("weeklyHoursOpen").ToString();
+        }
+
+        public void setWeeklyHoursOpen (string weeklyHoursOpen)
+        {
+            this.setProperty("weeklyHoursOpen", weeklyHoursOpen);
+        }
+
         public string getEducationalInstitutionName ()
         {
             return this.getProperty("educationalInstitutionName").ToString();
@@ -342,6 +354,16 @@ namespace Arbor.Model
         public void setWebsite (string website)
         {
             this.setProperty("website", website);
+        }
+
+        public EducationalInstitution getPreviousEducationalInstitution ()
+        {
+            return (EducationalInstitution) this.getProperty("previousEducationalInstitution");
+        }
+
+        public void setPreviousEducationalInstitution (EducationalInstitution previousEducationalInstitution)
+        {
+            this.setProperty("previousEducationalInstitution", previousEducationalInstitution);
         }
 
 

@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class TravellerStatus : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_TRAVELLER_STATUS;
+        protected new string resourceType = ResourceType.UK_DFE_TRAVELLER_STATUS;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

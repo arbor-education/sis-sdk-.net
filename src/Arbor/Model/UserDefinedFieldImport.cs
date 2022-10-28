@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class UserDefinedFieldImport : ModelBase
     {
-        protected string resourceType = ResourceType.USER_DEFINED_FIELD_IMPORT;
+        protected new string resourceType = ResourceType.USER_DEFINED_FIELD_IMPORT;
         public const string ENTITY = "entity";
         public const string VALUE = "value";
         public const string ROW_INDEX = "rowIndex";

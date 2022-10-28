@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Student : ModelBase
     {
-        protected string resourceType = ResourceType.STUDENT;
+        protected new string resourceType = ResourceType.STUDENT;
         public const string UNIQUE_LEARNER_NUMBER = "uniqueLearnerNumber";
         public const string HOME_LOCAL_AUTHORITY = "homeLocalAuthority";
         public const string YOUTH_SUPPORT_SERVICES_AGREEMENT = "youthSupportServicesAgreement";
@@ -28,6 +28,7 @@ namespace Arbor.Model
         public const string GCSE_MATHS_GRADE_PRIOR = "gcseMathsGradePrior";
         public const string GCSE_MATHS_ACHIEVEMENT_TYPE = "gcseMathsAchievementType";
         public const string GCSE_MATHS_FUNDING_EXEMPTION_TYPE = "gcseMathsFundingExemptionType";
+        public const string T_LEVEL_PLANNED_EEP_HOURS = "tLevelPlannedEepHours";
         public const string PERSON = "person";
         public const string RELIGION = "religion";
         public const string ETHNICITY = "ethnicity";
@@ -39,6 +40,8 @@ namespace Arbor.Model
         public const string LEGACY_SYSTEM_ID = "legacySystemId";
         public const string MINIMUM_DATA_RETENTION_DATE = "minimumDataRetentionDate";
         public const string SUSPEND_CALENDAR_ENTRY_MAPPINGS = "suspendCalendarEntryMappings";
+        public const string IS_ACTIVE_OUTGOING_SYNC = "isActiveOutgoingSync";
+        public const string IS_ACTIVE_INCOMING_SYNC = "isActiveIncomingSync";
 
         public Student ()
         {
@@ -256,6 +259,16 @@ namespace Arbor.Model
             this.setProperty("gcseMathsFundingExemptionType", gcseMathsFundingExemptionType);
         }
 
+        public int getTLevelPlannedEepHours ()
+        {
+            return Convert.ToInt32(this.getProperty("tLevelPlannedEepHours"));
+        }
+
+        public void setTLevelPlannedEepHours (int tLevelPlannedEepHours)
+        {
+            this.setProperty("tLevelPlannedEepHours", tLevelPlannedEepHours);
+        }
+
         public Person getPerson ()
         {
             return (Person) this.getProperty("person");
@@ -364,6 +377,26 @@ namespace Arbor.Model
         public void setSuspendCalendarEntryMappings (bool suspendCalendarEntryMappings)
         {
             this.setProperty("suspendCalendarEntryMappings", suspendCalendarEntryMappings);
+        }
+
+        public bool getIsActiveOutgoingSync ()
+        {
+            return Convert.ToBoolean(this.getProperty("isActiveOutgoingSync"));
+        }
+
+        public void setIsActiveOutgoingSync (bool isActiveOutgoingSync)
+        {
+            this.setProperty("isActiveOutgoingSync", isActiveOutgoingSync);
+        }
+
+        public bool getIsActiveIncomingSync ()
+        {
+            return Convert.ToBoolean(this.getProperty("isActiveIncomingSync"));
+        }
+
+        public void setIsActiveIncomingSync (bool isActiveIncomingSync)
+        {
+            this.setProperty("isActiveIncomingSync", isActiveIncomingSync);
         }
 
 

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Guardian : ModelBase
     {
-        protected string resourceType = ResourceType.GUARDIAN;
+        protected new string resourceType = ResourceType.GUARDIAN;
         public const string PERSON = "person";
         public const string EMPLOYER = "employer";
         public const string RELIGION = "religion";
@@ -20,6 +20,8 @@ namespace Arbor.Model
         public const string PREFERRED_CONTACT_METHOD = "preferredContactMethod";
         public const string LEGACY_SYSTEM_ID = "legacySystemId";
         public const string IS_KEY_WORKER = "isKeyWorker";
+        public const string IS_ACTIVE_OUTGOING_SYNC = "isActiveOutgoingSync";
+        public const string IS_ACTIVE_INCOMING_SYNC = "isActiveIncomingSync";
 
         public Guardian ()
         {
@@ -155,6 +157,26 @@ namespace Arbor.Model
         public void setIsKeyWorker (bool isKeyWorker)
         {
             this.setProperty("isKeyWorker", isKeyWorker);
+        }
+
+        public bool getIsActiveOutgoingSync ()
+        {
+            return Convert.ToBoolean(this.getProperty("isActiveOutgoingSync"));
+        }
+
+        public void setIsActiveOutgoingSync (bool isActiveOutgoingSync)
+        {
+            this.setProperty("isActiveOutgoingSync", isActiveOutgoingSync);
+        }
+
+        public bool getIsActiveIncomingSync ()
+        {
+            return Convert.ToBoolean(this.getProperty("isActiveIncomingSync"));
+        }
+
+        public void setIsActiveIncomingSync (bool isActiveIncomingSync)
+        {
+            this.setProperty("isActiveIncomingSync", isActiveIncomingSync);
         }
 
 

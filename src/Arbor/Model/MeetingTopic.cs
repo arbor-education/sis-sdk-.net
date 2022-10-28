@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class MeetingTopic : ModelBase
     {
-        protected string resourceType = ResourceType.MEETING_TOPIC;
+        protected new string resourceType = ResourceType.MEETING_TOPIC;
         public const string MEETING = "meeting";
         public const string TOPIC = "topic";
 

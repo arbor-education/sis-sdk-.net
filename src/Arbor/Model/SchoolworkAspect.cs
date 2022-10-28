@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class SchoolworkAspect : ModelBase
     {
-        protected string resourceType = ResourceType.SCHOOLWORK_ASPECT;
+        protected new string resourceType = ResourceType.SCHOOLWORK_ASPECT;
         public const string SCHOOLWORK = "schoolwork";
         public const string ASPECT_NAME = "aspectName";
         public const string ASPECT_DATA_TYPE = "aspectDataType";

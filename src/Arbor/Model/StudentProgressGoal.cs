@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class StudentProgressGoal : ModelBase
     {
-        protected string resourceType = ResourceType.STUDENT_PROGRESS_GOAL;
+        protected new string resourceType = ResourceType.STUDENT_PROGRESS_GOAL;
         public const string STUDENT = "student";
         public const string ACADEMIC_YEAR = "academicYear";
         public const string ASSESSMENT = "assessment";

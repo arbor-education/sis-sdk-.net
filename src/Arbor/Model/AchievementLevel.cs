@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AchievementLevel : ModelBase
     {
-        protected string resourceType = ResourceType.ACHIEVEMENT_LEVEL;
+        protected new string resourceType = ResourceType.ACHIEVEMENT_LEVEL;
         public const string CODE = "code";
         public const string ACHIEVEMENT_LEVEL_SET = "achievementLevelSet";
         public const string NAME = "name";

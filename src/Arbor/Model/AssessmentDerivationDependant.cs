@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AssessmentDerivationDependant : ModelBase
     {
-        protected string resourceType = ResourceType.ASSESSMENT_DERIVATION_DEPENDANT;
+        protected new string resourceType = ResourceType.ASSESSMENT_DERIVATION_DEPENDANT;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";
@@ -17,6 +17,7 @@ namespace Arbor.Model
         public const string DESCRIPTION = "description";
         public const string DEPENDANT_ASSESSMENT = "dependantAssessment";
         public const string WEIGHTING = "weighting";
+        public const string MAX_GRADE_POINT_SCALE_VALUE = "maxGradePointScaleValue";
 
         public AssessmentDerivationDependant ()
         {
@@ -122,6 +123,16 @@ namespace Arbor.Model
         public void setWeighting (int weighting)
         {
             this.setProperty("weighting", weighting);
+        }
+
+        public float getMaxGradePointScaleValue ()
+        {
+            return (float) this.getProperty("maxGradePointScaleValue");
+        }
+
+        public void setMaxGradePointScaleValue (float maxGradePointScaleValue)
+        {
+            this.setProperty("maxGradePointScaleValue", maxGradePointScaleValue);
         }
 
 

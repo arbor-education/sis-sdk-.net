@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class InboundNotificationAutomaticRecipient : ModelBase
     {
-        protected string resourceType = ResourceType.INBOUND_NOTIFICATION_AUTOMATIC_RECIPIENT;
+        protected new string resourceType = ResourceType.INBOUND_NOTIFICATION_AUTOMATIC_RECIPIENT;
         public const string AUTOMATIC_RECIPIENT = "automaticRecipient";
 
         public InboundNotificationAutomaticRecipient ()

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class PointAwardScale : ModelBase
     {
-        protected string resourceType = ResourceType.POINT_AWARD_SCALE;
+        protected new string resourceType = ResourceType.POINT_AWARD_SCALE;
         public const string POINT_AWARD_SCALE_NAME = "pointAwardScaleName";
         public const string SINGULAR_POINT_NAME = "singularPointName";
         public const string PLURAL_POINT_NAME = "pluralPointName";

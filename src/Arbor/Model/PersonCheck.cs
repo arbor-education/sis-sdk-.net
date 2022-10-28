@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class PersonCheck : ModelBase
     {
-        protected string resourceType = ResourceType.PERSON_CHECK;
+        protected new string resourceType = ResourceType.PERSON_CHECK;
         public const string PERSON = "person";
         public const string CHECK_TYPE = "checkType";
         public const string CHECK_CLEARANCE_LEVEL = "checkClearanceLevel";

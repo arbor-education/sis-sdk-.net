@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class StudentDestination : ModelBase
     {
-        protected string resourceType = ResourceType.STUDENT_DESTINATION;
+        protected new string resourceType = ResourceType.STUDENT_DESTINATION;
         public const string STUDENT = "student";
         public const string STUDENT_DESTINATION_TYPE = "studentDestinationType";
         public const string START_DATE = "startDate";

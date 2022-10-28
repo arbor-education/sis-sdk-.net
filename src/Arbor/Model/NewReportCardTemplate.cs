@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class NewReportCardTemplate : ModelBase
     {
-        protected string resourceType = ResourceType.NEW_REPORT_CARD_TEMPLATE;
+        protected new string resourceType = ResourceType.NEW_REPORT_CARD_TEMPLATE;
         public const string TEMPLATE_NAME = "templateName";
         public const string TEMPLATE_FILENAME = "templateFilename";
         public const string TEMPLATE_HTML = "templateHtml";

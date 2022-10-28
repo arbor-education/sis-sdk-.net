@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AssessmentMetricAssessmentBatch : ModelBase
     {
-        protected string resourceType = ResourceType.ASSESSMENT_METRIC_ASSESSMENT_BATCH;
+        protected new string resourceType = ResourceType.ASSESSMENT_METRIC_ASSESSMENT_BATCH;
         public const string ASSESSMENT_METRIC = "assessmentMetric";
         public const string OPERATOR = "operator";
         public const string PARENT_ASSESSMENT_METRIC_ASSESSMENT_BATCH = "parentAssessmentMetricAssessmentBatch";
@@ -65,9 +65,9 @@ namespace Arbor.Model
             return this.getProperty("operator").ToString();
         }
 
-        public void setOperator (string operatorName)
+        public void setOperator (string _operator)
         {
-            this.setProperty("operator", operatorName);
+            this.setProperty("operator", _operator);
         }
 
         public AssessmentMetricAssessmentBatch getParentAssessmentMetricAssessmentBatch ()

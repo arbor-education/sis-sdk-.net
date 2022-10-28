@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class TripLocation : ModelBase
     {
-        protected string resourceType = ResourceType.TRIP_LOCATION;
+        protected new string resourceType = ResourceType.TRIP_LOCATION;
         public const string NAME = "name";
 
         public TripLocation ()

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class StaffContractPostAllowance : ModelBase
     {
-        protected string resourceType = ResourceType.STAFF_CONTRACT_POST_ALLOWANCE;
+        protected new string resourceType = ResourceType.STAFF_CONTRACT_POST_ALLOWANCE;
         public const string STAFF_CONTRACT_POST = "staffContractPost";
         public const string LINKED_ALLOWANCE = "linkedAllowance";
         public const string EFFECTIVE_DATE = "effectiveDate";

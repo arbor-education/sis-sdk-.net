@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class EarlyYearsPupilPremiumEligibility : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_EARLY_YEARS_PUPIL_PREMIUM_ELIGIBILITY;
+        protected new string resourceType = ResourceType.UK_DFE_EARLY_YEARS_PUPIL_PREMIUM_ELIGIBILITY;
         public const string STUDENT = "student";
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";

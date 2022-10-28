@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class TelephoneCall : ModelBase
     {
-        protected string resourceType = ResourceType.TELEPHONE_CALL;
+        protected new string resourceType = ResourceType.TELEPHONE_CALL;
         public const string CALLER_NAME = "callerName";
         public const string CALLER = "caller";
         public const string CALLER_TELEPHONE_NUMBER = "callerTelephoneNumber";

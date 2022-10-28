@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class CurriculumGrade : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_CURRICULUM_GRADE;
+        protected new string resourceType = ResourceType.UK_DFE_CURRICULUM_GRADE;
         public const string D00020 = "d00020";
         public const string D00020_ORDER = "d00020Order";
 

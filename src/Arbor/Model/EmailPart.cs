@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class EmailPart : ModelBase
     {
-        protected string resourceType = ResourceType.EMAIL_PART;
+        protected new string resourceType = ResourceType.EMAIL_PART;
         public const string EMAIL = "email";
         public const string MIME_CONTENT_ID = "mimeContentId";
         public const string DISPOSITION = "disposition";

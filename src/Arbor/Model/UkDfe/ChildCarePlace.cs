@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class ChildCarePlace : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_CHILD_CARE_PLACE;
+        protected new string resourceType = ResourceType.UK_DFE_CHILD_CARE_PLACE;
         public const string NAME = "name";
         public const string CHILD_CARE_ON_SITE = "childCareOnSite";
         public const string CHILD_CARE_SIGNPOSTING = "childCareSignposting";

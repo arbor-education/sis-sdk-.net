@@ -9,13 +9,15 @@ namespace Arbor.Model
 {
     public class ProgressAssessmentBatch : ModelBase
     {
-        protected string resourceType = ResourceType.PROGRESS_ASSESSMENT_BATCH;
+        protected new string resourceType = ResourceType.PROGRESS_ASSESSMENT_BATCH;
         public const string BATCH_NAME = "batchName";
         public const string ASSESSMENT = "assessment";
         public const string PROGRESS_MEASUREMENT_PERIOD_SET = "progressMeasurementPeriodSet";
         public const string ACADEMIC_YEAR = "academicYear";
         public const string IS_BASELINE_LOCKED = "isBaselineLocked";
         public const string IS_TARGET_LOCKED = "isTargetLocked";
+        public const string SHOW_RANK_ORDER = "showRankOrder";
+        public const string SHOW_CURRENT_VS_BASELINE = "showCurrentVsBaseline";
 
         public ProgressAssessmentBatch ()
         {
@@ -111,6 +113,26 @@ namespace Arbor.Model
         public void setIsTargetLocked (bool isTargetLocked)
         {
             this.setProperty("isTargetLocked", isTargetLocked);
+        }
+
+        public bool getShowRankOrder ()
+        {
+            return Convert.ToBoolean(this.getProperty("showRankOrder"));
+        }
+
+        public void setShowRankOrder (bool showRankOrder)
+        {
+            this.setProperty("showRankOrder", showRankOrder);
+        }
+
+        public bool getShowCurrentVsBaseline ()
+        {
+            return Convert.ToBoolean(this.getProperty("showCurrentVsBaseline"));
+        }
+
+        public void setShowCurrentVsBaseline (bool showCurrentVsBaseline)
+        {
+            this.setProperty("showCurrentVsBaseline", showCurrentVsBaseline);
         }
 
 

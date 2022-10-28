@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class NewReportCardText : ModelBase
     {
-        protected string resourceType = ResourceType.NEW_REPORT_CARD_TEXT;
+        protected new string resourceType = ResourceType.NEW_REPORT_CARD_TEXT;
         public const string NEW_REPORT_CARD_BATCH = "newReportCardBatch";
         public const string TITLE = "title";
         public const string POSITION = "position";

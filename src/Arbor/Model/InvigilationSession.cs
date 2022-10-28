@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class InvigilationSession : ModelBase
     {
-        protected string resourceType = ResourceType.INVIGILATION_SESSION;
+        protected new string resourceType = ResourceType.INVIGILATION_SESSION;
         public const string START_DATETIME = "startDatetime";
         public const string END_DATETIME = "endDatetime";
         public const string LOCATION_TEXT = "locationText";

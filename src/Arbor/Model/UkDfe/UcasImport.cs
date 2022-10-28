@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class UcasImport : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_UCAS_IMPORT;
+        protected new string resourceType = ResourceType.UK_DFE_UCAS_IMPORT;
         public const string NAME = "name";
         public const string FILE_DATE = "fileDate";
 

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CalendarType : ModelBase
     {
-        protected string resourceType = ResourceType.CALENDAR_TYPE;
+        protected new string resourceType = ResourceType.CALENDAR_TYPE;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";
