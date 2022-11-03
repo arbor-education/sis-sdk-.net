@@ -16,10 +16,9 @@ jobs:
         with:
           dotnet-version: 6.0.x
       - name: Package SDK
-        run: nuget pack src/ArborSdk.csproj -Build -Symbols -Version ${{ github.ref_name }}
+        run: nuget pack src/ArborSdk.csproj -Build -Symbols -SymbolPackageFormat snupkg -Version ${{ github.ref_name }}
       - name: Upload SDK Artifact
         uses: actions/upload-artifact@v3
         with:
           name: sdk
-          path: ArborSdk.*.nupkg
-          
+          path: ArborSdk.*.s?nupkg
