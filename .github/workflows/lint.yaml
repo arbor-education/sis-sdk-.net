@@ -13,7 +13,6 @@ jobs:
         uses: actions/setup-dotnet@v3
         with: 
           dotnet-version: |
-            4.5.1
             6.0.x
       - name: Lint Code Style
         run: dotnet format --verify-no-changes
