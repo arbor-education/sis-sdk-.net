@@ -1,0 +1,17 @@
+name: Linting
+
+on:
+  pull_request:
+
+jobs: 
+  lint:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Dotnet
+        uses: actions/setup-dotnet@v3
+        with: 
+          dotnet-version: 6.0.x
+      - name: Lint Code Style
+        run: dotnet format --verify-no-changes

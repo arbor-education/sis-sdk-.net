@@ -1,0 +1,29 @@
+name: Publish to NuGet
+
+on:
+  push:
+    tags:
+      - '*'
+jobs:
+  build:
+    runs-on: windows-2019
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Dotnet
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 6.0.x
+      - name: Configure NuGet
+        run: nuget SetApiKey ${{ secrets.NUGET_TOKEN }}
+      - name: Package SDK
+        run: nuget pack src/ArborSdk.csproj -Build -Symbols -SymbolPackageFormat snupkg -Version ${{ github.ref_name }}
+      - name: Upload SDK Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: sdk
+          path: |
+            *.nupkg
+            *.snupkg
+      - name: Push Release to NuGet
+        run: nuget push -NonInteractive ArborSdk.${{ github.ref_name }}.nupkg
