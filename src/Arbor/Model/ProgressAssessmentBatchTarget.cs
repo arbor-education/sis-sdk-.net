@@ -9,62 +9,63 @@ namespace Arbor.Model
 {
     public class ProgressAssessmentBatchTarget : ModelBase
     {
-        protected string resourceType = ResourceType.PROGRESS_ASSESSMENT_BATCH_TARGET;
+        protected new string resourceType = ResourceType.PROGRESS_ASSESSMENT_BATCH_TARGET;
         public const string PROGRESS_ASSESSMENT_BATCH = "progressAssessmentBatch";
         public const string TARGET = "target";
 
-        public ProgressAssessmentBatchTarget ()
+        public ProgressAssessmentBatchTarget()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public ProgressAssessmentBatchTarget (string resourceType = "ProgressAssessmentBatchTarget", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<ProgressAssessmentBatchTarget> query (SimpleQuery query = null)
+        public ProgressAssessmentBatchTarget(string resourceType = "ProgressAssessmentBatchTarget", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("ProgressAssessmentBatchTarget");
-        	RestGateway gateway = (RestGateway) ProgressAssessmentBatchTarget.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<ProgressAssessmentBatchTarget> progressassessmentbatchtargetCollection = new ModelCollection<ProgressAssessmentBatchTarget> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    progressassessmentbatchtargetCollection.add((ProgressAssessmentBatchTarget) model);
-        	}
-        
-        	return progressassessmentbatchtargetCollection;
+
         }
 
-        public static ProgressAssessmentBatchTarget retrieve (string id)
+
+        public static ModelCollection<ProgressAssessmentBatchTarget> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) ProgressAssessmentBatchTarget.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (ProgressAssessmentBatchTarget) gateway.retrieve(ResourceType.PROGRESS_ASSESSMENT_BATCH_TARGET, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("ProgressAssessmentBatchTarget");
+            RestGateway gateway = (RestGateway)ProgressAssessmentBatchTarget.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<ProgressAssessmentBatchTarget> progressassessmentbatchtargetCollection = new ModelCollection<ProgressAssessmentBatchTarget>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                progressassessmentbatchtargetCollection.add((ProgressAssessmentBatchTarget)model);
+            }
+
+            return progressassessmentbatchtargetCollection;
         }
 
-        public ProgressAssessmentBatch getProgressAssessmentBatch ()
+        public static ProgressAssessmentBatchTarget retrieve(string id)
         {
-            return (ProgressAssessmentBatch) this.getProperty("progressAssessmentBatch");
+            RestGateway gateway = (RestGateway)ProgressAssessmentBatchTarget.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (ProgressAssessmentBatchTarget)gateway.retrieve(ResourceType.PROGRESS_ASSESSMENT_BATCH_TARGET, id);
         }
 
-        public void setProgressAssessmentBatch (ProgressAssessmentBatch progressAssessmentBatch)
+        public ProgressAssessmentBatch getProgressAssessmentBatch()
+        {
+            return (ProgressAssessmentBatch)this.getProperty("progressAssessmentBatch");
+        }
+
+        public void setProgressAssessmentBatch(ProgressAssessmentBatch progressAssessmentBatch)
         {
             this.setProperty("progressAssessmentBatch", progressAssessmentBatch);
         }
 
-        public ModelBase getTarget ()
+        public ModelBase getTarget()
         {
-            return (ModelBase) this.getProperty("target");
+            return (ModelBase)this.getProperty("target");
         }
 
-        public void setTarget (ModelBase target)
+        public void setTarget(ModelBase target)
         {
             this.setProperty("target", target);
         }

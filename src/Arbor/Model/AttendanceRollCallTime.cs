@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AttendanceRollCallTime : ModelBase
     {
-        protected string resourceType = ResourceType.ATTENDANCE_ROLL_CALL_TIME;
+        protected new string resourceType = ResourceType.ATTENDANCE_ROLL_CALL_TIME;
         public const string ATTENDANCE_ROLL_CALL = "attendanceRollCall";
         public const string EFFECTIVE_DATE = "effectiveDate";
         public const string END_DATE = "endDate";
@@ -17,98 +17,99 @@ namespace Arbor.Model
         public const string REGISTER_CLOSES_TIME = "registerClosesTime";
         public const string ROLL_CALL_PERIOD_END_TIME = "rollCallPeriodEndTime";
 
-        public AttendanceRollCallTime ()
+        public AttendanceRollCallTime()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AttendanceRollCallTime (string resourceType = "AttendanceRollCallTime", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AttendanceRollCallTime> query (SimpleQuery query = null)
+        public AttendanceRollCallTime(string resourceType = "AttendanceRollCallTime", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AttendanceRollCallTime");
-        	RestGateway gateway = (RestGateway) AttendanceRollCallTime.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AttendanceRollCallTime> attendancerollcalltimeCollection = new ModelCollection<AttendanceRollCallTime> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    attendancerollcalltimeCollection.add((AttendanceRollCallTime) model);
-        	}
-        
-        	return attendancerollcalltimeCollection;
+
         }
 
-        public static AttendanceRollCallTime retrieve (string id)
+
+        public static ModelCollection<AttendanceRollCallTime> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AttendanceRollCallTime.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AttendanceRollCallTime) gateway.retrieve(ResourceType.ATTENDANCE_ROLL_CALL_TIME, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AttendanceRollCallTime");
+            RestGateway gateway = (RestGateway)AttendanceRollCallTime.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AttendanceRollCallTime> attendancerollcalltimeCollection = new ModelCollection<AttendanceRollCallTime>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                attendancerollcalltimeCollection.add((AttendanceRollCallTime)model);
+            }
+
+            return attendancerollcalltimeCollection;
         }
 
-        public AttendanceRollCall getAttendanceRollCall ()
+        public static AttendanceRollCallTime retrieve(string id)
         {
-            return (AttendanceRollCall) this.getProperty("attendanceRollCall");
+            RestGateway gateway = (RestGateway)AttendanceRollCallTime.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AttendanceRollCallTime)gateway.retrieve(ResourceType.ATTENDANCE_ROLL_CALL_TIME, id);
         }
 
-        public void setAttendanceRollCall (AttendanceRollCall attendanceRollCall)
+        public AttendanceRollCall getAttendanceRollCall()
+        {
+            return (AttendanceRollCall)this.getProperty("attendanceRollCall");
+        }
+
+        public void setAttendanceRollCall(AttendanceRollCall attendanceRollCall)
         {
             this.setProperty("attendanceRollCall", attendanceRollCall);
         }
 
-        public DateTime getEffectiveDate ()
+        public DateTime getEffectiveDate()
         {
             return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
-        public void setEffectiveDate (DateTime effectiveDate)
+        public void setEffectiveDate(DateTime effectiveDate)
         {
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }
 
-        public string getRegisterOpensTime ()
+        public string getRegisterOpensTime()
         {
             return this.getProperty("registerOpensTime").ToString();
         }
 
-        public void setRegisterOpensTime (string registerOpensTime)
+        public void setRegisterOpensTime(string registerOpensTime)
         {
             this.setProperty("registerOpensTime", registerOpensTime);
         }
 
-        public string getRegisterClosesTime ()
+        public string getRegisterClosesTime()
         {
             return this.getProperty("registerClosesTime").ToString();
         }
 
-        public void setRegisterClosesTime (string registerClosesTime)
+        public void setRegisterClosesTime(string registerClosesTime)
         {
             this.setProperty("registerClosesTime", registerClosesTime);
         }
 
-        public string getRollCallPeriodEndTime ()
+        public string getRollCallPeriodEndTime()
         {
             return this.getProperty("rollCallPeriodEndTime").ToString();
         }
 
-        public void setRollCallPeriodEndTime (string rollCallPeriodEndTime)
+        public void setRollCallPeriodEndTime(string rollCallPeriodEndTime)
         {
             this.setProperty("rollCallPeriodEndTime", rollCallPeriodEndTime);
         }

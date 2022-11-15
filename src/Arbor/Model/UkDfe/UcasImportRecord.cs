@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class UcasImportRecord : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_UCAS_IMPORT_RECORD;
+        protected new string resourceType = ResourceType.UK_DFE_UCAS_IMPORT_RECORD;
         public const string UCAS_IMPORT = "ucasImport";
         public const string CSV_ROW = "csvRow";
         public const string MAPPED_STUDENT = "mappedStudent";
@@ -21,138 +21,139 @@ namespace Arbor.Model.UkDfe
         public const string COURSE_NAME = "courseName";
         public const string CAMPUS_CODE = "campusCode";
 
-        public UcasImportRecord ()
+        public UcasImportRecord()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public UcasImportRecord (string resourceType = "UcasImportRecord", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<UcasImportRecord> query (SimpleQuery query = null)
+        public UcasImportRecord(string resourceType = "UcasImportRecord", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("UkDfe_UcasImportRecord");
-        	RestGateway gateway = (RestGateway) UcasImportRecord.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<UcasImportRecord> ucasimportrecordCollection = new ModelCollection<UcasImportRecord> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    ucasimportrecordCollection.add((UcasImportRecord) model);
-        	}
-        
-        	return ucasimportrecordCollection;
+
         }
 
-        public static UcasImportRecord retrieve (string id)
+
+        public static ModelCollection<UcasImportRecord> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) UcasImportRecord.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (UcasImportRecord) gateway.retrieve(ResourceType.UK_DFE_UCAS_IMPORT_RECORD, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("UkDfe_UcasImportRecord");
+            RestGateway gateway = (RestGateway)UcasImportRecord.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<UcasImportRecord> ucasimportrecordCollection = new ModelCollection<UcasImportRecord>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                ucasimportrecordCollection.add((UcasImportRecord)model);
+            }
+
+            return ucasimportrecordCollection;
         }
 
-        public UcasImport getUcasImport ()
+        public static UcasImportRecord retrieve(string id)
         {
-            return (UcasImport) this.getProperty("ucasImport");
+            RestGateway gateway = (RestGateway)UcasImportRecord.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (UcasImportRecord)gateway.retrieve(ResourceType.UK_DFE_UCAS_IMPORT_RECORD, id);
         }
 
-        public void setUcasImport (UcasImport ucasImport)
+        public UcasImport getUcasImport()
+        {
+            return (UcasImport)this.getProperty("ucasImport");
+        }
+
+        public void setUcasImport(UcasImport ucasImport)
         {
             this.setProperty("ucasImport", ucasImport);
         }
 
-        public int getCsvRow ()
+        public int getCsvRow()
         {
             return Convert.ToInt32(this.getProperty("csvRow"));
         }
 
-        public void setCsvRow (int csvRow)
+        public void setCsvRow(int csvRow)
         {
             this.setProperty("csvRow", csvRow);
         }
 
-        public Student getMappedStudent ()
+        public Student getMappedStudent()
         {
-            return (Student) this.getProperty("mappedStudent");
+            return (Student)this.getProperty("mappedStudent");
         }
 
-        public void setMappedStudent (Student mappedStudent)
+        public void setMappedStudent(Student mappedStudent)
         {
             this.setProperty("mappedStudent", mappedStudent);
         }
 
-        public int getYearOfEntry ()
+        public int getYearOfEntry()
         {
             return Convert.ToInt32(this.getProperty("yearOfEntry"));
         }
 
-        public void setYearOfEntry (int yearOfEntry)
+        public void setYearOfEntry(int yearOfEntry)
         {
             this.setProperty("yearOfEntry", yearOfEntry);
         }
 
-        public string getApplicationSchemeCode ()
+        public string getApplicationSchemeCode()
         {
             return this.getProperty("applicationSchemeCode").ToString();
         }
 
-        public void setApplicationSchemeCode (string applicationSchemeCode)
+        public void setApplicationSchemeCode(string applicationSchemeCode)
         {
             this.setProperty("applicationSchemeCode", applicationSchemeCode);
         }
 
-        public string getInstitutionCode ()
+        public string getInstitutionCode()
         {
             return this.getProperty("institutionCode").ToString();
         }
 
-        public void setInstitutionCode (string institutionCode)
+        public void setInstitutionCode(string institutionCode)
         {
             this.setProperty("institutionCode", institutionCode);
         }
 
-        public string getInstitutionName ()
+        public string getInstitutionName()
         {
             return this.getProperty("institutionName").ToString();
         }
 
-        public void setInstitutionName (string institutionName)
+        public void setInstitutionName(string institutionName)
         {
             this.setProperty("institutionName", institutionName);
         }
 
-        public string getCourseCode ()
+        public string getCourseCode()
         {
             return this.getProperty("courseCode").ToString();
         }
 
-        public void setCourseCode (string courseCode)
+        public void setCourseCode(string courseCode)
         {
             this.setProperty("courseCode", courseCode);
         }
 
-        public string getCourseName ()
+        public string getCourseName()
         {
             return this.getProperty("courseName").ToString();
         }
 
-        public void setCourseName (string courseName)
+        public void setCourseName(string courseName)
         {
             this.setProperty("courseName", courseName);
         }
 
-        public string getCampusCode ()
+        public string getCampusCode()
         {
             return this.getProperty("campusCode").ToString();
         }
 
-        public void setCampusCode (string campusCode)
+        public void setCampusCode(string campusCode)
         {
             this.setProperty("campusCode", campusCode);
         }

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CandidateRegistrationWithdrawalProposal : ModelBase
     {
-        protected string resourceType = ResourceType.CANDIDATE_REGISTRATION_WITHDRAWAL_PROPOSAL;
+        protected new string resourceType = ResourceType.CANDIDATE_REGISTRATION_WITHDRAWAL_PROPOSAL;
         public const string CANDIDATE_PROPOSAL = "candidateProposal";
         public const string CANDIDATE_REGISTRATION = "candidateRegistration";
         public const string APPROVED_BY_STAFF = "approvedByStaff";
@@ -17,98 +17,99 @@ namespace Arbor.Model
         public const string REJECTED_BY_STAFF = "rejectedByStaff";
         public const string REJECTED_DATETIME = "rejectedDatetime";
 
-        public CandidateRegistrationWithdrawalProposal ()
+        public CandidateRegistrationWithdrawalProposal()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public CandidateRegistrationWithdrawalProposal (string resourceType = "CandidateRegistrationWithdrawalProposal", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<CandidateRegistrationWithdrawalProposal> query (SimpleQuery query = null)
+        public CandidateRegistrationWithdrawalProposal(string resourceType = "CandidateRegistrationWithdrawalProposal", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("CandidateRegistrationWithdrawalProposal");
-        	RestGateway gateway = (RestGateway) CandidateRegistrationWithdrawalProposal.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<CandidateRegistrationWithdrawalProposal> candidateregistrationwithdrawalproposalCollection = new ModelCollection<CandidateRegistrationWithdrawalProposal> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    candidateregistrationwithdrawalproposalCollection.add((CandidateRegistrationWithdrawalProposal) model);
-        	}
-        
-        	return candidateregistrationwithdrawalproposalCollection;
+
         }
 
-        public static CandidateRegistrationWithdrawalProposal retrieve (string id)
+
+        public static ModelCollection<CandidateRegistrationWithdrawalProposal> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) CandidateRegistrationWithdrawalProposal.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (CandidateRegistrationWithdrawalProposal) gateway.retrieve(ResourceType.CANDIDATE_REGISTRATION_WITHDRAWAL_PROPOSAL, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("CandidateRegistrationWithdrawalProposal");
+            RestGateway gateway = (RestGateway)CandidateRegistrationWithdrawalProposal.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<CandidateRegistrationWithdrawalProposal> candidateregistrationwithdrawalproposalCollection = new ModelCollection<CandidateRegistrationWithdrawalProposal>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                candidateregistrationwithdrawalproposalCollection.add((CandidateRegistrationWithdrawalProposal)model);
+            }
+
+            return candidateregistrationwithdrawalproposalCollection;
         }
 
-        public CandidateProposal getCandidateProposal ()
+        public static CandidateRegistrationWithdrawalProposal retrieve(string id)
         {
-            return (CandidateProposal) this.getProperty("candidateProposal");
+            RestGateway gateway = (RestGateway)CandidateRegistrationWithdrawalProposal.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (CandidateRegistrationWithdrawalProposal)gateway.retrieve(ResourceType.CANDIDATE_REGISTRATION_WITHDRAWAL_PROPOSAL, id);
         }
 
-        public void setCandidateProposal (CandidateProposal candidateProposal)
+        public CandidateProposal getCandidateProposal()
+        {
+            return (CandidateProposal)this.getProperty("candidateProposal");
+        }
+
+        public void setCandidateProposal(CandidateProposal candidateProposal)
         {
             this.setProperty("candidateProposal", candidateProposal);
         }
 
-        public CandidateRegistration getCandidateRegistration ()
+        public CandidateRegistration getCandidateRegistration()
         {
-            return (CandidateRegistration) this.getProperty("candidateRegistration");
+            return (CandidateRegistration)this.getProperty("candidateRegistration");
         }
 
-        public void setCandidateRegistration (CandidateRegistration candidateRegistration)
+        public void setCandidateRegistration(CandidateRegistration candidateRegistration)
         {
             this.setProperty("candidateRegistration", candidateRegistration);
         }
 
-        public Staff getApprovedByStaff ()
+        public Staff getApprovedByStaff()
         {
-            return (Staff) this.getProperty("approvedByStaff");
+            return (Staff)this.getProperty("approvedByStaff");
         }
 
-        public void setApprovedByStaff (Staff approvedByStaff)
+        public void setApprovedByStaff(Staff approvedByStaff)
         {
             this.setProperty("approvedByStaff", approvedByStaff);
         }
 
-        public DateTime getApprovedDatetime ()
+        public DateTime getApprovedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("approvedDatetime"));
         }
 
-        public void setApprovedDatetime (DateTime approvedDatetime)
+        public void setApprovedDatetime(DateTime approvedDatetime)
         {
             this.setProperty("approvedDatetime", approvedDatetime);
         }
 
-        public Staff getRejectedByStaff ()
+        public Staff getRejectedByStaff()
         {
-            return (Staff) this.getProperty("rejectedByStaff");
+            return (Staff)this.getProperty("rejectedByStaff");
         }
 
-        public void setRejectedByStaff (Staff rejectedByStaff)
+        public void setRejectedByStaff(Staff rejectedByStaff)
         {
             this.setProperty("rejectedByStaff", rejectedByStaff);
         }
 
-        public DateTime getRejectedDatetime ()
+        public DateTime getRejectedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("rejectedDatetime"));
         }
 
-        public void setRejectedDatetime (DateTime rejectedDatetime)
+        public void setRejectedDatetime(DateTime rejectedDatetime)
         {
             this.setProperty("rejectedDatetime", rejectedDatetime);
         }

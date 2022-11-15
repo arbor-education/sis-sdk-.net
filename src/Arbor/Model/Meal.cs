@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Meal : ModelBase
     {
-        protected string resourceType = ResourceType.MEAL;
+        protected new string resourceType = ResourceType.MEAL;
         public const string ACADEMIC_YEAR = "academicYear";
         public const string MEAL_NAME = "mealName";
         public const string EFFECTIVE_DATE = "effectiveDate";
@@ -17,98 +17,99 @@ namespace Arbor.Model
         public const string CUSTOMER_ACCOUNT_TYPE = "customerAccountType";
         public const string COPIED_TO_MEAL = "copiedToMeal";
 
-        public Meal ()
+        public Meal()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public Meal (string resourceType = "Meal", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<Meal> query (SimpleQuery query = null)
+        public Meal(string resourceType = "Meal", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("Meal");
-        	RestGateway gateway = (RestGateway) Meal.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<Meal> mealCollection = new ModelCollection<Meal> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    mealCollection.add((Meal) model);
-        	}
-        
-        	return mealCollection;
+
         }
 
-        public static Meal retrieve (string id)
+
+        public static ModelCollection<Meal> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) Meal.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (Meal) gateway.retrieve(ResourceType.MEAL, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("Meal");
+            RestGateway gateway = (RestGateway)Meal.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<Meal> mealCollection = new ModelCollection<Meal>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                mealCollection.add((Meal)model);
+            }
+
+            return mealCollection;
         }
 
-        public AcademicYear getAcademicYear ()
+        public static Meal retrieve(string id)
         {
-            return (AcademicYear) this.getProperty("academicYear");
+            RestGateway gateway = (RestGateway)Meal.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (Meal)gateway.retrieve(ResourceType.MEAL, id);
         }
 
-        public void setAcademicYear (AcademicYear academicYear)
+        public AcademicYear getAcademicYear()
+        {
+            return (AcademicYear)this.getProperty("academicYear");
+        }
+
+        public void setAcademicYear(AcademicYear academicYear)
         {
             this.setProperty("academicYear", academicYear);
         }
 
-        public string getMealName ()
+        public string getMealName()
         {
             return this.getProperty("mealName").ToString();
         }
 
-        public void setMealName (string mealName)
+        public void setMealName(string mealName)
         {
             this.setProperty("mealName", mealName);
         }
 
-        public DateTime getEffectiveDate ()
+        public DateTime getEffectiveDate()
         {
             return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
-        public void setEffectiveDate (DateTime effectiveDate)
+        public void setEffectiveDate(DateTime effectiveDate)
         {
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }
 
-        public CustomerAccountType getCustomerAccountType ()
+        public CustomerAccountType getCustomerAccountType()
         {
-            return (CustomerAccountType) this.getProperty("customerAccountType");
+            return (CustomerAccountType)this.getProperty("customerAccountType");
         }
 
-        public void setCustomerAccountType (CustomerAccountType customerAccountType)
+        public void setCustomerAccountType(CustomerAccountType customerAccountType)
         {
             this.setProperty("customerAccountType", customerAccountType);
         }
 
-        public Meal getCopiedToMeal ()
+        public Meal getCopiedToMeal()
         {
-            return (Meal) this.getProperty("copiedToMeal");
+            return (Meal)this.getProperty("copiedToMeal");
         }
 
-        public void setCopiedToMeal (Meal copiedToMeal)
+        public void setCopiedToMeal(Meal copiedToMeal)
         {
             this.setProperty("copiedToMeal", copiedToMeal);
         }

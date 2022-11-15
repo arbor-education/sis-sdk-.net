@@ -9,84 +9,85 @@ namespace Arbor.Model
 {
     public class TargetJudgementRule : ModelBase
     {
-        protected string resourceType = ResourceType.TARGET_JUDGEMENT_RULE;
+        protected new string resourceType = ResourceType.TARGET_JUDGEMENT_RULE;
         public const string ASSESSMENT_ASPECT = "assessmentAspect";
         public const string TARGET_JUDGEMENT = "targetJudgement";
         public const string AMOUNT = "amount";
         public const string AMOUNT_UNIT = "amountUnit";
 
-        public TargetJudgementRule ()
+        public TargetJudgementRule()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public TargetJudgementRule (string resourceType = "TargetJudgementRule", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<TargetJudgementRule> query (SimpleQuery query = null)
+        public TargetJudgementRule(string resourceType = "TargetJudgementRule", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("TargetJudgementRule");
-        	RestGateway gateway = (RestGateway) TargetJudgementRule.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<TargetJudgementRule> targetjudgementruleCollection = new ModelCollection<TargetJudgementRule> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    targetjudgementruleCollection.add((TargetJudgementRule) model);
-        	}
-        
-        	return targetjudgementruleCollection;
+
         }
 
-        public static TargetJudgementRule retrieve (string id)
+
+        public static ModelCollection<TargetJudgementRule> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) TargetJudgementRule.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (TargetJudgementRule) gateway.retrieve(ResourceType.TARGET_JUDGEMENT_RULE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("TargetJudgementRule");
+            RestGateway gateway = (RestGateway)TargetJudgementRule.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<TargetJudgementRule> targetjudgementruleCollection = new ModelCollection<TargetJudgementRule>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                targetjudgementruleCollection.add((TargetJudgementRule)model);
+            }
+
+            return targetjudgementruleCollection;
         }
 
-        public AssessmentAspect getAssessmentAspect ()
+        public static TargetJudgementRule retrieve(string id)
         {
-            return (AssessmentAspect) this.getProperty("assessmentAspect");
+            RestGateway gateway = (RestGateway)TargetJudgementRule.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (TargetJudgementRule)gateway.retrieve(ResourceType.TARGET_JUDGEMENT_RULE, id);
         }
 
-        public void setAssessmentAspect (AssessmentAspect assessmentAspect)
+        public AssessmentAspect getAssessmentAspect()
+        {
+            return (AssessmentAspect)this.getProperty("assessmentAspect");
+        }
+
+        public void setAssessmentAspect(AssessmentAspect assessmentAspect)
         {
             this.setProperty("assessmentAspect", assessmentAspect);
         }
 
-        public TargetJudgement getTargetJudgement ()
+        public TargetJudgement getTargetJudgement()
         {
-            return (TargetJudgement) this.getProperty("targetJudgement");
+            return (TargetJudgement)this.getProperty("targetJudgement");
         }
 
-        public void setTargetJudgement (TargetJudgement targetJudgement)
+        public void setTargetJudgement(TargetJudgement targetJudgement)
         {
             this.setProperty("targetJudgement", targetJudgement);
         }
 
-        public float getAmount ()
+        public float getAmount()
         {
-            return (float) this.getProperty("amount");
+            return (float)this.getProperty("amount");
         }
 
-        public void setAmount (float amount)
+        public void setAmount(float amount)
         {
             this.setProperty("amount", amount);
         }
 
-        public string getAmountUnit ()
+        public string getAmountUnit()
         {
             return this.getProperty("amountUnit").ToString();
         }
 
-        public void setAmountUnit (string amountUnit)
+        public void setAmountUnit(string amountUnit)
         {
             this.setProperty("amountUnit", amountUnit);
         }

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class InterventionGroup : ModelBase
     {
-        protected string resourceType = ResourceType.INTERVENTION_GROUP;
+        protected new string resourceType = ResourceType.INTERVENTION_GROUP;
         public const string NAME = "name";
         public const string INTERVENTION = "intervention";
         public const string START_DATE = "startDate";
@@ -19,118 +19,119 @@ namespace Arbor.Model
         public const string STAFF = "staff";
         public const string IS_ATTENDANCE_REGISTERED = "isAttendanceRegistered";
 
-        public InterventionGroup ()
+        public InterventionGroup()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public InterventionGroup (string resourceType = "InterventionGroup", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<InterventionGroup> query (SimpleQuery query = null)
+        public InterventionGroup(string resourceType = "InterventionGroup", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("InterventionGroup");
-        	RestGateway gateway = (RestGateway) InterventionGroup.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<InterventionGroup> interventiongroupCollection = new ModelCollection<InterventionGroup> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    interventiongroupCollection.add((InterventionGroup) model);
-        	}
-        
-        	return interventiongroupCollection;
+
         }
 
-        public static InterventionGroup retrieve (string id)
+
+        public static ModelCollection<InterventionGroup> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) InterventionGroup.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (InterventionGroup) gateway.retrieve(ResourceType.INTERVENTION_GROUP, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("InterventionGroup");
+            RestGateway gateway = (RestGateway)InterventionGroup.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<InterventionGroup> interventiongroupCollection = new ModelCollection<InterventionGroup>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                interventiongroupCollection.add((InterventionGroup)model);
+            }
+
+            return interventiongroupCollection;
         }
 
-        public string getName ()
+        public static InterventionGroup retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)InterventionGroup.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (InterventionGroup)gateway.retrieve(ResourceType.INTERVENTION_GROUP, id);
+        }
+
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }
 
-        public Intervention getIntervention ()
+        public Intervention getIntervention()
         {
-            return (Intervention) this.getProperty("intervention");
+            return (Intervention)this.getProperty("intervention");
         }
 
-        public void setIntervention (Intervention intervention)
+        public void setIntervention(Intervention intervention)
         {
             this.setProperty("intervention", intervention);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDate()
         {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }
 
-        public string getAims ()
+        public string getAims()
         {
             return this.getProperty("aims").ToString();
         }
 
-        public void setAims (string aims)
+        public void setAims(string aims)
         {
             this.setProperty("aims", aims);
         }
 
-        public string getSuccessCriteria ()
+        public string getSuccessCriteria()
         {
             return this.getProperty("successCriteria").ToString();
         }
 
-        public void setSuccessCriteria (string successCriteria)
+        public void setSuccessCriteria(string successCriteria)
         {
             this.setProperty("successCriteria", successCriteria);
         }
 
-        public Staff getStaff ()
+        public Staff getStaff()
         {
-            return (Staff) this.getProperty("staff");
+            return (Staff)this.getProperty("staff");
         }
 
-        public void setStaff (Staff staff)
+        public void setStaff(Staff staff)
         {
             this.setProperty("staff", staff);
         }
 
-        public bool getIsAttendanceRegistered ()
+        public bool getIsAttendanceRegistered()
         {
             return Convert.ToBoolean(this.getProperty("isAttendanceRegistered"));
         }
 
-        public void setIsAttendanceRegistered (bool isAttendanceRegistered)
+        public void setIsAttendanceRegistered(bool isAttendanceRegistered)
         {
             this.setProperty("isAttendanceRegistered", isAttendanceRegistered);
         }

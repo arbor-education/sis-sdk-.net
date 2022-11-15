@@ -9,62 +9,63 @@ namespace Arbor.Model
 {
     public class InAppMessageNotification : ModelBase
     {
-        protected string resourceType = ResourceType.IN_APP_MESSAGE_NOTIFICATION;
+        protected new string resourceType = ResourceType.IN_APP_MESSAGE_NOTIFICATION;
         public const string IN_APP_MESSAGE = "inAppMessage";
         public const string NOTIFICATION_CHANNEL = "notificationChannel";
 
-        public InAppMessageNotification ()
+        public InAppMessageNotification()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public InAppMessageNotification (string resourceType = "InAppMessageNotification", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<InAppMessageNotification> query (SimpleQuery query = null)
+        public InAppMessageNotification(string resourceType = "InAppMessageNotification", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("InAppMessageNotification");
-        	RestGateway gateway = (RestGateway) InAppMessageNotification.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<InAppMessageNotification> inappmessagenotificationCollection = new ModelCollection<InAppMessageNotification> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    inappmessagenotificationCollection.add((InAppMessageNotification) model);
-        	}
-        
-        	return inappmessagenotificationCollection;
+
         }
 
-        public static InAppMessageNotification retrieve (string id)
+
+        public static ModelCollection<InAppMessageNotification> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) InAppMessageNotification.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (InAppMessageNotification) gateway.retrieve(ResourceType.IN_APP_MESSAGE_NOTIFICATION, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("InAppMessageNotification");
+            RestGateway gateway = (RestGateway)InAppMessageNotification.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<InAppMessageNotification> inappmessagenotificationCollection = new ModelCollection<InAppMessageNotification>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                inappmessagenotificationCollection.add((InAppMessageNotification)model);
+            }
+
+            return inappmessagenotificationCollection;
         }
 
-        public ModelBase getInAppMessage ()
+        public static InAppMessageNotification retrieve(string id)
         {
-            return (ModelBase) this.getProperty("inAppMessage");
+            RestGateway gateway = (RestGateway)InAppMessageNotification.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (InAppMessageNotification)gateway.retrieve(ResourceType.IN_APP_MESSAGE_NOTIFICATION, id);
         }
 
-        public void setInAppMessage (ModelBase inAppMessage)
+        public ModelBase getInAppMessage()
+        {
+            return (ModelBase)this.getProperty("inAppMessage");
+        }
+
+        public void setInAppMessage(ModelBase inAppMessage)
         {
             this.setProperty("inAppMessage", inAppMessage);
         }
 
-        public ModelBase getNotificationChannel ()
+        public ModelBase getNotificationChannel()
         {
-            return (ModelBase) this.getProperty("notificationChannel");
+            return (ModelBase)this.getProperty("notificationChannel");
         }
 
-        public void setNotificationChannel (ModelBase notificationChannel)
+        public void setNotificationChannel(ModelBase notificationChannel)
         {
             this.setProperty("notificationChannel", notificationChannel);
         }

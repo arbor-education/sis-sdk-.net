@@ -9,62 +9,63 @@ namespace Arbor.Model
 {
     public class EducationPlanContributor : ModelBase
     {
-        protected string resourceType = ResourceType.EDUCATION_PLAN_CONTRIBUTOR;
+        protected new string resourceType = ResourceType.EDUCATION_PLAN_CONTRIBUTOR;
         public const string EDUCATION_PLAN = "educationPlan";
         public const string CONTRIBUTOR = "contributor";
 
-        public EducationPlanContributor ()
+        public EducationPlanContributor()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public EducationPlanContributor (string resourceType = "EducationPlanContributor", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<EducationPlanContributor> query (SimpleQuery query = null)
+        public EducationPlanContributor(string resourceType = "EducationPlanContributor", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("EducationPlanContributor");
-        	RestGateway gateway = (RestGateway) EducationPlanContributor.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<EducationPlanContributor> educationplancontributorCollection = new ModelCollection<EducationPlanContributor> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    educationplancontributorCollection.add((EducationPlanContributor) model);
-        	}
-        
-        	return educationplancontributorCollection;
+
         }
 
-        public static EducationPlanContributor retrieve (string id)
+
+        public static ModelCollection<EducationPlanContributor> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) EducationPlanContributor.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (EducationPlanContributor) gateway.retrieve(ResourceType.EDUCATION_PLAN_CONTRIBUTOR, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("EducationPlanContributor");
+            RestGateway gateway = (RestGateway)EducationPlanContributor.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<EducationPlanContributor> educationplancontributorCollection = new ModelCollection<EducationPlanContributor>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                educationplancontributorCollection.add((EducationPlanContributor)model);
+            }
+
+            return educationplancontributorCollection;
         }
 
-        public EducationPlan getEducationPlan ()
+        public static EducationPlanContributor retrieve(string id)
         {
-            return (EducationPlan) this.getProperty("educationPlan");
+            RestGateway gateway = (RestGateway)EducationPlanContributor.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (EducationPlanContributor)gateway.retrieve(ResourceType.EDUCATION_PLAN_CONTRIBUTOR, id);
         }
 
-        public void setEducationPlan (EducationPlan educationPlan)
+        public EducationPlan getEducationPlan()
+        {
+            return (EducationPlan)this.getProperty("educationPlan");
+        }
+
+        public void setEducationPlan(EducationPlan educationPlan)
         {
             this.setProperty("educationPlan", educationPlan);
         }
 
-        public ModelBase getContributor ()
+        public ModelBase getContributor()
         {
-            return (ModelBase) this.getProperty("contributor");
+            return (ModelBase)this.getProperty("contributor");
         }
 
-        public void setContributor (ModelBase contributor)
+        public void setContributor(ModelBase contributor)
         {
             this.setProperty("contributor", contributor);
         }

@@ -9,62 +9,63 @@ namespace Arbor.Model
 {
     public class EmailAccountAccessPermission : ModelBase
     {
-        protected string resourceType = ResourceType.EMAIL_ACCOUNT_ACCESS_PERMISSION;
+        protected new string resourceType = ResourceType.EMAIL_ACCOUNT_ACCESS_PERMISSION;
         public const string EMAIL_ACCOUNT = "emailAccount";
         public const string BUSINESS_ROLE = "businessRole";
 
-        public EmailAccountAccessPermission ()
+        public EmailAccountAccessPermission()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public EmailAccountAccessPermission (string resourceType = "EmailAccountAccessPermission", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<EmailAccountAccessPermission> query (SimpleQuery query = null)
+        public EmailAccountAccessPermission(string resourceType = "EmailAccountAccessPermission", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("EmailAccountAccessPermission");
-        	RestGateway gateway = (RestGateway) EmailAccountAccessPermission.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<EmailAccountAccessPermission> emailaccountaccesspermissionCollection = new ModelCollection<EmailAccountAccessPermission> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    emailaccountaccesspermissionCollection.add((EmailAccountAccessPermission) model);
-        	}
-        
-        	return emailaccountaccesspermissionCollection;
+
         }
 
-        public static EmailAccountAccessPermission retrieve (string id)
+
+        public static ModelCollection<EmailAccountAccessPermission> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) EmailAccountAccessPermission.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (EmailAccountAccessPermission) gateway.retrieve(ResourceType.EMAIL_ACCOUNT_ACCESS_PERMISSION, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("EmailAccountAccessPermission");
+            RestGateway gateway = (RestGateway)EmailAccountAccessPermission.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<EmailAccountAccessPermission> emailaccountaccesspermissionCollection = new ModelCollection<EmailAccountAccessPermission>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                emailaccountaccesspermissionCollection.add((EmailAccountAccessPermission)model);
+            }
+
+            return emailaccountaccesspermissionCollection;
         }
 
-        public EmailAccount getEmailAccount ()
+        public static EmailAccountAccessPermission retrieve(string id)
         {
-            return (EmailAccount) this.getProperty("emailAccount");
+            RestGateway gateway = (RestGateway)EmailAccountAccessPermission.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (EmailAccountAccessPermission)gateway.retrieve(ResourceType.EMAIL_ACCOUNT_ACCESS_PERMISSION, id);
         }
 
-        public void setEmailAccount (EmailAccount emailAccount)
+        public EmailAccount getEmailAccount()
+        {
+            return (EmailAccount)this.getProperty("emailAccount");
+        }
+
+        public void setEmailAccount(EmailAccount emailAccount)
         {
             this.setProperty("emailAccount", emailAccount);
         }
 
-        public BusinessRole getBusinessRole ()
+        public BusinessRole getBusinessRole()
         {
-            return (BusinessRole) this.getProperty("businessRole");
+            return (BusinessRole)this.getProperty("businessRole");
         }
 
-        public void setBusinessRole (BusinessRole businessRole)
+        public void setBusinessRole(BusinessRole businessRole)
         {
             this.setProperty("businessRole", businessRole);
         }

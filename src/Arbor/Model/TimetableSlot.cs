@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class TimetableSlot : ModelBase
     {
-        protected string resourceType = ResourceType.TIMETABLE_SLOT;
+        protected new string resourceType = ResourceType.TIMETABLE_SLOT;
         public const string ACADEMIC_YEAR = "academicYear";
         public const string TIMETABLED_OBJECT = "timetabledObject";
         public const string DAY_OF_CYCLE = "dayOfCycle";
@@ -22,148 +22,149 @@ namespace Arbor.Model
         public const string FREQUENCY = "frequency";
         public const string STATUS = "status";
 
-        public TimetableSlot ()
+        public TimetableSlot()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public TimetableSlot (string resourceType = "TimetableSlot", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<TimetableSlot> query (SimpleQuery query = null)
+        public TimetableSlot(string resourceType = "TimetableSlot", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("TimetableSlot");
-        	RestGateway gateway = (RestGateway) TimetableSlot.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<TimetableSlot> timetableslotCollection = new ModelCollection<TimetableSlot> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    timetableslotCollection.add((TimetableSlot) model);
-        	}
-        
-        	return timetableslotCollection;
+
         }
 
-        public static TimetableSlot retrieve (string id)
+
+        public static ModelCollection<TimetableSlot> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) TimetableSlot.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (TimetableSlot) gateway.retrieve(ResourceType.TIMETABLE_SLOT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("TimetableSlot");
+            RestGateway gateway = (RestGateway)TimetableSlot.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<TimetableSlot> timetableslotCollection = new ModelCollection<TimetableSlot>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                timetableslotCollection.add((TimetableSlot)model);
+            }
+
+            return timetableslotCollection;
         }
 
-        public AcademicYear getAcademicYear ()
+        public static TimetableSlot retrieve(string id)
         {
-            return (AcademicYear) this.getProperty("academicYear");
+            RestGateway gateway = (RestGateway)TimetableSlot.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (TimetableSlot)gateway.retrieve(ResourceType.TIMETABLE_SLOT, id);
         }
 
-        public void setAcademicYear (AcademicYear academicYear)
+        public AcademicYear getAcademicYear()
+        {
+            return (AcademicYear)this.getProperty("academicYear");
+        }
+
+        public void setAcademicYear(AcademicYear academicYear)
         {
             this.setProperty("academicYear", academicYear);
         }
 
-        public ModelBase getTimetabledObject ()
+        public ModelBase getTimetabledObject()
         {
-            return (ModelBase) this.getProperty("timetabledObject");
+            return (ModelBase)this.getProperty("timetabledObject");
         }
 
-        public void setTimetabledObject (ModelBase timetabledObject)
+        public void setTimetabledObject(ModelBase timetabledObject)
         {
             this.setProperty("timetabledObject", timetabledObject);
         }
 
-        public int getDayOfCycle ()
+        public int getDayOfCycle()
         {
             return Convert.ToInt32(this.getProperty("dayOfCycle"));
         }
 
-        public void setDayOfCycle (int dayOfCycle)
+        public void setDayOfCycle(int dayOfCycle)
         {
             this.setProperty("dayOfCycle", dayOfCycle);
         }
 
-        public int getDayOfWeek ()
+        public int getDayOfWeek()
         {
             return Convert.ToInt32(this.getProperty("dayOfWeek"));
         }
 
-        public void setDayOfWeek (int dayOfWeek)
+        public void setDayOfWeek(int dayOfWeek)
         {
             this.setProperty("dayOfWeek", dayOfWeek);
         }
 
-        public bool getTermTimeOnly ()
+        public bool getTermTimeOnly()
         {
             return Convert.ToBoolean(this.getProperty("termTimeOnly"));
         }
 
-        public void setTermTimeOnly (bool termTimeOnly)
+        public void setTermTimeOnly(bool termTimeOnly)
         {
             this.setProperty("termTimeOnly", termTimeOnly);
         }
 
-        public string getStartTime ()
+        public string getStartTime()
         {
             return this.getProperty("startTime").ToString();
         }
 
-        public void setStartTime (string startTime)
+        public void setStartTime(string startTime)
         {
             this.setProperty("startTime", startTime);
         }
 
-        public string getEndTime ()
+        public string getEndTime()
         {
             return this.getProperty("endTime").ToString();
         }
 
-        public void setEndTime (string endTime)
+        public void setEndTime(string endTime)
         {
             this.setProperty("endTime", endTime);
         }
 
-        public DateTime getEffectiveDate ()
+        public DateTime getEffectiveDate()
         {
             return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
-        public void setEffectiveDate (DateTime effectiveDate)
+        public void setEffectiveDate(DateTime effectiveDate)
         {
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }
 
-        public string getFrequency ()
+        public string getFrequency()
         {
             return this.getProperty("frequency").ToString();
         }
 
-        public void setFrequency (string frequency)
+        public void setFrequency(string frequency)
         {
             this.setProperty("frequency", frequency);
         }
 
-        public string getStatus ()
+        public string getStatus()
         {
             return this.getProperty("status").ToString();
         }
 
-        public void setStatus (string status)
+        public void setStatus(string status)
         {
             this.setProperty("status", status);
         }

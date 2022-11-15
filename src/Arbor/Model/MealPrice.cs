@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class MealPrice : ModelBase
     {
-        protected string resourceType = ResourceType.MEAL_PRICE;
+        protected new string resourceType = ResourceType.MEAL_PRICE;
         public const string MEAL_PROVISION_PRICE_CATEGORY = "mealProvisionPriceCategory";
         public const string PRICE_EX_VAT = "priceExVat";
         public const string VAT_AMOUNT = "vatAmount";
@@ -17,98 +17,99 @@ namespace Arbor.Model
         public const string EFFECTIVE_DATE = "effectiveDate";
         public const string END_DATE = "endDate";
 
-        public MealPrice ()
+        public MealPrice()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public MealPrice (string resourceType = "MealPrice", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<MealPrice> query (SimpleQuery query = null)
+        public MealPrice(string resourceType = "MealPrice", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("MealPrice");
-        	RestGateway gateway = (RestGateway) MealPrice.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<MealPrice> mealpriceCollection = new ModelCollection<MealPrice> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    mealpriceCollection.add((MealPrice) model);
-        	}
-        
-        	return mealpriceCollection;
+
         }
 
-        public static MealPrice retrieve (string id)
+
+        public static ModelCollection<MealPrice> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) MealPrice.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (MealPrice) gateway.retrieve(ResourceType.MEAL_PRICE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("MealPrice");
+            RestGateway gateway = (RestGateway)MealPrice.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<MealPrice> mealpriceCollection = new ModelCollection<MealPrice>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                mealpriceCollection.add((MealPrice)model);
+            }
+
+            return mealpriceCollection;
         }
 
-        public MealProvisionPriceCategory getMealProvisionPriceCategory ()
+        public static MealPrice retrieve(string id)
         {
-            return (MealProvisionPriceCategory) this.getProperty("mealProvisionPriceCategory");
+            RestGateway gateway = (RestGateway)MealPrice.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (MealPrice)gateway.retrieve(ResourceType.MEAL_PRICE, id);
         }
 
-        public void setMealProvisionPriceCategory (MealProvisionPriceCategory mealProvisionPriceCategory)
+        public MealProvisionPriceCategory getMealProvisionPriceCategory()
+        {
+            return (MealProvisionPriceCategory)this.getProperty("mealProvisionPriceCategory");
+        }
+
+        public void setMealProvisionPriceCategory(MealProvisionPriceCategory mealProvisionPriceCategory)
         {
             this.setProperty("mealProvisionPriceCategory", mealProvisionPriceCategory);
         }
 
-        public string getPriceExVat ()
+        public string getPriceExVat()
         {
             return this.getProperty("priceExVat").ToString();
         }
 
-        public void setPriceExVat (string priceExVat)
+        public void setPriceExVat(string priceExVat)
         {
             this.setProperty("priceExVat", priceExVat);
         }
 
-        public string getVatAmount ()
+        public string getVatAmount()
         {
             return this.getProperty("vatAmount").ToString();
         }
 
-        public void setVatAmount (string vatAmount)
+        public void setVatAmount(string vatAmount)
         {
             this.setProperty("vatAmount", vatAmount);
         }
 
-        public VatRate getVatRate ()
+        public VatRate getVatRate()
         {
-            return (VatRate) this.getProperty("vatRate");
+            return (VatRate)this.getProperty("vatRate");
         }
 
-        public void setVatRate (VatRate vatRate)
+        public void setVatRate(VatRate vatRate)
         {
             this.setProperty("vatRate", vatRate);
         }
 
-        public DateTime getEffectiveDate ()
+        public DateTime getEffectiveDate()
         {
             return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
-        public void setEffectiveDate (DateTime effectiveDate)
+        public void setEffectiveDate(DateTime effectiveDate)
         {
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }

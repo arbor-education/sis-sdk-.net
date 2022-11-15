@@ -9,84 +9,85 @@ namespace Arbor.Model
 {
     public class PersonBenefitRecord : ModelBase
     {
-        protected string resourceType = ResourceType.PERSON_BENEFIT_RECORD;
+        protected new string resourceType = ResourceType.PERSON_BENEFIT_RECORD;
         public const string PERSON = "person";
         public const string BENEFIT_RECORD_TYPE = "benefitRecordType";
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
 
-        public PersonBenefitRecord ()
+        public PersonBenefitRecord()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public PersonBenefitRecord (string resourceType = "PersonBenefitRecord", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<PersonBenefitRecord> query (SimpleQuery query = null)
+        public PersonBenefitRecord(string resourceType = "PersonBenefitRecord", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("PersonBenefitRecord");
-        	RestGateway gateway = (RestGateway) PersonBenefitRecord.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<PersonBenefitRecord> personbenefitrecordCollection = new ModelCollection<PersonBenefitRecord> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    personbenefitrecordCollection.add((PersonBenefitRecord) model);
-        	}
-        
-        	return personbenefitrecordCollection;
+
         }
 
-        public static PersonBenefitRecord retrieve (string id)
+
+        public static ModelCollection<PersonBenefitRecord> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) PersonBenefitRecord.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (PersonBenefitRecord) gateway.retrieve(ResourceType.PERSON_BENEFIT_RECORD, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("PersonBenefitRecord");
+            RestGateway gateway = (RestGateway)PersonBenefitRecord.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<PersonBenefitRecord> personbenefitrecordCollection = new ModelCollection<PersonBenefitRecord>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                personbenefitrecordCollection.add((PersonBenefitRecord)model);
+            }
+
+            return personbenefitrecordCollection;
         }
 
-        public ModelBase getPerson ()
+        public static PersonBenefitRecord retrieve(string id)
         {
-            return (ModelBase) this.getProperty("person");
+            RestGateway gateway = (RestGateway)PersonBenefitRecord.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (PersonBenefitRecord)gateway.retrieve(ResourceType.PERSON_BENEFIT_RECORD, id);
         }
 
-        public void setPerson (ModelBase person)
+        public ModelBase getPerson()
+        {
+            return (ModelBase)this.getProperty("person");
+        }
+
+        public void setPerson(ModelBase person)
         {
             this.setProperty("person", person);
         }
 
-        public BenefitRecordType getBenefitRecordType ()
+        public BenefitRecordType getBenefitRecordType()
         {
-            return (BenefitRecordType) this.getProperty("benefitRecordType");
+            return (BenefitRecordType)this.getProperty("benefitRecordType");
         }
 
-        public void setBenefitRecordType (BenefitRecordType benefitRecordType)
+        public void setBenefitRecordType(BenefitRecordType benefitRecordType)
         {
             this.setProperty("benefitRecordType", benefitRecordType);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDate()
         {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }

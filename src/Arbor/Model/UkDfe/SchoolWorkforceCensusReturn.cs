@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class SchoolWorkforceCensusReturn : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_SCHOOL_WORKFORCE_CENSUS_RETURN;
+        protected new string resourceType = ResourceType.UK_DFE_SCHOOL_WORKFORCE_CENSUS_RETURN;
         public const string SCHOOL_WORKFORCE_CENSUS = "schoolWorkforceCensus";
         public const string EDUCATIONAL_INSTITUTION = "educationalInstitution";
         public const string RETURN_FILENAME = "returnFilename";
@@ -26,188 +26,189 @@ namespace Arbor.Model.UkDfe
         public const string IS_STAFF_CONTRACT_INFORMATION_EXCLUDED = "isStaffContractInformationExcluded";
         public const string SUBMITTED_DATETIME = "submittedDatetime";
 
-        public SchoolWorkforceCensusReturn ()
+        public SchoolWorkforceCensusReturn()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public SchoolWorkforceCensusReturn (string resourceType = "SchoolWorkforceCensusReturn", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<SchoolWorkforceCensusReturn> query (SimpleQuery query = null)
+        public SchoolWorkforceCensusReturn(string resourceType = "SchoolWorkforceCensusReturn", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("UkDfe_SchoolWorkforceCensusReturn");
-        	RestGateway gateway = (RestGateway) SchoolWorkforceCensusReturn.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<SchoolWorkforceCensusReturn> schoolworkforcecensusreturnCollection = new ModelCollection<SchoolWorkforceCensusReturn> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    schoolworkforcecensusreturnCollection.add((SchoolWorkforceCensusReturn) model);
-        	}
-        
-        	return schoolworkforcecensusreturnCollection;
+
         }
 
-        public static SchoolWorkforceCensusReturn retrieve (string id)
+
+        public static ModelCollection<SchoolWorkforceCensusReturn> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) SchoolWorkforceCensusReturn.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (SchoolWorkforceCensusReturn) gateway.retrieve(ResourceType.UK_DFE_SCHOOL_WORKFORCE_CENSUS_RETURN, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("UkDfe_SchoolWorkforceCensusReturn");
+            RestGateway gateway = (RestGateway)SchoolWorkforceCensusReturn.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<SchoolWorkforceCensusReturn> schoolworkforcecensusreturnCollection = new ModelCollection<SchoolWorkforceCensusReturn>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                schoolworkforcecensusreturnCollection.add((SchoolWorkforceCensusReturn)model);
+            }
+
+            return schoolworkforcecensusreturnCollection;
         }
 
-        public SchoolWorkforceCensus getSchoolWorkforceCensus ()
+        public static SchoolWorkforceCensusReturn retrieve(string id)
         {
-            return (SchoolWorkforceCensus) this.getProperty("schoolWorkforceCensus");
+            RestGateway gateway = (RestGateway)SchoolWorkforceCensusReturn.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (SchoolWorkforceCensusReturn)gateway.retrieve(ResourceType.UK_DFE_SCHOOL_WORKFORCE_CENSUS_RETURN, id);
         }
 
-        public void setSchoolWorkforceCensus (SchoolWorkforceCensus schoolWorkforceCensus)
+        public SchoolWorkforceCensus getSchoolWorkforceCensus()
+        {
+            return (SchoolWorkforceCensus)this.getProperty("schoolWorkforceCensus");
+        }
+
+        public void setSchoolWorkforceCensus(SchoolWorkforceCensus schoolWorkforceCensus)
         {
             this.setProperty("schoolWorkforceCensus", schoolWorkforceCensus);
         }
 
-        public EducationalInstitution getEducationalInstitution ()
+        public EducationalInstitution getEducationalInstitution()
         {
-            return (EducationalInstitution) this.getProperty("educationalInstitution");
+            return (EducationalInstitution)this.getProperty("educationalInstitution");
         }
 
-        public void setEducationalInstitution (EducationalInstitution educationalInstitution)
+        public void setEducationalInstitution(EducationalInstitution educationalInstitution)
         {
             this.setProperty("educationalInstitution", educationalInstitution);
         }
 
-        public string getReturnFilename ()
+        public string getReturnFilename()
         {
             return this.getProperty("returnFilename").ToString();
         }
 
-        public void setReturnFilename (string returnFilename)
+        public void setReturnFilename(string returnFilename)
         {
             this.setProperty("returnFilename", returnFilename);
         }
 
-        public string getStatusDescription ()
+        public string getStatusDescription()
         {
             return this.getProperty("statusDescription").ToString();
         }
 
-        public void setStatusDescription (string statusDescription)
+        public void setStatusDescription(string statusDescription)
         {
             this.setProperty("statusDescription", statusDescription);
         }
 
-        public int getReturnFilenameSequenceNumber ()
+        public int getReturnFilenameSequenceNumber()
         {
             return Convert.ToInt32(this.getProperty("returnFilenameSequenceNumber"));
         }
 
-        public void setReturnFilenameSequenceNumber (int returnFilenameSequenceNumber)
+        public void setReturnFilenameSequenceNumber(int returnFilenameSequenceNumber)
         {
             this.setProperty("returnFilenameSequenceNumber", returnFilenameSequenceNumber);
         }
 
-        public bool getXsltError ()
+        public bool getXsltError()
         {
             return Convert.ToBoolean(this.getProperty("xsltError"));
         }
 
-        public void setXsltError (bool xsltError)
+        public void setXsltError(bool xsltError)
         {
             this.setProperty("xsltError", xsltError);
         }
 
-        public bool getDataError ()
+        public bool getDataError()
         {
             return Convert.ToBoolean(this.getProperty("dataError"));
         }
 
-        public void setDataError (bool dataError)
+        public void setDataError(bool dataError)
         {
             this.setProperty("dataError", dataError);
         }
 
-        public bool getIsDryRun ()
+        public bool getIsDryRun()
         {
             return Convert.ToBoolean(this.getProperty("isDryRun"));
         }
 
-        public void setIsDryRun (bool isDryRun)
+        public void setIsDryRun(bool isDryRun)
         {
             this.setProperty("isDryRun", isDryRun);
         }
 
-        public DateTime getDataExportStartedDatetime ()
+        public DateTime getDataExportStartedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("dataExportStartedDatetime"));
         }
 
-        public void setDataExportStartedDatetime (DateTime dataExportStartedDatetime)
+        public void setDataExportStartedDatetime(DateTime dataExportStartedDatetime)
         {
             this.setProperty("dataExportStartedDatetime", dataExportStartedDatetime);
         }
 
-        public DateTime getDataExportCompletedDatetime ()
+        public DateTime getDataExportCompletedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("dataExportCompletedDatetime"));
         }
 
-        public void setDataExportCompletedDatetime (DateTime dataExportCompletedDatetime)
+        public void setDataExportCompletedDatetime(DateTime dataExportCompletedDatetime)
         {
             this.setProperty("dataExportCompletedDatetime", dataExportCompletedDatetime);
         }
 
-        public DateTime getSchoolApprovedDatetime ()
+        public DateTime getSchoolApprovedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("schoolApprovedDatetime"));
         }
 
-        public void setSchoolApprovedDatetime (DateTime schoolApprovedDatetime)
+        public void setSchoolApprovedDatetime(DateTime schoolApprovedDatetime)
         {
             this.setProperty("schoolApprovedDatetime", schoolApprovedDatetime);
         }
 
-        public DateTime getLocalAuthorityRejectedDatetime ()
+        public DateTime getLocalAuthorityRejectedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("localAuthorityRejectedDatetime"));
         }
 
-        public void setLocalAuthorityRejectedDatetime (DateTime localAuthorityRejectedDatetime)
+        public void setLocalAuthorityRejectedDatetime(DateTime localAuthorityRejectedDatetime)
         {
             this.setProperty("localAuthorityRejectedDatetime", localAuthorityRejectedDatetime);
         }
 
-        public DateTime getLocalAuthorityAcceptedDatetime ()
+        public DateTime getLocalAuthorityAcceptedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("localAuthorityAcceptedDatetime"));
         }
 
-        public void setLocalAuthorityAcceptedDatetime (DateTime localAuthorityAcceptedDatetime)
+        public void setLocalAuthorityAcceptedDatetime(DateTime localAuthorityAcceptedDatetime)
         {
             this.setProperty("localAuthorityAcceptedDatetime", localAuthorityAcceptedDatetime);
         }
 
-        public bool getIsStaffContractInformationExcluded ()
+        public bool getIsStaffContractInformationExcluded()
         {
             return Convert.ToBoolean(this.getProperty("isStaffContractInformationExcluded"));
         }
 
-        public void setIsStaffContractInformationExcluded (bool isStaffContractInformationExcluded)
+        public void setIsStaffContractInformationExcluded(bool isStaffContractInformationExcluded)
         {
             this.setProperty("isStaffContractInformationExcluded", isStaffContractInformationExcluded);
         }
 
-        public DateTime getSubmittedDatetime ()
+        public DateTime getSubmittedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("submittedDatetime"));
         }
 
-        public void setSubmittedDatetime (DateTime submittedDatetime)
+        public void setSubmittedDatetime(DateTime submittedDatetime)
         {
             this.setProperty("submittedDatetime", submittedDatetime);
         }

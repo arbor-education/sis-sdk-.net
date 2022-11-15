@@ -9,84 +9,85 @@ namespace Arbor.Model
 {
     public class IncomingBankTransaction : ModelBase
     {
-        protected string resourceType = ResourceType.INCOMING_BANK_TRANSACTION;
+        protected new string resourceType = ResourceType.INCOMING_BANK_TRANSACTION;
         public const string BILL_PAYER = "billPayer";
         public const string RECEIVED_DATE = "receivedDate";
         public const string CANCELLED_DATETIME = "cancelledDatetime";
         public const string PAYMENT = "payment";
 
-        public IncomingBankTransaction ()
+        public IncomingBankTransaction()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public IncomingBankTransaction (string resourceType = "IncomingBankTransaction", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<IncomingBankTransaction> query (SimpleQuery query = null)
+        public IncomingBankTransaction(string resourceType = "IncomingBankTransaction", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("IncomingBankTransaction");
-        	RestGateway gateway = (RestGateway) IncomingBankTransaction.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<IncomingBankTransaction> incomingbanktransactionCollection = new ModelCollection<IncomingBankTransaction> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    incomingbanktransactionCollection.add((IncomingBankTransaction) model);
-        	}
-        
-        	return incomingbanktransactionCollection;
+
         }
 
-        public static IncomingBankTransaction retrieve (string id)
+
+        public static ModelCollection<IncomingBankTransaction> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) IncomingBankTransaction.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (IncomingBankTransaction) gateway.retrieve(ResourceType.INCOMING_BANK_TRANSACTION, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("IncomingBankTransaction");
+            RestGateway gateway = (RestGateway)IncomingBankTransaction.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<IncomingBankTransaction> incomingbanktransactionCollection = new ModelCollection<IncomingBankTransaction>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                incomingbanktransactionCollection.add((IncomingBankTransaction)model);
+            }
+
+            return incomingbanktransactionCollection;
         }
 
-        public BillPayer getBillPayer ()
+        public static IncomingBankTransaction retrieve(string id)
         {
-            return (BillPayer) this.getProperty("billPayer");
+            RestGateway gateway = (RestGateway)IncomingBankTransaction.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (IncomingBankTransaction)gateway.retrieve(ResourceType.INCOMING_BANK_TRANSACTION, id);
         }
 
-        public void setBillPayer (BillPayer billPayer)
+        public BillPayer getBillPayer()
+        {
+            return (BillPayer)this.getProperty("billPayer");
+        }
+
+        public void setBillPayer(BillPayer billPayer)
         {
             this.setProperty("billPayer", billPayer);
         }
 
-        public DateTime getReceivedDate ()
+        public DateTime getReceivedDate()
         {
             return Convert.ToDateTime(this.getProperty("receivedDate"));
         }
 
-        public void setReceivedDate (DateTime receivedDate)
+        public void setReceivedDate(DateTime receivedDate)
         {
             this.setProperty("receivedDate", receivedDate);
         }
 
-        public DateTime getCancelledDatetime ()
+        public DateTime getCancelledDatetime()
         {
             return Convert.ToDateTime(this.getProperty("cancelledDatetime"));
         }
 
-        public void setCancelledDatetime (DateTime cancelledDatetime)
+        public void setCancelledDatetime(DateTime cancelledDatetime)
         {
             this.setProperty("cancelledDatetime", cancelledDatetime);
         }
 
-        public string getPayment ()
+        public string getPayment()
         {
             return this.getProperty("payment").ToString();
         }
 
-        public void setPayment (string payment)
+        public void setPayment(string payment)
         {
             this.setProperty("payment", payment);
         }

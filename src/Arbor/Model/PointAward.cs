@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class PointAward : ModelBase
     {
-        protected string resourceType = ResourceType.POINT_AWARD;
+        protected new string resourceType = ResourceType.POINT_AWARD;
         public const string POINT_AWARD_SCALE = "pointAwardScale";
         public const string STUDENT = "student";
         public const string POINT_AWARD_CATEGORY = "pointAwardCategory";
@@ -20,128 +20,129 @@ namespace Arbor.Model
         public const string AWARDED_BY_STAFF = "awardedByStaff";
         public const string EVENT = "event";
 
-        public PointAward ()
+        public PointAward()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public PointAward (string resourceType = "PointAward", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<PointAward> query (SimpleQuery query = null)
+        public PointAward(string resourceType = "PointAward", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("PointAward");
-        	RestGateway gateway = (RestGateway) PointAward.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<PointAward> pointawardCollection = new ModelCollection<PointAward> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    pointawardCollection.add((PointAward) model);
-        	}
-        
-        	return pointawardCollection;
+
         }
 
-        public static PointAward retrieve (string id)
+
+        public static ModelCollection<PointAward> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) PointAward.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (PointAward) gateway.retrieve(ResourceType.POINT_AWARD, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("PointAward");
+            RestGateway gateway = (RestGateway)PointAward.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<PointAward> pointawardCollection = new ModelCollection<PointAward>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                pointawardCollection.add((PointAward)model);
+            }
+
+            return pointawardCollection;
         }
 
-        public PointAwardScale getPointAwardScale ()
+        public static PointAward retrieve(string id)
         {
-            return (PointAwardScale) this.getProperty("pointAwardScale");
+            RestGateway gateway = (RestGateway)PointAward.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (PointAward)gateway.retrieve(ResourceType.POINT_AWARD, id);
         }
 
-        public void setPointAwardScale (PointAwardScale pointAwardScale)
+        public PointAwardScale getPointAwardScale()
+        {
+            return (PointAwardScale)this.getProperty("pointAwardScale");
+        }
+
+        public void setPointAwardScale(PointAwardScale pointAwardScale)
         {
             this.setProperty("pointAwardScale", pointAwardScale);
         }
 
-        public Student getStudent ()
+        public Student getStudent()
         {
-            return (Student) this.getProperty("student");
+            return (Student)this.getProperty("student");
         }
 
-        public void setStudent (Student student)
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public PointAwardCategory getPointAwardCategory ()
+        public PointAwardCategory getPointAwardCategory()
         {
-            return (PointAwardCategory) this.getProperty("pointAwardCategory");
+            return (PointAwardCategory)this.getProperty("pointAwardCategory");
         }
 
-        public void setPointAwardCategory (PointAwardCategory pointAwardCategory)
+        public void setPointAwardCategory(PointAwardCategory pointAwardCategory)
         {
             this.setProperty("pointAwardCategory", pointAwardCategory);
         }
 
-        public float getPoints ()
+        public float getPoints()
         {
-            return (float) this.getProperty("points");
+            return (float)this.getProperty("points");
         }
 
-        public void setPoints (float points)
+        public void setPoints(float points)
         {
             this.setProperty("points", points);
         }
 
-        public DateTime getAwardedDatetime ()
+        public DateTime getAwardedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("awardedDatetime"));
         }
 
-        public void setAwardedDatetime (DateTime awardedDatetime)
+        public void setAwardedDatetime(DateTime awardedDatetime)
         {
             this.setProperty("awardedDatetime", awardedDatetime);
         }
 
-        public string getNarrative ()
+        public string getNarrative()
         {
             return this.getProperty("narrative").ToString();
         }
 
-        public void setNarrative (string narrative)
+        public void setNarrative(string narrative)
         {
             this.setProperty("narrative", narrative);
         }
 
-        public ModelBase getLocation ()
+        public ModelBase getLocation()
         {
-            return (ModelBase) this.getProperty("location");
+            return (ModelBase)this.getProperty("location");
         }
 
-        public void setLocation (ModelBase location)
+        public void setLocation(ModelBase location)
         {
             this.setProperty("location", location);
         }
 
-        public Staff getAwardedByStaff ()
+        public Staff getAwardedByStaff()
         {
-            return (Staff) this.getProperty("awardedByStaff");
+            return (Staff)this.getProperty("awardedByStaff");
         }
 
-        public void setAwardedByStaff (Staff awardedByStaff)
+        public void setAwardedByStaff(Staff awardedByStaff)
         {
             this.setProperty("awardedByStaff", awardedByStaff);
         }
 
-        public ModelBase getEvent ()
+        public ModelBase getEvent()
         {
-            return (ModelBase) this.getProperty("event");
+            return (ModelBase)this.getProperty("event");
         }
 
-        public void setEvent (ModelBase _event)
+        public void setEvent(ModelBase _event)
         {
             this.setProperty("event", _event);
         }

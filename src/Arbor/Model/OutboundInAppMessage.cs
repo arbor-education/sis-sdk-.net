@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class OutboundInAppMessage : ModelBase
     {
-        protected string resourceType = ResourceType.OUTBOUND_IN_APP_MESSAGE;
+        protected new string resourceType = ResourceType.OUTBOUND_IN_APP_MESSAGE;
         public const string SENDER = "sender";
         public const string RECIPIENT = "recipient";
         public const string MESSAGE = "message";
@@ -19,118 +19,119 @@ namespace Arbor.Model
         public const string ACTION_REQUIRED_BY_DATETIME = "actionRequiredByDatetime";
         public const string INBOUND_IN_APP_MESSAGE_REPLIED_TO = "inboundInAppMessageRepliedTo";
 
-        public OutboundInAppMessage ()
+        public OutboundInAppMessage()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public OutboundInAppMessage (string resourceType = "OutboundInAppMessage", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<OutboundInAppMessage> query (SimpleQuery query = null)
+        public OutboundInAppMessage(string resourceType = "OutboundInAppMessage", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("OutboundInAppMessage");
-        	RestGateway gateway = (RestGateway) OutboundInAppMessage.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<OutboundInAppMessage> outboundinappmessageCollection = new ModelCollection<OutboundInAppMessage> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    outboundinappmessageCollection.add((OutboundInAppMessage) model);
-        	}
-        
-        	return outboundinappmessageCollection;
+
         }
 
-        public static OutboundInAppMessage retrieve (string id)
+
+        public static ModelCollection<OutboundInAppMessage> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) OutboundInAppMessage.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (OutboundInAppMessage) gateway.retrieve(ResourceType.OUTBOUND_IN_APP_MESSAGE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("OutboundInAppMessage");
+            RestGateway gateway = (RestGateway)OutboundInAppMessage.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<OutboundInAppMessage> outboundinappmessageCollection = new ModelCollection<OutboundInAppMessage>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                outboundinappmessageCollection.add((OutboundInAppMessage)model);
+            }
+
+            return outboundinappmessageCollection;
         }
 
-        public ModelBase getSender ()
+        public static OutboundInAppMessage retrieve(string id)
         {
-            return (ModelBase) this.getProperty("sender");
+            RestGateway gateway = (RestGateway)OutboundInAppMessage.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (OutboundInAppMessage)gateway.retrieve(ResourceType.OUTBOUND_IN_APP_MESSAGE, id);
         }
 
-        public void setSender (ModelBase sender)
+        public ModelBase getSender()
+        {
+            return (ModelBase)this.getProperty("sender");
+        }
+
+        public void setSender(ModelBase sender)
         {
             this.setProperty("sender", sender);
         }
 
-        public ModelBase getRecipient ()
+        public ModelBase getRecipient()
         {
-            return (ModelBase) this.getProperty("recipient");
+            return (ModelBase)this.getProperty("recipient");
         }
 
-        public void setRecipient (ModelBase recipient)
+        public void setRecipient(ModelBase recipient)
         {
             this.setProperty("recipient", recipient);
         }
 
-        public string getMessage ()
+        public string getMessage()
         {
             return this.getProperty("message").ToString();
         }
 
-        public void setMessage (string message)
+        public void setMessage(string message)
         {
             this.setProperty("message", message);
         }
 
-        public DateTime getReadDatetime ()
+        public DateTime getReadDatetime()
         {
             return Convert.ToDateTime(this.getProperty("readDatetime"));
         }
 
-        public void setReadDatetime (DateTime readDatetime)
+        public void setReadDatetime(DateTime readDatetime)
         {
             this.setProperty("readDatetime", readDatetime);
         }
 
-        public OutboundInAppMessageDraft getOutboundInAppMessageDraft ()
+        public OutboundInAppMessageDraft getOutboundInAppMessageDraft()
         {
-            return (OutboundInAppMessageDraft) this.getProperty("outboundInAppMessageDraft");
+            return (OutboundInAppMessageDraft)this.getProperty("outboundInAppMessageDraft");
         }
 
-        public void setOutboundInAppMessageDraft (OutboundInAppMessageDraft outboundInAppMessageDraft)
+        public void setOutboundInAppMessageDraft(OutboundInAppMessageDraft outboundInAppMessageDraft)
         {
             this.setProperty("outboundInAppMessageDraft", outboundInAppMessageDraft);
         }
 
-        public DateTime getSentDatetime ()
+        public DateTime getSentDatetime()
         {
             return Convert.ToDateTime(this.getProperty("sentDatetime"));
         }
 
-        public void setSentDatetime (DateTime sentDatetime)
+        public void setSentDatetime(DateTime sentDatetime)
         {
             this.setProperty("sentDatetime", sentDatetime);
         }
 
-        public DateTime getActionRequiredByDatetime ()
+        public DateTime getActionRequiredByDatetime()
         {
             return Convert.ToDateTime(this.getProperty("actionRequiredByDatetime"));
         }
 
-        public void setActionRequiredByDatetime (DateTime actionRequiredByDatetime)
+        public void setActionRequiredByDatetime(DateTime actionRequiredByDatetime)
         {
             this.setProperty("actionRequiredByDatetime", actionRequiredByDatetime);
         }
 
-        public InboundInAppMessage getInboundInAppMessageRepliedTo ()
+        public InboundInAppMessage getInboundInAppMessageRepliedTo()
         {
-            return (InboundInAppMessage) this.getProperty("inboundInAppMessageRepliedTo");
+            return (InboundInAppMessage)this.getProperty("inboundInAppMessageRepliedTo");
         }
 
-        public void setInboundInAppMessageRepliedTo (InboundInAppMessage inboundInAppMessageRepliedTo)
+        public void setInboundInAppMessageRepliedTo(InboundInAppMessage inboundInAppMessageRepliedTo)
         {
             this.setProperty("inboundInAppMessageRepliedTo", inboundInAppMessageRepliedTo);
         }

@@ -9,84 +9,85 @@ namespace Arbor.Model
 {
     public class CustomReportColumnConditionalFormatter : ModelBase
     {
-        protected string resourceType = ResourceType.CUSTOM_REPORT_COLUMN_CONDITIONAL_FORMATTER;
+        protected new string resourceType = ResourceType.CUSTOM_REPORT_COLUMN_CONDITIONAL_FORMATTER;
         public const string CUSTOM_REPORT_COLUMN = "customReportColumn";
         public const string CONDITION_CLASS = "conditionClass";
         public const string CONDITION_PARAMS = "conditionParams";
         public const string COLOR = "color";
 
-        public CustomReportColumnConditionalFormatter ()
+        public CustomReportColumnConditionalFormatter()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public CustomReportColumnConditionalFormatter (string resourceType = "CustomReportColumnConditionalFormatter", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<CustomReportColumnConditionalFormatter> query (SimpleQuery query = null)
+        public CustomReportColumnConditionalFormatter(string resourceType = "CustomReportColumnConditionalFormatter", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("CustomReportColumnConditionalFormatter");
-        	RestGateway gateway = (RestGateway) CustomReportColumnConditionalFormatter.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<CustomReportColumnConditionalFormatter> customreportcolumnconditionalformatterCollection = new ModelCollection<CustomReportColumnConditionalFormatter> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    customreportcolumnconditionalformatterCollection.add((CustomReportColumnConditionalFormatter) model);
-        	}
-        
-        	return customreportcolumnconditionalformatterCollection;
+
         }
 
-        public static CustomReportColumnConditionalFormatter retrieve (string id)
+
+        public static ModelCollection<CustomReportColumnConditionalFormatter> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) CustomReportColumnConditionalFormatter.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (CustomReportColumnConditionalFormatter) gateway.retrieve(ResourceType.CUSTOM_REPORT_COLUMN_CONDITIONAL_FORMATTER, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("CustomReportColumnConditionalFormatter");
+            RestGateway gateway = (RestGateway)CustomReportColumnConditionalFormatter.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<CustomReportColumnConditionalFormatter> customreportcolumnconditionalformatterCollection = new ModelCollection<CustomReportColumnConditionalFormatter>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                customreportcolumnconditionalformatterCollection.add((CustomReportColumnConditionalFormatter)model);
+            }
+
+            return customreportcolumnconditionalformatterCollection;
         }
 
-        public CustomReportColumn getCustomReportColumn ()
+        public static CustomReportColumnConditionalFormatter retrieve(string id)
         {
-            return (CustomReportColumn) this.getProperty("customReportColumn");
+            RestGateway gateway = (RestGateway)CustomReportColumnConditionalFormatter.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (CustomReportColumnConditionalFormatter)gateway.retrieve(ResourceType.CUSTOM_REPORT_COLUMN_CONDITIONAL_FORMATTER, id);
         }
 
-        public void setCustomReportColumn (CustomReportColumn customReportColumn)
+        public CustomReportColumn getCustomReportColumn()
+        {
+            return (CustomReportColumn)this.getProperty("customReportColumn");
+        }
+
+        public void setCustomReportColumn(CustomReportColumn customReportColumn)
         {
             this.setProperty("customReportColumn", customReportColumn);
         }
 
-        public string getConditionClass ()
+        public string getConditionClass()
         {
             return this.getProperty("conditionClass").ToString();
         }
 
-        public void setConditionClass (string conditionClass)
+        public void setConditionClass(string conditionClass)
         {
             this.setProperty("conditionClass", conditionClass);
         }
 
-        public string getConditionParams ()
+        public string getConditionParams()
         {
             return this.getProperty("conditionParams").ToString();
         }
 
-        public void setConditionParams (string conditionParams)
+        public void setConditionParams(string conditionParams)
         {
             this.setProperty("conditionParams", conditionParams);
         }
 
-        public string getColor ()
+        public string getColor()
         {
             return this.getProperty("color").ToString();
         }
 
-        public void setColor (string color)
+        public void setColor(string color)
         {
             this.setProperty("color", color);
         }

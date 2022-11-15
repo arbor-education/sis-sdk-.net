@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ClubMembership : ModelBase
     {
-        protected string resourceType = ResourceType.CLUB_MEMBERSHIP;
+        protected new string resourceType = ResourceType.CLUB_MEMBERSHIP;
         public const string CLUB = "club";
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
@@ -22,148 +22,149 @@ namespace Arbor.Model
         public const string CANCELLED_DATETIME = "cancelledDatetime";
         public const string DISABLED_DATETIME = "disabledDatetime";
 
-        public ClubMembership ()
+        public ClubMembership()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public ClubMembership (string resourceType = "ClubMembership", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<ClubMembership> query (SimpleQuery query = null)
+        public ClubMembership(string resourceType = "ClubMembership", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("ClubMembership");
-        	RestGateway gateway = (RestGateway) ClubMembership.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<ClubMembership> clubmembershipCollection = new ModelCollection<ClubMembership> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    clubmembershipCollection.add((ClubMembership) model);
-        	}
-        
-        	return clubmembershipCollection;
+
         }
 
-        public static ClubMembership retrieve (string id)
+
+        public static ModelCollection<ClubMembership> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) ClubMembership.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (ClubMembership) gateway.retrieve(ResourceType.CLUB_MEMBERSHIP, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("ClubMembership");
+            RestGateway gateway = (RestGateway)ClubMembership.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<ClubMembership> clubmembershipCollection = new ModelCollection<ClubMembership>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                clubmembershipCollection.add((ClubMembership)model);
+            }
+
+            return clubmembershipCollection;
         }
 
-        public Club getClub ()
+        public static ClubMembership retrieve(string id)
         {
-            return (Club) this.getProperty("club");
+            RestGateway gateway = (RestGateway)ClubMembership.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (ClubMembership)gateway.retrieve(ResourceType.CLUB_MEMBERSHIP, id);
         }
 
-        public void setClub (Club club)
+        public Club getClub()
+        {
+            return (Club)this.getProperty("club");
+        }
+
+        public void setClub(Club club)
         {
             this.setProperty("club", club);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDate()
         {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }
 
-        public ClubMembershipPeriod getClubMembershipPeriod ()
+        public ClubMembershipPeriod getClubMembershipPeriod()
         {
-            return (ClubMembershipPeriod) this.getProperty("clubMembershipPeriod");
+            return (ClubMembershipPeriod)this.getProperty("clubMembershipPeriod");
         }
 
-        public void setClubMembershipPeriod (ClubMembershipPeriod clubMembershipPeriod)
+        public void setClubMembershipPeriod(ClubMembershipPeriod clubMembershipPeriod)
         {
             this.setProperty("clubMembershipPeriod", clubMembershipPeriod);
         }
 
-        public Student getStudent ()
+        public Student getStudent()
         {
-            return (Student) this.getProperty("student");
+            return (Student)this.getProperty("student");
         }
 
-        public void setStudent (Student student)
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public bool getConsentReceived ()
+        public bool getConsentReceived()
         {
             return Convert.ToBoolean(this.getProperty("consentReceived"));
         }
 
-        public void setConsentReceived (bool consentReceived)
+        public void setConsentReceived(bool consentReceived)
         {
             this.setProperty("consentReceived", consentReceived);
         }
 
-        public DateTime getActivatedDatetime ()
+        public DateTime getActivatedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("activatedDatetime"));
         }
 
-        public void setActivatedDatetime (DateTime activatedDatetime)
+        public void setActivatedDatetime(DateTime activatedDatetime)
         {
             this.setProperty("activatedDatetime", activatedDatetime);
         }
 
-        public CustomerInvoice getCustomerInvoice ()
+        public CustomerInvoice getCustomerInvoice()
         {
-            return (CustomerInvoice) this.getProperty("customerInvoice");
+            return (CustomerInvoice)this.getProperty("customerInvoice");
         }
 
-        public void setCustomerInvoice (CustomerInvoice customerInvoice)
+        public void setCustomerInvoice(CustomerInvoice customerInvoice)
         {
             this.setProperty("customerInvoice", customerInvoice);
         }
 
-        public CustomerInvoiceItem getCustomerInvoiceItem ()
+        public CustomerInvoiceItem getCustomerInvoiceItem()
         {
-            return (CustomerInvoiceItem) this.getProperty("customerInvoiceItem");
+            return (CustomerInvoiceItem)this.getProperty("customerInvoiceItem");
         }
 
-        public void setCustomerInvoiceItem (CustomerInvoiceItem customerInvoiceItem)
+        public void setCustomerInvoiceItem(CustomerInvoiceItem customerInvoiceItem)
         {
             this.setProperty("customerInvoiceItem", customerInvoiceItem);
         }
 
-        public DateTime getCancelledDatetime ()
+        public DateTime getCancelledDatetime()
         {
             return Convert.ToDateTime(this.getProperty("cancelledDatetime"));
         }
 
-        public void setCancelledDatetime (DateTime cancelledDatetime)
+        public void setCancelledDatetime(DateTime cancelledDatetime)
         {
             this.setProperty("cancelledDatetime", cancelledDatetime);
         }
 
-        public DateTime getDisabledDatetime ()
+        public DateTime getDisabledDatetime()
         {
             return Convert.ToDateTime(this.getProperty("disabledDatetime"));
         }
 
-        public void setDisabledDatetime (DateTime disabledDatetime)
+        public void setDisabledDatetime(DateTime disabledDatetime)
         {
             this.setProperty("disabledDatetime", disabledDatetime);
         }

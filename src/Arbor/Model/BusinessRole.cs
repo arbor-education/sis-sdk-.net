@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class BusinessRole : ModelBase
     {
-        protected string resourceType = ResourceType.BUSINESS_ROLE;
+        protected new string resourceType = ResourceType.BUSINESS_ROLE;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";
@@ -22,148 +22,149 @@ namespace Arbor.Model
         public const string BUSINESS_ROLE_CATEGORY = "businessRoleCategory";
         public const string CUSTOMER_MANAGES_DEFAULT_USER_ROLES = "customerManagesDefaultUserRoles";
 
-        public BusinessRole ()
+        public BusinessRole()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public BusinessRole (string resourceType = "BusinessRole", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<BusinessRole> query (SimpleQuery query = null)
+        public BusinessRole(string resourceType = "BusinessRole", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("BusinessRole");
-        	RestGateway gateway = (RestGateway) BusinessRole.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<BusinessRole> businessroleCollection = new ModelCollection<BusinessRole> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    businessroleCollection.add((BusinessRole) model);
-        	}
-        
-        	return businessroleCollection;
+
         }
 
-        public static BusinessRole retrieve (string id)
+
+        public static ModelCollection<BusinessRole> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) BusinessRole.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (BusinessRole) gateway.retrieve(ResourceType.BUSINESS_ROLE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("BusinessRole");
+            RestGateway gateway = (RestGateway)BusinessRole.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<BusinessRole> businessroleCollection = new ModelCollection<BusinessRole>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                businessroleCollection.add((BusinessRole)model);
+            }
+
+            return businessroleCollection;
         }
 
-        public string getCode ()
+        public static BusinessRole retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)BusinessRole.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (BusinessRole)gateway.retrieve(ResourceType.BUSINESS_ROLE, id);
+        }
+
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }
 
-        public string getBusinessRoleName ()
+        public string getBusinessRoleName()
         {
             return this.getProperty("businessRoleName").ToString();
         }
 
-        public void setBusinessRoleName (string businessRoleName)
+        public void setBusinessRoleName(string businessRoleName)
         {
             this.setProperty("businessRoleName", businessRoleName);
         }
 
-        public string getUserDefinedName ()
+        public string getUserDefinedName()
         {
             return this.getProperty("userDefinedName").ToString();
         }
 
-        public void setUserDefinedName (string userDefinedName)
+        public void setUserDefinedName(string userDefinedName)
         {
             this.setProperty("userDefinedName", userDefinedName);
         }
 
-        public string getBusinessRoleDescription ()
+        public string getBusinessRoleDescription()
         {
             return this.getProperty("businessRoleDescription").ToString();
         }
 
-        public void setBusinessRoleDescription (string businessRoleDescription)
+        public void setBusinessRoleDescription(string businessRoleDescription)
         {
             this.setProperty("businessRoleDescription", businessRoleDescription);
         }
 
-        public string getUserDefinedDescription ()
+        public string getUserDefinedDescription()
         {
             return this.getProperty("userDefinedDescription").ToString();
         }
 
-        public void setUserDefinedDescription (string userDefinedDescription)
+        public void setUserDefinedDescription(string userDefinedDescription)
         {
             this.setProperty("userDefinedDescription", userDefinedDescription);
         }
 
-        public bool getInternalStaff ()
+        public bool getInternalStaff()
         {
             return Convert.ToBoolean(this.getProperty("internalStaff"));
         }
 
-        public void setInternalStaff (bool internalStaff)
+        public void setInternalStaff(bool internalStaff)
         {
             this.setProperty("internalStaff", internalStaff);
         }
 
-        public bool getTeachingStaff ()
+        public bool getTeachingStaff()
         {
             return Convert.ToBoolean(this.getProperty("teachingStaff"));
         }
 
-        public void setTeachingStaff (bool teachingStaff)
+        public void setTeachingStaff(bool teachingStaff)
         {
             this.setProperty("teachingStaff", teachingStaff);
         }
 
-        public string getBusinessRoleCategory ()
+        public string getBusinessRoleCategory()
         {
             return this.getProperty("businessRoleCategory").ToString();
         }
 
-        public void setBusinessRoleCategory (string businessRoleCategory)
+        public void setBusinessRoleCategory(string businessRoleCategory)
         {
             this.setProperty("businessRoleCategory", businessRoleCategory);
         }
 
-        public bool getCustomerManagesDefaultUserRoles ()
+        public bool getCustomerManagesDefaultUserRoles()
         {
             return Convert.ToBoolean(this.getProperty("customerManagesDefaultUserRoles"));
         }
 
-        public void setCustomerManagesDefaultUserRoles (bool customerManagesDefaultUserRoles)
+        public void setCustomerManagesDefaultUserRoles(bool customerManagesDefaultUserRoles)
         {
             this.setProperty("customerManagesDefaultUserRoles", customerManagesDefaultUserRoles);
         }

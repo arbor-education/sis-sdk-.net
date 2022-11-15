@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class SchoolCensusClass : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_SCHOOL_CENSUS_CLASS;
+        protected new string resourceType = ResourceType.UK_DFE_SCHOOL_CENSUS_CLASS;
         public const string SCHOOL_CENSUS = "schoolCensus";
         public const string SESSION = "session";
         public const string TEACHERS = "teachers";
@@ -20,128 +20,129 @@ namespace Arbor.Model.UkDfe
         public const string GUEST_PUPILS = "guestPupils";
         public const string INFANT_PUPIL_EXCEPTIONS = "infantPupilExceptions";
 
-        public SchoolCensusClass ()
+        public SchoolCensusClass()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public SchoolCensusClass (string resourceType = "SchoolCensusClass", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<SchoolCensusClass> query (SimpleQuery query = null)
+        public SchoolCensusClass(string resourceType = "SchoolCensusClass", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("UkDfe_SchoolCensusClass");
-        	RestGateway gateway = (RestGateway) SchoolCensusClass.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<SchoolCensusClass> schoolcensusclassCollection = new ModelCollection<SchoolCensusClass> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    schoolcensusclassCollection.add((SchoolCensusClass) model);
-        	}
-        
-        	return schoolcensusclassCollection;
+
         }
 
-        public static SchoolCensusClass retrieve (string id)
+
+        public static ModelCollection<SchoolCensusClass> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) SchoolCensusClass.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (SchoolCensusClass) gateway.retrieve(ResourceType.UK_DFE_SCHOOL_CENSUS_CLASS, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("UkDfe_SchoolCensusClass");
+            RestGateway gateway = (RestGateway)SchoolCensusClass.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<SchoolCensusClass> schoolcensusclassCollection = new ModelCollection<SchoolCensusClass>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                schoolcensusclassCollection.add((SchoolCensusClass)model);
+            }
+
+            return schoolcensusclassCollection;
         }
 
-        public SchoolCensus getSchoolCensus ()
+        public static SchoolCensusClass retrieve(string id)
         {
-            return (SchoolCensus) this.getProperty("schoolCensus");
+            RestGateway gateway = (RestGateway)SchoolCensusClass.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (SchoolCensusClass)gateway.retrieve(ResourceType.UK_DFE_SCHOOL_CENSUS_CLASS, id);
         }
 
-        public void setSchoolCensus (SchoolCensus schoolCensus)
+        public SchoolCensus getSchoolCensus()
+        {
+            return (SchoolCensus)this.getProperty("schoolCensus");
+        }
+
+        public void setSchoolCensus(SchoolCensus schoolCensus)
         {
             this.setProperty("schoolCensus", schoolCensus);
         }
 
-        public Session getSession ()
+        public Session getSession()
         {
-            return (Session) this.getProperty("session");
+            return (Session)this.getProperty("session");
         }
 
-        public void setSession (Session session)
+        public void setSession(Session session)
         {
             this.setProperty("session", session);
         }
 
-        public int getTeachers ()
+        public int getTeachers()
         {
             return Convert.ToInt32(this.getProperty("teachers"));
         }
 
-        public void setTeachers (int teachers)
+        public void setTeachers(int teachers)
         {
             this.setProperty("teachers", teachers);
         }
 
-        public int getNonTeachers ()
+        public int getNonTeachers()
         {
             return Convert.ToInt32(this.getProperty("nonTeachers"));
         }
 
-        public void setNonTeachers (int nonTeachers)
+        public void setNonTeachers(int nonTeachers)
         {
             this.setProperty("nonTeachers", nonTeachers);
         }
 
-        public int getPpaTeachers ()
+        public int getPpaTeachers()
         {
             return Convert.ToInt32(this.getProperty("ppaTeachers"));
         }
 
-        public void setPpaTeachers (int ppaTeachers)
+        public void setPpaTeachers(int ppaTeachers)
         {
             this.setProperty("ppaTeachers", ppaTeachers);
         }
 
-        public string getAscActivity ()
+        public string getAscActivity()
         {
             return this.getProperty("ascActivity").ToString();
         }
 
-        public void setAscActivity (string ascActivity)
+        public void setAscActivity(string ascActivity)
         {
             this.setProperty("ascActivity", ascActivity);
         }
 
-        public int getHomePupils ()
+        public int getHomePupils()
         {
             return Convert.ToInt32(this.getProperty("homePupils"));
         }
 
-        public void setHomePupils (int homePupils)
+        public void setHomePupils(int homePupils)
         {
             this.setProperty("homePupils", homePupils);
         }
 
-        public int getGuestPupils ()
+        public int getGuestPupils()
         {
             return Convert.ToInt32(this.getProperty("guestPupils"));
         }
 
-        public void setGuestPupils (int guestPupils)
+        public void setGuestPupils(int guestPupils)
         {
             this.setProperty("guestPupils", guestPupils);
         }
 
-        public string getInfantPupilExceptions ()
+        public string getInfantPupilExceptions()
         {
             return this.getProperty("infantPupilExceptions").ToString();
         }
 
-        public void setInfantPupilExceptions (string infantPupilExceptions)
+        public void setInfantPupilExceptions(string infantPupilExceptions)
         {
             this.setProperty("infantPupilExceptions", infantPupilExceptions);
         }

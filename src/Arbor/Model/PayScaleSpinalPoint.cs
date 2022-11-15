@@ -9,84 +9,85 @@ namespace Arbor.Model
 {
     public class PayScaleSpinalPoint : ModelBase
     {
-        protected string resourceType = ResourceType.PAY_SCALE_SPINAL_POINT;
+        protected new string resourceType = ResourceType.PAY_SCALE_SPINAL_POINT;
         public const string PAY_SCALE = "payScale";
         public const string SPINAL_POINT_CODE = "spinalPointCode";
         public const string SPINAL_POINT_NAME = "spinalPointName";
         public const string DATA_ORDER = "dataOrder";
 
-        public PayScaleSpinalPoint ()
+        public PayScaleSpinalPoint()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public PayScaleSpinalPoint (string resourceType = "PayScaleSpinalPoint", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<PayScaleSpinalPoint> query (SimpleQuery query = null)
+        public PayScaleSpinalPoint(string resourceType = "PayScaleSpinalPoint", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("PayScaleSpinalPoint");
-        	RestGateway gateway = (RestGateway) PayScaleSpinalPoint.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<PayScaleSpinalPoint> payscalespinalpointCollection = new ModelCollection<PayScaleSpinalPoint> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    payscalespinalpointCollection.add((PayScaleSpinalPoint) model);
-        	}
-        
-        	return payscalespinalpointCollection;
+
         }
 
-        public static PayScaleSpinalPoint retrieve (string id)
+
+        public static ModelCollection<PayScaleSpinalPoint> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) PayScaleSpinalPoint.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (PayScaleSpinalPoint) gateway.retrieve(ResourceType.PAY_SCALE_SPINAL_POINT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("PayScaleSpinalPoint");
+            RestGateway gateway = (RestGateway)PayScaleSpinalPoint.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<PayScaleSpinalPoint> payscalespinalpointCollection = new ModelCollection<PayScaleSpinalPoint>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                payscalespinalpointCollection.add((PayScaleSpinalPoint)model);
+            }
+
+            return payscalespinalpointCollection;
         }
 
-        public PayScale getPayScale ()
+        public static PayScaleSpinalPoint retrieve(string id)
         {
-            return (PayScale) this.getProperty("payScale");
+            RestGateway gateway = (RestGateway)PayScaleSpinalPoint.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (PayScaleSpinalPoint)gateway.retrieve(ResourceType.PAY_SCALE_SPINAL_POINT, id);
         }
 
-        public void setPayScale (PayScale payScale)
+        public PayScale getPayScale()
+        {
+            return (PayScale)this.getProperty("payScale");
+        }
+
+        public void setPayScale(PayScale payScale)
         {
             this.setProperty("payScale", payScale);
         }
 
-        public string getSpinalPointCode ()
+        public string getSpinalPointCode()
         {
             return this.getProperty("spinalPointCode").ToString();
         }
 
-        public void setSpinalPointCode (string spinalPointCode)
+        public void setSpinalPointCode(string spinalPointCode)
         {
             this.setProperty("spinalPointCode", spinalPointCode);
         }
 
-        public string getSpinalPointName ()
+        public string getSpinalPointName()
         {
             return this.getProperty("spinalPointName").ToString();
         }
 
-        public void setSpinalPointName (string spinalPointName)
+        public void setSpinalPointName(string spinalPointName)
         {
             this.setProperty("spinalPointName", spinalPointName);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }

@@ -9,73 +9,74 @@ namespace Arbor.Model
 {
     public class ExternallyGeneratedReportCard : ModelBase
     {
-        protected string resourceType = ResourceType.EXTERNALLY_GENERATED_REPORT_CARD;
+        protected new string resourceType = ResourceType.EXTERNALLY_GENERATED_REPORT_CARD;
         public const string CONTENT = "content";
         public const string REPORT_CARD_BATCH = "reportCardBatch";
         public const string STUDENT = "student";
 
-        public ExternallyGeneratedReportCard ()
+        public ExternallyGeneratedReportCard()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public ExternallyGeneratedReportCard (string resourceType = "ExternallyGeneratedReportCard", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<ExternallyGeneratedReportCard> query (SimpleQuery query = null)
+        public ExternallyGeneratedReportCard(string resourceType = "ExternallyGeneratedReportCard", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("ExternallyGeneratedReportCard");
-        	RestGateway gateway = (RestGateway) ExternallyGeneratedReportCard.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<ExternallyGeneratedReportCard> externallygeneratedreportcardCollection = new ModelCollection<ExternallyGeneratedReportCard> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    externallygeneratedreportcardCollection.add((ExternallyGeneratedReportCard) model);
-        	}
-        
-        	return externallygeneratedreportcardCollection;
+
         }
 
-        public static ExternallyGeneratedReportCard retrieve (string id)
+
+        public static ModelCollection<ExternallyGeneratedReportCard> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) ExternallyGeneratedReportCard.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (ExternallyGeneratedReportCard) gateway.retrieve(ResourceType.EXTERNALLY_GENERATED_REPORT_CARD, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("ExternallyGeneratedReportCard");
+            RestGateway gateway = (RestGateway)ExternallyGeneratedReportCard.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<ExternallyGeneratedReportCard> externallygeneratedreportcardCollection = new ModelCollection<ExternallyGeneratedReportCard>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                externallygeneratedreportcardCollection.add((ExternallyGeneratedReportCard)model);
+            }
+
+            return externallygeneratedreportcardCollection;
         }
 
-        public Content getContent ()
+        public static ExternallyGeneratedReportCard retrieve(string id)
         {
-            return (Content) this.getProperty("content");
+            RestGateway gateway = (RestGateway)ExternallyGeneratedReportCard.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (ExternallyGeneratedReportCard)gateway.retrieve(ResourceType.EXTERNALLY_GENERATED_REPORT_CARD, id);
         }
 
-        public void setContent (Content content)
+        public Content getContent()
+        {
+            return (Content)this.getProperty("content");
+        }
+
+        public void setContent(Content content)
         {
             this.setProperty("content", content);
         }
 
-        public NewReportCardBatch getReportCardBatch ()
+        public NewReportCardBatch getReportCardBatch()
         {
-            return (NewReportCardBatch) this.getProperty("reportCardBatch");
+            return (NewReportCardBatch)this.getProperty("reportCardBatch");
         }
 
-        public void setReportCardBatch (NewReportCardBatch reportCardBatch)
+        public void setReportCardBatch(NewReportCardBatch reportCardBatch)
         {
             this.setProperty("reportCardBatch", reportCardBatch);
         }
 
-        public Student getStudent ()
+        public Student getStudent()
         {
-            return (Student) this.getProperty("student");
+            return (Student)this.getProperty("student");
         }
 
-        public void setStudent (Student student)
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }

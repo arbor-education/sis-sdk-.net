@@ -9,95 +9,96 @@ namespace Arbor.Model
 {
     public class CustomReportCollation : ModelBase
     {
-        protected string resourceType = ResourceType.CUSTOM_REPORT_COLLATION;
+        protected new string resourceType = ResourceType.CUSTOM_REPORT_COLLATION;
         public const string CUSTOM_REPORT = "customReport";
         public const string FIELD_CLASS = "fieldClass";
         public const string FIELD_PARAMS = "fieldParams";
         public const string TRANSFORMATION_CLASS = "transformationClass";
         public const string CUSTOM_LABEL = "customLabel";
 
-        public CustomReportCollation ()
+        public CustomReportCollation()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public CustomReportCollation (string resourceType = "CustomReportCollation", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<CustomReportCollation> query (SimpleQuery query = null)
+        public CustomReportCollation(string resourceType = "CustomReportCollation", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("CustomReportCollation");
-        	RestGateway gateway = (RestGateway) CustomReportCollation.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<CustomReportCollation> customreportcollationCollection = new ModelCollection<CustomReportCollation> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    customreportcollationCollection.add((CustomReportCollation) model);
-        	}
-        
-        	return customreportcollationCollection;
+
         }
 
-        public static CustomReportCollation retrieve (string id)
+
+        public static ModelCollection<CustomReportCollation> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) CustomReportCollation.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (CustomReportCollation) gateway.retrieve(ResourceType.CUSTOM_REPORT_COLLATION, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("CustomReportCollation");
+            RestGateway gateway = (RestGateway)CustomReportCollation.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<CustomReportCollation> customreportcollationCollection = new ModelCollection<CustomReportCollation>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                customreportcollationCollection.add((CustomReportCollation)model);
+            }
+
+            return customreportcollationCollection;
         }
 
-        public CustomReport getCustomReport ()
+        public static CustomReportCollation retrieve(string id)
         {
-            return (CustomReport) this.getProperty("customReport");
+            RestGateway gateway = (RestGateway)CustomReportCollation.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (CustomReportCollation)gateway.retrieve(ResourceType.CUSTOM_REPORT_COLLATION, id);
         }
 
-        public void setCustomReport (CustomReport customReport)
+        public CustomReport getCustomReport()
+        {
+            return (CustomReport)this.getProperty("customReport");
+        }
+
+        public void setCustomReport(CustomReport customReport)
         {
             this.setProperty("customReport", customReport);
         }
 
-        public string getFieldClass ()
+        public string getFieldClass()
         {
             return this.getProperty("fieldClass").ToString();
         }
 
-        public void setFieldClass (string fieldClass)
+        public void setFieldClass(string fieldClass)
         {
             this.setProperty("fieldClass", fieldClass);
         }
 
-        public string getFieldParams ()
+        public string getFieldParams()
         {
             return this.getProperty("fieldParams").ToString();
         }
 
-        public void setFieldParams (string fieldParams)
+        public void setFieldParams(string fieldParams)
         {
             this.setProperty("fieldParams", fieldParams);
         }
 
-        public string getTransformationClass ()
+        public string getTransformationClass()
         {
             return this.getProperty("transformationClass").ToString();
         }
 
-        public void setTransformationClass (string transformationClass)
+        public void setTransformationClass(string transformationClass)
         {
             this.setProperty("transformationClass", transformationClass);
         }
 
-        public string getCustomLabel ()
+        public string getCustomLabel()
         {
             return this.getProperty("customLabel").ToString();
         }
 
-        public void setCustomLabel (string customLabel)
+        public void setCustomLabel(string customLabel)
         {
             this.setProperty("customLabel", customLabel);
         }

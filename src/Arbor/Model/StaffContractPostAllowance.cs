@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class StaffContractPostAllowance : ModelBase
     {
-        protected string resourceType = ResourceType.STAFF_CONTRACT_POST_ALLOWANCE;
+        protected new string resourceType = ResourceType.STAFF_CONTRACT_POST_ALLOWANCE;
         public const string STAFF_CONTRACT_POST = "staffContractPost";
         public const string LINKED_ALLOWANCE = "linkedAllowance";
         public const string EFFECTIVE_DATE = "effectiveDate";
@@ -22,148 +22,149 @@ namespace Arbor.Model
         public const string NI_STATUS = "niStatus";
         public const string BENEFIT_IN_KIND = "benefitInKind";
 
-        public StaffContractPostAllowance ()
+        public StaffContractPostAllowance()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public StaffContractPostAllowance (string resourceType = "StaffContractPostAllowance", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<StaffContractPostAllowance> query (SimpleQuery query = null)
+        public StaffContractPostAllowance(string resourceType = "StaffContractPostAllowance", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("StaffContractPostAllowance");
-        	RestGateway gateway = (RestGateway) StaffContractPostAllowance.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<StaffContractPostAllowance> staffcontractpostallowanceCollection = new ModelCollection<StaffContractPostAllowance> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    staffcontractpostallowanceCollection.add((StaffContractPostAllowance) model);
-        	}
-        
-        	return staffcontractpostallowanceCollection;
+
         }
 
-        public static StaffContractPostAllowance retrieve (string id)
+
+        public static ModelCollection<StaffContractPostAllowance> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) StaffContractPostAllowance.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (StaffContractPostAllowance) gateway.retrieve(ResourceType.STAFF_CONTRACT_POST_ALLOWANCE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("StaffContractPostAllowance");
+            RestGateway gateway = (RestGateway)StaffContractPostAllowance.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<StaffContractPostAllowance> staffcontractpostallowanceCollection = new ModelCollection<StaffContractPostAllowance>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                staffcontractpostallowanceCollection.add((StaffContractPostAllowance)model);
+            }
+
+            return staffcontractpostallowanceCollection;
         }
 
-        public StaffContractPost getStaffContractPost ()
+        public static StaffContractPostAllowance retrieve(string id)
         {
-            return (StaffContractPost) this.getProperty("staffContractPost");
+            RestGateway gateway = (RestGateway)StaffContractPostAllowance.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (StaffContractPostAllowance)gateway.retrieve(ResourceType.STAFF_CONTRACT_POST_ALLOWANCE, id);
         }
 
-        public void setStaffContractPost (StaffContractPost staffContractPost)
+        public StaffContractPost getStaffContractPost()
+        {
+            return (StaffContractPost)this.getProperty("staffContractPost");
+        }
+
+        public void setStaffContractPost(StaffContractPost staffContractPost)
         {
             this.setProperty("staffContractPost", staffContractPost);
         }
 
-        public Allowance getLinkedAllowance ()
+        public Allowance getLinkedAllowance()
         {
-            return (Allowance) this.getProperty("linkedAllowance");
+            return (Allowance)this.getProperty("linkedAllowance");
         }
 
-        public void setLinkedAllowance (Allowance linkedAllowance)
+        public void setLinkedAllowance(Allowance linkedAllowance)
         {
             this.setProperty("linkedAllowance", linkedAllowance);
         }
 
-        public DateTime getEffectiveDate ()
+        public DateTime getEffectiveDate()
         {
             return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
-        public void setEffectiveDate (DateTime effectiveDate)
+        public void setEffectiveDate(DateTime effectiveDate)
         {
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }
 
-        public string getGrossAllowance ()
+        public string getGrossAllowance()
         {
             return this.getProperty("grossAllowance").ToString();
         }
 
-        public void setGrossAllowance (string grossAllowance)
+        public void setGrossAllowance(string grossAllowance)
         {
             this.setProperty("grossAllowance", grossAllowance);
         }
 
-        public string getReason ()
+        public string getReason()
         {
             return this.getProperty("reason").ToString();
         }
 
-        public void setReason (string reason)
+        public void setReason(string reason)
         {
             this.setProperty("reason", reason);
         }
 
-        public string getAllowanceType ()
+        public string getAllowanceType()
         {
             return this.getProperty("allowanceType").ToString();
         }
 
-        public void setAllowanceType (string allowanceType)
+        public void setAllowanceType(string allowanceType)
         {
             this.setProperty("allowanceType", allowanceType);
         }
 
-        public float getPayFactor ()
+        public float getPayFactor()
         {
-            return (float) this.getProperty("payFactor");
+            return (float)this.getProperty("payFactor");
         }
 
-        public void setPayFactor (float payFactor)
+        public void setPayFactor(float payFactor)
         {
             this.setProperty("payFactor", payFactor);
         }
 
-        public bool getSuperannuation ()
+        public bool getSuperannuation()
         {
             return Convert.ToBoolean(this.getProperty("superannuation"));
         }
 
-        public void setSuperannuation (bool superannuation)
+        public void setSuperannuation(bool superannuation)
         {
             this.setProperty("superannuation", superannuation);
         }
 
-        public bool getNiStatus ()
+        public bool getNiStatus()
         {
             return Convert.ToBoolean(this.getProperty("niStatus"));
         }
 
-        public void setNiStatus (bool niStatus)
+        public void setNiStatus(bool niStatus)
         {
             this.setProperty("niStatus", niStatus);
         }
 
-        public bool getBenefitInKind ()
+        public bool getBenefitInKind()
         {
             return Convert.ToBoolean(this.getProperty("benefitInKind"));
         }
 
-        public void setBenefitInKind (bool benefitInKind)
+        public void setBenefitInKind(bool benefitInKind)
         {
             this.setProperty("benefitInKind", benefitInKind);
         }

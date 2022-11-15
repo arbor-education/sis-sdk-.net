@@ -9,62 +9,63 @@ namespace Arbor.Model
 {
     public class AcademicUnitCurriculum : ModelBase
     {
-        protected string resourceType = ResourceType.ACADEMIC_UNIT_CURRICULUM;
+        protected new string resourceType = ResourceType.ACADEMIC_UNIT_CURRICULUM;
         public const string ACADEMIC_UNIT = "academicUnit";
         public const string CURRICULUM = "curriculum";
 
-        public AcademicUnitCurriculum ()
+        public AcademicUnitCurriculum()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AcademicUnitCurriculum (string resourceType = "AcademicUnitCurriculum", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AcademicUnitCurriculum> query (SimpleQuery query = null)
+        public AcademicUnitCurriculum(string resourceType = "AcademicUnitCurriculum", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AcademicUnitCurriculum");
-        	RestGateway gateway = (RestGateway) AcademicUnitCurriculum.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AcademicUnitCurriculum> academicunitcurriculumCollection = new ModelCollection<AcademicUnitCurriculum> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    academicunitcurriculumCollection.add((AcademicUnitCurriculum) model);
-        	}
-        
-        	return academicunitcurriculumCollection;
+
         }
 
-        public static AcademicUnitCurriculum retrieve (string id)
+
+        public static ModelCollection<AcademicUnitCurriculum> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AcademicUnitCurriculum.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AcademicUnitCurriculum) gateway.retrieve(ResourceType.ACADEMIC_UNIT_CURRICULUM, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AcademicUnitCurriculum");
+            RestGateway gateway = (RestGateway)AcademicUnitCurriculum.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AcademicUnitCurriculum> academicunitcurriculumCollection = new ModelCollection<AcademicUnitCurriculum>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                academicunitcurriculumCollection.add((AcademicUnitCurriculum)model);
+            }
+
+            return academicunitcurriculumCollection;
         }
 
-        public AcademicUnit getAcademicUnit ()
+        public static AcademicUnitCurriculum retrieve(string id)
         {
-            return (AcademicUnit) this.getProperty("academicUnit");
+            RestGateway gateway = (RestGateway)AcademicUnitCurriculum.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AcademicUnitCurriculum)gateway.retrieve(ResourceType.ACADEMIC_UNIT_CURRICULUM, id);
         }
 
-        public void setAcademicUnit (AcademicUnit academicUnit)
+        public AcademicUnit getAcademicUnit()
+        {
+            return (AcademicUnit)this.getProperty("academicUnit");
+        }
+
+        public void setAcademicUnit(AcademicUnit academicUnit)
         {
             this.setProperty("academicUnit", academicUnit);
         }
 
-        public Curriculum getCurriculum ()
+        public Curriculum getCurriculum()
         {
-            return (Curriculum) this.getProperty("curriculum");
+            return (Curriculum)this.getProperty("curriculum");
         }
 
-        public void setCurriculum (Curriculum curriculum)
+        public void setCurriculum(Curriculum curriculum)
         {
             this.setProperty("curriculum", curriculum);
         }

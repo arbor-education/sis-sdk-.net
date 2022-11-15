@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class PaymentProvider : ModelBase
     {
-        protected string resourceType = ResourceType.PAYMENT_PROVIDER;
+        protected new string resourceType = ResourceType.PAYMENT_PROVIDER;
         public const string PAYMENT_PROVIDER_NAME = "paymentProviderName";
         public const string PROVIDER_CODE = "providerCode";
         public const string SECRET_KEY = "secretKey";
@@ -17,98 +17,99 @@ namespace Arbor.Model
         public const string IS_ENABLED = "isEnabled";
         public const string MINIMUM_TRANSACTION_AMOUNT = "minimumTransactionAmount";
 
-        public PaymentProvider ()
+        public PaymentProvider()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public PaymentProvider (string resourceType = "PaymentProvider", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<PaymentProvider> query (SimpleQuery query = null)
+        public PaymentProvider(string resourceType = "PaymentProvider", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("PaymentProvider");
-        	RestGateway gateway = (RestGateway) PaymentProvider.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<PaymentProvider> paymentproviderCollection = new ModelCollection<PaymentProvider> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    paymentproviderCollection.add((PaymentProvider) model);
-        	}
-        
-        	return paymentproviderCollection;
+
         }
 
-        public static PaymentProvider retrieve (string id)
+
+        public static ModelCollection<PaymentProvider> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) PaymentProvider.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (PaymentProvider) gateway.retrieve(ResourceType.PAYMENT_PROVIDER, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("PaymentProvider");
+            RestGateway gateway = (RestGateway)PaymentProvider.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<PaymentProvider> paymentproviderCollection = new ModelCollection<PaymentProvider>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                paymentproviderCollection.add((PaymentProvider)model);
+            }
+
+            return paymentproviderCollection;
         }
 
-        public string getPaymentProviderName ()
+        public static PaymentProvider retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)PaymentProvider.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (PaymentProvider)gateway.retrieve(ResourceType.PAYMENT_PROVIDER, id);
+        }
+
+        public string getPaymentProviderName()
         {
             return this.getProperty("paymentProviderName").ToString();
         }
 
-        public void setPaymentProviderName (string paymentProviderName)
+        public void setPaymentProviderName(string paymentProviderName)
         {
             this.setProperty("paymentProviderName", paymentProviderName);
         }
 
-        public string getProviderCode ()
+        public string getProviderCode()
         {
             return this.getProperty("providerCode").ToString();
         }
 
-        public void setProviderCode (string providerCode)
+        public void setProviderCode(string providerCode)
         {
             this.setProperty("providerCode", providerCode);
         }
 
-        public string getSecretKey ()
+        public string getSecretKey()
         {
             return this.getProperty("secretKey").ToString();
         }
 
-        public void setSecretKey (string secretKey)
+        public void setSecretKey(string secretKey)
         {
             this.setProperty("secretKey", secretKey);
         }
 
-        public string getPublishableKey ()
+        public string getPublishableKey()
         {
             return this.getProperty("publishableKey").ToString();
         }
 
-        public void setPublishableKey (string publishableKey)
+        public void setPublishableKey(string publishableKey)
         {
             this.setProperty("publishableKey", publishableKey);
         }
 
-        public bool getIsEnabled ()
+        public bool getIsEnabled()
         {
             return Convert.ToBoolean(this.getProperty("isEnabled"));
         }
 
-        public void setIsEnabled (bool isEnabled)
+        public void setIsEnabled(bool isEnabled)
         {
             this.setProperty("isEnabled", isEnabled);
         }
 
-        public string getMinimumTransactionAmount ()
+        public string getMinimumTransactionAmount()
         {
             return this.getProperty("minimumTransactionAmount").ToString();
         }
 
-        public void setMinimumTransactionAmount (string minimumTransactionAmount)
+        public void setMinimumTransactionAmount(string minimumTransactionAmount)
         {
             this.setProperty("minimumTransactionAmount", minimumTransactionAmount);
         }

@@ -9,7 +9,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>ArborSdkExamples</RootNamespace>
     <AssemblyName>ArborSdkExamples</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <UseMSBuildEngine>False</UseMSBuildEngine>
     <TargetFrameworkProfile />
   </PropertyGroup>

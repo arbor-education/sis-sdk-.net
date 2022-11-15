@@ -9,51 +9,52 @@ namespace Arbor.Model
 {
     public class AssessmentImportError : ModelBase
     {
-        protected string resourceType = ResourceType.ASSESSMENT_IMPORT_ERROR;
+        protected new string resourceType = ResourceType.ASSESSMENT_IMPORT_ERROR;
         public const string ERROR_MESSAGE = "errorMessage";
 
-        public AssessmentImportError ()
+        public AssessmentImportError()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AssessmentImportError (string resourceType = "AssessmentImportError", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AssessmentImportError> query (SimpleQuery query = null)
+        public AssessmentImportError(string resourceType = "AssessmentImportError", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AssessmentImportError");
-        	RestGateway gateway = (RestGateway) AssessmentImportError.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AssessmentImportError> assessmentimporterrorCollection = new ModelCollection<AssessmentImportError> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    assessmentimporterrorCollection.add((AssessmentImportError) model);
-        	}
-        
-        	return assessmentimporterrorCollection;
+
         }
 
-        public static AssessmentImportError retrieve (string id)
+
+        public static ModelCollection<AssessmentImportError> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AssessmentImportError.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AssessmentImportError) gateway.retrieve(ResourceType.ASSESSMENT_IMPORT_ERROR, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AssessmentImportError");
+            RestGateway gateway = (RestGateway)AssessmentImportError.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AssessmentImportError> assessmentimporterrorCollection = new ModelCollection<AssessmentImportError>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                assessmentimporterrorCollection.add((AssessmentImportError)model);
+            }
+
+            return assessmentimporterrorCollection;
         }
 
-        public string getErrorMessage ()
+        public static AssessmentImportError retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)AssessmentImportError.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AssessmentImportError)gateway.retrieve(ResourceType.ASSESSMENT_IMPORT_ERROR, id);
+        }
+
+        public string getErrorMessage()
         {
             return this.getProperty("errorMessage").ToString();
         }
 
-        public void setErrorMessage (string errorMessage)
+        public void setErrorMessage(string errorMessage)
         {
             this.setProperty("errorMessage", errorMessage);
         }

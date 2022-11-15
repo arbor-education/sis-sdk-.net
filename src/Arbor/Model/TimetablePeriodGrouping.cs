@@ -9,84 +9,85 @@ namespace Arbor.Model
 {
     public class TimetablePeriodGrouping : ModelBase
     {
-        protected string resourceType = ResourceType.TIMETABLE_PERIOD_GROUPING;
+        protected new string resourceType = ResourceType.TIMETABLE_PERIOD_GROUPING;
         public const string ACADEMIC_YEAR = "academicYear";
         public const string NAME = "name";
         public const string SHORT_NAME = "shortName";
         public const string DISPLAY_ORDER = "displayOrder";
 
-        public TimetablePeriodGrouping ()
+        public TimetablePeriodGrouping()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public TimetablePeriodGrouping (string resourceType = "TimetablePeriodGrouping", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<TimetablePeriodGrouping> query (SimpleQuery query = null)
+        public TimetablePeriodGrouping(string resourceType = "TimetablePeriodGrouping", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("TimetablePeriodGrouping");
-        	RestGateway gateway = (RestGateway) TimetablePeriodGrouping.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<TimetablePeriodGrouping> timetableperiodgroupingCollection = new ModelCollection<TimetablePeriodGrouping> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    timetableperiodgroupingCollection.add((TimetablePeriodGrouping) model);
-        	}
-        
-        	return timetableperiodgroupingCollection;
+
         }
 
-        public static TimetablePeriodGrouping retrieve (string id)
+
+        public static ModelCollection<TimetablePeriodGrouping> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) TimetablePeriodGrouping.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (TimetablePeriodGrouping) gateway.retrieve(ResourceType.TIMETABLE_PERIOD_GROUPING, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("TimetablePeriodGrouping");
+            RestGateway gateway = (RestGateway)TimetablePeriodGrouping.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<TimetablePeriodGrouping> timetableperiodgroupingCollection = new ModelCollection<TimetablePeriodGrouping>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                timetableperiodgroupingCollection.add((TimetablePeriodGrouping)model);
+            }
+
+            return timetableperiodgroupingCollection;
         }
 
-        public AcademicYear getAcademicYear ()
+        public static TimetablePeriodGrouping retrieve(string id)
         {
-            return (AcademicYear) this.getProperty("academicYear");
+            RestGateway gateway = (RestGateway)TimetablePeriodGrouping.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (TimetablePeriodGrouping)gateway.retrieve(ResourceType.TIMETABLE_PERIOD_GROUPING, id);
         }
 
-        public void setAcademicYear (AcademicYear academicYear)
+        public AcademicYear getAcademicYear()
+        {
+            return (AcademicYear)this.getProperty("academicYear");
+        }
+
+        public void setAcademicYear(AcademicYear academicYear)
         {
             this.setProperty("academicYear", academicYear);
         }
 
-        public string getName ()
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }
 
-        public string getShortName ()
+        public string getShortName()
         {
             return this.getProperty("shortName").ToString();
         }
 
-        public void setShortName (string shortName)
+        public void setShortName(string shortName)
         {
             this.setProperty("shortName", shortName);
         }
 
-        public int getDisplayOrder ()
+        public int getDisplayOrder()
         {
             return Convert.ToInt32(this.getProperty("displayOrder"));
         }
 
-        public void setDisplayOrder (int displayOrder)
+        public void setDisplayOrder(int displayOrder)
         {
             this.setProperty("displayOrder", displayOrder);
         }

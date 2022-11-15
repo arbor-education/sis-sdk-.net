@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AssessmentMarkNonSubmissionReason : ModelBase
     {
-        protected string resourceType = ResourceType.ASSESSMENT_MARK_NON_SUBMISSION_REASON;
+        protected new string resourceType = ResourceType.ASSESSMENT_MARK_NON_SUBMISSION_REASON;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";
@@ -17,98 +17,99 @@ namespace Arbor.Model
         public const string SHORT_NAME = "shortName";
         public const string ASSESSMENT_TYPE = "assessmentType";
 
-        public AssessmentMarkNonSubmissionReason ()
+        public AssessmentMarkNonSubmissionReason()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AssessmentMarkNonSubmissionReason (string resourceType = "AssessmentMarkNonSubmissionReason", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AssessmentMarkNonSubmissionReason> query (SimpleQuery query = null)
+        public AssessmentMarkNonSubmissionReason(string resourceType = "AssessmentMarkNonSubmissionReason", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AssessmentMarkNonSubmissionReason");
-        	RestGateway gateway = (RestGateway) AssessmentMarkNonSubmissionReason.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AssessmentMarkNonSubmissionReason> assessmentmarknonsubmissionreasonCollection = new ModelCollection<AssessmentMarkNonSubmissionReason> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    assessmentmarknonsubmissionreasonCollection.add((AssessmentMarkNonSubmissionReason) model);
-        	}
-        
-        	return assessmentmarknonsubmissionreasonCollection;
+
         }
 
-        public static AssessmentMarkNonSubmissionReason retrieve (string id)
+
+        public static ModelCollection<AssessmentMarkNonSubmissionReason> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AssessmentMarkNonSubmissionReason.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AssessmentMarkNonSubmissionReason) gateway.retrieve(ResourceType.ASSESSMENT_MARK_NON_SUBMISSION_REASON, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AssessmentMarkNonSubmissionReason");
+            RestGateway gateway = (RestGateway)AssessmentMarkNonSubmissionReason.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AssessmentMarkNonSubmissionReason> assessmentmarknonsubmissionreasonCollection = new ModelCollection<AssessmentMarkNonSubmissionReason>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                assessmentmarknonsubmissionreasonCollection.add((AssessmentMarkNonSubmissionReason)model);
+            }
+
+            return assessmentmarknonsubmissionreasonCollection;
         }
 
-        public string getCode ()
+        public static AssessmentMarkNonSubmissionReason retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)AssessmentMarkNonSubmissionReason.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AssessmentMarkNonSubmissionReason)gateway.retrieve(ResourceType.ASSESSMENT_MARK_NON_SUBMISSION_REASON, id);
+        }
+
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }
 
-        public string getName ()
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }
 
-        public string getShortName ()
+        public string getShortName()
         {
             return this.getProperty("shortName").ToString();
         }
 
-        public void setShortName (string shortName)
+        public void setShortName(string shortName)
         {
             this.setProperty("shortName", shortName);
         }
 
-        public string getAssessmentType ()
+        public string getAssessmentType()
         {
             return this.getProperty("assessmentType").ToString();
         }
 
-        public void setAssessmentType (string assessmentType)
+        public void setAssessmentType(string assessmentType)
         {
             this.setProperty("assessmentType", assessmentType);
         }

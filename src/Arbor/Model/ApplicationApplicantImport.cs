@@ -9,84 +9,85 @@ namespace Arbor.Model
 {
     public class ApplicationApplicantImport : ModelBase
     {
-        protected string resourceType = ResourceType.APPLICATION_APPLICANT_IMPORT;
+        protected new string resourceType = ResourceType.APPLICATION_APPLICANT_IMPORT;
         public const string APPLICATION = "application";
         public const string ROW_INDEX = "rowIndex";
         public const string ERRORS = "errors";
         public const string REQUIRED_ERRORS = "requiredErrors";
 
-        public ApplicationApplicantImport ()
+        public ApplicationApplicantImport()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public ApplicationApplicantImport (string resourceType = "ApplicationApplicantImport", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<ApplicationApplicantImport> query (SimpleQuery query = null)
+        public ApplicationApplicantImport(string resourceType = "ApplicationApplicantImport", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("ApplicationApplicantImport");
-        	RestGateway gateway = (RestGateway) ApplicationApplicantImport.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<ApplicationApplicantImport> applicationapplicantimportCollection = new ModelCollection<ApplicationApplicantImport> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    applicationapplicantimportCollection.add((ApplicationApplicantImport) model);
-        	}
-        
-        	return applicationapplicantimportCollection;
+
         }
 
-        public static ApplicationApplicantImport retrieve (string id)
+
+        public static ModelCollection<ApplicationApplicantImport> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) ApplicationApplicantImport.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (ApplicationApplicantImport) gateway.retrieve(ResourceType.APPLICATION_APPLICANT_IMPORT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("ApplicationApplicantImport");
+            RestGateway gateway = (RestGateway)ApplicationApplicantImport.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<ApplicationApplicantImport> applicationapplicantimportCollection = new ModelCollection<ApplicationApplicantImport>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                applicationapplicantimportCollection.add((ApplicationApplicantImport)model);
+            }
+
+            return applicationapplicantimportCollection;
         }
 
-        public Application getApplication ()
+        public static ApplicationApplicantImport retrieve(string id)
         {
-            return (Application) this.getProperty("application");
+            RestGateway gateway = (RestGateway)ApplicationApplicantImport.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (ApplicationApplicantImport)gateway.retrieve(ResourceType.APPLICATION_APPLICANT_IMPORT, id);
         }
 
-        public void setApplication (Application application)
+        public Application getApplication()
+        {
+            return (Application)this.getProperty("application");
+        }
+
+        public void setApplication(Application application)
         {
             this.setProperty("application", application);
         }
 
-        public int getRowIndex ()
+        public int getRowIndex()
         {
             return Convert.ToInt32(this.getProperty("rowIndex"));
         }
 
-        public void setRowIndex (int rowIndex)
+        public void setRowIndex(int rowIndex)
         {
             this.setProperty("rowIndex", rowIndex);
         }
 
-        public string getErrors ()
+        public string getErrors()
         {
             return this.getProperty("errors").ToString();
         }
 
-        public void setErrors (string errors)
+        public void setErrors(string errors)
         {
             this.setProperty("errors", errors);
         }
 
-        public string getRequiredErrors ()
+        public string getRequiredErrors()
         {
             return this.getProperty("requiredErrors").ToString();
         }
 
-        public void setRequiredErrors (string requiredErrors)
+        public void setRequiredErrors(string requiredErrors)
         {
             this.setProperty("requiredErrors", requiredErrors);
         }

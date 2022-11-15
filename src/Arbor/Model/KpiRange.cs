@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class KpiRange : ModelBase
     {
-        protected string resourceType = ResourceType.KPI_RANGE;
+        protected new string resourceType = ResourceType.KPI_RANGE;
         public const string KPI = "kpi";
         public const string KPI_TARGET = "kpiTarget";
         public const string RANGE_NAME = "rangeName";
@@ -19,118 +19,119 @@ namespace Arbor.Model
         public const string VALUE_TYPE = "valueType";
         public const string COLOR = "color";
 
-        public KpiRange ()
+        public KpiRange()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public KpiRange (string resourceType = "KpiRange", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<KpiRange> query (SimpleQuery query = null)
+        public KpiRange(string resourceType = "KpiRange", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("KpiRange");
-        	RestGateway gateway = (RestGateway) KpiRange.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<KpiRange> kpirangeCollection = new ModelCollection<KpiRange> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    kpirangeCollection.add((KpiRange) model);
-        	}
-        
-        	return kpirangeCollection;
+
         }
 
-        public static KpiRange retrieve (string id)
+
+        public static ModelCollection<KpiRange> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) KpiRange.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (KpiRange) gateway.retrieve(ResourceType.KPI_RANGE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("KpiRange");
+            RestGateway gateway = (RestGateway)KpiRange.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<KpiRange> kpirangeCollection = new ModelCollection<KpiRange>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                kpirangeCollection.add((KpiRange)model);
+            }
+
+            return kpirangeCollection;
         }
 
-        public Kpi getKpi ()
+        public static KpiRange retrieve(string id)
         {
-            return (Kpi) this.getProperty("kpi");
+            RestGateway gateway = (RestGateway)KpiRange.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (KpiRange)gateway.retrieve(ResourceType.KPI_RANGE, id);
         }
 
-        public void setKpi (Kpi kpi)
+        public Kpi getKpi()
+        {
+            return (Kpi)this.getProperty("kpi");
+        }
+
+        public void setKpi(Kpi kpi)
         {
             this.setProperty("kpi", kpi);
         }
 
-        public KpiTarget getKpiTarget ()
+        public KpiTarget getKpiTarget()
         {
-            return (KpiTarget) this.getProperty("kpiTarget");
+            return (KpiTarget)this.getProperty("kpiTarget");
         }
 
-        public void setKpiTarget (KpiTarget kpiTarget)
+        public void setKpiTarget(KpiTarget kpiTarget)
         {
             this.setProperty("kpiTarget", kpiTarget);
         }
 
-        public string getRangeName ()
+        public string getRangeName()
         {
             return this.getProperty("rangeName").ToString();
         }
 
-        public void setRangeName (string rangeName)
+        public void setRangeName(string rangeName)
         {
             this.setProperty("rangeName", rangeName);
         }
 
-        public string getAbbreviation ()
+        public string getAbbreviation()
         {
             return this.getProperty("abbreviation").ToString();
         }
 
-        public void setAbbreviation (string abbreviation)
+        public void setAbbreviation(string abbreviation)
         {
             this.setProperty("abbreviation", abbreviation);
         }
 
-        public float getLowerValue ()
+        public float getLowerValue()
         {
-            return (float) this.getProperty("lowerValue");
+            return (float)this.getProperty("lowerValue");
         }
 
-        public void setLowerValue (float lowerValue)
+        public void setLowerValue(float lowerValue)
         {
             this.setProperty("lowerValue", lowerValue);
         }
 
-        public float getUpperValue ()
+        public float getUpperValue()
         {
-            return (float) this.getProperty("upperValue");
+            return (float)this.getProperty("upperValue");
         }
 
-        public void setUpperValue (float upperValue)
+        public void setUpperValue(float upperValue)
         {
             this.setProperty("upperValue", upperValue);
         }
 
-        public string getValueType ()
+        public string getValueType()
         {
             return this.getProperty("valueType").ToString();
         }
 
-        public void setValueType (string valueType)
+        public void setValueType(string valueType)
         {
             this.setProperty("valueType", valueType);
         }
 
-        public string getColor ()
+        public string getColor()
         {
             return this.getProperty("color").ToString();
         }
 
-        public void setColor (string color)
+        public void setColor(string color)
         {
             this.setProperty("color", color);
         }

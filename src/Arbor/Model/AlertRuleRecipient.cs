@@ -9,95 +9,96 @@ namespace Arbor.Model
 {
     public class AlertRuleRecipient : ModelBase
     {
-        protected string resourceType = ResourceType.ALERT_RULE_RECIPIENT;
+        protected new string resourceType = ResourceType.ALERT_RULE_RECIPIENT;
         public const string ALERT_RULE = "alertRule";
         public const string CHANNEL = "channel";
         public const string RECIPIENT = "recipient";
         public const string RECIPIENT_FIELD = "recipientField";
         public const string RECIPIENT_RESOLVER = "recipientResolver";
 
-        public AlertRuleRecipient ()
+        public AlertRuleRecipient()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AlertRuleRecipient (string resourceType = "AlertRuleRecipient", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AlertRuleRecipient> query (SimpleQuery query = null)
+        public AlertRuleRecipient(string resourceType = "AlertRuleRecipient", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AlertRuleRecipient");
-        	RestGateway gateway = (RestGateway) AlertRuleRecipient.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AlertRuleRecipient> alertrulerecipientCollection = new ModelCollection<AlertRuleRecipient> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    alertrulerecipientCollection.add((AlertRuleRecipient) model);
-        	}
-        
-        	return alertrulerecipientCollection;
+
         }
 
-        public static AlertRuleRecipient retrieve (string id)
+
+        public static ModelCollection<AlertRuleRecipient> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AlertRuleRecipient.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AlertRuleRecipient) gateway.retrieve(ResourceType.ALERT_RULE_RECIPIENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AlertRuleRecipient");
+            RestGateway gateway = (RestGateway)AlertRuleRecipient.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AlertRuleRecipient> alertrulerecipientCollection = new ModelCollection<AlertRuleRecipient>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                alertrulerecipientCollection.add((AlertRuleRecipient)model);
+            }
+
+            return alertrulerecipientCollection;
         }
 
-        public AlertRule getAlertRule ()
+        public static AlertRuleRecipient retrieve(string id)
         {
-            return (AlertRule) this.getProperty("alertRule");
+            RestGateway gateway = (RestGateway)AlertRuleRecipient.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AlertRuleRecipient)gateway.retrieve(ResourceType.ALERT_RULE_RECIPIENT, id);
         }
 
-        public void setAlertRule (AlertRule alertRule)
+        public AlertRule getAlertRule()
+        {
+            return (AlertRule)this.getProperty("alertRule");
+        }
+
+        public void setAlertRule(AlertRule alertRule)
         {
             this.setProperty("alertRule", alertRule);
         }
 
-        public string getChannel ()
+        public string getChannel()
         {
             return this.getProperty("channel").ToString();
         }
 
-        public void setChannel (string channel)
+        public void setChannel(string channel)
         {
             this.setProperty("channel", channel);
         }
 
-        public ModelBase getRecipient ()
+        public ModelBase getRecipient()
         {
-            return (ModelBase) this.getProperty("recipient");
+            return (ModelBase)this.getProperty("recipient");
         }
 
-        public void setRecipient (ModelBase recipient)
+        public void setRecipient(ModelBase recipient)
         {
             this.setProperty("recipient", recipient);
         }
 
-        public string getRecipientField ()
+        public string getRecipientField()
         {
             return this.getProperty("recipientField").ToString();
         }
 
-        public void setRecipientField (string recipientField)
+        public void setRecipientField(string recipientField)
         {
             this.setProperty("recipientField", recipientField);
         }
 
-        public string getRecipientResolver ()
+        public string getRecipientResolver()
         {
             return this.getProperty("recipientResolver").ToString();
         }
 
-        public void setRecipientResolver (string recipientResolver)
+        public void setRecipientResolver(string recipientResolver)
         {
             this.setProperty("recipientResolver", recipientResolver);
         }

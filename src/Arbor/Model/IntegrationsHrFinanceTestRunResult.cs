@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class IntegrationsHrFinanceTestRunResult : ModelBase
     {
-        protected string resourceType = ResourceType.INTEGRATIONS_HR_FINANCE_TEST_RUN_RESULT;
+        protected new string resourceType = ResourceType.INTEGRATIONS_HR_FINANCE_TEST_RUN_RESULT;
         public const string INTEGRATIONS_HR_FINANCE_TEST_RUN = "integrationsHrFinanceTestRun";
         public const string TYPE = "type";
         public const string ACTION = "action";
@@ -23,158 +23,159 @@ namespace Arbor.Model
         public const string EXTERNAL_ENTITY_IDENTIFIER = "externalEntityIdentifier";
         public const string LABEL = "label";
 
-        public IntegrationsHrFinanceTestRunResult ()
+        public IntegrationsHrFinanceTestRunResult()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public IntegrationsHrFinanceTestRunResult (string resourceType = "IntegrationsHrFinanceTestRunResult", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<IntegrationsHrFinanceTestRunResult> query (SimpleQuery query = null)
+        public IntegrationsHrFinanceTestRunResult(string resourceType = "IntegrationsHrFinanceTestRunResult", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("IntegrationsHrFinanceTestRunResult");
-        	RestGateway gateway = (RestGateway) IntegrationsHrFinanceTestRunResult.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<IntegrationsHrFinanceTestRunResult> integrationshrfinancetestrunresultCollection = new ModelCollection<IntegrationsHrFinanceTestRunResult> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    integrationshrfinancetestrunresultCollection.add((IntegrationsHrFinanceTestRunResult) model);
-        	}
-        
-        	return integrationshrfinancetestrunresultCollection;
+
         }
 
-        public static IntegrationsHrFinanceTestRunResult retrieve (string id)
+
+        public static ModelCollection<IntegrationsHrFinanceTestRunResult> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) IntegrationsHrFinanceTestRunResult.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (IntegrationsHrFinanceTestRunResult) gateway.retrieve(ResourceType.INTEGRATIONS_HR_FINANCE_TEST_RUN_RESULT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("IntegrationsHrFinanceTestRunResult");
+            RestGateway gateway = (RestGateway)IntegrationsHrFinanceTestRunResult.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<IntegrationsHrFinanceTestRunResult> integrationshrfinancetestrunresultCollection = new ModelCollection<IntegrationsHrFinanceTestRunResult>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                integrationshrfinancetestrunresultCollection.add((IntegrationsHrFinanceTestRunResult)model);
+            }
+
+            return integrationshrfinancetestrunresultCollection;
         }
 
-        public IntegrationsHrFinanceTestRun getIntegrationsHrFinanceTestRun ()
+        public static IntegrationsHrFinanceTestRunResult retrieve(string id)
         {
-            return (IntegrationsHrFinanceTestRun) this.getProperty("integrationsHrFinanceTestRun");
+            RestGateway gateway = (RestGateway)IntegrationsHrFinanceTestRunResult.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (IntegrationsHrFinanceTestRunResult)gateway.retrieve(ResourceType.INTEGRATIONS_HR_FINANCE_TEST_RUN_RESULT, id);
         }
 
-        public void setIntegrationsHrFinanceTestRun (IntegrationsHrFinanceTestRun integrationsHrFinanceTestRun)
+        public IntegrationsHrFinanceTestRun getIntegrationsHrFinanceTestRun()
+        {
+            return (IntegrationsHrFinanceTestRun)this.getProperty("integrationsHrFinanceTestRun");
+        }
+
+        public void setIntegrationsHrFinanceTestRun(IntegrationsHrFinanceTestRun integrationsHrFinanceTestRun)
         {
             this.setProperty("integrationsHrFinanceTestRun", integrationsHrFinanceTestRun);
         }
 
-        public string getType ()
+        public string getType()
         {
             return this.getProperty("type").ToString();
         }
 
-        public void setType (string type)
+        public void setType(string type)
         {
             this.setProperty("type", type);
         }
 
-        public string getAction ()
+        public string getAction()
         {
             return this.getProperty("action").ToString();
         }
 
-        public void setAction (string action)
+        public void setAction(string action)
         {
             this.setProperty("action", action);
         }
 
-        public string getExternalPersonIdentifier ()
+        public string getExternalPersonIdentifier()
         {
             return this.getProperty("externalPersonIdentifier").ToString();
         }
 
-        public void setExternalPersonIdentifier (string externalPersonIdentifier)
+        public void setExternalPersonIdentifier(string externalPersonIdentifier)
         {
             this.setProperty("externalPersonIdentifier", externalPersonIdentifier);
         }
 
-        public string getExternalContractIdentifier ()
+        public string getExternalContractIdentifier()
         {
             return this.getProperty("externalContractIdentifier").ToString();
         }
 
-        public void setExternalContractIdentifier (string externalContractIdentifier)
+        public void setExternalContractIdentifier(string externalContractIdentifier)
         {
             this.setProperty("externalContractIdentifier", externalContractIdentifier);
         }
 
-        public string getPersonName ()
+        public string getPersonName()
         {
             return this.getProperty("personName").ToString();
         }
 
-        public void setPersonName (string personName)
+        public void setPersonName(string personName)
         {
             this.setProperty("personName", personName);
         }
 
-        public int getEntityObjectTypeId ()
+        public int getEntityObjectTypeId()
         {
             return Convert.ToInt32(this.getProperty("entityObjectTypeId"));
         }
 
-        public void setEntityObjectTypeId (int entityObjectTypeId)
+        public void setEntityObjectTypeId(int entityObjectTypeId)
         {
             this.setProperty("entityObjectTypeId", entityObjectTypeId);
         }
 
-        public int getEntityObjectId ()
+        public int getEntityObjectId()
         {
             return Convert.ToInt32(this.getProperty("entityObjectId"));
         }
 
-        public void setEntityObjectId (int entityObjectId)
+        public void setEntityObjectId(int entityObjectId)
         {
             this.setProperty("entityObjectId", entityObjectId);
         }
 
-        public string getOldData ()
+        public string getOldData()
         {
             return this.getProperty("oldData").ToString();
         }
 
-        public void setOldData (string oldData)
+        public void setOldData(string oldData)
         {
             this.setProperty("oldData", oldData);
         }
 
-        public string getNewData ()
+        public string getNewData()
         {
             return this.getProperty("newData").ToString();
         }
 
-        public void setNewData (string newData)
+        public void setNewData(string newData)
         {
             this.setProperty("newData", newData);
         }
 
-        public string getExternalEntityIdentifier ()
+        public string getExternalEntityIdentifier()
         {
             return this.getProperty("externalEntityIdentifier").ToString();
         }
 
-        public void setExternalEntityIdentifier (string externalEntityIdentifier)
+        public void setExternalEntityIdentifier(string externalEntityIdentifier)
         {
             this.setProperty("externalEntityIdentifier", externalEntityIdentifier);
         }
 
-        public string getLabel ()
+        public string getLabel()
         {
             return this.getProperty("label").ToString();
         }
 
-        public void setLabel (string label)
+        public void setLabel(string label)
         {
             this.setProperty("label", label);
         }

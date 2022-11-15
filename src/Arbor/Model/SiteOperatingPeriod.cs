@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class SiteOperatingPeriod : ModelBase
     {
-        protected string resourceType = ResourceType.SITE_OPERATING_PERIOD;
+        protected new string resourceType = ResourceType.SITE_OPERATING_PERIOD;
         public const string SITE = "site";
         public const string EFFECTIVE_DATE = "effectiveDate";
         public const string END_DATE = "endDate";
@@ -17,98 +17,99 @@ namespace Arbor.Model
         public const string START_TIME = "startTime";
         public const string END_TIME = "endTime";
 
-        public SiteOperatingPeriod ()
+        public SiteOperatingPeriod()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public SiteOperatingPeriod (string resourceType = "SiteOperatingPeriod", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<SiteOperatingPeriod> query (SimpleQuery query = null)
+        public SiteOperatingPeriod(string resourceType = "SiteOperatingPeriod", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("SiteOperatingPeriod");
-        	RestGateway gateway = (RestGateway) SiteOperatingPeriod.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<SiteOperatingPeriod> siteoperatingperiodCollection = new ModelCollection<SiteOperatingPeriod> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    siteoperatingperiodCollection.add((SiteOperatingPeriod) model);
-        	}
-        
-        	return siteoperatingperiodCollection;
+
         }
 
-        public static SiteOperatingPeriod retrieve (string id)
+
+        public static ModelCollection<SiteOperatingPeriod> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) SiteOperatingPeriod.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (SiteOperatingPeriod) gateway.retrieve(ResourceType.SITE_OPERATING_PERIOD, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("SiteOperatingPeriod");
+            RestGateway gateway = (RestGateway)SiteOperatingPeriod.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<SiteOperatingPeriod> siteoperatingperiodCollection = new ModelCollection<SiteOperatingPeriod>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                siteoperatingperiodCollection.add((SiteOperatingPeriod)model);
+            }
+
+            return siteoperatingperiodCollection;
         }
 
-        public Site getSite ()
+        public static SiteOperatingPeriod retrieve(string id)
         {
-            return (Site) this.getProperty("site");
+            RestGateway gateway = (RestGateway)SiteOperatingPeriod.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (SiteOperatingPeriod)gateway.retrieve(ResourceType.SITE_OPERATING_PERIOD, id);
         }
 
-        public void setSite (Site site)
+        public Site getSite()
+        {
+            return (Site)this.getProperty("site");
+        }
+
+        public void setSite(Site site)
         {
             this.setProperty("site", site);
         }
 
-        public DateTime getEffectiveDate ()
+        public DateTime getEffectiveDate()
         {
             return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
-        public void setEffectiveDate (DateTime effectiveDate)
+        public void setEffectiveDate(DateTime effectiveDate)
         {
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }
 
-        public int getDayOfCycle ()
+        public int getDayOfCycle()
         {
             return Convert.ToInt32(this.getProperty("dayOfCycle"));
         }
 
-        public void setDayOfCycle (int dayOfCycle)
+        public void setDayOfCycle(int dayOfCycle)
         {
             this.setProperty("dayOfCycle", dayOfCycle);
         }
 
-        public string getStartTime ()
+        public string getStartTime()
         {
             return this.getProperty("startTime").ToString();
         }
 
-        public void setStartTime (string startTime)
+        public void setStartTime(string startTime)
         {
             this.setProperty("startTime", startTime);
         }
 
-        public string getEndTime ()
+        public string getEndTime()
         {
             return this.getProperty("endTime").ToString();
         }
 
-        public void setEndTime (string endTime)
+        public void setEndTime(string endTime)
         {
             this.setProperty("endTime", endTime);
         }

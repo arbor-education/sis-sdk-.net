@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class InHouseExamResult : ModelBase
     {
-        protected string resourceType = ResourceType.IN_HOUSE_EXAM_RESULT;
+        protected new string resourceType = ResourceType.IN_HOUSE_EXAM_RESULT;
         public const string IN_HOUSE_EXAM = "inHouseExam";
         public const string STUDENT = "student";
         public const string IN_HOUSE_EXAM_ENTRY = "inHouseExamEntry";
@@ -17,98 +17,99 @@ namespace Arbor.Model
         public const string IN_HOUSE_EXAM_GRADE = "inHouseExamGrade";
         public const string RESULT_DATE = "resultDate";
 
-        public InHouseExamResult ()
+        public InHouseExamResult()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public InHouseExamResult (string resourceType = "InHouseExamResult", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<InHouseExamResult> query (SimpleQuery query = null)
+        public InHouseExamResult(string resourceType = "InHouseExamResult", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("InHouseExamResult");
-        	RestGateway gateway = (RestGateway) InHouseExamResult.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<InHouseExamResult> inhouseexamresultCollection = new ModelCollection<InHouseExamResult> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    inhouseexamresultCollection.add((InHouseExamResult) model);
-        	}
-        
-        	return inhouseexamresultCollection;
+
         }
 
-        public static InHouseExamResult retrieve (string id)
+
+        public static ModelCollection<InHouseExamResult> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) InHouseExamResult.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (InHouseExamResult) gateway.retrieve(ResourceType.IN_HOUSE_EXAM_RESULT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("InHouseExamResult");
+            RestGateway gateway = (RestGateway)InHouseExamResult.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<InHouseExamResult> inhouseexamresultCollection = new ModelCollection<InHouseExamResult>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                inhouseexamresultCollection.add((InHouseExamResult)model);
+            }
+
+            return inhouseexamresultCollection;
         }
 
-        public InHouseExam getInHouseExam ()
+        public static InHouseExamResult retrieve(string id)
         {
-            return (InHouseExam) this.getProperty("inHouseExam");
+            RestGateway gateway = (RestGateway)InHouseExamResult.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (InHouseExamResult)gateway.retrieve(ResourceType.IN_HOUSE_EXAM_RESULT, id);
         }
 
-        public void setInHouseExam (InHouseExam inHouseExam)
+        public InHouseExam getInHouseExam()
+        {
+            return (InHouseExam)this.getProperty("inHouseExam");
+        }
+
+        public void setInHouseExam(InHouseExam inHouseExam)
         {
             this.setProperty("inHouseExam", inHouseExam);
         }
 
-        public Student getStudent ()
+        public Student getStudent()
         {
-            return (Student) this.getProperty("student");
+            return (Student)this.getProperty("student");
         }
 
-        public void setStudent (Student student)
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public InHouseExamEntry getInHouseExamEntry ()
+        public InHouseExamEntry getInHouseExamEntry()
         {
-            return (InHouseExamEntry) this.getProperty("inHouseExamEntry");
+            return (InHouseExamEntry)this.getProperty("inHouseExamEntry");
         }
 
-        public void setInHouseExamEntry (InHouseExamEntry inHouseExamEntry)
+        public void setInHouseExamEntry(InHouseExamEntry inHouseExamEntry)
         {
             this.setProperty("inHouseExamEntry", inHouseExamEntry);
         }
 
-        public float getNumericValue ()
+        public float getNumericValue()
         {
-            return (float) this.getProperty("numericValue");
+            return (float)this.getProperty("numericValue");
         }
 
-        public void setNumericValue (float numericValue)
+        public void setNumericValue(float numericValue)
         {
             this.setProperty("numericValue", numericValue);
         }
 
-        public InHouseExamGrade getInHouseExamGrade ()
+        public InHouseExamGrade getInHouseExamGrade()
         {
-            return (InHouseExamGrade) this.getProperty("inHouseExamGrade");
+            return (InHouseExamGrade)this.getProperty("inHouseExamGrade");
         }
 
-        public void setInHouseExamGrade (InHouseExamGrade inHouseExamGrade)
+        public void setInHouseExamGrade(InHouseExamGrade inHouseExamGrade)
         {
             this.setProperty("inHouseExamGrade", inHouseExamGrade);
         }
 
-        public DateTime getResultDate ()
+        public DateTime getResultDate()
         {
             return Convert.ToDateTime(this.getProperty("resultDate"));
         }
 
-        public void setResultDate (DateTime resultDate)
+        public void setResultDate(DateTime resultDate)
         {
             this.setProperty("resultDate", resultDate);
         }

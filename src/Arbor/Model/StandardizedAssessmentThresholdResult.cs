@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class StandardizedAssessmentThresholdResult : ModelBase
     {
-        protected string resourceType = ResourceType.STANDARDIZED_ASSESSMENT_THRESHOLD_RESULT;
+        protected new string resourceType = ResourceType.STANDARDIZED_ASSESSMENT_THRESHOLD_RESULT;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";
@@ -18,108 +18,109 @@ namespace Arbor.Model
         public const string UPPER_RESULT_VALUE = "upperResultValue";
         public const string GRADE = "grade";
 
-        public StandardizedAssessmentThresholdResult ()
+        public StandardizedAssessmentThresholdResult()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public StandardizedAssessmentThresholdResult (string resourceType = "StandardizedAssessmentThresholdResult", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<StandardizedAssessmentThresholdResult> query (SimpleQuery query = null)
+        public StandardizedAssessmentThresholdResult(string resourceType = "StandardizedAssessmentThresholdResult", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("StandardizedAssessmentThresholdResult");
-        	RestGateway gateway = (RestGateway) StandardizedAssessmentThresholdResult.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<StandardizedAssessmentThresholdResult> standardizedassessmentthresholdresultCollection = new ModelCollection<StandardizedAssessmentThresholdResult> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    standardizedassessmentthresholdresultCollection.add((StandardizedAssessmentThresholdResult) model);
-        	}
-        
-        	return standardizedassessmentthresholdresultCollection;
+
         }
 
-        public static StandardizedAssessmentThresholdResult retrieve (string id)
+
+        public static ModelCollection<StandardizedAssessmentThresholdResult> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) StandardizedAssessmentThresholdResult.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (StandardizedAssessmentThresholdResult) gateway.retrieve(ResourceType.STANDARDIZED_ASSESSMENT_THRESHOLD_RESULT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("StandardizedAssessmentThresholdResult");
+            RestGateway gateway = (RestGateway)StandardizedAssessmentThresholdResult.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<StandardizedAssessmentThresholdResult> standardizedassessmentthresholdresultCollection = new ModelCollection<StandardizedAssessmentThresholdResult>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                standardizedassessmentthresholdresultCollection.add((StandardizedAssessmentThresholdResult)model);
+            }
+
+            return standardizedassessmentthresholdresultCollection;
         }
 
-        public string getCode ()
+        public static StandardizedAssessmentThresholdResult retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)StandardizedAssessmentThresholdResult.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (StandardizedAssessmentThresholdResult)gateway.retrieve(ResourceType.STANDARDIZED_ASSESSMENT_THRESHOLD_RESULT, id);
+        }
+
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }
 
-        public StandardizedAssessmentThreshold getStandardizedAssessmentThreshold ()
+        public StandardizedAssessmentThreshold getStandardizedAssessmentThreshold()
         {
-            return (StandardizedAssessmentThreshold) this.getProperty("standardizedAssessmentThreshold");
+            return (StandardizedAssessmentThreshold)this.getProperty("standardizedAssessmentThreshold");
         }
 
-        public void setStandardizedAssessmentThreshold (StandardizedAssessmentThreshold standardizedAssessmentThreshold)
+        public void setStandardizedAssessmentThreshold(StandardizedAssessmentThreshold standardizedAssessmentThreshold)
         {
             this.setProperty("standardizedAssessmentThreshold", standardizedAssessmentThreshold);
         }
 
-        public float getLowerResultValue ()
+        public float getLowerResultValue()
         {
-            return (float) this.getProperty("lowerResultValue");
+            return (float)this.getProperty("lowerResultValue");
         }
 
-        public void setLowerResultValue (float lowerResultValue)
+        public void setLowerResultValue(float lowerResultValue)
         {
             this.setProperty("lowerResultValue", lowerResultValue);
         }
 
-        public float getUpperResultValue ()
+        public float getUpperResultValue()
         {
-            return (float) this.getProperty("upperResultValue");
+            return (float)this.getProperty("upperResultValue");
         }
 
-        public void setUpperResultValue (float upperResultValue)
+        public void setUpperResultValue(float upperResultValue)
         {
             this.setProperty("upperResultValue", upperResultValue);
         }
 
-        public Grade getGrade ()
+        public Grade getGrade()
         {
-            return (Grade) this.getProperty("grade");
+            return (Grade)this.getProperty("grade");
         }
 
-        public void setGrade (Grade grade)
+        public void setGrade(Grade grade)
         {
             this.setProperty("grade", grade);
         }

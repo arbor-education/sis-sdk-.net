@@ -9,62 +9,63 @@ namespace Arbor.Model
 {
     public class PhysicalInterventionTechnique : ModelBase
     {
-        protected string resourceType = ResourceType.PHYSICAL_INTERVENTION_TECHNIQUE;
+        protected new string resourceType = ResourceType.PHYSICAL_INTERVENTION_TECHNIQUE;
         public const string NAME = "name";
         public const string DESCRIPTION = "description";
 
-        public PhysicalInterventionTechnique ()
+        public PhysicalInterventionTechnique()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public PhysicalInterventionTechnique (string resourceType = "PhysicalInterventionTechnique", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<PhysicalInterventionTechnique> query (SimpleQuery query = null)
+        public PhysicalInterventionTechnique(string resourceType = "PhysicalInterventionTechnique", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("PhysicalInterventionTechnique");
-        	RestGateway gateway = (RestGateway) PhysicalInterventionTechnique.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<PhysicalInterventionTechnique> physicalinterventiontechniqueCollection = new ModelCollection<PhysicalInterventionTechnique> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    physicalinterventiontechniqueCollection.add((PhysicalInterventionTechnique) model);
-        	}
-        
-        	return physicalinterventiontechniqueCollection;
+
         }
 
-        public static PhysicalInterventionTechnique retrieve (string id)
+
+        public static ModelCollection<PhysicalInterventionTechnique> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) PhysicalInterventionTechnique.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (PhysicalInterventionTechnique) gateway.retrieve(ResourceType.PHYSICAL_INTERVENTION_TECHNIQUE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("PhysicalInterventionTechnique");
+            RestGateway gateway = (RestGateway)PhysicalInterventionTechnique.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<PhysicalInterventionTechnique> physicalinterventiontechniqueCollection = new ModelCollection<PhysicalInterventionTechnique>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                physicalinterventiontechniqueCollection.add((PhysicalInterventionTechnique)model);
+            }
+
+            return physicalinterventiontechniqueCollection;
         }
 
-        public string getName ()
+        public static PhysicalInterventionTechnique retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)PhysicalInterventionTechnique.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (PhysicalInterventionTechnique)gateway.retrieve(ResourceType.PHYSICAL_INTERVENTION_TECHNIQUE, id);
+        }
+
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }
 
-        public string getDescription ()
+        public string getDescription()
         {
             return this.getProperty("description").ToString();
         }
 
-        public void setDescription (string description)
+        public void setDescription(string description)
         {
             this.setProperty("description", description);
         }

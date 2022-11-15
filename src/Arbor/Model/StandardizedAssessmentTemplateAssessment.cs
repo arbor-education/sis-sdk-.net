@@ -9,73 +9,74 @@ namespace Arbor.Model
 {
     public class StandardizedAssessmentTemplateAssessment : ModelBase
     {
-        protected string resourceType = ResourceType.STANDARDIZED_ASSESSMENT_TEMPLATE_ASSESSMENT;
+        protected new string resourceType = ResourceType.STANDARDIZED_ASSESSMENT_TEMPLATE_ASSESSMENT;
         public const string STANDARDIZED_ASSESSMENT_TEMPLATE = "standardizedAssessmentTemplate";
         public const string STANDARDIZED_ASSESSMENT = "standardizedAssessment";
         public const string DATA_ORDER = "dataOrder";
 
-        public StandardizedAssessmentTemplateAssessment ()
+        public StandardizedAssessmentTemplateAssessment()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public StandardizedAssessmentTemplateAssessment (string resourceType = "StandardizedAssessmentTemplateAssessment", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<StandardizedAssessmentTemplateAssessment> query (SimpleQuery query = null)
+        public StandardizedAssessmentTemplateAssessment(string resourceType = "StandardizedAssessmentTemplateAssessment", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("StandardizedAssessmentTemplateAssessment");
-        	RestGateway gateway = (RestGateway) StandardizedAssessmentTemplateAssessment.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<StandardizedAssessmentTemplateAssessment> standardizedassessmenttemplateassessmentCollection = new ModelCollection<StandardizedAssessmentTemplateAssessment> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    standardizedassessmenttemplateassessmentCollection.add((StandardizedAssessmentTemplateAssessment) model);
-        	}
-        
-        	return standardizedassessmenttemplateassessmentCollection;
+
         }
 
-        public static StandardizedAssessmentTemplateAssessment retrieve (string id)
+
+        public static ModelCollection<StandardizedAssessmentTemplateAssessment> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) StandardizedAssessmentTemplateAssessment.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (StandardizedAssessmentTemplateAssessment) gateway.retrieve(ResourceType.STANDARDIZED_ASSESSMENT_TEMPLATE_ASSESSMENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("StandardizedAssessmentTemplateAssessment");
+            RestGateway gateway = (RestGateway)StandardizedAssessmentTemplateAssessment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<StandardizedAssessmentTemplateAssessment> standardizedassessmenttemplateassessmentCollection = new ModelCollection<StandardizedAssessmentTemplateAssessment>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                standardizedassessmenttemplateassessmentCollection.add((StandardizedAssessmentTemplateAssessment)model);
+            }
+
+            return standardizedassessmenttemplateassessmentCollection;
         }
 
-        public StandardizedAssessmentTemplate getStandardizedAssessmentTemplate ()
+        public static StandardizedAssessmentTemplateAssessment retrieve(string id)
         {
-            return (StandardizedAssessmentTemplate) this.getProperty("standardizedAssessmentTemplate");
+            RestGateway gateway = (RestGateway)StandardizedAssessmentTemplateAssessment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (StandardizedAssessmentTemplateAssessment)gateway.retrieve(ResourceType.STANDARDIZED_ASSESSMENT_TEMPLATE_ASSESSMENT, id);
         }
 
-        public void setStandardizedAssessmentTemplate (StandardizedAssessmentTemplate standardizedAssessmentTemplate)
+        public StandardizedAssessmentTemplate getStandardizedAssessmentTemplate()
+        {
+            return (StandardizedAssessmentTemplate)this.getProperty("standardizedAssessmentTemplate");
+        }
+
+        public void setStandardizedAssessmentTemplate(StandardizedAssessmentTemplate standardizedAssessmentTemplate)
         {
             this.setProperty("standardizedAssessmentTemplate", standardizedAssessmentTemplate);
         }
 
-        public StandardizedAssessment getStandardizedAssessment ()
+        public StandardizedAssessment getStandardizedAssessment()
         {
-            return (StandardizedAssessment) this.getProperty("standardizedAssessment");
+            return (StandardizedAssessment)this.getProperty("standardizedAssessment");
         }
 
-        public void setStandardizedAssessment (StandardizedAssessment standardizedAssessment)
+        public void setStandardizedAssessment(StandardizedAssessment standardizedAssessment)
         {
             this.setProperty("standardizedAssessment", standardizedAssessment);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }

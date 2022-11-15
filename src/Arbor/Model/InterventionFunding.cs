@@ -9,95 +9,96 @@ namespace Arbor.Model
 {
     public class InterventionFunding : ModelBase
     {
-        protected string resourceType = ResourceType.INTERVENTION_FUNDING;
+        protected new string resourceType = ResourceType.INTERVENTION_FUNDING;
         public const string INTERVENTION = "intervention";
         public const string STUDENT = "student";
         public const string INTERVENTION_FUNDING_SOURCE = "interventionFundingSource";
         public const string FUNDING_AMOUNT = "fundingAmount";
         public const string FUNDING_PERCENTAGE = "fundingPercentage";
 
-        public InterventionFunding ()
+        public InterventionFunding()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public InterventionFunding (string resourceType = "InterventionFunding", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<InterventionFunding> query (SimpleQuery query = null)
+        public InterventionFunding(string resourceType = "InterventionFunding", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("InterventionFunding");
-        	RestGateway gateway = (RestGateway) InterventionFunding.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<InterventionFunding> interventionfundingCollection = new ModelCollection<InterventionFunding> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    interventionfundingCollection.add((InterventionFunding) model);
-        	}
-        
-        	return interventionfundingCollection;
+
         }
 
-        public static InterventionFunding retrieve (string id)
+
+        public static ModelCollection<InterventionFunding> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) InterventionFunding.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (InterventionFunding) gateway.retrieve(ResourceType.INTERVENTION_FUNDING, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("InterventionFunding");
+            RestGateway gateway = (RestGateway)InterventionFunding.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<InterventionFunding> interventionfundingCollection = new ModelCollection<InterventionFunding>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                interventionfundingCollection.add((InterventionFunding)model);
+            }
+
+            return interventionfundingCollection;
         }
 
-        public Intervention getIntervention ()
+        public static InterventionFunding retrieve(string id)
         {
-            return (Intervention) this.getProperty("intervention");
+            RestGateway gateway = (RestGateway)InterventionFunding.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (InterventionFunding)gateway.retrieve(ResourceType.INTERVENTION_FUNDING, id);
         }
 
-        public void setIntervention (Intervention intervention)
+        public Intervention getIntervention()
+        {
+            return (Intervention)this.getProperty("intervention");
+        }
+
+        public void setIntervention(Intervention intervention)
         {
             this.setProperty("intervention", intervention);
         }
 
-        public Student getStudent ()
+        public Student getStudent()
         {
-            return (Student) this.getProperty("student");
+            return (Student)this.getProperty("student");
         }
 
-        public void setStudent (Student student)
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public InterventionFundingSource getInterventionFundingSource ()
+        public InterventionFundingSource getInterventionFundingSource()
         {
-            return (InterventionFundingSource) this.getProperty("interventionFundingSource");
+            return (InterventionFundingSource)this.getProperty("interventionFundingSource");
         }
 
-        public void setInterventionFundingSource (InterventionFundingSource interventionFundingSource)
+        public void setInterventionFundingSource(InterventionFundingSource interventionFundingSource)
         {
             this.setProperty("interventionFundingSource", interventionFundingSource);
         }
 
-        public string getFundingAmount ()
+        public string getFundingAmount()
         {
             return this.getProperty("fundingAmount").ToString();
         }
 
-        public void setFundingAmount (string fundingAmount)
+        public void setFundingAmount(string fundingAmount)
         {
             this.setProperty("fundingAmount", fundingAmount);
         }
 
-        public float getFundingPercentage ()
+        public float getFundingPercentage()
         {
-            return (float) this.getProperty("fundingPercentage");
+            return (float)this.getProperty("fundingPercentage");
         }
 
-        public void setFundingPercentage (float fundingPercentage)
+        public void setFundingPercentage(float fundingPercentage)
         {
             this.setProperty("fundingPercentage", fundingPercentage);
         }

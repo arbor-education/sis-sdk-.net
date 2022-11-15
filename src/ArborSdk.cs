@@ -2,12 +2,12 @@ using System;
 
 namespace ArborSdk
 {
-	public class Main
-	{
-		public Main ()
-		{
-			
-		}
-	}
+    public class Main
+    {
+        public Main()
+        {
+
+        }
+    }
 }
 

@@ -349,7 +349,7 @@ namespace ArborSdkExamples
         {
             RestGateway gateway = new RestGateway(URL, USERNAME, PASSWORD);
             ModelBase.setDefaultGateway(gateway);
-            Country country = (Country) gateway.retrieve(ResourceType.COUNTRY, "GBR");
+            Country country = (Country)gateway.retrieve(ResourceType.COUNTRY, "GBR");
             LocalAuthority model = new LocalAuthority();
             model.setName("Test local authority");
             model.setCode("001");

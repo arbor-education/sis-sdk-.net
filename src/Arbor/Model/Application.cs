@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Application : ModelBase
     {
-        protected string resourceType = ResourceType.APPLICATION;
+        protected new string resourceType = ResourceType.APPLICATION;
         public const string STUDENT = "student";
         public const string APPLICATION_DATETIME = "applicationDatetime";
         public const string APPLICATION_REFERENCE_NUMBER = "applicationReferenceNumber";
@@ -28,208 +28,209 @@ namespace Arbor.Model
         public const string EXPECTED_HOUSE = "expectedHouse";
         public const string ENROLLED_DATETIME = "enrolledDatetime";
 
-        public Application ()
+        public Application()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public Application (string resourceType = "Application", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<Application> query (SimpleQuery query = null)
+        public Application(string resourceType = "Application", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("Application");
-        	RestGateway gateway = (RestGateway) Application.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<Application> applicationCollection = new ModelCollection<Application> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    applicationCollection.add((Application) model);
-        	}
-        
-        	return applicationCollection;
+
         }
 
-        public static Application retrieve (string id)
+
+        public static ModelCollection<Application> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) Application.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (Application) gateway.retrieve(ResourceType.APPLICATION, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("Application");
+            RestGateway gateway = (RestGateway)Application.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<Application> applicationCollection = new ModelCollection<Application>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                applicationCollection.add((Application)model);
+            }
+
+            return applicationCollection;
         }
 
-        public Student getStudent ()
+        public static Application retrieve(string id)
         {
-            return (Student) this.getProperty("student");
+            RestGateway gateway = (RestGateway)Application.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (Application)gateway.retrieve(ResourceType.APPLICATION, id);
         }
 
-        public void setStudent (Student student)
+        public Student getStudent()
+        {
+            return (Student)this.getProperty("student");
+        }
+
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public DateTime getApplicationDatetime ()
+        public DateTime getApplicationDatetime()
         {
             return Convert.ToDateTime(this.getProperty("applicationDatetime"));
         }
 
-        public void setApplicationDatetime (DateTime applicationDatetime)
+        public void setApplicationDatetime(DateTime applicationDatetime)
         {
             this.setProperty("applicationDatetime", applicationDatetime);
         }
 
-        public string getApplicationReferenceNumber ()
+        public string getApplicationReferenceNumber()
         {
             return this.getProperty("applicationReferenceNumber").ToString();
         }
 
-        public void setApplicationReferenceNumber (string applicationReferenceNumber)
+        public void setApplicationReferenceNumber(string applicationReferenceNumber)
         {
             this.setProperty("applicationReferenceNumber", applicationReferenceNumber);
         }
 
-        public IntakeSeason getIntakeSeason ()
+        public IntakeSeason getIntakeSeason()
         {
-            return (IntakeSeason) this.getProperty("intakeSeason");
+            return (IntakeSeason)this.getProperty("intakeSeason");
         }
 
-        public void setIntakeSeason (IntakeSeason intakeSeason)
+        public void setIntakeSeason(IntakeSeason intakeSeason)
         {
             this.setProperty("intakeSeason", intakeSeason);
         }
 
-        public IntakeSeasonApplicantBucket getApplicantBucket ()
+        public IntakeSeasonApplicantBucket getApplicantBucket()
         {
-            return (IntakeSeasonApplicantBucket) this.getProperty("applicantBucket");
+            return (IntakeSeasonApplicantBucket)this.getProperty("applicantBucket");
         }
 
-        public void setApplicantBucket (IntakeSeasonApplicantBucket applicantBucket)
+        public void setApplicantBucket(IntakeSeasonApplicantBucket applicantBucket)
         {
             this.setProperty("applicantBucket", applicantBucket);
         }
 
-        public float getBucketScore ()
+        public float getBucketScore()
         {
-            return (float) this.getProperty("bucketScore");
+            return (float)this.getProperty("bucketScore");
         }
 
-        public void setBucketScore (float bucketScore)
+        public void setBucketScore(float bucketScore)
         {
             this.setProperty("bucketScore", bucketScore);
         }
 
-        public DateTime getWithdrawnDatetime ()
+        public DateTime getWithdrawnDatetime()
         {
             return Convert.ToDateTime(this.getProperty("withdrawnDatetime"));
         }
 
-        public void setWithdrawnDatetime (DateTime withdrawnDatetime)
+        public void setWithdrawnDatetime(DateTime withdrawnDatetime)
         {
             this.setProperty("withdrawnDatetime", withdrawnDatetime);
         }
 
-        public ApplicationWithdrawalReason getWithdrawalReason ()
+        public ApplicationWithdrawalReason getWithdrawalReason()
         {
-            return (ApplicationWithdrawalReason) this.getProperty("withdrawalReason");
+            return (ApplicationWithdrawalReason)this.getProperty("withdrawalReason");
         }
 
-        public void setWithdrawalReason (ApplicationWithdrawalReason withdrawalReason)
+        public void setWithdrawalReason(ApplicationWithdrawalReason withdrawalReason)
         {
             this.setProperty("withdrawalReason", withdrawalReason);
         }
 
-        public DateTime getRejectedDatetime ()
+        public DateTime getRejectedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("rejectedDatetime"));
         }
 
-        public void setRejectedDatetime (DateTime rejectedDatetime)
+        public void setRejectedDatetime(DateTime rejectedDatetime)
         {
             this.setProperty("rejectedDatetime", rejectedDatetime);
         }
 
-        public IntakeSeasonGroup getIntakeSeasonGroup ()
+        public IntakeSeasonGroup getIntakeSeasonGroup()
         {
-            return (IntakeSeasonGroup) this.getProperty("intakeSeasonGroup");
+            return (IntakeSeasonGroup)this.getProperty("intakeSeasonGroup");
         }
 
-        public void setIntakeSeasonGroup (IntakeSeasonGroup intakeSeasonGroup)
+        public void setIntakeSeasonGroup(IntakeSeasonGroup intakeSeasonGroup)
         {
             this.setProperty("intakeSeasonGroup", intakeSeasonGroup);
         }
 
-        public DateTime getOfferedDatetime ()
+        public DateTime getOfferedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("offeredDatetime"));
         }
 
-        public void setOfferedDatetime (DateTime offeredDatetime)
+        public void setOfferedDatetime(DateTime offeredDatetime)
         {
             this.setProperty("offeredDatetime", offeredDatetime);
         }
 
-        public DateTime getAcceptedDatetime ()
+        public DateTime getAcceptedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("acceptedDatetime"));
         }
 
-        public void setAcceptedDatetime (DateTime acceptedDatetime)
+        public void setAcceptedDatetime(DateTime acceptedDatetime)
         {
             this.setProperty("acceptedDatetime", acceptedDatetime);
         }
 
-        public DateTime getExpectedAdmissionDate ()
+        public DateTime getExpectedAdmissionDate()
         {
             return Convert.ToDateTime(this.getProperty("expectedAdmissionDate"));
         }
 
-        public void setExpectedAdmissionDate (DateTime expectedAdmissionDate)
+        public void setExpectedAdmissionDate(DateTime expectedAdmissionDate)
         {
             this.setProperty("expectedAdmissionDate", expectedAdmissionDate);
         }
 
-        public AcademicLevel getExpectedAcademicLevel ()
+        public AcademicLevel getExpectedAcademicLevel()
         {
-            return (AcademicLevel) this.getProperty("expectedAcademicLevel");
+            return (AcademicLevel)this.getProperty("expectedAcademicLevel");
         }
 
-        public void setExpectedAcademicLevel (AcademicLevel expectedAcademicLevel)
+        public void setExpectedAcademicLevel(AcademicLevel expectedAcademicLevel)
         {
             this.setProperty("expectedAcademicLevel", expectedAcademicLevel);
         }
 
-        public RegistrationForm getExpectedRegistrationForm ()
+        public RegistrationForm getExpectedRegistrationForm()
         {
-            return (RegistrationForm) this.getProperty("expectedRegistrationForm");
+            return (RegistrationForm)this.getProperty("expectedRegistrationForm");
         }
 
-        public void setExpectedRegistrationForm (RegistrationForm expectedRegistrationForm)
+        public void setExpectedRegistrationForm(RegistrationForm expectedRegistrationForm)
         {
             this.setProperty("expectedRegistrationForm", expectedRegistrationForm);
         }
 
-        public House getExpectedHouse ()
+        public House getExpectedHouse()
         {
-            return (House) this.getProperty("expectedHouse");
+            return (House)this.getProperty("expectedHouse");
         }
 
-        public void setExpectedHouse (House expectedHouse)
+        public void setExpectedHouse(House expectedHouse)
         {
             this.setProperty("expectedHouse", expectedHouse);
         }
 
-        public DateTime getEnrolledDatetime ()
+        public DateTime getEnrolledDatetime()
         {
             return Convert.ToDateTime(this.getProperty("enrolledDatetime"));
         }
 
-        public void setEnrolledDatetime (DateTime enrolledDatetime)
+        public void setEnrolledDatetime(DateTime enrolledDatetime)
         {
             this.setProperty("enrolledDatetime", enrolledDatetime);
         }

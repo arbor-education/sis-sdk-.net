@@ -9,51 +9,52 @@ namespace Arbor.Model
 {
     public class AssessmentImportRow : ModelBase
     {
-        protected string resourceType = ResourceType.ASSESSMENT_IMPORT_ROW;
+        protected new string resourceType = ResourceType.ASSESSMENT_IMPORT_ROW;
         public const string MAPPED_STUDENT = "mappedStudent";
 
-        public AssessmentImportRow ()
+        public AssessmentImportRow()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AssessmentImportRow (string resourceType = "AssessmentImportRow", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AssessmentImportRow> query (SimpleQuery query = null)
+        public AssessmentImportRow(string resourceType = "AssessmentImportRow", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AssessmentImportRow");
-        	RestGateway gateway = (RestGateway) AssessmentImportRow.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AssessmentImportRow> assessmentimportrowCollection = new ModelCollection<AssessmentImportRow> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    assessmentimportrowCollection.add((AssessmentImportRow) model);
-        	}
-        
-        	return assessmentimportrowCollection;
+
         }
 
-        public static AssessmentImportRow retrieve (string id)
+
+        public static ModelCollection<AssessmentImportRow> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AssessmentImportRow.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AssessmentImportRow) gateway.retrieve(ResourceType.ASSESSMENT_IMPORT_ROW, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AssessmentImportRow");
+            RestGateway gateway = (RestGateway)AssessmentImportRow.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AssessmentImportRow> assessmentimportrowCollection = new ModelCollection<AssessmentImportRow>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                assessmentimportrowCollection.add((AssessmentImportRow)model);
+            }
+
+            return assessmentimportrowCollection;
         }
 
-        public Student getMappedStudent ()
+        public static AssessmentImportRow retrieve(string id)
         {
-            return (Student) this.getProperty("mappedStudent");
+            RestGateway gateway = (RestGateway)AssessmentImportRow.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AssessmentImportRow)gateway.retrieve(ResourceType.ASSESSMENT_IMPORT_ROW, id);
         }
 
-        public void setMappedStudent (Student mappedStudent)
+        public Student getMappedStudent()
+        {
+            return (Student)this.getProperty("mappedStudent");
+        }
+
+        public void setMappedStudent(Student mappedStudent)
         {
             this.setProperty("mappedStudent", mappedStudent);
         }

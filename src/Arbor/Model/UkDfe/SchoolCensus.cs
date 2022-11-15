@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class SchoolCensus : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_SCHOOL_CENSUS;
+        protected new string resourceType = ResourceType.UK_DFE_SCHOOL_CENSUS;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";
@@ -21,138 +21,139 @@ namespace Arbor.Model.UkDfe
         public const string SCHOOL_CENSUS_DATABASE_CLOSURE_DATE = "schoolCensusDatabaseClosureDate";
         public const string SCHOOL_CENSUS_SPECIFIC_TIME = "schoolCensusSpecificTime";
 
-        public SchoolCensus ()
+        public SchoolCensus()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public SchoolCensus (string resourceType = "SchoolCensus", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<SchoolCensus> query (SimpleQuery query = null)
+        public SchoolCensus(string resourceType = "SchoolCensus", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("UkDfe_SchoolCensus");
-        	RestGateway gateway = (RestGateway) SchoolCensus.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<SchoolCensus> schoolcensusCollection = new ModelCollection<SchoolCensus> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    schoolcensusCollection.add((SchoolCensus) model);
-        	}
-        
-        	return schoolcensusCollection;
+
         }
 
-        public static SchoolCensus retrieve (string id)
+
+        public static ModelCollection<SchoolCensus> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) SchoolCensus.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (SchoolCensus) gateway.retrieve(ResourceType.UK_DFE_SCHOOL_CENSUS, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("UkDfe_SchoolCensus");
+            RestGateway gateway = (RestGateway)SchoolCensus.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<SchoolCensus> schoolcensusCollection = new ModelCollection<SchoolCensus>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                schoolcensusCollection.add((SchoolCensus)model);
+            }
+
+            return schoolcensusCollection;
         }
 
-        public string getCode ()
+        public static SchoolCensus retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)SchoolCensus.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (SchoolCensus)gateway.retrieve(ResourceType.UK_DFE_SCHOOL_CENSUS, id);
+        }
+
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }
 
-        public AcademicYear getAcademicYear ()
+        public AcademicYear getAcademicYear()
         {
-            return (AcademicYear) this.getProperty("academicYear");
+            return (AcademicYear)this.getProperty("academicYear");
         }
 
-        public void setAcademicYear (AcademicYear academicYear)
+        public void setAcademicYear(AcademicYear academicYear)
         {
             this.setProperty("academicYear", academicYear);
         }
 
-        public string getSchoolCensusYear ()
+        public string getSchoolCensusYear()
         {
             return this.getProperty("schoolCensusYear").ToString();
         }
 
-        public void setSchoolCensusYear (string schoolCensusYear)
+        public void setSchoolCensusYear(string schoolCensusYear)
         {
             this.setProperty("schoolCensusYear", schoolCensusYear);
         }
 
-        public string getSchoolCensusTerm ()
+        public string getSchoolCensusTerm()
         {
             return this.getProperty("schoolCensusTerm").ToString();
         }
 
-        public void setSchoolCensusTerm (string schoolCensusTerm)
+        public void setSchoolCensusTerm(string schoolCensusTerm)
         {
             this.setProperty("schoolCensusTerm", schoolCensusTerm);
         }
 
-        public DateTime getSchoolCensusReferenceDate ()
+        public DateTime getSchoolCensusReferenceDate()
         {
             return Convert.ToDateTime(this.getProperty("schoolCensusReferenceDate"));
         }
 
-        public void setSchoolCensusReferenceDate (DateTime schoolCensusReferenceDate)
+        public void setSchoolCensusReferenceDate(DateTime schoolCensusReferenceDate)
         {
             this.setProperty("schoolCensusReferenceDate", schoolCensusReferenceDate);
         }
 
-        public DateTime getSchoolCensusReturnDeadlineDate ()
+        public DateTime getSchoolCensusReturnDeadlineDate()
         {
             return Convert.ToDateTime(this.getProperty("schoolCensusReturnDeadlineDate"));
         }
 
-        public void setSchoolCensusReturnDeadlineDate (DateTime schoolCensusReturnDeadlineDate)
+        public void setSchoolCensusReturnDeadlineDate(DateTime schoolCensusReturnDeadlineDate)
         {
             this.setProperty("schoolCensusReturnDeadlineDate", schoolCensusReturnDeadlineDate);
         }
 
-        public DateTime getSchoolCensusDatabaseClosureDate ()
+        public DateTime getSchoolCensusDatabaseClosureDate()
         {
             return Convert.ToDateTime(this.getProperty("schoolCensusDatabaseClosureDate"));
         }
 
-        public void setSchoolCensusDatabaseClosureDate (DateTime schoolCensusDatabaseClosureDate)
+        public void setSchoolCensusDatabaseClosureDate(DateTime schoolCensusDatabaseClosureDate)
         {
             this.setProperty("schoolCensusDatabaseClosureDate", schoolCensusDatabaseClosureDate);
         }
 
-        public DateTime getSchoolCensusSpecificTime ()
+        public DateTime getSchoolCensusSpecificTime()
         {
             return Convert.ToDateTime(this.getProperty("schoolCensusSpecificTime"));
         }
 
-        public void setSchoolCensusSpecificTime (DateTime schoolCensusSpecificTime)
+        public void setSchoolCensusSpecificTime(DateTime schoolCensusSpecificTime)
         {
             this.setProperty("schoolCensusSpecificTime", schoolCensusSpecificTime);
         }

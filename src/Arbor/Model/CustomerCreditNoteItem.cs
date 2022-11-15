@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CustomerCreditNoteItem : ModelBase
     {
-        protected string resourceType = ResourceType.CUSTOMER_CREDIT_NOTE_ITEM;
+        protected new string resourceType = ResourceType.CUSTOMER_CREDIT_NOTE_ITEM;
         public const string CUSTOMER_CREDIT_NOTE = "customerCreditNote";
         public const string CUSTOMER_INVOICE = "customerInvoice";
         public const string CUSTOMER_INVOICE_ITEM = "customerInvoiceItem";
@@ -17,98 +17,99 @@ namespace Arbor.Model
         public const string QUANTITY_CREDITED = "quantityCredited";
         public const string NARRATIVE = "narrative";
 
-        public CustomerCreditNoteItem ()
+        public CustomerCreditNoteItem()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public CustomerCreditNoteItem (string resourceType = "CustomerCreditNoteItem", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<CustomerCreditNoteItem> query (SimpleQuery query = null)
+        public CustomerCreditNoteItem(string resourceType = "CustomerCreditNoteItem", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("CustomerCreditNoteItem");
-        	RestGateway gateway = (RestGateway) CustomerCreditNoteItem.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<CustomerCreditNoteItem> customercreditnoteitemCollection = new ModelCollection<CustomerCreditNoteItem> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    customercreditnoteitemCollection.add((CustomerCreditNoteItem) model);
-        	}
-        
-        	return customercreditnoteitemCollection;
+
         }
 
-        public static CustomerCreditNoteItem retrieve (string id)
+
+        public static ModelCollection<CustomerCreditNoteItem> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) CustomerCreditNoteItem.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (CustomerCreditNoteItem) gateway.retrieve(ResourceType.CUSTOMER_CREDIT_NOTE_ITEM, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("CustomerCreditNoteItem");
+            RestGateway gateway = (RestGateway)CustomerCreditNoteItem.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<CustomerCreditNoteItem> customercreditnoteitemCollection = new ModelCollection<CustomerCreditNoteItem>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                customercreditnoteitemCollection.add((CustomerCreditNoteItem)model);
+            }
+
+            return customercreditnoteitemCollection;
         }
 
-        public CustomerCreditNote getCustomerCreditNote ()
+        public static CustomerCreditNoteItem retrieve(string id)
         {
-            return (CustomerCreditNote) this.getProperty("customerCreditNote");
+            RestGateway gateway = (RestGateway)CustomerCreditNoteItem.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (CustomerCreditNoteItem)gateway.retrieve(ResourceType.CUSTOMER_CREDIT_NOTE_ITEM, id);
         }
 
-        public void setCustomerCreditNote (CustomerCreditNote customerCreditNote)
+        public CustomerCreditNote getCustomerCreditNote()
+        {
+            return (CustomerCreditNote)this.getProperty("customerCreditNote");
+        }
+
+        public void setCustomerCreditNote(CustomerCreditNote customerCreditNote)
         {
             this.setProperty("customerCreditNote", customerCreditNote);
         }
 
-        public CustomerInvoice getCustomerInvoice ()
+        public CustomerInvoice getCustomerInvoice()
         {
-            return (CustomerInvoice) this.getProperty("customerInvoice");
+            return (CustomerInvoice)this.getProperty("customerInvoice");
         }
 
-        public void setCustomerInvoice (CustomerInvoice customerInvoice)
+        public void setCustomerInvoice(CustomerInvoice customerInvoice)
         {
             this.setProperty("customerInvoice", customerInvoice);
         }
 
-        public CustomerInvoiceItem getCustomerInvoiceItem ()
+        public CustomerInvoiceItem getCustomerInvoiceItem()
         {
-            return (CustomerInvoiceItem) this.getProperty("customerInvoiceItem");
+            return (CustomerInvoiceItem)this.getProperty("customerInvoiceItem");
         }
 
-        public void setCustomerInvoiceItem (CustomerInvoiceItem customerInvoiceItem)
+        public void setCustomerInvoiceItem(CustomerInvoiceItem customerInvoiceItem)
         {
             this.setProperty("customerInvoiceItem", customerInvoiceItem);
         }
 
-        public string getCreditAmount ()
+        public string getCreditAmount()
         {
             return this.getProperty("creditAmount").ToString();
         }
 
-        public void setCreditAmount (string creditAmount)
+        public void setCreditAmount(string creditAmount)
         {
             this.setProperty("creditAmount", creditAmount);
         }
 
-        public int getQuantityCredited ()
+        public int getQuantityCredited()
         {
             return Convert.ToInt32(this.getProperty("quantityCredited"));
         }
 
-        public void setQuantityCredited (int quantityCredited)
+        public void setQuantityCredited(int quantityCredited)
         {
             this.setProperty("quantityCredited", quantityCredited);
         }
 
-        public string getNarrative ()
+        public string getNarrative()
         {
             return this.getProperty("narrative").ToString();
         }
 
-        public void setNarrative (string narrative)
+        public void setNarrative(string narrative)
         {
             this.setProperty("narrative", narrative);
         }

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class QualificationGrade : ModelBase
     {
-        protected string resourceType = ResourceType.QUALIFICATION_GRADE;
+        protected new string resourceType = ResourceType.QUALIFICATION_GRADE;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";
@@ -22,148 +22,149 @@ namespace Arbor.Model
         public const string GRADE_LETTER = "gradeLetter";
         public const string GRADE_ORDER = "gradeOrder";
 
-        public QualificationGrade ()
+        public QualificationGrade()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public QualificationGrade (string resourceType = "QualificationGrade", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<QualificationGrade> query (SimpleQuery query = null)
+        public QualificationGrade(string resourceType = "QualificationGrade", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("QualificationGrade");
-        	RestGateway gateway = (RestGateway) QualificationGrade.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<QualificationGrade> qualificationgradeCollection = new ModelCollection<QualificationGrade> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    qualificationgradeCollection.add((QualificationGrade) model);
-        	}
-        
-        	return qualificationgradeCollection;
+
         }
 
-        public static QualificationGrade retrieve (string id)
+
+        public static ModelCollection<QualificationGrade> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) QualificationGrade.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (QualificationGrade) gateway.retrieve(ResourceType.QUALIFICATION_GRADE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("QualificationGrade");
+            RestGateway gateway = (RestGateway)QualificationGrade.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<QualificationGrade> qualificationgradeCollection = new ModelCollection<QualificationGrade>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                qualificationgradeCollection.add((QualificationGrade)model);
+            }
+
+            return qualificationgradeCollection;
         }
 
-        public string getCode ()
+        public static QualificationGrade retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)QualificationGrade.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (QualificationGrade)gateway.retrieve(ResourceType.QUALIFICATION_GRADE, id);
+        }
+
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }
 
-        public QualificationGradeSet getQualificationGradeSet ()
+        public QualificationGradeSet getQualificationGradeSet()
         {
-            return (QualificationGradeSet) this.getProperty("qualificationGradeSet");
+            return (QualificationGradeSet)this.getProperty("qualificationGradeSet");
         }
 
-        public void setQualificationGradeSet (QualificationGradeSet qualificationGradeSet)
+        public void setQualificationGradeSet(QualificationGradeSet qualificationGradeSet)
         {
             this.setProperty("qualificationGradeSet", qualificationGradeSet);
         }
 
-        public string getShortName ()
+        public string getShortName()
         {
             return this.getProperty("shortName").ToString();
         }
 
-        public void setShortName (string shortName)
+        public void setShortName(string shortName)
         {
             this.setProperty("shortName", shortName);
         }
 
-        public string getName ()
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }
 
-        public string getGradeIdentifier ()
+        public string getGradeIdentifier()
         {
             return this.getProperty("gradeIdentifier").ToString();
         }
 
-        public void setGradeIdentifier (string gradeIdentifier)
+        public void setGradeIdentifier(string gradeIdentifier)
         {
             this.setProperty("gradeIdentifier", gradeIdentifier);
         }
 
-        public float getGradeValue ()
+        public float getGradeValue()
         {
-            return (float) this.getProperty("gradeValue");
+            return (float)this.getProperty("gradeValue");
         }
 
-        public void setGradeValue (float gradeValue)
+        public void setGradeValue(float gradeValue)
         {
             this.setProperty("gradeValue", gradeValue);
         }
 
-        public string getGradeDescription ()
+        public string getGradeDescription()
         {
             return this.getProperty("gradeDescription").ToString();
         }
 
-        public void setGradeDescription (string gradeDescription)
+        public void setGradeDescription(string gradeDescription)
         {
             this.setProperty("gradeDescription", gradeDescription);
         }
 
-        public string getGradeLetter ()
+        public string getGradeLetter()
         {
             return this.getProperty("gradeLetter").ToString();
         }
 
-        public void setGradeLetter (string gradeLetter)
+        public void setGradeLetter(string gradeLetter)
         {
             this.setProperty("gradeLetter", gradeLetter);
         }
 
-        public int getGradeOrder ()
+        public int getGradeOrder()
         {
             return Convert.ToInt32(this.getProperty("gradeOrder"));
         }
 
-        public void setGradeOrder (int gradeOrder)
+        public void setGradeOrder(int gradeOrder)
         {
             this.setProperty("gradeOrder", gradeOrder);
         }

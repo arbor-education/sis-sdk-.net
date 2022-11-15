@@ -9,73 +9,74 @@ namespace Arbor.Model
 {
     public class InHouseExamInstance : ModelBase
     {
-        protected string resourceType = ResourceType.IN_HOUSE_EXAM_INSTANCE;
+        protected new string resourceType = ResourceType.IN_HOUSE_EXAM_INSTANCE;
         public const string IN_HOUSE_EXAM = "inHouseExam";
         public const string EXPECTED_START_DATETIME = "expectedStartDatetime";
         public const string EXPECTED_END_DATETIME = "expectedEndDatetime";
 
-        public InHouseExamInstance ()
+        public InHouseExamInstance()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public InHouseExamInstance (string resourceType = "InHouseExamInstance", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<InHouseExamInstance> query (SimpleQuery query = null)
+        public InHouseExamInstance(string resourceType = "InHouseExamInstance", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("InHouseExamInstance");
-        	RestGateway gateway = (RestGateway) InHouseExamInstance.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<InHouseExamInstance> inhouseexaminstanceCollection = new ModelCollection<InHouseExamInstance> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    inhouseexaminstanceCollection.add((InHouseExamInstance) model);
-        	}
-        
-        	return inhouseexaminstanceCollection;
+
         }
 
-        public static InHouseExamInstance retrieve (string id)
+
+        public static ModelCollection<InHouseExamInstance> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) InHouseExamInstance.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (InHouseExamInstance) gateway.retrieve(ResourceType.IN_HOUSE_EXAM_INSTANCE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("InHouseExamInstance");
+            RestGateway gateway = (RestGateway)InHouseExamInstance.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<InHouseExamInstance> inhouseexaminstanceCollection = new ModelCollection<InHouseExamInstance>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                inhouseexaminstanceCollection.add((InHouseExamInstance)model);
+            }
+
+            return inhouseexaminstanceCollection;
         }
 
-        public InHouseExam getInHouseExam ()
+        public static InHouseExamInstance retrieve(string id)
         {
-            return (InHouseExam) this.getProperty("inHouseExam");
+            RestGateway gateway = (RestGateway)InHouseExamInstance.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (InHouseExamInstance)gateway.retrieve(ResourceType.IN_HOUSE_EXAM_INSTANCE, id);
         }
 
-        public void setInHouseExam (InHouseExam inHouseExam)
+        public InHouseExam getInHouseExam()
+        {
+            return (InHouseExam)this.getProperty("inHouseExam");
+        }
+
+        public void setInHouseExam(InHouseExam inHouseExam)
         {
             this.setProperty("inHouseExam", inHouseExam);
         }
 
-        public DateTime getExpectedStartDatetime ()
+        public DateTime getExpectedStartDatetime()
         {
             return Convert.ToDateTime(this.getProperty("expectedStartDatetime"));
         }
 
-        public void setExpectedStartDatetime (DateTime expectedStartDatetime)
+        public void setExpectedStartDatetime(DateTime expectedStartDatetime)
         {
             this.setProperty("expectedStartDatetime", expectedStartDatetime);
         }
 
-        public DateTime getExpectedEndDatetime ()
+        public DateTime getExpectedEndDatetime()
         {
             return Convert.ToDateTime(this.getProperty("expectedEndDatetime"));
         }
 
-        public void setExpectedEndDatetime (DateTime expectedEndDatetime)
+        public void setExpectedEndDatetime(DateTime expectedEndDatetime)
         {
             this.setProperty("expectedEndDatetime", expectedEndDatetime);
         }

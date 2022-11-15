@@ -9,84 +9,85 @@ namespace Arbor.Model.UkDfe
 {
     public class AlternativeProvisionReason : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_ALTERNATIVE_PROVISION_REASON;
+        protected new string resourceType = ResourceType.UK_DFE_ALTERNATIVE_PROVISION_REASON;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";
         public const string NAME = "name";
 
-        public AlternativeProvisionReason ()
+        public AlternativeProvisionReason()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AlternativeProvisionReason (string resourceType = "AlternativeProvisionReason", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AlternativeProvisionReason> query (SimpleQuery query = null)
+        public AlternativeProvisionReason(string resourceType = "AlternativeProvisionReason", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("UkDfe_AlternativeProvisionReason");
-        	RestGateway gateway = (RestGateway) AlternativeProvisionReason.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AlternativeProvisionReason> alternativeprovisionreasonCollection = new ModelCollection<AlternativeProvisionReason> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    alternativeprovisionreasonCollection.add((AlternativeProvisionReason) model);
-        	}
-        
-        	return alternativeprovisionreasonCollection;
+
         }
 
-        public static AlternativeProvisionReason retrieve (string id)
+
+        public static ModelCollection<AlternativeProvisionReason> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AlternativeProvisionReason.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AlternativeProvisionReason) gateway.retrieve(ResourceType.UK_DFE_ALTERNATIVE_PROVISION_REASON, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("UkDfe_AlternativeProvisionReason");
+            RestGateway gateway = (RestGateway)AlternativeProvisionReason.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AlternativeProvisionReason> alternativeprovisionreasonCollection = new ModelCollection<AlternativeProvisionReason>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                alternativeprovisionreasonCollection.add((AlternativeProvisionReason)model);
+            }
+
+            return alternativeprovisionreasonCollection;
         }
 
-        public string getCode ()
+        public static AlternativeProvisionReason retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)AlternativeProvisionReason.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AlternativeProvisionReason)gateway.retrieve(ResourceType.UK_DFE_ALTERNATIVE_PROVISION_REASON, id);
+        }
+
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }
 
-        public string getName ()
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }

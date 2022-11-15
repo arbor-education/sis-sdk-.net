@@ -9,62 +9,63 @@ namespace Arbor.Model
 {
     public class HouseAutomaticEnrolment : ModelBase
     {
-        protected string resourceType = ResourceType.HOUSE_AUTOMATIC_ENROLMENT;
+        protected new string resourceType = ResourceType.HOUSE_AUTOMATIC_ENROLMENT;
         public const string HOUSE = "house";
         public const string TRIGGER = "trigger";
 
-        public HouseAutomaticEnrolment ()
+        public HouseAutomaticEnrolment()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public HouseAutomaticEnrolment (string resourceType = "HouseAutomaticEnrolment", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<HouseAutomaticEnrolment> query (SimpleQuery query = null)
+        public HouseAutomaticEnrolment(string resourceType = "HouseAutomaticEnrolment", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("HouseAutomaticEnrolment");
-        	RestGateway gateway = (RestGateway) HouseAutomaticEnrolment.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<HouseAutomaticEnrolment> houseautomaticenrolmentCollection = new ModelCollection<HouseAutomaticEnrolment> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    houseautomaticenrolmentCollection.add((HouseAutomaticEnrolment) model);
-        	}
-        
-        	return houseautomaticenrolmentCollection;
+
         }
 
-        public static HouseAutomaticEnrolment retrieve (string id)
+
+        public static ModelCollection<HouseAutomaticEnrolment> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) HouseAutomaticEnrolment.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (HouseAutomaticEnrolment) gateway.retrieve(ResourceType.HOUSE_AUTOMATIC_ENROLMENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("HouseAutomaticEnrolment");
+            RestGateway gateway = (RestGateway)HouseAutomaticEnrolment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<HouseAutomaticEnrolment> houseautomaticenrolmentCollection = new ModelCollection<HouseAutomaticEnrolment>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                houseautomaticenrolmentCollection.add((HouseAutomaticEnrolment)model);
+            }
+
+            return houseautomaticenrolmentCollection;
         }
 
-        public House getHouse ()
+        public static HouseAutomaticEnrolment retrieve(string id)
         {
-            return (House) this.getProperty("house");
+            RestGateway gateway = (RestGateway)HouseAutomaticEnrolment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (HouseAutomaticEnrolment)gateway.retrieve(ResourceType.HOUSE_AUTOMATIC_ENROLMENT, id);
         }
 
-        public void setHouse (House house)
+        public House getHouse()
+        {
+            return (House)this.getProperty("house");
+        }
+
+        public void setHouse(House house)
         {
             this.setProperty("house", house);
         }
 
-        public RegistrationForm getTrigger ()
+        public RegistrationForm getTrigger()
         {
-            return (RegistrationForm) this.getProperty("trigger");
+            return (RegistrationForm)this.getProperty("trigger");
         }
 
-        public void setTrigger (RegistrationForm trigger)
+        public void setTrigger(RegistrationForm trigger)
         {
             this.setProperty("trigger", trigger);
         }

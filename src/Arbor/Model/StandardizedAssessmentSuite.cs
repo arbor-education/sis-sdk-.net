@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class StandardizedAssessmentSuite : ModelBase
     {
-        protected string resourceType = ResourceType.STANDARDIZED_ASSESSMENT_SUITE;
+        protected new string resourceType = ResourceType.STANDARDIZED_ASSESSMENT_SUITE;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";
@@ -18,108 +18,109 @@ namespace Arbor.Model
         public const string NAME = "name";
         public const string SHORT_NAME = "shortName";
 
-        public StandardizedAssessmentSuite ()
+        public StandardizedAssessmentSuite()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public StandardizedAssessmentSuite (string resourceType = "StandardizedAssessmentSuite", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<StandardizedAssessmentSuite> query (SimpleQuery query = null)
+        public StandardizedAssessmentSuite(string resourceType = "StandardizedAssessmentSuite", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("StandardizedAssessmentSuite");
-        	RestGateway gateway = (RestGateway) StandardizedAssessmentSuite.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<StandardizedAssessmentSuite> standardizedassessmentsuiteCollection = new ModelCollection<StandardizedAssessmentSuite> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    standardizedassessmentsuiteCollection.add((StandardizedAssessmentSuite) model);
-        	}
-        
-        	return standardizedassessmentsuiteCollection;
+
         }
 
-        public static StandardizedAssessmentSuite retrieve (string id)
+
+        public static ModelCollection<StandardizedAssessmentSuite> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) StandardizedAssessmentSuite.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (StandardizedAssessmentSuite) gateway.retrieve(ResourceType.STANDARDIZED_ASSESSMENT_SUITE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("StandardizedAssessmentSuite");
+            RestGateway gateway = (RestGateway)StandardizedAssessmentSuite.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<StandardizedAssessmentSuite> standardizedassessmentsuiteCollection = new ModelCollection<StandardizedAssessmentSuite>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                standardizedassessmentsuiteCollection.add((StandardizedAssessmentSuite)model);
+            }
+
+            return standardizedassessmentsuiteCollection;
         }
 
-        public string getCode ()
+        public static StandardizedAssessmentSuite retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)StandardizedAssessmentSuite.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (StandardizedAssessmentSuite)gateway.retrieve(ResourceType.STANDARDIZED_ASSESSMENT_SUITE, id);
+        }
+
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }
 
-        public AssessmentProvider getAssessmentProvider ()
+        public AssessmentProvider getAssessmentProvider()
         {
-            return (AssessmentProvider) this.getProperty("assessmentProvider");
+            return (AssessmentProvider)this.getProperty("assessmentProvider");
         }
 
-        public void setAssessmentProvider (AssessmentProvider assessmentProvider)
+        public void setAssessmentProvider(AssessmentProvider assessmentProvider)
         {
             this.setProperty("assessmentProvider", assessmentProvider);
         }
 
-        public Subject getSubject ()
+        public Subject getSubject()
         {
-            return (Subject) this.getProperty("subject");
+            return (Subject)this.getProperty("subject");
         }
 
-        public void setSubject (Subject subject)
+        public void setSubject(Subject subject)
         {
             this.setProperty("subject", subject);
         }
 
-        public string getName ()
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }
 
-        public string getShortName ()
+        public string getShortName()
         {
             return this.getProperty("shortName").ToString();
         }
 
-        public void setShortName (string shortName)
+        public void setShortName(string shortName)
         {
             this.setProperty("shortName", shortName);
         }

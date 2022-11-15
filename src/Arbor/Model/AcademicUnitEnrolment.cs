@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AcademicUnitEnrolment : ModelBase
     {
-        protected string resourceType = ResourceType.ACADEMIC_UNIT_ENROLMENT;
+        protected new string resourceType = ResourceType.ACADEMIC_UNIT_ENROLMENT;
         public const string ACADEMIC_UNIT = "academicUnit";
         public const string STUDENT = "student";
         public const string START_DATE = "startDate";
@@ -20,128 +20,129 @@ namespace Arbor.Model
         public const string ENROLMENT_DEPENDENCY = "enrolmentDependency";
         public const string STUDENT_ATTENDANCE_PATTERN_DEPENDENCY = "studentAttendancePatternDependency";
 
-        public AcademicUnitEnrolment ()
+        public AcademicUnitEnrolment()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AcademicUnitEnrolment (string resourceType = "AcademicUnitEnrolment", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AcademicUnitEnrolment> query (SimpleQuery query = null)
+        public AcademicUnitEnrolment(string resourceType = "AcademicUnitEnrolment", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AcademicUnitEnrolment");
-        	RestGateway gateway = (RestGateway) AcademicUnitEnrolment.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AcademicUnitEnrolment> academicunitenrolmentCollection = new ModelCollection<AcademicUnitEnrolment> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    academicunitenrolmentCollection.add((AcademicUnitEnrolment) model);
-        	}
-        
-        	return academicunitenrolmentCollection;
+
         }
 
-        public static AcademicUnitEnrolment retrieve (string id)
+
+        public static ModelCollection<AcademicUnitEnrolment> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AcademicUnitEnrolment.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AcademicUnitEnrolment) gateway.retrieve(ResourceType.ACADEMIC_UNIT_ENROLMENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AcademicUnitEnrolment");
+            RestGateway gateway = (RestGateway)AcademicUnitEnrolment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AcademicUnitEnrolment> academicunitenrolmentCollection = new ModelCollection<AcademicUnitEnrolment>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                academicunitenrolmentCollection.add((AcademicUnitEnrolment)model);
+            }
+
+            return academicunitenrolmentCollection;
         }
 
-        public AcademicUnit getAcademicUnit ()
+        public static AcademicUnitEnrolment retrieve(string id)
         {
-            return (AcademicUnit) this.getProperty("academicUnit");
+            RestGateway gateway = (RestGateway)AcademicUnitEnrolment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AcademicUnitEnrolment)gateway.retrieve(ResourceType.ACADEMIC_UNIT_ENROLMENT, id);
         }
 
-        public void setAcademicUnit (AcademicUnit academicUnit)
+        public AcademicUnit getAcademicUnit()
+        {
+            return (AcademicUnit)this.getProperty("academicUnit");
+        }
+
+        public void setAcademicUnit(AcademicUnit academicUnit)
         {
             this.setProperty("academicUnit", academicUnit);
         }
 
-        public Student getStudent ()
+        public Student getStudent()
         {
-            return (Student) this.getProperty("student");
+            return (Student)this.getProperty("student");
         }
 
-        public void setStudent (Student student)
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDate()
         {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }
 
-        public string getEnrolmentStatus ()
+        public string getEnrolmentStatus()
         {
             return this.getProperty("enrolmentStatus").ToString();
         }
 
-        public void setEnrolmentStatus (string enrolmentStatus)
+        public void setEnrolmentStatus(string enrolmentStatus)
         {
             this.setProperty("enrolmentStatus", enrolmentStatus);
         }
 
-        public bool getRepeatEnrolment ()
+        public bool getRepeatEnrolment()
         {
             return Convert.ToBoolean(this.getProperty("repeatEnrolment"));
         }
 
-        public void setRepeatEnrolment (bool repeatEnrolment)
+        public void setRepeatEnrolment(bool repeatEnrolment)
         {
             this.setProperty("repeatEnrolment", repeatEnrolment);
         }
 
-        public AcademicUnitAutomaticEnrolment getAcademicUnitAutomaticEnrolment ()
+        public AcademicUnitAutomaticEnrolment getAcademicUnitAutomaticEnrolment()
         {
-            return (AcademicUnitAutomaticEnrolment) this.getProperty("academicUnitAutomaticEnrolment");
+            return (AcademicUnitAutomaticEnrolment)this.getProperty("academicUnitAutomaticEnrolment");
         }
 
-        public void setAcademicUnitAutomaticEnrolment (AcademicUnitAutomaticEnrolment academicUnitAutomaticEnrolment)
+        public void setAcademicUnitAutomaticEnrolment(AcademicUnitAutomaticEnrolment academicUnitAutomaticEnrolment)
         {
             this.setProperty("academicUnitAutomaticEnrolment", academicUnitAutomaticEnrolment);
         }
 
-        public ModelBase getEnrolmentDependency ()
+        public ModelBase getEnrolmentDependency()
         {
-            return (ModelBase) this.getProperty("enrolmentDependency");
+            return (ModelBase)this.getProperty("enrolmentDependency");
         }
 
-        public void setEnrolmentDependency (ModelBase enrolmentDependency)
+        public void setEnrolmentDependency(ModelBase enrolmentDependency)
         {
             this.setProperty("enrolmentDependency", enrolmentDependency);
         }
 
-        public StudentAttendancePattern getStudentAttendancePatternDependency ()
+        public StudentAttendancePattern getStudentAttendancePatternDependency()
         {
-            return (StudentAttendancePattern) this.getProperty("studentAttendancePatternDependency");
+            return (StudentAttendancePattern)this.getProperty("studentAttendancePatternDependency");
         }
 
-        public void setStudentAttendancePatternDependency (StudentAttendancePattern studentAttendancePatternDependency)
+        public void setStudentAttendancePatternDependency(StudentAttendancePattern studentAttendancePatternDependency)
         {
             this.setProperty("studentAttendancePatternDependency", studentAttendancePatternDependency);
         }

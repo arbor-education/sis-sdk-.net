@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class TimetablerImportResult : ModelBase
     {
-        protected string resourceType = ResourceType.TIMETABLER_IMPORT_RESULT;
+        protected new string resourceType = ResourceType.TIMETABLER_IMPORT_RESULT;
         public const string ACADEMIC_YEAR = "academicYear";
         public const string STEPS_COMPLETED = "stepsCompleted";
         public const string STEP_IN_PROGRESS = "stepInProgress";
@@ -17,98 +17,99 @@ namespace Arbor.Model
         public const string COMPLETED_DATETIME = "completedDatetime";
         public const string FILE_HASH = "fileHash";
 
-        public TimetablerImportResult ()
+        public TimetablerImportResult()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public TimetablerImportResult (string resourceType = "TimetablerImportResult", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<TimetablerImportResult> query (SimpleQuery query = null)
+        public TimetablerImportResult(string resourceType = "TimetablerImportResult", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("TimetablerImportResult");
-        	RestGateway gateway = (RestGateway) TimetablerImportResult.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<TimetablerImportResult> timetablerimportresultCollection = new ModelCollection<TimetablerImportResult> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    timetablerimportresultCollection.add((TimetablerImportResult) model);
-        	}
-        
-        	return timetablerimportresultCollection;
+
         }
 
-        public static TimetablerImportResult retrieve (string id)
+
+        public static ModelCollection<TimetablerImportResult> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) TimetablerImportResult.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (TimetablerImportResult) gateway.retrieve(ResourceType.TIMETABLER_IMPORT_RESULT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("TimetablerImportResult");
+            RestGateway gateway = (RestGateway)TimetablerImportResult.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<TimetablerImportResult> timetablerimportresultCollection = new ModelCollection<TimetablerImportResult>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                timetablerimportresultCollection.add((TimetablerImportResult)model);
+            }
+
+            return timetablerimportresultCollection;
         }
 
-        public AcademicYear getAcademicYear ()
+        public static TimetablerImportResult retrieve(string id)
         {
-            return (AcademicYear) this.getProperty("academicYear");
+            RestGateway gateway = (RestGateway)TimetablerImportResult.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (TimetablerImportResult)gateway.retrieve(ResourceType.TIMETABLER_IMPORT_RESULT, id);
         }
 
-        public void setAcademicYear (AcademicYear academicYear)
+        public AcademicYear getAcademicYear()
+        {
+            return (AcademicYear)this.getProperty("academicYear");
+        }
+
+        public void setAcademicYear(AcademicYear academicYear)
         {
             this.setProperty("academicYear", academicYear);
         }
 
-        public int getStepsCompleted ()
+        public int getStepsCompleted()
         {
             return Convert.ToInt32(this.getProperty("stepsCompleted"));
         }
 
-        public void setStepsCompleted (int stepsCompleted)
+        public void setStepsCompleted(int stepsCompleted)
         {
             this.setProperty("stepsCompleted", stepsCompleted);
         }
 
-        public int getStepInProgress ()
+        public int getStepInProgress()
         {
             return Convert.ToInt32(this.getProperty("stepInProgress"));
         }
 
-        public void setStepInProgress (int stepInProgress)
+        public void setStepInProgress(int stepInProgress)
         {
             this.setProperty("stepInProgress", stepInProgress);
         }
 
-        public DateTime getStartedDatetime ()
+        public DateTime getStartedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("startedDatetime"));
         }
 
-        public void setStartedDatetime (DateTime startedDatetime)
+        public void setStartedDatetime(DateTime startedDatetime)
         {
             this.setProperty("startedDatetime", startedDatetime);
         }
 
-        public DateTime getCompletedDatetime ()
+        public DateTime getCompletedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("completedDatetime"));
         }
 
-        public void setCompletedDatetime (DateTime completedDatetime)
+        public void setCompletedDatetime(DateTime completedDatetime)
         {
             this.setProperty("completedDatetime", completedDatetime);
         }
 
-        public string getFileHash ()
+        public string getFileHash()
         {
             return this.getProperty("fileHash").ToString();
         }
 
-        public void setFileHash (string fileHash)
+        public void setFileHash(string fileHash)
         {
             this.setProperty("fileHash", fileHash);
         }

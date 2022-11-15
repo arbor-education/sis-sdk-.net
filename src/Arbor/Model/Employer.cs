@@ -9,62 +9,63 @@ namespace Arbor.Model
 {
     public class Employer : ModelBase
     {
-        protected string resourceType = ResourceType.EMPLOYER;
+        protected new string resourceType = ResourceType.EMPLOYER;
         public const string NAME = "name";
         public const string IDENTIFIER = "identifier";
 
-        public Employer ()
+        public Employer()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public Employer (string resourceType = "Employer", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<Employer> query (SimpleQuery query = null)
+        public Employer(string resourceType = "Employer", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("Employer");
-        	RestGateway gateway = (RestGateway) Employer.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<Employer> employerCollection = new ModelCollection<Employer> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    employerCollection.add((Employer) model);
-        	}
-        
-        	return employerCollection;
+
         }
 
-        public static Employer retrieve (string id)
+
+        public static ModelCollection<Employer> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) Employer.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (Employer) gateway.retrieve(ResourceType.EMPLOYER, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("Employer");
+            RestGateway gateway = (RestGateway)Employer.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<Employer> employerCollection = new ModelCollection<Employer>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                employerCollection.add((Employer)model);
+            }
+
+            return employerCollection;
         }
 
-        public string getName ()
+        public static Employer retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)Employer.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (Employer)gateway.retrieve(ResourceType.EMPLOYER, id);
+        }
+
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }
 
-        public string getIdentifier ()
+        public string getIdentifier()
         {
             return this.getProperty("identifier").ToString();
         }
 
-        public void setIdentifier (string identifier)
+        public void setIdentifier(string identifier)
         {
             this.setProperty("identifier", identifier);
         }

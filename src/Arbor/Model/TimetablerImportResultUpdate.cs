@@ -9,62 +9,63 @@ namespace Arbor.Model
 {
     public class TimetablerImportResultUpdate : ModelBase
     {
-        protected string resourceType = ResourceType.TIMETABLER_IMPORT_RESULT_UPDATE;
+        protected new string resourceType = ResourceType.TIMETABLER_IMPORT_RESULT_UPDATE;
         public const string TIMETABLER_IMPORT_RESULT = "timetablerImportResult";
         public const string UPDATED = "updated";
 
-        public TimetablerImportResultUpdate ()
+        public TimetablerImportResultUpdate()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public TimetablerImportResultUpdate (string resourceType = "TimetablerImportResultUpdate", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<TimetablerImportResultUpdate> query (SimpleQuery query = null)
+        public TimetablerImportResultUpdate(string resourceType = "TimetablerImportResultUpdate", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("TimetablerImportResultUpdate");
-        	RestGateway gateway = (RestGateway) TimetablerImportResultUpdate.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<TimetablerImportResultUpdate> timetablerimportresultupdateCollection = new ModelCollection<TimetablerImportResultUpdate> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    timetablerimportresultupdateCollection.add((TimetablerImportResultUpdate) model);
-        	}
-        
-        	return timetablerimportresultupdateCollection;
+
         }
 
-        public static TimetablerImportResultUpdate retrieve (string id)
+
+        public static ModelCollection<TimetablerImportResultUpdate> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) TimetablerImportResultUpdate.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (TimetablerImportResultUpdate) gateway.retrieve(ResourceType.TIMETABLER_IMPORT_RESULT_UPDATE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("TimetablerImportResultUpdate");
+            RestGateway gateway = (RestGateway)TimetablerImportResultUpdate.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<TimetablerImportResultUpdate> timetablerimportresultupdateCollection = new ModelCollection<TimetablerImportResultUpdate>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                timetablerimportresultupdateCollection.add((TimetablerImportResultUpdate)model);
+            }
+
+            return timetablerimportresultupdateCollection;
         }
 
-        public TimetablerImportResult getTimetablerImportResult ()
+        public static TimetablerImportResultUpdate retrieve(string id)
         {
-            return (TimetablerImportResult) this.getProperty("timetablerImportResult");
+            RestGateway gateway = (RestGateway)TimetablerImportResultUpdate.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (TimetablerImportResultUpdate)gateway.retrieve(ResourceType.TIMETABLER_IMPORT_RESULT_UPDATE, id);
         }
 
-        public void setTimetablerImportResult (TimetablerImportResult timetablerImportResult)
+        public TimetablerImportResult getTimetablerImportResult()
+        {
+            return (TimetablerImportResult)this.getProperty("timetablerImportResult");
+        }
+
+        public void setTimetablerImportResult(TimetablerImportResult timetablerImportResult)
         {
             this.setProperty("timetablerImportResult", timetablerImportResult);
         }
 
-        public ModelBase getUpdated ()
+        public ModelBase getUpdated()
         {
-            return (ModelBase) this.getProperty("updated");
+            return (ModelBase)this.getProperty("updated");
         }
 
-        public void setUpdated (ModelBase updated)
+        public void setUpdated(ModelBase updated)
         {
             this.setProperty("updated", updated);
         }

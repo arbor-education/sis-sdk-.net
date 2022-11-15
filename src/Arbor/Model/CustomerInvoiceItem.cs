@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CustomerInvoiceItem : ModelBase
     {
-        protected string resourceType = ResourceType.CUSTOMER_INVOICE_ITEM;
+        protected new string resourceType = ResourceType.CUSTOMER_INVOICE_ITEM;
         public const string CUSTOMER_INVOICE = "customerInvoice";
         public const string ITEM_UNIT = "itemUnit";
         public const string ITEM_DESCRIPTION = "itemDescription";
@@ -22,148 +22,149 @@ namespace Arbor.Model
         public const string FULLY_PAID_DATE = "fullyPaidDate";
         public const string ITEM_STATUS = "itemStatus";
 
-        public CustomerInvoiceItem ()
+        public CustomerInvoiceItem()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public CustomerInvoiceItem (string resourceType = "CustomerInvoiceItem", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<CustomerInvoiceItem> query (SimpleQuery query = null)
+        public CustomerInvoiceItem(string resourceType = "CustomerInvoiceItem", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("CustomerInvoiceItem");
-        	RestGateway gateway = (RestGateway) CustomerInvoiceItem.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<CustomerInvoiceItem> customerinvoiceitemCollection = new ModelCollection<CustomerInvoiceItem> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    customerinvoiceitemCollection.add((CustomerInvoiceItem) model);
-        	}
-        
-        	return customerinvoiceitemCollection;
+
         }
 
-        public static CustomerInvoiceItem retrieve (string id)
+
+        public static ModelCollection<CustomerInvoiceItem> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) CustomerInvoiceItem.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (CustomerInvoiceItem) gateway.retrieve(ResourceType.CUSTOMER_INVOICE_ITEM, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("CustomerInvoiceItem");
+            RestGateway gateway = (RestGateway)CustomerInvoiceItem.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<CustomerInvoiceItem> customerinvoiceitemCollection = new ModelCollection<CustomerInvoiceItem>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                customerinvoiceitemCollection.add((CustomerInvoiceItem)model);
+            }
+
+            return customerinvoiceitemCollection;
         }
 
-        public CustomerInvoice getCustomerInvoice ()
+        public static CustomerInvoiceItem retrieve(string id)
         {
-            return (CustomerInvoice) this.getProperty("customerInvoice");
+            RestGateway gateway = (RestGateway)CustomerInvoiceItem.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (CustomerInvoiceItem)gateway.retrieve(ResourceType.CUSTOMER_INVOICE_ITEM, id);
         }
 
-        public void setCustomerInvoice (CustomerInvoice customerInvoice)
+        public CustomerInvoice getCustomerInvoice()
+        {
+            return (CustomerInvoice)this.getProperty("customerInvoice");
+        }
+
+        public void setCustomerInvoice(CustomerInvoice customerInvoice)
         {
             this.setProperty("customerInvoice", customerInvoice);
         }
 
-        public ItemUnit getItemUnit ()
+        public ItemUnit getItemUnit()
         {
-            return (ItemUnit) this.getProperty("itemUnit");
+            return (ItemUnit)this.getProperty("itemUnit");
         }
 
-        public void setItemUnit (ItemUnit itemUnit)
+        public void setItemUnit(ItemUnit itemUnit)
         {
             this.setProperty("itemUnit", itemUnit);
         }
 
-        public string getItemDescription ()
+        public string getItemDescription()
         {
             return this.getProperty("itemDescription").ToString();
         }
 
-        public void setItemDescription (string itemDescription)
+        public void setItemDescription(string itemDescription)
         {
             this.setProperty("itemDescription", itemDescription);
         }
 
-        public string getItemPriceExVat ()
+        public string getItemPriceExVat()
         {
             return this.getProperty("itemPriceExVat").ToString();
         }
 
-        public void setItemPriceExVat (string itemPriceExVat)
+        public void setItemPriceExVat(string itemPriceExVat)
         {
             this.setProperty("itemPriceExVat", itemPriceExVat);
         }
 
-        public int getQuantityInvoiced ()
+        public int getQuantityInvoiced()
         {
             return Convert.ToInt32(this.getProperty("quantityInvoiced"));
         }
 
-        public void setQuantityInvoiced (int quantityInvoiced)
+        public void setQuantityInvoiced(int quantityInvoiced)
         {
             this.setProperty("quantityInvoiced", quantityInvoiced);
         }
 
-        public VatRate getVatRate ()
+        public VatRate getVatRate()
         {
-            return (VatRate) this.getProperty("vatRate");
+            return (VatRate)this.getProperty("vatRate");
         }
 
-        public void setVatRate (VatRate vatRate)
+        public void setVatRate(VatRate vatRate)
         {
             this.setProperty("vatRate", vatRate);
         }
 
-        public string getItemVatAmount ()
+        public string getItemVatAmount()
         {
             return this.getProperty("itemVatAmount").ToString();
         }
 
-        public void setItemVatAmount (string itemVatAmount)
+        public void setItemVatAmount(string itemVatAmount)
         {
             this.setProperty("itemVatAmount", itemVatAmount);
         }
 
-        public string getItemTotalAmount ()
+        public string getItemTotalAmount()
         {
             return this.getProperty("itemTotalAmount").ToString();
         }
 
-        public void setItemTotalAmount (string itemTotalAmount)
+        public void setItemTotalAmount(string itemTotalAmount)
         {
             this.setProperty("itemTotalAmount", itemTotalAmount);
         }
 
-        public int getLineNumber ()
+        public int getLineNumber()
         {
             return Convert.ToInt32(this.getProperty("lineNumber"));
         }
 
-        public void setLineNumber (int lineNumber)
+        public void setLineNumber(int lineNumber)
         {
             this.setProperty("lineNumber", lineNumber);
         }
 
-        public DateTime getFullyPaidDate ()
+        public DateTime getFullyPaidDate()
         {
             return Convert.ToDateTime(this.getProperty("fullyPaidDate"));
         }
 
-        public void setFullyPaidDate (DateTime fullyPaidDate)
+        public void setFullyPaidDate(DateTime fullyPaidDate)
         {
             this.setProperty("fullyPaidDate", fullyPaidDate);
         }
 
-        public string getItemStatus ()
+        public string getItemStatus()
         {
             return this.getProperty("itemStatus").ToString();
         }
 
-        public void setItemStatus (string itemStatus)
+        public void setItemStatus(string itemStatus)
         {
             this.setProperty("itemStatus", itemStatus);
         }

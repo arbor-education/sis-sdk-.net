@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class PointAwardScale : ModelBase
     {
-        protected string resourceType = ResourceType.POINT_AWARD_SCALE;
+        protected new string resourceType = ResourceType.POINT_AWARD_SCALE;
         public const string POINT_AWARD_SCALE_NAME = "pointAwardScaleName";
         public const string SINGULAR_POINT_NAME = "singularPointName";
         public const string PLURAL_POINT_NAME = "pluralPointName";
@@ -25,178 +25,179 @@ namespace Arbor.Model
         public const string SHOW_AWARDED_BY_IN_PARENT_PORTAL = "showAwardedByInParentPortal";
         public const string SHOW_EVENT_IN_PARENT_PORTAL = "showEventInParentPortal";
 
-        public PointAwardScale ()
+        public PointAwardScale()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public PointAwardScale (string resourceType = "PointAwardScale", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<PointAwardScale> query (SimpleQuery query = null)
+        public PointAwardScale(string resourceType = "PointAwardScale", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("PointAwardScale");
-        	RestGateway gateway = (RestGateway) PointAwardScale.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<PointAwardScale> pointawardscaleCollection = new ModelCollection<PointAwardScale> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    pointawardscaleCollection.add((PointAwardScale) model);
-        	}
-        
-        	return pointawardscaleCollection;
+
         }
 
-        public static PointAwardScale retrieve (string id)
+
+        public static ModelCollection<PointAwardScale> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) PointAwardScale.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (PointAwardScale) gateway.retrieve(ResourceType.POINT_AWARD_SCALE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("PointAwardScale");
+            RestGateway gateway = (RestGateway)PointAwardScale.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<PointAwardScale> pointawardscaleCollection = new ModelCollection<PointAwardScale>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                pointawardscaleCollection.add((PointAwardScale)model);
+            }
+
+            return pointawardscaleCollection;
         }
 
-        public string getPointAwardScaleName ()
+        public static PointAwardScale retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)PointAwardScale.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (PointAwardScale)gateway.retrieve(ResourceType.POINT_AWARD_SCALE, id);
+        }
+
+        public string getPointAwardScaleName()
         {
             return this.getProperty("pointAwardScaleName").ToString();
         }
 
-        public void setPointAwardScaleName (string pointAwardScaleName)
+        public void setPointAwardScaleName(string pointAwardScaleName)
         {
             this.setProperty("pointAwardScaleName", pointAwardScaleName);
         }
 
-        public string getSingularPointName ()
+        public string getSingularPointName()
         {
             return this.getProperty("singularPointName").ToString();
         }
 
-        public void setSingularPointName (string singularPointName)
+        public void setSingularPointName(string singularPointName)
         {
             this.setProperty("singularPointName", singularPointName);
         }
 
-        public string getPluralPointName ()
+        public string getPluralPointName()
         {
             return this.getProperty("pluralPointName").ToString();
         }
 
-        public void setPluralPointName (string pluralPointName)
+        public void setPluralPointName(string pluralPointName)
         {
             this.setProperty("pluralPointName", pluralPointName);
         }
 
-        public float getCycleOpeningPointsBalance ()
+        public float getCycleOpeningPointsBalance()
         {
-            return (float) this.getProperty("cycleOpeningPointsBalance");
+            return (float)this.getProperty("cycleOpeningPointsBalance");
         }
 
-        public void setCycleOpeningPointsBalance (float cycleOpeningPointsBalance)
+        public void setCycleOpeningPointsBalance(float cycleOpeningPointsBalance)
         {
             this.setProperty("cycleOpeningPointsBalance", cycleOpeningPointsBalance);
         }
 
-        public float getTermOpeningPointsBalance ()
+        public float getTermOpeningPointsBalance()
         {
-            return (float) this.getProperty("termOpeningPointsBalance");
+            return (float)this.getProperty("termOpeningPointsBalance");
         }
 
-        public void setTermOpeningPointsBalance (float termOpeningPointsBalance)
+        public void setTermOpeningPointsBalance(float termOpeningPointsBalance)
         {
             this.setProperty("termOpeningPointsBalance", termOpeningPointsBalance);
         }
 
-        public float getAcademicYearOpeningPointsBalance ()
+        public float getAcademicYearOpeningPointsBalance()
         {
-            return (float) this.getProperty("academicYearOpeningPointsBalance");
+            return (float)this.getProperty("academicYearOpeningPointsBalance");
         }
 
-        public void setAcademicYearOpeningPointsBalance (float academicYearOpeningPointsBalance)
+        public void setAcademicYearOpeningPointsBalance(float academicYearOpeningPointsBalance)
         {
             this.setProperty("academicYearOpeningPointsBalance", academicYearOpeningPointsBalance);
         }
 
-        public float getLifetimeOpeningPointsBalance ()
+        public float getLifetimeOpeningPointsBalance()
         {
-            return (float) this.getProperty("lifetimeOpeningPointsBalance");
+            return (float)this.getProperty("lifetimeOpeningPointsBalance");
         }
 
-        public void setLifetimeOpeningPointsBalance (float lifetimeOpeningPointsBalance)
+        public void setLifetimeOpeningPointsBalance(float lifetimeOpeningPointsBalance)
         {
             this.setProperty("lifetimeOpeningPointsBalance", lifetimeOpeningPointsBalance);
         }
 
-        public float getMinPointAward ()
+        public float getMinPointAward()
         {
-            return (float) this.getProperty("minPointAward");
+            return (float)this.getProperty("minPointAward");
         }
 
-        public void setMinPointAward (float minPointAward)
+        public void setMinPointAward(float minPointAward)
         {
             this.setProperty("minPointAward", minPointAward);
         }
 
-        public float getMaxPointAward ()
+        public float getMaxPointAward()
         {
-            return (float) this.getProperty("maxPointAward");
+            return (float)this.getProperty("maxPointAward");
         }
 
-        public void setMaxPointAward (float maxPointAward)
+        public void setMaxPointAward(float maxPointAward)
         {
             this.setProperty("maxPointAward", maxPointAward);
         }
 
-        public string getDirectionality ()
+        public string getDirectionality()
         {
             return this.getProperty("directionality").ToString();
         }
 
-        public void setDirectionality (string directionality)
+        public void setDirectionality(string directionality)
         {
             this.setProperty("directionality", directionality);
         }
 
-        public bool getShowInParentPortal ()
+        public bool getShowInParentPortal()
         {
             return Convert.ToBoolean(this.getProperty("showInParentPortal"));
         }
 
-        public void setShowInParentPortal (bool showInParentPortal)
+        public void setShowInParentPortal(bool showInParentPortal)
         {
             this.setProperty("showInParentPortal", showInParentPortal);
         }
 
-        public bool getShowNarrativeInParentPortal ()
+        public bool getShowNarrativeInParentPortal()
         {
             return Convert.ToBoolean(this.getProperty("showNarrativeInParentPortal"));
         }
 
-        public void setShowNarrativeInParentPortal (bool showNarrativeInParentPortal)
+        public void setShowNarrativeInParentPortal(bool showNarrativeInParentPortal)
         {
             this.setProperty("showNarrativeInParentPortal", showNarrativeInParentPortal);
         }
 
-        public bool getShowAwardedByInParentPortal ()
+        public bool getShowAwardedByInParentPortal()
         {
             return Convert.ToBoolean(this.getProperty("showAwardedByInParentPortal"));
         }
 
-        public void setShowAwardedByInParentPortal (bool showAwardedByInParentPortal)
+        public void setShowAwardedByInParentPortal(bool showAwardedByInParentPortal)
         {
             this.setProperty("showAwardedByInParentPortal", showAwardedByInParentPortal);
         }
 
-        public bool getShowEventInParentPortal ()
+        public bool getShowEventInParentPortal()
         {
             return Convert.ToBoolean(this.getProperty("showEventInParentPortal"));
         }
 
-        public void setShowEventInParentPortal (bool showEventInParentPortal)
+        public void setShowEventInParentPortal(bool showEventInParentPortal)
         {
             this.setProperty("showEventInParentPortal", showEventInParentPortal);
         }

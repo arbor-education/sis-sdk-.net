@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class MotorVehicle : ModelBase
     {
-        protected string resourceType = ResourceType.MOTOR_VEHICLE;
+        protected new string resourceType = ResourceType.MOTOR_VEHICLE;
         public const string OWNER = "owner";
         public const string MOTOR_VEHICLE_TYPE = "motorVehicleType";
         public const string MOTOR_VEHICLE_MAKE = "motorVehicleMake";
@@ -18,108 +18,109 @@ namespace Arbor.Model
         public const string REGISTRATION_NUMBER = "registrationNumber";
         public const string PARKING_ALLOCATION_PROVIDED = "parkingAllocationProvided";
 
-        public MotorVehicle ()
+        public MotorVehicle()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public MotorVehicle (string resourceType = "MotorVehicle", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<MotorVehicle> query (SimpleQuery query = null)
+        public MotorVehicle(string resourceType = "MotorVehicle", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("MotorVehicle");
-        	RestGateway gateway = (RestGateway) MotorVehicle.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<MotorVehicle> motorvehicleCollection = new ModelCollection<MotorVehicle> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    motorvehicleCollection.add((MotorVehicle) model);
-        	}
-        
-        	return motorvehicleCollection;
+
         }
 
-        public static MotorVehicle retrieve (string id)
+
+        public static ModelCollection<MotorVehicle> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) MotorVehicle.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (MotorVehicle) gateway.retrieve(ResourceType.MOTOR_VEHICLE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("MotorVehicle");
+            RestGateway gateway = (RestGateway)MotorVehicle.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<MotorVehicle> motorvehicleCollection = new ModelCollection<MotorVehicle>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                motorvehicleCollection.add((MotorVehicle)model);
+            }
+
+            return motorvehicleCollection;
         }
 
-        public ModelBase getOwner ()
+        public static MotorVehicle retrieve(string id)
         {
-            return (ModelBase) this.getProperty("owner");
+            RestGateway gateway = (RestGateway)MotorVehicle.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (MotorVehicle)gateway.retrieve(ResourceType.MOTOR_VEHICLE, id);
         }
 
-        public void setOwner (ModelBase owner)
+        public ModelBase getOwner()
+        {
+            return (ModelBase)this.getProperty("owner");
+        }
+
+        public void setOwner(ModelBase owner)
         {
             this.setProperty("owner", owner);
         }
 
-        public string getMotorVehicleType ()
+        public string getMotorVehicleType()
         {
             return this.getProperty("motorVehicleType").ToString();
         }
 
-        public void setMotorVehicleType (string motorVehicleType)
+        public void setMotorVehicleType(string motorVehicleType)
         {
             this.setProperty("motorVehicleType", motorVehicleType);
         }
 
-        public MotorVehicleMake getMotorVehicleMake ()
+        public MotorVehicleMake getMotorVehicleMake()
         {
-            return (MotorVehicleMake) this.getProperty("motorVehicleMake");
+            return (MotorVehicleMake)this.getProperty("motorVehicleMake");
         }
 
-        public void setMotorVehicleMake (MotorVehicleMake motorVehicleMake)
+        public void setMotorVehicleMake(MotorVehicleMake motorVehicleMake)
         {
             this.setProperty("motorVehicleMake", motorVehicleMake);
         }
 
-        public string getModel ()
+        public string getModel()
         {
             return this.getProperty("model").ToString();
         }
 
-        public void setModel (string model)
+        public void setModel(string model)
         {
             this.setProperty("model", model);
         }
 
-        public string getColour ()
+        public string getColour()
         {
             return this.getProperty("colour").ToString();
         }
 
-        public void setColour (string colour)
+        public void setColour(string colour)
         {
             this.setProperty("colour", colour);
         }
 
-        public string getRegistrationNumber ()
+        public string getRegistrationNumber()
         {
             return this.getProperty("registrationNumber").ToString();
         }
 
-        public void setRegistrationNumber (string registrationNumber)
+        public void setRegistrationNumber(string registrationNumber)
         {
             this.setProperty("registrationNumber", registrationNumber);
         }
 
-        public bool getParkingAllocationProvided ()
+        public bool getParkingAllocationProvided()
         {
             return Convert.ToBoolean(this.getProperty("parkingAllocationProvided"));
         }
 
-        public void setParkingAllocationProvided (bool parkingAllocationProvided)
+        public void setParkingAllocationProvided(bool parkingAllocationProvided)
         {
             this.setProperty("parkingAllocationProvided", parkingAllocationProvided);
         }

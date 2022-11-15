@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class InHouseCandidateAccessArrangement : ModelBase
     {
-        protected string resourceType = ResourceType.IN_HOUSE_CANDIDATE_ACCESS_ARRANGEMENT;
+        protected new string resourceType = ResourceType.IN_HOUSE_CANDIDATE_ACCESS_ARRANGEMENT;
         public const string IN_HOUSE_CANDIDATE = "inHouseCandidate";
         public const string ACCESS_ARRANGEMENT = "accessArrangement";
         public const string EXTRA_TIME_PERCENTAGE = "extraTimePercentage";
@@ -17,98 +17,99 @@ namespace Arbor.Model
         public const string EFFECTIVE_DATE = "effectiveDate";
         public const string END_DATE = "endDate";
 
-        public InHouseCandidateAccessArrangement ()
+        public InHouseCandidateAccessArrangement()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public InHouseCandidateAccessArrangement (string resourceType = "InHouseCandidateAccessArrangement", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<InHouseCandidateAccessArrangement> query (SimpleQuery query = null)
+        public InHouseCandidateAccessArrangement(string resourceType = "InHouseCandidateAccessArrangement", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("InHouseCandidateAccessArrangement");
-        	RestGateway gateway = (RestGateway) InHouseCandidateAccessArrangement.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<InHouseCandidateAccessArrangement> inhousecandidateaccessarrangementCollection = new ModelCollection<InHouseCandidateAccessArrangement> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    inhousecandidateaccessarrangementCollection.add((InHouseCandidateAccessArrangement) model);
-        	}
-        
-        	return inhousecandidateaccessarrangementCollection;
+
         }
 
-        public static InHouseCandidateAccessArrangement retrieve (string id)
+
+        public static ModelCollection<InHouseCandidateAccessArrangement> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) InHouseCandidateAccessArrangement.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (InHouseCandidateAccessArrangement) gateway.retrieve(ResourceType.IN_HOUSE_CANDIDATE_ACCESS_ARRANGEMENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("InHouseCandidateAccessArrangement");
+            RestGateway gateway = (RestGateway)InHouseCandidateAccessArrangement.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<InHouseCandidateAccessArrangement> inhousecandidateaccessarrangementCollection = new ModelCollection<InHouseCandidateAccessArrangement>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                inhousecandidateaccessarrangementCollection.add((InHouseCandidateAccessArrangement)model);
+            }
+
+            return inhousecandidateaccessarrangementCollection;
         }
 
-        public InHouseCandidate getInHouseCandidate ()
+        public static InHouseCandidateAccessArrangement retrieve(string id)
         {
-            return (InHouseCandidate) this.getProperty("inHouseCandidate");
+            RestGateway gateway = (RestGateway)InHouseCandidateAccessArrangement.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (InHouseCandidateAccessArrangement)gateway.retrieve(ResourceType.IN_HOUSE_CANDIDATE_ACCESS_ARRANGEMENT, id);
         }
 
-        public void setInHouseCandidate (InHouseCandidate inHouseCandidate)
+        public InHouseCandidate getInHouseCandidate()
+        {
+            return (InHouseCandidate)this.getProperty("inHouseCandidate");
+        }
+
+        public void setInHouseCandidate(InHouseCandidate inHouseCandidate)
         {
             this.setProperty("inHouseCandidate", inHouseCandidate);
         }
 
-        public AccessArrangement getAccessArrangement ()
+        public AccessArrangement getAccessArrangement()
         {
-            return (AccessArrangement) this.getProperty("accessArrangement");
+            return (AccessArrangement)this.getProperty("accessArrangement");
         }
 
-        public void setAccessArrangement (AccessArrangement accessArrangement)
+        public void setAccessArrangement(AccessArrangement accessArrangement)
         {
             this.setProperty("accessArrangement", accessArrangement);
         }
 
-        public float getExtraTimePercentage ()
+        public float getExtraTimePercentage()
         {
-            return (float) this.getProperty("extraTimePercentage");
+            return (float)this.getProperty("extraTimePercentage");
         }
 
-        public void setExtraTimePercentage (float extraTimePercentage)
+        public void setExtraTimePercentage(float extraTimePercentage)
         {
             this.setProperty("extraTimePercentage", extraTimePercentage);
         }
 
-        public string getReason ()
+        public string getReason()
         {
             return this.getProperty("reason").ToString();
         }
 
-        public void setReason (string reason)
+        public void setReason(string reason)
         {
             this.setProperty("reason", reason);
         }
 
-        public DateTime getEffectiveDate ()
+        public DateTime getEffectiveDate()
         {
             return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
-        public void setEffectiveDate (DateTime effectiveDate)
+        public void setEffectiveDate(DateTime effectiveDate)
         {
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }

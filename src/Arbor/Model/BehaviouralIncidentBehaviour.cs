@@ -9,73 +9,74 @@ namespace Arbor.Model
 {
     public class BehaviouralIncidentBehaviour : ModelBase
     {
-        protected string resourceType = ResourceType.BEHAVIOURAL_INCIDENT_BEHAVIOUR;
+        protected new string resourceType = ResourceType.BEHAVIOURAL_INCIDENT_BEHAVIOUR;
         public const string BEHAVIOURAL_INCIDENT = "behaviouralIncident";
         public const string STUDENT = "student";
         public const string BEHAVIOUR = "behaviour";
 
-        public BehaviouralIncidentBehaviour ()
+        public BehaviouralIncidentBehaviour()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public BehaviouralIncidentBehaviour (string resourceType = "BehaviouralIncidentBehaviour", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<BehaviouralIncidentBehaviour> query (SimpleQuery query = null)
+        public BehaviouralIncidentBehaviour(string resourceType = "BehaviouralIncidentBehaviour", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("BehaviouralIncidentBehaviour");
-        	RestGateway gateway = (RestGateway) BehaviouralIncidentBehaviour.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<BehaviouralIncidentBehaviour> behaviouralincidentbehaviourCollection = new ModelCollection<BehaviouralIncidentBehaviour> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    behaviouralincidentbehaviourCollection.add((BehaviouralIncidentBehaviour) model);
-        	}
-        
-        	return behaviouralincidentbehaviourCollection;
+
         }
 
-        public static BehaviouralIncidentBehaviour retrieve (string id)
+
+        public static ModelCollection<BehaviouralIncidentBehaviour> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) BehaviouralIncidentBehaviour.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (BehaviouralIncidentBehaviour) gateway.retrieve(ResourceType.BEHAVIOURAL_INCIDENT_BEHAVIOUR, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("BehaviouralIncidentBehaviour");
+            RestGateway gateway = (RestGateway)BehaviouralIncidentBehaviour.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<BehaviouralIncidentBehaviour> behaviouralincidentbehaviourCollection = new ModelCollection<BehaviouralIncidentBehaviour>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                behaviouralincidentbehaviourCollection.add((BehaviouralIncidentBehaviour)model);
+            }
+
+            return behaviouralincidentbehaviourCollection;
         }
 
-        public BehaviouralIncident getBehaviouralIncident ()
+        public static BehaviouralIncidentBehaviour retrieve(string id)
         {
-            return (BehaviouralIncident) this.getProperty("behaviouralIncident");
+            RestGateway gateway = (RestGateway)BehaviouralIncidentBehaviour.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (BehaviouralIncidentBehaviour)gateway.retrieve(ResourceType.BEHAVIOURAL_INCIDENT_BEHAVIOUR, id);
         }
 
-        public void setBehaviouralIncident (BehaviouralIncident behaviouralIncident)
+        public BehaviouralIncident getBehaviouralIncident()
+        {
+            return (BehaviouralIncident)this.getProperty("behaviouralIncident");
+        }
+
+        public void setBehaviouralIncident(BehaviouralIncident behaviouralIncident)
         {
             this.setProperty("behaviouralIncident", behaviouralIncident);
         }
 
-        public Student getStudent ()
+        public Student getStudent()
         {
-            return (Student) this.getProperty("student");
+            return (Student)this.getProperty("student");
         }
 
-        public void setStudent (Student student)
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public Behaviour getBehaviour ()
+        public Behaviour getBehaviour()
         {
-            return (Behaviour) this.getProperty("behaviour");
+            return (Behaviour)this.getProperty("behaviour");
         }
 
-        public void setBehaviour (Behaviour behaviour)
+        public void setBehaviour(Behaviour behaviour)
         {
             this.setProperty("behaviour", behaviour);
         }

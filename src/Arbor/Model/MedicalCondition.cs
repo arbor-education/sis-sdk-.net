@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class MedicalCondition : ModelBase
     {
-        protected string resourceType = ResourceType.MEDICAL_CONDITION;
+        protected new string resourceType = ResourceType.MEDICAL_CONDITION;
         public const string PERSON = "person";
         public const string MEDICAL_CONDITION_TYPE = "medicalConditionType";
         public const string MEDICAL_CONDITION_NAME = "medicalConditionName";
@@ -19,118 +19,119 @@ namespace Arbor.Model
         public const string SYMPTOMS = "symptoms";
         public const string TREATMENT = "treatment";
 
-        public MedicalCondition ()
+        public MedicalCondition()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public MedicalCondition (string resourceType = "MedicalCondition", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<MedicalCondition> query (SimpleQuery query = null)
+        public MedicalCondition(string resourceType = "MedicalCondition", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("MedicalCondition");
-        	RestGateway gateway = (RestGateway) MedicalCondition.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<MedicalCondition> medicalconditionCollection = new ModelCollection<MedicalCondition> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    medicalconditionCollection.add((MedicalCondition) model);
-        	}
-        
-        	return medicalconditionCollection;
+
         }
 
-        public static MedicalCondition retrieve (string id)
+
+        public static ModelCollection<MedicalCondition> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) MedicalCondition.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (MedicalCondition) gateway.retrieve(ResourceType.MEDICAL_CONDITION, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("MedicalCondition");
+            RestGateway gateway = (RestGateway)MedicalCondition.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<MedicalCondition> medicalconditionCollection = new ModelCollection<MedicalCondition>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                medicalconditionCollection.add((MedicalCondition)model);
+            }
+
+            return medicalconditionCollection;
         }
 
-        public ModelBase getPerson ()
+        public static MedicalCondition retrieve(string id)
         {
-            return (ModelBase) this.getProperty("person");
+            RestGateway gateway = (RestGateway)MedicalCondition.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (MedicalCondition)gateway.retrieve(ResourceType.MEDICAL_CONDITION, id);
         }
 
-        public void setPerson (ModelBase person)
+        public ModelBase getPerson()
+        {
+            return (ModelBase)this.getProperty("person");
+        }
+
+        public void setPerson(ModelBase person)
         {
             this.setProperty("person", person);
         }
 
-        public MedicalConditionType getMedicalConditionType ()
+        public MedicalConditionType getMedicalConditionType()
         {
-            return (MedicalConditionType) this.getProperty("medicalConditionType");
+            return (MedicalConditionType)this.getProperty("medicalConditionType");
         }
 
-        public void setMedicalConditionType (MedicalConditionType medicalConditionType)
+        public void setMedicalConditionType(MedicalConditionType medicalConditionType)
         {
             this.setProperty("medicalConditionType", medicalConditionType);
         }
 
-        public string getMedicalConditionName ()
+        public string getMedicalConditionName()
         {
             return this.getProperty("medicalConditionName").ToString();
         }
 
-        public void setMedicalConditionName (string medicalConditionName)
+        public void setMedicalConditionName(string medicalConditionName)
         {
             this.setProperty("medicalConditionName", medicalConditionName);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDate()
         {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }
 
-        public string getSeverity ()
+        public string getSeverity()
         {
             return this.getProperty("severity").ToString();
         }
 
-        public void setSeverity (string severity)
+        public void setSeverity(string severity)
         {
             this.setProperty("severity", severity);
         }
 
-        public string getSymptoms ()
+        public string getSymptoms()
         {
             return this.getProperty("symptoms").ToString();
         }
 
-        public void setSymptoms (string symptoms)
+        public void setSymptoms(string symptoms)
         {
             this.setProperty("symptoms", symptoms);
         }
 
-        public string getTreatment ()
+        public string getTreatment()
         {
             return this.getProperty("treatment").ToString();
         }
 
-        public void setTreatment (string treatment)
+        public void setTreatment(string treatment)
         {
             this.setProperty("treatment", treatment);
         }

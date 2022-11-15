@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Assessment : ModelBase
     {
-        protected string resourceType = ResourceType.ASSESSMENT;
+        protected new string resourceType = ResourceType.ASSESSMENT;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";
@@ -24,168 +24,169 @@ namespace Arbor.Model
         public const string IS_BASELINE_LOCKED = "isBaselineLocked";
         public const string IS_TARGET_LOCKED = "isTargetLocked";
 
-        public Assessment ()
+        public Assessment()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public Assessment (string resourceType = "Assessment", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<Assessment> query (SimpleQuery query = null)
+        public Assessment(string resourceType = "Assessment", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("Assessment");
-        	RestGateway gateway = (RestGateway) Assessment.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<Assessment> assessmentCollection = new ModelCollection<Assessment> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    assessmentCollection.add((Assessment) model);
-        	}
-        
-        	return assessmentCollection;
+
         }
 
-        public static Assessment retrieve (string id)
+
+        public static ModelCollection<Assessment> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) Assessment.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (Assessment) gateway.retrieve(ResourceType.ASSESSMENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("Assessment");
+            RestGateway gateway = (RestGateway)Assessment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<Assessment> assessmentCollection = new ModelCollection<Assessment>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                assessmentCollection.add((Assessment)model);
+            }
+
+            return assessmentCollection;
         }
 
-        public string getCode ()
+        public static Assessment retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)Assessment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (Assessment)gateway.retrieve(ResourceType.ASSESSMENT, id);
+        }
+
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }
 
-        public string getAssessmentName ()
+        public string getAssessmentName()
         {
             return this.getProperty("assessmentName").ToString();
         }
 
-        public void setAssessmentName (string assessmentName)
+        public void setAssessmentName(string assessmentName)
         {
             this.setProperty("assessmentName", assessmentName);
         }
 
-        public string getAssessmentShortName ()
+        public string getAssessmentShortName()
         {
             return this.getProperty("assessmentShortName").ToString();
         }
 
-        public void setAssessmentShortName (string assessmentShortName)
+        public void setAssessmentShortName(string assessmentShortName)
         {
             this.setProperty("assessmentShortName", assessmentShortName);
         }
 
-        public string getUserDefinedName ()
+        public string getUserDefinedName()
         {
             return this.getProperty("userDefinedName").ToString();
         }
 
-        public void setUserDefinedName (string userDefinedName)
+        public void setUserDefinedName(string userDefinedName)
         {
             this.setProperty("userDefinedName", userDefinedName);
         }
 
-        public string getUserDefinedShortName ()
+        public string getUserDefinedShortName()
         {
             return this.getProperty("userDefinedShortName").ToString();
         }
 
-        public void setUserDefinedShortName (string userDefinedShortName)
+        public void setUserDefinedShortName(string userDefinedShortName)
         {
             this.setProperty("userDefinedShortName", userDefinedShortName);
         }
 
-        public Subject getSubject ()
+        public Subject getSubject()
         {
-            return (Subject) this.getProperty("subject");
+            return (Subject)this.getProperty("subject");
         }
 
-        public void setSubject (Subject subject)
+        public void setSubject(Subject subject)
         {
             this.setProperty("subject", subject);
         }
 
-        public CurriculumTier getCurriculumTier ()
+        public CurriculumTier getCurriculumTier()
         {
-            return (CurriculumTier) this.getProperty("curriculumTier");
+            return (CurriculumTier)this.getProperty("curriculumTier");
         }
 
-        public void setCurriculumTier (CurriculumTier curriculumTier)
+        public void setCurriculumTier(CurriculumTier curriculumTier)
         {
             this.setProperty("curriculumTier", curriculumTier);
         }
 
-        public GradePointScale getGradePointScale ()
+        public GradePointScale getGradePointScale()
         {
-            return (GradePointScale) this.getProperty("gradePointScale");
+            return (GradePointScale)this.getProperty("gradePointScale");
         }
 
-        public void setGradePointScale (GradePointScale gradePointScale)
+        public void setGradePointScale(GradePointScale gradePointScale)
         {
             this.setProperty("gradePointScale", gradePointScale);
         }
 
-        public string getStudentProgressBaselineCalculatorClassName ()
+        public string getStudentProgressBaselineCalculatorClassName()
         {
             return this.getProperty("studentProgressBaselineCalculatorClassName").ToString();
         }
 
-        public void setStudentProgressBaselineCalculatorClassName (string studentProgressBaselineCalculatorClassName)
+        public void setStudentProgressBaselineCalculatorClassName(string studentProgressBaselineCalculatorClassName)
         {
             this.setProperty("studentProgressBaselineCalculatorClassName", studentProgressBaselineCalculatorClassName);
         }
 
-        public bool getIsBaselineLocked ()
+        public bool getIsBaselineLocked()
         {
             return Convert.ToBoolean(this.getProperty("isBaselineLocked"));
         }
 
-        public void setIsBaselineLocked (bool isBaselineLocked)
+        public void setIsBaselineLocked(bool isBaselineLocked)
         {
             this.setProperty("isBaselineLocked", isBaselineLocked);
         }
 
-        public bool getIsTargetLocked ()
+        public bool getIsTargetLocked()
         {
             return Convert.ToBoolean(this.getProperty("isTargetLocked"));
         }
 
-        public void setIsTargetLocked (bool isTargetLocked)
+        public void setIsTargetLocked(bool isTargetLocked)
         {
             this.setProperty("isTargetLocked", isTargetLocked);
         }

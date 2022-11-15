@@ -9,73 +9,74 @@ namespace Arbor.Model
 {
     public class MessageDraftRecipient : ModelBase
     {
-        protected string resourceType = ResourceType.MESSAGE_DRAFT_RECIPIENT;
+        protected new string resourceType = ResourceType.MESSAGE_DRAFT_RECIPIENT;
         public const string MESSAGE_DRAFT = "messageDraft";
         public const string RECIPIENT = "recipient";
         public const string RESOLVER = "resolver";
 
-        public MessageDraftRecipient ()
+        public MessageDraftRecipient()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public MessageDraftRecipient (string resourceType = "MessageDraftRecipient", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<MessageDraftRecipient> query (SimpleQuery query = null)
+        public MessageDraftRecipient(string resourceType = "MessageDraftRecipient", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("MessageDraftRecipient");
-        	RestGateway gateway = (RestGateway) MessageDraftRecipient.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<MessageDraftRecipient> messagedraftrecipientCollection = new ModelCollection<MessageDraftRecipient> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    messagedraftrecipientCollection.add((MessageDraftRecipient) model);
-        	}
-        
-        	return messagedraftrecipientCollection;
+
         }
 
-        public static MessageDraftRecipient retrieve (string id)
+
+        public static ModelCollection<MessageDraftRecipient> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) MessageDraftRecipient.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (MessageDraftRecipient) gateway.retrieve(ResourceType.MESSAGE_DRAFT_RECIPIENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("MessageDraftRecipient");
+            RestGateway gateway = (RestGateway)MessageDraftRecipient.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<MessageDraftRecipient> messagedraftrecipientCollection = new ModelCollection<MessageDraftRecipient>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                messagedraftrecipientCollection.add((MessageDraftRecipient)model);
+            }
+
+            return messagedraftrecipientCollection;
         }
 
-        public ModelBase getMessageDraft ()
+        public static MessageDraftRecipient retrieve(string id)
         {
-            return (ModelBase) this.getProperty("messageDraft");
+            RestGateway gateway = (RestGateway)MessageDraftRecipient.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (MessageDraftRecipient)gateway.retrieve(ResourceType.MESSAGE_DRAFT_RECIPIENT, id);
         }
 
-        public void setMessageDraft (ModelBase messageDraft)
+        public ModelBase getMessageDraft()
+        {
+            return (ModelBase)this.getProperty("messageDraft");
+        }
+
+        public void setMessageDraft(ModelBase messageDraft)
         {
             this.setProperty("messageDraft", messageDraft);
         }
 
-        public ModelBase getRecipient ()
+        public ModelBase getRecipient()
         {
-            return (ModelBase) this.getProperty("recipient");
+            return (ModelBase)this.getProperty("recipient");
         }
 
-        public void setRecipient (ModelBase recipient)
+        public void setRecipient(ModelBase recipient)
         {
             this.setProperty("recipient", recipient);
         }
 
-        public string getResolver ()
+        public string getResolver()
         {
             return this.getProperty("resolver").ToString();
         }
 
-        public void setResolver (string resolver)
+        public void setResolver(string resolver)
         {
             this.setProperty("resolver", resolver);
         }

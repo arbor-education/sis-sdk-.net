@@ -9,51 +9,52 @@ namespace Arbor.Model
 {
     public class QualificationResultEmbargoViewer : ModelBase
     {
-        protected string resourceType = ResourceType.QUALIFICATION_RESULT_EMBARGO_VIEWER;
+        protected new string resourceType = ResourceType.QUALIFICATION_RESULT_EMBARGO_VIEWER;
         public const string VIEWER = "viewer";
 
-        public QualificationResultEmbargoViewer ()
+        public QualificationResultEmbargoViewer()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public QualificationResultEmbargoViewer (string resourceType = "QualificationResultEmbargoViewer", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<QualificationResultEmbargoViewer> query (SimpleQuery query = null)
+        public QualificationResultEmbargoViewer(string resourceType = "QualificationResultEmbargoViewer", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("QualificationResultEmbargoViewer");
-        	RestGateway gateway = (RestGateway) QualificationResultEmbargoViewer.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<QualificationResultEmbargoViewer> qualificationresultembargoviewerCollection = new ModelCollection<QualificationResultEmbargoViewer> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    qualificationresultembargoviewerCollection.add((QualificationResultEmbargoViewer) model);
-        	}
-        
-        	return qualificationresultembargoviewerCollection;
+
         }
 
-        public static QualificationResultEmbargoViewer retrieve (string id)
+
+        public static ModelCollection<QualificationResultEmbargoViewer> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) QualificationResultEmbargoViewer.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (QualificationResultEmbargoViewer) gateway.retrieve(ResourceType.QUALIFICATION_RESULT_EMBARGO_VIEWER, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("QualificationResultEmbargoViewer");
+            RestGateway gateway = (RestGateway)QualificationResultEmbargoViewer.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<QualificationResultEmbargoViewer> qualificationresultembargoviewerCollection = new ModelCollection<QualificationResultEmbargoViewer>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                qualificationresultembargoviewerCollection.add((QualificationResultEmbargoViewer)model);
+            }
+
+            return qualificationresultembargoviewerCollection;
         }
 
-        public ModelBase getViewer ()
+        public static QualificationResultEmbargoViewer retrieve(string id)
         {
-            return (ModelBase) this.getProperty("viewer");
+            RestGateway gateway = (RestGateway)QualificationResultEmbargoViewer.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (QualificationResultEmbargoViewer)gateway.retrieve(ResourceType.QUALIFICATION_RESULT_EMBARGO_VIEWER, id);
         }
 
-        public void setViewer (ModelBase viewer)
+        public ModelBase getViewer()
+        {
+            return (ModelBase)this.getProperty("viewer");
+        }
+
+        public void setViewer(ModelBase viewer)
         {
             this.setProperty("viewer", viewer);
         }

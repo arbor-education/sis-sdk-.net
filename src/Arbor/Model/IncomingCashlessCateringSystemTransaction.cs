@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class IncomingCashlessCateringSystemTransaction : ModelBase
     {
-        protected string resourceType = ResourceType.INCOMING_CASHLESS_CATERING_SYSTEM_TRANSACTION;
+        protected new string resourceType = ResourceType.INCOMING_CASHLESS_CATERING_SYSTEM_TRANSACTION;
         public const string BILL_PAYER = "billPayer";
         public const string SOURCE = "source";
         public const string TRANSACTION_IDENTIFIER = "transactionIdentifier";
@@ -19,142 +19,143 @@ namespace Arbor.Model
         public const string TRANSACTION_FEE_AMOUNT = "transactionFeeAmount";
         public const string VAT_AMOUNT = "vatAmount";
         public const string TRANSACTION_DATE = "transactionDate";
-        public const string RELATED_ENTITY = "related_entity";
+        public const string RELATED_ENTITY = "relatedEntity";
 
-        public IncomingCashlessCateringSystemTransaction ()
+        public IncomingCashlessCateringSystemTransaction()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public IncomingCashlessCateringSystemTransaction (string resourceType = "IncomingCashlessCateringSystemTransaction", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<IncomingCashlessCateringSystemTransaction> query (SimpleQuery query = null)
+        public IncomingCashlessCateringSystemTransaction(string resourceType = "IncomingCashlessCateringSystemTransaction", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("IncomingCashlessCateringSystemTransaction");
-        	RestGateway gateway = (RestGateway) IncomingCashlessCateringSystemTransaction.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<IncomingCashlessCateringSystemTransaction> incomingcashlesscateringsystemtransactionCollection = new ModelCollection<IncomingCashlessCateringSystemTransaction> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    incomingcashlesscateringsystemtransactionCollection.add((IncomingCashlessCateringSystemTransaction) model);
-        	}
-        
-        	return incomingcashlesscateringsystemtransactionCollection;
+
         }
 
-        public static IncomingCashlessCateringSystemTransaction retrieve (string id)
+
+        public static ModelCollection<IncomingCashlessCateringSystemTransaction> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) IncomingCashlessCateringSystemTransaction.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (IncomingCashlessCateringSystemTransaction) gateway.retrieve(ResourceType.INCOMING_CASHLESS_CATERING_SYSTEM_TRANSACTION, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("IncomingCashlessCateringSystemTransaction");
+            RestGateway gateway = (RestGateway)IncomingCashlessCateringSystemTransaction.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<IncomingCashlessCateringSystemTransaction> incomingcashlesscateringsystemtransactionCollection = new ModelCollection<IncomingCashlessCateringSystemTransaction>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                incomingcashlesscateringsystemtransactionCollection.add((IncomingCashlessCateringSystemTransaction)model);
+            }
+
+            return incomingcashlesscateringsystemtransactionCollection;
         }
 
-        public BillPayer getBillPayer ()
+        public static IncomingCashlessCateringSystemTransaction retrieve(string id)
         {
-            return (BillPayer) this.getProperty("billPayer");
+            RestGateway gateway = (RestGateway)IncomingCashlessCateringSystemTransaction.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (IncomingCashlessCateringSystemTransaction)gateway.retrieve(ResourceType.INCOMING_CASHLESS_CATERING_SYSTEM_TRANSACTION, id);
         }
 
-        public void setBillPayer (BillPayer billPayer)
+        public BillPayer getBillPayer()
+        {
+            return (BillPayer)this.getProperty("billPayer");
+        }
+
+        public void setBillPayer(BillPayer billPayer)
         {
             this.setProperty("billPayer", billPayer);
         }
 
-        public string getSource ()
+        public string getSource()
         {
             return this.getProperty("source").ToString();
         }
 
-        public void setSource (string source)
+        public void setSource(string source)
         {
             this.setProperty("source", source);
         }
 
-        public string getTransactionIdentifier ()
+        public string getTransactionIdentifier()
         {
             return this.getProperty("transactionIdentifier").ToString();
         }
 
-        public void setTransactionIdentifier (string transactionIdentifier)
+        public void setTransactionIdentifier(string transactionIdentifier)
         {
             this.setProperty("transactionIdentifier", transactionIdentifier);
         }
 
-        public string getNarrative ()
+        public string getNarrative()
         {
             return this.getProperty("narrative").ToString();
         }
 
-        public void setNarrative (string narrative)
+        public void setNarrative(string narrative)
         {
             this.setProperty("narrative", narrative);
         }
 
-        public CustomerAccount getCustomerAccount ()
+        public CustomerAccount getCustomerAccount()
         {
-            return (CustomerAccount) this.getProperty("customerAccount");
+            return (CustomerAccount)this.getProperty("customerAccount");
         }
 
-        public void setCustomerAccount (CustomerAccount customerAccount)
+        public void setCustomerAccount(CustomerAccount customerAccount)
         {
             this.setProperty("customerAccount", customerAccount);
         }
 
-        public string getTransactionAmount ()
+        public string getTransactionAmount()
         {
             return this.getProperty("transactionAmount").ToString();
         }
 
-        public void setTransactionAmount (string transactionAmount)
+        public void setTransactionAmount(string transactionAmount)
         {
             this.setProperty("transactionAmount", transactionAmount);
         }
 
-        public string getTransactionFeeAmount ()
+        public string getTransactionFeeAmount()
         {
             return this.getProperty("transactionFeeAmount").ToString();
         }
 
-        public void setTransactionFeeAmount (string transactionFeeAmount)
+        public void setTransactionFeeAmount(string transactionFeeAmount)
         {
             this.setProperty("transactionFeeAmount", transactionFeeAmount);
         }
 
-        public string getVatAmount ()
+        public string getVatAmount()
         {
             return this.getProperty("vatAmount").ToString();
         }
 
-        public void setVatAmount (string vatAmount)
+        public void setVatAmount(string vatAmount)
         {
             this.setProperty("vatAmount", vatAmount);
         }
 
-        public DateTime getTransactionDate ()
+        public DateTime getTransactionDate()
         {
             return Convert.ToDateTime(this.getProperty("transactionDate"));
         }
 
-        public void setTransactionDate (DateTime transactionDate)
+        public void setTransactionDate(DateTime transactionDate)
         {
             this.setProperty("transactionDate", transactionDate);
         }
 
-        public ModelBase getRelated_entity ()
+        public ModelBase getRelatedEntity()
         {
-            return (ModelBase) this.getProperty("related_entity");
+            return (ModelBase)this.getProperty("relatedEntity");
         }
 
-        public void setRelated_entity (ModelBase related_entity)
+        public void setRelatedEntity(ModelBase relatedEntity)
         {
-            this.setProperty("related_entity", related_entity);
+            this.setProperty("relatedEntity", relatedEntity);
         }
 
 

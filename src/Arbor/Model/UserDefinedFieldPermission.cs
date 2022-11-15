@@ -9,84 +9,85 @@ namespace Arbor.Model
 {
     public class UserDefinedFieldPermission : ModelBase
     {
-        protected string resourceType = ResourceType.USER_DEFINED_FIELD_PERMISSION;
+        protected new string resourceType = ResourceType.USER_DEFINED_FIELD_PERMISSION;
         public const string USER_DEFINED_FIELD = "userDefinedField";
         public const string IDENTIFIER = "identifier";
         public const string CODE = "code";
         public const string ACTIVE = "active";
 
-        public UserDefinedFieldPermission ()
+        public UserDefinedFieldPermission()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public UserDefinedFieldPermission (string resourceType = "UserDefinedFieldPermission", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<UserDefinedFieldPermission> query (SimpleQuery query = null)
+        public UserDefinedFieldPermission(string resourceType = "UserDefinedFieldPermission", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("UserDefinedFieldPermission");
-        	RestGateway gateway = (RestGateway) UserDefinedFieldPermission.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<UserDefinedFieldPermission> userdefinedfieldpermissionCollection = new ModelCollection<UserDefinedFieldPermission> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    userdefinedfieldpermissionCollection.add((UserDefinedFieldPermission) model);
-        	}
-        
-        	return userdefinedfieldpermissionCollection;
+
         }
 
-        public static UserDefinedFieldPermission retrieve (string id)
+
+        public static ModelCollection<UserDefinedFieldPermission> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) UserDefinedFieldPermission.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (UserDefinedFieldPermission) gateway.retrieve(ResourceType.USER_DEFINED_FIELD_PERMISSION, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("UserDefinedFieldPermission");
+            RestGateway gateway = (RestGateway)UserDefinedFieldPermission.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<UserDefinedFieldPermission> userdefinedfieldpermissionCollection = new ModelCollection<UserDefinedFieldPermission>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                userdefinedfieldpermissionCollection.add((UserDefinedFieldPermission)model);
+            }
+
+            return userdefinedfieldpermissionCollection;
         }
 
-        public UserDefinedField getUserDefinedField ()
+        public static UserDefinedFieldPermission retrieve(string id)
         {
-            return (UserDefinedField) this.getProperty("userDefinedField");
+            RestGateway gateway = (RestGateway)UserDefinedFieldPermission.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (UserDefinedFieldPermission)gateway.retrieve(ResourceType.USER_DEFINED_FIELD_PERMISSION, id);
         }
 
-        public void setUserDefinedField (UserDefinedField userDefinedField)
+        public UserDefinedField getUserDefinedField()
+        {
+            return (UserDefinedField)this.getProperty("userDefinedField");
+        }
+
+        public void setUserDefinedField(UserDefinedField userDefinedField)
         {
             this.setProperty("userDefinedField", userDefinedField);
         }
 
-        public string getIdentifier ()
+        public string getIdentifier()
         {
             return this.getProperty("identifier").ToString();
         }
 
-        public void setIdentifier (string identifier)
+        public void setIdentifier(string identifier)
         {
             this.setProperty("identifier", identifier);
         }
 
-        public string getCode ()
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }

@@ -9,62 +9,63 @@ namespace Arbor.Model
 {
     public class ExclusionExclusionReason : ModelBase
     {
-        protected string resourceType = ResourceType.EXCLUSION_EXCLUSION_REASON;
+        protected new string resourceType = ResourceType.EXCLUSION_EXCLUSION_REASON;
         public const string EXCLUSION = "exclusion";
         public const string EXCLUSION_REASON = "exclusionReason";
 
-        public ExclusionExclusionReason ()
+        public ExclusionExclusionReason()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public ExclusionExclusionReason (string resourceType = "ExclusionExclusionReason", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<ExclusionExclusionReason> query (SimpleQuery query = null)
+        public ExclusionExclusionReason(string resourceType = "ExclusionExclusionReason", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("ExclusionExclusionReason");
-        	RestGateway gateway = (RestGateway) ExclusionExclusionReason.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<ExclusionExclusionReason> exclusionexclusionreasonCollection = new ModelCollection<ExclusionExclusionReason> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    exclusionexclusionreasonCollection.add((ExclusionExclusionReason) model);
-        	}
-        
-        	return exclusionexclusionreasonCollection;
+
         }
 
-        public static ExclusionExclusionReason retrieve (string id)
+
+        public static ModelCollection<ExclusionExclusionReason> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) ExclusionExclusionReason.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (ExclusionExclusionReason) gateway.retrieve(ResourceType.EXCLUSION_EXCLUSION_REASON, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("ExclusionExclusionReason");
+            RestGateway gateway = (RestGateway)ExclusionExclusionReason.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<ExclusionExclusionReason> exclusionexclusionreasonCollection = new ModelCollection<ExclusionExclusionReason>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                exclusionexclusionreasonCollection.add((ExclusionExclusionReason)model);
+            }
+
+            return exclusionexclusionreasonCollection;
         }
 
-        public ModelBase getExclusion ()
+        public static ExclusionExclusionReason retrieve(string id)
         {
-            return (ModelBase) this.getProperty("exclusion");
+            RestGateway gateway = (RestGateway)ExclusionExclusionReason.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (ExclusionExclusionReason)gateway.retrieve(ResourceType.EXCLUSION_EXCLUSION_REASON, id);
         }
 
-        public void setExclusion (ModelBase exclusion)
+        public ModelBase getExclusion()
+        {
+            return (ModelBase)this.getProperty("exclusion");
+        }
+
+        public void setExclusion(ModelBase exclusion)
         {
             this.setProperty("exclusion", exclusion);
         }
 
-        public ExclusionReason getExclusionReason ()
+        public ExclusionReason getExclusionReason()
         {
-            return (ExclusionReason) this.getProperty("exclusionReason");
+            return (ExclusionReason)this.getProperty("exclusionReason");
         }
 
-        public void setExclusionReason (ExclusionReason exclusionReason)
+        public void setExclusionReason(ExclusionReason exclusionReason)
         {
             this.setProperty("exclusionReason", exclusionReason);
         }

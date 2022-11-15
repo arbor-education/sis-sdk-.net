@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Demographic : ModelBase
     {
-        protected string resourceType = ResourceType.DEMOGRAPHIC;
+        protected new string resourceType = ResourceType.DEMOGRAPHIC;
         public const string LABEL = "label";
         public const string SHORT_NAME = "shortName";
         public const string TYPE = "type";
@@ -24,168 +24,169 @@ namespace Arbor.Model
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";
 
-        public Demographic ()
+        public Demographic()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public Demographic (string resourceType = "Demographic", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<Demographic> query (SimpleQuery query = null)
+        public Demographic(string resourceType = "Demographic", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("Demographic");
-        	RestGateway gateway = (RestGateway) Demographic.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<Demographic> demographicCollection = new ModelCollection<Demographic> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    demographicCollection.add((Demographic) model);
-        	}
-        
-        	return demographicCollection;
+
         }
 
-        public static Demographic retrieve (string id)
+
+        public static ModelCollection<Demographic> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) Demographic.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (Demographic) gateway.retrieve(ResourceType.DEMOGRAPHIC, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("Demographic");
+            RestGateway gateway = (RestGateway)Demographic.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<Demographic> demographicCollection = new ModelCollection<Demographic>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                demographicCollection.add((Demographic)model);
+            }
+
+            return demographicCollection;
         }
 
-        public string getLabel ()
+        public static Demographic retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)Demographic.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (Demographic)gateway.retrieve(ResourceType.DEMOGRAPHIC, id);
+        }
+
+        public string getLabel()
         {
             return this.getProperty("label").ToString();
         }
 
-        public void setLabel (string label)
+        public void setLabel(string label)
         {
             this.setProperty("label", label);
         }
 
-        public string getShortName ()
+        public string getShortName()
         {
             return this.getProperty("shortName").ToString();
         }
 
-        public void setShortName (string shortName)
+        public void setShortName(string shortName)
         {
             this.setProperty("shortName", shortName);
         }
 
-        public string getType ()
+        public string getType()
         {
             return this.getProperty("type").ToString();
         }
 
-        public void setType (string type)
+        public void setType(string type)
         {
             this.setProperty("type", type);
         }
 
-        public bool getHasInverse ()
+        public bool getHasInverse()
         {
             return Convert.ToBoolean(this.getProperty("hasInverse"));
         }
 
-        public void setHasInverse (bool hasInverse)
+        public void setHasInverse(bool hasInverse)
         {
             this.setProperty("hasInverse", hasInverse);
         }
 
-        public string getInverseLabel ()
+        public string getInverseLabel()
         {
             return this.getProperty("inverseLabel").ToString();
         }
 
-        public void setInverseLabel (string inverseLabel)
+        public void setInverseLabel(string inverseLabel)
         {
             this.setProperty("inverseLabel", inverseLabel);
         }
 
-        public string getDescription ()
+        public string getDescription()
         {
             return this.getProperty("description").ToString();
         }
 
-        public void setDescription (string description)
+        public void setDescription(string description)
         {
             this.setProperty("description", description);
         }
 
-        public string getCalculationClass ()
+        public string getCalculationClass()
         {
             return this.getProperty("calculationClass").ToString();
         }
 
-        public void setCalculationClass (string calculationClass)
+        public void setCalculationClass(string calculationClass)
         {
             this.setProperty("calculationClass", calculationClass);
         }
 
-        public DateTime getEffectiveDate ()
+        public DateTime getEffectiveDate()
         {
             return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
-        public void setEffectiveDate (DateTime effectiveDate)
+        public void setEffectiveDate(DateTime effectiveDate)
         {
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }
 
-        public string getCode ()
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public string getCalculationParams ()
+        public string getCalculationParams()
         {
             return this.getProperty("calculationParams").ToString();
         }
 
-        public void setCalculationParams (string calculationParams)
+        public void setCalculationParams(string calculationParams)
         {
             this.setProperty("calculationParams", calculationParams);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }
