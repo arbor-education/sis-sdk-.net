@@ -26,4 +26,4 @@ jobs:
             *.nupkg
             *.snupkg
       - name: Push Release to NuGet
-        run: nuget push -NonInteractive ArborSdk.${{ github.ref_name }}.nupkg
+        run: nuget push -NonInteractive ArborSdk.${{ github.ref_name }}.nupkg -Source https://api.nuget.org/v3/index.json
