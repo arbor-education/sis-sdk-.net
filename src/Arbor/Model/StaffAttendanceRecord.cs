@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class StaffAttendanceRecord : ModelBase
     {
-        protected new string resourceType = ResourceType.STAFF_ATTENDANCE_RECORD;
+        protected string resourceType = ResourceType.STAFF_ATTENDANCE_RECORD;
         public const string STAFF = "staff";
         public const string ATTENDANCE_PERIOD_DATE = "attendancePeriodDate";
         public const string ATTENDANCE_PERIOD_START_TIME = "attendancePeriodStartTime";

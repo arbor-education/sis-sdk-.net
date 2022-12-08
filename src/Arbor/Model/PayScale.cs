@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class PayScale : ModelBase
     {
-        protected new string resourceType = ResourceType.PAY_SCALE;
+        protected string resourceType = ResourceType.PAY_SCALE;
         public const string REGIONAL_PAY_SPINE = "regionalPaySpine";
         public const string PAY_SCALE_CATEGORY = "payScaleCategory";
         public const string PAY_SCALE_CODE = "payScaleCode";

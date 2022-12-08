@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CommunicationTemplate : ModelBase
     {
-        protected new string resourceType = ResourceType.COMMUNICATION_TEMPLATE;
+        protected string resourceType = ResourceType.COMMUNICATION_TEMPLATE;
         public const string NAME = "name";
         public const string IDENTIFIER = "identifier";
         public const string EMAIL_SUBJECT = "emailSubject";

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AcademicLevelMembership : ModelBase
     {
-        protected new string resourceType = ResourceType.ACADEMIC_LEVEL_MEMBERSHIP;
+        protected string resourceType = ResourceType.ACADEMIC_LEVEL_MEMBERSHIP;
         public const string ACADEMIC_LEVEL = "academicLevel";
         public const string STUDENT = "student";
         public const string START_DATE = "startDate";

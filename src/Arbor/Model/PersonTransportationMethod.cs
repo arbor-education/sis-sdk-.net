@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class PersonTransportationMethod : ModelBase
     {
-        protected new string resourceType = ResourceType.PERSON_TRANSPORTATION_METHOD;
+        protected string resourceType = ResourceType.PERSON_TRANSPORTATION_METHOD;
         public const string PERSON = "person";
         public const string TRANSPORTATION_METHOD = "transportationMethod";
         public const string NOTES = "notes";

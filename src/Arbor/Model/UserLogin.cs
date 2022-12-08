@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class UserLogin : ModelBase
     {
-        protected new string resourceType = ResourceType.USER_LOGIN;
+        protected string resourceType = ResourceType.USER_LOGIN;
         public const string USER = "user";
         public const string LOGIN_DATETIME = "loginDatetime";
         public const string IP_ADDRESS = "ipAddress";

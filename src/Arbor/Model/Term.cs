@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Term : ModelBase
     {
-        protected new string resourceType = ResourceType.TERM;
+        protected string resourceType = ResourceType.TERM;
         public const string ACADEMIC_YEAR = "academicYear";
         public const string TERM_NAME = "termName";
         public const string SHORT_TERM_NAME = "shortTermName";

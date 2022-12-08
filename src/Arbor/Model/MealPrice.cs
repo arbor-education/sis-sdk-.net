@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class MealPrice : ModelBase
     {
-        protected new string resourceType = ResourceType.MEAL_PRICE;
+        protected string resourceType = ResourceType.MEAL_PRICE;
         public const string MEAL_PROVISION_PRICE_CATEGORY = "mealProvisionPriceCategory";
         public const string PRICE_EX_VAT = "priceExVat";
         public const string VAT_AMOUNT = "vatAmount";

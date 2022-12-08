@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class IntegrationsHrFinanceTestRunResult : ModelBase
     {
-        protected new string resourceType = ResourceType.INTEGRATIONS_HR_FINANCE_TEST_RUN_RESULT;
+        protected string resourceType = ResourceType.INTEGRATIONS_HR_FINANCE_TEST_RUN_RESULT;
         public const string INTEGRATIONS_HR_FINANCE_TEST_RUN = "integrationsHrFinanceTestRun";
         public const string TYPE = "type";
         public const string ACTION = "action";

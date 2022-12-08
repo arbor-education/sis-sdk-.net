@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class BillPayer : ModelBase
     {
-        protected new string resourceType = ResourceType.BILL_PAYER;
+        protected string resourceType = ResourceType.BILL_PAYER;
         public const string LEGAL_ENTITY = "legalEntity";
         public const string DELETED_LEGAL_ENTITY_NAME = "deletedLegalEntityName";
         public const string STRIPE_CUSTOMER_ID = "stripeCustomerId";

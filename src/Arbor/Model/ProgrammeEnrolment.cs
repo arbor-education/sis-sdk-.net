@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ProgrammeEnrolment : ModelBase
     {
-        protected new string resourceType = ResourceType.PROGRAMME_ENROLMENT;
+        protected string resourceType = ResourceType.PROGRAMME_ENROLMENT;
         public const string PROGRAMME_INSTANCE = "programmeInstance";
         public const string STUDENT = "student";
         public const string MAIN_PROGRAMME = "mainProgramme";

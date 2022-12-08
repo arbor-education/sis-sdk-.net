@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ImpairmentCategory : ModelBase
     {
-        protected new string resourceType = ResourceType.IMPAIRMENT_CATEGORY;
+        protected string resourceType = ResourceType.IMPAIRMENT_CATEGORY;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ExternalAdministrator : ModelBase
     {
-        protected new string resourceType = ResourceType.EXTERNAL_ADMINISTRATOR;
+        protected string resourceType = ResourceType.EXTERNAL_ADMINISTRATOR;
         public const string FIRST_NAME = "firstName";
         public const string LAST_NAME = "lastName";
         public const string EMAIL = "email";

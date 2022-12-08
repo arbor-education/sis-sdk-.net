@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class UnenrolmentReason : ModelBase
     {
-        protected new string resourceType = ResourceType.UK_DFE_UNENROLMENT_REASON;
+        protected string resourceType = ResourceType.UK_DFE_UNENROLMENT_REASON;
         public const string D00206 = "d00206";
 
         public UnenrolmentReason()

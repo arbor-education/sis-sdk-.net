@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class Ethnicity : ModelBase
     {
-        protected new string resourceType = ResourceType.UK_DFE_ETHNICITY;
+        protected string resourceType = ResourceType.UK_DFE_ETHNICITY;
         public const string DFES_MAIN_CODE = "dfesMainCode";
         public const string D00005 = "d00005";
         public const string ONS_CODE = "onsCode";

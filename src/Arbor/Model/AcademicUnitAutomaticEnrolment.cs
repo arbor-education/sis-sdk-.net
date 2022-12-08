@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AcademicUnitAutomaticEnrolment : ModelBase
     {
-        protected new string resourceType = ResourceType.ACADEMIC_UNIT_AUTOMATIC_ENROLMENT;
+        protected string resourceType = ResourceType.ACADEMIC_UNIT_AUTOMATIC_ENROLMENT;
         public const string ACADEMIC_UNIT = "academicUnit";
         public const string TRIGGER = "trigger";
         public const string ATTENDANCE_PATTERN = "attendancePattern";

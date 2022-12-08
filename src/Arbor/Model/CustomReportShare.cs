@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CustomReportShare : ModelBase
     {
-        protected new string resourceType = ResourceType.CUSTOM_REPORT_SHARE;
+        protected string resourceType = ResourceType.CUSTOM_REPORT_SHARE;
         public const string CUSTOM_REPORT = "customReport";
         public const string SHARED_WITH = "sharedWith";
         public const string PERMISSION_LEVEL = "permissionLevel";

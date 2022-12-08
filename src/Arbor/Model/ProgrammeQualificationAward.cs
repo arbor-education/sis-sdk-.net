@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ProgrammeQualificationAward : ModelBase
     {
-        protected new string resourceType = ResourceType.PROGRAMME_QUALIFICATION_AWARD;
+        protected string resourceType = ResourceType.PROGRAMME_QUALIFICATION_AWARD;
         public const string PROGRAMME_INSTANCE = "programmeInstance";
         public const string QUALIFICATION_AWARD = "qualificationAward";
 

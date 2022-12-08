@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class NewReportCardBatchTarget : ModelBase
     {
-        protected new string resourceType = ResourceType.NEW_REPORT_CARD_BATCH_TARGET;
+        protected string resourceType = ResourceType.NEW_REPORT_CARD_BATCH_TARGET;
         public const string REPORT_CARD_BATCH = "reportCardBatch";
         public const string TARGET = "target";
         public const string REPORTS_GENERATING = "reportsGenerating";

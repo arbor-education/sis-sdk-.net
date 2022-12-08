@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class BursaryPaymentManualCriterionStatus : ModelBase
     {
-        protected new string resourceType = ResourceType.BURSARY_PAYMENT_MANUAL_CRITERION_STATUS;
+        protected string resourceType = ResourceType.BURSARY_PAYMENT_MANUAL_CRITERION_STATUS;
         public const string BURSARY_PAYMENT = "bursaryPayment";
         public const string BURSARY_PAYMENT_MANUAL_CRITERION = "bursaryPaymentManualCriterion";
         public const string IS_MET = "isMet";

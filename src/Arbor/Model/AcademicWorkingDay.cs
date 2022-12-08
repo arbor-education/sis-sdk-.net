@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AcademicWorkingDay : ModelBase
     {
-        protected new string resourceType = ResourceType.ACADEMIC_WORKING_DAY;
+        protected string resourceType = ResourceType.ACADEMIC_WORKING_DAY;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

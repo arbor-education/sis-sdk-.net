@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class OptionsImportResult : ModelBase
     {
-        protected new string resourceType = ResourceType.OPTIONS_IMPORT_RESULT;
+        protected string resourceType = ResourceType.OPTIONS_IMPORT_RESULT;
         public const string ACADEMIC_YEAR = "academicYear";
         public const string STEPS_COMPLETED = "stepsCompleted";
         public const string STEP_IN_PROGRESS = "stepInProgress";

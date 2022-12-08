@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AlertRuleCondition : ModelBase
     {
-        protected new string resourceType = ResourceType.ALERT_RULE_CONDITION;
+        protected string resourceType = ResourceType.ALERT_RULE_CONDITION;
         public const string ALERT_RULE = "alertRule";
         public const string TRIGGER_FIELD = "triggerField";
         public const string CONDITION_GROUP = "conditionGroup";

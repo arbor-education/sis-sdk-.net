@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class EventParticipantInvitation : ModelBase
     {
-        protected new string resourceType = ResourceType.EVENT_PARTICIPANT_INVITATION;
+        protected string resourceType = ResourceType.EVENT_PARTICIPANT_INVITATION;
         public const string EVENT_PARTICIPANT = "eventParticipant";
         public const string INVITEE = "invitee";
         public const string INVITATION_DATETIME = "invitationDatetime";

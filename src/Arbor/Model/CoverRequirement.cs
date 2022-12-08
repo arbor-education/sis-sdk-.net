@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CoverRequirement : ModelBase
     {
-        protected new string resourceType = ResourceType.COVER_REQUIREMENT;
+        protected string resourceType = ResourceType.COVER_REQUIREMENT;
         public const string COVER_EVENT = "coverEvent";
         public const string ABSENT_STAFF = "absentStaff";
         public const string ABSENCE_EVENT = "absenceEvent";

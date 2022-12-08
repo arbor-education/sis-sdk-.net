@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class TwoYearOldFundingBasis : ModelBase
     {
-        protected new string resourceType = ResourceType.UK_DFE_TWO_YEAR_OLD_FUNDING_BASIS;
+        protected string resourceType = ResourceType.UK_DFE_TWO_YEAR_OLD_FUNDING_BASIS;
         public const string STUDENT = "student";
         public const string FUNDING_BASIS = "fundingBasis";
 

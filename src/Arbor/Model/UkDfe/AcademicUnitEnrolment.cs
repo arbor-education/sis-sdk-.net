@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class AcademicUnitEnrolment : ModelBase
     {
-        protected new string resourceType = ResourceType.UK_DFE_ACADEMIC_UNIT_ENROLMENT;
+        protected string resourceType = ResourceType.UK_DFE_ACADEMIC_UNIT_ENROLMENT;
         public const string PLANNED_EEP_HOURS = "plannedEepHours";
 
         public AcademicUnitEnrolment()

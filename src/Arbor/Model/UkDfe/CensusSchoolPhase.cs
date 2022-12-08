@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class CensusSchoolPhase : ModelBase
     {
-        protected new string resourceType = ResourceType.UK_DFE_CENSUS_SCHOOL_PHASE;
+        protected string resourceType = ResourceType.UK_DFE_CENSUS_SCHOOL_PHASE;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

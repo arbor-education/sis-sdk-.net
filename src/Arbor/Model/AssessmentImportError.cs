@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AssessmentImportError : ModelBase
     {
-        protected new string resourceType = ResourceType.ASSESSMENT_IMPORT_ERROR;
+        protected string resourceType = ResourceType.ASSESSMENT_IMPORT_ERROR;
         public const string ERROR_MESSAGE = "errorMessage";
 
         public AssessmentImportError()

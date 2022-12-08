@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class InverseDemographic : ModelBase
     {
-        protected new string resourceType = ResourceType.INVERSE_DEMOGRAPHIC;
+        protected string resourceType = ResourceType.INVERSE_DEMOGRAPHIC;
         public const string DEMOGRAPHIC = "demographic";
 
         public InverseDemographic()

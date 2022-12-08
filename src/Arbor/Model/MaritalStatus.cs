@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class MaritalStatus : ModelBase
     {
-        protected new string resourceType = ResourceType.MARITAL_STATUS;
+        protected string resourceType = ResourceType.MARITAL_STATUS;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

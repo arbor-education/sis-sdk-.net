@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class QualificationTimetableSessionType : ModelBase
     {
-        protected new string resourceType = ResourceType.QUALIFICATION_TIMETABLE_SESSION_TYPE;
+        protected string resourceType = ResourceType.QUALIFICATION_TIMETABLE_SESSION_TYPE;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

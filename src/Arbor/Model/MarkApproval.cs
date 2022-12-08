@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class MarkApproval : ModelBase
     {
-        protected new string resourceType = ResourceType.MARK_APPROVAL;
+        protected string resourceType = ResourceType.MARK_APPROVAL;
         public const string MARK = "mark";
         public const string APPROVAL_LEVEL = "approvalLevel";
         public const string ASSESSMENT_DATA_COLLECTION_ITEM = "assessmentDataCollectionItem";

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class UserDefinedRecord : ModelBase
     {
-        protected new string resourceType = ResourceType.USER_DEFINED_RECORD;
+        protected string resourceType = ResourceType.USER_DEFINED_RECORD;
         public const string ENTITY = "entity";
         public const string USER_DEFINED_FIELD = "userDefinedField";
         public const string VALUE = "value";

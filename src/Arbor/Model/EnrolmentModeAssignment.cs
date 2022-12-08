@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class EnrolmentModeAssignment : ModelBase
     {
-        protected new string resourceType = ResourceType.ENROLMENT_MODE_ASSIGNMENT;
+        protected string resourceType = ResourceType.ENROLMENT_MODE_ASSIGNMENT;
         public const string ACADEMIC_YEAR_ENROLMENT = "academicYearEnrolment";
         public const string ENROLMENT_MODE = "enrolmentMode";
         public const string START_DATE = "startDate";

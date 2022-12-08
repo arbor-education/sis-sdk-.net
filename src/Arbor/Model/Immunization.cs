@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Immunization : ModelBase
     {
-        protected new string resourceType = ResourceType.IMMUNIZATION;
+        protected string resourceType = ResourceType.IMMUNIZATION;
         public const string PERSON = "person";
         public const string IMMUNIZATION_TYPE = "immunizationType";
         public const string IMMUNIZATION_DATE = "immunizationDate";

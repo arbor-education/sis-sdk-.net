@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AttendanceRollCall : ModelBase
     {
-        protected new string resourceType = ResourceType.ATTENDANCE_ROLL_CALL;
+        protected string resourceType = ResourceType.ATTENDANCE_ROLL_CALL;
         public const string NAME = "name";
         public const string SHORT_NAME = "shortName";
         public const string AUTO_FILL_CLASS = "autoFillClass";

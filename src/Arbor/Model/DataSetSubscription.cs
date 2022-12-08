@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class DataSetSubscription : ModelBase
     {
-        protected new string resourceType = ResourceType.DATA_SET_SUBSCRIPTION;
+        protected string resourceType = ResourceType.DATA_SET_SUBSCRIPTION;
         public const string DATA_SET_NAME = "dataSetName";
         public const string DATA_SET_IDENTIFIER = "dataSetIdentifier";
         public const string SUPPLIER_IDENTIFIER = "supplierIdentifier";

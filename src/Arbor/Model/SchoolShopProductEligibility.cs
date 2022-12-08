@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class SchoolShopProductEligibility : ModelBase
     {
-        protected new string resourceType = ResourceType.SCHOOL_SHOP_PRODUCT_ELIGIBILITY;
+        protected string resourceType = ResourceType.SCHOOL_SHOP_PRODUCT_ELIGIBILITY;
         public const string SCHOOL_SHOP_PRODUCT = "schoolShopProduct";
         public const string ELIGIBLE = "eligible";
 

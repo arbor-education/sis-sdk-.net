@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class PushNotificationToken : ModelBase
     {
-        protected new string resourceType = ResourceType.PUSH_NOTIFICATION_TOKEN;
+        protected string resourceType = ResourceType.PUSH_NOTIFICATION_TOKEN;
         public const string USER = "user";
         public const string TOKEN = "token";
         public const string UNIQUE_IDENTIFIER = "uniqueIdentifier";

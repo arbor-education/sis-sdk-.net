@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ExternallyGeneratedReportCard : ModelBase
     {
-        protected new string resourceType = ResourceType.EXTERNALLY_GENERATED_REPORT_CARD;
+        protected string resourceType = ResourceType.EXTERNALLY_GENERATED_REPORT_CARD;
         public const string CONTENT = "content";
         public const string REPORT_CARD_BATCH = "reportCardBatch";
         public const string STUDENT = "student";

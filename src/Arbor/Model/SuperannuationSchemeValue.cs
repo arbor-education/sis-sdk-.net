@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class SuperannuationSchemeValue : ModelBase
     {
-        protected new string resourceType = ResourceType.SUPERANNUATION_SCHEME_VALUE;
+        protected string resourceType = ResourceType.SUPERANNUATION_SCHEME_VALUE;
         public const string SUPERANNUATION_SCHEME = "superannuationScheme";
         public const string EFFECTIVE_DATE = "effectiveDate";
         public const string END_DATE = "endDate";

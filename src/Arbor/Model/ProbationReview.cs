@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ProbationReview : ModelBase
     {
-        protected new string resourceType = ResourceType.PROBATION_REVIEW;
+        protected string resourceType = ResourceType.PROBATION_REVIEW;
         public const string PROBATION = "probation";
         public const string REVIEW_DATE = "reviewDate";
         public const string REVIEW_OUTCOME = "reviewOutcome";

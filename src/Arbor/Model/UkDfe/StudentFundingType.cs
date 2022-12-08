@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class StudentFundingType : ModelBase
     {
-        protected new string resourceType = ResourceType.UK_DFE_STUDENT_FUNDING_TYPE;
+        protected string resourceType = ResourceType.UK_DFE_STUDENT_FUNDING_TYPE;
         public const string D00209 = "d00209";
 
         public StudentFundingType()

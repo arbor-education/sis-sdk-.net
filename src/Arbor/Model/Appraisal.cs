@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Appraisal : ModelBase
     {
-        protected new string resourceType = ResourceType.APPRAISAL;
+        protected string resourceType = ResourceType.APPRAISAL;
         public const string APPRAISEE = "appraisee";
         public const string APPRAISAL_DATE = "appraisalDate";
         public const string APPRAISER = "appraiser";

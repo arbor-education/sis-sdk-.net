@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class OfstedGrade : ModelBase
     {
-        protected new string resourceType = ResourceType.UK_DFE_OFSTED_GRADE;
+        protected string resourceType = ResourceType.UK_DFE_OFSTED_GRADE;
         public const string LABEL = "label";
         public const string CODE = "code";
         public const string NUMERICAL_CODE = "numericalCode";

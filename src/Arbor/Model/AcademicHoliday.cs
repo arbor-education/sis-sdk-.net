@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AcademicHoliday : ModelBase
     {
-        protected new string resourceType = ResourceType.ACADEMIC_HOLIDAY;
+        protected string resourceType = ResourceType.ACADEMIC_HOLIDAY;
         public const string ACADEMIC_HOLIDAY_TYPE = "academicHolidayType";
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";

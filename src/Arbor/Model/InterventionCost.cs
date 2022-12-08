@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class InterventionCost : ModelBase
     {
-        protected new string resourceType = ResourceType.INTERVENTION_COST;
+        protected string resourceType = ResourceType.INTERVENTION_COST;
         public const string INTERVENTION = "intervention";
         public const string AMOUNT = "amount";
         public const string DESCRIPTION = "description";

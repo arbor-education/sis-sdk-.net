@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ProgrammeClassification : ModelBase
     {
-        protected new string resourceType = ResourceType.PROGRAMME_CLASSIFICATION;
+        protected string resourceType = ResourceType.PROGRAMME_CLASSIFICATION;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

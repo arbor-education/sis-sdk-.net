@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AssessmentMetricSet : ModelBase
     {
-        protected new string resourceType = ResourceType.ASSESSMENT_METRIC_SET;
+        protected string resourceType = ResourceType.ASSESSMENT_METRIC_SET;
         public const string NAME = "name";
         public const string IS_KEY_METRIC = "isKeyMetric";
         public const string RULE_ITEM_TYPE = "ruleItemType";

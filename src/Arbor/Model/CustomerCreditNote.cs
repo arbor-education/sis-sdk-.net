@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CustomerCreditNote : ModelBase
     {
-        protected new string resourceType = ResourceType.CUSTOMER_CREDIT_NOTE;
+        protected string resourceType = ResourceType.CUSTOMER_CREDIT_NOTE;
         public const string CUSTOMER_ACCOUNT = "customerAccount";
         public const string BILL_PAYER = "billPayer";
         public const string CREDIT_NOTE_DATE = "creditNoteDate";

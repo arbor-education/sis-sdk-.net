@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AcademicUnitQualificationLink : ModelBase
     {
-        protected new string resourceType = ResourceType.ACADEMIC_UNIT_QUALIFICATION_LINK;
+        protected string resourceType = ResourceType.ACADEMIC_UNIT_QUALIFICATION_LINK;
         public const string ACADEMIC_UNIT = "academicUnit";
         public const string QUALIFICATION_ASSESSABLE = "qualificationAssessable";
         public const string AUTOMATIC_ENTRY = "automaticEntry";

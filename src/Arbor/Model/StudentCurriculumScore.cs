@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class StudentCurriculumScore : ModelBase
     {
-        protected new string resourceType = ResourceType.STUDENT_CURRICULUM_SCORE;
+        protected string resourceType = ResourceType.STUDENT_CURRICULUM_SCORE;
         public const string STUDENT = "student";
         public const string CURRICULUM_ENTITY = "curriculumEntity";
         public const string ASSESSMENT_TYPE = "assessmentType";

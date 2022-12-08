@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class SiteTravelTime : ModelBase
     {
-        protected new string resourceType = ResourceType.SITE_TRAVEL_TIME;
+        protected string resourceType = ResourceType.SITE_TRAVEL_TIME;
         public const string SITE1 = "site1";
         public const string SITE2 = "site2";
         public const string TRAVEL_TIME = "travelTime";

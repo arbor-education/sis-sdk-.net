@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CandidateEntry : ModelBase
     {
-        protected new string resourceType = ResourceType.CANDIDATE_ENTRY;
+        protected string resourceType = ResourceType.CANDIDATE_ENTRY;
         public const string CANDIDATE = "candidate";
         public const string QUALIFICATION_LEARNING_UNIT = "qualificationLearningUnit";
         public const string QUALIFICATION_AVAILABILITY_INSTANCE = "qualificationAvailabilityInstance";

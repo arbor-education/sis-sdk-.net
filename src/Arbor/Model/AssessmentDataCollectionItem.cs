@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AssessmentDataCollectionItem : ModelBase
     {
-        protected new string resourceType = ResourceType.ASSESSMENT_DATA_COLLECTION_ITEM;
+        protected string resourceType = ResourceType.ASSESSMENT_DATA_COLLECTION_ITEM;
         public const string ASSESSMENT_DATA_COLLECTION = "assessmentDataCollection";
         public const string ASSESSMENT_ENTITY = "assessmentEntity";
         public const string STUDENT_GROUP = "studentGroup";
@@ -18,6 +18,7 @@ namespace Arbor.Model
         public const string DEADLINE_DATE = "deadlineDate";
         public const string COMPLETION_NUMERATOR = "completionNumerator";
         public const string COMPLETION_DENOMINATOR = "completionDenominator";
+        public const string DERIVE_ASSIGNED_STAFF = "deriveAssignedStaff";
 
         public AssessmentDataCollectionItem()
         {
@@ -134,6 +135,16 @@ namespace Arbor.Model
         public void setCompletionDenominator(int completionDenominator)
         {
             this.setProperty("completionDenominator", completionDenominator);
+        }
+
+        public bool getDeriveAssignedStaff()
+        {
+            return Convert.ToBoolean(this.getProperty("deriveAssignedStaff"));
+        }
+
+        public void setDeriveAssignedStaff(bool deriveAssignedStaff)
+        {
+            this.setProperty("deriveAssignedStaff", deriveAssignedStaff);
         }
 
 

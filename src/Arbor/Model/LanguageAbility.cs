@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class LanguageAbility : ModelBase
     {
-        protected new string resourceType = ResourceType.LANGUAGE_ABILITY;
+        protected string resourceType = ResourceType.LANGUAGE_ABILITY;
         public const string PERSON = "person";
         public const string LANGUAGE = "language";
         public const string IS_NATIVE_LANGUAGE = "isNativeLanguage";

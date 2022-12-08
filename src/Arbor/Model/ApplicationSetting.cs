@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ApplicationSetting : ModelBase
     {
-        protected new string resourceType = ResourceType.APPLICATION_SETTING;
+        protected string resourceType = ResourceType.APPLICATION_SETTING;
         public const string SETTING_NAME = "settingName";
         public const string SETTING_VALUE = "settingValue";
         public const string SETTING_CLASS = "settingClass";

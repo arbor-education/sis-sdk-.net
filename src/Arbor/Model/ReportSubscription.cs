@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ReportSubscription : ModelBase
     {
-        protected new string resourceType = ResourceType.REPORT_SUBSCRIPTION;
+        protected string resourceType = ResourceType.REPORT_SUBSCRIPTION;
         public const string REPORT_IDENTIFIER = "reportIdentifier";
         public const string SUBSCRIBER = "subscriber";
 

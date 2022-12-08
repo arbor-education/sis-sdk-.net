@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class PayScaleCategory : ModelBase
     {
-        protected new string resourceType = ResourceType.UK_DFE_PAY_SCALE_CATEGORY;
+        protected string resourceType = ResourceType.UK_DFE_PAY_SCALE_CATEGORY;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

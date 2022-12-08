@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CustomReportScope : ModelBase
     {
-        protected new string resourceType = ResourceType.CUSTOM_REPORT_SCOPE;
+        protected string resourceType = ResourceType.CUSTOM_REPORT_SCOPE;
         public const string CUSTOM_REPORT = "customReport";
         public const string BASE_ENTITY_TYPE = "baseEntityType";
         public const string REFERENCE_DATE_RANGE_START_DATE = "referenceDateRangeStartDate";

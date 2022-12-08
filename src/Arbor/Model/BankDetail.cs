@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class BankDetail : ModelBase
     {
-        protected new string resourceType = ResourceType.BANK_DETAIL;
+        protected string resourceType = ResourceType.BANK_DETAIL;
         public const string ACCOUNT_HOLDER = "accountHolder";
         public const string EFFECTIVE_DATE = "effectiveDate";
         public const string END_DATE = "endDate";

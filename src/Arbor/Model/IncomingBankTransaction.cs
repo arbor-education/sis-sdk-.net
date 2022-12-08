@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class IncomingBankTransaction : ModelBase
     {
-        protected new string resourceType = ResourceType.INCOMING_BANK_TRANSACTION;
+        protected string resourceType = ResourceType.INCOMING_BANK_TRANSACTION;
         public const string BILL_PAYER = "billPayer";
         public const string RECEIVED_DATE = "receivedDate";
         public const string CANCELLED_DATETIME = "cancelledDatetime";

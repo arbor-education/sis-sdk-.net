@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class InterventionSession : ModelBase
     {
-        protected new string resourceType = ResourceType.INTERVENTION_SESSION;
+        protected string resourceType = ResourceType.INTERVENTION_SESSION;
         public const string START_DATETIME = "startDatetime";
         public const string END_DATETIME = "endDatetime";
         public const string LOCATION_TEXT = "locationText";

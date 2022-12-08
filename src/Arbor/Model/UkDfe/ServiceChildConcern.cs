@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class ServiceChildConcern : ModelBase
     {
-        protected new string resourceType = ResourceType.UK_DFE_SERVICE_CHILD_CONCERN;
+        protected string resourceType = ResourceType.UK_DFE_SERVICE_CHILD_CONCERN;
         public const string STUDENT = "student";
         public const string MOVE_CONCERN = "moveConcern";
         public const string DEPLOYMENT_CONCERN = "deploymentConcern";

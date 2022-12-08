@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ReportCardBatchAcademicUnit : ModelBase
     {
-        protected new string resourceType = ResourceType.REPORT_CARD_BATCH_ACADEMIC_UNIT;
+        protected string resourceType = ResourceType.REPORT_CARD_BATCH_ACADEMIC_UNIT;
         public const string REPORT_CARD_BATCH = "reportCardBatch";
         public const string ORDER = "order";
         public const string ACADEMIC_UNIT = "academicUnit";

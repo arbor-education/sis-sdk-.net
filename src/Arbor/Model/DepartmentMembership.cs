@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class DepartmentMembership : ModelBase
     {
-        protected new string resourceType = ResourceType.DEPARTMENT_MEMBERSHIP;
+        protected string resourceType = ResourceType.DEPARTMENT_MEMBERSHIP;
         public const string DEPARTMENT_RESPONSIBILITY = "departmentResponsibility";
         public const string DEPARTMENT = "department";
         public const string STAFF = "staff";

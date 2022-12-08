@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class TimetablePeriodGrouping : ModelBase
     {
-        protected new string resourceType = ResourceType.TIMETABLE_PERIOD_GROUPING;
+        protected string resourceType = ResourceType.TIMETABLE_PERIOD_GROUPING;
         public const string ACADEMIC_YEAR = "academicYear";
         public const string NAME = "name";
         public const string SHORT_NAME = "shortName";

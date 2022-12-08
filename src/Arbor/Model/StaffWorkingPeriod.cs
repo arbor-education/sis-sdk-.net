@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class StaffWorkingPeriod : ModelBase
     {
-        protected new string resourceType = ResourceType.STAFF_WORKING_PERIOD;
+        protected string resourceType = ResourceType.STAFF_WORKING_PERIOD;
         public const string STAFF = "staff";
         public const string EFFECTIVE_DATE = "effectiveDate";
         public const string END_DATE = "endDate";

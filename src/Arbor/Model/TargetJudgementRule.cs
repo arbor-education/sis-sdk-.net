@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class TargetJudgementRule : ModelBase
     {
-        protected new string resourceType = ResourceType.TARGET_JUDGEMENT_RULE;
+        protected string resourceType = ResourceType.TARGET_JUDGEMENT_RULE;
         public const string ASSESSMENT_ASPECT = "assessmentAspect";
         public const string TARGET_JUDGEMENT = "targetJudgement";
         public const string AMOUNT = "amount";

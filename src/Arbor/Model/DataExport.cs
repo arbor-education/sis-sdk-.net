@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class DataExport : ModelBase
     {
-        protected new string resourceType = ResourceType.DATA_EXPORT;
+        protected string resourceType = ResourceType.DATA_EXPORT;
         public const string USER = "user";
         public const string MODULE = "module";
         public const string CONTROLLER = "controller";
@@ -104,9 +104,9 @@ namespace Arbor.Model
             return this.getProperty("params").ToString();
         }
 
-        public void setParams(string _params)
+        public void setParams(string params)
         {
-            this.setProperty("params", _params);
+            this.setProperty("params", params);
         }
 
         public string getHash()

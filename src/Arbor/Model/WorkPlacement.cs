@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class WorkPlacement : ModelBase
     {
-        protected new string resourceType = ResourceType.WORK_PLACEMENT;
+        protected string resourceType = ResourceType.WORK_PLACEMENT;
         public const string STUDENT = "student";
         public const string EMPLOYER = "employer";
         public const string START_DATE = "startDate";

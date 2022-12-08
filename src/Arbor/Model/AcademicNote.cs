@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AcademicNote : ModelBase
     {
-        protected new string resourceType = ResourceType.ACADEMIC_NOTE;
+        protected string resourceType = ResourceType.ACADEMIC_NOTE;
         public const string STUDENT = "student";
         public const string ACADEMIC_UNIT = "academicUnit";
         public const string SUMMARY = "summary";

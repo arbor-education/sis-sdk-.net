@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class EmailReference : ModelBase
     {
-        protected new string resourceType = ResourceType.EMAIL_REFERENCE;
+        protected string resourceType = ResourceType.EMAIL_REFERENCE;
         public const string EMAIL = "email";
         public const string REFERENCE_TYPE = "referenceType";
         public const string REFERENCED_MESSAGE_ID = "referencedMessageId";

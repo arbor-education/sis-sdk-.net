@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CustomerAccount : ModelBase
     {
-        protected new string resourceType = ResourceType.CUSTOMER_ACCOUNT;
+        protected string resourceType = ResourceType.CUSTOMER_ACCOUNT;
         public const string RELATED_ENTITY = "relatedEntity";
         public const string DELETED_RELATED_ENTITY_NAME = "deletedRelatedEntityName";
         public const string CUSTOMER_ACCOUNT_TYPE = "customerAccountType";

@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class SchoolCensusReturn : ModelBase
     {
-        protected new string resourceType = ResourceType.UK_DFE_SCHOOL_CENSUS_RETURN;
+        protected string resourceType = ResourceType.UK_DFE_SCHOOL_CENSUS_RETURN;
         public const string SCHOOL_CENSUS = "schoolCensus";
         public const string EDUCATIONAL_INSTITUTION = "educationalInstitution";
         public const string CURRENT_RETURN_NUMBER = "currentReturnNumber";

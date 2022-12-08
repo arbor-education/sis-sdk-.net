@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Tagging : ModelBase
     {
-        protected new string resourceType = ResourceType.TAGGING;
+        protected string resourceType = ResourceType.TAGGING;
         public const string TAG = "tag";
         public const string TAGGED_OBJECT = "taggedObject";
         public const string START_DATE = "startDate";

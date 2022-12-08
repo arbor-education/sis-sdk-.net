@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class DeliveryAddress : ModelBase
     {
-        protected new string resourceType = ResourceType.DELIVERY_ADDRESS;
+        protected string resourceType = ResourceType.DELIVERY_ADDRESS;
         public const string DELIVERY_ADDRESS_NAME = "deliveryAddressName";
         public const string OWNER = "owner";
         public const string POSTAL_ADDRESS = "postalAddress";

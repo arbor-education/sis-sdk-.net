@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class SmsMessageStatus : ModelBase
     {
-        protected new string resourceType = ResourceType.SMS_MESSAGE_STATUS;
+        protected string resourceType = ResourceType.SMS_MESSAGE_STATUS;
         public const string SMS_MESSAGE = "smsMessage";
         public const string SMS_MESSAGE_PART = "smsMessagePart";
         public const string STATUS_TYPE = "statusType";

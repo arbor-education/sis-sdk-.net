@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Position : ModelBase
     {
-        protected new string resourceType = ResourceType.POSITION;
+        protected string resourceType = ResourceType.POSITION;
         public const string POSITION_CATEGORY = "positionCategory";
         public const string WORKFORCE_VACANCY_POST = "workforceVacancyPost";
         public const string WORKFORCE_CENSUS_ROLE_IDENTIFIER = "workforceCensusRoleIdentifier";

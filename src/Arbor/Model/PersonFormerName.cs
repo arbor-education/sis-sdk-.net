@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class PersonFormerName : ModelBase
     {
-        protected new string resourceType = ResourceType.PERSON_FORMER_NAME;
+        protected string resourceType = ResourceType.PERSON_FORMER_NAME;
         public const string PERSON = "person";
         public const string FROM_DATE = "fromDate";
         public const string END_DATE = "endDate";

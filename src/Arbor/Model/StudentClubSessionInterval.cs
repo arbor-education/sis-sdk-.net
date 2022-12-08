@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class StudentClubSessionInterval : ModelBase
     {
-        protected new string resourceType = ResourceType.STUDENT_CLUB_SESSION_INTERVAL;
+        protected string resourceType = ResourceType.STUDENT_CLUB_SESSION_INTERVAL;
         public const string STUDENT = "student";
         public const string CLUB_SESSION_INTERVAL = "clubSessionInterval";
         public const string CLUB_SESSION = "clubSession";

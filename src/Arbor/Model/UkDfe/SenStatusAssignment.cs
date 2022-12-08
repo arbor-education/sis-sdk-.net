@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class SenStatusAssignment : ModelBase
     {
-        protected new string resourceType = ResourceType.UK_DFE_SEN_STATUS_ASSIGNMENT;
+        protected string resourceType = ResourceType.UK_DFE_SEN_STATUS_ASSIGNMENT;
         public const string IS_MEMBER_OF_SEN_UNIT = "isMemberOfSenUnit";
         public const string HAS_RESOURCED_PROVISION = "hasResourcedProvision";
 

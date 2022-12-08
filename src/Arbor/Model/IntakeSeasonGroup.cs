@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class IntakeSeasonGroup : ModelBase
     {
-        protected new string resourceType = ResourceType.INTAKE_SEASON_GROUP;
+        protected string resourceType = ResourceType.INTAKE_SEASON_GROUP;
         public const string GROUP_NAME = "groupName";
         public const string INTAKE_SEASON = "intakeSeason";
         public const string EXPECTED_ADMISSION_DATE = "expectedAdmissionDate";

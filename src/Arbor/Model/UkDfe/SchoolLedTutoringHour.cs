@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class SchoolLedTutoringHour : ModelBase
     {
-        protected new string resourceType = ResourceType.UK_DFE_SCHOOL_LED_TUTORING_HOUR;
+        protected string resourceType = ResourceType.UK_DFE_SCHOOL_LED_TUTORING_HOUR;
         public const string STUDENT = "student";
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";

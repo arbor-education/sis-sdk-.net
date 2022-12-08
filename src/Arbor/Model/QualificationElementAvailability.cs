@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class QualificationElementAvailability : ModelBase
     {
-        protected new string resourceType = ResourceType.QUALIFICATION_ELEMENT_AVAILABILITY;
+        protected string resourceType = ResourceType.QUALIFICATION_ELEMENT_AVAILABILITY;
         public const string QUALIFICATION_AVAILABILITY_INSTANCE = "qualificationAvailabilityInstance";
         public const string QUALIFICATION_ELEMENT = "qualificationElement";
 

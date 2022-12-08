@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AssessmentImportRow : ModelBase
     {
-        protected new string resourceType = ResourceType.ASSESSMENT_IMPORT_ROW;
+        protected string resourceType = ResourceType.ASSESSMENT_IMPORT_ROW;
         public const string MAPPED_STUDENT = "mappedStudent";
 
         public AssessmentImportRow()

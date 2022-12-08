@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class TeachingAssistantAllocation : ModelBase
     {
-        protected new string resourceType = ResourceType.TEACHING_ASSISTANT_ALLOCATION;
+        protected string resourceType = ResourceType.TEACHING_ASSISTANT_ALLOCATION;
         public const string STAFF = "staff";
         public const string DAY_OF_CYCLE = "dayOfCycle";
         public const string START_TIME = "startTime";

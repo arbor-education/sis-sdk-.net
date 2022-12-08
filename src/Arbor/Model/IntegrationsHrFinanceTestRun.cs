@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class IntegrationsHrFinanceTestRun : ModelBase
     {
-        protected new string resourceType = ResourceType.INTEGRATIONS_HR_FINANCE_TEST_RUN;
+        protected string resourceType = ResourceType.INTEGRATIONS_HR_FINANCE_TEST_RUN;
         public const string INTEGRATIONS_HR_FINANCE_PROVIDER = "integrationsHrFinanceProvider";
         public const string REQUESTED_DATETIME = "requestedDatetime";
         public const string COMPLETED_DATETIME = "completedDatetime";

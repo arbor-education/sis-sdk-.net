@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CommunicationTag : ModelBase
     {
-        protected new string resourceType = ResourceType.COMMUNICATION_TAG;
+        protected string resourceType = ResourceType.COMMUNICATION_TAG;
         public const string COMMUNICATION = "communication";
         public const string TAGGED_ENTITY = "taggedEntity";
         public const string IS_SHARED = "isShared";

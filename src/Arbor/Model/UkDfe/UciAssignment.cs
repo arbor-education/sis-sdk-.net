@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class UciAssignment : ModelBase
     {
-        protected new string resourceType = ResourceType.UK_DFE_UCI_ASSIGNMENT;
+        protected string resourceType = ResourceType.UK_DFE_UCI_ASSIGNMENT;
         public const string STUDENT = "student";
         public const string UCI = "uci";
         public const string ISSUED_YEAR = "issuedYear";

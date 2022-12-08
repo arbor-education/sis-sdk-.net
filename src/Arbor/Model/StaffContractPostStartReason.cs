@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class StaffContractPostStartReason : ModelBase
     {
-        protected new string resourceType = ResourceType.STAFF_CONTRACT_POST_START_REASON;
+        protected string resourceType = ResourceType.STAFF_CONTRACT_POST_START_REASON;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

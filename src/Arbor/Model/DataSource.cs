@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class DataSource : ModelBase
     {
-        protected new string resourceType = ResourceType.DATA_SOURCE;
+        protected string resourceType = ResourceType.DATA_SOURCE;
         public const string DOMAIN = "domain";
         public const string PROVIDER = "provider";
 

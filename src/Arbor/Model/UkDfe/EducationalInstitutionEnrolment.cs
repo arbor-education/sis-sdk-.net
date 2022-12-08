@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class EducationalInstitutionEnrolment : ModelBase
     {
-        protected new string resourceType = ResourceType.UK_DFE_EDUCATIONAL_INSTITUTION_ENROLMENT;
+        protected string resourceType = ResourceType.UK_DFE_EDUCATIONAL_INSTITUTION_ENROLMENT;
         public const string REMOVAL_GROUNDS = "removalGrounds";
         public const string ALTERNATIVE_PROVISION_REASON = "alternativeProvisionReason";
 

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class FinalAssessmentTarget : ModelBase
     {
-        protected new string resourceType = ResourceType.FINAL_ASSESSMENT_TARGET;
+        protected string resourceType = ResourceType.FINAL_ASSESSMENT_TARGET;
         public const string STUDENT = "student";
         public const string ASSESSMENT = "assessment";
         public const string GRADE = "grade";

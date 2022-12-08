@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class SendingProfile : ModelBase
     {
-        protected new string resourceType = ResourceType.SENDING_PROFILE;
+        protected string resourceType = ResourceType.SENDING_PROFILE;
         public const string OWNER = "owner";
         public const string EMAIL_ADDRESS = "emailAddress";
         public const string MOBILE_TELEPHONE_NUMBER = "mobileTelephoneNumber";

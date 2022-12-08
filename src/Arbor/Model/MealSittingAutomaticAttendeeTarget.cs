@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class MealSittingAutomaticAttendeeTarget : ModelBase
     {
-        protected new string resourceType = ResourceType.MEAL_SITTING_AUTOMATIC_ATTENDEE_TARGET;
+        protected string resourceType = ResourceType.MEAL_SITTING_AUTOMATIC_ATTENDEE_TARGET;
         public const string MEAL_SITTING = "mealSitting";
         public const string AUTOMATIC_ATTENDEE_TARGET = "automaticAttendeeTarget";
 

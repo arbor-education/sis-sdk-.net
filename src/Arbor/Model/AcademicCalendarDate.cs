@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AcademicCalendarDate : ModelBase
     {
-        protected new string resourceType = ResourceType.ACADEMIC_CALENDAR_DATE;
+        protected string resourceType = ResourceType.ACADEMIC_CALENDAR_DATE;
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
         public const string CALENDAR_YEAR = "calendarYear";

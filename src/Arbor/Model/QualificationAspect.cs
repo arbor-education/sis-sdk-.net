@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class QualificationAspect : ModelBase
     {
-        protected new string resourceType = ResourceType.QUALIFICATION_ASPECT;
+        protected string resourceType = ResourceType.QUALIFICATION_ASPECT;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

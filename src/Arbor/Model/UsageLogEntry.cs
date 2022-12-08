@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class UsageLogEntry : ModelBase
     {
-        protected new string resourceType = ResourceType.USAGE_LOG_ENTRY;
+        protected string resourceType = ResourceType.USAGE_LOG_ENTRY;
         public const string TIMESTAMP = "timestamp";
         public const string USER = "user";
         public const string SEVERITY = "severity";

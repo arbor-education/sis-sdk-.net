@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Kpi : ModelBase
     {
-        protected new string resourceType = ResourceType.KPI;
+        protected string resourceType = ResourceType.KPI;
         public const string CODE = "code";
         public const string KPI_NAME = "kpiName";
         public const string DESCRIPTION = "description";

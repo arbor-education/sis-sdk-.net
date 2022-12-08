@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Book : ModelBase
     {
-        protected new string resourceType = ResourceType.BOOK;
+        protected string resourceType = ResourceType.BOOK;
         public const string BOOK_TYPE = "bookType";
         public const string PREFIX = "prefix";
         public const string FIRST_NUMBER = "firstNumber";

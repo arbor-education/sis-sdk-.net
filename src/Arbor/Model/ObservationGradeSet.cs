@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ObservationGradeSet : ModelBase
     {
-        protected new string resourceType = ResourceType.OBSERVATION_GRADE_SET;
+        protected string resourceType = ResourceType.OBSERVATION_GRADE_SET;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

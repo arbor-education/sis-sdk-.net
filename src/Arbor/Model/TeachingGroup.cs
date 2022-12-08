@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class TeachingGroup : ModelBase
     {
-        protected new string resourceType = ResourceType.TEACHING_GROUP;
+        protected string resourceType = ResourceType.TEACHING_GROUP;
         public const string TEACHING_GROUP_NAME = "teachingGroupName";
         public const string DESCRIPTION = "description";
         public const string ACADEMIC_YEAR = "academicYear";

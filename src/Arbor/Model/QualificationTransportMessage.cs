@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class QualificationTransportMessage : ModelBase
     {
-        protected new string resourceType = ResourceType.QUALIFICATION_TRANSPORT_MESSAGE;
+        protected string resourceType = ResourceType.QUALIFICATION_TRANSPORT_MESSAGE;
         public const string QUALIFICATION_TRANSPORT_CERTIFICATE = "qualificationTransportCertificate";
         public const string CONTENT = "content";
         public const string TYPE = "type";

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CandidateRegistrationWithdrawalProposal : ModelBase
     {
-        protected new string resourceType = ResourceType.CANDIDATE_REGISTRATION_WITHDRAWAL_PROPOSAL;
+        protected string resourceType = ResourceType.CANDIDATE_REGISTRATION_WITHDRAWAL_PROPOSAL;
         public const string CANDIDATE_PROPOSAL = "candidateProposal";
         public const string CANDIDATE_REGISTRATION = "candidateRegistration";
         public const string APPROVED_BY_STAFF = "approvedByStaff";

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CourtOrder : ModelBase
     {
-        protected new string resourceType = ResourceType.COURT_ORDER;
+        protected string resourceType = ResourceType.COURT_ORDER;
         public const string SUMMARY = "summary";
         public const string CONTENT = "content";
         public const string EFFECTIVE_DATE = "effectiveDate";

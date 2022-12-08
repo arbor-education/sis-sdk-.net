@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CandidateAccessArrangement : ModelBase
     {
-        protected new string resourceType = ResourceType.CANDIDATE_ACCESS_ARRANGEMENT;
+        protected string resourceType = ResourceType.CANDIDATE_ACCESS_ARRANGEMENT;
         public const string CANDIDATE = "candidate";
         public const string ACCESS_ARRANGEMENT = "accessArrangement";
         public const string EXTRA_TIME_PERCENTAGE = "extraTimePercentage";

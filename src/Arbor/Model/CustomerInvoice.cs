@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CustomerInvoice : ModelBase
     {
-        protected new string resourceType = ResourceType.CUSTOMER_INVOICE;
+        protected string resourceType = ResourceType.CUSTOMER_INVOICE;
         public const string PREVIOUS_CUSTOMER_INVOICE = "previousCustomerInvoice";
         public const string CUSTOMER_ACCOUNT = "customerAccount";
         public const string INVOICE_NUMBER = "invoiceNumber";

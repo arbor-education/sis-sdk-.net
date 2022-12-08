@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Allowance : ModelBase
     {
-        protected new string resourceType = ResourceType.ALLOWANCE;
+        protected string resourceType = ResourceType.ALLOWANCE;
         public const string ALLOWANCE_NAME = "allowanceName";
         public const string ALLOWANCE_CODE = "allowanceCode";
 

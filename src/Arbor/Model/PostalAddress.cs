@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class PostalAddress : ModelBase
     {
-        protected new string resourceType = ResourceType.POSTAL_ADDRESS;
+        protected string resourceType = ResourceType.POSTAL_ADDRESS;
         public const string ADDRESS1 = "address1";
         public const string ADDRESS2 = "address2";
         public const string ADDRESS3 = "address3";

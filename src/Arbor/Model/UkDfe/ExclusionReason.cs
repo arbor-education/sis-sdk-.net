@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class ExclusionReason : ModelBase
     {
-        protected new string resourceType = ResourceType.UK_DFE_EXCLUSION_REASON;
+        protected string resourceType = ResourceType.UK_DFE_EXCLUSION_REASON;
         public const string D00024 = "d00024";
 
         public ExclusionReason()

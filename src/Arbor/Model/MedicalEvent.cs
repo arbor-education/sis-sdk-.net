@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class MedicalEvent : ModelBase
     {
-        protected new string resourceType = ResourceType.MEDICAL_EVENT;
+        protected string resourceType = ResourceType.MEDICAL_EVENT;
         public const string PERSON = "person";
         public const string START_DATETIME = "startDatetime";
         public const string END_DATETIME = "endDatetime";

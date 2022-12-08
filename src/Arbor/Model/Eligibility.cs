@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Eligibility : ModelBase
     {
-        protected new string resourceType = ResourceType.ELIGIBILITY;
+        protected string resourceType = ResourceType.ELIGIBILITY;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

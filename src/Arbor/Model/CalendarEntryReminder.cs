@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CalendarEntryReminder : ModelBase
     {
-        protected new string resourceType = ResourceType.CALENDAR_ENTRY_REMINDER;
+        protected string resourceType = ResourceType.CALENDAR_ENTRY_REMINDER;
         public const string CALENDAR_ENTRY_MAPPING = "calendarEntryMapping";
         public const string REMINDER_SENT_DATETIME = "reminderSentDatetime";
 

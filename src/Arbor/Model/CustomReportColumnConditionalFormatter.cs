@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CustomReportColumnConditionalFormatter : ModelBase
     {
-        protected new string resourceType = ResourceType.CUSTOM_REPORT_COLUMN_CONDITIONAL_FORMATTER;
+        protected string resourceType = ResourceType.CUSTOM_REPORT_COLUMN_CONDITIONAL_FORMATTER;
         public const string CUSTOM_REPORT_COLUMN = "customReportColumn";
         public const string CONDITION_CLASS = "conditionClass";
         public const string CONDITION_PARAMS = "conditionParams";

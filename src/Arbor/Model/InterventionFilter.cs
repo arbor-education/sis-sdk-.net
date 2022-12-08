@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class InterventionFilter : ModelBase
     {
-        protected new string resourceType = ResourceType.INTERVENTION_FILTER;
+        protected string resourceType = ResourceType.INTERVENTION_FILTER;
         public const string INTERVENTION = "intervention";
         public const string FIELD_CLASS = "fieldClass";
         public const string FIELD_PARAMS = "fieldParams";

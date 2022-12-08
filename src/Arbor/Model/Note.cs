@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Note : ModelBase
     {
-        protected new string resourceType = ResourceType.NOTE;
+        protected string resourceType = ResourceType.NOTE;
         public const string NOTE = "note";
         public const string REFERENCE_OBJECT = "referenceObject";
         public const string IS_SHARED_WITH_GUARDIANS = "isSharedWithGuardians";

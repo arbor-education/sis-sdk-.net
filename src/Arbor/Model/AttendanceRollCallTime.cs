@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AttendanceRollCallTime : ModelBase
     {
-        protected new string resourceType = ResourceType.ATTENDANCE_ROLL_CALL_TIME;
+        protected string resourceType = ResourceType.ATTENDANCE_ROLL_CALL_TIME;
         public const string ATTENDANCE_ROLL_CALL = "attendanceRollCall";
         public const string EFFECTIVE_DATE = "effectiveDate";
         public const string END_DATE = "endDate";

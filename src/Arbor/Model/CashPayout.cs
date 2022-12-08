@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CashPayout : ModelBase
     {
-        protected new string resourceType = ResourceType.CASH_PAYOUT;
+        protected string resourceType = ResourceType.CASH_PAYOUT;
         public const string CUSTOMER_ACCOUNT = "customerAccount";
         public const string PAYOUT_DATETIME = "payoutDatetime";
         public const string PAYOUT = "payout";

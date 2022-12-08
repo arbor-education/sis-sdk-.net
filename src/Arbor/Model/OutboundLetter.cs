@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class OutboundLetter : ModelBase
     {
-        protected new string resourceType = ResourceType.OUTBOUND_LETTER;
+        protected string resourceType = ResourceType.OUTBOUND_LETTER;
         public const string SENDER = "sender";
         public const string DOCUMENT_LAYOUT = "documentLayout";
         public const string BODY = "body";

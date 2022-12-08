@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class QualifiedTeacherRoute : ModelBase
     {
-        protected new string resourceType = ResourceType.UK_DFE_QUALIFIED_TEACHER_ROUTE;
+        protected string resourceType = ResourceType.UK_DFE_QUALIFIED_TEACHER_ROUTE;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

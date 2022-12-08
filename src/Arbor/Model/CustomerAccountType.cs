@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CustomerAccountType : ModelBase
     {
-        protected new string resourceType = ResourceType.CUSTOMER_ACCOUNT_TYPE;
+        protected string resourceType = ResourceType.CUSTOMER_ACCOUNT_TYPE;
         public const string ACCOUNT_TYPE_NAME = "accountTypeName";
         public const string ACCOUNT_TYPE_DESCRIPTION = "accountTypeDescription";
         public const string CODE = "code";

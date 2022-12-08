@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class RoomLayoutSeat : ModelBase
     {
-        protected new string resourceType = ResourceType.ROOM_LAYOUT_SEAT;
+        protected string resourceType = ResourceType.ROOM_LAYOUT_SEAT;
         public const string ROOM_LAYOUT = "roomLayout";
         public const string X = "x";
         public const string Y = "y";

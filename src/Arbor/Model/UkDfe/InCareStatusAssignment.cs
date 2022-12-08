@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class InCareStatusAssignment : ModelBase
     {
-        protected new string resourceType = ResourceType.UK_DFE_IN_CARE_STATUS_ASSIGNMENT;
+        protected string resourceType = ResourceType.UK_DFE_IN_CARE_STATUS_ASSIGNMENT;
         public const string RESPONSIBLE_LOCAL_AUTHORITY = "responsibleLocalAuthority";
 
         public InCareStatusAssignment()

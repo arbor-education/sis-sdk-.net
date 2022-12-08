@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AdditionalPaymentReason : ModelBase
     {
-        protected new string resourceType = ResourceType.ADDITIONAL_PAYMENT_REASON;
+        protected string resourceType = ResourceType.ADDITIONAL_PAYMENT_REASON;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class StudentStandardizedAssessmentMark : ModelBase
     {
-        protected new string resourceType = ResourceType.STUDENT_STANDARDIZED_ASSESSMENT_MARK;
+        protected string resourceType = ResourceType.STUDENT_STANDARDIZED_ASSESSMENT_MARK;
         public const string STUDENT = "student";
         public const string STANDARDIZED_ASSESSMENT = "standardizedAssessment";
         public const string STUDENT_STANDARDIZED_ASSESSMENT = "studentStandardizedAssessment";

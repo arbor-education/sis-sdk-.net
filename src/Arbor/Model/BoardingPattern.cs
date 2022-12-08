@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class BoardingPattern : ModelBase
     {
-        protected new string resourceType = ResourceType.BOARDING_PATTERN;
+        protected string resourceType = ResourceType.BOARDING_PATTERN;
         public const string STUDENT = "student";
         public const string EFFECTIVE_DATE = "effectiveDate";
         public const string END_DATE = "endDate";

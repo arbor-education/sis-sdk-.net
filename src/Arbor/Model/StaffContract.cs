@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class StaffContract : ModelBase
     {
-        protected new string resourceType = ResourceType.STAFF_CONTRACT;
+        protected string resourceType = ResourceType.STAFF_CONTRACT;
         public const string STAFF = "staff";
         public const string STAFF_EMPLOYMENT_TYPE = "staffEmploymentType";
         public const string CONTRACT_NAME = "contractName";

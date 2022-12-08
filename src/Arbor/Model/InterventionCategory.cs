@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class InterventionCategory : ModelBase
     {
-        protected new string resourceType = ResourceType.INTERVENTION_CATEGORY;
+        protected string resourceType = ResourceType.INTERVENTION_CATEGORY;
         public const string INTERVENTION_CATEGORY_NAME = "interventionCategoryName";
         public const string SHORT_NAME = "shortName";
         public const string CODE = "code";

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class StaffContractPostAdditionalPayment : ModelBase
     {
-        protected new string resourceType = ResourceType.STAFF_CONTRACT_POST_ADDITIONAL_PAYMENT;
+        protected string resourceType = ResourceType.STAFF_CONTRACT_POST_ADDITIONAL_PAYMENT;
         public const string STAFF_CONTRACT_POST = "staffContractPost";
         public const string ADDITIONAL_PAYMENT = "additionalPayment";
         public const string PAYMENT_DATE = "paymentDate";

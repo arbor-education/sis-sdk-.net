@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CustomerPayment : ModelBase
     {
-        protected new string resourceType = ResourceType.CUSTOMER_PAYMENT;
+        protected string resourceType = ResourceType.CUSTOMER_PAYMENT;
         public const string CUSTOMER_INVOICE = "customerInvoice";
         public const string BILL_PAYER = "billPayer";
         public const string INCOMING_DIRECT_DEBIT_TRANSACTION = "incomingDirectDebitTransaction";

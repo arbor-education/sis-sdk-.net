@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CustomGroupNotificationRecipient : ModelBase
     {
-        protected new string resourceType = ResourceType.CUSTOM_GROUP_NOTIFICATION_RECIPIENT;
+        protected string resourceType = ResourceType.CUSTOM_GROUP_NOTIFICATION_RECIPIENT;
         public const string CUSTOM_GROUP_NOTIFICATION_SETTING = "customGroupNotificationSetting";
         public const string STAFF = "staff";
         public const string STAFF_TYPE = "staffType";

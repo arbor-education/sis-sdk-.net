@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class EmailAccountAccessPermission : ModelBase
     {
-        protected new string resourceType = ResourceType.EMAIL_ACCOUNT_ACCESS_PERMISSION;
+        protected string resourceType = ResourceType.EMAIL_ACCOUNT_ACCESS_PERMISSION;
         public const string EMAIL_ACCOUNT = "emailAccount";
         public const string BUSINESS_ROLE = "businessRole";
 

@@ -10,7 +10,7 @@ namespace Arbor.Model
 {
     public class RegistrationForm : ModelBase
     {
-        protected new string resourceType = ResourceType.REGISTRATION_FORM;
+        protected string resourceType = ResourceType.REGISTRATION_FORM;
         public const string CODE = "code";
         public const string REGISTRATION_FORM_NAME = "registrationFormName";
         public const string SHORT_NAME = "shortName";

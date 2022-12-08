@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class BehaviouralIncidentBehaviour : ModelBase
     {
-        protected new string resourceType = ResourceType.BEHAVIOURAL_INCIDENT_BEHAVIOUR;
+        protected string resourceType = ResourceType.BEHAVIOURAL_INCIDENT_BEHAVIOUR;
         public const string BEHAVIOURAL_INCIDENT = "behaviouralIncident";
         public const string STUDENT = "student";
         public const string BEHAVIOUR = "behaviour";

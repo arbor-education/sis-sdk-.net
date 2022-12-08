@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class KpiTarget : ModelBase
     {
-        protected new string resourceType = ResourceType.KPI_TARGET;
+        protected string resourceType = ResourceType.KPI_TARGET;
         public const string KPI = "kpi";
         public const string EFFECTIVE_DATE = "effectiveDate";
         public const string END_DATE = "endDate";

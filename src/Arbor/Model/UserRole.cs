@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class UserRole : ModelBase
     {
-        protected new string resourceType = ResourceType.USER_ROLE;
+        protected string resourceType = ResourceType.USER_ROLE;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class VisionTest : ModelBase
     {
-        protected new string resourceType = ResourceType.VISION_TEST;
+        protected string resourceType = ResourceType.VISION_TEST;
         public const string STUDENT = "student";
         public const string TEST_DATE = "testDate";
         public const string COLOR_BLINDNESS = "colorBlindness";

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class KpiRange : ModelBase
     {
-        protected new string resourceType = ResourceType.KPI_RANGE;
+        protected string resourceType = ResourceType.KPI_RANGE;
         public const string KPI = "kpi";
         public const string KPI_TARGET = "kpiTarget";
         public const string RANGE_NAME = "rangeName";

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class IncomingCardTransaction : ModelBase
     {
-        protected new string resourceType = ResourceType.INCOMING_CARD_TRANSACTION;
+        protected string resourceType = ResourceType.INCOMING_CARD_TRANSACTION;
         public const string BILL_PAYER = "billPayer";
         public const string PAYMENT_PROVIDER = "paymentProvider";
         public const string PAYMENT_PROVIDER_PAYOUT = "paymentProviderPayout";

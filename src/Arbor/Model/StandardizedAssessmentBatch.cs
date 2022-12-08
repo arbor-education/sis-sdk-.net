@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class StandardizedAssessmentBatch : ModelBase
     {
-        protected new string resourceType = ResourceType.STANDARDIZED_ASSESSMENT_BATCH;
+        protected string resourceType = ResourceType.STANDARDIZED_ASSESSMENT_BATCH;
         public const string ACADEMIC_YEAR = "academicYear";
         public const string BATCH_NAME = "batchName";
         public const string STANDARDIZED_ASSESSMENT_TEMPLATE = "standardizedAssessmentTemplate";

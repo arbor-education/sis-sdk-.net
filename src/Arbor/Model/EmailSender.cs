@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class EmailSender : ModelBase
     {
-        protected new string resourceType = ResourceType.EMAIL_SENDER;
+        protected string resourceType = ResourceType.EMAIL_SENDER;
         public const string EMAIL = "email";
         public const string SENDER_TYPE = "senderType";
         public const string SENDER_NAME = "senderName";

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class StandardizedAssessmentTemplate : ModelBase
     {
-        protected new string resourceType = ResourceType.STANDARDIZED_ASSESSMENT_TEMPLATE;
+        protected string resourceType = ResourceType.STANDARDIZED_ASSESSMENT_TEMPLATE;
         public const string TEMPLATE_NAME = "templateName";
         public const string CODE = "code";
         public const string VALIDITY_START_DATE = "validityStartDate";

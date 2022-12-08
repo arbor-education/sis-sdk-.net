@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CompanyStaff : ModelBase
     {
-        protected new string resourceType = ResourceType.COMPANY_STAFF;
+        protected string resourceType = ResourceType.COMPANY_STAFF;
         public const string COMPANY = "company";
         public const string PERSON = "person";
         public const string POSITION = "position";

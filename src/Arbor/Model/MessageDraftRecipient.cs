@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class MessageDraftRecipient : ModelBase
     {
-        protected new string resourceType = ResourceType.MESSAGE_DRAFT_RECIPIENT;
+        protected string resourceType = ResourceType.MESSAGE_DRAFT_RECIPIENT;
         public const string MESSAGE_DRAFT = "messageDraft";
         public const string RECIPIENT = "recipient";
         public const string RESOLVER = "resolver";

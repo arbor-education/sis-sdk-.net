@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class BursaryPaymentAutomaticCriterion : ModelBase
     {
-        protected new string resourceType = ResourceType.BURSARY_PAYMENT_AUTOMATIC_CRITERION;
+        protected string resourceType = ResourceType.BURSARY_PAYMENT_AUTOMATIC_CRITERION;
         public const string BURSARY_TYPE = "bursaryType";
         public const string NAME = "name";
         public const string FIELD_CLASS = "fieldClass";

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Trip : ModelBase
     {
-        protected new string resourceType = ResourceType.TRIP;
+        protected string resourceType = ResourceType.TRIP;
         public const string START_DATETIME = "startDatetime";
         public const string END_DATETIME = "endDatetime";
         public const string LOCATION_TEXT = "locationText";

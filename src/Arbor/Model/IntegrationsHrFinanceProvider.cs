@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class IntegrationsHrFinanceProvider : ModelBase
     {
-        protected new string resourceType = ResourceType.INTEGRATIONS_HR_FINANCE_PROVIDER;
+        protected string resourceType = ResourceType.INTEGRATIONS_HR_FINANCE_PROVIDER;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

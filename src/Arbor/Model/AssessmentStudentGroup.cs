@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AssessmentStudentGroup : ModelBase
     {
-        protected new string resourceType = ResourceType.ASSESSMENT_STUDENT_GROUP;
+        protected string resourceType = ResourceType.ASSESSMENT_STUDENT_GROUP;
         public const string ACADEMIC_YEAR_ASSESSMENT = "academicYearAssessment";
         public const string STUDENT_GROUP = "studentGroup";
 

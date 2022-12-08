@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AssessmentGradeSet : ModelBase
     {
-        protected new string resourceType = ResourceType.ASSESSMENT_GRADE_SET;
+        protected string resourceType = ResourceType.ASSESSMENT_GRADE_SET;
         public const string ASSESSMENT = "assessment";
         public const string GRADE_SET = "gradeSet";
         public const string IS_DEFAULT = "isDefault";

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class DataSharingRequest : ModelBase
     {
-        protected new string resourceType = ResourceType.DATA_SHARING_REQUEST;
+        protected string resourceType = ResourceType.DATA_SHARING_REQUEST;
         public const string GROUP_APPLICATION_ID = "groupApplicationId";
         public const string PERMISSION_LEVEL = "permissionLevel";
         public const string STATUS = "status";

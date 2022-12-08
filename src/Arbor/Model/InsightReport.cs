@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class InsightReport : ModelBase
     {
-        protected new string resourceType = ResourceType.INSIGHT_REPORT;
+        protected string resourceType = ResourceType.INSIGHT_REPORT;
         public const string REPORT_TYPE = "reportType";
         public const string SUB_REPORT_TYPE = "subReportType";
         public const string PERIOD = "period";

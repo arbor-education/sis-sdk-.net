@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AdHocBursaryPayment : ModelBase
     {
-        protected new string resourceType = ResourceType.AD_HOC_BURSARY_PAYMENT;
+        protected string resourceType = ResourceType.AD_HOC_BURSARY_PAYMENT;
         public const string STUDENT = "student";
         public const string BURSARY_TYPE = "bursaryType";
         public const string AMOUNT = "amount";

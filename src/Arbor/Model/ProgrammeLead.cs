@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ProgrammeLead : ModelBase
     {
-        protected new string resourceType = ResourceType.PROGRAMME_LEAD;
+        protected string resourceType = ResourceType.PROGRAMME_LEAD;
         public const string PROGRAMME = "programme";
         public const string STAFF = "staff";
         public const string START_DATE = "startDate";

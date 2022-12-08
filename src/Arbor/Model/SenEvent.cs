@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class SenEvent : ModelBase
     {
-        protected new string resourceType = ResourceType.SEN_EVENT;
+        protected string resourceType = ResourceType.SEN_EVENT;
         public const string START_DATETIME = "startDatetime";
         public const string END_DATETIME = "endDatetime";
         public const string LOCATION_TEXT = "locationText";

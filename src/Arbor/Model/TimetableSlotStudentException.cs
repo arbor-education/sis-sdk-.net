@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class TimetableSlotStudentException : ModelBase
     {
-        protected new string resourceType = ResourceType.TIMETABLE_SLOT_STUDENT_EXCEPTION;
+        protected string resourceType = ResourceType.TIMETABLE_SLOT_STUDENT_EXCEPTION;
         public const string TIMETABLE_SLOT = "timetableSlot";
         public const string STUDENT = "student";
         public const string EFFECTIVE_DATE = "effectiveDate";

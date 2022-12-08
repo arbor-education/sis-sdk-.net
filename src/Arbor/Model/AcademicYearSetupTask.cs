@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AcademicYearSetupTask : ModelBase
     {
-        protected new string resourceType = ResourceType.ACADEMIC_YEAR_SETUP_TASK;
+        protected string resourceType = ResourceType.ACADEMIC_YEAR_SETUP_TASK;
         public const string ACADEMIC_YEAR = "academicYear";
         public const string TYPE = "type";
         public const string APPROVED_DATETIME = "approvedDatetime";

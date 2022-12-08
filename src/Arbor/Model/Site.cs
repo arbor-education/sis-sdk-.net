@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Site : ModelBase
     {
-        protected new string resourceType = ResourceType.SITE;
+        protected string resourceType = ResourceType.SITE;
         public const string SITE_NAME = "siteName";
         public const string SHORT_NAME = "shortName";
         public const string SITE_DISPLAY_ORDER = "siteDisplayOrder";

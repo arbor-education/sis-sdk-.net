@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class RoomAsset : ModelBase
     {
-        protected new string resourceType = ResourceType.ROOM_ASSET;
+        protected string resourceType = ResourceType.ROOM_ASSET;
         public const string ROOM_ASSET_NAME = "roomAssetName";
         public const string ASSIGN_TO_PEOPLE = "assignToPeople";
 

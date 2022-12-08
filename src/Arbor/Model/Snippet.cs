@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Snippet : ModelBase
     {
-        protected new string resourceType = ResourceType.SNIPPET;
+        protected string resourceType = ResourceType.SNIPPET;
         public const string SNIPPET_NAME = "snippetName";
         public const string SNIPPET_TEXT = "snippetText";
         public const string CATEGORY = "category";

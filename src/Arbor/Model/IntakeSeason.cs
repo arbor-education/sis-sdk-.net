@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class IntakeSeason : ModelBase
     {
-        protected new string resourceType = ResourceType.INTAKE_SEASON;
+        protected string resourceType = ResourceType.INTAKE_SEASON;
         public const string INTAKE_SEASON_NAME = "intakeSeasonName";
         public const string ACADEMIC_YEAR = "academicYear";
         public const string START_DATE = "startDate";

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CustomerAccountRefund : ModelBase
     {
-        protected new string resourceType = ResourceType.CUSTOMER_ACCOUNT_REFUND;
+        protected string resourceType = ResourceType.CUSTOMER_ACCOUNT_REFUND;
         public const string CUSTOMER_ACCOUNT = "customerAccount";
         public const string REFUND_DATETIME = "refundDatetime";
         public const string REFUND = "refund";

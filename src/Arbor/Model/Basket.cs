@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Basket : ModelBase
     {
-        protected new string resourceType = ResourceType.BASKET;
+        protected string resourceType = ResourceType.BASKET;
         public const string GUARDIAN = "guardian";
 
         public Basket()

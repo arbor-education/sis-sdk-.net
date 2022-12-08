@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class StandardizedAssessmentThresholdResult : ModelBase
     {
-        protected new string resourceType = ResourceType.STANDARDIZED_ASSESSMENT_THRESHOLD_RESULT;
+        protected string resourceType = ResourceType.STANDARDIZED_ASSESSMENT_THRESHOLD_RESULT;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CommunicationAction : ModelBase
     {
-        protected new string resourceType = ResourceType.COMMUNICATION_ACTION;
+        protected string resourceType = ResourceType.COMMUNICATION_ACTION;
         public const string COMMUNICATION = "communication";
         public const string ACTION_TAKEN = "actionTaken";
         public const string REPLY = "reply";

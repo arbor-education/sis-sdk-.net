@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class PointAward : ModelBase
     {
-        protected new string resourceType = ResourceType.POINT_AWARD;
+        protected string resourceType = ResourceType.POINT_AWARD;
         public const string POINT_AWARD_SCALE = "pointAwardScale";
         public const string STUDENT = "student";
         public const string POINT_AWARD_CATEGORY = "pointAwardCategory";

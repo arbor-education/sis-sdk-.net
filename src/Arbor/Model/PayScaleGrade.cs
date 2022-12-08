@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class PayScaleGrade : ModelBase
     {
-        protected new string resourceType = ResourceType.PAY_SCALE_GRADE;
+        protected string resourceType = ResourceType.PAY_SCALE_GRADE;
         public const string PAY_SCALE = "payScale";
         public const string GRADE_NAME = "gradeName";
         public const string DATA_ORDER = "dataOrder";

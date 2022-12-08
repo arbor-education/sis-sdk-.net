@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Calendar : ModelBase
     {
-        protected new string resourceType = ResourceType.CALENDAR;
+        protected string resourceType = ResourceType.CALENDAR;
         public const string OWNER = "owner";
         public const string CALENDAR_TYPE = "calendarType";
         public const string CALENDAR_NAME = "calendarName";

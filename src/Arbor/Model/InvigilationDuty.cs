@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class InvigilationDuty : ModelBase
     {
-        protected new string resourceType = ResourceType.INVIGILATION_DUTY;
+        protected string resourceType = ResourceType.INVIGILATION_DUTY;
         public const string INVIGILATION_SESSION = "invigilationSession";
         public const string STAFF = "staff";
         public const string ADDITIONAL_ROLE = "additionalRole";

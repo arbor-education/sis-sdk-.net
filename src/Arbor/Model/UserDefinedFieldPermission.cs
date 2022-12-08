@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class UserDefinedFieldPermission : ModelBase
     {
-        protected new string resourceType = ResourceType.USER_DEFINED_FIELD_PERMISSION;
+        protected string resourceType = ResourceType.USER_DEFINED_FIELD_PERMISSION;
         public const string USER_DEFINED_FIELD = "userDefinedField";
         public const string IDENTIFIER = "identifier";
         public const string CODE = "code";

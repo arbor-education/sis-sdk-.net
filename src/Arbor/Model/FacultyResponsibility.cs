@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class FacultyResponsibility : ModelBase
     {
-        protected new string resourceType = ResourceType.FACULTY_RESPONSIBILITY;
+        protected string resourceType = ResourceType.FACULTY_RESPONSIBILITY;
         public const string FACULTY_RESPONSIBILITY_TYPE = "facultyResponsibilityType";
         public const string FACULTY = "faculty";
         public const string START_DATE = "startDate";

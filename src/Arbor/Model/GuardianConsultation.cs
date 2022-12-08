@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class GuardianConsultation : ModelBase
     {
-        protected new string resourceType = ResourceType.GUARDIAN_CONSULTATION;
+        protected string resourceType = ResourceType.GUARDIAN_CONSULTATION;
         public const string GUARDIAN_CONSULTATION_NAME = "guardianConsultationName";
         public const string START_DATETIME = "startDatetime";
         public const string END_DATETIME = "endDatetime";

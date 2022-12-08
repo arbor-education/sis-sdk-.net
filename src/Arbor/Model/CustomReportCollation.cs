@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CustomReportCollation : ModelBase
     {
-        protected new string resourceType = ResourceType.CUSTOM_REPORT_COLLATION;
+        protected string resourceType = ResourceType.CUSTOM_REPORT_COLLATION;
         public const string CUSTOM_REPORT = "customReport";
         public const string FIELD_CLASS = "fieldClass";
         public const string FIELD_PARAMS = "fieldParams";

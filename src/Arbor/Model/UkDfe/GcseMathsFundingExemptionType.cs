@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class GcseMathsFundingExemptionType : ModelBase
     {
-        protected new string resourceType = ResourceType.UK_DFE_GCSE_MATHS_FUNDING_EXEMPTION_TYPE;
+        protected string resourceType = ResourceType.UK_DFE_GCSE_MATHS_FUNDING_EXEMPTION_TYPE;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

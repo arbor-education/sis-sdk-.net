@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AssessmentMarkNonSubmissionReason : ModelBase
     {
-        protected new string resourceType = ResourceType.ASSESSMENT_MARK_NON_SUBMISSION_REASON;
+        protected string resourceType = ResourceType.ASSESSMENT_MARK_NON_SUBMISSION_REASON;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class OptionsImportAcademicUnitMapping : ModelBase
     {
-        protected new string resourceType = ResourceType.OPTIONS_IMPORT_ACADEMIC_UNIT_MAPPING;
+        protected string resourceType = ResourceType.OPTIONS_IMPORT_ACADEMIC_UNIT_MAPPING;
         public const string OPTIONS_IMPORT_RESULT = "optionsImportResult";
         public const string ACADEMIC_UNIT_NAME = "academicUnitName";
         public const string MAPPING_ACTION = "mappingAction";

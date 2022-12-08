@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class DocumentLayout : ModelBase
     {
-        protected new string resourceType = ResourceType.DOCUMENT_LAYOUT;
+        protected string resourceType = ResourceType.DOCUMENT_LAYOUT;
         public const string NAME = "name";
         public const string FIRST_PAGE_HEADER_HTML = "firstPageHeaderHtml";
         public const string FIRST_PAGE_HEADER_HEIGHT = "firstPageHeaderHeight";

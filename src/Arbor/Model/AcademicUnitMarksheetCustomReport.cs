@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AcademicUnitMarksheetCustomReport : ModelBase
     {
-        protected new string resourceType = ResourceType.ACADEMIC_UNIT_MARKSHEET_CUSTOM_REPORT;
+        protected string resourceType = ResourceType.ACADEMIC_UNIT_MARKSHEET_CUSTOM_REPORT;
         public const string ACADEMIC_UNIT = "academicUnit";
         public const string CUSTOM_REPORT = "customReport";
 

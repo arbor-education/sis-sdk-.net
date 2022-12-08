@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class InCareStatus : ModelBase
     {
-        protected new string resourceType = ResourceType.IN_CARE_STATUS;
+        protected string resourceType = ResourceType.IN_CARE_STATUS;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

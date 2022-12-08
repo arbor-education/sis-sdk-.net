@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class IdentityCard : ModelBase
     {
-        protected new string resourceType = ResourceType.IDENTITY_CARD;
+        protected string resourceType = ResourceType.IDENTITY_CARD;
         public const string OWNER = "owner";
         public const string CARD_NUMBER = "cardNumber";
         public const string ACTIVE = "active";

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class InterventionGroup : ModelBase
     {
-        protected new string resourceType = ResourceType.INTERVENTION_GROUP;
+        protected string resourceType = ResourceType.INTERVENTION_GROUP;
         public const string NAME = "name";
         public const string INTERVENTION = "intervention";
         public const string START_DATE = "startDate";

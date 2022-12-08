@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ContentTag : ModelBase
     {
-        protected new string resourceType = ResourceType.CONTENT_TAG;
+        protected string resourceType = ResourceType.CONTENT_TAG;
         public const string CONTENT = "content";
         public const string TAGGED = "tagged";
         public const string TAG_NAME = "tagName";

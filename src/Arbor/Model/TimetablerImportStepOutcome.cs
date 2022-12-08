@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class TimetablerImportStepOutcome : ModelBase
     {
-        protected new string resourceType = ResourceType.TIMETABLER_IMPORT_STEP_OUTCOME;
+        protected string resourceType = ResourceType.TIMETABLER_IMPORT_STEP_OUTCOME;
         public const string TIMETABLER_IMPORT_RESULT = "timetablerImportResult";
         public const string IDENTIFIER = "identifier";
         public const string DESCRIPTION = "description";

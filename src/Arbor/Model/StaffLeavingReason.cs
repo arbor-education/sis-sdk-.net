@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class StaffLeavingReason : ModelBase
     {
-        protected new string resourceType = ResourceType.STAFF_LEAVING_REASON;
+        protected string resourceType = ResourceType.STAFF_LEAVING_REASON;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

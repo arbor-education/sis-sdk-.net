@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class NewStudentReportCardSection : ModelBase
     {
-        protected new string resourceType = ResourceType.NEW_STUDENT_REPORT_CARD_SECTION;
+        protected string resourceType = ResourceType.NEW_STUDENT_REPORT_CARD_SECTION;
         public const string STUDENT_REPORT_CARD = "studentReportCard";
         public const string LINKED_ENTITY = "linkedEntity";
         public const string COMPLETED_DATETIME = "completedDatetime";

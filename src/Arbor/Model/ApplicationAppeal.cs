@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ApplicationAppeal : ModelBase
     {
-        protected new string resourceType = ResourceType.APPLICATION_APPEAL;
+        protected string resourceType = ResourceType.APPLICATION_APPEAL;
         public const string APPLICATION = "application";
         public const string NARRATIVE = "narrative";
         public const string LODGED_DATE = "lodgedDate";

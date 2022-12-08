@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class StudentAttendancePattern : ModelBase
     {
-        protected new string resourceType = ResourceType.STUDENT_ATTENDANCE_PATTERN;
+        protected string resourceType = ResourceType.STUDENT_ATTENDANCE_PATTERN;
         public const string ACADEMIC_YEAR = "academicYear";
         public const string STUDENT = "student";
         public const string ATTENDANCE_PATTERN = "attendancePattern";

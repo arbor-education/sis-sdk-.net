@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class RoomChangeRequirement : ModelBase
     {
-        protected new string resourceType = ResourceType.ROOM_CHANGE_REQUIREMENT;
+        protected string resourceType = ResourceType.ROOM_CHANGE_REQUIREMENT;
         public const string EVENT = "event";
         public const string UNAVAILABLE_ROOM = "unavailableRoom";
         public const string NEW_ROOM = "newRoom";

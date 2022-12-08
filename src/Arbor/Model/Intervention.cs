@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Intervention : ModelBase
     {
-        protected new string resourceType = ResourceType.INTERVENTION;
+        protected string resourceType = ResourceType.INTERVENTION;
         public const string NAME = "name";
         public const string ACADEMIC_YEAR = "academicYear";
         public const string TERM = "term";

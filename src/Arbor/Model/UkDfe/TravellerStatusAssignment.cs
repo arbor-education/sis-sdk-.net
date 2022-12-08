@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class TravellerStatusAssignment : ModelBase
     {
-        protected new string resourceType = ResourceType.UK_DFE_TRAVELLER_STATUS_ASSIGNMENT;
+        protected string resourceType = ResourceType.UK_DFE_TRAVELLER_STATUS_ASSIGNMENT;
         public const string TRAVELLER_STATUS = "travellerStatus";
         public const string STUDENT = "student";
         public const string START_DATE = "startDate";

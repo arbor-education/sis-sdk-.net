@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AssessmentFrameworkAssessment : ModelBase
     {
-        protected new string resourceType = ResourceType.ASSESSMENT_FRAMEWORK_ASSESSMENT;
+        protected string resourceType = ResourceType.ASSESSMENT_FRAMEWORK_ASSESSMENT;
         public const string ASSESSMENT = "assessment";
         public const string STEPS_COMPLETED = "stepsCompleted";
         public const string SETUP_COMPLETED = "setupCompleted";

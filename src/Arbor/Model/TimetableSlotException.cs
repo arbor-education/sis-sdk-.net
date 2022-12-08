@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class TimetableSlotException : ModelBase
     {
-        protected new string resourceType = ResourceType.TIMETABLE_SLOT_EXCEPTION;
+        protected string resourceType = ResourceType.TIMETABLE_SLOT_EXCEPTION;
         public const string TIMETABLE_SLOT = "timetableSlot";
         public const string EXCEPTION_DATE = "exceptionDate";
         public const string NO_EVENT_EXCEPTION = "noEventException";

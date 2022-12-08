@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class MealProvisionPriceCategoryGroup : ModelBase
     {
-        protected new string resourceType = ResourceType.MEAL_PROVISION_PRICE_CATEGORY_GROUP;
+        protected string resourceType = ResourceType.MEAL_PROVISION_PRICE_CATEGORY_GROUP;
         public const string MEAL_PROVISION_PRICE_CATEGORY = "mealProvisionPriceCategory";
         public const string GROUP = "group";
 

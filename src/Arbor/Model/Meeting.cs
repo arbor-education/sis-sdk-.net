@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Meeting : ModelBase
     {
-        protected new string resourceType = ResourceType.MEETING;
+        protected string resourceType = ResourceType.MEETING;
         public const string START_DATETIME = "startDatetime";
         public const string END_DATETIME = "endDatetime";
         public const string LOCATION_TEXT = "locationText";

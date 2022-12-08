@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class StudentGuardianRelationship : ModelBase
     {
-        protected new string resourceType = ResourceType.STUDENT_GUARDIAN_RELATIONSHIP;
+        protected string resourceType = ResourceType.STUDENT_GUARDIAN_RELATIONSHIP;
         public const string STUDENT = "student";
         public const string GUARDIAN = "guardian";
         public const string GUARDIAN_RELATIONSHIP_TYPE = "guardianRelationshipType";

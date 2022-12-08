@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Region : ModelBase
     {
-        protected new string resourceType = ResourceType.REGION;
+        protected string resourceType = ResourceType.REGION;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";
