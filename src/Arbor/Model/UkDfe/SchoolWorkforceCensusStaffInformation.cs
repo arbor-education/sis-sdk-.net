@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class SchoolWorkforceCensusStaffInformation : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_SCHOOL_WORKFORCE_CENSUS_STAFF_INFORMATION;
+        protected new string resourceType = ResourceType.UK_DFE_SCHOOL_WORKFORCE_CENSUS_STAFF_INFORMATION;
         public const string SCHOOL_WORKFORCE_CENSUS = "schoolWorkforceCensus";
         public const string OCCASIONALS_QTS = "occasionalsQts";
         public const string OCCASIONALS_NOT_QTS = "occasionalsNotQts";

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CandidateDisappliedAccessArrangement : ModelBase
     {
-        protected string resourceType = ResourceType.CANDIDATE_DISAPPLIED_ACCESS_ARRANGEMENT;
+        protected new string resourceType = ResourceType.CANDIDATE_DISAPPLIED_ACCESS_ARRANGEMENT;
         public const string CANDIDATE = "candidate";
         public const string ACCESS_ARRANGEMENT = "accessArrangement";
         public const string QUALIFICATION_ASSESSABLE = "qualificationAssessable";

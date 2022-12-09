@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ExclusionReason : ModelBase
     {
-        protected string resourceType = ResourceType.EXCLUSION_REASON;
+        protected new string resourceType = ResourceType.EXCLUSION_REASON;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

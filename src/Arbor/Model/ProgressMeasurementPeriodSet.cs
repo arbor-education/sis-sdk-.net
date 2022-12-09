@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ProgressMeasurementPeriodSet : ModelBase
     {
-        protected string resourceType = ResourceType.PROGRESS_MEASUREMENT_PERIOD_SET;
+        protected new string resourceType = ResourceType.PROGRESS_MEASUREMENT_PERIOD_SET;
         public const string PERIOD_FREQUENCY = "periodFrequency";
         public const string SET_NAME = "setName";
         public const string ACADEMIC_YEAR = "academicYear";

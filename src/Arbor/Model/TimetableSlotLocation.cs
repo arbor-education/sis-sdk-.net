@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class TimetableSlotLocation : ModelBase
     {
-        protected string resourceType = ResourceType.TIMETABLE_SLOT_LOCATION;
+        protected new string resourceType = ResourceType.TIMETABLE_SLOT_LOCATION;
         public const string TIMETABLE_SLOT = "timetableSlot";
         public const string LOCATION = "location";
         public const string EFFECTIVE_DATE = "effectiveDate";

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class GoogleProvisioningSetting : ModelBase
     {
-        protected string resourceType = ResourceType.GOOGLE_PROVISIONING_SETTING;
+        protected new string resourceType = ResourceType.GOOGLE_PROVISIONING_SETTING;
         public const string PROVISION_STAFF_USERS = "provisionStaffUsers";
         public const string PROVISION_STUDENT_USERS = "provisionStudentUsers";
         public const string AUTH_CONFIG = "authConfig";

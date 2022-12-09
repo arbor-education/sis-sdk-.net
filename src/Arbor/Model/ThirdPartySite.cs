@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ThirdPartySite : ModelBase
     {
-        protected string resourceType = ResourceType.THIRD_PARTY_SITE;
+        protected new string resourceType = ResourceType.THIRD_PARTY_SITE;
         public const string CODE = "code";
         public const string NAME = "name";
 

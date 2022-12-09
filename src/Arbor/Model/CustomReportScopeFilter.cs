@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CustomReportScopeFilter : ModelBase
     {
-        protected string resourceType = ResourceType.CUSTOM_REPORT_SCOPE_FILTER;
+        protected new string resourceType = ResourceType.CUSTOM_REPORT_SCOPE_FILTER;
         public const string CUSTOM_REPORT_SCOPE = "customReportScope";
         public const string FIELD_CLASS = "fieldClass";
         public const string FIELD_PARAMS = "fieldParams";

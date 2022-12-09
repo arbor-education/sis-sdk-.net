@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class IntegrationVleProvider : ModelBase
     {
-        protected string resourceType = ResourceType.INTEGRATION_VLE_PROVIDER;
+        protected new string resourceType = ResourceType.INTEGRATION_VLE_PROVIDER;
         public const string NAME = "name";
         public const string CONFIGURATION = "configuration";
         public const string ENABLED = "enabled";

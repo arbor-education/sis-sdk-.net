@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class BehaviourTime : ModelBase
     {
-        protected string resourceType = ResourceType.BEHAVIOUR_TIME;
+        protected new string resourceType = ResourceType.BEHAVIOUR_TIME;
         public const string START_TIME = "startTime";
         public const string END_TIME = "endTime";
         public const string NAME = "name";

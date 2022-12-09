@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class OptionsImportStudentMapping : ModelBase
     {
-        protected string resourceType = ResourceType.OPTIONS_IMPORT_STUDENT_MAPPING;
+        protected new string resourceType = ResourceType.OPTIONS_IMPORT_STUDENT_MAPPING;
         public const string OPTIONS_IMPORT_RESULT = "optionsImportResult";
         public const string STUDENT_NAME = "studentName";
         public const string STUDENT_IDENTIFIER = "studentIdentifier";

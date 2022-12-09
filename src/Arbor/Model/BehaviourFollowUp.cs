@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class BehaviourFollowUp : ModelBase
     {
-        protected string resourceType = ResourceType.BEHAVIOUR_FOLLOW_UP;
+        protected new string resourceType = ResourceType.BEHAVIOUR_FOLLOW_UP;
         public const string STUDENT = "student";
         public const string STAFF = "staff";
         public const string FOLLOW_UP_DATETIME = "followUpDatetime";

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class RoomFeature : ModelBase
     {
-        protected string resourceType = ResourceType.ROOM_FEATURE;
+        protected new string resourceType = ResourceType.ROOM_FEATURE;
         public const string ROOM_FEATURE_NAME = "roomFeatureName";
         public const string ASSIGN_TO_PEOPLE = "assignToPeople";
 

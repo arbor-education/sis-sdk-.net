@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AdHocAssessmentBatchTarget : ModelBase
     {
-        protected string resourceType = ResourceType.AD_HOC_ASSESSMENT_BATCH_TARGET;
+        protected new string resourceType = ResourceType.AD_HOC_ASSESSMENT_BATCH_TARGET;
         public const string AD_HOC_ASSESSMENT_BATCH = "adHocAssessmentBatch";
         public const string TARGET = "target";
         public const string MARKING_STARTED_DATETIME = "markingStartedDatetime";

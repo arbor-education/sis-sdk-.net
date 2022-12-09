@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class PhantomModel : ModelBase
     {
-        protected string resourceType = ResourceType.PHANTOM_MODEL;
+        protected new string resourceType = ResourceType.PHANTOM_MODEL;
         public const string ENTITY_TYPE = "entityType";
         public const string USER = "user";
         public const string MODEL_CREATED_DATETIME = "modelCreatedDatetime";

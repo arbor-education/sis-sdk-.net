@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class RepeatingSchoolEventParticipant : ModelBase
     {
-        protected string resourceType = ResourceType.REPEATING_SCHOOL_EVENT_PARTICIPANT;
+        protected new string resourceType = ResourceType.REPEATING_SCHOOL_EVENT_PARTICIPANT;
         public const string REPEATING_SCHOOL_EVENT = "repeatingSchoolEvent";
         public const string PARTICIPANT = "participant";
 

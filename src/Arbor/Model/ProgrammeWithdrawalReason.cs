@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ProgrammeWithdrawalReason : ModelBase
     {
-        protected string resourceType = ResourceType.PROGRAMME_WITHDRAWAL_REASON;
+        protected new string resourceType = ResourceType.PROGRAMME_WITHDRAWAL_REASON;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class VatRate : ModelBase
     {
-        protected string resourceType = ResourceType.VAT_RATE;
+        protected new string resourceType = ResourceType.VAT_RATE;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

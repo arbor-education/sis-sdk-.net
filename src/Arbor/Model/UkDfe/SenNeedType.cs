@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class SenNeedType : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_SEN_NEED_TYPE;
+        protected new string resourceType = ResourceType.UK_DFE_SEN_NEED_TYPE;
         public const string D00237 = "d00237";
         public const string EXPORT_CODE = "exportCode";
 

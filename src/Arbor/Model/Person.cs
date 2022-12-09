@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Person : ModelBase
     {
-        protected string resourceType = ResourceType.PERSON;
+        protected new string resourceType = ResourceType.PERSON;
         public const string GENDER = "gender";
         public const string GENDER_IDENTITY = "genderIdentity";
         public const string GENDER_IDENTITY_PREFERRED_TERM = "genderIdentityPreferredTerm";

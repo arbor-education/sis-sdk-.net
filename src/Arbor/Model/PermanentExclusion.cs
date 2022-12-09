@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class PermanentExclusion : ModelBase
     {
-        protected string resourceType = ResourceType.PERMANENT_EXCLUSION;
+        protected new string resourceType = ResourceType.PERMANENT_EXCLUSION;
         public const string STUDENT = "student";
         public const string EXCLUSION_REASON = "exclusionReason";
         public const string FROM_DATE = "fromDate";

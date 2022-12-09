@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class DietaryRequirement : ModelBase
     {
-        protected string resourceType = ResourceType.DIETARY_REQUIREMENT;
+        protected new string resourceType = ResourceType.DIETARY_REQUIREMENT;
         public const string PERSON = "person";
         public const string DIETARY_REQUIREMENT_TYPE = "dietaryRequirementType";
         public const string NOTE = "note";

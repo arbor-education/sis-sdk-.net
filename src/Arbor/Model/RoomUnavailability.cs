@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class RoomUnavailability : ModelBase
     {
-        protected string resourceType = ResourceType.ROOM_UNAVAILABILITY;
+        protected new string resourceType = ResourceType.ROOM_UNAVAILABILITY;
         public const string ROOM = "room";
         public const string START_DATETIME = "startDatetime";
         public const string END_DATETIME = "endDatetime";

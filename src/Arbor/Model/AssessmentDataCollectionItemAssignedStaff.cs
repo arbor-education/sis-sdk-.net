@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AssessmentDataCollectionItemAssignedStaff : ModelBase
     {
-        protected string resourceType = ResourceType.ASSESSMENT_DATA_COLLECTION_ITEM_ASSIGNED_STAFF;
+        protected new string resourceType = ResourceType.ASSESSMENT_DATA_COLLECTION_ITEM_ASSIGNED_STAFF;
         public const string ASSESSMENT_DATA_COLLECTION_ITEM = "assessmentDataCollectionItem";
         public const string ASSIGNED_STAFF = "assignedStaff";
 

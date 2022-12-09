@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AchievementLevelSet : ModelBase
     {
-        protected string resourceType = ResourceType.ACHIEVEMENT_LEVEL_SET;
+        protected new string resourceType = ResourceType.ACHIEVEMENT_LEVEL_SET;
         public const string CODE = "code";
         public const string NAME = "name";
         public const string ACHIEVED_THRESHOLD = "achievedThreshold";

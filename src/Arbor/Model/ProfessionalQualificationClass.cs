@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ProfessionalQualificationClass : ModelBase
     {
-        protected string resourceType = ResourceType.PROFESSIONAL_QUALIFICATION_CLASS;
+        protected new string resourceType = ResourceType.PROFESSIONAL_QUALIFICATION_CLASS;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

@@ -10,7 +10,7 @@ namespace Arbor.Model
 {
     public class AcademicUnit : ModelBase
     {
-        protected string resourceType = ResourceType.ACADEMIC_UNIT;
+        protected new string resourceType = ResourceType.ACADEMIC_UNIT;
         public const string UNIQUE_IDENTIFIER = "uniqueIdentifier";
         public const string PARENT_ACADEMIC_UNIT = "parentAcademicUnit";
         public const string ACADEMIC_PROGRAMME_INSTANCE = "academicProgrammeInstance";

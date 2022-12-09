@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class InCareStatusAssignment : ModelBase
     {
-        protected string resourceType = ResourceType.IN_CARE_STATUS_ASSIGNMENT;
+        protected new string resourceType = ResourceType.IN_CARE_STATUS_ASSIGNMENT;
         public const string RESPONSIBLE_LOCAL_AUTHORITY = "responsibleLocalAuthority";
         public const string IN_CARE_STATUS = "inCareStatus";
         public const string STUDENT = "student";

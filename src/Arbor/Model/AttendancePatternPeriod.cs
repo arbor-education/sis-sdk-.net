@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AttendancePatternPeriod : ModelBase
     {
-        protected string resourceType = ResourceType.ATTENDANCE_PATTERN_PERIOD;
+        protected new string resourceType = ResourceType.ATTENDANCE_PATTERN_PERIOD;
         public const string ATTENDANCE_PATTERN = "attendancePattern";
         public const string DAY_OF_CYCLE = "dayOfCycle";
         public const string START_TIME = "startTime";

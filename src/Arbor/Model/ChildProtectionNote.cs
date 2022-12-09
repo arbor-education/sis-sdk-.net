@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ChildProtectionNote : ModelBase
     {
-        protected string resourceType = ResourceType.CHILD_PROTECTION_NOTE;
+        protected new string resourceType = ResourceType.CHILD_PROTECTION_NOTE;
         public const string STUDENT = "student";
         public const string SUMMARY = "summary";
         public const string CONTENT = "content";

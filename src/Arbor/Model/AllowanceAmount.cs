@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AllowanceAmount : ModelBase
     {
-        protected string resourceType = ResourceType.ALLOWANCE_AMOUNT;
+        protected new string resourceType = ResourceType.ALLOWANCE_AMOUNT;
         public const string ALLOWANCE = "allowance";
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";

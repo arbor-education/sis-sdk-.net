@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Voucher : ModelBase
     {
-        protected string resourceType = ResourceType.VOUCHER;
+        protected new string resourceType = ResourceType.VOUCHER;
         public const string BILL_PAYER = "billPayer";
         public const string PAYMENT_RECEIVED_DATE = "paymentReceivedDate";
         public const string NARRATIVE = "narrative";

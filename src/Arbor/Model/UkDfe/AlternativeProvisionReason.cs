@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class AlternativeProvisionReason : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_ALTERNATIVE_PROVISION_REASON;
+        protected new string resourceType = ResourceType.UK_DFE_ALTERNATIVE_PROVISION_REASON;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

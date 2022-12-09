@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class StandardizedAssessmentBatchTarget : ModelBase
     {
-        protected string resourceType = ResourceType.STANDARDIZED_ASSESSMENT_BATCH_TARGET;
+        protected new string resourceType = ResourceType.STANDARDIZED_ASSESSMENT_BATCH_TARGET;
         public const string STANDARDIZED_ASSESSMENT_BATCH = "standardizedAssessmentBatch";
         public const string TARGET = "target";
 

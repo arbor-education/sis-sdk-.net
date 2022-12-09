@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ReportCardBatchCurriculum : ModelBase
     {
-        protected string resourceType = ResourceType.REPORT_CARD_BATCH_CURRICULUM;
+        protected new string resourceType = ResourceType.REPORT_CARD_BATCH_CURRICULUM;
         public const string REPORT_CARD_BATCH = "reportCardBatch";
         public const string ORDER = "order";
         public const string CURRICULUM = "curriculum";

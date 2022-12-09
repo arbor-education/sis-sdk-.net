@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class InboundInAppMessage : ModelBase
     {
-        protected string resourceType = ResourceType.INBOUND_IN_APP_MESSAGE;
+        protected new string resourceType = ResourceType.INBOUND_IN_APP_MESSAGE;
         public const string SENDER = "sender";
         public const string RECIPIENT = "recipient";
         public const string MESSAGE = "message";

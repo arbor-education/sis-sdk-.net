@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class StandardizedAssessmentAspectCategory : ModelBase
     {
-        protected string resourceType = ResourceType.STANDARDIZED_ASSESSMENT_ASPECT_CATEGORY;
+        protected new string resourceType = ResourceType.STANDARDIZED_ASSESSMENT_ASPECT_CATEGORY;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

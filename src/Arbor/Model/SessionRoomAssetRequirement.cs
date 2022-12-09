@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class SessionRoomAssetRequirement : ModelBase
     {
-        protected string resourceType = ResourceType.SESSION_ROOM_ASSET_REQUIREMENT;
+        protected new string resourceType = ResourceType.SESSION_ROOM_ASSET_REQUIREMENT;
         public const string SESSION = "session";
         public const string ROOM_ASSET = "roomAsset";
         public const string QUANTITY = "quantity";

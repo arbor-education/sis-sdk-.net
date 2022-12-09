@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class FixedPeriodExclusion : ModelBase
     {
-        protected string resourceType = ResourceType.FIXED_PERIOD_EXCLUSION;
+        protected new string resourceType = ResourceType.FIXED_PERIOD_EXCLUSION;
         public const string STUDENT = "student";
         public const string EXCLUSION_REASON = "exclusionReason";
         public const string FROM_DATETIME = "fromDatetime";

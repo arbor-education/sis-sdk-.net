@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class HearingTest : ModelBase
     {
-        protected string resourceType = ResourceType.HEARING_TEST;
+        protected new string resourceType = ResourceType.HEARING_TEST;
         public const string STUDENT = "student";
         public const string TEST_DATE = "testDate";
         public const string NOTES = "notes";

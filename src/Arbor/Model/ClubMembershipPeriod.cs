@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ClubMembershipPeriod : ModelBase
     {
-        protected string resourceType = ResourceType.CLUB_MEMBERSHIP_PERIOD;
+        protected new string resourceType = ResourceType.CLUB_MEMBERSHIP_PERIOD;
         public const string CLUB = "club";
         public const string NAME = "name";
         public const string PURCHASE_START_DATE = "purchaseStartDate";

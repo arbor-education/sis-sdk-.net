@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class MealProvisionPriceCategory : ModelBase
     {
-        protected string resourceType = ResourceType.MEAL_PROVISION_PRICE_CATEGORY;
+        protected new string resourceType = ResourceType.MEAL_PROVISION_PRICE_CATEGORY;
         public const string CATEGORY_NAME = "categoryName";
         public const string MEAL_PROVISION = "mealProvision";
         public const string APPLIES_TO = "appliesTo";

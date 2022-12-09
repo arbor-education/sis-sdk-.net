@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class QualificationSubscription : ModelBase
     {
-        protected string resourceType = ResourceType.QUALIFICATION_SUBSCRIPTION;
+        protected new string resourceType = ResourceType.QUALIFICATION_SUBSCRIPTION;
         public const string QUALIFICATION_ELEMENT_TYPE = "qualificationElementType";
         public const string QUALIFICATION_ELEMENT_CODE = "qualificationElementCode";
         public const string HASH = "hash";

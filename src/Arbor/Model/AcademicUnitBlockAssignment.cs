@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AcademicUnitBlockAssignment : ModelBase
     {
-        protected string resourceType = ResourceType.ACADEMIC_UNIT_BLOCK_ASSIGNMENT;
+        protected new string resourceType = ResourceType.ACADEMIC_UNIT_BLOCK_ASSIGNMENT;
         public const string ACADEMIC_UNIT = "academicUnit";
         public const string BLOCK_NAME = "blockName";
 

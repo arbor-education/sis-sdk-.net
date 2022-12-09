@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class SchoolProgressTargetRule : ModelBase
     {
-        protected string resourceType = ResourceType.SCHOOL_PROGRESS_TARGET_RULE;
+        protected new string resourceType = ResourceType.SCHOOL_PROGRESS_TARGET_RULE;
         public const string RULE_NAME = "ruleName";
         public const string ASSESSMENT = "assessment";
         public const string EFFECTIVE_DATE = "effectiveDate";

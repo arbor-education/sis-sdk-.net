@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class StudentCurriculumAchievement : ModelBase
     {
-        protected string resourceType = ResourceType.STUDENT_CURRICULUM_ACHIEVEMENT;
+        protected new string resourceType = ResourceType.STUDENT_CURRICULUM_ACHIEVEMENT;
         public const string STUDENT = "student";
         public const string CURRICULUM_STATEMENT = "curriculumStatement";
         public const string ACHIEVEMENT_LEVEL = "achievementLevel";

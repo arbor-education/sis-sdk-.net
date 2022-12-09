@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class SiteOperatingPeriodException : ModelBase
     {
-        protected string resourceType = ResourceType.SITE_OPERATING_PERIOD_EXCEPTION;
+        protected new string resourceType = ResourceType.SITE_OPERATING_PERIOD_EXCEPTION;
         public const string SITE = "site";
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";

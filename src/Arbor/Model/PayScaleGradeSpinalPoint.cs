@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class PayScaleGradeSpinalPoint : ModelBase
     {
-        protected string resourceType = ResourceType.PAY_SCALE_GRADE_SPINAL_POINT;
+        protected new string resourceType = ResourceType.PAY_SCALE_GRADE_SPINAL_POINT;
         public const string PAY_SCALE_GRADE = "payScaleGrade";
         public const string PAY_SCALE_SPINAL_POINT = "payScaleSpinalPoint";
 

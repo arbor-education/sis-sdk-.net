@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class InternalExclusion : ModelBase
     {
-        protected string resourceType = ResourceType.INTERNAL_EXCLUSION;
+        protected new string resourceType = ResourceType.INTERNAL_EXCLUSION;
         public const string STUDENT = "student";
         public const string ISSUED_BY_STAFF = "issuedByStaff";
         public const string INTERNAL_EXCLUSION_SESSION = "internalExclusionSession";

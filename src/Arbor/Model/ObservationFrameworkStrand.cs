@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ObservationFrameworkStrand : ModelBase
     {
-        protected string resourceType = ResourceType.OBSERVATION_FRAMEWORK_STRAND;
+        protected new string resourceType = ResourceType.OBSERVATION_FRAMEWORK_STRAND;
         public const string OBSERVATION_FRAMEWORK = "observationFramework";
         public const string OBSERVATION_STRAND = "observationStrand";
 

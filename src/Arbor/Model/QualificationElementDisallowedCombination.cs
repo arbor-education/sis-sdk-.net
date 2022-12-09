@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class QualificationElementDisallowedCombination : ModelBase
     {
-        protected string resourceType = ResourceType.QUALIFICATION_ELEMENT_DISALLOWED_COMBINATION;
+        protected new string resourceType = ResourceType.QUALIFICATION_ELEMENT_DISALLOWED_COMBINATION;
         public const string FIRST_ELEMENT = "firstElement";
         public const string SECOND_ELEMENT = "secondElement";
 

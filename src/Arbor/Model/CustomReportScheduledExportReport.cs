@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CustomReportScheduledExportReport : ModelBase
     {
-        protected string resourceType = ResourceType.CUSTOM_REPORT_SCHEDULED_EXPORT_REPORT;
+        protected new string resourceType = ResourceType.CUSTOM_REPORT_SCHEDULED_EXPORT_REPORT;
         public const string CUSTOM_REPORT_SCHEDULED_EXPORT = "customReportScheduledExport";
         public const string CUSTOM_REPORT = "customReport";
         public const string EXPORT_FORMAT = "exportFormat";

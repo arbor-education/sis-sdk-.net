@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class MealRotationMenu : ModelBase
     {
-        protected string resourceType = ResourceType.MEAL_ROTATION_MENU;
+        protected new string resourceType = ResourceType.MEAL_ROTATION_MENU;
         public const string NAME = "name";
         public const string MEAL = "meal";
         public const string EFFECTIVE_DATE = "effectiveDate";

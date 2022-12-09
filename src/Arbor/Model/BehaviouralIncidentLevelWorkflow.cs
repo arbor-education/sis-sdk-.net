@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class BehaviouralIncidentLevelWorkflow : ModelBase
     {
-        protected string resourceType = ResourceType.BEHAVIOURAL_INCIDENT_LEVEL_WORKFLOW;
+        protected new string resourceType = ResourceType.BEHAVIOURAL_INCIDENT_LEVEL_WORKFLOW;
         public const string LEVEL_OF_INCIDENT = "levelOfIncident";
         public const string AUTO_CLOSE = "autoClose";
         public const string ESCALATION_THRESHOLD_COUNT = "escalationThresholdCount";

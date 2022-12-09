@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class HouseMembership : ModelBase
     {
-        protected string resourceType = ResourceType.HOUSE_MEMBERSHIP;
+        protected new string resourceType = ResourceType.HOUSE_MEMBERSHIP;
         public const string HOUSE = "house";
         public const string STUDENT = "student";
         public const string START_DATE = "startDate";

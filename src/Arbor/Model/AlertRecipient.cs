@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AlertRecipient : ModelBase
     {
-        protected string resourceType = ResourceType.ALERT_RECIPIENT;
+        protected new string resourceType = ResourceType.ALERT_RECIPIENT;
         public const string ALERT = "alert";
         public const string ALERT_RULE_RECIPIENT = "alertRuleRecipient";
         public const string CHANNEL = "channel";

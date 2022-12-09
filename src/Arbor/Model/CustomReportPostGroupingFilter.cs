@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CustomReportPostGroupingFilter : ModelBase
     {
-        protected string resourceType = ResourceType.CUSTOM_REPORT_POST_GROUPING_FILTER;
+        protected new string resourceType = ResourceType.CUSTOM_REPORT_POST_GROUPING_FILTER;
         public const string CUSTOM_REPORT = "customReport";
         public const string FIELD_CLASS = "fieldClass";
         public const string FIELD_PARAMS = "fieldParams";

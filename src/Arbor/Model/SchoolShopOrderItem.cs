@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class SchoolShopOrderItem : ModelBase
     {
-        protected string resourceType = ResourceType.SCHOOL_SHOP_ORDER_ITEM;
+        protected new string resourceType = ResourceType.SCHOOL_SHOP_ORDER_ITEM;
         public const string SCHOOL_SHOP_PRODUCT = "schoolShopProduct";
         public const string CUSTOMER_INVOICE_ITEM = "customerInvoiceItem";
         public const string STATUS = "status";

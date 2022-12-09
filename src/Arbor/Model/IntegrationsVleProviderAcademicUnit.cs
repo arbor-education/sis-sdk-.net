@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class IntegrationsVleProviderAcademicUnit : ModelBase
     {
-        protected string resourceType = ResourceType.INTEGRATIONS_VLE_PROVIDER_ACADEMIC_UNIT;
+        protected new string resourceType = ResourceType.INTEGRATIONS_VLE_PROVIDER_ACADEMIC_UNIT;
         public const string ACADEMIC_UNIT = "academicUnit";
 
         public IntegrationsVleProviderAcademicUnit()

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Guardian : ModelBase
     {
-        protected string resourceType = ResourceType.GUARDIAN;
+        protected new string resourceType = ResourceType.GUARDIAN;
         public const string PERSON = "person";
         public const string EMPLOYER = "employer";
         public const string RELIGION = "religion";

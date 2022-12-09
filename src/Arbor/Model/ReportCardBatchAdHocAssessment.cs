@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ReportCardBatchAdHocAssessment : ModelBase
     {
-        protected string resourceType = ResourceType.REPORT_CARD_BATCH_AD_HOC_ASSESSMENT;
+        protected new string resourceType = ResourceType.REPORT_CARD_BATCH_AD_HOC_ASSESSMENT;
         public const string REPORT_CARD_BATCH = "reportCardBatch";
         public const string AD_HOC_ASSESSMENT = "adHocAssessment";
         public const string ORDER = "order";

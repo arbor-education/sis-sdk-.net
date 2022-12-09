@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class IntegrationsCashlessCateringSystemProvider : ModelBase
     {
-        protected string resourceType = ResourceType.INTEGRATIONS_CASHLESS_CATERING_SYSTEM_PROVIDER;
+        protected new string resourceType = ResourceType.INTEGRATIONS_CASHLESS_CATERING_SYSTEM_PROVIDER;
         public const string NAME = "name";
         public const string CUSTOMER_ACCOUNT_TYPE = "customerAccountType";
         public const string PROVIDER = "provider";

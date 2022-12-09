@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class TripEligibility : ModelBase
     {
-        protected string resourceType = ResourceType.TRIP_ELIGIBILITY;
+        protected new string resourceType = ResourceType.TRIP_ELIGIBILITY;
         public const string TRIP = "trip";
         public const string ELIGIBILE = "eligibile";
 

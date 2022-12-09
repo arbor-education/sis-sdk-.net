@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Application : ModelBase
     {
-        protected string resourceType = ResourceType.APPLICATION;
+        protected new string resourceType = ResourceType.APPLICATION;
         public const string STUDENT = "student";
         public const string APPLICATION_DATETIME = "applicationDatetime";
         public const string APPLICATION_REFERENCE_NUMBER = "applicationReferenceNumber";

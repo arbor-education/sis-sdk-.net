@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class Position : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_POSITION;
+        protected new string resourceType = ResourceType.UK_DFE_POSITION;
         public const string POSITION_CATEGORY = "positionCategory";
         public const string WORKFORCE_VACANCY_POST = "workforceVacancyPost";
         public const string WORKFORCE_CENSUS_ROLE_IDENTIFIER = "workforceCensusRoleIdentifier";

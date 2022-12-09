@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class OutboundLetterRecipient : ModelBase
     {
-        protected string resourceType = ResourceType.OUTBOUND_LETTER_RECIPIENT;
+        protected new string resourceType = ResourceType.OUTBOUND_LETTER_RECIPIENT;
         public const string OUTBOUND_LETTER = "outboundLetter";
         public const string RECIPIENT_NAME = "recipientName";
         public const string RECIPIENT = "recipient";

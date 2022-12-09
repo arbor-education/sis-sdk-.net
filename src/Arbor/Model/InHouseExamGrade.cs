@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class InHouseExamGrade : ModelBase
     {
-        protected string resourceType = ResourceType.IN_HOUSE_EXAM_GRADE;
+        protected new string resourceType = ResourceType.IN_HOUSE_EXAM_GRADE;
         public const string IN_HOUSE_EXAM = "inHouseExam";
         public const string QUALIFICATION_GRADE = "qualificationGrade";
         public const string SHORT_NAME = "shortName";

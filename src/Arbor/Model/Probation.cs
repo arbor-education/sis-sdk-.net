@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Probation : ModelBase
     {
-        protected string resourceType = ResourceType.PROBATION;
+        protected new string resourceType = ResourceType.PROBATION;
         public const string STAFF_CONTRACT = "staffContract";
         public const string START_DATE = "startDate";
         public const string ORIGINAL_END_DATE = "originalEndDate";

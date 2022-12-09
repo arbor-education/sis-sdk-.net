@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AdHocAssessmentCategory : ModelBase
     {
-        protected string resourceType = ResourceType.AD_HOC_ASSESSMENT_CATEGORY;
+        protected new string resourceType = ResourceType.AD_HOC_ASSESSMENT_CATEGORY;
         public const string CATEGORY_NAME = "categoryName";
 
         public AdHocAssessmentCategory()

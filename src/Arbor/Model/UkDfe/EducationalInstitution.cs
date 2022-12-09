@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class EducationalInstitution : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_EDUCATIONAL_INSTITUTION;
+        protected new string resourceType = ResourceType.UK_DFE_EDUCATIONAL_INSTITUTION;
         public const string LOCAL_AUTHORITY = "localAuthority";
         public const string ESTABLISHMENT_NUMBER = "establishmentNumber";
         public const string CENSUS_SCHOOL_PHASE = "censusSchoolPhase";

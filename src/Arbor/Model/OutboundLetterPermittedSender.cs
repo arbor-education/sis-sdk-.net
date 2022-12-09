@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class OutboundLetterPermittedSender : ModelBase
     {
-        protected string resourceType = ResourceType.OUTBOUND_LETTER_PERMITTED_SENDER;
+        protected new string resourceType = ResourceType.OUTBOUND_LETTER_PERMITTED_SENDER;
         public const string ACTION_TAKER = "actionTaker";
         public const string SENDER = "sender";
         public const string ALLOW = "allow";

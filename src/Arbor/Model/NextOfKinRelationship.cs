@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class NextOfKinRelationship : ModelBase
     {
-        protected string resourceType = ResourceType.NEXT_OF_KIN_RELATIONSHIP;
+        protected new string resourceType = ResourceType.NEXT_OF_KIN_RELATIONSHIP;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

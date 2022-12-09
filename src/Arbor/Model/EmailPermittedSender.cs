@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class EmailPermittedSender : ModelBase
     {
-        protected string resourceType = ResourceType.EMAIL_PERMITTED_SENDER;
+        protected new string resourceType = ResourceType.EMAIL_PERMITTED_SENDER;
         public const string ACTION_TAKER = "actionTaker";
         public const string SENDER = "sender";
         public const string ALLOW = "allow";

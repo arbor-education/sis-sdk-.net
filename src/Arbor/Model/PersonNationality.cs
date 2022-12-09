@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class PersonNationality : ModelBase
     {
-        protected string resourceType = ResourceType.PERSON_NATIONALITY;
+        protected new string resourceType = ResourceType.PERSON_NATIONALITY;
         public const string PERSON = "person";
         public const string COUNTRY = "country";
         public const string NATIONALITY_STATUS = "nationalityStatus";

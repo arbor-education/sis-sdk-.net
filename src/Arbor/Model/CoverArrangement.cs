@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CoverArrangement : ModelBase
     {
-        protected string resourceType = ResourceType.COVER_ARRANGEMENT;
+        protected new string resourceType = ResourceType.COVER_ARRANGEMENT;
         public const string COVER_REQUIREMENT = "coverRequirement";
         public const string COVERING_STAFF = "coveringStaff";
         public const string COVER_START_DATETIME = "coverStartDatetime";

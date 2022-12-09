@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CandidateRegistrationAudit : ModelBase
     {
-        protected string resourceType = ResourceType.CANDIDATE_REGISTRATION_AUDIT;
+        protected new string resourceType = ResourceType.CANDIDATE_REGISTRATION_AUDIT;
         public const string CANDIDATE_REGISTRATION = "candidateRegistration";
         public const string TYPE = "type";
         public const string ACTION_DATETIME = "actionDatetime";

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class EnabledFeature : ModelBase
     {
-        protected string resourceType = ResourceType.ENABLED_FEATURE;
+        protected new string resourceType = ResourceType.ENABLED_FEATURE;
         public const string FEATURE_IDENTIFIER = "featureIdentifier";
         public const string CRM_CONTRACT_SERVICE_SUBSCRIPTION_ID = "crmContractServiceSubscriptionId";
         public const string BILLING_SERVICE_CONTRACT_SUBSCRIPTION_ID = "billingServiceContractSubscriptionId";

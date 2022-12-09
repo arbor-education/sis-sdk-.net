@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class InAppMessagePermittedSender : ModelBase
     {
-        protected string resourceType = ResourceType.IN_APP_MESSAGE_PERMITTED_SENDER;
+        protected new string resourceType = ResourceType.IN_APP_MESSAGE_PERMITTED_SENDER;
         public const string ACTION_TAKER = "actionTaker";
         public const string SENDER = "sender";
         public const string ALLOW = "allow";

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Alert : ModelBase
     {
-        protected string resourceType = ResourceType.ALERT;
+        protected new string resourceType = ResourceType.ALERT;
         public const string ALERT_RULE = "alertRule";
         public const string TRIGGER_EVENT_TYPE = "triggerEventType";
         public const string TRIGGERED_BY = "triggeredBy";

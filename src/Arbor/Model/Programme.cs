@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Programme : ModelBase
     {
-        protected string resourceType = ResourceType.PROGRAMME;
+        protected new string resourceType = ResourceType.PROGRAMME;
         public const string NAME = "name";
         public const string SHORT_NAME = "shortName";
         public const string IDENTIFIER = "identifier";

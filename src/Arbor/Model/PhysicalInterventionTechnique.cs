@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class PhysicalInterventionTechnique : ModelBase
     {
-        protected string resourceType = ResourceType.PHYSICAL_INTERVENTION_TECHNIQUE;
+        protected new string resourceType = ResourceType.PHYSICAL_INTERVENTION_TECHNIQUE;
         public const string NAME = "name";
         public const string DESCRIPTION = "description";
 

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class MedicalNote : ModelBase
     {
-        protected string resourceType = ResourceType.MEDICAL_NOTE;
+        protected new string resourceType = ResourceType.MEDICAL_NOTE;
         public const string STUDENT = "student";
         public const string SUMMARY = "summary";
         public const string CONTENT = "content";

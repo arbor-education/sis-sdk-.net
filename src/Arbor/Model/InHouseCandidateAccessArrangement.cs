@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class InHouseCandidateAccessArrangement : ModelBase
     {
-        protected string resourceType = ResourceType.IN_HOUSE_CANDIDATE_ACCESS_ARRANGEMENT;
+        protected new string resourceType = ResourceType.IN_HOUSE_CANDIDATE_ACCESS_ARRANGEMENT;
         public const string IN_HOUSE_CANDIDATE = "inHouseCandidate";
         public const string ACCESS_ARRANGEMENT = "accessArrangement";
         public const string EXTRA_TIME_PERCENTAGE = "extraTimePercentage";

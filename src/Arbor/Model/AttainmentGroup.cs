@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AttainmentGroup : ModelBase
     {
-        protected string resourceType = ResourceType.ATTAINMENT_GROUP;
+        protected new string resourceType = ResourceType.ATTAINMENT_GROUP;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

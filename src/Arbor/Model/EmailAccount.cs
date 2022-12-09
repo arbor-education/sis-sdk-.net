@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class EmailAccount : ModelBase
     {
-        protected string resourceType = ResourceType.EMAIL_ACCOUNT;
+        protected new string resourceType = ResourceType.EMAIL_ACCOUNT;
         public const string SERVER_TYPE = "serverType";
         public const string SERVER_HOST = "serverHost";
         public const string SERVER_PORT = "serverPort";

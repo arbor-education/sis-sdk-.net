@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class PinnedItem : ModelBase
     {
-        protected string resourceType = ResourceType.PINNED_ITEM;
+        protected new string resourceType = ResourceType.PINNED_ITEM;
         public const string PINNED = "pinned";
         public const string TARGET = "target";
         public const string PINNED_UNTIL_DATETIME = "pinnedUntilDatetime";

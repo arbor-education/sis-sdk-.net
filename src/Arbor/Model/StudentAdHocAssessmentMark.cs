@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class StudentAdHocAssessmentMark : ModelBase
     {
-        protected string resourceType = ResourceType.STUDENT_AD_HOC_ASSESSMENT_MARK;
+        protected new string resourceType = ResourceType.STUDENT_AD_HOC_ASSESSMENT_MARK;
         public const string AD_HOC_ASSESSMENT_BATCH = "adHocAssessmentBatch";
         public const string STUDENT = "student";
         public const string AD_HOC_ASSESSMENT = "adHocAssessment";

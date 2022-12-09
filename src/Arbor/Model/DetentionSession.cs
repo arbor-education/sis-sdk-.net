@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class DetentionSession : ModelBase
     {
-        protected string resourceType = ResourceType.DETENTION_SESSION;
+        protected new string resourceType = ResourceType.DETENTION_SESSION;
         public const string START_DATETIME = "startDatetime";
         public const string END_DATETIME = "endDatetime";
         public const string LOCATION_TEXT = "locationText";

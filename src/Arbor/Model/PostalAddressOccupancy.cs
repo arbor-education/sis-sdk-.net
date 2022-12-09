@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class PostalAddressOccupancy : ModelBase
     {
-        protected string resourceType = ResourceType.POSTAL_ADDRESS_OCCUPANCY;
+        protected new string resourceType = ResourceType.POSTAL_ADDRESS_OCCUPANCY;
         public const string POSTAL_ADDRESS = "postalAddress";
         public const string OCCUPANT = "occupant";
         public const string EFFECTIVE_DATE = "effectiveDate";

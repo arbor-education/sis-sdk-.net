@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class Programme : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_PROGRAMME;
+        protected new string resourceType = ResourceType.UK_DFE_PROGRAMME;
         public const string IS_TRAINEESHIP = "isTraineeship";
 
         public Programme()

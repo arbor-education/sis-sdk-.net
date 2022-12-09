@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class AlternativeProvisionPlacement : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_ALTERNATIVE_PROVISION_PLACEMENT;
+        protected new string resourceType = ResourceType.UK_DFE_ALTERNATIVE_PROVISION_PLACEMENT;
         public const string STUDENT = "student";
         public const string EDUCATIONAL_INSTITUTION = "educationalInstitution";
         public const string COMPANY = "company";

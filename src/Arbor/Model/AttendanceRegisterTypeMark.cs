@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AttendanceRegisterTypeMark : ModelBase
     {
-        protected string resourceType = ResourceType.ATTENDANCE_REGISTER_TYPE_MARK;
+        protected new string resourceType = ResourceType.ATTENDANCE_REGISTER_TYPE_MARK;
         public const string ATTENDANCE_REGISTER_TYPE = "attendanceRegisterType";
         public const string ATTENDANCE_MARK = "attendanceMark";
 

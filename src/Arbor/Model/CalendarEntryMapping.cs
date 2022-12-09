@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CalendarEntryMapping : ModelBase
     {
-        protected string resourceType = ResourceType.CALENDAR_ENTRY_MAPPING;
+        protected new string resourceType = ResourceType.CALENDAR_ENTRY_MAPPING;
         public const string EVENT = "event";
         public const string START_DATETIME = "startDatetime";
         public const string END_DATETIME = "endDatetime";

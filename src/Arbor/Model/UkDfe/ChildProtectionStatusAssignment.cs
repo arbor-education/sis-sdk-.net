@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class ChildProtectionStatusAssignment : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_CHILD_PROTECTION_STATUS_ASSIGNMENT;
+        protected new string resourceType = ResourceType.UK_DFE_CHILD_PROTECTION_STATUS_ASSIGNMENT;
         public const string RESPONSIBLE_LOCAL_AUTHORITY = "responsibleLocalAuthority";
 
         public ChildProtectionStatusAssignment()

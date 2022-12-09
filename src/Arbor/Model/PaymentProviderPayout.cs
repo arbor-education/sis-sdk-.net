@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class PaymentProviderPayout : ModelBase
     {
-        protected string resourceType = ResourceType.PAYMENT_PROVIDER_PAYOUT;
+        protected new string resourceType = ResourceType.PAYMENT_PROVIDER_PAYOUT;
         public const string BANK_ACCOUNT = "bankAccount";
         public const string PAYMENT_PROVIDER = "paymentProvider";
         public const string PAYMENT_PROVIDER_PAYOUT_IDENTIFIER = "paymentProviderPayoutIdentifier";

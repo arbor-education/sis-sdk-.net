@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class UserBeta : ModelBase
     {
-        protected string resourceType = ResourceType.USER_BETA;
+        protected new string resourceType = ResourceType.USER_BETA;
         public const string USER = "user";
         public const string IS_ELIGIBLE = "isEligible";
         public const string IS_ENABLED = "isEnabled";

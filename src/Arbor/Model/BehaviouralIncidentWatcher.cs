@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class BehaviouralIncidentWatcher : ModelBase
     {
-        protected string resourceType = ResourceType.BEHAVIOURAL_INCIDENT_WATCHER;
+        protected new string resourceType = ResourceType.BEHAVIOURAL_INCIDENT_WATCHER;
         public const string BEHAVIOURAL_INCIDENT = "behaviouralIncident";
         public const string STAFF = "staff";
 

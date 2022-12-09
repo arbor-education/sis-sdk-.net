@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class SchoolCensusPupilReconciliation : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_SCHOOL_CENSUS_PUPIL_RECONCILIATION;
+        protected new string resourceType = ResourceType.UK_DFE_SCHOOL_CENSUS_PUPIL_RECONCILIATION;
         public const string SCHOOL_CENSUS = "schoolCensus";
         public const string PART_TIME_NOT_IN = "partTimeNotIn";
         public const string PRIVATE_STUDY = "privateStudy";

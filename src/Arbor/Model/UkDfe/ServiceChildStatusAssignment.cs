@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class ServiceChildStatusAssignment : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_SERVICE_CHILD_STATUS_ASSIGNMENT;
+        protected new string resourceType = ResourceType.UK_DFE_SERVICE_CHILD_STATUS_ASSIGNMENT;
         public const string STUDENT = "student";
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";

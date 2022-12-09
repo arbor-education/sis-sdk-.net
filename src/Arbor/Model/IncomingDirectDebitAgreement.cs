@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class IncomingDirectDebitAgreement : ModelBase
     {
-        protected string resourceType = ResourceType.INCOMING_DIRECT_DEBIT_AGREEMENT;
+        protected new string resourceType = ResourceType.INCOMING_DIRECT_DEBIT_AGREEMENT;
         public const string BILL_PAYER = "billPayer";
         public const string PAYMENT_PROVIDER = "paymentProvider";
         public const string PAYMENT_PROVIDER_AGREEMENT_IDENTIFIER = "paymentProviderAgreementIdentifier";

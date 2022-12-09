@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AssessmentDefaultDisplayGradeSet : ModelBase
     {
-        protected string resourceType = ResourceType.ASSESSMENT_DEFAULT_DISPLAY_GRADE_SET;
+        protected new string resourceType = ResourceType.ASSESSMENT_DEFAULT_DISPLAY_GRADE_SET;
         public const string PROGRESS_ASSESSMENT_BATCH = "progressAssessmentBatch";
         public const string GRADE_SET = "gradeSet";
 

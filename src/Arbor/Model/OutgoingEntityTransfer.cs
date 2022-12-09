@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class OutgoingEntityTransfer : ModelBase
     {
-        protected string resourceType = ResourceType.OUTGOING_ENTITY_TRANSFER;
+        protected new string resourceType = ResourceType.OUTGOING_ENTITY_TRANSFER;
         public const string SOURCE_ENTITY = "sourceEntity";
         public const string TRANSFER_CLASS_NAME = "transferClassName";
         public const string DESTINATION_APPLICATION_ID = "destinationApplicationId";

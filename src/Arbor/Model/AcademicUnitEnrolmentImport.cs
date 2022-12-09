@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AcademicUnitEnrolmentImport : ModelBase
     {
-        protected string resourceType = ResourceType.ACADEMIC_UNIT_ENROLMENT_IMPORT;
+        protected new string resourceType = ResourceType.ACADEMIC_UNIT_ENROLMENT_IMPORT;
         public const string NAME = "name";
         public const string ACADEMIC_YEAR = "academicYear";
         public const string IMPORT_STARTED_DATETIME = "importStartedDatetime";

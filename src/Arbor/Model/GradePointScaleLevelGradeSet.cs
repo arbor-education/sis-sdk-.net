@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class GradePointScaleLevelGradeSet : ModelBase
     {
-        protected string resourceType = ResourceType.GRADE_POINT_SCALE_LEVEL_GRADE_SET;
+        protected new string resourceType = ResourceType.GRADE_POINT_SCALE_LEVEL_GRADE_SET;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";

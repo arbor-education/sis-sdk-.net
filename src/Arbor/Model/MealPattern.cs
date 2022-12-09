@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class MealPattern : ModelBase
     {
-        protected string resourceType = ResourceType.MEAL_PATTERN;
+        protected new string resourceType = ResourceType.MEAL_PATTERN;
         public const string ATTENDEE = "attendee";
         public const string MEAL = "meal";
         public const string MEAL_SITTING = "mealSitting";

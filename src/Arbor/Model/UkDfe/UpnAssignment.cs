@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class UpnAssignment : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_UPN_ASSIGNMENT;
+        protected new string resourceType = ResourceType.UK_DFE_UPN_ASSIGNMENT;
         public const string STUDENT = "student";
         public const string ISSUED_YEAR = "issuedYear";
         public const string ISSUED_LOCAL_AUTHORITY = "issuedLocalAuthority";

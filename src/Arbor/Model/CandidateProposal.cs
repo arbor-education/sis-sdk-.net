@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CandidateProposal : ModelBase
     {
-        protected string resourceType = ResourceType.CANDIDATE_PROPOSAL;
+        protected new string resourceType = ResourceType.CANDIDATE_PROPOSAL;
         public const string CANDIDATE = "candidate";
         public const string SUGGESTED_BY_STAFF = "suggestedByStaff";
         public const string SUGGESTED_DATETIME = "suggestedDatetime";

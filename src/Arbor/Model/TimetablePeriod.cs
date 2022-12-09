@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class TimetablePeriod : ModelBase
     {
-        protected string resourceType = ResourceType.TIMETABLE_PERIOD;
+        protected new string resourceType = ResourceType.TIMETABLE_PERIOD;
         public const string TIMETABLE_PERIOD_GROUPING = "timetablePeriodGrouping";
         public const string DAY_OF_CYCLE = "dayOfCycle";
         public const string DAY_OF_WEEK = "dayOfWeek";

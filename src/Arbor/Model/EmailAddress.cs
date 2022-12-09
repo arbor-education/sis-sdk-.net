@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class EmailAddress : ModelBase
     {
-        protected string resourceType = ResourceType.EMAIL_ADDRESS;
+        protected new string resourceType = ResourceType.EMAIL_ADDRESS;
         public const string EMAIL_ADDRESS_OWNER = "emailAddressOwner";
         public const string EMAIL_ADDRESS_TYPE = "emailAddressType";
         public const string EMAIL_ADDRESS = "emailAddress";

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class SmsMessagePart : ModelBase
     {
-        protected string resourceType = ResourceType.SMS_MESSAGE_PART;
+        protected new string resourceType = ResourceType.SMS_MESSAGE_PART;
         public const string SMS_MESSAGE = "smsMessage";
         public const string PART_IDENTIFIER = "partIdentifier";
         public const string RECEIVED_DATETIME = "receivedDatetime";

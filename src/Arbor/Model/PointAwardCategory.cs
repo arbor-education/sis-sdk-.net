@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class PointAwardCategory : ModelBase
     {
-        protected string resourceType = ResourceType.POINT_AWARD_CATEGORY;
+        protected new string resourceType = ResourceType.POINT_AWARD_CATEGORY;
         public const string DESCRIPTION = "description";
         public const string POINT_AWARD_SCALE = "pointAwardScale";
         public const string DEFAULT_POINTS = "defaultPoints";

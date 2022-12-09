@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class EmergencyAlertType : ModelBase
     {
-        protected string resourceType = ResourceType.EMERGENCY_ALERT_TYPE;
+        protected new string resourceType = ResourceType.EMERGENCY_ALERT_TYPE;
         public const string NAME = "name";
         public const string ACTIVE = "active";
 

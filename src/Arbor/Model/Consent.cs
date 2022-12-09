@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Consent : ModelBase
     {
-        protected string resourceType = ResourceType.CONSENT;
+        protected new string resourceType = ResourceType.CONSENT;
         public const string STUDENT = "student";
         public const string CONSENT_TYPE = "consentType";
         public const string RELATED = "related";
