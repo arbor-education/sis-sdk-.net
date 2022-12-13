@@ -18,6 +18,9 @@ namespace Arbor.Model
         public const string IS_TARGET_LOCKED = "isTargetLocked";
         public const string SHOW_RANK_ORDER = "showRankOrder";
         public const string SHOW_CURRENT_VS_BASELINE = "showCurrentVsBaseline";
+        public const string SHOW_CURRENT_VS_YEAR_TARGET = "showCurrentVsYearTarget";
+        public const string SHOW_CURRENT_VS_PREDICTED = "showCurrentVsPredicted";
+        public const string SHOW_CURRENT_VS_PREVIOUS = "showCurrentVsPrevious";
 
         public ProgressAssessmentBatch()
         {
@@ -134,6 +137,36 @@ namespace Arbor.Model
         public void setShowCurrentVsBaseline(bool showCurrentVsBaseline)
         {
             this.setProperty("showCurrentVsBaseline", showCurrentVsBaseline);
+        }
+
+        public bool getShowCurrentVsYearTarget()
+        {
+            return Convert.ToBoolean(this.getProperty("showCurrentVsYearTarget"));
+        }
+
+        public void setShowCurrentVsYearTarget(bool showCurrentVsYearTarget)
+        {
+            this.setProperty("showCurrentVsYearTarget", showCurrentVsYearTarget);
+        }
+
+        public bool getShowCurrentVsPredicted()
+        {
+            return Convert.ToBoolean(this.getProperty("showCurrentVsPredicted"));
+        }
+
+        public void setShowCurrentVsPredicted(bool showCurrentVsPredicted)
+        {
+            this.setProperty("showCurrentVsPredicted", showCurrentVsPredicted);
+        }
+
+        public bool getShowCurrentVsPrevious()
+        {
+            return Convert.ToBoolean(this.getProperty("showCurrentVsPrevious"));
+        }
+
+        public void setShowCurrentVsPrevious(bool showCurrentVsPrevious)
+        {
+            this.setProperty("showCurrentVsPrevious", showCurrentVsPrevious);
         }
 
 

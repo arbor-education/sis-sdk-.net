@@ -24,6 +24,8 @@ namespace Arbor.Model
         public const string DETENTION_EMAIL_GUARDIAN = "detentionEmailGuardian";
         public const string BEHAVIOURAL_INCIDENT_SMS_TEMPLATE = "behaviouralIncidentSmsTemplate";
         public const string BEHAVIOURAL_INCIDENT_EMAIL_TEMPLATE = "behaviouralIncidentEmailTemplate";
+        public const string DETENTION_EMAIL_TEMPLATE = "detentionEmailTemplate";
+        public const string DETENTION_SMS_TEMPLATE = "detentionSmsTemplate";
         public const string DEFAULT_ASSIGNEE = "defaultAssignee";
         public const string SPECIFIC_ASSIGNEE = "specificAssignee";
         public const string DETENTION_TYPE = "detentionType";
@@ -215,6 +217,26 @@ namespace Arbor.Model
         public void setBehaviouralIncidentEmailTemplate(CommunicationTemplate behaviouralIncidentEmailTemplate)
         {
             this.setProperty("behaviouralIncidentEmailTemplate", behaviouralIncidentEmailTemplate);
+        }
+
+        public CommunicationTemplate getDetentionEmailTemplate()
+        {
+            return (CommunicationTemplate)this.getProperty("detentionEmailTemplate");
+        }
+
+        public void setDetentionEmailTemplate(CommunicationTemplate detentionEmailTemplate)
+        {
+            this.setProperty("detentionEmailTemplate", detentionEmailTemplate);
+        }
+
+        public CommunicationTemplate getDetentionSmsTemplate()
+        {
+            return (CommunicationTemplate)this.getProperty("detentionSmsTemplate");
+        }
+
+        public void setDetentionSmsTemplate(CommunicationTemplate detentionSmsTemplate)
+        {
+            this.setProperty("detentionSmsTemplate", detentionSmsTemplate);
         }
 
         public string getDefaultAssignee()

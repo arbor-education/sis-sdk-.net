@@ -78,4 +78,3 @@ namespace Arbor.Resource.UkDfe
         public const string UK_DFE_YOUNG_CARER_STATUS_ASSIGNMENT = "UkDfe_YoungCarerStatusAssignment";
     }
 }
-

@@ -60,6 +60,7 @@ namespace Arbor.Resource
         public const string ASSESSMENT_ASPECT = "AssessmentAspect";
         public const string ASSESSMENT_DATA_COLLECTION = "AssessmentDataCollection";
         public const string ASSESSMENT_DATA_COLLECTION_ITEM = "AssessmentDataCollectionItem";
+        public const string ASSESSMENT_DATA_COLLECTION_ITEM_ASSIGNED_STAFF = "AssessmentDataCollectionItemAssignedStaff";
         public const string ASSESSMENT_DEFAULT_DISPLAY_GRADE_SET = "AssessmentDefaultDisplayGradeSet";
         public const string ASSESSMENT_DERIVATION = "AssessmentDerivation";
         public const string ASSESSMENT_DERIVATION_DEPENDANT = "AssessmentDerivationDependant";
@@ -337,10 +338,7 @@ namespace Arbor.Resource
         public const string INTAKE_SEASON_APPLICANT_BUCKET = "IntakeSeasonApplicantBucket";
         public const string INTAKE_SEASON_GROUP = "IntakeSeasonGroup";
         public const string INTEGRATION_VLE_PROVIDER = "IntegrationVleProvider";
-
-        public const string INTEGRATIONS_CASHLESS_CATERING_SYSTEM_PROVIDER =
-            "IntegrationsCashlessCateringSystemProvider";
-
+        public const string INTEGRATIONS_CASHLESS_CATERING_SYSTEM_PROVIDER = "IntegrationsCashlessCateringSystemProvider";
         public const string INTEGRATIONS_HR_FINANCE_MAPPING_STATUS = "IntegrationsHrFinanceMappingStatus";
         public const string INTEGRATIONS_HR_FINANCE_PROVIDER = "IntegrationsHrFinanceProvider";
         public const string INTEGRATIONS_HR_FINANCE_TEST_RUN = "IntegrationsHrFinanceTestRun";
@@ -495,10 +493,7 @@ namespace Arbor.Resource
         public const string PROGRESS_ASSESSMENT_BATCH = "ProgressAssessmentBatch";
         public const string PROGRESS_ASSESSMENT_BATCH_MEASUREMENT_PERIOD = "ProgressAssessmentBatchMeasurementPeriod";
         public const string PROGRESS_ASSESSMENT_BATCH_TARGET = "ProgressAssessmentBatchTarget";
-
-        public const string PROGRESS_ASSESSMENT_BATCH_TARGET_MEASUREMENT_PERIOD =
-            "ProgressAssessmentBatchTargetMeasurementPeriod";
-
+        public const string PROGRESS_ASSESSMENT_BATCH_TARGET_MEASUREMENT_PERIOD = "ProgressAssessmentBatchTargetMeasurementPeriod";
         public const string PROGRESS_GOAL_TYPE = "ProgressGoalType";
         public const string PROGRESS_MEASUREMENT_PERIOD = "ProgressMeasurementPeriod";
         public const string PROGRESS_MEASUREMENT_PERIOD_SET = "ProgressMeasurementPeriodSet";

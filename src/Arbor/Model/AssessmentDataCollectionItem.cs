@@ -18,6 +18,7 @@ namespace Arbor.Model
         public const string DEADLINE_DATE = "deadlineDate";
         public const string COMPLETION_NUMERATOR = "completionNumerator";
         public const string COMPLETION_DENOMINATOR = "completionDenominator";
+        public const string DERIVE_ASSIGNED_STAFF = "deriveAssignedStaff";
 
         public AssessmentDataCollectionItem()
         {
@@ -134,6 +135,16 @@ namespace Arbor.Model
         public void setCompletionDenominator(int completionDenominator)
         {
             this.setProperty("completionDenominator", completionDenominator);
+        }
+
+        public bool getDeriveAssignedStaff()
+        {
+            return Convert.ToBoolean(this.getProperty("deriveAssignedStaff"));
+        }
+
+        public void setDeriveAssignedStaff(bool deriveAssignedStaff)
+        {
+            this.setProperty("deriveAssignedStaff", deriveAssignedStaff);
         }
 
 
