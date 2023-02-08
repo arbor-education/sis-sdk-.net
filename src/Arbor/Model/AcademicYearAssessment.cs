@@ -18,6 +18,7 @@ namespace Arbor.Model
         public const string IS_LINKED_TO_SUMMATIVE_TRACKING = "isLinkedToSummativeTracking";
         public const string SETUP_COMPLETED_DATETIME = "setupCompletedDatetime";
         public const string SETUP_COMPLETION_STARTED_DATETIME = "setupCompletionStartedDatetime";
+        public const string DELETION_STARTED_DATETIME = "deletionStartedDatetime";
         public const string ALLOW_COMMENTS = "allowComments";
 
         public AcademicYearAssessment()
@@ -135,6 +136,16 @@ namespace Arbor.Model
         public void setSetupCompletionStartedDatetime(DateTime setupCompletionStartedDatetime)
         {
             this.setProperty("setupCompletionStartedDatetime", setupCompletionStartedDatetime);
+        }
+
+        public DateTime getDeletionStartedDatetime()
+        {
+            return Convert.ToDateTime(this.getProperty("deletionStartedDatetime"));
+        }
+
+        public void setDeletionStartedDatetime(DateTime deletionStartedDatetime)
+        {
+            this.setProperty("deletionStartedDatetime", deletionStartedDatetime);
         }
 
         public bool getAllowComments()
