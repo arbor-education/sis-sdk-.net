@@ -12,6 +12,7 @@ namespace Arbor.Model
         protected new string resourceType = ResourceType.BEHAVIOUR;
         public const string BEHAVIOUR_NAME = "behaviourName";
         public const string DESCRIPTION = "description";
+        public const string BEHAVIOURAL_INCIDENT_LEVEL_WORKFLOW = "behaviouralIncidentLevelWorkflow";
         public const string SEVERITY = "severity";
         public const string ACTIVE = "active";
         public const string IS_MY_CLASSROOM_DEFAULT = "isMyClassroomDefault";
@@ -71,6 +72,16 @@ namespace Arbor.Model
         public void setDescription(string description)
         {
             this.setProperty("description", description);
+        }
+
+        public BehaviouralIncidentLevelWorkflow getBehaviouralIncidentLevelWorkflow()
+        {
+            return (BehaviouralIncidentLevelWorkflow)this.getProperty("behaviouralIncidentLevelWorkflow");
+        }
+
+        public void setBehaviouralIncidentLevelWorkflow(BehaviouralIncidentLevelWorkflow behaviouralIncidentLevelWorkflow)
+        {
+            this.setProperty("behaviouralIncidentLevelWorkflow", behaviouralIncidentLevelWorkflow);
         }
 
         public string getSeverity()

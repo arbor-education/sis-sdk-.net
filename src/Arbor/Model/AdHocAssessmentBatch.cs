@@ -13,6 +13,7 @@ namespace Arbor.Model
         public const string AD_HOC_ASSESSMENT = "adHocAssessment";
         public const string PROGRESS_MEASUREMENT_PERIOD = "progressMeasurementPeriod";
         public const string ASSESSMENT_REFERENCE_DATE = "assessmentReferenceDate";
+        public const string DELETION_STARTED_DATETIME = "deletionStartedDatetime";
 
         public AdHocAssessmentBatch()
         {
@@ -79,6 +80,16 @@ namespace Arbor.Model
         public void setAssessmentReferenceDate(DateTime assessmentReferenceDate)
         {
             this.setProperty("assessmentReferenceDate", assessmentReferenceDate);
+        }
+
+        public DateTime getDeletionStartedDatetime()
+        {
+            return Convert.ToDateTime(this.getProperty("deletionStartedDatetime"));
+        }
+
+        public void setDeletionStartedDatetime(DateTime deletionStartedDatetime)
+        {
+            this.setProperty("deletionStartedDatetime", deletionStartedDatetime);
         }
 
 
