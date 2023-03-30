@@ -16,6 +16,7 @@ namespace Arbor.Model
         public const string POSTAL_TOWN = "postalTown";
         public const string POSTAL_STATE = "postalState";
         public const string POSTAL_CODE = "postalCode";
+        public const string UNIQUE_PROPERTY_REFERENCE_NUMBER = "uniquePropertyReferenceNumber";
         public const string COUNTRY = "country";
         public const string LAT = "lat";
         public const string LNG = "lng";
@@ -116,6 +117,16 @@ namespace Arbor.Model
         public void setPostalCode(string postalCode)
         {
             this.setProperty("postalCode", postalCode);
+        }
+
+        public string getUniquePropertyReferenceNumber()
+        {
+            return this.getProperty("uniquePropertyReferenceNumber").ToString();
+        }
+
+        public void setUniquePropertyReferenceNumber(string uniquePropertyReferenceNumber)
+        {
+            this.setProperty("uniquePropertyReferenceNumber", uniquePropertyReferenceNumber);
         }
 
         public Country getCountry()

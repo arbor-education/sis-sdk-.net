@@ -16,6 +16,7 @@ namespace Arbor.Model
         public const string ESCALATION_THRESHOLD_COUNT = "escalationThresholdCount";
         public const string ESCALATION_THRESHOLD_TIME_RANGE = "escalationThresholdTimeRange";
         public const string ESCALATE_TO_LEVEL = "escalateToLevel";
+        public const string ESCALATE_NUMBER_OF_LEVELS = "escalateNumberOfLevels";
         public const string RESET_TO_ZERO = "resetToZero";
         public const string GUARDIAN_EMAIL_TEMPLATE = "guardianEmailTemplate";
         public const string MESSAGE_CHANNEL = "messageChannel";
@@ -138,6 +139,16 @@ namespace Arbor.Model
         public void setEscalateToLevel(int escalateToLevel)
         {
             this.setProperty("escalateToLevel", escalateToLevel);
+        }
+
+        public int getEscalateNumberOfLevels()
+        {
+            return Convert.ToInt32(this.getProperty("escalateNumberOfLevels"));
+        }
+
+        public void setEscalateNumberOfLevels(int escalateNumberOfLevels)
+        {
+            this.setProperty("escalateNumberOfLevels", escalateNumberOfLevels);
         }
 
         public bool getResetToZero()
