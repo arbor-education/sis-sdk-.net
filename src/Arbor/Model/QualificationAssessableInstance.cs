@@ -20,7 +20,6 @@ namespace Arbor.Model
         public const string START_DATE_RANGE_UNTIL = "startDateRangeUntil";
         public const string DURATION = "duration";
         public const string IS_CENTRE_SPECIFIED_TIMETABLE = "isCentreSpecifiedTimetable";
-        public const string CENTRE_SPECIFIED_DATETIME = "centreSpecifiedDatetime";
         public const string CENTRE_SPECIFIED_DURATION = "centreSpecifiedDuration";
         public const string IS_PROVISIONAL = "isProvisional";
 
@@ -159,16 +158,6 @@ namespace Arbor.Model
         public void setIsCentreSpecifiedTimetable(bool isCentreSpecifiedTimetable)
         {
             this.setProperty("isCentreSpecifiedTimetable", isCentreSpecifiedTimetable);
-        }
-
-        public DateTime getCentreSpecifiedDatetime()
-        {
-            return Convert.ToDateTime(this.getProperty("centreSpecifiedDatetime"));
-        }
-
-        public void setCentreSpecifiedDatetime(DateTime centreSpecifiedDatetime)
-        {
-            this.setProperty("centreSpecifiedDatetime", centreSpecifiedDatetime);
         }
 
         public string getCentreSpecifiedDuration()

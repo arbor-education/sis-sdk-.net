@@ -202,6 +202,9 @@ namespace Arbor.Resource
         public const string CUSTOM_GROUP_NOTIFICATION_RECIPIENT = "CustomGroupNotificationRecipient";
         public const string CUSTOM_GROUP_NOTIFICATION_SETTING = "CustomGroupNotificationSetting";
         public const string CUSTOM_REPORT = "CustomReport";
+        public const string CUSTOM_REPORT_CARD = "CustomReportCard";
+        public const string CUSTOM_REPORT_CARD_STUDENT = "CustomReportCardStudent";
+        public const string CUSTOM_REPORT_CARD_STUDENT_GROUP = "CustomReportCardStudentGroup";
         public const string CUSTOM_REPORT_COLLATION = "CustomReportCollation";
         public const string CUSTOM_REPORT_COLUMN = "CustomReportColumn";
         public const string CUSTOM_REPORT_COLUMN_CONDITIONAL_FORMATTER = "CustomReportColumnConditionalFormatter";

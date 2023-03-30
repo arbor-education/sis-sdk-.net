@@ -11,6 +11,7 @@ namespace Arbor.Model
     {
         protected new string resourceType = ResourceType.BEHAVIOURAL_INCIDENT_DEFAULT_WATCHER;
         public const string LEVEL_OF_INCIDENT = "levelOfIncident";
+        public const string BEHAVIOURAL_INCIDENT_LEVEL_WORKFLOW = "behaviouralIncidentLevelWorkflow";
         public const string RELATION_TO_STUDENT = "relationToStudent";
         public const string STAFF = "staff";
 
@@ -59,6 +60,16 @@ namespace Arbor.Model
         public void setLevelOfIncident(int levelOfIncident)
         {
             this.setProperty("levelOfIncident", levelOfIncident);
+        }
+
+        public BehaviouralIncidentLevelWorkflow getBehaviouralIncidentLevelWorkflow()
+        {
+            return (BehaviouralIncidentLevelWorkflow)this.getProperty("behaviouralIncidentLevelWorkflow");
+        }
+
+        public void setBehaviouralIncidentLevelWorkflow(BehaviouralIncidentLevelWorkflow behaviouralIncidentLevelWorkflow)
+        {
+            this.setProperty("behaviouralIncidentLevelWorkflow", behaviouralIncidentLevelWorkflow);
         }
 
         public string getRelationToStudent()
