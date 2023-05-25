@@ -43,6 +43,7 @@ namespace Arbor.Resource
         public const string AD_HOC_ASSESSMENT_CATEGORY = "AdHocAssessmentCategory";
         public const string AD_HOC_BURSARY_PAYMENT = "AdHocBursaryPayment";
         public const string ADDITIONAL_PAYMENT_REASON = "AdditionalPaymentReason";
+        public const string AI_REQUEST = "AiRequest";
         public const string ALERT = "Alert";
         public const string ALERT_RECIPIENT = "AlertRecipient";
         public const string ALERT_RULE = "AlertRule";
@@ -541,6 +542,7 @@ namespace Arbor.Resource
         public const string REPORT_CARD_BATCH_AD_HOC_ASSESSMENT = "ReportCardBatchAdHocAssessment";
         public const string REPORT_CARD_BATCH_CURRICULUM = "ReportCardBatchCurriculum";
         public const string REPORT_CARD_BATCH_PROGRESS_ASSESSMENT = "ReportCardBatchProgressAssessment";
+        public const string REPORT_CARD_BATCH_STANDARDIZED_ASSESSMENT = "ReportCardBatchStandardizedAssessment";
         public const string REPORT_SUBSCRIPTION = "ReportSubscription";
         public const string ROOM = "Room";
         public const string ROOM_ASSET = "RoomAsset";
