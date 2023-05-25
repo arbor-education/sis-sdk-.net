@@ -17,6 +17,7 @@ namespace Arbor.Model.UkDfe
         public const string QUALIFIED_TEACHER_ROUTE = "qualifiedTeacherRoute";
         public const string HLTA_STATUS = "hltaStatus";
         public const string NEWLY_QUALIFIED_TEACHER_DATE = "newlyQualifiedTeacherDate";
+        public const string SLT_STATUS_FOR_SWC = "sltStatusForSwc";
 
         public Staff()
         {
@@ -123,6 +124,16 @@ namespace Arbor.Model.UkDfe
         public void setNewlyQualifiedTeacherDate(DateTime newlyQualifiedTeacherDate)
         {
             this.setProperty("newlyQualifiedTeacherDate", newlyQualifiedTeacherDate);
+        }
+
+        public string getSltStatusForSwc()
+        {
+            return this.getProperty("sltStatusForSwc").ToString();
+        }
+
+        public void setSltStatusForSwc(string sltStatusForSwc)
+        {
+            this.setProperty("sltStatusForSwc", sltStatusForSwc);
         }
 
 
