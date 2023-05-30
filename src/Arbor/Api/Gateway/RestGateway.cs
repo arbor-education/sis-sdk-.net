@@ -200,15 +200,18 @@ namespace Arbor.Api.Gateway
 			return model;
 		}
 
-		public HttpWebResponse delete(ModelBase model)
-		{
-			string url = model.getResourceUrl().AbsoluteUri;
-			WebRequest request = WebRequest.Create(url);
-			request.Method = HTTP_METHOD_DELETE;
-			HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+        public JObject delete(ModelBase model)
+        {
+            // Filters
+            PluralizeFilter filterPluralize = new PluralizeFilter();
+            CamelCaseToDash filterCamelToDash = new CamelCaseToDash();
 
-			return response;
-		}
+            string resourceSegment = (filterCamelToDash.filter(filterPluralize.filter(resource)));
+            string url = baseUrl + "/rest-v2/" + resourceSegment + "/" + id;
+
+            // Request / Response
+            return this.sendRequest(HTTP_METHOD_GET.ToString(), url);
+        }
 
 		public ModelCollection<ModelBase> query(SimpleQuery query)
 		{
@@ -404,17 +407,20 @@ namespace Arbor.Api.Gateway
 				}
 			}
 
-			switch (code)
-			{
-				case HttpStatusCode.OK:
-				case HttpStatusCode.Created:
-					responsePayload = JObject.Parse(serverResponse);
-					break;
-				case HttpStatusCode.NotFound:
-				case HttpStatusCode.InternalServerError:
-					throw new ServerErrorException(message);
-					break;
-				default:
+            switch (code)
+            {
+                case HttpStatusCode.OK:
+                case HttpStatusCode.Created:
+                    responsePayload = JObject.Parse(serverResponse);
+                    break;
+                case HttpStatusCode.NoContent:
+                    responsePayload = JObject.Parse("{message: 'Successfully deleted entity'}");
+                    break;
+                case HttpStatusCode.NotFound:
+                case HttpStatusCode.InternalServerError:
+                    throw new ServerErrorException(message);
+                    break;
+                default:
 
 				throw new ServerErrorException(message);
 					break;
