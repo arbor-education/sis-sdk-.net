@@ -210,7 +210,7 @@ namespace Arbor.Api.Gateway
             string url = baseUrl + "/rest-v2/" + resourceSegment + "/" + id;
 
             // Request / Response
-            return this.sendRequest(HTTP_METHOD_GET.ToString(), url);
+            return this.sendRequest(HTTP_METHOD_DELETE.ToString(), url);
         }
 
 		public ModelCollection<ModelBase> query(SimpleQuery query)
