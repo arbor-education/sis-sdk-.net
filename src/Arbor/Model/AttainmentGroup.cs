@@ -9,95 +9,96 @@ namespace Arbor.Model
 {
     public class AttainmentGroup : ModelBase
     {
-        protected string resourceType = ResourceType.ATTAINMENT_GROUP;
+        protected new string resourceType = ResourceType.ATTAINMENT_GROUP;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";
         public const string NAME = "name";
         public const string CALCULATION_CLASS = "calculationClass";
 
-        public AttainmentGroup ()
+        public AttainmentGroup()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AttainmentGroup (string resourceType = "AttainmentGroup", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AttainmentGroup> query (SimpleQuery query = null)
+        public AttainmentGroup(string resourceType = "AttainmentGroup", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AttainmentGroup");
-        	RestGateway gateway = (RestGateway) AttainmentGroup.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AttainmentGroup> attainmentgroupCollection = new ModelCollection<AttainmentGroup> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    attainmentgroupCollection.add((AttainmentGroup) model);
-        	}
-        
-        	return attainmentgroupCollection;
+
         }
 
-        public static AttainmentGroup retrieve (string id)
+
+        public static ModelCollection<AttainmentGroup> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AttainmentGroup.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AttainmentGroup) gateway.retrieve(ResourceType.ATTAINMENT_GROUP, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AttainmentGroup");
+            RestGateway gateway = (RestGateway)AttainmentGroup.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AttainmentGroup> attainmentgroupCollection = new ModelCollection<AttainmentGroup>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                attainmentgroupCollection.add((AttainmentGroup)model);
+            }
+
+            return attainmentgroupCollection;
         }
 
-        public string getCode ()
+        public static AttainmentGroup retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)AttainmentGroup.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AttainmentGroup)gateway.retrieve(ResourceType.ATTAINMENT_GROUP, id);
+        }
+
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }
 
-        public string getName ()
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }
 
-        public string getCalculationClass ()
+        public string getCalculationClass()
         {
             return this.getProperty("calculationClass").ToString();
         }
 
-        public void setCalculationClass (string calculationClass)
+        public void setCalculationClass(string calculationClass)
         {
             this.setProperty("calculationClass", calculationClass);
         }

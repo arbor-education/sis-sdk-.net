@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class File : ModelBase
     {
-        protected string resourceType = ResourceType.FILE;
+        protected new string resourceType = ResourceType.FILE;
         public const string CONTENT = "content";
         public const string URL = "url";
         public const string FILE_SIZE = "fileSize";
@@ -19,118 +19,119 @@ namespace Arbor.Model
         public const string FILE_NAME = "fileName";
         public const string COMPRESSED = "compressed";
 
-        public File ()
+        public File()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public File (string resourceType = "File", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<File> query (SimpleQuery query = null)
+        public File(string resourceType = "File", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("File");
-        	RestGateway gateway = (RestGateway) File.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<File> fileCollection = new ModelCollection<File> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    fileCollection.add((File) model);
-        	}
-        
-        	return fileCollection;
+
         }
 
-        public static File retrieve (string id)
+
+        public static ModelCollection<File> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) File.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (File) gateway.retrieve(ResourceType.FILE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("File");
+            RestGateway gateway = (RestGateway)File.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<File> fileCollection = new ModelCollection<File>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                fileCollection.add((File)model);
+            }
+
+            return fileCollection;
         }
 
-        public Content getContent ()
+        public static File retrieve(string id)
         {
-            return (Content) this.getProperty("content");
+            RestGateway gateway = (RestGateway)File.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (File)gateway.retrieve(ResourceType.FILE, id);
         }
 
-        public void setContent (Content content)
+        public Content getContent()
+        {
+            return (Content)this.getProperty("content");
+        }
+
+        public void setContent(Content content)
         {
             this.setProperty("content", content);
         }
 
-        public string getUrl ()
+        public string getUrl()
         {
             return this.getProperty("url").ToString();
         }
 
-        public void setUrl (string url)
+        public void setUrl(string url)
         {
             this.setProperty("url", url);
         }
 
-        public int getFileSize ()
+        public int getFileSize()
         {
             return Convert.ToInt32(this.getProperty("fileSize"));
         }
 
-        public void setFileSize (int fileSize)
+        public void setFileSize(int fileSize)
         {
             this.setProperty("fileSize", fileSize);
         }
 
-        public string getMimeType ()
+        public string getMimeType()
         {
             return this.getProperty("mimeType").ToString();
         }
 
-        public void setMimeType (string mimeType)
+        public void setMimeType(string mimeType)
         {
             this.setProperty("mimeType", mimeType);
         }
 
-        public string getFileIdentifier ()
+        public string getFileIdentifier()
         {
             return this.getProperty("fileIdentifier").ToString();
         }
 
-        public void setFileIdentifier (string fileIdentifier)
+        public void setFileIdentifier(string fileIdentifier)
         {
             this.setProperty("fileIdentifier", fileIdentifier);
         }
 
-        public string getFileMetadata ()
+        public string getFileMetadata()
         {
             return this.getProperty("fileMetadata").ToString();
         }
 
-        public void setFileMetadata (string fileMetadata)
+        public void setFileMetadata(string fileMetadata)
         {
             this.setProperty("fileMetadata", fileMetadata);
         }
 
-        public string getFileName ()
+        public string getFileName()
         {
             return this.getProperty("fileName").ToString();
         }
 
-        public void setFileName (string fileName)
+        public void setFileName(string fileName)
         {
             this.setProperty("fileName", fileName);
         }
 
-        public bool getCompressed ()
+        public bool getCompressed()
         {
             return Convert.ToBoolean(this.getProperty("compressed"));
         }
 
-        public void setCompressed (bool compressed)
+        public void setCompressed(bool compressed)
         {
             this.setProperty("compressed", compressed);
         }

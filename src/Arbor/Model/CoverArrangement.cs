@@ -9,108 +9,120 @@ namespace Arbor.Model
 {
     public class CoverArrangement : ModelBase
     {
-        protected string resourceType = ResourceType.COVER_ARRANGEMENT;
+        protected new string resourceType = ResourceType.COVER_ARRANGEMENT;
         public const string COVER_REQUIREMENT = "coverRequirement";
         public const string COVERING_STAFF = "coveringStaff";
         public const string COVER_START_DATETIME = "coverStartDatetime";
         public const string COVER_END_DATETIME = "coverEndDatetime";
         public const string AGREED_DATETIME = "agreedDatetime";
         public const string NOT_AGREED_DATETIME = "notAgreedDatetime";
+        public const string IS_SEND_CREATION_NOTIFICATION = "isSendCreationNotification";
 
-        public CoverArrangement ()
+        public CoverArrangement()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public CoverArrangement (string resourceType = "CoverArrangement", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<CoverArrangement> query (SimpleQuery query = null)
+        public CoverArrangement(string resourceType = "CoverArrangement", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("CoverArrangement");
-        	RestGateway gateway = (RestGateway) CoverArrangement.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<CoverArrangement> coverarrangementCollection = new ModelCollection<CoverArrangement> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    coverarrangementCollection.add((CoverArrangement) model);
-        	}
-        
-        	return coverarrangementCollection;
+
         }
 
-        public static CoverArrangement retrieve (string id)
+
+        public static ModelCollection<CoverArrangement> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) CoverArrangement.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (CoverArrangement) gateway.retrieve(ResourceType.COVER_ARRANGEMENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("CoverArrangement");
+            RestGateway gateway = (RestGateway)CoverArrangement.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<CoverArrangement> coverarrangementCollection = new ModelCollection<CoverArrangement>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                coverarrangementCollection.add((CoverArrangement)model);
+            }
+
+            return coverarrangementCollection;
         }
 
-        public CoverRequirement getCoverRequirement ()
+        public static CoverArrangement retrieve(string id)
         {
-            return (CoverRequirement) this.getProperty("coverRequirement");
+            RestGateway gateway = (RestGateway)CoverArrangement.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (CoverArrangement)gateway.retrieve(ResourceType.COVER_ARRANGEMENT, id);
         }
 
-        public void setCoverRequirement (CoverRequirement coverRequirement)
+        public CoverRequirement getCoverRequirement()
+        {
+            return (CoverRequirement)this.getProperty("coverRequirement");
+        }
+
+        public void setCoverRequirement(CoverRequirement coverRequirement)
         {
             this.setProperty("coverRequirement", coverRequirement);
         }
 
-        public Staff getCoveringStaff ()
+        public Staff getCoveringStaff()
         {
-            return (Staff) this.getProperty("coveringStaff");
+            return (Staff)this.getProperty("coveringStaff");
         }
 
-        public void setCoveringStaff (Staff coveringStaff)
+        public void setCoveringStaff(Staff coveringStaff)
         {
             this.setProperty("coveringStaff", coveringStaff);
         }
 
-        public DateTime getCoverStartDatetime ()
+        public DateTime getCoverStartDatetime()
         {
             return Convert.ToDateTime(this.getProperty("coverStartDatetime"));
         }
 
-        public void setCoverStartDatetime (DateTime coverStartDatetime)
+        public void setCoverStartDatetime(DateTime coverStartDatetime)
         {
             this.setProperty("coverStartDatetime", coverStartDatetime);
         }
 
-        public DateTime getCoverEndDatetime ()
+        public DateTime getCoverEndDatetime()
         {
             return Convert.ToDateTime(this.getProperty("coverEndDatetime"));
         }
 
-        public void setCoverEndDatetime (DateTime coverEndDatetime)
+        public void setCoverEndDatetime(DateTime coverEndDatetime)
         {
             this.setProperty("coverEndDatetime", coverEndDatetime);
         }
 
-        public DateTime getAgreedDatetime ()
+        public DateTime getAgreedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("agreedDatetime"));
         }
 
-        public void setAgreedDatetime (DateTime agreedDatetime)
+        public void setAgreedDatetime(DateTime agreedDatetime)
         {
             this.setProperty("agreedDatetime", agreedDatetime);
         }
 
-        public DateTime getNotAgreedDatetime ()
+        public DateTime getNotAgreedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("notAgreedDatetime"));
         }
 
-        public void setNotAgreedDatetime (DateTime notAgreedDatetime)
+        public void setNotAgreedDatetime(DateTime notAgreedDatetime)
         {
             this.setProperty("notAgreedDatetime", notAgreedDatetime);
+        }
+
+        public bool getIsSendCreationNotification()
+        {
+            return Convert.ToBoolean(this.getProperty("isSendCreationNotification"));
+        }
+
+        public void setIsSendCreationNotification(bool isSendCreationNotification)
+        {
+            this.setProperty("isSendCreationNotification", isSendCreationNotification);
         }
 
 

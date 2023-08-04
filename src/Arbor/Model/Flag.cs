@@ -14,68 +14,69 @@ namespace Arbor.Model
         public const string TEXT = "text";
         public const string TARGET = "target";
 
-        public Flag ()
+        public Flag()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public Flag (string resourceType = "Flag", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<Flag> query (SimpleQuery query = null)
+        public Flag(string resourceType = "Flag", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("Flag");
-        	RestGateway gateway = (RestGateway) Flag.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<Flag> flagCollection = new ModelCollection<Flag> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    flagCollection.add((Flag) model);
-        	}
-        
-        	return flagCollection;
+
         }
 
-        public static Flag retrieve (string id)
+
+        public static ModelCollection<Flag> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) Flag.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (Flag) gateway.retrieve(ResourceType.FLAG, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("Flag");
+            RestGateway gateway = (RestGateway)Flag.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<Flag> flagCollection = new ModelCollection<Flag>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                flagCollection.add((Flag)model);
+            }
+
+            return flagCollection;
         }
 
-        public ModelBase getPerson ()
+        public static Flag retrieve(string id)
         {
-            return (ModelBase) this.getProperty("person");
+            RestGateway gateway = (RestGateway)Flag.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (Flag)gateway.retrieve(ResourceType.FLAG, id);
         }
 
-        public void setPerson (ModelBase person)
+        public ModelBase getPerson()
+        {
+            return (ModelBase)this.getProperty("person");
+        }
+
+        public void setPerson(ModelBase person)
         {
             this.setProperty("person", person);
         }
 
-        public string getText ()
+        public string getText()
         {
             return this.getProperty("text").ToString();
         }
 
-        public void setText (string text)
+        public void setText(string text)
         {
             this.setProperty("text", text);
         }
 
-        public ModelBase getTarget ()
+        public ModelBase getTarget()
         {
-            return (ModelBase) this.getProperty("target");
+            return (ModelBase)this.getProperty("target");
         }
 
-        public void setTarget (ModelBase target)
+        public void setTarget(ModelBase target)
         {
             this.setProperty("target", target);
         }

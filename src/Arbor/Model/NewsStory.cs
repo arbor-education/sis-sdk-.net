@@ -24,168 +24,169 @@ namespace Arbor.Model
         public const string MAPPED_TO_NEWS_FEED = "mappedToNewsFeed";
         public const string COMMENT_COUNT = "commentCount";
 
-        public NewsStory ()
+        public NewsStory()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public NewsStory (string resourceType = "NewsStory", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<NewsStory> query (SimpleQuery query = null)
+        public NewsStory(string resourceType = "NewsStory", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("NewsStory");
-        	RestGateway gateway = (RestGateway) NewsStory.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<NewsStory> newsstoryCollection = new ModelCollection<NewsStory> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    newsstoryCollection.add((NewsStory) model);
-        	}
-        
-        	return newsstoryCollection;
+
         }
 
-        public static NewsStory retrieve (string id)
+
+        public static ModelCollection<NewsStory> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) NewsStory.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (NewsStory) gateway.retrieve(ResourceType.NEWS_STORY, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("NewsStory");
+            RestGateway gateway = (RestGateway)NewsStory.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<NewsStory> newsstoryCollection = new ModelCollection<NewsStory>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                newsstoryCollection.add((NewsStory)model);
+            }
+
+            return newsstoryCollection;
         }
 
-        public DateTime getReferenceDatetime ()
+        public static NewsStory retrieve(string id)
         {
-            return (DateTime) this.getProperty("referenceDatetime");
+            RestGateway gateway = (RestGateway)NewsStory.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (NewsStory)gateway.retrieve(ResourceType.NEWS_STORY, id);
         }
 
-        public void setReferenceDatetime (DateTime referenceDatetime)
+        public DateTime getReferenceDatetime()
+        {
+            return (DateTime)this.getProperty("referenceDatetime");
+        }
+
+        public void setReferenceDatetime(DateTime referenceDatetime)
         {
             this.setProperty("referenceDatetime", referenceDatetime);
         }
 
-        public string getTitle ()
+        public string getTitle()
         {
             return this.getProperty("title").ToString();
         }
 
-        public void setTitle (string title)
+        public void setTitle(string title)
         {
             this.setProperty("title", title);
         }
 
-        public Content getProfilePicture ()
+        public Content getProfilePicture()
         {
-            return (Content) this.getProperty("profilePicture");
+            return (Content)this.getProperty("profilePicture");
         }
 
-        public void setProfilePicture (Content profilePicture)
+        public void setProfilePicture(Content profilePicture)
         {
             this.setProperty("profilePicture", profilePicture);
         }
 
-        public string getImage ()
+        public string getImage()
         {
             return this.getProperty("image").ToString();
         }
 
-        public void setImage (string image)
+        public void setImage(string image)
         {
             this.setProperty("image", image);
         }
 
-        public string getCategory ()
+        public string getCategory()
         {
             return this.getProperty("category").ToString();
         }
 
-        public void setCategory (string category)
+        public void setCategory(string category)
         {
             this.setProperty("category", category);
         }
 
-        public string getBody ()
+        public string getBody()
         {
             return this.getProperty("body").ToString();
         }
 
-        public void setBody (string body)
+        public void setBody(string body)
         {
             this.setProperty("body", body);
         }
 
-        public float getTypeSpecificRatingFactor ()
+        public float getTypeSpecificRatingFactor()
         {
-            return (float) this.getProperty("typeSpecificRatingFactor");
+            return (float)this.getProperty("typeSpecificRatingFactor");
         }
 
-        public void setTypeSpecificRatingFactor (float typeSpecificRatingFactor)
+        public void setTypeSpecificRatingFactor(float typeSpecificRatingFactor)
         {
             this.setProperty("typeSpecificRatingFactor", typeSpecificRatingFactor);
         }
 
-        public ModelBase getOrigin ()
+        public ModelBase getOrigin()
         {
-            return (ModelBase) this.getProperty("origin");
+            return (ModelBase)this.getProperty("origin");
         }
 
-        public void setOrigin (ModelBase origin)
+        public void setOrigin(ModelBase origin)
         {
             this.setProperty("origin", origin);
         }
 
-        public string getIdentifier ()
+        public string getIdentifier()
         {
             return this.getProperty("identifier").ToString();
         }
 
-        public void setIdentifier (string identifier)
+        public void setIdentifier(string identifier)
         {
             this.setProperty("identifier", identifier);
         }
 
-        public string getType ()
+        public string getType()
         {
             return this.getProperty("type").ToString();
         }
 
-        public void setType (string type)
+        public void setType(string type)
         {
             this.setProperty("type", type);
         }
 
-        public string getData ()
+        public string getData()
         {
             return this.getProperty("data").ToString();
         }
 
-        public void setData (string data)
+        public void setData(string data)
         {
             this.setProperty("data", data);
         }
 
-        public bool getMappedToNewsFeed ()
+        public bool getMappedToNewsFeed()
         {
-            return (bool) this.getProperty("mappedToNewsFeed");
+            return (bool)this.getProperty("mappedToNewsFeed");
         }
 
-        public void setMappedToNewsFeed (bool mappedToNewsFeed)
+        public void setMappedToNewsFeed(bool mappedToNewsFeed)
         {
             this.setProperty("mappedToNewsFeed", mappedToNewsFeed);
         }
 
-        public int getCommentCount ()
+        public int getCommentCount()
         {
             return Convert.ToInt32(this.getProperty("commentCount"));
         }
 
-        public void setCommentCount (int commentCount)
+        public void setCommentCount(int commentCount)
         {
             this.setProperty("commentCount", commentCount);
         }

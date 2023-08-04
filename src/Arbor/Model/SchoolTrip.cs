@@ -17,96 +17,99 @@ namespace Arbor.Model
         public const string TRIP_NAME = "tripName";
         public const string DESCRIPTION = "description";
 
-        public SchoolTrip ()
+        public SchoolTrip()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public SchoolTrip (string resourceType = "SchoolTrip", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<SchoolTrip> query (SimpleQuery query = null)
+        public SchoolTrip(string resourceType = "SchoolTrip", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("SchoolTrip");
-        	RestGateway gateway = (RestGateway) SchoolTrip.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<SchoolTrip> schooltripCollection = new ModelCollection<SchoolTrip> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    schooltripCollection.add((SchoolTrip) model);
-        	}
-        
-        	return schooltripCollection;
+
         }
 
-        public static SchoolTrip retrieve (string id)
+
+        public static ModelCollection<SchoolTrip> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) SchoolTrip.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (SchoolTrip) gateway.retrieve(ResourceType.SCHOOL_TRIP, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("SchoolTrip");
+            RestGateway gateway = (RestGateway)SchoolTrip.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<SchoolTrip> schooltripCollection = new ModelCollection<SchoolTrip>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                schooltripCollection.add((SchoolTrip)model);
+            }
+
+            return schooltripCollection;
         }
 
-        public DateTime getStartDatetime (){
+        public static SchoolTrip retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)SchoolTrip.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (SchoolTrip)gateway.retrieve(ResourceType.SCHOOL_TRIP, id);
+        }
+
+        public DateTime getStartDatetime()
+        {
             return Convert.ToDateTime(this.getProperty("startDatetime"));
         }
 
-        public void setStartDatetime (DateTime startDatetime)
+        public void setStartDatetime(DateTime startDatetime)
         {
             this.setProperty("startDatetime", startDatetime);
         }
 
-        public DateTime getEndDatetime (){
+        public DateTime getEndDatetime()
+        {
             return Convert.ToDateTime(this.getProperty("endDatetime"));
         }
 
-        public void setEndDatetime (DateTime endDatetime)
+        public void setEndDatetime(DateTime endDatetime)
         {
             this.setProperty("endDatetime", endDatetime);
         }
 
-        public string getLocationText ()
+        public string getLocationText()
         {
             return this.getProperty("locationText").ToString();
         }
 
-        public void setLocationText (string locationText)
+        public void setLocationText(string locationText)
         {
             this.setProperty("locationText", locationText);
         }
 
-        public ModelBase getLocation ()
+        public ModelBase getLocation()
         {
-            return (ModelBase) this.getProperty("location");
+            return (ModelBase)this.getProperty("location");
         }
 
-        public void setLocation (ModelBase location)
+        public void setLocation(ModelBase location)
         {
             this.setProperty("location", location);
         }
 
-        public string getTripName ()
+        public string getTripName()
         {
             return this.getProperty("tripName").ToString();
         }
 
-        public void setTripName (string tripName)
+        public void setTripName(string tripName)
         {
             this.setProperty("tripName", tripName);
         }
 
-        public string getDescription ()
+        public string getDescription()
         {
             return this.getProperty("description").ToString();
         }
 
-        public void setDescription (string description)
+        public void setDescription(string description)
         {
             this.setProperty("description", description);
         }

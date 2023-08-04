@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class GoogleUser : ModelBase
     {
-        protected string resourceType = ResourceType.GOOGLE_USER;
+        protected new string resourceType = ResourceType.GOOGLE_USER;
         public const string GIVEN_NAME = "givenName";
         public const string FAMILY_NAME = "familyName";
         public const string PRIMARY_EMAIL = "primaryEmail";

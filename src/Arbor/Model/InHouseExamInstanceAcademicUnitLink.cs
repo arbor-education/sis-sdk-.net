@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class InHouseExamInstanceAcademicUnitLink : ModelBase
     {
-        protected string resourceType = ResourceType.IN_HOUSE_EXAM_INSTANCE_ACADEMIC_UNIT_LINK;
+        protected new string resourceType = ResourceType.IN_HOUSE_EXAM_INSTANCE_ACADEMIC_UNIT_LINK;
         public const string IN_HOUSE_EXAM_INSTANCE = "inHouseExamInstance";
         public const string ACADEMIC_UNIT = "academicUnit";
 

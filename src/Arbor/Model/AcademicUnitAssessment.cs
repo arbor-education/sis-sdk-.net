@@ -9,62 +9,63 @@ namespace Arbor.Model
 {
     public class AcademicUnitAssessment : ModelBase
     {
-        protected string resourceType = ResourceType.ACADEMIC_UNIT_ASSESSMENT;
+        protected new string resourceType = ResourceType.ACADEMIC_UNIT_ASSESSMENT;
         public const string ACADEMIC_UNIT = "academicUnit";
         public const string ASSESSMENT = "assessment";
 
-        public AcademicUnitAssessment ()
+        public AcademicUnitAssessment()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AcademicUnitAssessment (string resourceType = "AcademicUnitAssessment", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AcademicUnitAssessment> query (SimpleQuery query = null)
+        public AcademicUnitAssessment(string resourceType = "AcademicUnitAssessment", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AcademicUnitAssessment");
-        	RestGateway gateway = (RestGateway) AcademicUnitAssessment.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AcademicUnitAssessment> academicunitassessmentCollection = new ModelCollection<AcademicUnitAssessment> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    academicunitassessmentCollection.add((AcademicUnitAssessment) model);
-        	}
-        
-        	return academicunitassessmentCollection;
+
         }
 
-        public static AcademicUnitAssessment retrieve (string id)
+
+        public static ModelCollection<AcademicUnitAssessment> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AcademicUnitAssessment.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AcademicUnitAssessment) gateway.retrieve(ResourceType.ACADEMIC_UNIT_ASSESSMENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AcademicUnitAssessment");
+            RestGateway gateway = (RestGateway)AcademicUnitAssessment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AcademicUnitAssessment> academicunitassessmentCollection = new ModelCollection<AcademicUnitAssessment>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                academicunitassessmentCollection.add((AcademicUnitAssessment)model);
+            }
+
+            return academicunitassessmentCollection;
         }
 
-        public AcademicUnit getAcademicUnit ()
+        public static AcademicUnitAssessment retrieve(string id)
         {
-            return (AcademicUnit) this.getProperty("academicUnit");
+            RestGateway gateway = (RestGateway)AcademicUnitAssessment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AcademicUnitAssessment)gateway.retrieve(ResourceType.ACADEMIC_UNIT_ASSESSMENT, id);
         }
 
-        public void setAcademicUnit (AcademicUnit academicUnit)
+        public AcademicUnit getAcademicUnit()
+        {
+            return (AcademicUnit)this.getProperty("academicUnit");
+        }
+
+        public void setAcademicUnit(AcademicUnit academicUnit)
         {
             this.setProperty("academicUnit", academicUnit);
         }
 
-        public Assessment getAssessment ()
+        public Assessment getAssessment()
         {
-            return (Assessment) this.getProperty("assessment");
+            return (Assessment)this.getProperty("assessment");
         }
 
-        public void setAssessment (Assessment assessment)
+        public void setAssessment(Assessment assessment)
         {
             this.setProperty("assessment", assessment);
         }

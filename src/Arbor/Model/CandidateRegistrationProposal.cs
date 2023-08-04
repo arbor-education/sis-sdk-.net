@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CandidateRegistrationProposal : ModelBase
     {
-        protected string resourceType = ResourceType.CANDIDATE_REGISTRATION_PROPOSAL;
+        protected new string resourceType = ResourceType.CANDIDATE_REGISTRATION_PROPOSAL;
         public const string CANDIDATE_PROPOSAL = "candidateProposal";
         public const string QUALIFICATION_AVAILABILITY_INSTANCE = "qualificationAvailabilityInstance";
         public const string QUALIFICATION_AWARD = "qualificationAward";
@@ -18,108 +18,109 @@ namespace Arbor.Model
         public const string REJECTED_BY_STAFF = "rejectedByStaff";
         public const string REJECTED_DATETIME = "rejectedDatetime";
 
-        public CandidateRegistrationProposal ()
+        public CandidateRegistrationProposal()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public CandidateRegistrationProposal (string resourceType = "CandidateRegistrationProposal", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<CandidateRegistrationProposal> query (SimpleQuery query = null)
+        public CandidateRegistrationProposal(string resourceType = "CandidateRegistrationProposal", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("CandidateRegistrationProposal");
-        	RestGateway gateway = (RestGateway) CandidateRegistrationProposal.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<CandidateRegistrationProposal> candidateregistrationproposalCollection = new ModelCollection<CandidateRegistrationProposal> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    candidateregistrationproposalCollection.add((CandidateRegistrationProposal) model);
-        	}
-        
-        	return candidateregistrationproposalCollection;
+
         }
 
-        public static CandidateRegistrationProposal retrieve (string id)
+
+        public static ModelCollection<CandidateRegistrationProposal> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) CandidateRegistrationProposal.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (CandidateRegistrationProposal) gateway.retrieve(ResourceType.CANDIDATE_REGISTRATION_PROPOSAL, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("CandidateRegistrationProposal");
+            RestGateway gateway = (RestGateway)CandidateRegistrationProposal.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<CandidateRegistrationProposal> candidateregistrationproposalCollection = new ModelCollection<CandidateRegistrationProposal>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                candidateregistrationproposalCollection.add((CandidateRegistrationProposal)model);
+            }
+
+            return candidateregistrationproposalCollection;
         }
 
-        public CandidateProposal getCandidateProposal ()
+        public static CandidateRegistrationProposal retrieve(string id)
         {
-            return (CandidateProposal) this.getProperty("candidateProposal");
+            RestGateway gateway = (RestGateway)CandidateRegistrationProposal.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (CandidateRegistrationProposal)gateway.retrieve(ResourceType.CANDIDATE_REGISTRATION_PROPOSAL, id);
         }
 
-        public void setCandidateProposal (CandidateProposal candidateProposal)
+        public CandidateProposal getCandidateProposal()
+        {
+            return (CandidateProposal)this.getProperty("candidateProposal");
+        }
+
+        public void setCandidateProposal(CandidateProposal candidateProposal)
         {
             this.setProperty("candidateProposal", candidateProposal);
         }
 
-        public QualificationAvailabilityInstance getQualificationAvailabilityInstance ()
+        public QualificationAvailabilityInstance getQualificationAvailabilityInstance()
         {
-            return (QualificationAvailabilityInstance) this.getProperty("qualificationAvailabilityInstance");
+            return (QualificationAvailabilityInstance)this.getProperty("qualificationAvailabilityInstance");
         }
 
-        public void setQualificationAvailabilityInstance (QualificationAvailabilityInstance qualificationAvailabilityInstance)
+        public void setQualificationAvailabilityInstance(QualificationAvailabilityInstance qualificationAvailabilityInstance)
         {
             this.setProperty("qualificationAvailabilityInstance", qualificationAvailabilityInstance);
         }
 
-        public QualificationAward getQualificationAward ()
+        public QualificationAward getQualificationAward()
         {
-            return (QualificationAward) this.getProperty("qualificationAward");
+            return (QualificationAward)this.getProperty("qualificationAward");
         }
 
-        public void setQualificationAward (QualificationAward qualificationAward)
+        public void setQualificationAward(QualificationAward qualificationAward)
         {
             this.setProperty("qualificationAward", qualificationAward);
         }
 
-        public Staff getApprovedByStaff ()
+        public Staff getApprovedByStaff()
         {
-            return (Staff) this.getProperty("approvedByStaff");
+            return (Staff)this.getProperty("approvedByStaff");
         }
 
-        public void setApprovedByStaff (Staff approvedByStaff)
+        public void setApprovedByStaff(Staff approvedByStaff)
         {
             this.setProperty("approvedByStaff", approvedByStaff);
         }
 
-        public DateTime getApprovedDatetime ()
+        public DateTime getApprovedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("approvedDatetime"));
         }
 
-        public void setApprovedDatetime (DateTime approvedDatetime)
+        public void setApprovedDatetime(DateTime approvedDatetime)
         {
             this.setProperty("approvedDatetime", approvedDatetime);
         }
 
-        public Staff getRejectedByStaff ()
+        public Staff getRejectedByStaff()
         {
-            return (Staff) this.getProperty("rejectedByStaff");
+            return (Staff)this.getProperty("rejectedByStaff");
         }
 
-        public void setRejectedByStaff (Staff rejectedByStaff)
+        public void setRejectedByStaff(Staff rejectedByStaff)
         {
             this.setProperty("rejectedByStaff", rejectedByStaff);
         }
 
-        public DateTime getRejectedDatetime ()
+        public DateTime getRejectedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("rejectedDatetime"));
         }
 
-        public void setRejectedDatetime (DateTime rejectedDatetime)
+        public void setRejectedDatetime(DateTime rejectedDatetime)
         {
             this.setProperty("rejectedDatetime", rejectedDatetime);
         }

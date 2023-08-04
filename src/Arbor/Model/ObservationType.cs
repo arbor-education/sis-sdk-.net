@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ObservationType : ModelBase
     {
-        protected string resourceType = ResourceType.OBSERVATION_TYPE;
+        protected new string resourceType = ResourceType.OBSERVATION_TYPE;
         public const string NAME = "name";
 
         public ObservationType ()

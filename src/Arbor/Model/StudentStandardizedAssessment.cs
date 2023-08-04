@@ -9,84 +9,85 @@ namespace Arbor.Model
 {
     public class StudentStandardizedAssessment : ModelBase
     {
-        protected string resourceType = ResourceType.STUDENT_STANDARDIZED_ASSESSMENT;
+        protected new string resourceType = ResourceType.STUDENT_STANDARDIZED_ASSESSMENT;
         public const string STUDENT = "student";
         public const string STANDARDIZED_ASSESSMENT_TEMPLATE = "standardizedAssessmentTemplate";
         public const string ASSESSMENT_DATE = "assessmentDate";
         public const string COMPLETED_DATE = "completedDate";
 
-        public StudentStandardizedAssessment ()
+        public StudentStandardizedAssessment()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public StudentStandardizedAssessment (string resourceType = "StudentStandardizedAssessment", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<StudentStandardizedAssessment> query (SimpleQuery query = null)
+        public StudentStandardizedAssessment(string resourceType = "StudentStandardizedAssessment", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("StudentStandardizedAssessment");
-        	RestGateway gateway = (RestGateway) StudentStandardizedAssessment.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<StudentStandardizedAssessment> studentstandardizedassessmentCollection = new ModelCollection<StudentStandardizedAssessment> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    studentstandardizedassessmentCollection.add((StudentStandardizedAssessment) model);
-        	}
-        
-        	return studentstandardizedassessmentCollection;
+
         }
 
-        public static StudentStandardizedAssessment retrieve (string id)
+
+        public static ModelCollection<StudentStandardizedAssessment> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) StudentStandardizedAssessment.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (StudentStandardizedAssessment) gateway.retrieve(ResourceType.STUDENT_STANDARDIZED_ASSESSMENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("StudentStandardizedAssessment");
+            RestGateway gateway = (RestGateway)StudentStandardizedAssessment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<StudentStandardizedAssessment> studentstandardizedassessmentCollection = new ModelCollection<StudentStandardizedAssessment>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                studentstandardizedassessmentCollection.add((StudentStandardizedAssessment)model);
+            }
+
+            return studentstandardizedassessmentCollection;
         }
 
-        public Student getStudent ()
+        public static StudentStandardizedAssessment retrieve(string id)
         {
-            return (Student) this.getProperty("student");
+            RestGateway gateway = (RestGateway)StudentStandardizedAssessment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (StudentStandardizedAssessment)gateway.retrieve(ResourceType.STUDENT_STANDARDIZED_ASSESSMENT, id);
         }
 
-        public void setStudent (Student student)
+        public Student getStudent()
+        {
+            return (Student)this.getProperty("student");
+        }
+
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public StandardizedAssessmentTemplate getStandardizedAssessmentTemplate ()
+        public StandardizedAssessmentTemplate getStandardizedAssessmentTemplate()
         {
-            return (StandardizedAssessmentTemplate) this.getProperty("standardizedAssessmentTemplate");
+            return (StandardizedAssessmentTemplate)this.getProperty("standardizedAssessmentTemplate");
         }
 
-        public void setStandardizedAssessmentTemplate (StandardizedAssessmentTemplate standardizedAssessmentTemplate)
+        public void setStandardizedAssessmentTemplate(StandardizedAssessmentTemplate standardizedAssessmentTemplate)
         {
             this.setProperty("standardizedAssessmentTemplate", standardizedAssessmentTemplate);
         }
 
-        public DateTime getAssessmentDate ()
+        public DateTime getAssessmentDate()
         {
             return Convert.ToDateTime(this.getProperty("assessmentDate"));
         }
 
-        public void setAssessmentDate (DateTime assessmentDate)
+        public void setAssessmentDate(DateTime assessmentDate)
         {
             this.setProperty("assessmentDate", assessmentDate);
         }
 
-        public DateTime getCompletedDate ()
+        public DateTime getCompletedDate()
         {
             return Convert.ToDateTime(this.getProperty("completedDate"));
         }
 
-        public void setCompletedDate (DateTime completedDate)
+        public void setCompletedDate(DateTime completedDate)
         {
             this.setProperty("completedDate", completedDate);
         }

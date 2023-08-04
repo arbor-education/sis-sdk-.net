@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Guardian : ModelBase
     {
-        protected string resourceType = ResourceType.GUARDIAN;
+        protected new string resourceType = ResourceType.GUARDIAN;
         public const string PERSON = "person";
         public const string EMPLOYER = "employer";
         public const string RELIGION = "religion";
@@ -19,131 +19,165 @@ namespace Arbor.Model
         public const string SHARE_CONTACT_DETAILS = "shareContactDetails";
         public const string PREFERRED_CONTACT_METHOD = "preferredContactMethod";
         public const string LEGACY_SYSTEM_ID = "legacySystemId";
+        public const string IS_KEY_WORKER = "isKeyWorker";
+        public const string IS_ACTIVE_OUTGOING_SYNC = "isActiveOutgoingSync";
+        public const string IS_ACTIVE_INCOMING_SYNC = "isActiveIncomingSync";
 
-        public Guardian ()
+        public Guardian()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public Guardian (string resourceType = "Guardian", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<Guardian> query (SimpleQuery query = null)
+        public Guardian(string resourceType = "Guardian", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("Guardian");
-        	RestGateway gateway = (RestGateway) Guardian.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<Guardian> guardianCollection = new ModelCollection<Guardian> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    guardianCollection.add((Guardian) model);
-        	}
-        
-        	return guardianCollection;
+
         }
 
-        public static Guardian retrieve (string id)
+
+        public static ModelCollection<Guardian> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) Guardian.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (Guardian) gateway.retrieve(ResourceType.GUARDIAN, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("Guardian");
+            RestGateway gateway = (RestGateway)Guardian.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<Guardian> guardianCollection = new ModelCollection<Guardian>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                guardianCollection.add((Guardian)model);
+            }
+
+            return guardianCollection;
         }
 
-        public Person getPerson ()
+        public static Guardian retrieve(string id)
         {
-            return (Person) this.getProperty("person");
+            RestGateway gateway = (RestGateway)Guardian.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (Guardian)gateway.retrieve(ResourceType.GUARDIAN, id);
         }
 
-        public void setPerson (Person person)
+        public Person getPerson()
+        {
+            return (Person)this.getProperty("person");
+        }
+
+        public void setPerson(Person person)
         {
             this.setProperty("person", person);
         }
 
-        public string getEmployer ()
+        public string getEmployer()
         {
             return this.getProperty("employer").ToString();
         }
 
-        public void setEmployer (string employer)
+        public void setEmployer(string employer)
         {
             this.setProperty("employer", employer);
         }
 
-        public Religion getReligion ()
+        public Religion getReligion()
         {
-            return (Religion) this.getProperty("religion");
+            return (Religion)this.getProperty("religion");
         }
 
-        public void setReligion (Religion religion)
+        public void setReligion(Religion religion)
         {
             this.setProperty("religion", religion);
         }
 
-        public Ethnicity getEthnicity ()
+        public Ethnicity getEthnicity()
         {
-            return (Ethnicity) this.getProperty("ethnicity");
+            return (Ethnicity)this.getProperty("ethnicity");
         }
 
-        public void setEthnicity (Ethnicity ethnicity)
+        public void setEthnicity(Ethnicity ethnicity)
         {
             this.setProperty("ethnicity", ethnicity);
         }
 
-        public string getJobPosition ()
+        public string getJobPosition()
         {
             return this.getProperty("jobPosition").ToString();
         }
 
-        public void setJobPosition (string jobPosition)
+        public void setJobPosition(string jobPosition)
         {
             this.setProperty("jobPosition", jobPosition);
         }
 
-        public string getBloodGroup ()
+        public string getBloodGroup()
         {
             return this.getProperty("bloodGroup").ToString();
         }
 
-        public void setBloodGroup (string bloodGroup)
+        public void setBloodGroup(string bloodGroup)
         {
             this.setProperty("bloodGroup", bloodGroup);
         }
 
-        public bool getShareContactDetails ()
+        public bool getShareContactDetails()
         {
             return Convert.ToBoolean(this.getProperty("shareContactDetails"));
         }
 
-        public void setShareContactDetails (bool shareContactDetails)
+        public void setShareContactDetails(bool shareContactDetails)
         {
             this.setProperty("shareContactDetails", shareContactDetails);
         }
 
-        public string getPreferredContactMethod ()
+        public string getPreferredContactMethod()
         {
             return this.getProperty("preferredContactMethod").ToString();
         }
 
-        public void setPreferredContactMethod (string preferredContactMethod)
+        public void setPreferredContactMethod(string preferredContactMethod)
         {
             this.setProperty("preferredContactMethod", preferredContactMethod);
         }
 
-        public string getLegacySystemId ()
+        public string getLegacySystemId()
         {
             return this.getProperty("legacySystemId").ToString();
         }
 
-        public void setLegacySystemId (string legacySystemId)
+        public void setLegacySystemId(string legacySystemId)
         {
             this.setProperty("legacySystemId", legacySystemId);
+        }
+
+        public bool getIsKeyWorker()
+        {
+            return Convert.ToBoolean(this.getProperty("isKeyWorker"));
+        }
+
+        public void setIsKeyWorker(bool isKeyWorker)
+        {
+            this.setProperty("isKeyWorker", isKeyWorker);
+        }
+
+        public bool getIsActiveOutgoingSync()
+        {
+            return Convert.ToBoolean(this.getProperty("isActiveOutgoingSync"));
+        }
+
+        public void setIsActiveOutgoingSync(bool isActiveOutgoingSync)
+        {
+            this.setProperty("isActiveOutgoingSync", isActiveOutgoingSync);
+        }
+
+        public bool getIsActiveIncomingSync()
+        {
+            return Convert.ToBoolean(this.getProperty("isActiveIncomingSync"));
+        }
+
+        public void setIsActiveIncomingSync(bool isActiveIncomingSync)
+        {
+            this.setProperty("isActiveIncomingSync", isActiveIncomingSync);
         }
 
 

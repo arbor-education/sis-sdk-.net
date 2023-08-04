@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class InterventionFilter : ModelBase
     {
-        protected string resourceType = ResourceType.INTERVENTION_FILTER;
+        protected new string resourceType = ResourceType.INTERVENTION_FILTER;
         public const string INTERVENTION = "intervention";
         public const string FIELD_CLASS = "fieldClass";
         public const string FIELD_PARAMS = "fieldParams";
@@ -19,118 +19,119 @@ namespace Arbor.Model
         public const string FILTER_GROUP_INDEX = "filterGroupIndex";
         public const string IS_OUTCOME = "isOutcome";
 
-        public InterventionFilter ()
+        public InterventionFilter()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public InterventionFilter (string resourceType = "InterventionFilter", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<InterventionFilter> query (SimpleQuery query = null)
+        public InterventionFilter(string resourceType = "InterventionFilter", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("InterventionFilter");
-        	RestGateway gateway = (RestGateway) InterventionFilter.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<InterventionFilter> interventionfilterCollection = new ModelCollection<InterventionFilter> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    interventionfilterCollection.add((InterventionFilter) model);
-        	}
-        
-        	return interventionfilterCollection;
+
         }
 
-        public static InterventionFilter retrieve (string id)
+
+        public static ModelCollection<InterventionFilter> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) InterventionFilter.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (InterventionFilter) gateway.retrieve(ResourceType.INTERVENTION_FILTER, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("InterventionFilter");
+            RestGateway gateway = (RestGateway)InterventionFilter.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<InterventionFilter> interventionfilterCollection = new ModelCollection<InterventionFilter>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                interventionfilterCollection.add((InterventionFilter)model);
+            }
+
+            return interventionfilterCollection;
         }
 
-        public Intervention getIntervention ()
+        public static InterventionFilter retrieve(string id)
         {
-            return (Intervention) this.getProperty("intervention");
+            RestGateway gateway = (RestGateway)InterventionFilter.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (InterventionFilter)gateway.retrieve(ResourceType.INTERVENTION_FILTER, id);
         }
 
-        public void setIntervention (Intervention intervention)
+        public Intervention getIntervention()
+        {
+            return (Intervention)this.getProperty("intervention");
+        }
+
+        public void setIntervention(Intervention intervention)
         {
             this.setProperty("intervention", intervention);
         }
 
-        public string getFieldClass ()
+        public string getFieldClass()
         {
             return this.getProperty("fieldClass").ToString();
         }
 
-        public void setFieldClass (string fieldClass)
+        public void setFieldClass(string fieldClass)
         {
             this.setProperty("fieldClass", fieldClass);
         }
 
-        public string getFieldParams ()
+        public string getFieldParams()
         {
             return this.getProperty("fieldParams").ToString();
         }
 
-        public void setFieldParams (string fieldParams)
+        public void setFieldParams(string fieldParams)
         {
             this.setProperty("fieldParams", fieldParams);
         }
 
-        public string getTransformationClass ()
+        public string getTransformationClass()
         {
             return this.getProperty("transformationClass").ToString();
         }
 
-        public void setTransformationClass (string transformationClass)
+        public void setTransformationClass(string transformationClass)
         {
             this.setProperty("transformationClass", transformationClass);
         }
 
-        public string getConditionClass ()
+        public string getConditionClass()
         {
             return this.getProperty("conditionClass").ToString();
         }
 
-        public void setConditionClass (string conditionClass)
+        public void setConditionClass(string conditionClass)
         {
             this.setProperty("conditionClass", conditionClass);
         }
 
-        public string getConditionParams ()
+        public string getConditionParams()
         {
             return this.getProperty("conditionParams").ToString();
         }
 
-        public void setConditionParams (string conditionParams)
+        public void setConditionParams(string conditionParams)
         {
             this.setProperty("conditionParams", conditionParams);
         }
 
-        public int getFilterGroupIndex ()
+        public int getFilterGroupIndex()
         {
             return Convert.ToInt32(this.getProperty("filterGroupIndex"));
         }
 
-        public void setFilterGroupIndex (int filterGroupIndex)
+        public void setFilterGroupIndex(int filterGroupIndex)
         {
             this.setProperty("filterGroupIndex", filterGroupIndex);
         }
 
-        public bool getIsOutcome ()
+        public bool getIsOutcome()
         {
             return Convert.ToBoolean(this.getProperty("isOutcome"));
         }
 
-        public void setIsOutcome (bool isOutcome)
+        public void setIsOutcome(bool isOutcome)
         {
             this.setProperty("isOutcome", isOutcome);
         }

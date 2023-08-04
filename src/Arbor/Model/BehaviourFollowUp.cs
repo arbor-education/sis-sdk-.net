@@ -9,84 +9,85 @@ namespace Arbor.Model
 {
     public class BehaviourFollowUp : ModelBase
     {
-        protected string resourceType = ResourceType.BEHAVIOUR_FOLLOW_UP;
+        protected new string resourceType = ResourceType.BEHAVIOUR_FOLLOW_UP;
         public const string STUDENT = "student";
         public const string STAFF = "staff";
         public const string FOLLOW_UP_DATETIME = "followUpDatetime";
         public const string SUMMARY = "summary";
 
-        public BehaviourFollowUp ()
+        public BehaviourFollowUp()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public BehaviourFollowUp (string resourceType = "BehaviourFollowUp", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<BehaviourFollowUp> query (SimpleQuery query = null)
+        public BehaviourFollowUp(string resourceType = "BehaviourFollowUp", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("BehaviourFollowUp");
-        	RestGateway gateway = (RestGateway) BehaviourFollowUp.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<BehaviourFollowUp> behaviourfollowupCollection = new ModelCollection<BehaviourFollowUp> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    behaviourfollowupCollection.add((BehaviourFollowUp) model);
-        	}
-        
-        	return behaviourfollowupCollection;
+
         }
 
-        public static BehaviourFollowUp retrieve (string id)
+
+        public static ModelCollection<BehaviourFollowUp> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) BehaviourFollowUp.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (BehaviourFollowUp) gateway.retrieve(ResourceType.BEHAVIOUR_FOLLOW_UP, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("BehaviourFollowUp");
+            RestGateway gateway = (RestGateway)BehaviourFollowUp.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<BehaviourFollowUp> behaviourfollowupCollection = new ModelCollection<BehaviourFollowUp>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                behaviourfollowupCollection.add((BehaviourFollowUp)model);
+            }
+
+            return behaviourfollowupCollection;
         }
 
-        public Student getStudent ()
+        public static BehaviourFollowUp retrieve(string id)
         {
-            return (Student) this.getProperty("student");
+            RestGateway gateway = (RestGateway)BehaviourFollowUp.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (BehaviourFollowUp)gateway.retrieve(ResourceType.BEHAVIOUR_FOLLOW_UP, id);
         }
 
-        public void setStudent (Student student)
+        public Student getStudent()
+        {
+            return (Student)this.getProperty("student");
+        }
+
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public Staff getStaff ()
+        public Staff getStaff()
         {
-            return (Staff) this.getProperty("staff");
+            return (Staff)this.getProperty("staff");
         }
 
-        public void setStaff (Staff staff)
+        public void setStaff(Staff staff)
         {
             this.setProperty("staff", staff);
         }
 
-        public DateTime getFollowUpDatetime ()
+        public DateTime getFollowUpDatetime()
         {
             return Convert.ToDateTime(this.getProperty("followUpDatetime"));
         }
 
-        public void setFollowUpDatetime (DateTime followUpDatetime)
+        public void setFollowUpDatetime(DateTime followUpDatetime)
         {
             this.setProperty("followUpDatetime", followUpDatetime);
         }
 
-        public string getSummary ()
+        public string getSummary()
         {
             return this.getProperty("summary").ToString();
         }
 
-        public void setSummary (string summary)
+        public void setSummary(string summary)
         {
             this.setProperty("summary", summary);
         }

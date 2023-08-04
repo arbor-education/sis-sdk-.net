@@ -19,118 +19,119 @@ namespace Arbor.Model
         public const string ASSESSMENT = "assessment";
         public const string COLLECT_PREDICTED_MARK = "collectPredictedMark";
 
-        public AssessmentDataCollectionPolicyProgressAssessmentRule ()
+        public AssessmentDataCollectionPolicyProgressAssessmentRule()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AssessmentDataCollectionPolicyProgressAssessmentRule (string resourceType = "AssessmentDataCollectionPolicyProgressAssessmentRule", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AssessmentDataCollectionPolicyProgressAssessmentRule> query (SimpleQuery query = null)
+        public AssessmentDataCollectionPolicyProgressAssessmentRule(string resourceType = "AssessmentDataCollectionPolicyProgressAssessmentRule", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AssessmentDataCollectionPolicyProgressAssessmentRule");
-        	RestGateway gateway = (RestGateway) AssessmentDataCollectionPolicyProgressAssessmentRule.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AssessmentDataCollectionPolicyProgressAssessmentRule> assessmentdatacollectionpolicyprogressassessmentruleCollection = new ModelCollection<AssessmentDataCollectionPolicyProgressAssessmentRule> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    assessmentdatacollectionpolicyprogressassessmentruleCollection.add((AssessmentDataCollectionPolicyProgressAssessmentRule) model);
-        	}
-        
-        	return assessmentdatacollectionpolicyprogressassessmentruleCollection;
+
         }
 
-        public static AssessmentDataCollectionPolicyProgressAssessmentRule retrieve (string id)
+
+        public static ModelCollection<AssessmentDataCollectionPolicyProgressAssessmentRule> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AssessmentDataCollectionPolicyProgressAssessmentRule.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AssessmentDataCollectionPolicyProgressAssessmentRule) gateway.retrieve(ResourceType.ASSESSMENT_DATA_COLLECTION_POLICY_PROGRESS_ASSESSMENT_RULE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AssessmentDataCollectionPolicyProgressAssessmentRule");
+            RestGateway gateway = (RestGateway)AssessmentDataCollectionPolicyProgressAssessmentRule.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AssessmentDataCollectionPolicyProgressAssessmentRule> assessmentdatacollectionpolicyprogressassessmentruleCollection = new ModelCollection<AssessmentDataCollectionPolicyProgressAssessmentRule>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                assessmentdatacollectionpolicyprogressassessmentruleCollection.add((AssessmentDataCollectionPolicyProgressAssessmentRule)model);
+            }
+
+            return assessmentdatacollectionpolicyprogressassessmentruleCollection;
         }
 
-        public AssessmentDataCollectionPolicy getAssessmentDataCollectionPolicy ()
+        public static AssessmentDataCollectionPolicyProgressAssessmentRule retrieve(string id)
         {
-            return (AssessmentDataCollectionPolicy) this.getProperty("assessmentDataCollectionPolicy");
+            RestGateway gateway = (RestGateway)AssessmentDataCollectionPolicyProgressAssessmentRule.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AssessmentDataCollectionPolicyProgressAssessmentRule)gateway.retrieve(ResourceType.ASSESSMENT_DATA_COLLECTION_POLICY_PROGRESS_ASSESSMENT_RULE, id);
         }
 
-        public void setAssessmentDataCollectionPolicy (AssessmentDataCollectionPolicy assessmentDataCollectionPolicy)
+        public AssessmentDataCollectionPolicy getAssessmentDataCollectionPolicy()
+        {
+            return (AssessmentDataCollectionPolicy)this.getProperty("assessmentDataCollectionPolicy");
+        }
+
+        public void setAssessmentDataCollectionPolicy(AssessmentDataCollectionPolicy assessmentDataCollectionPolicy)
         {
             this.setProperty("assessmentDataCollectionPolicy", assessmentDataCollectionPolicy);
         }
 
-        public string getInputStaffType ()
+        public string getInputStaffType()
         {
             return this.getProperty("inputStaffType").ToString();
         }
 
-        public void setInputStaffType (string inputStaffType)
+        public void setInputStaffType(string inputStaffType)
         {
             this.setProperty("inputStaffType", inputStaffType);
         }
 
-        public string getLevelOneApprovalStaffType ()
+        public string getLevelOneApprovalStaffType()
         {
             return this.getProperty("levelOneApprovalStaffType").ToString();
         }
 
-        public void setLevelOneApprovalStaffType (string levelOneApprovalStaffType)
+        public void setLevelOneApprovalStaffType(string levelOneApprovalStaffType)
         {
             this.setProperty("levelOneApprovalStaffType", levelOneApprovalStaffType);
         }
 
-        public string getLevelTwoApprovalStaffType ()
+        public string getLevelTwoApprovalStaffType()
         {
             return this.getProperty("levelTwoApprovalStaffType").ToString();
         }
 
-        public void setLevelTwoApprovalStaffType (string levelTwoApprovalStaffType)
+        public void setLevelTwoApprovalStaffType(string levelTwoApprovalStaffType)
         {
             this.setProperty("levelTwoApprovalStaffType", levelTwoApprovalStaffType);
         }
 
-        public bool getCollectCurrentMark ()
+        public bool getCollectCurrentMark()
         {
-            return (bool) this.getProperty("collectCurrentMark");
+            return (bool)this.getProperty("collectCurrentMark");
         }
 
-        public void setCollectCurrentMark (bool collectCurrentMark)
+        public void setCollectCurrentMark(bool collectCurrentMark)
         {
             this.setProperty("collectCurrentMark", collectCurrentMark);
         }
 
-        public bool getCollectComment ()
+        public bool getCollectComment()
         {
-            return (bool) this.getProperty("collectComment");
+            return (bool)this.getProperty("collectComment");
         }
 
-        public void setCollectComment (bool collectComment)
+        public void setCollectComment(bool collectComment)
         {
             this.setProperty("collectComment", collectComment);
         }
 
-        public Assessment getAssessment ()
+        public Assessment getAssessment()
         {
-            return (Assessment) this.getProperty("assessment");
+            return (Assessment)this.getProperty("assessment");
         }
 
-        public void setAssessment (Assessment assessment)
+        public void setAssessment(Assessment assessment)
         {
             this.setProperty("assessment", assessment);
         }
 
-        public bool getCollectPredictedMark ()
+        public bool getCollectPredictedMark()
         {
-            return (bool) this.getProperty("collectPredictedMark");
+            return (bool)this.getProperty("collectPredictedMark");
         }
 
-        public void setCollectPredictedMark (bool collectPredictedMark)
+        public void setCollectPredictedMark(bool collectPredictedMark)
         {
             this.setProperty("collectPredictedMark", collectPredictedMark);
         }

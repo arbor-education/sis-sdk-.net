@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string DATA_QUALITY_CHECK_RESULT = "dataQualityCheckResult";
         public const string TAGGED = "tagged";
 
-        public DataQualityCheckTag ()
+        public DataQualityCheckTag()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public DataQualityCheckTag (string resourceType = "DataQualityCheckTag", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<DataQualityCheckTag> query (SimpleQuery query = null)
+        public DataQualityCheckTag(string resourceType = "DataQualityCheckTag", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("DataQualityCheckTag");
-        	RestGateway gateway = (RestGateway) DataQualityCheckTag.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<DataQualityCheckTag> dataqualitychecktagCollection = new ModelCollection<DataQualityCheckTag> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    dataqualitychecktagCollection.add((DataQualityCheckTag) model);
-        	}
-        
-        	return dataqualitychecktagCollection;
+
         }
 
-        public static DataQualityCheckTag retrieve (string id)
+
+        public static ModelCollection<DataQualityCheckTag> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) DataQualityCheckTag.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (DataQualityCheckTag) gateway.retrieve(ResourceType.DATA_QUALITY_CHECK_TAG, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("DataQualityCheckTag");
+            RestGateway gateway = (RestGateway)DataQualityCheckTag.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<DataQualityCheckTag> dataqualitychecktagCollection = new ModelCollection<DataQualityCheckTag>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                dataqualitychecktagCollection.add((DataQualityCheckTag)model);
+            }
+
+            return dataqualitychecktagCollection;
         }
 
-        public DataQualityCheckResult getDataQualityCheckResult ()
+        public static DataQualityCheckTag retrieve(string id)
         {
-            return (DataQualityCheckResult) this.getProperty("dataQualityCheckResult");
+            RestGateway gateway = (RestGateway)DataQualityCheckTag.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (DataQualityCheckTag)gateway.retrieve(ResourceType.DATA_QUALITY_CHECK_TAG, id);
         }
 
-        public void setDataQualityCheckResult (DataQualityCheckResult dataQualityCheckResult)
+        public DataQualityCheckResult getDataQualityCheckResult()
+        {
+            return (DataQualityCheckResult)this.getProperty("dataQualityCheckResult");
+        }
+
+        public void setDataQualityCheckResult(DataQualityCheckResult dataQualityCheckResult)
         {
             this.setProperty("dataQualityCheckResult", dataQualityCheckResult);
         }
 
-        public ModelBase getTagged ()
+        public ModelBase getTagged()
         {
-            return (ModelBase) this.getProperty("tagged");
+            return (ModelBase)this.getProperty("tagged");
         }
 
-        public void setTagged (ModelBase tagged)
+        public void setTagged(ModelBase tagged)
         {
             this.setProperty("tagged", tagged);
         }

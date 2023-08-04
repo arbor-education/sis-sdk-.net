@@ -9,95 +9,96 @@ namespace Arbor.Model
 {
     public class StudentFunding : ModelBase
     {
-        protected string resourceType = ResourceType.STUDENT_FUNDING;
+        protected new string resourceType = ResourceType.STUDENT_FUNDING;
         public const string STUDENT = "student";
         public const string STUDENT_FUNDING_TYPE = "studentFundingType";
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
         public const string NOTE = "note";
 
-        public StudentFunding ()
+        public StudentFunding()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public StudentFunding (string resourceType = "StudentFunding", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<StudentFunding> query (SimpleQuery query = null)
+        public StudentFunding(string resourceType = "StudentFunding", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("StudentFunding");
-        	RestGateway gateway = (RestGateway) StudentFunding.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<StudentFunding> studentfundingCollection = new ModelCollection<StudentFunding> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    studentfundingCollection.add((StudentFunding) model);
-        	}
-        
-        	return studentfundingCollection;
+
         }
 
-        public static StudentFunding retrieve (string id)
+
+        public static ModelCollection<StudentFunding> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) StudentFunding.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (StudentFunding) gateway.retrieve(ResourceType.STUDENT_FUNDING, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("StudentFunding");
+            RestGateway gateway = (RestGateway)StudentFunding.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<StudentFunding> studentfundingCollection = new ModelCollection<StudentFunding>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                studentfundingCollection.add((StudentFunding)model);
+            }
+
+            return studentfundingCollection;
         }
 
-        public Student getStudent ()
+        public static StudentFunding retrieve(string id)
         {
-            return (Student) this.getProperty("student");
+            RestGateway gateway = (RestGateway)StudentFunding.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (StudentFunding)gateway.retrieve(ResourceType.STUDENT_FUNDING, id);
         }
 
-        public void setStudent (Student student)
+        public Student getStudent()
+        {
+            return (Student)this.getProperty("student");
+        }
+
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public StudentFundingType getStudentFundingType ()
+        public StudentFundingType getStudentFundingType()
         {
-            return (StudentFundingType) this.getProperty("studentFundingType");
+            return (StudentFundingType)this.getProperty("studentFundingType");
         }
 
-        public void setStudentFundingType (StudentFundingType studentFundingType)
+        public void setStudentFundingType(StudentFundingType studentFundingType)
         {
             this.setProperty("studentFundingType", studentFundingType);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDate()
         {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }
 
-        public string getNote ()
+        public string getNote()
         {
             return this.getProperty("note").ToString();
         }
 
-        public void setNote (string note)
+        public void setNote(string note)
         {
             this.setProperty("note", note);
         }

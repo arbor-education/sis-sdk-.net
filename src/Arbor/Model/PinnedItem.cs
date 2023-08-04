@@ -9,73 +9,74 @@ namespace Arbor.Model
 {
     public class PinnedItem : ModelBase
     {
-        protected string resourceType = ResourceType.PINNED_ITEM;
+        protected new string resourceType = ResourceType.PINNED_ITEM;
         public const string PINNED = "pinned";
         public const string TARGET = "target";
         public const string PINNED_UNTIL_DATETIME = "pinnedUntilDatetime";
 
-        public PinnedItem ()
+        public PinnedItem()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public PinnedItem (string resourceType = "PinnedItem", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<PinnedItem> query (SimpleQuery query = null)
+        public PinnedItem(string resourceType = "PinnedItem", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("PinnedItem");
-        	RestGateway gateway = (RestGateway) PinnedItem.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<PinnedItem> pinneditemCollection = new ModelCollection<PinnedItem> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    pinneditemCollection.add((PinnedItem) model);
-        	}
-        
-        	return pinneditemCollection;
+
         }
 
-        public static PinnedItem retrieve (string id)
+
+        public static ModelCollection<PinnedItem> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) PinnedItem.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (PinnedItem) gateway.retrieve(ResourceType.PINNED_ITEM, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("PinnedItem");
+            RestGateway gateway = (RestGateway)PinnedItem.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<PinnedItem> pinneditemCollection = new ModelCollection<PinnedItem>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                pinneditemCollection.add((PinnedItem)model);
+            }
+
+            return pinneditemCollection;
         }
 
-        public ModelBase getPinned ()
+        public static PinnedItem retrieve(string id)
         {
-            return (ModelBase) this.getProperty("pinned");
+            RestGateway gateway = (RestGateway)PinnedItem.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (PinnedItem)gateway.retrieve(ResourceType.PINNED_ITEM, id);
         }
 
-        public void setPinned (ModelBase pinned)
+        public ModelBase getPinned()
+        {
+            return (ModelBase)this.getProperty("pinned");
+        }
+
+        public void setPinned(ModelBase pinned)
         {
             this.setProperty("pinned", pinned);
         }
 
-        public ModelBase getTarget ()
+        public ModelBase getTarget()
         {
-            return (ModelBase) this.getProperty("target");
+            return (ModelBase)this.getProperty("target");
         }
 
-        public void setTarget (ModelBase target)
+        public void setTarget(ModelBase target)
         {
             this.setProperty("target", target);
         }
 
-        public DateTime getPinnedUntilDatetime ()
+        public DateTime getPinnedUntilDatetime()
         {
             return Convert.ToDateTime(this.getProperty("pinnedUntilDatetime"));
         }
 
-        public void setPinnedUntilDatetime (DateTime pinnedUntilDatetime)
+        public void setPinnedUntilDatetime(DateTime pinnedUntilDatetime)
         {
             this.setProperty("pinnedUntilDatetime", pinnedUntilDatetime);
         }

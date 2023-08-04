@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class BoardingPattern : ModelBase
     {
-        protected string resourceType = ResourceType.BOARDING_PATTERN;
+        protected new string resourceType = ResourceType.BOARDING_PATTERN;
         public const string STUDENT = "student";
         public const string EFFECTIVE_DATE = "effectiveDate";
         public const string END_DATE = "endDate";
@@ -22,148 +22,149 @@ namespace Arbor.Model
         public const string SUNDAY_BOARDING_STATUS = "sundayBoardingStatus";
         public const string ACCOMMODATION_ROOM = "accommodationRoom";
 
-        public BoardingPattern ()
+        public BoardingPattern()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public BoardingPattern (string resourceType = "BoardingPattern", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<BoardingPattern> query (SimpleQuery query = null)
+        public BoardingPattern(string resourceType = "BoardingPattern", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("BoardingPattern");
-        	RestGateway gateway = (RestGateway) BoardingPattern.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<BoardingPattern> boardingpatternCollection = new ModelCollection<BoardingPattern> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    boardingpatternCollection.add((BoardingPattern) model);
-        	}
-        
-        	return boardingpatternCollection;
+
         }
 
-        public static BoardingPattern retrieve (string id)
+
+        public static ModelCollection<BoardingPattern> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) BoardingPattern.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (BoardingPattern) gateway.retrieve(ResourceType.BOARDING_PATTERN, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("BoardingPattern");
+            RestGateway gateway = (RestGateway)BoardingPattern.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<BoardingPattern> boardingpatternCollection = new ModelCollection<BoardingPattern>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                boardingpatternCollection.add((BoardingPattern)model);
+            }
+
+            return boardingpatternCollection;
         }
 
-        public Student getStudent ()
+        public static BoardingPattern retrieve(string id)
         {
-            return (Student) this.getProperty("student");
+            RestGateway gateway = (RestGateway)BoardingPattern.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (BoardingPattern)gateway.retrieve(ResourceType.BOARDING_PATTERN, id);
         }
 
-        public void setStudent (Student student)
+        public Student getStudent()
+        {
+            return (Student)this.getProperty("student");
+        }
+
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public DateTime getEffectiveDate ()
+        public DateTime getEffectiveDate()
         {
             return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
-        public void setEffectiveDate (DateTime effectiveDate)
+        public void setEffectiveDate(DateTime effectiveDate)
         {
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }
 
-        public BoardingStatus getMondayBoardingStatus ()
+        public BoardingStatus getMondayBoardingStatus()
         {
-            return (BoardingStatus) this.getProperty("mondayBoardingStatus");
+            return (BoardingStatus)this.getProperty("mondayBoardingStatus");
         }
 
-        public void setMondayBoardingStatus (BoardingStatus mondayBoardingStatus)
+        public void setMondayBoardingStatus(BoardingStatus mondayBoardingStatus)
         {
             this.setProperty("mondayBoardingStatus", mondayBoardingStatus);
         }
 
-        public BoardingStatus getTuesdayBoardingStatus ()
+        public BoardingStatus getTuesdayBoardingStatus()
         {
-            return (BoardingStatus) this.getProperty("tuesdayBoardingStatus");
+            return (BoardingStatus)this.getProperty("tuesdayBoardingStatus");
         }
 
-        public void setTuesdayBoardingStatus (BoardingStatus tuesdayBoardingStatus)
+        public void setTuesdayBoardingStatus(BoardingStatus tuesdayBoardingStatus)
         {
             this.setProperty("tuesdayBoardingStatus", tuesdayBoardingStatus);
         }
 
-        public BoardingStatus getWednesdayBoardingStatus ()
+        public BoardingStatus getWednesdayBoardingStatus()
         {
-            return (BoardingStatus) this.getProperty("wednesdayBoardingStatus");
+            return (BoardingStatus)this.getProperty("wednesdayBoardingStatus");
         }
 
-        public void setWednesdayBoardingStatus (BoardingStatus wednesdayBoardingStatus)
+        public void setWednesdayBoardingStatus(BoardingStatus wednesdayBoardingStatus)
         {
             this.setProperty("wednesdayBoardingStatus", wednesdayBoardingStatus);
         }
 
-        public BoardingStatus getThursdayBoardingStatus ()
+        public BoardingStatus getThursdayBoardingStatus()
         {
-            return (BoardingStatus) this.getProperty("thursdayBoardingStatus");
+            return (BoardingStatus)this.getProperty("thursdayBoardingStatus");
         }
 
-        public void setThursdayBoardingStatus (BoardingStatus thursdayBoardingStatus)
+        public void setThursdayBoardingStatus(BoardingStatus thursdayBoardingStatus)
         {
             this.setProperty("thursdayBoardingStatus", thursdayBoardingStatus);
         }
 
-        public BoardingStatus getFridayBoardingStatus ()
+        public BoardingStatus getFridayBoardingStatus()
         {
-            return (BoardingStatus) this.getProperty("fridayBoardingStatus");
+            return (BoardingStatus)this.getProperty("fridayBoardingStatus");
         }
 
-        public void setFridayBoardingStatus (BoardingStatus fridayBoardingStatus)
+        public void setFridayBoardingStatus(BoardingStatus fridayBoardingStatus)
         {
             this.setProperty("fridayBoardingStatus", fridayBoardingStatus);
         }
 
-        public BoardingStatus getSaturdayBoardingStatus ()
+        public BoardingStatus getSaturdayBoardingStatus()
         {
-            return (BoardingStatus) this.getProperty("saturdayBoardingStatus");
+            return (BoardingStatus)this.getProperty("saturdayBoardingStatus");
         }
 
-        public void setSaturdayBoardingStatus (BoardingStatus saturdayBoardingStatus)
+        public void setSaturdayBoardingStatus(BoardingStatus saturdayBoardingStatus)
         {
             this.setProperty("saturdayBoardingStatus", saturdayBoardingStatus);
         }
 
-        public BoardingStatus getSundayBoardingStatus ()
+        public BoardingStatus getSundayBoardingStatus()
         {
-            return (BoardingStatus) this.getProperty("sundayBoardingStatus");
+            return (BoardingStatus)this.getProperty("sundayBoardingStatus");
         }
 
-        public void setSundayBoardingStatus (BoardingStatus sundayBoardingStatus)
+        public void setSundayBoardingStatus(BoardingStatus sundayBoardingStatus)
         {
             this.setProperty("sundayBoardingStatus", sundayBoardingStatus);
         }
 
-        public Room getAccommodationRoom ()
+        public Room getAccommodationRoom()
         {
-            return (Room) this.getProperty("accommodationRoom");
+            return (Room)this.getProperty("accommodationRoom");
         }
 
-        public void setAccommodationRoom (Room accommodationRoom)
+        public void setAccommodationRoom(Room accommodationRoom)
         {
             this.setProperty("accommodationRoom", accommodationRoom);
         }

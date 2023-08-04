@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class EarlyYearsPupilPremiumRecipient : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_EARLY_YEARS_PUPIL_PREMIUM_RECIPIENT;
+        protected new string resourceType = ResourceType.UK_DFE_EARLY_YEARS_PUPIL_PREMIUM_RECIPIENT;
         public const string STUDENT = "student";
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
@@ -64,7 +64,7 @@ namespace Arbor.Model.UkDfe
 
         public DateTime getStartDate ()
         {
-            Convert.ToDateTime(this.getProperty("startDate"))
+            return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
         public void setStartDate (DateTime startDate)
@@ -74,7 +74,7 @@ namespace Arbor.Model.UkDfe
 
         public DateTime getEndDate ()
         {
-            Convert.ToDateTime(this.getProperty("endDate"))
+            return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
         public void setEndDate (DateTime endDate)
@@ -84,7 +84,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getRecipientForEconomicReasons ()
         {
-            return (bool) this.getProperty("recipientForEconomicReasons");
+            return Convert.ToBoolean(this.getProperty("recipientForEconomicReasons"));
         }
 
         public void setRecipientForEconomicReasons (bool recipientForEconomicReasons)
@@ -94,7 +94,7 @@ namespace Arbor.Model.UkDfe
 
         public bool getRecipientForOtherReasons ()
         {
-            return (bool) this.getProperty("recipientForOtherReasons");
+            return Convert.ToBoolean(this.getProperty("recipientForOtherReasons"));
         }
 
         public void setRecipientForOtherReasons (bool recipientForOtherReasons)

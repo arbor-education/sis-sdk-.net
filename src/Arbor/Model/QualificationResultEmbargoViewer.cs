@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class QualificationResultEmbargoViewer : ModelBase
     {
-        protected string resourceType = ResourceType.QUALIFICATION_RESULT_EMBARGO_VIEWER;
+        protected new string resourceType = ResourceType.QUALIFICATION_RESULT_EMBARGO_VIEWER;
         public const string VIEWER = "viewer";
 
         public QualificationResultEmbargoViewer ()

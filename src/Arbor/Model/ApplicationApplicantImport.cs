@@ -9,8 +9,7 @@ namespace Arbor.Model
 {
     public class ApplicationApplicantImport : ModelBase
     {
-        protected string resourceType = ResourceType.APPLICATION_APPLICANT_IMPORT;
-        public const string APPLICATION_APPLICANT_IMPORT_JOB = "applicationApplicantImportJob";
+        protected new string resourceType = ResourceType.APPLICATION_APPLICANT_IMPORT;
         public const string APPLICATION = "application";
         public const string ROW_INDEX = "rowIndex";
         public const string ERRORS = "errors";
@@ -50,16 +49,6 @@ namespace Arbor.Model
             RestGateway gateway = (RestGateway) ApplicationApplicantImport.getDefaultGateway();
         	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
         	return (ApplicationApplicantImport) gateway.retrieve(ResourceType.APPLICATION_APPLICANT_IMPORT, id);
-        }
-
-        public ApplicationApplicantImportJob getApplicationApplicantImportJob ()
-        {
-            return (ApplicationApplicantImportJob) this.getProperty("applicationApplicantImportJob");
-        }
-
-        public void setApplicationApplicantImportJob (ApplicationApplicantImportJob applicationApplicantImportJob)
-        {
-            this.setProperty("applicationApplicantImportJob", applicationApplicantImportJob);
         }
 
         public Application getApplication ()

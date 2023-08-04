@@ -9,73 +9,74 @@ namespace Arbor.Model
 {
     public class EventParticipant : ModelBase
     {
-        protected string resourceType = ResourceType.EVENT_PARTICIPANT;
+        protected new string resourceType = ResourceType.EVENT_PARTICIPANT;
         public const string EVENT = "event";
         public const string PARTICIPANT = "participant";
         public const string ATTENDANCE_REQUIREMENT = "attendanceRequirement";
 
-        public EventParticipant ()
+        public EventParticipant()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public EventParticipant (string resourceType = "EventParticipant", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<EventParticipant> query (SimpleQuery query = null)
+        public EventParticipant(string resourceType = "EventParticipant", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("EventParticipant");
-        	RestGateway gateway = (RestGateway) EventParticipant.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<EventParticipant> eventparticipantCollection = new ModelCollection<EventParticipant> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    eventparticipantCollection.add((EventParticipant) model);
-        	}
-        
-        	return eventparticipantCollection;
+
         }
 
-        public static EventParticipant retrieve (string id)
+
+        public static ModelCollection<EventParticipant> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) EventParticipant.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (EventParticipant) gateway.retrieve(ResourceType.EVENT_PARTICIPANT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("EventParticipant");
+            RestGateway gateway = (RestGateway)EventParticipant.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<EventParticipant> eventparticipantCollection = new ModelCollection<EventParticipant>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                eventparticipantCollection.add((EventParticipant)model);
+            }
+
+            return eventparticipantCollection;
         }
 
-        public ModelBase getEvent ()
+        public static EventParticipant retrieve(string id)
         {
-            return (ModelBase) this.getProperty("event");
+            RestGateway gateway = (RestGateway)EventParticipant.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (EventParticipant)gateway.retrieve(ResourceType.EVENT_PARTICIPANT, id);
         }
 
-        public void setEvent (ModelBase _event)
+        public ModelBase getEvent()
+        {
+            return (ModelBase)this.getProperty("event");
+        }
+
+        public void setEvent(ModelBase _event)
         {
             this.setProperty("event", _event);
         }
 
-        public ModelBase getParticipant ()
+        public ModelBase getParticipant()
         {
-            return (ModelBase) this.getProperty("participant");
+            return (ModelBase)this.getProperty("participant");
         }
 
-        public void setParticipant (ModelBase participant)
+        public void setParticipant(ModelBase participant)
         {
             this.setProperty("participant", participant);
         }
 
-        public string getAttendanceRequirement ()
+        public string getAttendanceRequirement()
         {
             return this.getProperty("attendanceRequirement").ToString();
         }
 
-        public void setAttendanceRequirement (string attendanceRequirement)
+        public void setAttendanceRequirement(string attendanceRequirement)
         {
             this.setProperty("attendanceRequirement", attendanceRequirement);
         }

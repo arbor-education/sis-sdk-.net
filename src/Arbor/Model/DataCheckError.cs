@@ -22,148 +22,149 @@ namespace Arbor.Model
         public const string CORRECTED_DATETIME = "correctedDatetime";
         public const string CORRECTED_BY_USER = "correctedByUser";
 
-        public DataCheckError ()
+        public DataCheckError()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public DataCheckError (string resourceType = "DataCheckError", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<DataCheckError> query (SimpleQuery query = null)
+        public DataCheckError(string resourceType = "DataCheckError", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("DataCheckError");
-        	RestGateway gateway = (RestGateway) DataCheckError.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<DataCheckError> datacheckerrorCollection = new ModelCollection<DataCheckError> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    datacheckerrorCollection.add((DataCheckError) model);
-        	}
-        
-        	return datacheckerrorCollection;
+
         }
 
-        public static DataCheckError retrieve (string id)
+
+        public static ModelCollection<DataCheckError> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) DataCheckError.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (DataCheckError) gateway.retrieve(ResourceType.DATA_CHECK_ERROR, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("DataCheckError");
+            RestGateway gateway = (RestGateway)DataCheckError.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<DataCheckError> datacheckerrorCollection = new ModelCollection<DataCheckError>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                datacheckerrorCollection.add((DataCheckError)model);
+            }
+
+            return datacheckerrorCollection;
         }
 
-        public string getDataCheckerClassName ()
+        public static DataCheckError retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)DataCheckError.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (DataCheckError)gateway.retrieve(ResourceType.DATA_CHECK_ERROR, id);
+        }
+
+        public string getDataCheckerClassName()
         {
             return this.getProperty("dataCheckerClassName").ToString();
         }
 
-        public void setDataCheckerClassName (string dataCheckerClassName)
+        public void setDataCheckerClassName(string dataCheckerClassName)
         {
             this.setProperty("dataCheckerClassName", dataCheckerClassName);
         }
 
-        public string getErrorIdentifier ()
+        public string getErrorIdentifier()
         {
             return this.getProperty("errorIdentifier").ToString();
         }
 
-        public void setErrorIdentifier (string errorIdentifier)
+        public void setErrorIdentifier(string errorIdentifier)
         {
             this.setProperty("errorIdentifier", errorIdentifier);
         }
 
-        public ModelBase getCheckedEntity ()
+        public ModelBase getCheckedEntity()
         {
-            return (ModelBase) this.getProperty("checkedEntity");
+            return (ModelBase)this.getProperty("checkedEntity");
         }
 
-        public void setCheckedEntity (ModelBase checkedEntity)
+        public void setCheckedEntity(ModelBase checkedEntity)
         {
             this.setProperty("checkedEntity", checkedEntity);
         }
 
-        public ModelBase getReportingEntity ()
+        public ModelBase getReportingEntity()
         {
-            return (ModelBase) this.getProperty("reportingEntity");
+            return (ModelBase)this.getProperty("reportingEntity");
         }
 
-        public void setReportingEntity (ModelBase reportingEntity)
+        public void setReportingEntity(ModelBase reportingEntity)
         {
             this.setProperty("reportingEntity", reportingEntity);
         }
 
-        public DateTime getReportedDatetime ()
+        public DateTime getReportedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("reportedDatetime"));
         }
 
-        public void setReportedDatetime (DateTime reportedDatetime)
+        public void setReportedDatetime(DateTime reportedDatetime)
         {
             this.setProperty("reportedDatetime", reportedDatetime);
         }
 
-        public string getPriority ()
+        public string getPriority()
         {
             return this.getProperty("priority").ToString();
         }
 
-        public void setPriority (string priority)
+        public void setPriority(string priority)
         {
             this.setProperty("priority", priority);
         }
 
-        public bool getErrorFixIsMandatory ()
+        public bool getErrorFixIsMandatory()
         {
             return Convert.ToBoolean(this.getProperty("errorFixIsMandatory"));
         }
 
-        public void setErrorFixIsMandatory (bool errorFixIsMandatory)
+        public void setErrorFixIsMandatory(bool errorFixIsMandatory)
         {
             this.setProperty("errorFixIsMandatory", errorFixIsMandatory);
         }
 
-        public DateTime getIgnoredDatetime ()
+        public DateTime getIgnoredDatetime()
         {
             return Convert.ToDateTime(this.getProperty("ignoredDatetime"));
         }
 
-        public void setIgnoredDatetime (DateTime ignoredDatetime)
+        public void setIgnoredDatetime(DateTime ignoredDatetime)
         {
             this.setProperty("ignoredDatetime", ignoredDatetime);
         }
 
-        public DateTime getIgnoredByUser ()
+        public DateTime getIgnoredByUser()
         {
             return Convert.ToDateTime(this.getProperty("ignoredByUser"));
         }
 
-        public void setIgnoredByUser (DateTime ignoredByUser)
+        public void setIgnoredByUser(DateTime ignoredByUser)
         {
             this.setProperty("ignoredByUser", ignoredByUser);
         }
 
-        public DateTime getCorrectedDatetime ()
+        public DateTime getCorrectedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("correctedDatetime"));
         }
 
-        public void setCorrectedDatetime (DateTime correctedDatetime)
+        public void setCorrectedDatetime(DateTime correctedDatetime)
         {
             this.setProperty("correctedDatetime", correctedDatetime);
         }
 
-        public User getCorrectedByUser ()
+        public User getCorrectedByUser()
         {
-            return (User) this.getProperty("correctedByUser");
+            return (User)this.getProperty("correctedByUser");
         }
 
-        public void setCorrectedByUser (User correctedByUser)
+        public void setCorrectedByUser(User correctedByUser)
         {
             this.setProperty("correctedByUser", correctedByUser);
         }

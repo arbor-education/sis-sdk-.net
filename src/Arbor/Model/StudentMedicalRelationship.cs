@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class StudentMedicalRelationship : ModelBase
     {
-        protected string resourceType = ResourceType.STUDENT_MEDICAL_RELATIONSHIP;
+        protected new string resourceType = ResourceType.STUDENT_MEDICAL_RELATIONSHIP;
         public const string STUDENT = "student";
         public const string MEDICAL_INSTITUTION = "medicalInstitution";
         public const string MEDICAL_INSTITUTION_STAFF = "medicalInstitutionStaff";
@@ -18,108 +18,109 @@ namespace Arbor.Model
         public const string END_DATE = "endDate";
         public const string NOTES = "notes";
 
-        public StudentMedicalRelationship ()
+        public StudentMedicalRelationship()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public StudentMedicalRelationship (string resourceType = "StudentMedicalRelationship", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<StudentMedicalRelationship> query (SimpleQuery query = null)
+        public StudentMedicalRelationship(string resourceType = "StudentMedicalRelationship", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("StudentMedicalRelationship");
-        	RestGateway gateway = (RestGateway) StudentMedicalRelationship.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<StudentMedicalRelationship> studentmedicalrelationshipCollection = new ModelCollection<StudentMedicalRelationship> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    studentmedicalrelationshipCollection.add((StudentMedicalRelationship) model);
-        	}
-        
-        	return studentmedicalrelationshipCollection;
+
         }
 
-        public static StudentMedicalRelationship retrieve (string id)
+
+        public static ModelCollection<StudentMedicalRelationship> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) StudentMedicalRelationship.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (StudentMedicalRelationship) gateway.retrieve(ResourceType.STUDENT_MEDICAL_RELATIONSHIP, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("StudentMedicalRelationship");
+            RestGateway gateway = (RestGateway)StudentMedicalRelationship.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<StudentMedicalRelationship> studentmedicalrelationshipCollection = new ModelCollection<StudentMedicalRelationship>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                studentmedicalrelationshipCollection.add((StudentMedicalRelationship)model);
+            }
+
+            return studentmedicalrelationshipCollection;
         }
 
-        public Student getStudent ()
+        public static StudentMedicalRelationship retrieve(string id)
         {
-            return (Student) this.getProperty("student");
+            RestGateway gateway = (RestGateway)StudentMedicalRelationship.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (StudentMedicalRelationship)gateway.retrieve(ResourceType.STUDENT_MEDICAL_RELATIONSHIP, id);
         }
 
-        public void setStudent (Student student)
+        public Student getStudent()
+        {
+            return (Student)this.getProperty("student");
+        }
+
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public MedicalInstitution getMedicalInstitution ()
+        public MedicalInstitution getMedicalInstitution()
         {
-            return (MedicalInstitution) this.getProperty("medicalInstitution");
+            return (MedicalInstitution)this.getProperty("medicalInstitution");
         }
 
-        public void setMedicalInstitution (MedicalInstitution medicalInstitution)
+        public void setMedicalInstitution(MedicalInstitution medicalInstitution)
         {
             this.setProperty("medicalInstitution", medicalInstitution);
         }
 
-        public MedicalInstitutionStaff getMedicalInstitutionStaff ()
+        public MedicalInstitutionStaff getMedicalInstitutionStaff()
         {
-            return (MedicalInstitutionStaff) this.getProperty("medicalInstitutionStaff");
+            return (MedicalInstitutionStaff)this.getProperty("medicalInstitutionStaff");
         }
 
-        public void setMedicalInstitutionStaff (MedicalInstitutionStaff medicalInstitutionStaff)
+        public void setMedicalInstitutionStaff(MedicalInstitutionStaff medicalInstitutionStaff)
         {
             this.setProperty("medicalInstitutionStaff", medicalInstitutionStaff);
         }
 
-        public MedicalRelationshipType getMedicalRelationshipType ()
+        public MedicalRelationshipType getMedicalRelationshipType()
         {
-            return (MedicalRelationshipType) this.getProperty("medicalRelationshipType");
+            return (MedicalRelationshipType)this.getProperty("medicalRelationshipType");
         }
 
-        public void setMedicalRelationshipType (MedicalRelationshipType medicalRelationshipType)
+        public void setMedicalRelationshipType(MedicalRelationshipType medicalRelationshipType)
         {
             this.setProperty("medicalRelationshipType", medicalRelationshipType);
         }
 
-        public DateTime getEffectiveDate ()
+        public DateTime getEffectiveDate()
         {
             return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
-        public void setEffectiveDate (DateTime effectiveDate)
+        public void setEffectiveDate(DateTime effectiveDate)
         {
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }
 
-        public string getNotes ()
+        public string getNotes()
         {
             return this.getProperty("notes").ToString();
         }
 
-        public void setNotes (string notes)
+        public void setNotes(string notes)
         {
             this.setProperty("notes", notes);
         }

@@ -19,118 +19,119 @@ namespace Arbor.Model
         public const string ORIGIN = "origin";
         public const string TYPE = "type";
 
-        public TodoItem ()
+        public TodoItem()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public TodoItem (string resourceType = "TodoItem", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<TodoItem> query (SimpleQuery query = null)
+        public TodoItem(string resourceType = "TodoItem", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("TodoItem");
-        	RestGateway gateway = (RestGateway) TodoItem.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<TodoItem> todoitemCollection = new ModelCollection<TodoItem> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    todoitemCollection.add((TodoItem) model);
-        	}
-        
-        	return todoitemCollection;
+
         }
 
-        public static TodoItem retrieve (string id)
+
+        public static ModelCollection<TodoItem> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) TodoItem.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (TodoItem) gateway.retrieve(ResourceType.TODO_ITEM, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("TodoItem");
+            RestGateway gateway = (RestGateway)TodoItem.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<TodoItem> todoitemCollection = new ModelCollection<TodoItem>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                todoitemCollection.add((TodoItem)model);
+            }
+
+            return todoitemCollection;
         }
 
-        public string getIdentifier ()
+        public static TodoItem retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)TodoItem.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (TodoItem)gateway.retrieve(ResourceType.TODO_ITEM, id);
+        }
+
+        public string getIdentifier()
         {
             return this.getProperty("identifier").ToString();
         }
 
-        public void setIdentifier (string identifier)
+        public void setIdentifier(string identifier)
         {
             this.setProperty("identifier", identifier);
         }
 
-        public string getText ()
+        public string getText()
         {
             return this.getProperty("text").ToString();
         }
 
-        public void setText (string text)
+        public void setText(string text)
         {
             this.setProperty("text", text);
         }
 
-        public ModelBase getAssignee ()
+        public ModelBase getAssignee()
         {
-            return (ModelBase) this.getProperty("assignee");
+            return (ModelBase)this.getProperty("assignee");
         }
 
-        public void setAssignee (ModelBase assignee)
+        public void setAssignee(ModelBase assignee)
         {
             this.setProperty("assignee", assignee);
         }
 
-        public DateTime getReferenceDatetime ()
+        public DateTime getReferenceDatetime()
         {
-            return (DateTime) this.getProperty("referenceDatetime");
+            return (DateTime)this.getProperty("referenceDatetime");
         }
 
-        public void setReferenceDatetime (DateTime referenceDatetime)
+        public void setReferenceDatetime(DateTime referenceDatetime)
         {
             this.setProperty("referenceDatetime", referenceDatetime);
         }
 
-        public DateTime getDueDatetime ()
+        public DateTime getDueDatetime()
         {
-            return (DateTime) this.getProperty("dueDatetime");
+            return (DateTime)this.getProperty("dueDatetime");
         }
 
-        public void setDueDatetime (DateTime dueDatetime)
+        public void setDueDatetime(DateTime dueDatetime)
         {
             this.setProperty("dueDatetime", dueDatetime);
         }
 
-        public DateTime getResolvedDatetime ()
+        public DateTime getResolvedDatetime()
         {
-            return (DateTime) this.getProperty("resolvedDatetime");
+            return (DateTime)this.getProperty("resolvedDatetime");
         }
 
-        public void setResolvedDatetime (DateTime resolvedDatetime)
+        public void setResolvedDatetime(DateTime resolvedDatetime)
         {
             this.setProperty("resolvedDatetime", resolvedDatetime);
         }
 
-        public ModelBase getOrigin ()
+        public ModelBase getOrigin()
         {
-            return (ModelBase) this.getProperty("origin");
+            return (ModelBase)this.getProperty("origin");
         }
 
-        public void setOrigin (ModelBase origin)
+        public void setOrigin(ModelBase origin)
         {
             this.setProperty("origin", origin);
         }
 
-        public string getType ()
+        public string getType()
         {
             return this.getProperty("type").ToString();
         }
 
-        public void setType (string type)
+        public void setType(string type)
         {
             this.setProperty("type", type);
         }

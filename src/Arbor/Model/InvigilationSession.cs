@@ -9,84 +9,85 @@ namespace Arbor.Model
 {
     public class InvigilationSession : ModelBase
     {
-        protected string resourceType = ResourceType.INVIGILATION_SESSION;
+        protected new string resourceType = ResourceType.INVIGILATION_SESSION;
         public const string START_DATETIME = "startDatetime";
         public const string END_DATETIME = "endDatetime";
         public const string LOCATION_TEXT = "locationText";
         public const string LOCATION = "location";
 
-        public InvigilationSession ()
+        public InvigilationSession()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public InvigilationSession (string resourceType = "InvigilationSession", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<InvigilationSession> query (SimpleQuery query = null)
+        public InvigilationSession(string resourceType = "InvigilationSession", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("InvigilationSession");
-        	RestGateway gateway = (RestGateway) InvigilationSession.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<InvigilationSession> invigilationsessionCollection = new ModelCollection<InvigilationSession> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    invigilationsessionCollection.add((InvigilationSession) model);
-        	}
-        
-        	return invigilationsessionCollection;
+
         }
 
-        public static InvigilationSession retrieve (string id)
+
+        public static ModelCollection<InvigilationSession> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) InvigilationSession.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (InvigilationSession) gateway.retrieve(ResourceType.INVIGILATION_SESSION, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("InvigilationSession");
+            RestGateway gateway = (RestGateway)InvigilationSession.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<InvigilationSession> invigilationsessionCollection = new ModelCollection<InvigilationSession>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                invigilationsessionCollection.add((InvigilationSession)model);
+            }
+
+            return invigilationsessionCollection;
         }
 
-        public DateTime getStartDatetime ()
+        public static InvigilationSession retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)InvigilationSession.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (InvigilationSession)gateway.retrieve(ResourceType.INVIGILATION_SESSION, id);
+        }
+
+        public DateTime getStartDatetime()
         {
             return Convert.ToDateTime(this.getProperty("startDatetime"));
         }
 
-        public void setStartDatetime (DateTime startDatetime)
+        public void setStartDatetime(DateTime startDatetime)
         {
             this.setProperty("startDatetime", startDatetime);
         }
 
-        public DateTime getEndDatetime ()
+        public DateTime getEndDatetime()
         {
             return Convert.ToDateTime(this.getProperty("endDatetime"));
         }
 
-        public void setEndDatetime (DateTime endDatetime)
+        public void setEndDatetime(DateTime endDatetime)
         {
             this.setProperty("endDatetime", endDatetime);
         }
 
-        public string getLocationText ()
+        public string getLocationText()
         {
             return this.getProperty("locationText").ToString();
         }
 
-        public void setLocationText (string locationText)
+        public void setLocationText(string locationText)
         {
             this.setProperty("locationText", locationText);
         }
 
-        public ModelBase getLocation ()
+        public ModelBase getLocation()
         {
-            return (ModelBase) this.getProperty("location");
+            return (ModelBase)this.getProperty("location");
         }
 
-        public void setLocation (ModelBase location)
+        public void setLocation(ModelBase location)
         {
             this.setProperty("location", location);
         }

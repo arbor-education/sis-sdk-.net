@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class StudentIntervention : ModelBase
     {
-        protected string resourceType = ResourceType.STUDENT_INTERVENTION;
+        protected new string resourceType = ResourceType.STUDENT_INTERVENTION;
         public const string STUDENT = "student";
         public const string INTERVENTION = "intervention";
         public const string INTERVENTION_GROUP = "interventionGroup";
@@ -28,208 +28,209 @@ namespace Arbor.Model
         public const string SUCCESS = "success";
         public const string ESTIMATED_DURATION = "estimatedDuration";
 
-        public StudentIntervention ()
+        public StudentIntervention()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public StudentIntervention (string resourceType = "StudentIntervention", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<StudentIntervention> query (SimpleQuery query = null)
+        public StudentIntervention(string resourceType = "StudentIntervention", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("StudentIntervention");
-        	RestGateway gateway = (RestGateway) StudentIntervention.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<StudentIntervention> studentinterventionCollection = new ModelCollection<StudentIntervention> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    studentinterventionCollection.add((StudentIntervention) model);
-        	}
-        
-        	return studentinterventionCollection;
+
         }
 
-        public static StudentIntervention retrieve (string id)
+
+        public static ModelCollection<StudentIntervention> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) StudentIntervention.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (StudentIntervention) gateway.retrieve(ResourceType.STUDENT_INTERVENTION, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("StudentIntervention");
+            RestGateway gateway = (RestGateway)StudentIntervention.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<StudentIntervention> studentinterventionCollection = new ModelCollection<StudentIntervention>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                studentinterventionCollection.add((StudentIntervention)model);
+            }
+
+            return studentinterventionCollection;
         }
 
-        public Student getStudent ()
+        public static StudentIntervention retrieve(string id)
         {
-            return (Student) this.getProperty("student");
+            RestGateway gateway = (RestGateway)StudentIntervention.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (StudentIntervention)gateway.retrieve(ResourceType.STUDENT_INTERVENTION, id);
         }
 
-        public void setStudent (Student student)
+        public Student getStudent()
+        {
+            return (Student)this.getProperty("student");
+        }
+
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public Intervention getIntervention ()
+        public Intervention getIntervention()
         {
-            return (Intervention) this.getProperty("intervention");
+            return (Intervention)this.getProperty("intervention");
         }
 
-        public void setIntervention (Intervention intervention)
+        public void setIntervention(Intervention intervention)
         {
             this.setProperty("intervention", intervention);
         }
 
-        public InterventionGroup getInterventionGroup ()
+        public InterventionGroup getInterventionGroup()
         {
-            return (InterventionGroup) this.getProperty("interventionGroup");
+            return (InterventionGroup)this.getProperty("interventionGroup");
         }
 
-        public void setInterventionGroup (InterventionGroup interventionGroup)
+        public void setInterventionGroup(InterventionGroup interventionGroup)
         {
             this.setProperty("interventionGroup", interventionGroup);
         }
 
-        public DateTime getStartDatetime ()
+        public DateTime getStartDatetime()
         {
             return Convert.ToDateTime(this.getProperty("startDatetime"));
         }
 
-        public void setStartDatetime (DateTime startDatetime)
+        public void setStartDatetime(DateTime startDatetime)
         {
             this.setProperty("startDatetime", startDatetime);
         }
 
-        public DateTime getEndDatetime ()
+        public DateTime getEndDatetime()
         {
             return Convert.ToDateTime(this.getProperty("endDatetime"));
         }
 
-        public void setEndDatetime (DateTime endDatetime)
+        public void setEndDatetime(DateTime endDatetime)
         {
             this.setProperty("endDatetime", endDatetime);
         }
 
-        public string getPriority ()
+        public string getPriority()
         {
             return this.getProperty("priority").ToString();
         }
 
-        public void setPriority (string priority)
+        public void setPriority(string priority)
         {
             this.setProperty("priority", priority);
         }
 
-        public string getStatus ()
+        public string getStatus()
         {
             return this.getProperty("status").ToString();
         }
 
-        public void setStatus (string status)
+        public void setStatus(string status)
         {
             this.setProperty("status", status);
         }
 
-        public string getMonitoring ()
+        public string getMonitoring()
         {
             return this.getProperty("monitoring").ToString();
         }
 
-        public void setMonitoring (string monitoring)
+        public void setMonitoring(string monitoring)
         {
             this.setProperty("monitoring", monitoring);
         }
 
-        public string getAims ()
+        public string getAims()
         {
             return this.getProperty("aims").ToString();
         }
 
-        public void setAims (string aims)
+        public void setAims(string aims)
         {
             this.setProperty("aims", aims);
         }
 
-        public string getStrategies ()
+        public string getStrategies()
         {
             return this.getProperty("strategies").ToString();
         }
 
-        public void setStrategies (string strategies)
+        public void setStrategies(string strategies)
         {
             this.setProperty("strategies", strategies);
         }
 
-        public string getSuccessCriteria ()
+        public string getSuccessCriteria()
         {
             return this.getProperty("successCriteria").ToString();
         }
 
-        public void setSuccessCriteria (string successCriteria)
+        public void setSuccessCriteria(string successCriteria)
         {
             this.setProperty("successCriteria", successCriteria);
         }
 
-        public string getReason ()
+        public string getReason()
         {
             return this.getProperty("reason").ToString();
         }
 
-        public void setReason (string reason)
+        public void setReason(string reason)
         {
             this.setProperty("reason", reason);
         }
 
-        public SenNeed getSenNeed ()
+        public SenNeed getSenNeed()
         {
-            return (SenNeed) this.getProperty("senNeed");
+            return (SenNeed)this.getProperty("senNeed");
         }
 
-        public void setSenNeed (SenNeed senNeed)
+        public void setSenNeed(SenNeed senNeed)
         {
             this.setProperty("senNeed", senNeed);
         }
 
-        public LanguageAbility getLanguageAbility ()
+        public LanguageAbility getLanguageAbility()
         {
-            return (LanguageAbility) this.getProperty("languageAbility");
+            return (LanguageAbility)this.getProperty("languageAbility");
         }
 
-        public void setLanguageAbility (LanguageAbility languageAbility)
+        public void setLanguageAbility(LanguageAbility languageAbility)
         {
             this.setProperty("languageAbility", languageAbility);
         }
 
-        public MedicalCondition getMedicalCondition ()
+        public MedicalCondition getMedicalCondition()
         {
-            return (MedicalCondition) this.getProperty("medicalCondition");
+            return (MedicalCondition)this.getProperty("medicalCondition");
         }
 
-        public void setMedicalCondition (MedicalCondition medicalCondition)
+        public void setMedicalCondition(MedicalCondition medicalCondition)
         {
             this.setProperty("medicalCondition", medicalCondition);
         }
 
-        public string getSuccess ()
+        public string getSuccess()
         {
             return this.getProperty("success").ToString();
         }
 
-        public void setSuccess (string success)
+        public void setSuccess(string success)
         {
             this.setProperty("success", success);
         }
 
-        public string getEstimatedDuration ()
+        public string getEstimatedDuration()
         {
             return this.getProperty("estimatedDuration").ToString();
         }
 
-        public void setEstimatedDuration (string estimatedDuration)
+        public void setEstimatedDuration(string estimatedDuration)
         {
             this.setProperty("estimatedDuration", estimatedDuration);
         }

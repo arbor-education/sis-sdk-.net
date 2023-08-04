@@ -22,148 +22,149 @@ namespace Arbor.Model
         public const string TEST_FOR_STUDENTS = "testForStudents";
         public const string TEST_FOR_STUDENT_ACADEMIC_UNIT_ENROLMENTS = "testForStudentAcademicUnitEnrolments";
 
-        public Trigger ()
+        public Trigger()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public Trigger (string resourceType = "Trigger", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<Trigger> query (SimpleQuery query = null)
+        public Trigger(string resourceType = "Trigger", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("Trigger");
-        	RestGateway gateway = (RestGateway) Trigger.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<Trigger> triggerCollection = new ModelCollection<Trigger> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    triggerCollection.add((Trigger) model);
-        	}
-        
-        	return triggerCollection;
+
         }
 
-        public static Trigger retrieve (string id)
+
+        public static ModelCollection<Trigger> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) Trigger.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (Trigger) gateway.retrieve(ResourceType.TRIGGER, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("Trigger");
+            RestGateway gateway = (RestGateway)Trigger.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<Trigger> triggerCollection = new ModelCollection<Trigger>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                triggerCollection.add((Trigger)model);
+            }
+
+            return triggerCollection;
         }
 
-        public string getCode ()
+        public static Trigger retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)Trigger.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (Trigger)gateway.retrieve(ResourceType.TRIGGER, id);
+        }
+
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public string getTriggerCategory ()
+        public string getTriggerCategory()
         {
             return this.getProperty("triggerCategory").ToString();
         }
 
-        public void setTriggerCategory (string triggerCategory)
+        public void setTriggerCategory(string triggerCategory)
         {
             this.setProperty("triggerCategory", triggerCategory);
         }
 
-        public string getTriggerName ()
+        public string getTriggerName()
         {
             return this.getProperty("triggerName").ToString();
         }
 
-        public void setTriggerName (string triggerName)
+        public void setTriggerName(string triggerName)
         {
             this.setProperty("triggerName", triggerName);
         }
 
-        public string getDescription ()
+        public string getDescription()
         {
             return this.getProperty("description").ToString();
         }
 
-        public void setDescription (string description)
+        public void setDescription(string description)
         {
             this.setProperty("description", description);
         }
 
-        public string getTriggerClass ()
+        public string getTriggerClass()
         {
             return this.getProperty("triggerClass").ToString();
         }
 
-        public void setTriggerClass (string triggerClass)
+        public void setTriggerClass(string triggerClass)
         {
             this.setProperty("triggerClass", triggerClass);
         }
 
-        public string getTriggerClassArgs ()
+        public string getTriggerClassArgs()
         {
             return this.getProperty("triggerClassArgs").ToString();
         }
 
-        public void setTriggerClassArgs (string triggerClassArgs)
+        public void setTriggerClassArgs(string triggerClassArgs)
         {
             this.setProperty("triggerClassArgs", triggerClassArgs);
         }
 
-        public bool getTestForSchool ()
+        public bool getTestForSchool()
         {
-            return (bool) this.getProperty("testForSchool");
+            return (bool)this.getProperty("testForSchool");
         }
 
-        public void setTestForSchool (bool testForSchool)
+        public void setTestForSchool(bool testForSchool)
         {
             this.setProperty("testForSchool", testForSchool);
         }
 
-        public bool getTestForGroups ()
+        public bool getTestForGroups()
         {
-            return (bool) this.getProperty("testForGroups");
+            return (bool)this.getProperty("testForGroups");
         }
 
-        public void setTestForGroups (bool testForGroups)
+        public void setTestForGroups(bool testForGroups)
         {
             this.setProperty("testForGroups", testForGroups);
         }
 
-        public bool getTestForAcademicUnits ()
+        public bool getTestForAcademicUnits()
         {
-            return (bool) this.getProperty("testForAcademicUnits");
+            return (bool)this.getProperty("testForAcademicUnits");
         }
 
-        public void setTestForAcademicUnits (bool testForAcademicUnits)
+        public void setTestForAcademicUnits(bool testForAcademicUnits)
         {
             this.setProperty("testForAcademicUnits", testForAcademicUnits);
         }
 
-        public bool getTestForStudents ()
+        public bool getTestForStudents()
         {
-            return (bool) this.getProperty("testForStudents");
+            return (bool)this.getProperty("testForStudents");
         }
 
-        public void setTestForStudents (bool testForStudents)
+        public void setTestForStudents(bool testForStudents)
         {
             this.setProperty("testForStudents", testForStudents);
         }
 
-        public bool getTestForStudentAcademicUnitEnrolments ()
+        public bool getTestForStudentAcademicUnitEnrolments()
         {
-            return (bool) this.getProperty("testForStudentAcademicUnitEnrolments");
+            return (bool)this.getProperty("testForStudentAcademicUnitEnrolments");
         }
 
-        public void setTestForStudentAcademicUnitEnrolments (bool testForStudentAcademicUnitEnrolments)
+        public void setTestForStudentAcademicUnitEnrolments(bool testForStudentAcademicUnitEnrolments)
         {
             this.setProperty("testForStudentAcademicUnitEnrolments", testForStudentAcademicUnitEnrolments);
         }

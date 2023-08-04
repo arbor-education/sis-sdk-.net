@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string NEWS_STORY = "newsStory";
         public const string TEXT = "text";
 
-        public NewsStoryComment ()
+        public NewsStoryComment()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public NewsStoryComment (string resourceType = "NewsStoryComment", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<NewsStoryComment> query (SimpleQuery query = null)
+        public NewsStoryComment(string resourceType = "NewsStoryComment", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("NewsStoryComment");
-        	RestGateway gateway = (RestGateway) NewsStoryComment.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<NewsStoryComment> newsstorycommentCollection = new ModelCollection<NewsStoryComment> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    newsstorycommentCollection.add((NewsStoryComment) model);
-        	}
-        
-        	return newsstorycommentCollection;
+
         }
 
-        public static NewsStoryComment retrieve (string id)
+
+        public static ModelCollection<NewsStoryComment> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) NewsStoryComment.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (NewsStoryComment) gateway.retrieve(ResourceType.NEWS_STORY_COMMENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("NewsStoryComment");
+            RestGateway gateway = (RestGateway)NewsStoryComment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<NewsStoryComment> newsstorycommentCollection = new ModelCollection<NewsStoryComment>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                newsstorycommentCollection.add((NewsStoryComment)model);
+            }
+
+            return newsstorycommentCollection;
         }
 
-        public NewsStory getNewsStory ()
+        public static NewsStoryComment retrieve(string id)
         {
-            return (NewsStory) this.getProperty("newsStory");
+            RestGateway gateway = (RestGateway)NewsStoryComment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (NewsStoryComment)gateway.retrieve(ResourceType.NEWS_STORY_COMMENT, id);
         }
 
-        public void setNewsStory (NewsStory newsStory)
+        public NewsStory getNewsStory()
+        {
+            return (NewsStory)this.getProperty("newsStory");
+        }
+
+        public void setNewsStory(NewsStory newsStory)
         {
             this.setProperty("newsStory", newsStory);
         }
 
-        public string getText ()
+        public string getText()
         {
             return this.getProperty("text").ToString();
         }
 
-        public void setText (string text)
+        public void setText(string text)
         {
             this.setProperty("text", text);
         }

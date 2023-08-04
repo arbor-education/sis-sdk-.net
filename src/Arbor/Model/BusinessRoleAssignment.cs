@@ -9,95 +9,96 @@ namespace Arbor.Model
 {
     public class BusinessRoleAssignment : ModelBase
     {
-        protected string resourceType = ResourceType.BUSINESS_ROLE_ASSIGNMENT;
+        protected new string resourceType = ResourceType.BUSINESS_ROLE_ASSIGNMENT;
         public const string BUSINESS_ROLE = "businessRole";
         public const string STAFF_CONTRACT_POST = "staffContractPost";
         public const string PERSON = "person";
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
 
-        public BusinessRoleAssignment ()
+        public BusinessRoleAssignment()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public BusinessRoleAssignment (string resourceType = "BusinessRoleAssignment", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<BusinessRoleAssignment> query (SimpleQuery query = null)
+        public BusinessRoleAssignment(string resourceType = "BusinessRoleAssignment", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("BusinessRoleAssignment");
-        	RestGateway gateway = (RestGateway) BusinessRoleAssignment.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<BusinessRoleAssignment> businessroleassignmentCollection = new ModelCollection<BusinessRoleAssignment> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    businessroleassignmentCollection.add((BusinessRoleAssignment) model);
-        	}
-        
-        	return businessroleassignmentCollection;
+
         }
 
-        public static BusinessRoleAssignment retrieve (string id)
+
+        public static ModelCollection<BusinessRoleAssignment> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) BusinessRoleAssignment.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (BusinessRoleAssignment) gateway.retrieve(ResourceType.BUSINESS_ROLE_ASSIGNMENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("BusinessRoleAssignment");
+            RestGateway gateway = (RestGateway)BusinessRoleAssignment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<BusinessRoleAssignment> businessroleassignmentCollection = new ModelCollection<BusinessRoleAssignment>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                businessroleassignmentCollection.add((BusinessRoleAssignment)model);
+            }
+
+            return businessroleassignmentCollection;
         }
 
-        public BusinessRole getBusinessRole ()
+        public static BusinessRoleAssignment retrieve(string id)
         {
-            return (BusinessRole) this.getProperty("businessRole");
+            RestGateway gateway = (RestGateway)BusinessRoleAssignment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (BusinessRoleAssignment)gateway.retrieve(ResourceType.BUSINESS_ROLE_ASSIGNMENT, id);
         }
 
-        public void setBusinessRole (BusinessRole businessRole)
+        public BusinessRole getBusinessRole()
+        {
+            return (BusinessRole)this.getProperty("businessRole");
+        }
+
+        public void setBusinessRole(BusinessRole businessRole)
         {
             this.setProperty("businessRole", businessRole);
         }
 
-        public StaffContractPost getStaffContractPost ()
+        public StaffContractPost getStaffContractPost()
         {
-            return (StaffContractPost) this.getProperty("staffContractPost");
+            return (StaffContractPost)this.getProperty("staffContractPost");
         }
 
-        public void setStaffContractPost (StaffContractPost staffContractPost)
+        public void setStaffContractPost(StaffContractPost staffContractPost)
         {
             this.setProperty("staffContractPost", staffContractPost);
         }
 
-        public ModelBase getPerson ()
+        public ModelBase getPerson()
         {
-            return (ModelBase) this.getProperty("person");
+            return (ModelBase)this.getProperty("person");
         }
 
-        public void setPerson (ModelBase person)
+        public void setPerson(ModelBase person)
         {
             this.setProperty("person", person);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDate()
         {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }

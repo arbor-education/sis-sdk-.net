@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class QualificationAvailabilityInstance : ModelBase
     {
-        protected string resourceType = ResourceType.QUALIFICATION_AVAILABILITY_INSTANCE;
+        protected new string resourceType = ResourceType.QUALIFICATION_AVAILABILITY_INSTANCE;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";
@@ -18,108 +18,109 @@ namespace Arbor.Model
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
 
-        public QualificationAvailabilityInstance ()
+        public QualificationAvailabilityInstance()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public QualificationAvailabilityInstance (string resourceType = "QualificationAvailabilityInstance", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<QualificationAvailabilityInstance> query (SimpleQuery query = null)
+        public QualificationAvailabilityInstance(string resourceType = "QualificationAvailabilityInstance", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("QualificationAvailabilityInstance");
-        	RestGateway gateway = (RestGateway) QualificationAvailabilityInstance.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<QualificationAvailabilityInstance> qualificationavailabilityinstanceCollection = new ModelCollection<QualificationAvailabilityInstance> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    qualificationavailabilityinstanceCollection.add((QualificationAvailabilityInstance) model);
-        	}
-        
-        	return qualificationavailabilityinstanceCollection;
+
         }
 
-        public static QualificationAvailabilityInstance retrieve (string id)
+
+        public static ModelCollection<QualificationAvailabilityInstance> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) QualificationAvailabilityInstance.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (QualificationAvailabilityInstance) gateway.retrieve(ResourceType.QUALIFICATION_AVAILABILITY_INSTANCE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("QualificationAvailabilityInstance");
+            RestGateway gateway = (RestGateway)QualificationAvailabilityInstance.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<QualificationAvailabilityInstance> qualificationavailabilityinstanceCollection = new ModelCollection<QualificationAvailabilityInstance>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                qualificationavailabilityinstanceCollection.add((QualificationAvailabilityInstance)model);
+            }
+
+            return qualificationavailabilityinstanceCollection;
         }
 
-        public string getCode ()
+        public static QualificationAvailabilityInstance retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)QualificationAvailabilityInstance.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (QualificationAvailabilityInstance)gateway.retrieve(ResourceType.QUALIFICATION_AVAILABILITY_INSTANCE, id);
+        }
+
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }
 
-        public AwardingOrganization getAwardingOrganization ()
+        public AwardingOrganization getAwardingOrganization()
         {
-            return (AwardingOrganization) this.getProperty("awardingOrganization");
+            return (AwardingOrganization)this.getProperty("awardingOrganization");
         }
 
-        public void setAwardingOrganization (AwardingOrganization awardingOrganization)
+        public void setAwardingOrganization(AwardingOrganization awardingOrganization)
         {
             this.setProperty("awardingOrganization", awardingOrganization);
         }
 
-        public string getQualificationAvailabilityIdentifier ()
+        public string getQualificationAvailabilityIdentifier()
         {
             return this.getProperty("qualificationAvailabilityIdentifier").ToString();
         }
 
-        public void setQualificationAvailabilityIdentifier (string qualificationAvailabilityIdentifier)
+        public void setQualificationAvailabilityIdentifier(string qualificationAvailabilityIdentifier)
         {
             this.setProperty("qualificationAvailabilityIdentifier", qualificationAvailabilityIdentifier);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDate()
         {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }

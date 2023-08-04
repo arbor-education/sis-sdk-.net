@@ -9,95 +9,96 @@ namespace Arbor.Model
 {
     public class QualificationAwardSubtype : ModelBase
     {
-        protected string resourceType = ResourceType.QUALIFICATION_AWARD_SUBTYPE;
+        protected new string resourceType = ResourceType.QUALIFICATION_AWARD_SUBTYPE;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";
         public const string QUALIFICATION_AWARD_TYPE = "qualificationAwardType";
         public const string NAME = "name";
 
-        public QualificationAwardSubtype ()
+        public QualificationAwardSubtype()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public QualificationAwardSubtype (string resourceType = "QualificationAwardSubtype", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<QualificationAwardSubtype> query (SimpleQuery query = null)
+        public QualificationAwardSubtype(string resourceType = "QualificationAwardSubtype", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("QualificationAwardSubtype");
-        	RestGateway gateway = (RestGateway) QualificationAwardSubtype.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<QualificationAwardSubtype> qualificationawardsubtypeCollection = new ModelCollection<QualificationAwardSubtype> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    qualificationawardsubtypeCollection.add((QualificationAwardSubtype) model);
-        	}
-        
-        	return qualificationawardsubtypeCollection;
+
         }
 
-        public static QualificationAwardSubtype retrieve (string id)
+
+        public static ModelCollection<QualificationAwardSubtype> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) QualificationAwardSubtype.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (QualificationAwardSubtype) gateway.retrieve(ResourceType.QUALIFICATION_AWARD_SUBTYPE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("QualificationAwardSubtype");
+            RestGateway gateway = (RestGateway)QualificationAwardSubtype.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<QualificationAwardSubtype> qualificationawardsubtypeCollection = new ModelCollection<QualificationAwardSubtype>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                qualificationawardsubtypeCollection.add((QualificationAwardSubtype)model);
+            }
+
+            return qualificationawardsubtypeCollection;
         }
 
-        public string getCode ()
+        public static QualificationAwardSubtype retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)QualificationAwardSubtype.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (QualificationAwardSubtype)gateway.retrieve(ResourceType.QUALIFICATION_AWARD_SUBTYPE, id);
+        }
+
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }
 
-        public QualificationAwardType getQualificationAwardType ()
+        public QualificationAwardType getQualificationAwardType()
         {
-            return (QualificationAwardType) this.getProperty("qualificationAwardType");
+            return (QualificationAwardType)this.getProperty("qualificationAwardType");
         }
 
-        public void setQualificationAwardType (QualificationAwardType qualificationAwardType)
+        public void setQualificationAwardType(QualificationAwardType qualificationAwardType)
         {
             this.setProperty("qualificationAwardType", qualificationAwardType);
         }
 
-        public string getName ()
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }

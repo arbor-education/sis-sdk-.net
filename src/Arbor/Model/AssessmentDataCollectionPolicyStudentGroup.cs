@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string ASSESSMENT_DATA_COLLECTION_POLICY = "assessmentDataCollectionPolicy";
         public const string STUDENT_GROUP = "studentGroup";
 
-        public AssessmentDataCollectionPolicyStudentGroup ()
+        public AssessmentDataCollectionPolicyStudentGroup()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AssessmentDataCollectionPolicyStudentGroup (string resourceType = "AssessmentDataCollectionPolicyStudentGroup", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AssessmentDataCollectionPolicyStudentGroup> query (SimpleQuery query = null)
+        public AssessmentDataCollectionPolicyStudentGroup(string resourceType = "AssessmentDataCollectionPolicyStudentGroup", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AssessmentDataCollectionPolicyStudentGroup");
-        	RestGateway gateway = (RestGateway) AssessmentDataCollectionPolicyStudentGroup.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AssessmentDataCollectionPolicyStudentGroup> assessmentdatacollectionpolicystudentgroupCollection = new ModelCollection<AssessmentDataCollectionPolicyStudentGroup> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    assessmentdatacollectionpolicystudentgroupCollection.add((AssessmentDataCollectionPolicyStudentGroup) model);
-        	}
-        
-        	return assessmentdatacollectionpolicystudentgroupCollection;
+
         }
 
-        public static AssessmentDataCollectionPolicyStudentGroup retrieve (string id)
+
+        public static ModelCollection<AssessmentDataCollectionPolicyStudentGroup> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AssessmentDataCollectionPolicyStudentGroup.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AssessmentDataCollectionPolicyStudentGroup) gateway.retrieve(ResourceType.ASSESSMENT_DATA_COLLECTION_POLICY_STUDENT_GROUP, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AssessmentDataCollectionPolicyStudentGroup");
+            RestGateway gateway = (RestGateway)AssessmentDataCollectionPolicyStudentGroup.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AssessmentDataCollectionPolicyStudentGroup> assessmentdatacollectionpolicystudentgroupCollection = new ModelCollection<AssessmentDataCollectionPolicyStudentGroup>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                assessmentdatacollectionpolicystudentgroupCollection.add((AssessmentDataCollectionPolicyStudentGroup)model);
+            }
+
+            return assessmentdatacollectionpolicystudentgroupCollection;
         }
 
-        public AssessmentDataCollectionPolicy getAssessmentDataCollectionPolicy ()
+        public static AssessmentDataCollectionPolicyStudentGroup retrieve(string id)
         {
-            return (AssessmentDataCollectionPolicy) this.getProperty("assessmentDataCollectionPolicy");
+            RestGateway gateway = (RestGateway)AssessmentDataCollectionPolicyStudentGroup.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AssessmentDataCollectionPolicyStudentGroup)gateway.retrieve(ResourceType.ASSESSMENT_DATA_COLLECTION_POLICY_STUDENT_GROUP, id);
         }
 
-        public void setAssessmentDataCollectionPolicy (AssessmentDataCollectionPolicy assessmentDataCollectionPolicy)
+        public AssessmentDataCollectionPolicy getAssessmentDataCollectionPolicy()
+        {
+            return (AssessmentDataCollectionPolicy)this.getProperty("assessmentDataCollectionPolicy");
+        }
+
+        public void setAssessmentDataCollectionPolicy(AssessmentDataCollectionPolicy assessmentDataCollectionPolicy)
         {
             this.setProperty("assessmentDataCollectionPolicy", assessmentDataCollectionPolicy);
         }
 
-        public ModelBase getStudentGroup ()
+        public ModelBase getStudentGroup()
         {
-            return (ModelBase) this.getProperty("studentGroup");
+            return (ModelBase)this.getProperty("studentGroup");
         }
 
-        public void setStudentGroup (ModelBase studentGroup)
+        public void setStudentGroup(ModelBase studentGroup)
         {
             this.setProperty("studentGroup", studentGroup);
         }

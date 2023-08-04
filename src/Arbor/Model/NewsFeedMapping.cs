@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string RANK = "rank";
         public const string RANK_VALID_UNTIL = "rankValidUntil";
 
-        public NewsFeedMapping ()
+        public NewsFeedMapping()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public NewsFeedMapping (string resourceType = "NewsFeedMapping", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<NewsFeedMapping> query (SimpleQuery query = null)
+        public NewsFeedMapping(string resourceType = "NewsFeedMapping", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("NewsFeedMapping");
-        	RestGateway gateway = (RestGateway) NewsFeedMapping.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<NewsFeedMapping> newsfeedmappingCollection = new ModelCollection<NewsFeedMapping> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    newsfeedmappingCollection.add((NewsFeedMapping) model);
-        	}
-        
-        	return newsfeedmappingCollection;
+
         }
 
-        public static NewsFeedMapping retrieve (string id)
+
+        public static ModelCollection<NewsFeedMapping> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) NewsFeedMapping.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (NewsFeedMapping) gateway.retrieve(ResourceType.NEWS_FEED_MAPPING, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("NewsFeedMapping");
+            RestGateway gateway = (RestGateway)NewsFeedMapping.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<NewsFeedMapping> newsfeedmappingCollection = new ModelCollection<NewsFeedMapping>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                newsfeedmappingCollection.add((NewsFeedMapping)model);
+            }
+
+            return newsfeedmappingCollection;
         }
 
-        public ModelBase getPerson ()
+        public static NewsFeedMapping retrieve(string id)
         {
-            return (ModelBase) this.getProperty("person");
+            RestGateway gateway = (RestGateway)NewsFeedMapping.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (NewsFeedMapping)gateway.retrieve(ResourceType.NEWS_FEED_MAPPING, id);
         }
 
-        public void setPerson (ModelBase person)
+        public ModelBase getPerson()
+        {
+            return (ModelBase)this.getProperty("person");
+        }
+
+        public void setPerson(ModelBase person)
         {
             this.setProperty("person", person);
         }
 
-        public NewsStory getNewsStory ()
+        public NewsStory getNewsStory()
         {
-            return (NewsStory) this.getProperty("newsStory");
+            return (NewsStory)this.getProperty("newsStory");
         }
 
-        public void setNewsStory (NewsStory newsStory)
+        public void setNewsStory(NewsStory newsStory)
         {
             this.setProperty("newsStory", newsStory);
         }
 
-        public float getRank ()
+        public float getRank()
         {
-            return (float) this.getProperty("rank");
+            return (float)this.getProperty("rank");
         }
 
-        public void setRank (float rank)
+        public void setRank(float rank)
         {
             this.setProperty("rank", rank);
         }
 
-        public DateTime getRankValidUntil ()
+        public DateTime getRankValidUntil()
         {
-            return (DateTime) this.getProperty("rankValidUntil");
+            return (DateTime)this.getProperty("rankValidUntil");
         }
 
-        public void setRankValidUntil (DateTime rankValidUntil)
+        public void setRankValidUntil(DateTime rankValidUntil)
         {
             this.setProperty("rankValidUntil", rankValidUntil);
         }

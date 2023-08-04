@@ -9,73 +9,74 @@ namespace Arbor.Model
 {
     public class LessonPlanObjective : ModelBase
     {
-        protected string resourceType = ResourceType.LESSON_PLAN_OBJECTIVE;
+        protected new string resourceType = ResourceType.LESSON_PLAN_OBJECTIVE;
         public const string OBJECTIVE_TITLE = "objectiveTitle";
         public const string OBJECTIVE_DESCRIPTION = "objectiveDescription";
         public const string CURRICULUM_STATEMENT = "curriculumStatement";
 
-        public LessonPlanObjective ()
+        public LessonPlanObjective()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public LessonPlanObjective (string resourceType = "LessonPlanObjective", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<LessonPlanObjective> query (SimpleQuery query = null)
+        public LessonPlanObjective(string resourceType = "LessonPlanObjective", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("LessonPlanObjective");
-        	RestGateway gateway = (RestGateway) LessonPlanObjective.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<LessonPlanObjective> lessonplanobjectiveCollection = new ModelCollection<LessonPlanObjective> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    lessonplanobjectiveCollection.add((LessonPlanObjective) model);
-        	}
-        
-        	return lessonplanobjectiveCollection;
+
         }
 
-        public static LessonPlanObjective retrieve (string id)
+
+        public static ModelCollection<LessonPlanObjective> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) LessonPlanObjective.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (LessonPlanObjective) gateway.retrieve(ResourceType.LESSON_PLAN_OBJECTIVE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("LessonPlanObjective");
+            RestGateway gateway = (RestGateway)LessonPlanObjective.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<LessonPlanObjective> lessonplanobjectiveCollection = new ModelCollection<LessonPlanObjective>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                lessonplanobjectiveCollection.add((LessonPlanObjective)model);
+            }
+
+            return lessonplanobjectiveCollection;
         }
 
-        public string getObjectiveTitle ()
+        public static LessonPlanObjective retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)LessonPlanObjective.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (LessonPlanObjective)gateway.retrieve(ResourceType.LESSON_PLAN_OBJECTIVE, id);
+        }
+
+        public string getObjectiveTitle()
         {
             return this.getProperty("objectiveTitle").ToString();
         }
 
-        public void setObjectiveTitle (string objectiveTitle)
+        public void setObjectiveTitle(string objectiveTitle)
         {
             this.setProperty("objectiveTitle", objectiveTitle);
         }
 
-        public string getObjectiveDescription ()
+        public string getObjectiveDescription()
         {
             return this.getProperty("objectiveDescription").ToString();
         }
 
-        public void setObjectiveDescription (string objectiveDescription)
+        public void setObjectiveDescription(string objectiveDescription)
         {
             this.setProperty("objectiveDescription", objectiveDescription);
         }
 
-        public CurriculumStatement getCurriculumStatement ()
+        public CurriculumStatement getCurriculumStatement()
         {
-            return (CurriculumStatement) this.getProperty("curriculumStatement");
+            return (CurriculumStatement)this.getProperty("curriculumStatement");
         }
 
-        public void setCurriculumStatement (CurriculumStatement curriculumStatement)
+        public void setCurriculumStatement(CurriculumStatement curriculumStatement)
         {
             this.setProperty("curriculumStatement", curriculumStatement);
         }

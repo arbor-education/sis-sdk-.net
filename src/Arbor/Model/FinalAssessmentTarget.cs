@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class FinalAssessmentTarget : ModelBase
     {
-        protected string resourceType = ResourceType.FINAL_ASSESSMENT_TARGET;
+        protected new string resourceType = ResourceType.FINAL_ASSESSMENT_TARGET;
         public const string STUDENT = "student";
         public const string ASSESSMENT = "assessment";
         public const string GRADE = "grade";
@@ -18,108 +18,109 @@ namespace Arbor.Model
         public const string STATISTICAL_GRADE_POINT_SCALE_VALUE = "statisticalGradePointScaleValue";
         public const string LOCKED = "locked";
 
-        public FinalAssessmentTarget ()
+        public FinalAssessmentTarget()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public FinalAssessmentTarget (string resourceType = "FinalAssessmentTarget", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<FinalAssessmentTarget> query (SimpleQuery query = null)
+        public FinalAssessmentTarget(string resourceType = "FinalAssessmentTarget", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("FinalAssessmentTarget");
-        	RestGateway gateway = (RestGateway) FinalAssessmentTarget.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<FinalAssessmentTarget> finalassessmenttargetCollection = new ModelCollection<FinalAssessmentTarget> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    finalassessmenttargetCollection.add((FinalAssessmentTarget) model);
-        	}
-        
-        	return finalassessmenttargetCollection;
+
         }
 
-        public static FinalAssessmentTarget retrieve (string id)
+
+        public static ModelCollection<FinalAssessmentTarget> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) FinalAssessmentTarget.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (FinalAssessmentTarget) gateway.retrieve(ResourceType.FINAL_ASSESSMENT_TARGET, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("FinalAssessmentTarget");
+            RestGateway gateway = (RestGateway)FinalAssessmentTarget.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<FinalAssessmentTarget> finalassessmenttargetCollection = new ModelCollection<FinalAssessmentTarget>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                finalassessmenttargetCollection.add((FinalAssessmentTarget)model);
+            }
+
+            return finalassessmenttargetCollection;
         }
 
-        public Student getStudent ()
+        public static FinalAssessmentTarget retrieve(string id)
         {
-            return (Student) this.getProperty("student");
+            RestGateway gateway = (RestGateway)FinalAssessmentTarget.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (FinalAssessmentTarget)gateway.retrieve(ResourceType.FINAL_ASSESSMENT_TARGET, id);
         }
 
-        public void setStudent (Student student)
+        public Student getStudent()
+        {
+            return (Student)this.getProperty("student");
+        }
+
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public Assessment getAssessment ()
+        public Assessment getAssessment()
         {
-            return (Assessment) this.getProperty("assessment");
+            return (Assessment)this.getProperty("assessment");
         }
 
-        public void setAssessment (Assessment assessment)
+        public void setAssessment(Assessment assessment)
         {
             this.setProperty("assessment", assessment);
         }
 
-        public Grade getGrade ()
+        public Grade getGrade()
         {
-            return (Grade) this.getProperty("grade");
+            return (Grade)this.getProperty("grade");
         }
 
-        public void setGrade (Grade grade)
+        public void setGrade(Grade grade)
         {
             this.setProperty("grade", grade);
         }
 
-        public float getLowerGradePointScaleValue ()
+        public float getLowerGradePointScaleValue()
         {
-            return (float) this.getProperty("lowerGradePointScaleValue");
+            return (float)this.getProperty("lowerGradePointScaleValue");
         }
 
-        public void setLowerGradePointScaleValue (float lowerGradePointScaleValue)
+        public void setLowerGradePointScaleValue(float lowerGradePointScaleValue)
         {
             this.setProperty("lowerGradePointScaleValue", lowerGradePointScaleValue);
         }
 
-        public float getUpperGradePointScaleValue ()
+        public float getUpperGradePointScaleValue()
         {
-            return (float) this.getProperty("upperGradePointScaleValue");
+            return (float)this.getProperty("upperGradePointScaleValue");
         }
 
-        public void setUpperGradePointScaleValue (float upperGradePointScaleValue)
+        public void setUpperGradePointScaleValue(float upperGradePointScaleValue)
         {
             this.setProperty("upperGradePointScaleValue", upperGradePointScaleValue);
         }
 
-        public float getStatisticalGradePointScaleValue ()
+        public float getStatisticalGradePointScaleValue()
         {
-            return (float) this.getProperty("statisticalGradePointScaleValue");
+            return (float)this.getProperty("statisticalGradePointScaleValue");
         }
 
-        public void setStatisticalGradePointScaleValue (float statisticalGradePointScaleValue)
+        public void setStatisticalGradePointScaleValue(float statisticalGradePointScaleValue)
         {
             this.setProperty("statisticalGradePointScaleValue", statisticalGradePointScaleValue);
         }
 
-        public bool getLocked ()
+        public bool getLocked()
         {
             return Convert.ToBoolean(this.getProperty("locked"));
         }
 
-        public void setLocked (bool locked)
+        public void setLocked(bool locked)
         {
             this.setProperty("locked", locked);
         }

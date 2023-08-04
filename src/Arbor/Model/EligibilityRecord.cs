@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class EligibilityRecord : ModelBase
     {
-        protected string resourceType = ResourceType.ELIGIBILITY_RECORD;
+        protected new string resourceType = ResourceType.ELIGIBILITY_RECORD;
         public const string ELIGIBILITY = "eligibility";
         public const string PERSON = "person";
         public const string START_DATE = "startDate";
@@ -17,98 +17,99 @@ namespace Arbor.Model
         public const string LAST_VERIFIED_DATE = "lastVerifiedDate";
         public const string NEXT_CHECK_DATE = "nextCheckDate";
 
-        public EligibilityRecord ()
+        public EligibilityRecord()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public EligibilityRecord (string resourceType = "EligibilityRecord", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<EligibilityRecord> query (SimpleQuery query = null)
+        public EligibilityRecord(string resourceType = "EligibilityRecord", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("EligibilityRecord");
-        	RestGateway gateway = (RestGateway) EligibilityRecord.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<EligibilityRecord> eligibilityrecordCollection = new ModelCollection<EligibilityRecord> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    eligibilityrecordCollection.add((EligibilityRecord) model);
-        	}
-        
-        	return eligibilityrecordCollection;
+
         }
 
-        public static EligibilityRecord retrieve (string id)
+
+        public static ModelCollection<EligibilityRecord> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) EligibilityRecord.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (EligibilityRecord) gateway.retrieve(ResourceType.ELIGIBILITY_RECORD, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("EligibilityRecord");
+            RestGateway gateway = (RestGateway)EligibilityRecord.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<EligibilityRecord> eligibilityrecordCollection = new ModelCollection<EligibilityRecord>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                eligibilityrecordCollection.add((EligibilityRecord)model);
+            }
+
+            return eligibilityrecordCollection;
         }
 
-        public Eligibility getEligibility ()
+        public static EligibilityRecord retrieve(string id)
         {
-            return (Eligibility) this.getProperty("eligibility");
+            RestGateway gateway = (RestGateway)EligibilityRecord.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (EligibilityRecord)gateway.retrieve(ResourceType.ELIGIBILITY_RECORD, id);
         }
 
-        public void setEligibility (Eligibility eligibility)
+        public Eligibility getEligibility()
+        {
+            return (Eligibility)this.getProperty("eligibility");
+        }
+
+        public void setEligibility(Eligibility eligibility)
         {
             this.setProperty("eligibility", eligibility);
         }
 
-        public ModelBase getPerson ()
+        public ModelBase getPerson()
         {
-            return (ModelBase) this.getProperty("person");
+            return (ModelBase)this.getProperty("person");
         }
 
-        public void setPerson (ModelBase person)
+        public void setPerson(ModelBase person)
         {
             this.setProperty("person", person);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDate()
         {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }
 
-        public DateTime getLastVerifiedDate ()
+        public DateTime getLastVerifiedDate()
         {
             return Convert.ToDateTime(this.getProperty("lastVerifiedDate"));
         }
 
-        public void setLastVerifiedDate (DateTime lastVerifiedDate)
+        public void setLastVerifiedDate(DateTime lastVerifiedDate)
         {
             this.setProperty("lastVerifiedDate", lastVerifiedDate);
         }
 
-        public DateTime getNextCheckDate ()
+        public DateTime getNextCheckDate()
         {
             return Convert.ToDateTime(this.getProperty("nextCheckDate"));
         }
 
-        public void setNextCheckDate (DateTime nextCheckDate)
+        public void setNextCheckDate(DateTime nextCheckDate)
         {
             this.setProperty("nextCheckDate", nextCheckDate);
         }

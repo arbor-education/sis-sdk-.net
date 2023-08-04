@@ -9,84 +9,85 @@ namespace Arbor.Model
 {
     public class AssessmentGradeSet : ModelBase
     {
-        protected string resourceType = ResourceType.ASSESSMENT_GRADE_SET;
+        protected new string resourceType = ResourceType.ASSESSMENT_GRADE_SET;
         public const string ASSESSMENT = "assessment";
         public const string GRADE_SET = "gradeSet";
         public const string IS_DEFAULT = "isDefault";
         public const string IS_ORIGINAL = "isOriginal";
 
-        public AssessmentGradeSet ()
+        public AssessmentGradeSet()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AssessmentGradeSet (string resourceType = "AssessmentGradeSet", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AssessmentGradeSet> query (SimpleQuery query = null)
+        public AssessmentGradeSet(string resourceType = "AssessmentGradeSet", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AssessmentGradeSet");
-        	RestGateway gateway = (RestGateway) AssessmentGradeSet.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AssessmentGradeSet> assessmentgradesetCollection = new ModelCollection<AssessmentGradeSet> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    assessmentgradesetCollection.add((AssessmentGradeSet) model);
-        	}
-        
-        	return assessmentgradesetCollection;
+
         }
 
-        public static AssessmentGradeSet retrieve (string id)
+
+        public static ModelCollection<AssessmentGradeSet> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AssessmentGradeSet.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AssessmentGradeSet) gateway.retrieve(ResourceType.ASSESSMENT_GRADE_SET, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AssessmentGradeSet");
+            RestGateway gateway = (RestGateway)AssessmentGradeSet.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AssessmentGradeSet> assessmentgradesetCollection = new ModelCollection<AssessmentGradeSet>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                assessmentgradesetCollection.add((AssessmentGradeSet)model);
+            }
+
+            return assessmentgradesetCollection;
         }
 
-        public Assessment getAssessment ()
+        public static AssessmentGradeSet retrieve(string id)
         {
-            return (Assessment) this.getProperty("assessment");
+            RestGateway gateway = (RestGateway)AssessmentGradeSet.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AssessmentGradeSet)gateway.retrieve(ResourceType.ASSESSMENT_GRADE_SET, id);
         }
 
-        public void setAssessment (Assessment assessment)
+        public Assessment getAssessment()
+        {
+            return (Assessment)this.getProperty("assessment");
+        }
+
+        public void setAssessment(Assessment assessment)
         {
             this.setProperty("assessment", assessment);
         }
 
-        public GradeSet getGradeSet ()
+        public GradeSet getGradeSet()
         {
-            return (GradeSet) this.getProperty("gradeSet");
+            return (GradeSet)this.getProperty("gradeSet");
         }
 
-        public void setGradeSet (GradeSet gradeSet)
+        public void setGradeSet(GradeSet gradeSet)
         {
             this.setProperty("gradeSet", gradeSet);
         }
 
-        public bool getIsDefault ()
+        public bool getIsDefault()
         {
             return Convert.ToBoolean(this.getProperty("isDefault"));
         }
 
-        public void setIsDefault (bool isDefault)
+        public void setIsDefault(bool isDefault)
         {
             this.setProperty("isDefault", isDefault);
         }
 
-        public bool getIsOriginal ()
+        public bool getIsOriginal()
         {
             return Convert.ToBoolean(this.getProperty("isOriginal"));
         }
 
-        public void setIsOriginal (bool isOriginal)
+        public void setIsOriginal(bool isOriginal)
         {
             this.setProperty("isOriginal", isOriginal);
         }

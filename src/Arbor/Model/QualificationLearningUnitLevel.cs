@@ -9,84 +9,85 @@ namespace Arbor.Model
 {
     public class QualificationLearningUnitLevel : ModelBase
     {
-        protected string resourceType = ResourceType.QUALIFICATION_LEARNING_UNIT_LEVEL;
+        protected new string resourceType = ResourceType.QUALIFICATION_LEARNING_UNIT_LEVEL;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";
         public const string NAME = "name";
 
-        public QualificationLearningUnitLevel ()
+        public QualificationLearningUnitLevel()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public QualificationLearningUnitLevel (string resourceType = "QualificationLearningUnitLevel", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<QualificationLearningUnitLevel> query (SimpleQuery query = null)
+        public QualificationLearningUnitLevel(string resourceType = "QualificationLearningUnitLevel", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("QualificationLearningUnitLevel");
-        	RestGateway gateway = (RestGateway) QualificationLearningUnitLevel.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<QualificationLearningUnitLevel> qualificationlearningunitlevelCollection = new ModelCollection<QualificationLearningUnitLevel> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    qualificationlearningunitlevelCollection.add((QualificationLearningUnitLevel) model);
-        	}
-        
-        	return qualificationlearningunitlevelCollection;
+
         }
 
-        public static QualificationLearningUnitLevel retrieve (string id)
+
+        public static ModelCollection<QualificationLearningUnitLevel> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) QualificationLearningUnitLevel.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (QualificationLearningUnitLevel) gateway.retrieve(ResourceType.QUALIFICATION_LEARNING_UNIT_LEVEL, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("QualificationLearningUnitLevel");
+            RestGateway gateway = (RestGateway)QualificationLearningUnitLevel.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<QualificationLearningUnitLevel> qualificationlearningunitlevelCollection = new ModelCollection<QualificationLearningUnitLevel>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                qualificationlearningunitlevelCollection.add((QualificationLearningUnitLevel)model);
+            }
+
+            return qualificationlearningunitlevelCollection;
         }
 
-        public string getCode ()
+        public static QualificationLearningUnitLevel retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)QualificationLearningUnitLevel.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (QualificationLearningUnitLevel)gateway.retrieve(ResourceType.QUALIFICATION_LEARNING_UNIT_LEVEL, id);
+        }
+
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }
 
-        public string getName ()
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class StudentOtherSchoolAttendanceRecord : ModelBase
     {
-        protected string resourceType = ResourceType.STUDENT_OTHER_SCHOOL_ATTENDANCE_RECORD;
+        protected new string resourceType = ResourceType.STUDENT_OTHER_SCHOOL_ATTENDANCE_RECORD;
         public const string STUDENT = "student";
         public const string EDUCATIONAL_INSTITUTION = "educationalInstitution";
         public const string YEAR = "year";
@@ -21,138 +21,139 @@ namespace Arbor.Model
         public const string ATTENDANCE_START_DATE = "attendanceStartDate";
         public const string ATTENDANCE_MARKS = "attendanceMarks";
 
-        public StudentOtherSchoolAttendanceRecord ()
+        public StudentOtherSchoolAttendanceRecord()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public StudentOtherSchoolAttendanceRecord (string resourceType = "StudentOtherSchoolAttendanceRecord", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<StudentOtherSchoolAttendanceRecord> query (SimpleQuery query = null)
+        public StudentOtherSchoolAttendanceRecord(string resourceType = "StudentOtherSchoolAttendanceRecord", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("StudentOtherSchoolAttendanceRecord");
-        	RestGateway gateway = (RestGateway) StudentOtherSchoolAttendanceRecord.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<StudentOtherSchoolAttendanceRecord> studentotherschoolattendancerecordCollection = new ModelCollection<StudentOtherSchoolAttendanceRecord> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    studentotherschoolattendancerecordCollection.add((StudentOtherSchoolAttendanceRecord) model);
-        	}
-        
-        	return studentotherschoolattendancerecordCollection;
+
         }
 
-        public static StudentOtherSchoolAttendanceRecord retrieve (string id)
+
+        public static ModelCollection<StudentOtherSchoolAttendanceRecord> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) StudentOtherSchoolAttendanceRecord.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (StudentOtherSchoolAttendanceRecord) gateway.retrieve(ResourceType.STUDENT_OTHER_SCHOOL_ATTENDANCE_RECORD, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("StudentOtherSchoolAttendanceRecord");
+            RestGateway gateway = (RestGateway)StudentOtherSchoolAttendanceRecord.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<StudentOtherSchoolAttendanceRecord> studentotherschoolattendancerecordCollection = new ModelCollection<StudentOtherSchoolAttendanceRecord>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                studentotherschoolattendancerecordCollection.add((StudentOtherSchoolAttendanceRecord)model);
+            }
+
+            return studentotherschoolattendancerecordCollection;
         }
 
-        public Student getStudent ()
+        public static StudentOtherSchoolAttendanceRecord retrieve(string id)
         {
-            return (Student) this.getProperty("student");
+            RestGateway gateway = (RestGateway)StudentOtherSchoolAttendanceRecord.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (StudentOtherSchoolAttendanceRecord)gateway.retrieve(ResourceType.STUDENT_OTHER_SCHOOL_ATTENDANCE_RECORD, id);
         }
 
-        public void setStudent (Student student)
+        public Student getStudent()
+        {
+            return (Student)this.getProperty("student");
+        }
+
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public EducationalInstitution getEducationalInstitution ()
+        public EducationalInstitution getEducationalInstitution()
         {
-            return (EducationalInstitution) this.getProperty("educationalInstitution");
+            return (EducationalInstitution)this.getProperty("educationalInstitution");
         }
 
-        public void setEducationalInstitution (EducationalInstitution educationalInstitution)
+        public void setEducationalInstitution(EducationalInstitution educationalInstitution)
         {
             this.setProperty("educationalInstitution", educationalInstitution);
         }
 
-        public string getYear ()
+        public string getYear()
         {
             return this.getProperty("year").ToString();
         }
 
-        public void setYear (string year)
+        public void setYear(string year)
         {
             this.setProperty("year", year);
         }
 
-        public AcademicYear getAcademicYear ()
+        public AcademicYear getAcademicYear()
         {
-            return (AcademicYear) this.getProperty("academicYear");
+            return (AcademicYear)this.getProperty("academicYear");
         }
 
-        public void setAcademicYear (AcademicYear academicYear)
+        public void setAcademicYear(AcademicYear academicYear)
         {
             this.setProperty("academicYear", academicYear);
         }
 
-        public int getSessionsPossible ()
+        public int getSessionsPossible()
         {
             return Convert.ToInt32(this.getProperty("sessionsPossible"));
         }
 
-        public void setSessionsPossible (int sessionsPossible)
+        public void setSessionsPossible(int sessionsPossible)
         {
             this.setProperty("sessionsPossible", sessionsPossible);
         }
 
-        public int getSessionsAttended ()
+        public int getSessionsAttended()
         {
             return Convert.ToInt32(this.getProperty("sessionsAttended"));
         }
 
-        public void setSessionsAttended (int sessionsAttended)
+        public void setSessionsAttended(int sessionsAttended)
         {
             this.setProperty("sessionsAttended", sessionsAttended);
         }
 
-        public int getSessionsAuthorizedAbsence ()
+        public int getSessionsAuthorizedAbsence()
         {
             return Convert.ToInt32(this.getProperty("sessionsAuthorizedAbsence"));
         }
 
-        public void setSessionsAuthorizedAbsence (int sessionsAuthorizedAbsence)
+        public void setSessionsAuthorizedAbsence(int sessionsAuthorizedAbsence)
         {
             this.setProperty("sessionsAuthorizedAbsence", sessionsAuthorizedAbsence);
         }
 
-        public int getSessionsUnauthorizedAbsence ()
+        public int getSessionsUnauthorizedAbsence()
         {
             return Convert.ToInt32(this.getProperty("sessionsUnauthorizedAbsence"));
         }
 
-        public void setSessionsUnauthorizedAbsence (int sessionsUnauthorizedAbsence)
+        public void setSessionsUnauthorizedAbsence(int sessionsUnauthorizedAbsence)
         {
             this.setProperty("sessionsUnauthorizedAbsence", sessionsUnauthorizedAbsence);
         }
 
-        public DateTime getAttendanceStartDate ()
+        public DateTime getAttendanceStartDate()
         {
             return Convert.ToDateTime(this.getProperty("attendanceStartDate"));
         }
 
-        public void setAttendanceStartDate (DateTime attendanceStartDate)
+        public void setAttendanceStartDate(DateTime attendanceStartDate)
         {
             this.setProperty("attendanceStartDate", attendanceStartDate);
         }
 
-        public string getAttendanceMarks ()
+        public string getAttendanceMarks()
         {
             return this.getProperty("attendanceMarks").ToString();
         }
 
-        public void setAttendanceMarks (string attendanceMarks)
+        public void setAttendanceMarks(string attendanceMarks)
         {
             this.setProperty("attendanceMarks", attendanceMarks);
         }

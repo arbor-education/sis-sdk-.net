@@ -9,7 +9,7 @@ namespace Arbor.Model.UkDfe
 {
     public class EducationalInstitution : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_EDUCATIONAL_INSTITUTION;
+        protected new string resourceType = ResourceType.UK_DFE_EDUCATIONAL_INSTITUTION;
         public const string LOCAL_AUTHORITY = "localAuthority";
         public const string ESTABLISHMENT_NUMBER = "establishmentNumber";
         public const string CENSUS_SCHOOL_PHASE = "censusSchoolPhase";
@@ -18,6 +18,7 @@ namespace Arbor.Model.UkDfe
         public const string GOVERNANCE_TYPE = "governanceType";
         public const string INTAKE_TYPE = "intakeType";
         public const string URN = "urn";
+        public const string UKPRN = "ukprn";
         public const string HAS_CHILD_MOTHER_PROVISION = "hasChildMotherProvision";
         public const string HAS_CHILDCARE_PLACES = "hasChildcarePlaces";
         public const string CENTER_NUMBER = "centerNumber";
@@ -29,231 +30,264 @@ namespace Arbor.Model.UkDfe
         public const string SPECIAL_SCHOOL_MIN_FEMALE_AGE = "specialSchoolMinFemaleAge";
         public const string SPECIAL_SCHOOL_MAX_FEMALE_AGE = "specialSchoolMaxFemaleAge";
         public const string SPECIAL_SCHOOL_SEN_PROVISIONS = "specialSchoolSenProvisions";
+        public const string CENSUS_SCHOOL_OPENING_DATE = "censusSchoolOpeningDate";
+        public const string WEEKLY_HOURS_OPEN = "weeklyHoursOpen";
 
-        public EducationalInstitution ()
+        public EducationalInstitution()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public EducationalInstitution (string resourceType = "EducationalInstitution", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<EducationalInstitution> query (SimpleQuery query = null)
+        public EducationalInstitution(string resourceType = "EducationalInstitution", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("UkDfe_EducationalInstitution");
-        	RestGateway gateway = (RestGateway) EducationalInstitution.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<EducationalInstitution> educationalinstitutionCollection = new ModelCollection<EducationalInstitution> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    educationalinstitutionCollection.add((EducationalInstitution) model);
-        	}
-        
-        	return educationalinstitutionCollection;
+
         }
 
-        public static EducationalInstitution retrieve (string id)
+
+        public static ModelCollection<EducationalInstitution> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) EducationalInstitution.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (EducationalInstitution) gateway.retrieve(ResourceType.UK_DFE_EDUCATIONAL_INSTITUTION, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("UkDfe_EducationalInstitution");
+            RestGateway gateway = (RestGateway)EducationalInstitution.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<EducationalInstitution> educationalinstitutionCollection = new ModelCollection<EducationalInstitution>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                educationalinstitutionCollection.add((EducationalInstitution)model);
+            }
+
+            return educationalinstitutionCollection;
         }
 
-        public LocalAuthority getLocalAuthority ()
+        public static EducationalInstitution retrieve(string id)
         {
-            return (LocalAuthority) this.getProperty("localAuthority");
+            RestGateway gateway = (RestGateway)EducationalInstitution.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (EducationalInstitution)gateway.retrieve(ResourceType.UK_DFE_EDUCATIONAL_INSTITUTION, id);
         }
 
-        public void setLocalAuthority (LocalAuthority localAuthority)
+        public LocalAuthority getLocalAuthority()
+        {
+            return (LocalAuthority)this.getProperty("localAuthority");
+        }
+
+        public void setLocalAuthority(LocalAuthority localAuthority)
         {
             this.setProperty("localAuthority", localAuthority);
         }
 
-        public string getEstablishmentNumber ()
+        public string getEstablishmentNumber()
         {
             return this.getProperty("establishmentNumber").ToString();
         }
 
-        public void setEstablishmentNumber (string establishmentNumber)
+        public void setEstablishmentNumber(string establishmentNumber)
         {
             this.setProperty("establishmentNumber", establishmentNumber);
         }
 
-        public CensusSchoolPhase getCensusSchoolPhase ()
+        public CensusSchoolPhase getCensusSchoolPhase()
         {
-            return (CensusSchoolPhase) this.getProperty("censusSchoolPhase");
+            return (CensusSchoolPhase)this.getProperty("censusSchoolPhase");
         }
 
-        public void setCensusSchoolPhase (CensusSchoolPhase censusSchoolPhase)
+        public void setCensusSchoolPhase(CensusSchoolPhase censusSchoolPhase)
         {
             this.setProperty("censusSchoolPhase", censusSchoolPhase);
         }
 
-        public SchoolType getSchoolType ()
+        public SchoolType getSchoolType()
         {
-            return (SchoolType) this.getProperty("schoolType");
+            return (SchoolType)this.getProperty("schoolType");
         }
 
-        public void setSchoolType (SchoolType schoolType)
+        public void setSchoolType(SchoolType schoolType)
         {
             this.setProperty("schoolType", schoolType);
         }
 
-        public string getSchoolGender ()
+        public string getSchoolGender()
         {
             return this.getProperty("schoolGender").ToString();
         }
 
-        public void setSchoolGender (string schoolGender)
+        public void setSchoolGender(string schoolGender)
         {
             this.setProperty("schoolGender", schoolGender);
         }
 
-        public SchoolGovernanceType getGovernanceType ()
+        public SchoolGovernanceType getGovernanceType()
         {
-            return (SchoolGovernanceType) this.getProperty("governanceType");
+            return (SchoolGovernanceType)this.getProperty("governanceType");
         }
 
-        public void setGovernanceType (SchoolGovernanceType governanceType)
+        public void setGovernanceType(SchoolGovernanceType governanceType)
         {
             this.setProperty("governanceType", governanceType);
         }
 
-        public SchoolIntakeType getIntakeType ()
+        public SchoolIntakeType getIntakeType()
         {
-            return (SchoolIntakeType) this.getProperty("intakeType");
+            return (SchoolIntakeType)this.getProperty("intakeType");
         }
 
-        public void setIntakeType (SchoolIntakeType intakeType)
+        public void setIntakeType(SchoolIntakeType intakeType)
         {
             this.setProperty("intakeType", intakeType);
         }
 
-        public string getUrn ()
+        public string getUrn()
         {
             return this.getProperty("urn").ToString();
         }
 
-        public void setUrn (string urn)
+        public void setUrn(string urn)
         {
             this.setProperty("urn", urn);
         }
 
-        public bool getHasChildMotherProvision ()
+        public string getUkprn()
         {
-            return (bool) this.getProperty("hasChildMotherProvision");
+            return this.getProperty("ukprn").ToString();
         }
 
-        public void setHasChildMotherProvision (bool hasChildMotherProvision)
+        public void setUkprn(string ukprn)
+        {
+            this.setProperty("ukprn", ukprn);
+        }
+
+        public bool getHasChildMotherProvision()
+        {
+            return Convert.ToBoolean(this.getProperty("hasChildMotherProvision"));
+        }
+
+        public void setHasChildMotherProvision(bool hasChildMotherProvision)
         {
             this.setProperty("hasChildMotherProvision", hasChildMotherProvision);
         }
 
-        public bool getHasChildcarePlaces ()
+        public bool getHasChildcarePlaces()
         {
-            return (bool) this.getProperty("hasChildcarePlaces");
+            return Convert.ToBoolean(this.getProperty("hasChildcarePlaces"));
         }
 
-        public void setHasChildcarePlaces (bool hasChildcarePlaces)
+        public void setHasChildcarePlaces(bool hasChildcarePlaces)
         {
             this.setProperty("hasChildcarePlaces", hasChildcarePlaces);
         }
 
-        public string getCenterNumber ()
+        public string getCenterNumber()
         {
             return this.getProperty("centerNumber").ToString();
         }
 
-        public void setCenterNumber (string centerNumber)
+        public void setCenterNumber(string centerNumber)
         {
             this.setProperty("centerNumber", centerNumber);
         }
 
-        public string getSpecialSchoolAccommodation ()
+        public string getSpecialSchoolAccommodation()
         {
             return this.getProperty("specialSchoolAccommodation").ToString();
         }
 
-        public void setSpecialSchoolAccommodation (string specialSchoolAccommodation)
+        public void setSpecialSchoolAccommodation(string specialSchoolAccommodation)
         {
             this.setProperty("specialSchoolAccommodation", specialSchoolAccommodation);
         }
 
-        public int getSpecialSchoolMaxDayPupils ()
+        public int getSpecialSchoolMaxDayPupils()
         {
             return Convert.ToInt32(this.getProperty("specialSchoolMaxDayPupils"));
         }
 
-        public void setSpecialSchoolMaxDayPupils (int specialSchoolMaxDayPupils)
+        public void setSpecialSchoolMaxDayPupils(int specialSchoolMaxDayPupils)
         {
             this.setProperty("specialSchoolMaxDayPupils", specialSchoolMaxDayPupils);
         }
 
-        public int getSpecialSchoolMaxBoarders ()
+        public int getSpecialSchoolMaxBoarders()
         {
             return Convert.ToInt32(this.getProperty("specialSchoolMaxBoarders"));
         }
 
-        public void setSpecialSchoolMaxBoarders (int specialSchoolMaxBoarders)
+        public void setSpecialSchoolMaxBoarders(int specialSchoolMaxBoarders)
         {
             this.setProperty("specialSchoolMaxBoarders", specialSchoolMaxBoarders);
         }
 
-        public int getSpecialSchoolMinMaleAge ()
+        public int getSpecialSchoolMinMaleAge()
         {
             return Convert.ToInt32(this.getProperty("specialSchoolMinMaleAge"));
         }
 
-        public void setSpecialSchoolMinMaleAge (int specialSchoolMinMaleAge)
+        public void setSpecialSchoolMinMaleAge(int specialSchoolMinMaleAge)
         {
             this.setProperty("specialSchoolMinMaleAge", specialSchoolMinMaleAge);
         }
 
-        public int getSpecialSchoolMaxMaleAge ()
+        public int getSpecialSchoolMaxMaleAge()
         {
             return Convert.ToInt32(this.getProperty("specialSchoolMaxMaleAge"));
         }
 
-        public void setSpecialSchoolMaxMaleAge (int specialSchoolMaxMaleAge)
+        public void setSpecialSchoolMaxMaleAge(int specialSchoolMaxMaleAge)
         {
             this.setProperty("specialSchoolMaxMaleAge", specialSchoolMaxMaleAge);
         }
 
-        public int getSpecialSchoolMinFemaleAge ()
+        public int getSpecialSchoolMinFemaleAge()
         {
             return Convert.ToInt32(this.getProperty("specialSchoolMinFemaleAge"));
         }
 
-        public void setSpecialSchoolMinFemaleAge (int specialSchoolMinFemaleAge)
+        public void setSpecialSchoolMinFemaleAge(int specialSchoolMinFemaleAge)
         {
             this.setProperty("specialSchoolMinFemaleAge", specialSchoolMinFemaleAge);
         }
 
-        public int getSpecialSchoolMaxFemaleAge ()
+        public int getSpecialSchoolMaxFemaleAge()
         {
             return Convert.ToInt32(this.getProperty("specialSchoolMaxFemaleAge"));
         }
 
-        public void setSpecialSchoolMaxFemaleAge (int specialSchoolMaxFemaleAge)
+        public void setSpecialSchoolMaxFemaleAge(int specialSchoolMaxFemaleAge)
         {
             this.setProperty("specialSchoolMaxFemaleAge", specialSchoolMaxFemaleAge);
         }
 
-        public string getSpecialSchoolSenProvisions ()
+        public string getSpecialSchoolSenProvisions()
         {
             return this.getProperty("specialSchoolSenProvisions").ToString();
         }
 
-        public void setSpecialSchoolSenProvisions (string specialSchoolSenProvisions)
+        public void setSpecialSchoolSenProvisions(string specialSchoolSenProvisions)
         {
             this.setProperty("specialSchoolSenProvisions", specialSchoolSenProvisions);
+        }
+
+        public DateTime getCensusSchoolOpeningDate()
+        {
+            return Convert.ToDateTime(this.getProperty("censusSchoolOpeningDate"));
+        }
+
+        public void setCensusSchoolOpeningDate(DateTime censusSchoolOpeningDate)
+        {
+            this.setProperty("censusSchoolOpeningDate", censusSchoolOpeningDate);
+        }
+
+        public string getWeeklyHoursOpen()
+        {
+            return this.getProperty("weeklyHoursOpen").ToString();
+        }
+
+        public void setWeeklyHoursOpen(string weeklyHoursOpen)
+        {
+            this.setProperty("weeklyHoursOpen", weeklyHoursOpen);
         }
 
 

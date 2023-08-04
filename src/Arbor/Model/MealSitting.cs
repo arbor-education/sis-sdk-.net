@@ -9,95 +9,96 @@ namespace Arbor.Model
 {
     public class MealSitting : ModelBase
     {
-        protected string resourceType = ResourceType.MEAL_SITTING;
+        protected new string resourceType = ResourceType.MEAL_SITTING;
         public const string MEAL = "meal";
         public const string MEAL_SITTING_NAME = "mealSittingName";
         public const string ROOM = "room";
         public const string EFFECTIVE_DATE = "effectiveDate";
         public const string END_DATE = "endDate";
 
-        public MealSitting ()
+        public MealSitting()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public MealSitting (string resourceType = "MealSitting", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<MealSitting> query (SimpleQuery query = null)
+        public MealSitting(string resourceType = "MealSitting", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("MealSitting");
-        	RestGateway gateway = (RestGateway) MealSitting.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<MealSitting> mealsittingCollection = new ModelCollection<MealSitting> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    mealsittingCollection.add((MealSitting) model);
-        	}
-        
-        	return mealsittingCollection;
+
         }
 
-        public static MealSitting retrieve (string id)
+
+        public static ModelCollection<MealSitting> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) MealSitting.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (MealSitting) gateway.retrieve(ResourceType.MEAL_SITTING, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("MealSitting");
+            RestGateway gateway = (RestGateway)MealSitting.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<MealSitting> mealsittingCollection = new ModelCollection<MealSitting>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                mealsittingCollection.add((MealSitting)model);
+            }
+
+            return mealsittingCollection;
         }
 
-        public Meal getMeal ()
+        public static MealSitting retrieve(string id)
         {
-            return (Meal) this.getProperty("meal");
+            RestGateway gateway = (RestGateway)MealSitting.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (MealSitting)gateway.retrieve(ResourceType.MEAL_SITTING, id);
         }
 
-        public void setMeal (Meal meal)
+        public Meal getMeal()
+        {
+            return (Meal)this.getProperty("meal");
+        }
+
+        public void setMeal(Meal meal)
         {
             this.setProperty("meal", meal);
         }
 
-        public string getMealSittingName ()
+        public string getMealSittingName()
         {
             return this.getProperty("mealSittingName").ToString();
         }
 
-        public void setMealSittingName (string mealSittingName)
+        public void setMealSittingName(string mealSittingName)
         {
             this.setProperty("mealSittingName", mealSittingName);
         }
 
-        public Room getRoom ()
+        public Room getRoom()
         {
-            return (Room) this.getProperty("room");
+            return (Room)this.getProperty("room");
         }
 
-        public void setRoom (Room room)
+        public void setRoom(Room room)
         {
             this.setProperty("room", room);
         }
 
-        public DateTime getEffectiveDate ()
+        public DateTime getEffectiveDate()
         {
             return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
-        public void setEffectiveDate (DateTime effectiveDate)
+        public void setEffectiveDate(DateTime effectiveDate)
         {
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }

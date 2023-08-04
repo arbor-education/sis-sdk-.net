@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class StudentSchoolwork : ModelBase
     {
-        protected string resourceType = ResourceType.STUDENT_SCHOOLWORK;
+        protected new string resourceType = ResourceType.STUDENT_SCHOOLWORK;
         public const string SCHOOLWORK = "schoolwork";
         public const string STUDENT = "student";
         public const string DUE_DATETIME = "dueDatetime";
@@ -17,98 +17,99 @@ namespace Arbor.Model
         public const string MARKING_COMPLETED_DATETIME = "markingCompletedDatetime";
         public const string NOT_SUBMITTED_DATETIME = "notSubmittedDatetime";
 
-        public StudentSchoolwork ()
+        public StudentSchoolwork()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public StudentSchoolwork (string resourceType = "StudentSchoolwork", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<StudentSchoolwork> query (SimpleQuery query = null)
+        public StudentSchoolwork(string resourceType = "StudentSchoolwork", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("StudentSchoolwork");
-        	RestGateway gateway = (RestGateway) StudentSchoolwork.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<StudentSchoolwork> studentschoolworkCollection = new ModelCollection<StudentSchoolwork> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    studentschoolworkCollection.add((StudentSchoolwork) model);
-        	}
-        
-        	return studentschoolworkCollection;
+
         }
 
-        public static StudentSchoolwork retrieve (string id)
+
+        public static ModelCollection<StudentSchoolwork> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) StudentSchoolwork.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (StudentSchoolwork) gateway.retrieve(ResourceType.STUDENT_SCHOOLWORK, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("StudentSchoolwork");
+            RestGateway gateway = (RestGateway)StudentSchoolwork.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<StudentSchoolwork> studentschoolworkCollection = new ModelCollection<StudentSchoolwork>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                studentschoolworkCollection.add((StudentSchoolwork)model);
+            }
+
+            return studentschoolworkCollection;
         }
 
-        public Schoolwork getSchoolwork ()
+        public static StudentSchoolwork retrieve(string id)
         {
-            return (Schoolwork) this.getProperty("schoolwork");
+            RestGateway gateway = (RestGateway)StudentSchoolwork.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (StudentSchoolwork)gateway.retrieve(ResourceType.STUDENT_SCHOOLWORK, id);
         }
 
-        public void setSchoolwork (Schoolwork schoolwork)
+        public Schoolwork getSchoolwork()
+        {
+            return (Schoolwork)this.getProperty("schoolwork");
+        }
+
+        public void setSchoolwork(Schoolwork schoolwork)
         {
             this.setProperty("schoolwork", schoolwork);
         }
 
-        public Student getStudent ()
+        public Student getStudent()
         {
-            return (Student) this.getProperty("student");
+            return (Student)this.getProperty("student");
         }
 
-        public void setStudent (Student student)
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public DateTime getDueDatetime ()
+        public DateTime getDueDatetime()
         {
             return Convert.ToDateTime(this.getProperty("dueDatetime"));
         }
 
-        public void setDueDatetime (DateTime dueDatetime)
+        public void setDueDatetime(DateTime dueDatetime)
         {
             this.setProperty("dueDatetime", dueDatetime);
         }
 
-        public DateTime getSubmittedDatetime ()
+        public DateTime getSubmittedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("submittedDatetime"));
         }
 
-        public void setSubmittedDatetime (DateTime submittedDatetime)
+        public void setSubmittedDatetime(DateTime submittedDatetime)
         {
             this.setProperty("submittedDatetime", submittedDatetime);
         }
 
-        public DateTime getMarkingCompletedDatetime ()
+        public DateTime getMarkingCompletedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("markingCompletedDatetime"));
         }
 
-        public void setMarkingCompletedDatetime (DateTime markingCompletedDatetime)
+        public void setMarkingCompletedDatetime(DateTime markingCompletedDatetime)
         {
             this.setProperty("markingCompletedDatetime", markingCompletedDatetime);
         }
 
-        public DateTime getNotSubmittedDatetime ()
+        public DateTime getNotSubmittedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("notSubmittedDatetime"));
         }
 
-        public void setNotSubmittedDatetime (DateTime notSubmittedDatetime)
+        public void setNotSubmittedDatetime(DateTime notSubmittedDatetime)
         {
             this.setProperty("notSubmittedDatetime", notSubmittedDatetime);
         }

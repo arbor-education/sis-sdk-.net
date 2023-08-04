@@ -9,84 +9,85 @@ namespace Arbor.Model
 {
     public class TeachingGroupTutor : ModelBase
     {
-        protected string resourceType = ResourceType.TEACHING_GROUP_TUTOR;
+        protected new string resourceType = ResourceType.TEACHING_GROUP_TUTOR;
         public const string TEACHING_GROUP = "teachingGroup";
         public const string STAFF = "staff";
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
 
-        public TeachingGroupTutor ()
+        public TeachingGroupTutor()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public TeachingGroupTutor (string resourceType = "TeachingGroupTutor", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<TeachingGroupTutor> query (SimpleQuery query = null)
+        public TeachingGroupTutor(string resourceType = "TeachingGroupTutor", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("TeachingGroupTutor");
-        	RestGateway gateway = (RestGateway) TeachingGroupTutor.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<TeachingGroupTutor> teachinggrouptutorCollection = new ModelCollection<TeachingGroupTutor> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    teachinggrouptutorCollection.add((TeachingGroupTutor) model);
-        	}
-        
-        	return teachinggrouptutorCollection;
+
         }
 
-        public static TeachingGroupTutor retrieve (string id)
+
+        public static ModelCollection<TeachingGroupTutor> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) TeachingGroupTutor.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (TeachingGroupTutor) gateway.retrieve(ResourceType.TEACHING_GROUP_TUTOR, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("TeachingGroupTutor");
+            RestGateway gateway = (RestGateway)TeachingGroupTutor.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<TeachingGroupTutor> teachinggrouptutorCollection = new ModelCollection<TeachingGroupTutor>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                teachinggrouptutorCollection.add((TeachingGroupTutor)model);
+            }
+
+            return teachinggrouptutorCollection;
         }
 
-        public TeachingGroup getTeachingGroup ()
+        public static TeachingGroupTutor retrieve(string id)
         {
-            return (TeachingGroup) this.getProperty("teachingGroup");
+            RestGateway gateway = (RestGateway)TeachingGroupTutor.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (TeachingGroupTutor)gateway.retrieve(ResourceType.TEACHING_GROUP_TUTOR, id);
         }
 
-        public void setTeachingGroup (TeachingGroup teachingGroup)
+        public TeachingGroup getTeachingGroup()
+        {
+            return (TeachingGroup)this.getProperty("teachingGroup");
+        }
+
+        public void setTeachingGroup(TeachingGroup teachingGroup)
         {
             this.setProperty("teachingGroup", teachingGroup);
         }
 
-        public Staff getStaff ()
+        public Staff getStaff()
         {
-            return (Staff) this.getProperty("staff");
+            return (Staff)this.getProperty("staff");
         }
 
-        public void setStaff (Staff staff)
+        public void setStaff(Staff staff)
         {
             this.setProperty("staff", staff);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDate()
         {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }

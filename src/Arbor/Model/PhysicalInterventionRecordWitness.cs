@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class PhysicalInterventionRecordWitness : ModelBase
     {
-        protected string resourceType = ResourceType.PHYSICAL_INTERVENTION_RECORD_WITNESS;
+        protected new string resourceType = ResourceType.PHYSICAL_INTERVENTION_RECORD_WITNESS;
         public const string PHYSICAL_INTERVENTION_RECORD = "physicalInterventionRecord";
         public const string WITNESS = "witness";
         public const string NARRATIVE = "narrative";

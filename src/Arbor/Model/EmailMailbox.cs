@@ -22,145 +22,149 @@ namespace Arbor.Model
         public const string LAST_ERROR_DATETIME = "lastErrorDatetime";
         public const string DISABLED = "disabled";
 
-        public EmailMailbox ()
+        public EmailMailbox()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public EmailMailbox (string resourceType = "EmailMailbox", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<EmailMailbox> query (SimpleQuery query = null)
+        public EmailMailbox(string resourceType = "EmailMailbox", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("EmailMailbox");
-        	RestGateway gateway = (RestGateway) EmailMailbox.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<EmailMailbox> emailmailboxCollection = new ModelCollection<EmailMailbox> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    emailmailboxCollection.add((EmailMailbox) model);
-        	}
-        
-        	return emailmailboxCollection;
+
         }
 
-        public static EmailMailbox retrieve (string id)
+
+        public static ModelCollection<EmailMailbox> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) EmailMailbox.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (EmailMailbox) gateway.retrieve(ResourceType.EMAIL_MAILBOX, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("EmailMailbox");
+            RestGateway gateway = (RestGateway)EmailMailbox.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<EmailMailbox> emailmailboxCollection = new ModelCollection<EmailMailbox>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                emailmailboxCollection.add((EmailMailbox)model);
+            }
+
+            return emailmailboxCollection;
         }
 
-        public EmailAccount getEmailAccount ()
+        public static EmailMailbox retrieve(string id)
         {
-            return (EmailAccount) this.getProperty("emailAccount");
+            RestGateway gateway = (RestGateway)EmailMailbox.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (EmailMailbox)gateway.retrieve(ResourceType.EMAIL_MAILBOX, id);
         }
 
-        public void setEmailAccount (EmailAccount emailAccount)
+        public EmailAccount getEmailAccount()
+        {
+            return (EmailAccount)this.getProperty("emailAccount");
+        }
+
+        public void setEmailAccount(EmailAccount emailAccount)
         {
             this.setProperty("emailAccount", emailAccount);
         }
 
-        public string getMailboxType ()
+        public string getMailboxType()
         {
             return this.getProperty("mailboxType").ToString();
         }
 
-        public void setMailboxType (string mailboxType)
+        public void setMailboxType(string mailboxType)
         {
             this.setProperty("mailboxType", mailboxType);
         }
 
-        public string getMailboxFolder ()
+        public string getMailboxFolder()
         {
             return this.getProperty("mailboxFolder").ToString();
         }
 
-        public void setMailboxFolder (string mailboxFolder)
+        public void setMailboxFolder(string mailboxFolder)
         {
             this.setProperty("mailboxFolder", mailboxFolder);
         }
 
-        public DateTime getLastRetrievedDatetime (){
+        public DateTime getLastRetrievedDatetime()
+        {
             return Convert.ToDateTime(this.getProperty("lastRetrievedDatetime"));
         }
 
-        public void setLastRetrievedDatetime (DateTime lastRetrievedDatetime)
+        public void setLastRetrievedDatetime(DateTime lastRetrievedDatetime)
         {
             this.setProperty("lastRetrievedDatetime", lastRetrievedDatetime);
         }
 
-        public int getLastSeenUid ()
+        public int getLastSeenUid()
         {
             return Convert.ToInt32(this.getProperty("lastSeenUid"));
         }
 
-        public void setLastSeenUid (int lastSeenUid)
+        public void setLastSeenUid(int lastSeenUid)
         {
             this.setProperty("lastSeenUid", lastSeenUid);
         }
 
-        public int getUidValidity ()
+        public int getUidValidity()
         {
             return Convert.ToInt32(this.getProperty("uidValidity"));
         }
 
-        public void setUidValidity (int uidValidity)
+        public void setUidValidity(int uidValidity)
         {
             this.setProperty("uidValidity", uidValidity);
         }
 
-        public string getDefaultActionRequiredByTime ()
+        public string getDefaultActionRequiredByTime()
         {
             return this.getProperty("defaultActionRequiredByTime").ToString();
         }
 
-        public void setDefaultActionRequiredByTime (string defaultActionRequiredByTime)
+        public void setDefaultActionRequiredByTime(string defaultActionRequiredByTime)
         {
             this.setProperty("defaultActionRequiredByTime", defaultActionRequiredByTime);
         }
 
-        public bool getSharedByDefault ()
+        public bool getSharedByDefault()
         {
-            return (bool) this.getProperty("sharedByDefault");
+            return (bool)this.getProperty("sharedByDefault");
         }
 
-        public void setSharedByDefault (bool sharedByDefault)
+        public void setSharedByDefault(bool sharedByDefault)
         {
             this.setProperty("sharedByDefault", sharedByDefault);
         }
 
-        public DateTime getFirstErrorDatetime (){
+        public DateTime getFirstErrorDatetime()
+        {
             return Convert.ToDateTime(this.getProperty("firstErrorDatetime"));
         }
 
-        public void setFirstErrorDatetime (DateTime firstErrorDatetime)
+        public void setFirstErrorDatetime(DateTime firstErrorDatetime)
         {
             this.setProperty("firstErrorDatetime", firstErrorDatetime);
         }
 
-        public DateTime getLastErrorDatetime (){
+        public DateTime getLastErrorDatetime()
+        {
             return Convert.ToDateTime(this.getProperty("lastErrorDatetime"));
         }
 
-        public void setLastErrorDatetime (DateTime lastErrorDatetime)
+        public void setLastErrorDatetime(DateTime lastErrorDatetime)
         {
             this.setProperty("lastErrorDatetime", lastErrorDatetime);
         }
 
-        public bool getDisabled ()
+        public bool getDisabled()
         {
-            return (bool) this.getProperty("disabled");
+            return (bool)this.getProperty("disabled");
         }
 
-        public void setDisabled (bool disabled)
+        public void setDisabled(bool disabled)
         {
             this.setProperty("disabled", disabled);
         }

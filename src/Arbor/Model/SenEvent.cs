@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class SenEvent : ModelBase
     {
-        protected string resourceType = ResourceType.SEN_EVENT;
+        protected new string resourceType = ResourceType.SEN_EVENT;
         public const string START_DATETIME = "startDatetime";
         public const string END_DATETIME = "endDatetime";
         public const string LOCATION_TEXT = "locationText";
@@ -19,118 +19,119 @@ namespace Arbor.Model
         public const string SEN_EVENT_NAME = "senEventName";
         public const string SEN_EVENT_DESCRIPTION = "senEventDescription";
 
-        public SenEvent ()
+        public SenEvent()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public SenEvent (string resourceType = "SenEvent", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<SenEvent> query (SimpleQuery query = null)
+        public SenEvent(string resourceType = "SenEvent", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("SenEvent");
-        	RestGateway gateway = (RestGateway) SenEvent.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<SenEvent> seneventCollection = new ModelCollection<SenEvent> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    seneventCollection.add((SenEvent) model);
-        	}
-        
-        	return seneventCollection;
+
         }
 
-        public static SenEvent retrieve (string id)
+
+        public static ModelCollection<SenEvent> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) SenEvent.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (SenEvent) gateway.retrieve(ResourceType.SEN_EVENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("SenEvent");
+            RestGateway gateway = (RestGateway)SenEvent.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<SenEvent> seneventCollection = new ModelCollection<SenEvent>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                seneventCollection.add((SenEvent)model);
+            }
+
+            return seneventCollection;
         }
 
-        public DateTime getStartDatetime ()
+        public static SenEvent retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)SenEvent.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (SenEvent)gateway.retrieve(ResourceType.SEN_EVENT, id);
+        }
+
+        public DateTime getStartDatetime()
         {
             return Convert.ToDateTime(this.getProperty("startDatetime"));
         }
 
-        public void setStartDatetime (DateTime startDatetime)
+        public void setStartDatetime(DateTime startDatetime)
         {
             this.setProperty("startDatetime", startDatetime);
         }
 
-        public DateTime getEndDatetime ()
+        public DateTime getEndDatetime()
         {
             return Convert.ToDateTime(this.getProperty("endDatetime"));
         }
 
-        public void setEndDatetime (DateTime endDatetime)
+        public void setEndDatetime(DateTime endDatetime)
         {
             this.setProperty("endDatetime", endDatetime);
         }
 
-        public string getLocationText ()
+        public string getLocationText()
         {
             return this.getProperty("locationText").ToString();
         }
 
-        public void setLocationText (string locationText)
+        public void setLocationText(string locationText)
         {
             this.setProperty("locationText", locationText);
         }
 
-        public ModelBase getLocation ()
+        public ModelBase getLocation()
         {
-            return (ModelBase) this.getProperty("location");
+            return (ModelBase)this.getProperty("location");
         }
 
-        public void setLocation (ModelBase location)
+        public void setLocation(ModelBase location)
         {
             this.setProperty("location", location);
         }
 
-        public Student getStudent ()
+        public Student getStudent()
         {
-            return (Student) this.getProperty("student");
+            return (Student)this.getProperty("student");
         }
 
-        public void setStudent (Student student)
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public SenEventType getSenEventType ()
+        public SenEventType getSenEventType()
         {
-            return (SenEventType) this.getProperty("senEventType");
+            return (SenEventType)this.getProperty("senEventType");
         }
 
-        public void setSenEventType (SenEventType senEventType)
+        public void setSenEventType(SenEventType senEventType)
         {
             this.setProperty("senEventType", senEventType);
         }
 
-        public string getSenEventName ()
+        public string getSenEventName()
         {
             return this.getProperty("senEventName").ToString();
         }
 
-        public void setSenEventName (string senEventName)
+        public void setSenEventName(string senEventName)
         {
             this.setProperty("senEventName", senEventName);
         }
 
-        public string getSenEventDescription ()
+        public string getSenEventDescription()
         {
             return this.getProperty("senEventDescription").ToString();
         }
 
-        public void setSenEventDescription (string senEventDescription)
+        public void setSenEventDescription(string senEventDescription)
         {
             this.setProperty("senEventDescription", senEventDescription);
         }

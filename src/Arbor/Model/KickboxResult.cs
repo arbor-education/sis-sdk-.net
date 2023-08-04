@@ -22,147 +22,149 @@ namespace Arbor.Model
         public const string RESPONSE_CODE = "responseCode";
         public const string LAST_CHECKED_DATETIME = "lastCheckedDatetime";
 
-        public KickboxResult ()
+        public KickboxResult()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public KickboxResult (string resourceType = "KickboxResult", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<KickboxResult> query (SimpleQuery query = null)
+        public KickboxResult(string resourceType = "KickboxResult", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("KickboxResult");
-        	RestGateway gateway = (RestGateway) KickboxResult.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<KickboxResult> kickboxresultCollection = new ModelCollection<KickboxResult> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    kickboxresultCollection.add((KickboxResult) model);
-        	}
-        
-        	return kickboxresultCollection;
+
         }
 
-        public static KickboxResult retrieve (string id)
+
+        public static ModelCollection<KickboxResult> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) KickboxResult.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (KickboxResult) gateway.retrieve(ResourceType.KICKBOX_RESULT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("KickboxResult");
+            RestGateway gateway = (RestGateway)KickboxResult.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<KickboxResult> kickboxresultCollection = new ModelCollection<KickboxResult>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                kickboxresultCollection.add((KickboxResult)model);
+            }
+
+            return kickboxresultCollection;
         }
 
-        public string getRawEmailAddress ()
+        public static KickboxResult retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)KickboxResult.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (KickboxResult)gateway.retrieve(ResourceType.KICKBOX_RESULT, id);
+        }
+
+        public string getRawEmailAddress()
         {
             return this.getProperty("rawEmailAddress").ToString();
         }
 
-        public void setRawEmailAddress (string rawEmailAddress)
+        public void setRawEmailAddress(string rawEmailAddress)
         {
             this.setProperty("rawEmailAddress", rawEmailAddress);
         }
 
-        public string getResult ()
+        public string getResult()
         {
             return this.getProperty("result").ToString();
         }
 
-        public void setResult (string result)
+        public void setResult(string result)
         {
             this.setProperty("result", result);
         }
 
-        public string getReason ()
+        public string getReason()
         {
             return this.getProperty("reason").ToString();
         }
 
-        public void setReason (string reason)
+        public void setReason(string reason)
         {
             this.setProperty("reason", reason);
         }
 
-        public bool getRole ()
+        public bool getRole()
         {
-            return (bool) this.getProperty("role");
+            return (bool)this.getProperty("role");
         }
 
-        public void setRole (bool role)
+        public void setRole(bool role)
         {
             this.setProperty("role", role);
         }
 
-        public bool getFree ()
+        public bool getFree()
         {
-            return (bool) this.getProperty("free");
+            return (bool)this.getProperty("free");
         }
 
-        public void setFree (bool free)
+        public void setFree(bool free)
         {
             this.setProperty("free", free);
         }
 
-        public bool getDisposable ()
+        public bool getDisposable()
         {
-            return (bool) this.getProperty("disposable");
+            return (bool)this.getProperty("disposable");
         }
 
-        public void setDisposable (bool disposable)
+        public void setDisposable(bool disposable)
         {
             this.setProperty("disposable", disposable);
         }
 
-        public bool getAcceptAll ()
+        public bool getAcceptAll()
         {
-            return (bool) this.getProperty("acceptAll");
+            return (bool)this.getProperty("acceptAll");
         }
 
-        public void setAcceptAll (bool acceptAll)
+        public void setAcceptAll(bool acceptAll)
         {
             this.setProperty("acceptAll", acceptAll);
         }
 
-        public string getDidYouMean ()
+        public string getDidYouMean()
         {
             return this.getProperty("didYouMean").ToString();
         }
 
-        public void setDidYouMean (string didYouMean)
+        public void setDidYouMean(string didYouMean)
         {
             this.setProperty("didYouMean", didYouMean);
         }
 
-        public float getSendex ()
+        public float getSendex()
         {
-            return (float) this.getProperty("sendex");
+            return (float)this.getProperty("sendex");
         }
 
-        public void setSendex (float sendex)
+        public void setSendex(float sendex)
         {
             this.setProperty("sendex", sendex);
         }
 
-        public int getResponseCode ()
+        public int getResponseCode()
         {
             return Convert.ToInt32(this.getProperty("responseCode"));
         }
 
-        public void setResponseCode (int responseCode)
+        public void setResponseCode(int responseCode)
         {
             this.setProperty("responseCode", responseCode);
         }
 
-        public DateTime getLastCheckedDatetime (){
+        public DateTime getLastCheckedDatetime()
+        {
             return Convert.ToDateTime(this.getProperty("lastCheckedDatetime"));
         }
 
-        public void setLastCheckedDatetime (DateTime lastCheckedDatetime)
+        public void setLastCheckedDatetime(DateTime lastCheckedDatetime)
         {
             this.setProperty("lastCheckedDatetime", lastCheckedDatetime);
         }

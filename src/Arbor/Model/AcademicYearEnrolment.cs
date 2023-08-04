@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class AcademicYearEnrolment : ModelBase
     {
-        protected string resourceType = ResourceType.ACADEMIC_YEAR_ENROLMENT;
+        protected new string resourceType = ResourceType.ACADEMIC_YEAR_ENROLMENT;
         public const string ACADEMIC_YEAR = "academicYear";
         public const string STUDENT = "student";
         public const string START_DATE = "startDate";
@@ -17,98 +17,99 @@ namespace Arbor.Model
         public const string UNENROLMENT_REASON = "unenrolmentReason";
         public const string ENROLMENT_NOTES = "enrolmentNotes";
 
-        public AcademicYearEnrolment ()
+        public AcademicYearEnrolment()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AcademicYearEnrolment (string resourceType = "AcademicYearEnrolment", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AcademicYearEnrolment> query (SimpleQuery query = null)
+        public AcademicYearEnrolment(string resourceType = "AcademicYearEnrolment", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AcademicYearEnrolment");
-        	RestGateway gateway = (RestGateway) AcademicYearEnrolment.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AcademicYearEnrolment> academicyearenrolmentCollection = new ModelCollection<AcademicYearEnrolment> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    academicyearenrolmentCollection.add((AcademicYearEnrolment) model);
-        	}
-        
-        	return academicyearenrolmentCollection;
+
         }
 
-        public static AcademicYearEnrolment retrieve (string id)
+
+        public static ModelCollection<AcademicYearEnrolment> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AcademicYearEnrolment.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AcademicYearEnrolment) gateway.retrieve(ResourceType.ACADEMIC_YEAR_ENROLMENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AcademicYearEnrolment");
+            RestGateway gateway = (RestGateway)AcademicYearEnrolment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AcademicYearEnrolment> academicyearenrolmentCollection = new ModelCollection<AcademicYearEnrolment>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                academicyearenrolmentCollection.add((AcademicYearEnrolment)model);
+            }
+
+            return academicyearenrolmentCollection;
         }
 
-        public AcademicYear getAcademicYear ()
+        public static AcademicYearEnrolment retrieve(string id)
         {
-            return (AcademicYear) this.getProperty("academicYear");
+            RestGateway gateway = (RestGateway)AcademicYearEnrolment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AcademicYearEnrolment)gateway.retrieve(ResourceType.ACADEMIC_YEAR_ENROLMENT, id);
         }
 
-        public void setAcademicYear (AcademicYear academicYear)
+        public AcademicYear getAcademicYear()
+        {
+            return (AcademicYear)this.getProperty("academicYear");
+        }
+
+        public void setAcademicYear(AcademicYear academicYear)
         {
             this.setProperty("academicYear", academicYear);
         }
 
-        public Student getStudent ()
+        public Student getStudent()
         {
-            return (Student) this.getProperty("student");
+            return (Student)this.getProperty("student");
         }
 
-        public void setStudent (Student student)
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDate()
         {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }
 
-        public UnenrolmentReason getUnenrolmentReason ()
+        public UnenrolmentReason getUnenrolmentReason()
         {
-            return (UnenrolmentReason) this.getProperty("unenrolmentReason");
+            return (UnenrolmentReason)this.getProperty("unenrolmentReason");
         }
 
-        public void setUnenrolmentReason (UnenrolmentReason unenrolmentReason)
+        public void setUnenrolmentReason(UnenrolmentReason unenrolmentReason)
         {
             this.setProperty("unenrolmentReason", unenrolmentReason);
         }
 
-        public string getEnrolmentNotes ()
+        public string getEnrolmentNotes()
         {
             return this.getProperty("enrolmentNotes").ToString();
         }
 
-        public void setEnrolmentNotes (string enrolmentNotes)
+        public void setEnrolmentNotes(string enrolmentNotes)
         {
             this.setProperty("enrolmentNotes", enrolmentNotes);
         }

@@ -9,73 +9,74 @@ namespace Arbor.Model
 {
     public class DietaryRequirement : ModelBase
     {
-        protected string resourceType = ResourceType.DIETARY_REQUIREMENT;
+        protected new string resourceType = ResourceType.DIETARY_REQUIREMENT;
         public const string PERSON = "person";
         public const string DIETARY_REQUIREMENT_TYPE = "dietaryRequirementType";
         public const string NOTE = "note";
 
-        public DietaryRequirement ()
+        public DietaryRequirement()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public DietaryRequirement (string resourceType = "DietaryRequirement", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<DietaryRequirement> query (SimpleQuery query = null)
+        public DietaryRequirement(string resourceType = "DietaryRequirement", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("DietaryRequirement");
-        	RestGateway gateway = (RestGateway) DietaryRequirement.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<DietaryRequirement> dietaryrequirementCollection = new ModelCollection<DietaryRequirement> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    dietaryrequirementCollection.add((DietaryRequirement) model);
-        	}
-        
-        	return dietaryrequirementCollection;
+
         }
 
-        public static DietaryRequirement retrieve (string id)
+
+        public static ModelCollection<DietaryRequirement> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) DietaryRequirement.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (DietaryRequirement) gateway.retrieve(ResourceType.DIETARY_REQUIREMENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("DietaryRequirement");
+            RestGateway gateway = (RestGateway)DietaryRequirement.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<DietaryRequirement> dietaryrequirementCollection = new ModelCollection<DietaryRequirement>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                dietaryrequirementCollection.add((DietaryRequirement)model);
+            }
+
+            return dietaryrequirementCollection;
         }
 
-        public ModelBase getPerson ()
+        public static DietaryRequirement retrieve(string id)
         {
-            return (ModelBase) this.getProperty("person");
+            RestGateway gateway = (RestGateway)DietaryRequirement.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (DietaryRequirement)gateway.retrieve(ResourceType.DIETARY_REQUIREMENT, id);
         }
 
-        public void setPerson (ModelBase person)
+        public ModelBase getPerson()
+        {
+            return (ModelBase)this.getProperty("person");
+        }
+
+        public void setPerson(ModelBase person)
         {
             this.setProperty("person", person);
         }
 
-        public DietaryRequirementType getDietaryRequirementType ()
+        public DietaryRequirementType getDietaryRequirementType()
         {
-            return (DietaryRequirementType) this.getProperty("dietaryRequirementType");
+            return (DietaryRequirementType)this.getProperty("dietaryRequirementType");
         }
 
-        public void setDietaryRequirementType (DietaryRequirementType dietaryRequirementType)
+        public void setDietaryRequirementType(DietaryRequirementType dietaryRequirementType)
         {
             this.setProperty("dietaryRequirementType", dietaryRequirementType);
         }
 
-        public string getNote ()
+        public string getNote()
         {
             return this.getProperty("note").ToString();
         }
 
-        public void setNote (string note)
+        public void setNote(string note)
         {
             this.setProperty("note", note);
         }

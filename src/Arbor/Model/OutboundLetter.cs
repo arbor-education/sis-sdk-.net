@@ -9,8 +9,7 @@ namespace Arbor.Model
 {
     public class OutboundLetter : ModelBase
     {
-        protected string resourceType = ResourceType.OUTBOUND_LETTER;
-        public const string OUTBOUND_LETTER_DRAFT = "outboundLetterDraft";
+        protected new string resourceType = ResourceType.OUTBOUND_LETTER;
         public const string SENDER = "sender";
         public const string DOCUMENT_LAYOUT = "documentLayout";
         public const string BODY = "body";
@@ -51,16 +50,6 @@ namespace Arbor.Model
             RestGateway gateway = (RestGateway) OutboundLetter.getDefaultGateway();
         	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
         	return (OutboundLetter) gateway.retrieve(ResourceType.OUTBOUND_LETTER, id);
-        }
-
-        public OutboundLetterDraft getOutboundLetterDraft ()
-        {
-            return (OutboundLetterDraft) this.getProperty("outboundLetterDraft");
-        }
-
-        public void setOutboundLetterDraft (OutboundLetterDraft outboundLetterDraft)
-        {
-            this.setProperty("outboundLetterDraft", outboundLetterDraft);
         }
 
         public ModelBase getSender ()

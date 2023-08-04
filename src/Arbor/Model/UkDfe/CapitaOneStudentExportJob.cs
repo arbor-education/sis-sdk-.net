@@ -16,85 +16,89 @@ namespace Arbor.Model.UkDfe
         public const string ERROR_DATETIME = "errorDatetime";
         public const string ERROR_LOG = "errorLog";
 
-        public CapitaOneStudentExportJob ()
+        public CapitaOneStudentExportJob()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public CapitaOneStudentExportJob (string resourceType = "CapitaOneStudentExportJob", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<CapitaOneStudentExportJob> query (SimpleQuery query = null)
+        public CapitaOneStudentExportJob(string resourceType = "CapitaOneStudentExportJob", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("UkDfe_CapitaOneStudentExportJob");
-        	RestGateway gateway = (RestGateway) CapitaOneStudentExportJob.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<CapitaOneStudentExportJob> capitaonestudentexportjobCollection = new ModelCollection<CapitaOneStudentExportJob> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    capitaonestudentexportjobCollection.add((CapitaOneStudentExportJob) model);
-        	}
-        
-        	return capitaonestudentexportjobCollection;
+
         }
 
-        public static CapitaOneStudentExportJob retrieve (string id)
+
+        public static ModelCollection<CapitaOneStudentExportJob> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) CapitaOneStudentExportJob.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (CapitaOneStudentExportJob) gateway.retrieve(ResourceType.UK_DFE_CAPITA_ONE_STUDENT_EXPORT_JOB, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("UkDfe_CapitaOneStudentExportJob");
+            RestGateway gateway = (RestGateway)CapitaOneStudentExportJob.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<CapitaOneStudentExportJob> capitaonestudentexportjobCollection = new ModelCollection<CapitaOneStudentExportJob>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                capitaonestudentexportjobCollection.add((CapitaOneStudentExportJob)model);
+            }
+
+            return capitaonestudentexportjobCollection;
         }
 
-        public int getSequenceNumber ()
+        public static CapitaOneStudentExportJob retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)CapitaOneStudentExportJob.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (CapitaOneStudentExportJob)gateway.retrieve(ResourceType.UK_DFE_CAPITA_ONE_STUDENT_EXPORT_JOB, id);
+        }
+
+        public int getSequenceNumber()
         {
             return Convert.ToInt32(this.getProperty("sequenceNumber"));
         }
 
-        public void setSequenceNumber (int sequenceNumber)
+        public void setSequenceNumber(int sequenceNumber)
         {
             this.setProperty("sequenceNumber", sequenceNumber);
         }
 
-        public DateTime getStartedDatetime (){
+        public DateTime getStartedDatetime()
+        {
             return Convert.ToDateTime(this.getProperty("startedDatetime"));
         }
 
-        public void setStartedDatetime (DateTime startedDatetime)
+        public void setStartedDatetime(DateTime startedDatetime)
         {
             this.setProperty("startedDatetime", startedDatetime);
         }
 
-        public DateTime getCompletedDatetime (){
+        public DateTime getCompletedDatetime()
+        {
             return Convert.ToDateTime(this.getProperty("completedDatetime"));
         }
 
-        public void setCompletedDatetime (DateTime completedDatetime)
+        public void setCompletedDatetime(DateTime completedDatetime)
         {
             this.setProperty("completedDatetime", completedDatetime);
         }
 
-        public DateTime getErrorDatetime (){
+        public DateTime getErrorDatetime()
+        {
             return Convert.ToDateTime(this.getProperty("errorDatetime"));
         }
 
-        public void setErrorDatetime (DateTime errorDatetime)
+        public void setErrorDatetime(DateTime errorDatetime)
         {
             this.setProperty("errorDatetime", errorDatetime);
         }
 
-        public string getErrorLog ()
+        public string getErrorLog()
         {
             return this.getProperty("errorLog").ToString();
         }
 
-        public void setErrorLog (string errorLog)
+        public void setErrorLog(string errorLog)
         {
             this.setProperty("errorLog", errorLog);
         }

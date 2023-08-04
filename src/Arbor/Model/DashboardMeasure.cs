@@ -17,98 +17,99 @@ namespace Arbor.Model
         public const string TARGETABLE = "targetable";
         public const string DISPLAY_ORDER = "displayOrder";
 
-        public DashboardMeasure ()
+        public DashboardMeasure()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public DashboardMeasure (string resourceType = "DashboardMeasure", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<DashboardMeasure> query (SimpleQuery query = null)
+        public DashboardMeasure(string resourceType = "DashboardMeasure", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("DashboardMeasure");
-        	RestGateway gateway = (RestGateway) DashboardMeasure.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<DashboardMeasure> dashboardmeasureCollection = new ModelCollection<DashboardMeasure> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    dashboardmeasureCollection.add((DashboardMeasure) model);
-        	}
-        
-        	return dashboardmeasureCollection;
+
         }
 
-        public static DashboardMeasure retrieve (string id)
+
+        public static ModelCollection<DashboardMeasure> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) DashboardMeasure.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (DashboardMeasure) gateway.retrieve(ResourceType.DASHBOARD_MEASURE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("DashboardMeasure");
+            RestGateway gateway = (RestGateway)DashboardMeasure.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<DashboardMeasure> dashboardmeasureCollection = new ModelCollection<DashboardMeasure>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                dashboardmeasureCollection.add((DashboardMeasure)model);
+            }
+
+            return dashboardmeasureCollection;
         }
 
-        public DashboardSection getDashboardSection ()
+        public static DashboardMeasure retrieve(string id)
         {
-            return (DashboardSection) this.getProperty("dashboardSection");
+            RestGateway gateway = (RestGateway)DashboardMeasure.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (DashboardMeasure)gateway.retrieve(ResourceType.DASHBOARD_MEASURE, id);
         }
 
-        public void setDashboardSection (DashboardSection dashboardSection)
+        public DashboardSection getDashboardSection()
+        {
+            return (DashboardSection)this.getProperty("dashboardSection");
+        }
+
+        public void setDashboardSection(DashboardSection dashboardSection)
         {
             this.setProperty("dashboardSection", dashboardSection);
         }
 
-        public Kpi getKpi ()
+        public Kpi getKpi()
         {
-            return (Kpi) this.getProperty("kpi");
+            return (Kpi)this.getProperty("kpi");
         }
 
-        public void setKpi (Kpi kpi)
+        public void setKpi(Kpi kpi)
         {
             this.setProperty("kpi", kpi);
         }
 
-        public Kpi getFallbackKpi ()
+        public Kpi getFallbackKpi()
         {
-            return (Kpi) this.getProperty("fallbackKpi");
+            return (Kpi)this.getProperty("fallbackKpi");
         }
 
-        public void setFallbackKpi (Kpi fallbackKpi)
+        public void setFallbackKpi(Kpi fallbackKpi)
         {
             this.setProperty("fallbackKpi", fallbackKpi);
         }
 
-        public Kpi getComparisonKpi ()
+        public Kpi getComparisonKpi()
         {
-            return (Kpi) this.getProperty("comparisonKpi");
+            return (Kpi)this.getProperty("comparisonKpi");
         }
 
-        public void setComparisonKpi (Kpi comparisonKpi)
+        public void setComparisonKpi(Kpi comparisonKpi)
         {
             this.setProperty("comparisonKpi", comparisonKpi);
         }
 
-        public bool getTargetable ()
+        public bool getTargetable()
         {
-            return (bool) this.getProperty("targetable");
+            return (bool)this.getProperty("targetable");
         }
 
-        public void setTargetable (bool targetable)
+        public void setTargetable(bool targetable)
         {
             this.setProperty("targetable", targetable);
         }
 
-        public int getDisplayOrder ()
+        public int getDisplayOrder()
         {
             return Convert.ToInt32(this.getProperty("displayOrder"));
         }
 
-        public void setDisplayOrder (int displayOrder)
+        public void setDisplayOrder(int displayOrder)
         {
             this.setProperty("displayOrder", displayOrder);
         }

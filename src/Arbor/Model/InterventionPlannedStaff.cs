@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string PLANNED_HOURS = "plannedHours";
         public const string PRICE_PER_HOUR = "pricePerHour";
 
-        public InterventionPlannedStaff ()
+        public InterventionPlannedStaff()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public InterventionPlannedStaff (string resourceType = "InterventionPlannedStaff", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<InterventionPlannedStaff> query (SimpleQuery query = null)
+        public InterventionPlannedStaff(string resourceType = "InterventionPlannedStaff", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("InterventionPlannedStaff");
-        	RestGateway gateway = (RestGateway) InterventionPlannedStaff.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<InterventionPlannedStaff> interventionplannedstaffCollection = new ModelCollection<InterventionPlannedStaff> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    interventionplannedstaffCollection.add((InterventionPlannedStaff) model);
-        	}
-        
-        	return interventionplannedstaffCollection;
+
         }
 
-        public static InterventionPlannedStaff retrieve (string id)
+
+        public static ModelCollection<InterventionPlannedStaff> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) InterventionPlannedStaff.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (InterventionPlannedStaff) gateway.retrieve(ResourceType.INTERVENTION_PLANNED_STAFF, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("InterventionPlannedStaff");
+            RestGateway gateway = (RestGateway)InterventionPlannedStaff.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<InterventionPlannedStaff> interventionplannedstaffCollection = new ModelCollection<InterventionPlannedStaff>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                interventionplannedstaffCollection.add((InterventionPlannedStaff)model);
+            }
+
+            return interventionplannedstaffCollection;
         }
 
-        public Intervention getIntervention ()
+        public static InterventionPlannedStaff retrieve(string id)
         {
-            return (Intervention) this.getProperty("intervention");
+            RestGateway gateway = (RestGateway)InterventionPlannedStaff.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (InterventionPlannedStaff)gateway.retrieve(ResourceType.INTERVENTION_PLANNED_STAFF, id);
         }
 
-        public void setIntervention (Intervention intervention)
+        public Intervention getIntervention()
+        {
+            return (Intervention)this.getProperty("intervention");
+        }
+
+        public void setIntervention(Intervention intervention)
         {
             this.setProperty("intervention", intervention);
         }
 
-        public ModelBase getStaff ()
+        public ModelBase getStaff()
         {
-            return (ModelBase) this.getProperty("staff");
+            return (ModelBase)this.getProperty("staff");
         }
 
-        public void setStaff (ModelBase staff)
+        public void setStaff(ModelBase staff)
         {
             this.setProperty("staff", staff);
         }
 
-        public string getPlannedHours ()
+        public string getPlannedHours()
         {
             return this.getProperty("plannedHours").ToString();
         }
 
-        public void setPlannedHours (string plannedHours)
+        public void setPlannedHours(string plannedHours)
         {
             this.setProperty("plannedHours", plannedHours);
         }
 
-        public string getPricePerHour ()
+        public string getPricePerHour()
         {
             return this.getProperty("pricePerHour").ToString();
         }
 
-        public void setPricePerHour (string pricePerHour)
+        public void setPricePerHour(string pricePerHour)
         {
             this.setProperty("pricePerHour", pricePerHour);
         }

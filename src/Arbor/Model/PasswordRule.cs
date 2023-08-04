@@ -17,98 +17,99 @@ namespace Arbor.Model
         public const string REQUIRE_LETTER = "requireLetter";
         public const string REQUIRE_MIXED_CASE = "requireMixedCase";
 
-        public PasswordRule ()
+        public PasswordRule()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public PasswordRule (string resourceType = "PasswordRule", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<PasswordRule> query (SimpleQuery query = null)
+        public PasswordRule(string resourceType = "PasswordRule", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("PasswordRule");
-        	RestGateway gateway = (RestGateway) PasswordRule.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<PasswordRule> passwordruleCollection = new ModelCollection<PasswordRule> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    passwordruleCollection.add((PasswordRule) model);
-        	}
-        
-        	return passwordruleCollection;
+
         }
 
-        public static PasswordRule retrieve (string id)
+
+        public static ModelCollection<PasswordRule> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) PasswordRule.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (PasswordRule) gateway.retrieve(ResourceType.PASSWORD_RULE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("PasswordRule");
+            RestGateway gateway = (RestGateway)PasswordRule.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<PasswordRule> passwordruleCollection = new ModelCollection<PasswordRule>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                passwordruleCollection.add((PasswordRule)model);
+            }
+
+            return passwordruleCollection;
         }
 
-        public string getAppliesFor ()
+        public static PasswordRule retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)PasswordRule.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (PasswordRule)gateway.retrieve(ResourceType.PASSWORD_RULE, id);
+        }
+
+        public string getAppliesFor()
         {
             return this.getProperty("appliesFor").ToString();
         }
 
-        public void setAppliesFor (string appliesFor)
+        public void setAppliesFor(string appliesFor)
         {
             this.setProperty("appliesFor", appliesFor);
         }
 
-        public int getMinLength ()
+        public int getMinLength()
         {
             return Convert.ToInt32(this.getProperty("minLength"));
         }
 
-        public void setMinLength (int minLength)
+        public void setMinLength(int minLength)
         {
             this.setProperty("minLength", minLength);
         }
 
-        public int getDaysValid ()
+        public int getDaysValid()
         {
             return Convert.ToInt32(this.getProperty("daysValid"));
         }
 
-        public void setDaysValid (int daysValid)
+        public void setDaysValid(int daysValid)
         {
             this.setProperty("daysValid", daysValid);
         }
 
-        public bool getRequireNumber ()
+        public bool getRequireNumber()
         {
-            return (bool) this.getProperty("requireNumber");
+            return (bool)this.getProperty("requireNumber");
         }
 
-        public void setRequireNumber (bool requireNumber)
+        public void setRequireNumber(bool requireNumber)
         {
             this.setProperty("requireNumber", requireNumber);
         }
 
-        public bool getRequireLetter ()
+        public bool getRequireLetter()
         {
-            return (bool) this.getProperty("requireLetter");
+            return (bool)this.getProperty("requireLetter");
         }
 
-        public void setRequireLetter (bool requireLetter)
+        public void setRequireLetter(bool requireLetter)
         {
             this.setProperty("requireLetter", requireLetter);
         }
 
-        public bool getRequireMixedCase ()
+        public bool getRequireMixedCase()
         {
-            return (bool) this.getProperty("requireMixedCase");
+            return (bool)this.getProperty("requireMixedCase");
         }
 
-        public void setRequireMixedCase (bool requireMixedCase)
+        public void setRequireMixedCase(bool requireMixedCase)
         {
             this.setProperty("requireMixedCase", requireMixedCase);
         }

@@ -16,88 +16,89 @@ namespace Arbor.Model
         public const string TAG_VALUE = "tagValue";
         public const string TAG_URL = "tagUrl";
 
-        public DataExportErrorTag ()
+        public DataExportErrorTag()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public DataExportErrorTag (string resourceType = "DataExportErrorTag", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<DataExportErrorTag> query (SimpleQuery query = null)
+        public DataExportErrorTag(string resourceType = "DataExportErrorTag", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("DataExportErrorTag");
-        	RestGateway gateway = (RestGateway) DataExportErrorTag.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<DataExportErrorTag> dataexporterrortagCollection = new ModelCollection<DataExportErrorTag> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    dataexporterrortagCollection.add((DataExportErrorTag) model);
-        	}
-        
-        	return dataexporterrortagCollection;
+
         }
 
-        public static DataExportErrorTag retrieve (string id)
+
+        public static ModelCollection<DataExportErrorTag> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) DataExportErrorTag.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (DataExportErrorTag) gateway.retrieve(ResourceType.DATA_EXPORT_ERROR_TAG, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("DataExportErrorTag");
+            RestGateway gateway = (RestGateway)DataExportErrorTag.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<DataExportErrorTag> dataexporterrortagCollection = new ModelCollection<DataExportErrorTag>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                dataexporterrortagCollection.add((DataExportErrorTag)model);
+            }
+
+            return dataexporterrortagCollection;
         }
 
-        public DataExportError getDataExportError ()
+        public static DataExportErrorTag retrieve(string id)
         {
-            return (DataExportError) this.getProperty("dataExportError");
+            RestGateway gateway = (RestGateway)DataExportErrorTag.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (DataExportErrorTag)gateway.retrieve(ResourceType.DATA_EXPORT_ERROR_TAG, id);
         }
 
-        public void setDataExportError (DataExportError dataExportError)
+        public DataExportError getDataExportError()
+        {
+            return (DataExportError)this.getProperty("dataExportError");
+        }
+
+        public void setDataExportError(DataExportError dataExportError)
         {
             this.setProperty("dataExportError", dataExportError);
         }
 
-        public ModelBase getTaggedEntity ()
+        public ModelBase getTaggedEntity()
         {
-            return (ModelBase) this.getProperty("taggedEntity");
+            return (ModelBase)this.getProperty("taggedEntity");
         }
 
-        public void setTaggedEntity (ModelBase taggedEntity)
+        public void setTaggedEntity(ModelBase taggedEntity)
         {
             this.setProperty("taggedEntity", taggedEntity);
         }
 
-        public string getTagName ()
+        public string getTagName()
         {
             return this.getProperty("tagName").ToString();
         }
 
-        public void setTagName (string tagName)
+        public void setTagName(string tagName)
         {
             this.setProperty("tagName", tagName);
         }
 
-        public string getTagValue ()
+        public string getTagValue()
         {
             return this.getProperty("tagValue").ToString();
         }
 
-        public void setTagValue (string tagValue)
+        public void setTagValue(string tagValue)
         {
             this.setProperty("tagValue", tagValue);
         }
 
-        public string getTagUrl ()
+        public string getTagUrl()
         {
             return this.getProperty("tagUrl").ToString();
         }
 
-        public void setTagUrl (string tagUrl)
+        public void setTagUrl(string tagUrl)
         {
             this.setProperty("tagUrl", tagUrl);
         }

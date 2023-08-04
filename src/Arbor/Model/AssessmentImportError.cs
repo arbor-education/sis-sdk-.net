@@ -9,8 +9,7 @@ namespace Arbor.Model
 {
     public class AssessmentImportError : ModelBase
     {
-        protected string resourceType = ResourceType.ASSESSMENT_IMPORT_ERROR;
-        public const string ASSESSMENT_IMPORT_JOB = "assessmentImportJob";
+        protected new string resourceType = ResourceType.ASSESSMENT_IMPORT_ERROR;
         public const string ERROR_MESSAGE = "errorMessage";
 
         public AssessmentImportError ()
@@ -47,16 +46,6 @@ namespace Arbor.Model
             RestGateway gateway = (RestGateway) AssessmentImportError.getDefaultGateway();
         	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
         	return (AssessmentImportError) gateway.retrieve(ResourceType.ASSESSMENT_IMPORT_ERROR, id);
-        }
-
-        public AssessmentImportJob getAssessmentImportJob ()
-        {
-            return (AssessmentImportJob) this.getProperty("assessmentImportJob");
-        }
-
-        public void setAssessmentImportJob (AssessmentImportJob assessmentImportJob)
-        {
-            this.setProperty("assessmentImportJob", assessmentImportJob);
         }
 
         public string getErrorMessage ()

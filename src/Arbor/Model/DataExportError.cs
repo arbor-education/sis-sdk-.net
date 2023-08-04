@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string EXPORT_JOB = "exportJob";
         public const string ERROR_MESSAGE = "errorMessage";
 
-        public DataExportError ()
+        public DataExportError()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public DataExportError (string resourceType = "DataExportError", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<DataExportError> query (SimpleQuery query = null)
+        public DataExportError(string resourceType = "DataExportError", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("DataExportError");
-        	RestGateway gateway = (RestGateway) DataExportError.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<DataExportError> dataexporterrorCollection = new ModelCollection<DataExportError> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    dataexporterrorCollection.add((DataExportError) model);
-        	}
-        
-        	return dataexporterrorCollection;
+
         }
 
-        public static DataExportError retrieve (string id)
+
+        public static ModelCollection<DataExportError> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) DataExportError.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (DataExportError) gateway.retrieve(ResourceType.DATA_EXPORT_ERROR, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("DataExportError");
+            RestGateway gateway = (RestGateway)DataExportError.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<DataExportError> dataexporterrorCollection = new ModelCollection<DataExportError>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                dataexporterrorCollection.add((DataExportError)model);
+            }
+
+            return dataexporterrorCollection;
         }
 
-        public ModelBase getExportJob ()
+        public static DataExportError retrieve(string id)
         {
-            return (ModelBase) this.getProperty("exportJob");
+            RestGateway gateway = (RestGateway)DataExportError.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (DataExportError)gateway.retrieve(ResourceType.DATA_EXPORT_ERROR, id);
         }
 
-        public void setExportJob (ModelBase exportJob)
+        public ModelBase getExportJob()
+        {
+            return (ModelBase)this.getProperty("exportJob");
+        }
+
+        public void setExportJob(ModelBase exportJob)
         {
             this.setProperty("exportJob", exportJob);
         }
 
-        public string getErrorMessage ()
+        public string getErrorMessage()
         {
             return this.getProperty("errorMessage").ToString();
         }
 
-        public void setErrorMessage (string errorMessage)
+        public void setErrorMessage(string errorMessage)
         {
             this.setProperty("errorMessage", errorMessage);
         }

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class InHouseExam : ModelBase
     {
-        protected string resourceType = ResourceType.IN_HOUSE_EXAM;
+        protected new string resourceType = ResourceType.IN_HOUSE_EXAM;
         public const string MOCK_QUALIFICATION_ASSESSABLE = "mockQualificationAssessable";
         public const string MOCK_QUALIFICATION_LEARNING_UNIT = "mockQualificationLearningUnit";
         public const string DURATION = "duration";

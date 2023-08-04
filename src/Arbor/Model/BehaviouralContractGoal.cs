@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string FREQUENCY = "frequency";
         public const string BEHAVIOUR = "behaviour";
 
-        public BehaviouralContractGoal ()
+        public BehaviouralContractGoal()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public BehaviouralContractGoal (string resourceType = "BehaviouralContractGoal", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<BehaviouralContractGoal> query (SimpleQuery query = null)
+        public BehaviouralContractGoal(string resourceType = "BehaviouralContractGoal", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("BehaviouralContractGoal");
-        	RestGateway gateway = (RestGateway) BehaviouralContractGoal.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<BehaviouralContractGoal> behaviouralcontractgoalCollection = new ModelCollection<BehaviouralContractGoal> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    behaviouralcontractgoalCollection.add((BehaviouralContractGoal) model);
-        	}
-        
-        	return behaviouralcontractgoalCollection;
+
         }
 
-        public static BehaviouralContractGoal retrieve (string id)
+
+        public static ModelCollection<BehaviouralContractGoal> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) BehaviouralContractGoal.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (BehaviouralContractGoal) gateway.retrieve(ResourceType.BEHAVIOURAL_CONTRACT_GOAL, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("BehaviouralContractGoal");
+            RestGateway gateway = (RestGateway)BehaviouralContractGoal.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<BehaviouralContractGoal> behaviouralcontractgoalCollection = new ModelCollection<BehaviouralContractGoal>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                behaviouralcontractgoalCollection.add((BehaviouralContractGoal)model);
+            }
+
+            return behaviouralcontractgoalCollection;
         }
 
-        public BehaviouralContract getBehaviouralContract ()
+        public static BehaviouralContractGoal retrieve(string id)
         {
-            return (BehaviouralContract) this.getProperty("behaviouralContract");
+            RestGateway gateway = (RestGateway)BehaviouralContractGoal.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (BehaviouralContractGoal)gateway.retrieve(ResourceType.BEHAVIOURAL_CONTRACT_GOAL, id);
         }
 
-        public void setBehaviouralContract (BehaviouralContract behaviouralContract)
+        public BehaviouralContract getBehaviouralContract()
+        {
+            return (BehaviouralContract)this.getProperty("behaviouralContract");
+        }
+
+        public void setBehaviouralContract(BehaviouralContract behaviouralContract)
         {
             this.setProperty("behaviouralContract", behaviouralContract);
         }
 
-        public string getDescription ()
+        public string getDescription()
         {
             return this.getProperty("description").ToString();
         }
 
-        public void setDescription (string description)
+        public void setDescription(string description)
         {
             this.setProperty("description", description);
         }
 
-        public string getFrequency ()
+        public string getFrequency()
         {
             return this.getProperty("frequency").ToString();
         }
 
-        public void setFrequency (string frequency)
+        public void setFrequency(string frequency)
         {
             this.setProperty("frequency", frequency);
         }
 
-        public Behaviour getBehaviour ()
+        public Behaviour getBehaviour()
         {
-            return (Behaviour) this.getProperty("behaviour");
+            return (Behaviour)this.getProperty("behaviour");
         }
 
-        public void setBehaviour (Behaviour behaviour)
+        public void setBehaviour(Behaviour behaviour)
         {
             this.setProperty("behaviour", behaviour);
         }
