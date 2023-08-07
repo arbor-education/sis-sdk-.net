@@ -13,7 +13,7 @@ namespace Arbor.Api.Gateway
         ModelBase create(ModelBase model);
         ModelBase retrieve(string resource, string id);
         ModelBase update(ModelBase model);
-        HttpWebResponse delete(ModelBase model);
+        JObject delete(ModelBase model);
         ModelCollection<ModelBase> query(SimpleQuery query);
         ModelBase refresh(ModelBase model);
         object instantiateModel(string resourceType);
