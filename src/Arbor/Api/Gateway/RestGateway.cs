@@ -56,7 +56,7 @@ namespace Arbor.Api.Gateway
             hResource.Add(resourceRoot, arrayRepresentation);
             hBody.Add("request", hResource);
 
-            string body = JsonConvert.SerializeObject(hBody, Formatting.None);
+            string body = JsonConvert.SerializeObject(hBody, Formatting.None, new ArborJsonConverter());
 
             //Console.WriteLine(hBody.ToString());
             //Console.WriteLine(body);
