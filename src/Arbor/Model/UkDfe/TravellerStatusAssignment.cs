@@ -9,93 +9,96 @@ namespace Arbor.Model.UkDfe
 {
     public class TravellerStatusAssignment : ModelBase
     {
-        protected string resourceType = ResourceType.UK_DFE_TRAVELLER_STATUS_ASSIGNMENT;
+        protected new string resourceType = ResourceType.UK_DFE_TRAVELLER_STATUS_ASSIGNMENT;
         public const string TRAVELLER_STATUS = "travellerStatus";
         public const string STUDENT = "student";
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
         public const string INFORMATION_SOURCE = "informationSource";
 
-        public TravellerStatusAssignment ()
+        public TravellerStatusAssignment()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public TravellerStatusAssignment (string resourceType = "TravellerStatusAssignment", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<TravellerStatusAssignment> query (SimpleQuery query = null)
+        public TravellerStatusAssignment(string resourceType = "TravellerStatusAssignment", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("UkDfe_TravellerStatusAssignment");
-        	RestGateway gateway = (RestGateway) TravellerStatusAssignment.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<TravellerStatusAssignment> travellerstatusassignmentCollection = new ModelCollection<TravellerStatusAssignment> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    travellerstatusassignmentCollection.add((TravellerStatusAssignment) model);
-        	}
-        
-        	return travellerstatusassignmentCollection;
+
         }
 
-        public static TravellerStatusAssignment retrieve (string id)
+
+        public static ModelCollection<TravellerStatusAssignment> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) TravellerStatusAssignment.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (TravellerStatusAssignment) gateway.retrieve(ResourceType.UK_DFE_TRAVELLER_STATUS_ASSIGNMENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("UkDfe_TravellerStatusAssignment");
+            RestGateway gateway = (RestGateway)TravellerStatusAssignment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<TravellerStatusAssignment> travellerstatusassignmentCollection = new ModelCollection<TravellerStatusAssignment>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                travellerstatusassignmentCollection.add((TravellerStatusAssignment)model);
+            }
+
+            return travellerstatusassignmentCollection;
         }
 
-        public TravellerStatus getTravellerStatus ()
+        public static TravellerStatusAssignment retrieve(string id)
         {
-            return (TravellerStatus) this.getProperty("travellerStatus");
+            RestGateway gateway = (RestGateway)TravellerStatusAssignment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (TravellerStatusAssignment)gateway.retrieve(ResourceType.UK_DFE_TRAVELLER_STATUS_ASSIGNMENT, id);
         }
 
-        public void setTravellerStatus (TravellerStatus travellerStatus)
+        public TravellerStatus getTravellerStatus()
+        {
+            return (TravellerStatus)this.getProperty("travellerStatus");
+        }
+
+        public void setTravellerStatus(TravellerStatus travellerStatus)
         {
             this.setProperty("travellerStatus", travellerStatus);
         }
 
-        public Student getStudent ()
+        public Student getStudent()
         {
-            return (Student) this.getProperty("student");
+            return (Student)this.getProperty("student");
         }
 
-        public void setStudent (Student student)
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public DateTime getStartDate (){
+        public DateTime getStartDate()
+        {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate (){
+        public DateTime getEndDate()
+        {
             return Convert.ToDateTime(this.getProperty("endDate"));
-        }                                                  
+        }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }
 
-        public string getInformationSource ()
+        public string getInformationSource()
         {
             return this.getProperty("informationSource").ToString();
         }
 
-        public void setInformationSource (string informationSource)
+        public void setInformationSource(string informationSource)
         {
             this.setProperty("informationSource", informationSource);
         }

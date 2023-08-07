@@ -9,84 +9,85 @@ namespace Arbor.Model
 {
     public class NewReportCardText : ModelBase
     {
-        protected string resourceType = ResourceType.NEW_REPORT_CARD_TEXT;
+        protected new string resourceType = ResourceType.NEW_REPORT_CARD_TEXT;
         public const string NEW_REPORT_CARD_BATCH = "newReportCardBatch";
         public const string TITLE = "title";
         public const string POSITION = "position";
         public const string BODY = "body";
 
-        public NewReportCardText ()
+        public NewReportCardText()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public NewReportCardText (string resourceType = "NewReportCardText", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<NewReportCardText> query (SimpleQuery query = null)
+        public NewReportCardText(string resourceType = "NewReportCardText", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("NewReportCardText");
-        	RestGateway gateway = (RestGateway) NewReportCardText.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<NewReportCardText> newreportcardtextCollection = new ModelCollection<NewReportCardText> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    newreportcardtextCollection.add((NewReportCardText) model);
-        	}
-        
-        	return newreportcardtextCollection;
+
         }
 
-        public static NewReportCardText retrieve (string id)
+
+        public static ModelCollection<NewReportCardText> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) NewReportCardText.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (NewReportCardText) gateway.retrieve(ResourceType.NEW_REPORT_CARD_TEXT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("NewReportCardText");
+            RestGateway gateway = (RestGateway)NewReportCardText.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<NewReportCardText> newreportcardtextCollection = new ModelCollection<NewReportCardText>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                newreportcardtextCollection.add((NewReportCardText)model);
+            }
+
+            return newreportcardtextCollection;
         }
 
-        public NewReportCardBatch getNewReportCardBatch ()
+        public static NewReportCardText retrieve(string id)
         {
-            return (NewReportCardBatch) this.getProperty("newReportCardBatch");
+            RestGateway gateway = (RestGateway)NewReportCardText.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (NewReportCardText)gateway.retrieve(ResourceType.NEW_REPORT_CARD_TEXT, id);
         }
 
-        public void setNewReportCardBatch (NewReportCardBatch newReportCardBatch)
+        public NewReportCardBatch getNewReportCardBatch()
+        {
+            return (NewReportCardBatch)this.getProperty("newReportCardBatch");
+        }
+
+        public void setNewReportCardBatch(NewReportCardBatch newReportCardBatch)
         {
             this.setProperty("newReportCardBatch", newReportCardBatch);
         }
 
-        public string getTitle ()
+        public string getTitle()
         {
             return this.getProperty("title").ToString();
         }
 
-        public void setTitle (string title)
+        public void setTitle(string title)
         {
             this.setProperty("title", title);
         }
 
-        public string getPosition ()
+        public string getPosition()
         {
             return this.getProperty("position").ToString();
         }
 
-        public void setPosition (string position)
+        public void setPosition(string position)
         {
             this.setProperty("position", position);
         }
 
-        public string getBody ()
+        public string getBody()
         {
             return this.getProperty("body").ToString();
         }
 
-        public void setBody (string body)
+        public void setBody(string body)
         {
             this.setProperty("body", body);
         }

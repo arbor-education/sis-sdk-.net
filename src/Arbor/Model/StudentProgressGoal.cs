@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class StudentProgressGoal : ModelBase
     {
-        protected string resourceType = ResourceType.STUDENT_PROGRESS_GOAL;
+        protected new string resourceType = ResourceType.STUDENT_PROGRESS_GOAL;
         public const string STUDENT = "student";
         public const string ACADEMIC_YEAR = "academicYear";
         public const string ASSESSMENT = "assessment";
@@ -21,138 +21,139 @@ namespace Arbor.Model
         public const string STATISTICAL_GRADE_POINT_SCALE_VALUE = "statisticalGradePointScaleValue";
         public const string IS_CALCULATED_GRADE = "isCalculatedGrade";
 
-        public StudentProgressGoal ()
+        public StudentProgressGoal()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public StudentProgressGoal (string resourceType = "StudentProgressGoal", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<StudentProgressGoal> query (SimpleQuery query = null)
+        public StudentProgressGoal(string resourceType = "StudentProgressGoal", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("StudentProgressGoal");
-        	RestGateway gateway = (RestGateway) StudentProgressGoal.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<StudentProgressGoal> studentprogressgoalCollection = new ModelCollection<StudentProgressGoal> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    studentprogressgoalCollection.add((StudentProgressGoal) model);
-        	}
-        
-        	return studentprogressgoalCollection;
+
         }
 
-        public static StudentProgressGoal retrieve (string id)
+
+        public static ModelCollection<StudentProgressGoal> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) StudentProgressGoal.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (StudentProgressGoal) gateway.retrieve(ResourceType.STUDENT_PROGRESS_GOAL, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("StudentProgressGoal");
+            RestGateway gateway = (RestGateway)StudentProgressGoal.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<StudentProgressGoal> studentprogressgoalCollection = new ModelCollection<StudentProgressGoal>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                studentprogressgoalCollection.add((StudentProgressGoal)model);
+            }
+
+            return studentprogressgoalCollection;
         }
 
-        public Student getStudent ()
+        public static StudentProgressGoal retrieve(string id)
         {
-            return (Student) this.getProperty("student");
+            RestGateway gateway = (RestGateway)StudentProgressGoal.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (StudentProgressGoal)gateway.retrieve(ResourceType.STUDENT_PROGRESS_GOAL, id);
         }
 
-        public void setStudent (Student student)
+        public Student getStudent()
+        {
+            return (Student)this.getProperty("student");
+        }
+
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public AcademicYear getAcademicYear ()
+        public AcademicYear getAcademicYear()
         {
-            return (AcademicYear) this.getProperty("academicYear");
+            return (AcademicYear)this.getProperty("academicYear");
         }
 
-        public void setAcademicYear (AcademicYear academicYear)
+        public void setAcademicYear(AcademicYear academicYear)
         {
             this.setProperty("academicYear", academicYear);
         }
 
-        public Assessment getAssessment ()
+        public Assessment getAssessment()
         {
-            return (Assessment) this.getProperty("assessment");
+            return (Assessment)this.getProperty("assessment");
         }
 
-        public void setAssessment (Assessment assessment)
+        public void setAssessment(Assessment assessment)
         {
             this.setProperty("assessment", assessment);
         }
 
-        public string getGoalType ()
+        public string getGoalType()
         {
             return this.getProperty("goalType").ToString();
         }
 
-        public void setGoalType (string goalType)
+        public void setGoalType(string goalType)
         {
             this.setProperty("goalType", goalType);
         }
 
-        public Grade getGrade ()
+        public Grade getGrade()
         {
-            return (Grade) this.getProperty("grade");
+            return (Grade)this.getProperty("grade");
         }
 
-        public void setGrade (Grade grade)
+        public void setGrade(Grade grade)
         {
             this.setProperty("grade", grade);
         }
 
-        public ProgressMeasurementPeriod getProgressMeasurementPeriod ()
+        public ProgressMeasurementPeriod getProgressMeasurementPeriod()
         {
-            return (ProgressMeasurementPeriod) this.getProperty("progressMeasurementPeriod");
+            return (ProgressMeasurementPeriod)this.getProperty("progressMeasurementPeriod");
         }
 
-        public void setProgressMeasurementPeriod (ProgressMeasurementPeriod progressMeasurementPeriod)
+        public void setProgressMeasurementPeriod(ProgressMeasurementPeriod progressMeasurementPeriod)
         {
             this.setProperty("progressMeasurementPeriod", progressMeasurementPeriod);
         }
 
-        public float getLowerGradePointScaleValue ()
+        public float getLowerGradePointScaleValue()
         {
-            return (float) this.getProperty("lowerGradePointScaleValue");
+            return (float)this.getProperty("lowerGradePointScaleValue");
         }
 
-        public void setLowerGradePointScaleValue (float lowerGradePointScaleValue)
+        public void setLowerGradePointScaleValue(float lowerGradePointScaleValue)
         {
             this.setProperty("lowerGradePointScaleValue", lowerGradePointScaleValue);
         }
 
-        public float getUpperGradePointScaleValue ()
+        public float getUpperGradePointScaleValue()
         {
-            return (float) this.getProperty("upperGradePointScaleValue");
+            return (float)this.getProperty("upperGradePointScaleValue");
         }
 
-        public void setUpperGradePointScaleValue (float upperGradePointScaleValue)
+        public void setUpperGradePointScaleValue(float upperGradePointScaleValue)
         {
             this.setProperty("upperGradePointScaleValue", upperGradePointScaleValue);
         }
 
-        public float getStatisticalGradePointScaleValue ()
+        public float getStatisticalGradePointScaleValue()
         {
-            return (float) this.getProperty("statisticalGradePointScaleValue");
+            return (float)this.getProperty("statisticalGradePointScaleValue");
         }
 
-        public void setStatisticalGradePointScaleValue (float statisticalGradePointScaleValue)
+        public void setStatisticalGradePointScaleValue(float statisticalGradePointScaleValue)
         {
             this.setProperty("statisticalGradePointScaleValue", statisticalGradePointScaleValue);
         }
 
-        public bool getIsCalculatedGrade ()
+        public bool getIsCalculatedGrade()
         {
             return Convert.ToBoolean(this.getProperty("isCalculatedGrade"));
         }
 
-        public void setIsCalculatedGrade (bool isCalculatedGrade)
+        public void setIsCalculatedGrade(bool isCalculatedGrade)
         {
             this.setProperty("isCalculatedGrade", isCalculatedGrade);
         }

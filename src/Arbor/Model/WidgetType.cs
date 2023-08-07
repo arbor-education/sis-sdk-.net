@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string WIDGET_TYPE_IDENTIFIER = "widgetTypeIdentifier";
         public const string WIDGET_TYPE_NAME = "widgetTypeName";
 
-        public WidgetType ()
+        public WidgetType()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public WidgetType (string resourceType = "WidgetType", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<WidgetType> query (SimpleQuery query = null)
+        public WidgetType(string resourceType = "WidgetType", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("WidgetType");
-        	RestGateway gateway = (RestGateway) WidgetType.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<WidgetType> widgettypeCollection = new ModelCollection<WidgetType> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    widgettypeCollection.add((WidgetType) model);
-        	}
-        
-        	return widgettypeCollection;
+
         }
 
-        public static WidgetType retrieve (string id)
+
+        public static ModelCollection<WidgetType> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) WidgetType.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (WidgetType) gateway.retrieve(ResourceType.WIDGET_TYPE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("WidgetType");
+            RestGateway gateway = (RestGateway)WidgetType.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<WidgetType> widgettypeCollection = new ModelCollection<WidgetType>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                widgettypeCollection.add((WidgetType)model);
+            }
+
+            return widgettypeCollection;
         }
 
-        public string getWidgetTypeIdentifier ()
+        public static WidgetType retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)WidgetType.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (WidgetType)gateway.retrieve(ResourceType.WIDGET_TYPE, id);
+        }
+
+        public string getWidgetTypeIdentifier()
         {
             return this.getProperty("widgetTypeIdentifier").ToString();
         }
 
-        public void setWidgetTypeIdentifier (string widgetTypeIdentifier)
+        public void setWidgetTypeIdentifier(string widgetTypeIdentifier)
         {
             this.setProperty("widgetTypeIdentifier", widgetTypeIdentifier);
         }
 
-        public string getWidgetTypeName ()
+        public string getWidgetTypeName()
         {
             return this.getProperty("widgetTypeName").ToString();
         }
 
-        public void setWidgetTypeName (string widgetTypeName)
+        public void setWidgetTypeName(string widgetTypeName)
         {
             this.setProperty("widgetTypeName", widgetTypeName);
         }

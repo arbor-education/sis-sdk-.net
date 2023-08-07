@@ -18,108 +18,109 @@ namespace Arbor.Model
         public const string STATISTICAL_GRADE_POINT_SCALE_VALUE = "statisticalGradePointScaleValue";
         public const string RECORDED_DATE = "recordedDate";
 
-        public PredictedFinalAssessmentMark ()
+        public PredictedFinalAssessmentMark()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public PredictedFinalAssessmentMark (string resourceType = "PredictedFinalAssessmentMark", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<PredictedFinalAssessmentMark> query (SimpleQuery query = null)
+        public PredictedFinalAssessmentMark(string resourceType = "PredictedFinalAssessmentMark", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("PredictedFinalAssessmentMark");
-        	RestGateway gateway = (RestGateway) PredictedFinalAssessmentMark.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<PredictedFinalAssessmentMark> predictedfinalassessmentmarkCollection = new ModelCollection<PredictedFinalAssessmentMark> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    predictedfinalassessmentmarkCollection.add((PredictedFinalAssessmentMark) model);
-        	}
-        
-        	return predictedfinalassessmentmarkCollection;
+
         }
 
-        public static PredictedFinalAssessmentMark retrieve (string id)
+
+        public static ModelCollection<PredictedFinalAssessmentMark> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) PredictedFinalAssessmentMark.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (PredictedFinalAssessmentMark) gateway.retrieve(ResourceType.PREDICTED_FINAL_ASSESSMENT_MARK, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("PredictedFinalAssessmentMark");
+            RestGateway gateway = (RestGateway)PredictedFinalAssessmentMark.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<PredictedFinalAssessmentMark> predictedfinalassessmentmarkCollection = new ModelCollection<PredictedFinalAssessmentMark>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                predictedfinalassessmentmarkCollection.add((PredictedFinalAssessmentMark)model);
+            }
+
+            return predictedfinalassessmentmarkCollection;
         }
 
-        public Student getStudent ()
+        public static PredictedFinalAssessmentMark retrieve(string id)
         {
-            return (Student) this.getProperty("student");
+            RestGateway gateway = (RestGateway)PredictedFinalAssessmentMark.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (PredictedFinalAssessmentMark)gateway.retrieve(ResourceType.PREDICTED_FINAL_ASSESSMENT_MARK, id);
         }
 
-        public void setStudent (Student student)
+        public Student getStudent()
+        {
+            return (Student)this.getProperty("student");
+        }
+
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public Assessment getAssessment ()
+        public Assessment getAssessment()
         {
-            return (Assessment) this.getProperty("assessment");
+            return (Assessment)this.getProperty("assessment");
         }
 
-        public void setAssessment (Assessment assessment)
+        public void setAssessment(Assessment assessment)
         {
             this.setProperty("assessment", assessment);
         }
 
-        public Grade getGrade ()
+        public Grade getGrade()
         {
-            return (Grade) this.getProperty("grade");
+            return (Grade)this.getProperty("grade");
         }
 
-        public void setGrade (Grade grade)
+        public void setGrade(Grade grade)
         {
             this.setProperty("grade", grade);
         }
 
-        public float getLowerGradePointScaleValue ()
+        public float getLowerGradePointScaleValue()
         {
-            return (float) this.getProperty("lowerGradePointScaleValue");
+            return (float)this.getProperty("lowerGradePointScaleValue");
         }
 
-        public void setLowerGradePointScaleValue (float lowerGradePointScaleValue)
+        public void setLowerGradePointScaleValue(float lowerGradePointScaleValue)
         {
             this.setProperty("lowerGradePointScaleValue", lowerGradePointScaleValue);
         }
 
-        public float getUpperGradePointScaleValue ()
+        public float getUpperGradePointScaleValue()
         {
-            return (float) this.getProperty("upperGradePointScaleValue");
+            return (float)this.getProperty("upperGradePointScaleValue");
         }
 
-        public void setUpperGradePointScaleValue (float upperGradePointScaleValue)
+        public void setUpperGradePointScaleValue(float upperGradePointScaleValue)
         {
             this.setProperty("upperGradePointScaleValue", upperGradePointScaleValue);
         }
 
-        public float getStatisticalGradePointScaleValue ()
+        public float getStatisticalGradePointScaleValue()
         {
-            return (float) this.getProperty("statisticalGradePointScaleValue");
+            return (float)this.getProperty("statisticalGradePointScaleValue");
         }
 
-        public void setStatisticalGradePointScaleValue (float statisticalGradePointScaleValue)
+        public void setStatisticalGradePointScaleValue(float statisticalGradePointScaleValue)
         {
             this.setProperty("statisticalGradePointScaleValue", statisticalGradePointScaleValue);
         }
 
-        public DateTime getRecordedDate ()
+        public DateTime getRecordedDate()
         {
             return Convert.ToDateTime(this.getProperty("recordedDate"));
         }
 
-        public void setRecordedDate (DateTime recordedDate)
+        public void setRecordedDate(DateTime recordedDate)
         {
             this.setProperty("recordedDate", recordedDate);
         }

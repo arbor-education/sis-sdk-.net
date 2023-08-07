@@ -9,62 +9,63 @@ namespace Arbor.Model
 {
     public class TripEligibility : ModelBase
     {
-        protected string resourceType = ResourceType.TRIP_ELIGIBILITY;
+        protected new string resourceType = ResourceType.TRIP_ELIGIBILITY;
         public const string TRIP = "trip";
         public const string ELIGIBILE = "eligibile";
 
-        public TripEligibility ()
+        public TripEligibility()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public TripEligibility (string resourceType = "TripEligibility", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<TripEligibility> query (SimpleQuery query = null)
+        public TripEligibility(string resourceType = "TripEligibility", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("TripEligibility");
-        	RestGateway gateway = (RestGateway) TripEligibility.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<TripEligibility> tripeligibilityCollection = new ModelCollection<TripEligibility> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    tripeligibilityCollection.add((TripEligibility) model);
-        	}
-        
-        	return tripeligibilityCollection;
+
         }
 
-        public static TripEligibility retrieve (string id)
+
+        public static ModelCollection<TripEligibility> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) TripEligibility.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (TripEligibility) gateway.retrieve(ResourceType.TRIP_ELIGIBILITY, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("TripEligibility");
+            RestGateway gateway = (RestGateway)TripEligibility.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<TripEligibility> tripeligibilityCollection = new ModelCollection<TripEligibility>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                tripeligibilityCollection.add((TripEligibility)model);
+            }
+
+            return tripeligibilityCollection;
         }
 
-        public Trip getTrip ()
+        public static TripEligibility retrieve(string id)
         {
-            return (Trip) this.getProperty("trip");
+            RestGateway gateway = (RestGateway)TripEligibility.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (TripEligibility)gateway.retrieve(ResourceType.TRIP_ELIGIBILITY, id);
         }
 
-        public void setTrip (Trip trip)
+        public Trip getTrip()
+        {
+            return (Trip)this.getProperty("trip");
+        }
+
+        public void setTrip(Trip trip)
         {
             this.setProperty("trip", trip);
         }
 
-        public ModelBase getEligibile ()
+        public ModelBase getEligibile()
         {
-            return (ModelBase) this.getProperty("eligibile");
+            return (ModelBase)this.getProperty("eligibile");
         }
 
-        public void setEligibile (ModelBase eligibile)
+        public void setEligibile(ModelBase eligibile)
         {
             this.setProperty("eligibile", eligibile);
         }

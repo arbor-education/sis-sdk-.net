@@ -9,62 +9,63 @@ namespace Arbor.Model
 {
     public class QualificationElementDisallowedCombination : ModelBase
     {
-        protected string resourceType = ResourceType.QUALIFICATION_ELEMENT_DISALLOWED_COMBINATION;
+        protected new string resourceType = ResourceType.QUALIFICATION_ELEMENT_DISALLOWED_COMBINATION;
         public const string FIRST_ELEMENT = "firstElement";
         public const string SECOND_ELEMENT = "secondElement";
 
-        public QualificationElementDisallowedCombination ()
+        public QualificationElementDisallowedCombination()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public QualificationElementDisallowedCombination (string resourceType = "QualificationElementDisallowedCombination", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<QualificationElementDisallowedCombination> query (SimpleQuery query = null)
+        public QualificationElementDisallowedCombination(string resourceType = "QualificationElementDisallowedCombination", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("QualificationElementDisallowedCombination");
-        	RestGateway gateway = (RestGateway) QualificationElementDisallowedCombination.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<QualificationElementDisallowedCombination> qualificationelementdisallowedcombinationCollection = new ModelCollection<QualificationElementDisallowedCombination> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    qualificationelementdisallowedcombinationCollection.add((QualificationElementDisallowedCombination) model);
-        	}
-        
-        	return qualificationelementdisallowedcombinationCollection;
+
         }
 
-        public static QualificationElementDisallowedCombination retrieve (string id)
+
+        public static ModelCollection<QualificationElementDisallowedCombination> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) QualificationElementDisallowedCombination.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (QualificationElementDisallowedCombination) gateway.retrieve(ResourceType.QUALIFICATION_ELEMENT_DISALLOWED_COMBINATION, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("QualificationElementDisallowedCombination");
+            RestGateway gateway = (RestGateway)QualificationElementDisallowedCombination.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<QualificationElementDisallowedCombination> qualificationelementdisallowedcombinationCollection = new ModelCollection<QualificationElementDisallowedCombination>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                qualificationelementdisallowedcombinationCollection.add((QualificationElementDisallowedCombination)model);
+            }
+
+            return qualificationelementdisallowedcombinationCollection;
         }
 
-        public ModelBase getFirstElement ()
+        public static QualificationElementDisallowedCombination retrieve(string id)
         {
-            return (ModelBase) this.getProperty("firstElement");
+            RestGateway gateway = (RestGateway)QualificationElementDisallowedCombination.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (QualificationElementDisallowedCombination)gateway.retrieve(ResourceType.QUALIFICATION_ELEMENT_DISALLOWED_COMBINATION, id);
         }
 
-        public void setFirstElement (ModelBase firstElement)
+        public ModelBase getFirstElement()
+        {
+            return (ModelBase)this.getProperty("firstElement");
+        }
+
+        public void setFirstElement(ModelBase firstElement)
         {
             this.setProperty("firstElement", firstElement);
         }
 
-        public ModelBase getSecondElement ()
+        public ModelBase getSecondElement()
         {
-            return (ModelBase) this.getProperty("secondElement");
+            return (ModelBase)this.getProperty("secondElement");
         }
 
-        public void setSecondElement (ModelBase secondElement)
+        public void setSecondElement(ModelBase secondElement)
         {
             this.setProperty("secondElement", secondElement);
         }

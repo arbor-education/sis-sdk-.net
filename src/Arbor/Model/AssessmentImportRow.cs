@@ -9,8 +9,7 @@ namespace Arbor.Model
 {
     public class AssessmentImportRow : ModelBase
     {
-        protected string resourceType = ResourceType.ASSESSMENT_IMPORT_ROW;
-        public const string ASSESSMENT_IMPORT_JOB = "assessmentImportJob";
+        protected new string resourceType = ResourceType.ASSESSMENT_IMPORT_ROW;
         public const string MAPPED_STUDENT = "mappedStudent";
 
         public AssessmentImportRow ()
@@ -47,16 +46,6 @@ namespace Arbor.Model
             RestGateway gateway = (RestGateway) AssessmentImportRow.getDefaultGateway();
         	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
         	return (AssessmentImportRow) gateway.retrieve(ResourceType.ASSESSMENT_IMPORT_ROW, id);
-        }
-
-        public AssessmentImportJob getAssessmentImportJob ()
-        {
-            return (AssessmentImportJob) this.getProperty("assessmentImportJob");
-        }
-
-        public void setAssessmentImportJob (AssessmentImportJob assessmentImportJob)
-        {
-            this.setProperty("assessmentImportJob", assessmentImportJob);
         }
 
         public Student getMappedStudent ()

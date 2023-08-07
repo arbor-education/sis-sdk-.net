@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ClubMembershipPeriod : ModelBase
     {
-        protected string resourceType = ResourceType.CLUB_MEMBERSHIP_PERIOD;
+        protected new string resourceType = ResourceType.CLUB_MEMBERSHIP_PERIOD;
         public const string CLUB = "club";
         public const string NAME = "name";
         public const string PURCHASE_START_DATE = "purchaseStartDate";
@@ -18,108 +18,109 @@ namespace Arbor.Model
         public const string GUARDIAN_SIGNUP_START_DATETIME = "guardianSignupStartDatetime";
         public const string GUARDIAN_SIGNUP_END_DATETIME = "guardianSignupEndDatetime";
 
-        public ClubMembershipPeriod ()
+        public ClubMembershipPeriod()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public ClubMembershipPeriod (string resourceType = "ClubMembershipPeriod", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<ClubMembershipPeriod> query (SimpleQuery query = null)
+        public ClubMembershipPeriod(string resourceType = "ClubMembershipPeriod", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("ClubMembershipPeriod");
-        	RestGateway gateway = (RestGateway) ClubMembershipPeriod.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<ClubMembershipPeriod> clubmembershipperiodCollection = new ModelCollection<ClubMembershipPeriod> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    clubmembershipperiodCollection.add((ClubMembershipPeriod) model);
-        	}
-        
-        	return clubmembershipperiodCollection;
+
         }
 
-        public static ClubMembershipPeriod retrieve (string id)
+
+        public static ModelCollection<ClubMembershipPeriod> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) ClubMembershipPeriod.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (ClubMembershipPeriod) gateway.retrieve(ResourceType.CLUB_MEMBERSHIP_PERIOD, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("ClubMembershipPeriod");
+            RestGateway gateway = (RestGateway)ClubMembershipPeriod.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<ClubMembershipPeriod> clubmembershipperiodCollection = new ModelCollection<ClubMembershipPeriod>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                clubmembershipperiodCollection.add((ClubMembershipPeriod)model);
+            }
+
+            return clubmembershipperiodCollection;
         }
 
-        public Club getClub ()
+        public static ClubMembershipPeriod retrieve(string id)
         {
-            return (Club) this.getProperty("club");
+            RestGateway gateway = (RestGateway)ClubMembershipPeriod.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (ClubMembershipPeriod)gateway.retrieve(ResourceType.CLUB_MEMBERSHIP_PERIOD, id);
         }
 
-        public void setClub (Club club)
+        public Club getClub()
+        {
+            return (Club)this.getProperty("club");
+        }
+
+        public void setClub(Club club)
         {
             this.setProperty("club", club);
         }
 
-        public string getName ()
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }
 
-        public DateTime getPurchaseStartDate ()
+        public DateTime getPurchaseStartDate()
         {
             return Convert.ToDateTime(this.getProperty("purchaseStartDate"));
         }
 
-        public void setPurchaseStartDate (DateTime purchaseStartDate)
+        public void setPurchaseStartDate(DateTime purchaseStartDate)
         {
             this.setProperty("purchaseStartDate", purchaseStartDate);
         }
 
-        public DateTime getPurchaseEndDate ()
+        public DateTime getPurchaseEndDate()
         {
             return Convert.ToDateTime(this.getProperty("purchaseEndDate"));
         }
 
-        public void setPurchaseEndDate (DateTime purchaseEndDate)
+        public void setPurchaseEndDate(DateTime purchaseEndDate)
         {
             this.setProperty("purchaseEndDate", purchaseEndDate);
         }
 
-        public string getMembershipPeriodType ()
+        public string getMembershipPeriodType()
         {
             return this.getProperty("membershipPeriodType").ToString();
         }
 
-        public void setMembershipPeriodType (string membershipPeriodType)
+        public void setMembershipPeriodType(string membershipPeriodType)
         {
             this.setProperty("membershipPeriodType", membershipPeriodType);
         }
 
-        public DateTime getGuardianSignupStartDatetime ()
+        public DateTime getGuardianSignupStartDatetime()
         {
             return Convert.ToDateTime(this.getProperty("guardianSignupStartDatetime"));
         }
 
-        public void setGuardianSignupStartDatetime (DateTime guardianSignupStartDatetime)
+        public void setGuardianSignupStartDatetime(DateTime guardianSignupStartDatetime)
         {
             this.setProperty("guardianSignupStartDatetime", guardianSignupStartDatetime);
         }
 
-        public DateTime getGuardianSignupEndDatetime ()
+        public DateTime getGuardianSignupEndDatetime()
         {
             return Convert.ToDateTime(this.getProperty("guardianSignupEndDatetime"));
         }
 
-        public void setGuardianSignupEndDatetime (DateTime guardianSignupEndDatetime)
+        public void setGuardianSignupEndDatetime(DateTime guardianSignupEndDatetime)
         {
             this.setProperty("guardianSignupEndDatetime", guardianSignupEndDatetime);
         }

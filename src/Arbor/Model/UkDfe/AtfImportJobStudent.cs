@@ -30,226 +30,229 @@ namespace Arbor.Model.UkDfe
         public const string SCHOOL_HISTORY_PROCESSED = "schoolHistoryProcessed";
         public const string IMPORT_ERRORS = "importErrors";
 
-        public AtfImportJobStudent ()
+        public AtfImportJobStudent()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AtfImportJobStudent (string resourceType = "AtfImportJobStudent", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AtfImportJobStudent> query (SimpleQuery query = null)
+        public AtfImportJobStudent(string resourceType = "AtfImportJobStudent", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("UkDfe_AtfImportJobStudent");
-        	RestGateway gateway = (RestGateway) AtfImportJobStudent.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AtfImportJobStudent> atfimportjobstudentCollection = new ModelCollection<AtfImportJobStudent> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    atfimportjobstudentCollection.add((AtfImportJobStudent) model);
-        	}
-        
-        	return atfimportjobstudentCollection;
+
         }
 
-        public static AtfImportJobStudent retrieve (string id)
+
+        public static ModelCollection<AtfImportJobStudent> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AtfImportJobStudent.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AtfImportJobStudent) gateway.retrieve(ResourceType.UK_DFE_ATF_IMPORT_JOB_STUDENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("UkDfe_AtfImportJobStudent");
+            RestGateway gateway = (RestGateway)AtfImportJobStudent.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AtfImportJobStudent> atfimportjobstudentCollection = new ModelCollection<AtfImportJobStudent>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                atfimportjobstudentCollection.add((AtfImportJobStudent)model);
+            }
+
+            return atfimportjobstudentCollection;
         }
 
-        public AtfImportJob getAtfImportJob ()
+        public static AtfImportJobStudent retrieve(string id)
         {
-            return (AtfImportJob) this.getProperty("atfImportJob");
+            RestGateway gateway = (RestGateway)AtfImportJobStudent.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AtfImportJobStudent)gateway.retrieve(ResourceType.UK_DFE_ATF_IMPORT_JOB_STUDENT, id);
         }
 
-        public void setAtfImportJob (AtfImportJob atfImportJob)
+        public AtfImportJob getAtfImportJob()
+        {
+            return (AtfImportJob)this.getProperty("atfImportJob");
+        }
+
+        public void setAtfImportJob(AtfImportJob atfImportJob)
         {
             this.setProperty("atfImportJob", atfImportJob);
         }
 
-        public string getFirstName ()
+        public string getFirstName()
         {
             return this.getProperty("firstName").ToString();
         }
 
-        public void setFirstName (string firstName)
+        public void setFirstName(string firstName)
         {
             this.setProperty("firstName", firstName);
         }
 
-        public string getLastName ()
+        public string getLastName()
         {
             return this.getProperty("lastName").ToString();
         }
 
-        public void setLastName (string lastName)
+        public void setLastName(string lastName)
         {
             this.setProperty("lastName", lastName);
         }
 
-        public DateTime getDateOfBirth (){
+        public DateTime getDateOfBirth()
+        {
             return Convert.ToDateTime(this.getProperty("dateOfBirth"));
         }
 
-        public void setDateOfBirth (DateTime dateOfBirth)
+        public void setDateOfBirth(DateTime dateOfBirth)
         {
             this.setProperty("dateOfBirth", dateOfBirth);
         }
 
-        public Gender getGender ()
+        public Gender getGender()
         {
-            return (Gender) this.getProperty("gender");
+            return (Gender)this.getProperty("gender");
         }
 
-        public void setGender (Gender gender)
+        public void setGender(Gender gender)
         {
             this.setProperty("gender", gender);
         }
 
-        public string getApplicationReference ()
+        public string getApplicationReference()
         {
             return this.getProperty("applicationReference").ToString();
         }
 
-        public void setApplicationReference (string applicationReference)
+        public void setApplicationReference(string applicationReference)
         {
             this.setProperty("applicationReference", applicationReference);
         }
 
-        public string getUpn ()
+        public string getUpn()
         {
             return this.getProperty("upn").ToString();
         }
 
-        public void setUpn (string upn)
+        public void setUpn(string upn)
         {
             this.setProperty("upn", upn);
         }
 
-        public string getUniqueLearnerNumber ()
+        public string getUniqueLearnerNumber()
         {
             return this.getProperty("uniqueLearnerNumber").ToString();
         }
 
-        public void setUniqueLearnerNumber (string uniqueLearnerNumber)
+        public void setUniqueLearnerNumber(string uniqueLearnerNumber)
         {
             this.setProperty("uniqueLearnerNumber", uniqueLearnerNumber);
         }
 
-        public string getUniqueCandidateIdentifier ()
+        public string getUniqueCandidateIdentifier()
         {
             return this.getProperty("uniqueCandidateIdentifier").ToString();
         }
 
-        public void setUniqueCandidateIdentifier (string uniqueCandidateIdentifier)
+        public void setUniqueCandidateIdentifier(string uniqueCandidateIdentifier)
         {
             this.setProperty("uniqueCandidateIdentifier", uniqueCandidateIdentifier);
         }
 
-        public Student getStudent ()
+        public Student getStudent()
         {
-            return (Student) this.getProperty("student");
+            return (Student)this.getProperty("student");
         }
 
-        public void setStudent (Student student)
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public DateTime getImportDatetime (){
+        public DateTime getImportDatetime()
+        {
             return Convert.ToDateTime(this.getProperty("importDatetime"));
         }
 
-        public void setImportDatetime (DateTime importDatetime)
+        public void setImportDatetime(DateTime importDatetime)
         {
             this.setProperty("importDatetime", importDatetime);
         }
 
-        public bool getBasicDetailsProcessed ()
+        public bool getBasicDetailsProcessed()
         {
-            return (bool) this.getProperty("basicDetailsProcessed");
+            return (bool)this.getProperty("basicDetailsProcessed");
         }
 
-        public void setBasicDetailsProcessed (bool basicDetailsProcessed)
+        public void setBasicDetailsProcessed(bool basicDetailsProcessed)
         {
             this.setProperty("basicDetailsProcessed", basicDetailsProcessed);
         }
 
-        public bool getFsmHistoryProcessed ()
+        public bool getFsmHistoryProcessed()
         {
-            return (bool) this.getProperty("fsmHistoryProcessed");
+            return (bool)this.getProperty("fsmHistoryProcessed");
         }
 
-        public void setFsmHistoryProcessed (bool fsmHistoryProcessed)
+        public void setFsmHistoryProcessed(bool fsmHistoryProcessed)
         {
             this.setProperty("fsmHistoryProcessed", fsmHistoryProcessed);
         }
 
-        public bool getLookedAfterProcessed ()
+        public bool getLookedAfterProcessed()
         {
-            return (bool) this.getProperty("lookedAfterProcessed");
+            return (bool)this.getProperty("lookedAfterProcessed");
         }
 
-        public void setLookedAfterProcessed (bool lookedAfterProcessed)
+        public void setLookedAfterProcessed(bool lookedAfterProcessed)
         {
             this.setProperty("lookedAfterProcessed", lookedAfterProcessed);
         }
 
-        public bool getSenHistoryProcessed ()
+        public bool getSenHistoryProcessed()
         {
-            return (bool) this.getProperty("senHistoryProcessed");
+            return (bool)this.getProperty("senHistoryProcessed");
         }
 
-        public void setSenHistoryProcessed (bool senHistoryProcessed)
+        public void setSenHistoryProcessed(bool senHistoryProcessed)
         {
             this.setProperty("senHistoryProcessed", senHistoryProcessed);
         }
 
-        public bool getAddressProcessed ()
+        public bool getAddressProcessed()
         {
-            return (bool) this.getProperty("addressProcessed");
+            return (bool)this.getProperty("addressProcessed");
         }
 
-        public void setAddressProcessed (bool addressProcessed)
+        public void setAddressProcessed(bool addressProcessed)
         {
             this.setProperty("addressProcessed", addressProcessed);
         }
 
-        public bool getContactsProcessed ()
+        public bool getContactsProcessed()
         {
-            return (bool) this.getProperty("contactsProcessed");
+            return (bool)this.getProperty("contactsProcessed");
         }
 
-        public void setContactsProcessed (bool contactsProcessed)
+        public void setContactsProcessed(bool contactsProcessed)
         {
             this.setProperty("contactsProcessed", contactsProcessed);
         }
 
-        public bool getSchoolHistoryProcessed ()
+        public bool getSchoolHistoryProcessed()
         {
-            return (bool) this.getProperty("schoolHistoryProcessed");
+            return (bool)this.getProperty("schoolHistoryProcessed");
         }
 
-        public void setSchoolHistoryProcessed (bool schoolHistoryProcessed)
+        public void setSchoolHistoryProcessed(bool schoolHistoryProcessed)
         {
             this.setProperty("schoolHistoryProcessed", schoolHistoryProcessed);
         }
 
-        public string getImportErrors ()
+        public string getImportErrors()
         {
             return this.getProperty("importErrors").ToString();
         }
 
-        public void setImportErrors (string importErrors)
+        public void setImportErrors(string importErrors)
         {
             this.setProperty("importErrors", importErrors);
         }

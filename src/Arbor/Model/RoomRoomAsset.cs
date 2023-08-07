@@ -9,73 +9,74 @@ namespace Arbor.Model
 {
     public class RoomRoomAsset : ModelBase
     {
-        protected string resourceType = ResourceType.ROOM_ROOM_ASSET;
+        protected new string resourceType = ResourceType.ROOM_ROOM_ASSET;
         public const string ROOM = "room";
         public const string ROOM_ASSET = "roomAsset";
         public const string QUANTITY = "quantity";
 
-        public RoomRoomAsset ()
+        public RoomRoomAsset()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public RoomRoomAsset (string resourceType = "RoomRoomAsset", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<RoomRoomAsset> query (SimpleQuery query = null)
+        public RoomRoomAsset(string resourceType = "RoomRoomAsset", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("RoomRoomAsset");
-        	RestGateway gateway = (RestGateway) RoomRoomAsset.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<RoomRoomAsset> roomroomassetCollection = new ModelCollection<RoomRoomAsset> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    roomroomassetCollection.add((RoomRoomAsset) model);
-        	}
-        
-        	return roomroomassetCollection;
+
         }
 
-        public static RoomRoomAsset retrieve (string id)
+
+        public static ModelCollection<RoomRoomAsset> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) RoomRoomAsset.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (RoomRoomAsset) gateway.retrieve(ResourceType.ROOM_ROOM_ASSET, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("RoomRoomAsset");
+            RestGateway gateway = (RestGateway)RoomRoomAsset.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<RoomRoomAsset> roomroomassetCollection = new ModelCollection<RoomRoomAsset>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                roomroomassetCollection.add((RoomRoomAsset)model);
+            }
+
+            return roomroomassetCollection;
         }
 
-        public Room getRoom ()
+        public static RoomRoomAsset retrieve(string id)
         {
-            return (Room) this.getProperty("room");
+            RestGateway gateway = (RestGateway)RoomRoomAsset.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (RoomRoomAsset)gateway.retrieve(ResourceType.ROOM_ROOM_ASSET, id);
         }
 
-        public void setRoom (Room room)
+        public Room getRoom()
+        {
+            return (Room)this.getProperty("room");
+        }
+
+        public void setRoom(Room room)
         {
             this.setProperty("room", room);
         }
 
-        public RoomAsset getRoomAsset ()
+        public RoomAsset getRoomAsset()
         {
-            return (RoomAsset) this.getProperty("roomAsset");
+            return (RoomAsset)this.getProperty("roomAsset");
         }
 
-        public void setRoomAsset (RoomAsset roomAsset)
+        public void setRoomAsset(RoomAsset roomAsset)
         {
             this.setProperty("roomAsset", roomAsset);
         }
 
-        public int getQuantity ()
+        public int getQuantity()
         {
             return Convert.ToInt32(this.getProperty("quantity"));
         }
 
-        public void setQuantity (int quantity)
+        public void setQuantity(int quantity)
         {
             this.setProperty("quantity", quantity);
         }

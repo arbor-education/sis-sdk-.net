@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class MealPattern : ModelBase
     {
-        protected string resourceType = ResourceType.MEAL_PATTERN;
+        protected new string resourceType = ResourceType.MEAL_PATTERN;
         public const string ATTENDEE = "attendee";
         public const string MEAL = "meal";
         public const string MEAL_SITTING = "mealSitting";
@@ -26,188 +26,189 @@ namespace Arbor.Model
         public const string MEAL_SITTING_AUTOMATIC_ATTENDEE_TARGET = "mealSittingAutomaticAttendeeTarget";
         public const string GROUP_MEMBERSHIP = "groupMembership";
 
-        public MealPattern ()
+        public MealPattern()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public MealPattern (string resourceType = "MealPattern", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<MealPattern> query (SimpleQuery query = null)
+        public MealPattern(string resourceType = "MealPattern", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("MealPattern");
-        	RestGateway gateway = (RestGateway) MealPattern.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<MealPattern> mealpatternCollection = new ModelCollection<MealPattern> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    mealpatternCollection.add((MealPattern) model);
-        	}
-        
-        	return mealpatternCollection;
+
         }
 
-        public static MealPattern retrieve (string id)
+
+        public static ModelCollection<MealPattern> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) MealPattern.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (MealPattern) gateway.retrieve(ResourceType.MEAL_PATTERN, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("MealPattern");
+            RestGateway gateway = (RestGateway)MealPattern.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<MealPattern> mealpatternCollection = new ModelCollection<MealPattern>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                mealpatternCollection.add((MealPattern)model);
+            }
+
+            return mealpatternCollection;
         }
 
-        public ModelBase getAttendee ()
+        public static MealPattern retrieve(string id)
         {
-            return (ModelBase) this.getProperty("attendee");
+            RestGateway gateway = (RestGateway)MealPattern.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (MealPattern)gateway.retrieve(ResourceType.MEAL_PATTERN, id);
         }
 
-        public void setAttendee (ModelBase attendee)
+        public ModelBase getAttendee()
+        {
+            return (ModelBase)this.getProperty("attendee");
+        }
+
+        public void setAttendee(ModelBase attendee)
         {
             this.setProperty("attendee", attendee);
         }
 
-        public Meal getMeal ()
+        public Meal getMeal()
         {
-            return (Meal) this.getProperty("meal");
+            return (Meal)this.getProperty("meal");
         }
 
-        public void setMeal (Meal meal)
+        public void setMeal(Meal meal)
         {
             this.setProperty("meal", meal);
         }
 
-        public MealSitting getMealSitting ()
+        public MealSitting getMealSitting()
         {
-            return (MealSitting) this.getProperty("mealSitting");
+            return (MealSitting)this.getProperty("mealSitting");
         }
 
-        public void setMealSitting (MealSitting mealSitting)
+        public void setMealSitting(MealSitting mealSitting)
         {
             this.setProperty("mealSitting", mealSitting);
         }
 
-        public bool getAppliesMonday ()
+        public bool getAppliesMonday()
         {
             return Convert.ToBoolean(this.getProperty("appliesMonday"));
         }
 
-        public void setAppliesMonday (bool appliesMonday)
+        public void setAppliesMonday(bool appliesMonday)
         {
             this.setProperty("appliesMonday", appliesMonday);
         }
 
-        public bool getAppliesTuesday ()
+        public bool getAppliesTuesday()
         {
             return Convert.ToBoolean(this.getProperty("appliesTuesday"));
         }
 
-        public void setAppliesTuesday (bool appliesTuesday)
+        public void setAppliesTuesday(bool appliesTuesday)
         {
             this.setProperty("appliesTuesday", appliesTuesday);
         }
 
-        public bool getAppliesWednesday ()
+        public bool getAppliesWednesday()
         {
             return Convert.ToBoolean(this.getProperty("appliesWednesday"));
         }
 
-        public void setAppliesWednesday (bool appliesWednesday)
+        public void setAppliesWednesday(bool appliesWednesday)
         {
             this.setProperty("appliesWednesday", appliesWednesday);
         }
 
-        public bool getAppliesThursday ()
+        public bool getAppliesThursday()
         {
             return Convert.ToBoolean(this.getProperty("appliesThursday"));
         }
 
-        public void setAppliesThursday (bool appliesThursday)
+        public void setAppliesThursday(bool appliesThursday)
         {
             this.setProperty("appliesThursday", appliesThursday);
         }
 
-        public bool getAppliesFriday ()
+        public bool getAppliesFriday()
         {
             return Convert.ToBoolean(this.getProperty("appliesFriday"));
         }
 
-        public void setAppliesFriday (bool appliesFriday)
+        public void setAppliesFriday(bool appliesFriday)
         {
             this.setProperty("appliesFriday", appliesFriday);
         }
 
-        public bool getAppliesSaturday ()
+        public bool getAppliesSaturday()
         {
             return Convert.ToBoolean(this.getProperty("appliesSaturday"));
         }
 
-        public void setAppliesSaturday (bool appliesSaturday)
+        public void setAppliesSaturday(bool appliesSaturday)
         {
             this.setProperty("appliesSaturday", appliesSaturday);
         }
 
-        public bool getAppliesSunday ()
+        public bool getAppliesSunday()
         {
             return Convert.ToBoolean(this.getProperty("appliesSunday"));
         }
 
-        public void setAppliesSunday (bool appliesSunday)
+        public void setAppliesSunday(bool appliesSunday)
         {
             this.setProperty("appliesSunday", appliesSunday);
         }
 
-        public int getDayOfCycle ()
+        public int getDayOfCycle()
         {
             return Convert.ToInt32(this.getProperty("dayOfCycle"));
         }
 
-        public void setDayOfCycle (int dayOfCycle)
+        public void setDayOfCycle(int dayOfCycle)
         {
             this.setProperty("dayOfCycle", dayOfCycle);
         }
 
-        public DateTime getEffectiveDate ()
+        public DateTime getEffectiveDate()
         {
             return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
-        public void setEffectiveDate (DateTime effectiveDate)
+        public void setEffectiveDate(DateTime effectiveDate)
         {
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }
 
-        public MealSittingAutomaticAttendeeTarget getMealSittingAutomaticAttendeeTarget ()
+        public MealSittingAutomaticAttendeeTarget getMealSittingAutomaticAttendeeTarget()
         {
-            return (MealSittingAutomaticAttendeeTarget) this.getProperty("mealSittingAutomaticAttendeeTarget");
+            return (MealSittingAutomaticAttendeeTarget)this.getProperty("mealSittingAutomaticAttendeeTarget");
         }
 
-        public void setMealSittingAutomaticAttendeeTarget (MealSittingAutomaticAttendeeTarget mealSittingAutomaticAttendeeTarget)
+        public void setMealSittingAutomaticAttendeeTarget(MealSittingAutomaticAttendeeTarget mealSittingAutomaticAttendeeTarget)
         {
             this.setProperty("mealSittingAutomaticAttendeeTarget", mealSittingAutomaticAttendeeTarget);
         }
 
-        public ModelBase getGroupMembership ()
+        public ModelBase getGroupMembership()
         {
-            return (ModelBase) this.getProperty("groupMembership");
+            return (ModelBase)this.getProperty("groupMembership");
         }
 
-        public void setGroupMembership (ModelBase groupMembership)
+        public void setGroupMembership(ModelBase groupMembership)
         {
             this.setProperty("groupMembership", groupMembership);
         }

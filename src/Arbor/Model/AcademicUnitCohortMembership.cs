@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
 
-        public AcademicUnitCohortMembership ()
+        public AcademicUnitCohortMembership()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AcademicUnitCohortMembership (string resourceType = "AcademicUnitCohortMembership", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AcademicUnitCohortMembership> query (SimpleQuery query = null)
+        public AcademicUnitCohortMembership(string resourceType = "AcademicUnitCohortMembership", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AcademicUnitCohortMembership");
-        	RestGateway gateway = (RestGateway) AcademicUnitCohortMembership.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AcademicUnitCohortMembership> academicunitcohortmembershipCollection = new ModelCollection<AcademicUnitCohortMembership> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    academicunitcohortmembershipCollection.add((AcademicUnitCohortMembership) model);
-        	}
-        
-        	return academicunitcohortmembershipCollection;
+
         }
 
-        public static AcademicUnitCohortMembership retrieve (string id)
+
+        public static ModelCollection<AcademicUnitCohortMembership> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AcademicUnitCohortMembership.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AcademicUnitCohortMembership) gateway.retrieve(ResourceType.ACADEMIC_UNIT_COHORT_MEMBERSHIP, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AcademicUnitCohortMembership");
+            RestGateway gateway = (RestGateway)AcademicUnitCohortMembership.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AcademicUnitCohortMembership> academicunitcohortmembershipCollection = new ModelCollection<AcademicUnitCohortMembership>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                academicunitcohortmembershipCollection.add((AcademicUnitCohortMembership)model);
+            }
+
+            return academicunitcohortmembershipCollection;
         }
 
-        public AcademicUnitCohort getAcademicUnitCohort ()
+        public static AcademicUnitCohortMembership retrieve(string id)
         {
-            return (AcademicUnitCohort) this.getProperty("academicUnitCohort");
+            RestGateway gateway = (RestGateway)AcademicUnitCohortMembership.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AcademicUnitCohortMembership)gateway.retrieve(ResourceType.ACADEMIC_UNIT_COHORT_MEMBERSHIP, id);
         }
 
-        public void setAcademicUnitCohort (AcademicUnitCohort academicUnitCohort)
+        public AcademicUnitCohort getAcademicUnitCohort()
+        {
+            return (AcademicUnitCohort)this.getProperty("academicUnitCohort");
+        }
+
+        public void setAcademicUnitCohort(AcademicUnitCohort academicUnitCohort)
         {
             this.setProperty("academicUnitCohort", academicUnitCohort);
         }
 
-        public Student getStudent ()
+        public Student getStudent()
         {
-            return (Student) this.getProperty("student");
+            return (Student)this.getProperty("student");
         }
 
-        public void setStudent (Student student)
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDate()
         {
-            return (DateTime) this.getProperty("startDate");
+            return (DateTime)this.getProperty("startDate");
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
-            return (DateTime) this.getProperty("endDate");
+            return (DateTime)this.getProperty("endDate");
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }

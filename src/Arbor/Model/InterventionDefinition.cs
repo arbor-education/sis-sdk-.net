@@ -16,88 +16,89 @@ namespace Arbor.Model
         public const string LOWEST_CURRICULUM_GRADE = "lowestCurriculumGrade";
         public const string HIGHEST_CURRICULUM_GRADE = "highestCurriculumGrade";
 
-        public InterventionDefinition ()
+        public InterventionDefinition()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public InterventionDefinition (string resourceType = "InterventionDefinition", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<InterventionDefinition> query (SimpleQuery query = null)
+        public InterventionDefinition(string resourceType = "InterventionDefinition", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("InterventionDefinition");
-        	RestGateway gateway = (RestGateway) InterventionDefinition.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<InterventionDefinition> interventiondefinitionCollection = new ModelCollection<InterventionDefinition> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    interventiondefinitionCollection.add((InterventionDefinition) model);
-        	}
-        
-        	return interventiondefinitionCollection;
+
         }
 
-        public static InterventionDefinition retrieve (string id)
+
+        public static ModelCollection<InterventionDefinition> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) InterventionDefinition.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (InterventionDefinition) gateway.retrieve(ResourceType.INTERVENTION_DEFINITION, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("InterventionDefinition");
+            RestGateway gateway = (RestGateway)InterventionDefinition.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<InterventionDefinition> interventiondefinitionCollection = new ModelCollection<InterventionDefinition>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                interventiondefinitionCollection.add((InterventionDefinition)model);
+            }
+
+            return interventiondefinitionCollection;
         }
 
-        public string getName ()
+        public static InterventionDefinition retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)InterventionDefinition.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (InterventionDefinition)gateway.retrieve(ResourceType.INTERVENTION_DEFINITION, id);
+        }
+
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }
 
-        public string getShortName ()
+        public string getShortName()
         {
             return this.getProperty("shortName").ToString();
         }
 
-        public void setShortName (string shortName)
+        public void setShortName(string shortName)
         {
             this.setProperty("shortName", shortName);
         }
 
-        public InterventionCategory getInterventionCategory ()
+        public InterventionCategory getInterventionCategory()
         {
-            return (InterventionCategory) this.getProperty("interventionCategory");
+            return (InterventionCategory)this.getProperty("interventionCategory");
         }
 
-        public void setInterventionCategory (InterventionCategory interventionCategory)
+        public void setInterventionCategory(InterventionCategory interventionCategory)
         {
             this.setProperty("interventionCategory", interventionCategory);
         }
 
-        public CurriculumGrade getLowestCurriculumGrade ()
+        public CurriculumGrade getLowestCurriculumGrade()
         {
-            return (CurriculumGrade) this.getProperty("lowestCurriculumGrade");
+            return (CurriculumGrade)this.getProperty("lowestCurriculumGrade");
         }
 
-        public void setLowestCurriculumGrade (CurriculumGrade lowestCurriculumGrade)
+        public void setLowestCurriculumGrade(CurriculumGrade lowestCurriculumGrade)
         {
             this.setProperty("lowestCurriculumGrade", lowestCurriculumGrade);
         }
 
-        public CurriculumGrade getHighestCurriculumGrade ()
+        public CurriculumGrade getHighestCurriculumGrade()
         {
-            return (CurriculumGrade) this.getProperty("highestCurriculumGrade");
+            return (CurriculumGrade)this.getProperty("highestCurriculumGrade");
         }
 
-        public void setHighestCurriculumGrade (CurriculumGrade highestCurriculumGrade)
+        public void setHighestCurriculumGrade(CurriculumGrade highestCurriculumGrade)
         {
             this.setProperty("highestCurriculumGrade", highestCurriculumGrade);
         }

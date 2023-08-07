@@ -9,117 +9,107 @@ namespace Arbor.Model
 {
     public class CustomerAccountRefund : ModelBase
     {
-        protected string resourceType = ResourceType.CUSTOMER_ACCOUNT_REFUND;
+        protected new string resourceType = ResourceType.CUSTOMER_ACCOUNT_REFUND;
         public const string CUSTOMER_ACCOUNT = "customerAccount";
         public const string REFUND_DATETIME = "refundDatetime";
         public const string REFUND = "refund";
         public const string TRANSACTION = "transaction";
-        public const string STRIPE_REFUND_TRANSACTION = "stripeRefundTransaction";
         public const string REFUND_SUCCEEDED_DATETIME = "refundSucceededDatetime";
         public const string REFUND_FAILED_DATETIME = "refundFailedDatetime";
 
-        public CustomerAccountRefund ()
+        public CustomerAccountRefund()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public CustomerAccountRefund (string resourceType = "CustomerAccountRefund", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<CustomerAccountRefund> query (SimpleQuery query = null)
+        public CustomerAccountRefund(string resourceType = "CustomerAccountRefund", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("CustomerAccountRefund");
-        	RestGateway gateway = (RestGateway) CustomerAccountRefund.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<CustomerAccountRefund> customeraccountrefundCollection = new ModelCollection<CustomerAccountRefund> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    customeraccountrefundCollection.add((CustomerAccountRefund) model);
-        	}
-        
-        	return customeraccountrefundCollection;
+
         }
 
-        public static CustomerAccountRefund retrieve (string id)
+
+        public static ModelCollection<CustomerAccountRefund> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) CustomerAccountRefund.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (CustomerAccountRefund) gateway.retrieve(ResourceType.CUSTOMER_ACCOUNT_REFUND, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("CustomerAccountRefund");
+            RestGateway gateway = (RestGateway)CustomerAccountRefund.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<CustomerAccountRefund> customeraccountrefundCollection = new ModelCollection<CustomerAccountRefund>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                customeraccountrefundCollection.add((CustomerAccountRefund)model);
+            }
+
+            return customeraccountrefundCollection;
         }
 
-        public CustomerAccount getCustomerAccount ()
+        public static CustomerAccountRefund retrieve(string id)
         {
-            return (CustomerAccount) this.getProperty("customerAccount");
+            RestGateway gateway = (RestGateway)CustomerAccountRefund.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (CustomerAccountRefund)gateway.retrieve(ResourceType.CUSTOMER_ACCOUNT_REFUND, id);
         }
 
-        public void setCustomerAccount (CustomerAccount customerAccount)
+        public CustomerAccount getCustomerAccount()
+        {
+            return (CustomerAccount)this.getProperty("customerAccount");
+        }
+
+        public void setCustomerAccount(CustomerAccount customerAccount)
         {
             this.setProperty("customerAccount", customerAccount);
         }
 
-        public DateTime getRefundDatetime ()
+        public DateTime getRefundDatetime()
         {
             return Convert.ToDateTime(this.getProperty("refundDatetime"));
         }
 
-        public void setRefundDatetime (DateTime refundDatetime)
+        public void setRefundDatetime(DateTime refundDatetime)
         {
             this.setProperty("refundDatetime", refundDatetime);
         }
 
-        public string getRefund ()
+        public string getRefund()
         {
             return this.getProperty("refund").ToString();
         }
 
-        public void setRefund (string refund)
+        public void setRefund(string refund)
         {
             this.setProperty("refund", refund);
         }
 
-        public ModelBase getTransaction ()
+        public ModelBase getTransaction()
         {
-            return (ModelBase) this.getProperty("transaction");
+            return (ModelBase)this.getProperty("transaction");
         }
 
-        public void setTransaction (ModelBase transaction)
+        public void setTransaction(ModelBase transaction)
         {
             this.setProperty("transaction", transaction);
         }
 
-        public StripeRefundTransaction getStripeRefundTransaction ()
-        {
-            return (StripeRefundTransaction) this.getProperty("stripeRefundTransaction");
-        }
-
-        public void setStripeRefundTransaction (StripeRefundTransaction stripeRefundTransaction)
-        {
-            this.setProperty("stripeRefundTransaction", stripeRefundTransaction);
-        }
-
-        public DateTime getRefundSucceededDatetime ()
+        public DateTime getRefundSucceededDatetime()
         {
             return Convert.ToDateTime(this.getProperty("refundSucceededDatetime"));
         }
 
-        public void setRefundSucceededDatetime (DateTime refundSucceededDatetime)
+        public void setRefundSucceededDatetime(DateTime refundSucceededDatetime)
         {
             this.setProperty("refundSucceededDatetime", refundSucceededDatetime);
         }
 
-        public DateTime getRefundFailedDatetime ()
+        public DateTime getRefundFailedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("refundFailedDatetime"));
         }
 
-        public void setRefundFailedDatetime (DateTime refundFailedDatetime)
+        public void setRefundFailedDatetime(DateTime refundFailedDatetime)
         {
             this.setProperty("refundFailedDatetime", refundFailedDatetime);
         }

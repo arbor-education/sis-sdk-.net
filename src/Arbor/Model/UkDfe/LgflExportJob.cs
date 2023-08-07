@@ -15,75 +15,79 @@ namespace Arbor.Model.UkDfe
         public const string ERROR_DATETIME = "errorDatetime";
         public const string ERROR_LOG = "errorLog";
 
-        public LgflExportJob ()
+        public LgflExportJob()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public LgflExportJob (string resourceType = "LgflExportJob", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<LgflExportJob> query (SimpleQuery query = null)
+        public LgflExportJob(string resourceType = "LgflExportJob", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("UkDfe_LgflExportJob");
-        	RestGateway gateway = (RestGateway) LgflExportJob.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<LgflExportJob> lgflexportjobCollection = new ModelCollection<LgflExportJob> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    lgflexportjobCollection.add((LgflExportJob) model);
-        	}
-        
-        	return lgflexportjobCollection;
+
         }
 
-        public static LgflExportJob retrieve (string id)
+
+        public static ModelCollection<LgflExportJob> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) LgflExportJob.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (LgflExportJob) gateway.retrieve(ResourceType.UK_DFE_LGFL_EXPORT_JOB, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("UkDfe_LgflExportJob");
+            RestGateway gateway = (RestGateway)LgflExportJob.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<LgflExportJob> lgflexportjobCollection = new ModelCollection<LgflExportJob>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                lgflexportjobCollection.add((LgflExportJob)model);
+            }
+
+            return lgflexportjobCollection;
         }
 
-        public DateTime getStartedDatetime (){
+        public static LgflExportJob retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)LgflExportJob.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (LgflExportJob)gateway.retrieve(ResourceType.UK_DFE_LGFL_EXPORT_JOB, id);
+        }
+
+        public DateTime getStartedDatetime()
+        {
             return Convert.ToDateTime(this.getProperty("startedDatetime"));
         }
 
-        public void setStartedDatetime (DateTime startedDatetime)
+        public void setStartedDatetime(DateTime startedDatetime)
         {
             this.setProperty("startedDatetime", startedDatetime);
         }
 
-        public DateTime getCompletedDatetime (){
+        public DateTime getCompletedDatetime()
+        {
             return Convert.ToDateTime(this.getProperty("completedDatetime"));
         }
 
-        public void setCompletedDatetime (DateTime completedDatetime)
+        public void setCompletedDatetime(DateTime completedDatetime)
         {
             this.setProperty("completedDatetime", completedDatetime);
         }
 
-        public DateTime getErrorDatetime (){
+        public DateTime getErrorDatetime()
+        {
             return Convert.ToDateTime(this.getProperty("errorDatetime"));
         }
 
-        public void setErrorDatetime (DateTime errorDatetime)
+        public void setErrorDatetime(DateTime errorDatetime)
         {
             this.setProperty("errorDatetime", errorDatetime);
         }
 
-        public string getErrorLog ()
+        public string getErrorLog()
         {
             return this.getProperty("errorLog").ToString();
         }
 
-        public void setErrorLog (string errorLog)
+        public void setErrorLog(string errorLog)
         {
             this.setProperty("errorLog", errorLog);
         }

@@ -23,157 +23,159 @@ namespace Arbor.Model
         public const string RESPONSE_CODE = "responseCode";
         public const string ERROR_DESCRIPTION = "errorDescription";
 
-        public GbrPostalAddressCleanJob ()
+        public GbrPostalAddressCleanJob()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public GbrPostalAddressCleanJob (string resourceType = "GbrPostalAddressCleanJob", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<GbrPostalAddressCleanJob> query (SimpleQuery query = null)
+        public GbrPostalAddressCleanJob(string resourceType = "GbrPostalAddressCleanJob", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("GbrPostalAddressCleanJob");
-        	RestGateway gateway = (RestGateway) GbrPostalAddressCleanJob.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<GbrPostalAddressCleanJob> gbrpostaladdresscleanjobCollection = new ModelCollection<GbrPostalAddressCleanJob> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    gbrpostaladdresscleanjobCollection.add((GbrPostalAddressCleanJob) model);
-        	}
-        
-        	return gbrpostaladdresscleanjobCollection;
+
         }
 
-        public static GbrPostalAddressCleanJob retrieve (string id)
+
+        public static ModelCollection<GbrPostalAddressCleanJob> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) GbrPostalAddressCleanJob.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (GbrPostalAddressCleanJob) gateway.retrieve(ResourceType.GBR_POSTAL_ADDRESS_CLEAN_JOB, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("GbrPostalAddressCleanJob");
+            RestGateway gateway = (RestGateway)GbrPostalAddressCleanJob.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<GbrPostalAddressCleanJob> gbrpostaladdresscleanjobCollection = new ModelCollection<GbrPostalAddressCleanJob>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                gbrpostaladdresscleanjobCollection.add((GbrPostalAddressCleanJob)model);
+            }
+
+            return gbrpostaladdresscleanjobCollection;
         }
 
-        public PostalAddress getPostalAddress ()
+        public static GbrPostalAddressCleanJob retrieve(string id)
         {
-            return (PostalAddress) this.getProperty("postalAddress");
+            RestGateway gateway = (RestGateway)GbrPostalAddressCleanJob.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (GbrPostalAddressCleanJob)gateway.retrieve(ResourceType.GBR_POSTAL_ADDRESS_CLEAN_JOB, id);
         }
 
-        public void setPostalAddress (PostalAddress postalAddress)
+        public PostalAddress getPostalAddress()
+        {
+            return (PostalAddress)this.getProperty("postalAddress");
+        }
+
+        public void setPostalAddress(PostalAddress postalAddress)
         {
             this.setProperty("postalAddress", postalAddress);
         }
 
-        public DateTime getExecutedDatetime (){
+        public DateTime getExecutedDatetime()
+        {
             return Convert.ToDateTime(this.getProperty("executedDatetime"));
         }
 
-        public void setExecutedDatetime (DateTime executedDatetime)
+        public void setExecutedDatetime(DateTime executedDatetime)
         {
             this.setProperty("executedDatetime", executedDatetime);
         }
 
-        public string getCleanAddress_1 ()
+        public string getCleanAddress_1()
         {
             return this.getProperty("cleanAddress_1").ToString();
         }
 
-        public void setCleanAddress_1 (string cleanAddress_1)
+        public void setCleanAddress_1(string cleanAddress_1)
         {
             this.setProperty("cleanAddress_1", cleanAddress_1);
         }
 
-        public string getCleanAddress_2 ()
+        public string getCleanAddress_2()
         {
             return this.getProperty("cleanAddress_2").ToString();
         }
 
-        public void setCleanAddress_2 (string cleanAddress_2)
+        public void setCleanAddress_2(string cleanAddress_2)
         {
             this.setProperty("cleanAddress_2", cleanAddress_2);
         }
 
-        public string getCleanAddress_3 ()
+        public string getCleanAddress_3()
         {
             return this.getProperty("cleanAddress_3").ToString();
         }
 
-        public void setCleanAddress_3 (string cleanAddress_3)
+        public void setCleanAddress_3(string cleanAddress_3)
         {
             this.setProperty("cleanAddress_3", cleanAddress_3);
         }
 
-        public string getCleanTown ()
+        public string getCleanTown()
         {
             return this.getProperty("cleanTown").ToString();
         }
 
-        public void setCleanTown (string cleanTown)
+        public void setCleanTown(string cleanTown)
         {
             this.setProperty("cleanTown", cleanTown);
         }
 
-        public string getCleanState ()
+        public string getCleanState()
         {
             return this.getProperty("cleanState").ToString();
         }
 
-        public void setCleanState (string cleanState)
+        public void setCleanState(string cleanState)
         {
             this.setProperty("cleanState", cleanState);
         }
 
-        public string getCleanPostalCode ()
+        public string getCleanPostalCode()
         {
             return this.getProperty("cleanPostalCode").ToString();
         }
 
-        public void setCleanPostalCode (string cleanPostalCode)
+        public void setCleanPostalCode(string cleanPostalCode)
         {
             this.setProperty("cleanPostalCode", cleanPostalCode);
         }
 
-        public int getUpdrn ()
+        public int getUpdrn()
         {
             return Convert.ToInt32(this.getProperty("updrn"));
         }
 
-        public void setUpdrn (int updrn)
+        public void setUpdrn(int updrn)
         {
             this.setProperty("updrn", updrn);
         }
 
-        public string getOutcome ()
+        public string getOutcome()
         {
             return this.getProperty("outcome").ToString();
         }
 
-        public void setOutcome (string outcome)
+        public void setOutcome(string outcome)
         {
             this.setProperty("outcome", outcome);
         }
 
-        public int getResponseCode ()
+        public int getResponseCode()
         {
             return Convert.ToInt32(this.getProperty("responseCode"));
         }
 
-        public void setResponseCode (int responseCode)
+        public void setResponseCode(int responseCode)
         {
             this.setProperty("responseCode", responseCode);
         }
 
-        public string getErrorDescription ()
+        public string getErrorDescription()
         {
             return this.getProperty("errorDescription").ToString();
         }
 
-        public void setErrorDescription (string errorDescription)
+        public void setErrorDescription(string errorDescription)
         {
             this.setProperty("errorDescription", errorDescription);
         }

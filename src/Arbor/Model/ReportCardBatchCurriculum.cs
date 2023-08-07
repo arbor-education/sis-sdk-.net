@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ReportCardBatchCurriculum : ModelBase
     {
-        protected string resourceType = ResourceType.REPORT_CARD_BATCH_CURRICULUM;
+        protected new string resourceType = ResourceType.REPORT_CARD_BATCH_CURRICULUM;
         public const string REPORT_CARD_BATCH = "reportCardBatch";
         public const string ORDER = "order";
         public const string CURRICULUM = "curriculum";
@@ -23,158 +23,159 @@ namespace Arbor.Model
         public const string SUMMATIVE_GRADE_TYPE = "summativeGradeType";
         public const string SUMMATIVE_GRADE_ACHIEVEMENT_LEVEL_SET = "summativeGradeAchievementLevelSet";
 
-        public ReportCardBatchCurriculum ()
+        public ReportCardBatchCurriculum()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public ReportCardBatchCurriculum (string resourceType = "ReportCardBatchCurriculum", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<ReportCardBatchCurriculum> query (SimpleQuery query = null)
+        public ReportCardBatchCurriculum(string resourceType = "ReportCardBatchCurriculum", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("ReportCardBatchCurriculum");
-        	RestGateway gateway = (RestGateway) ReportCardBatchCurriculum.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<ReportCardBatchCurriculum> reportcardbatchcurriculumCollection = new ModelCollection<ReportCardBatchCurriculum> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    reportcardbatchcurriculumCollection.add((ReportCardBatchCurriculum) model);
-        	}
-        
-        	return reportcardbatchcurriculumCollection;
+
         }
 
-        public static ReportCardBatchCurriculum retrieve (string id)
+
+        public static ModelCollection<ReportCardBatchCurriculum> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) ReportCardBatchCurriculum.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (ReportCardBatchCurriculum) gateway.retrieve(ResourceType.REPORT_CARD_BATCH_CURRICULUM, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("ReportCardBatchCurriculum");
+            RestGateway gateway = (RestGateway)ReportCardBatchCurriculum.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<ReportCardBatchCurriculum> reportcardbatchcurriculumCollection = new ModelCollection<ReportCardBatchCurriculum>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                reportcardbatchcurriculumCollection.add((ReportCardBatchCurriculum)model);
+            }
+
+            return reportcardbatchcurriculumCollection;
         }
 
-        public NewReportCardBatch getReportCardBatch ()
+        public static ReportCardBatchCurriculum retrieve(string id)
         {
-            return (NewReportCardBatch) this.getProperty("reportCardBatch");
+            RestGateway gateway = (RestGateway)ReportCardBatchCurriculum.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (ReportCardBatchCurriculum)gateway.retrieve(ResourceType.REPORT_CARD_BATCH_CURRICULUM, id);
         }
 
-        public void setReportCardBatch (NewReportCardBatch reportCardBatch)
+        public NewReportCardBatch getReportCardBatch()
+        {
+            return (NewReportCardBatch)this.getProperty("reportCardBatch");
+        }
+
+        public void setReportCardBatch(NewReportCardBatch reportCardBatch)
         {
             this.setProperty("reportCardBatch", reportCardBatch);
         }
 
-        public int getOrder ()
+        public int getOrder()
         {
             return Convert.ToInt32(this.getProperty("order"));
         }
 
-        public void setOrder (int order)
+        public void setOrder(int order)
         {
             this.setProperty("order", order);
         }
 
-        public Curriculum getCurriculum ()
+        public Curriculum getCurriculum()
         {
-            return (Curriculum) this.getProperty("curriculum");
+            return (Curriculum)this.getProperty("curriculum");
         }
 
-        public void setCurriculum (Curriculum curriculum)
+        public void setCurriculum(Curriculum curriculum)
         {
             this.setProperty("curriculum", curriculum);
         }
 
-        public bool getIncludeStatements ()
+        public bool getIncludeStatements()
         {
             return Convert.ToBoolean(this.getProperty("includeStatements"));
         }
 
-        public void setIncludeStatements (bool includeStatements)
+        public void setIncludeStatements(bool includeStatements)
         {
             this.setProperty("includeStatements", includeStatements);
         }
 
-        public AchievementLevel getLowerAchievementLevel ()
+        public AchievementLevel getLowerAchievementLevel()
         {
-            return (AchievementLevel) this.getProperty("lowerAchievementLevel");
+            return (AchievementLevel)this.getProperty("lowerAchievementLevel");
         }
 
-        public void setLowerAchievementLevel (AchievementLevel lowerAchievementLevel)
+        public void setLowerAchievementLevel(AchievementLevel lowerAchievementLevel)
         {
             this.setProperty("lowerAchievementLevel", lowerAchievementLevel);
         }
 
-        public float getLowerAchievementValue ()
+        public float getLowerAchievementValue()
         {
-            return (float) this.getProperty("lowerAchievementValue");
+            return (float)this.getProperty("lowerAchievementValue");
         }
 
-        public void setLowerAchievementValue (float lowerAchievementValue)
+        public void setLowerAchievementValue(float lowerAchievementValue)
         {
             this.setProperty("lowerAchievementValue", lowerAchievementValue);
         }
 
-        public AchievementLevel getUpperAchievementLevel ()
+        public AchievementLevel getUpperAchievementLevel()
         {
-            return (AchievementLevel) this.getProperty("upperAchievementLevel");
+            return (AchievementLevel)this.getProperty("upperAchievementLevel");
         }
 
-        public void setUpperAchievementLevel (AchievementLevel upperAchievementLevel)
+        public void setUpperAchievementLevel(AchievementLevel upperAchievementLevel)
         {
             this.setProperty("upperAchievementLevel", upperAchievementLevel);
         }
 
-        public float getUpperAchievementValue ()
+        public float getUpperAchievementValue()
         {
-            return (float) this.getProperty("upperAchievementValue");
+            return (float)this.getProperty("upperAchievementValue");
         }
 
-        public void setUpperAchievementValue (float upperAchievementValue)
+        public void setUpperAchievementValue(float upperAchievementValue)
         {
             this.setProperty("upperAchievementValue", upperAchievementValue);
         }
 
-        public string getReportingMode ()
+        public string getReportingMode()
         {
             return this.getProperty("reportingMode").ToString();
         }
 
-        public void setReportingMode (string reportingMode)
+        public void setReportingMode(string reportingMode)
         {
             this.setProperty("reportingMode", reportingMode);
         }
 
-        public bool getIncludeSummativeGrade ()
+        public bool getIncludeSummativeGrade()
         {
             return Convert.ToBoolean(this.getProperty("includeSummativeGrade"));
         }
 
-        public void setIncludeSummativeGrade (bool includeSummativeGrade)
+        public void setIncludeSummativeGrade(bool includeSummativeGrade)
         {
             this.setProperty("includeSummativeGrade", includeSummativeGrade);
         }
 
-        public string getSummativeGradeType ()
+        public string getSummativeGradeType()
         {
             return this.getProperty("summativeGradeType").ToString();
         }
 
-        public void setSummativeGradeType (string summativeGradeType)
+        public void setSummativeGradeType(string summativeGradeType)
         {
             this.setProperty("summativeGradeType", summativeGradeType);
         }
 
-        public AchievementLevelSet getSummativeGradeAchievementLevelSet ()
+        public AchievementLevelSet getSummativeGradeAchievementLevelSet()
         {
-            return (AchievementLevelSet) this.getProperty("summativeGradeAchievementLevelSet");
+            return (AchievementLevelSet)this.getProperty("summativeGradeAchievementLevelSet");
         }
 
-        public void setSummativeGradeAchievementLevelSet (AchievementLevelSet summativeGradeAchievementLevelSet)
+        public void setSummativeGradeAchievementLevelSet(AchievementLevelSet summativeGradeAchievementLevelSet)
         {
             this.setProperty("summativeGradeAchievementLevelSet", summativeGradeAchievementLevelSet);
         }

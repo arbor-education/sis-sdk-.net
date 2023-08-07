@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string PERSON = "person";
         public const string NEWS_STORY = "newsStory";
 
-        public TimelineMapping ()
+        public TimelineMapping()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public TimelineMapping (string resourceType = "TimelineMapping", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<TimelineMapping> query (SimpleQuery query = null)
+        public TimelineMapping(string resourceType = "TimelineMapping", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("TimelineMapping");
-        	RestGateway gateway = (RestGateway) TimelineMapping.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<TimelineMapping> timelinemappingCollection = new ModelCollection<TimelineMapping> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    timelinemappingCollection.add((TimelineMapping) model);
-        	}
-        
-        	return timelinemappingCollection;
+
         }
 
-        public static TimelineMapping retrieve (string id)
+
+        public static ModelCollection<TimelineMapping> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) TimelineMapping.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (TimelineMapping) gateway.retrieve(ResourceType.TIMELINE_MAPPING, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("TimelineMapping");
+            RestGateway gateway = (RestGateway)TimelineMapping.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<TimelineMapping> timelinemappingCollection = new ModelCollection<TimelineMapping>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                timelinemappingCollection.add((TimelineMapping)model);
+            }
+
+            return timelinemappingCollection;
         }
 
-        public ModelBase getPerson ()
+        public static TimelineMapping retrieve(string id)
         {
-            return (ModelBase) this.getProperty("person");
+            RestGateway gateway = (RestGateway)TimelineMapping.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (TimelineMapping)gateway.retrieve(ResourceType.TIMELINE_MAPPING, id);
         }
 
-        public void setPerson (ModelBase person)
+        public ModelBase getPerson()
+        {
+            return (ModelBase)this.getProperty("person");
+        }
+
+        public void setPerson(ModelBase person)
         {
             this.setProperty("person", person);
         }
 
-        public NewsStory getNewsStory ()
+        public NewsStory getNewsStory()
         {
-            return (NewsStory) this.getProperty("newsStory");
+            return (NewsStory)this.getProperty("newsStory");
         }
 
-        public void setNewsStory (NewsStory newsStory)
+        public void setNewsStory(NewsStory newsStory)
         {
             this.setProperty("newsStory", newsStory);
         }

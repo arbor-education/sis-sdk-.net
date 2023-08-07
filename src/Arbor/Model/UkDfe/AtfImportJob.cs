@@ -23,157 +23,159 @@ namespace Arbor.Model.UkDfe
         public const string LAST_IMPORT_DATETIME = "lastImportDatetime";
         public const string STATUS = "status";
 
-        public AtfImportJob ()
+        public AtfImportJob()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AtfImportJob (string resourceType = "AtfImportJob", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AtfImportJob> query (SimpleQuery query = null)
+        public AtfImportJob(string resourceType = "AtfImportJob", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("UkDfe_AtfImportJob");
-        	RestGateway gateway = (RestGateway) AtfImportJob.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AtfImportJob> atfimportjobCollection = new ModelCollection<AtfImportJob> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    atfimportjobCollection.add((AtfImportJob) model);
-        	}
-        
-        	return atfimportjobCollection;
+
         }
 
-        public static AtfImportJob retrieve (string id)
+
+        public static ModelCollection<AtfImportJob> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AtfImportJob.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AtfImportJob) gateway.retrieve(ResourceType.UK_DFE_ATF_IMPORT_JOB, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("UkDfe_AtfImportJob");
+            RestGateway gateway = (RestGateway)AtfImportJob.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AtfImportJob> atfimportjobCollection = new ModelCollection<AtfImportJob>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                atfimportjobCollection.add((AtfImportJob)model);
+            }
+
+            return atfimportjobCollection;
         }
 
-        public string getAtfVersion ()
+        public static AtfImportJob retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)AtfImportJob.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AtfImportJob)gateway.retrieve(ResourceType.UK_DFE_ATF_IMPORT_JOB, id);
+        }
+
+        public string getAtfVersion()
         {
             return this.getProperty("atfVersion").ToString();
         }
 
-        public void setAtfVersion (string atfVersion)
+        public void setAtfVersion(string atfVersion)
         {
             this.setProperty("atfVersion", atfVersion);
         }
 
-        public string getSourceLocalAuthorityCode ()
+        public string getSourceLocalAuthorityCode()
         {
             return this.getProperty("sourceLocalAuthorityCode").ToString();
         }
 
-        public void setSourceLocalAuthorityCode (string sourceLocalAuthorityCode)
+        public void setSourceLocalAuthorityCode(string sourceLocalAuthorityCode)
         {
             this.setProperty("sourceLocalAuthorityCode", sourceLocalAuthorityCode);
         }
 
-        public LocalAuthority getSourceLocalAuthority ()
+        public LocalAuthority getSourceLocalAuthority()
         {
-            return (LocalAuthority) this.getProperty("sourceLocalAuthority");
+            return (LocalAuthority)this.getProperty("sourceLocalAuthority");
         }
 
-        public void setSourceLocalAuthority (LocalAuthority sourceLocalAuthority)
+        public void setSourceLocalAuthority(LocalAuthority sourceLocalAuthority)
         {
             this.setProperty("sourceLocalAuthority", sourceLocalAuthority);
         }
 
-        public string getSourceEstablishmentNumber ()
+        public string getSourceEstablishmentNumber()
         {
             return this.getProperty("sourceEstablishmentNumber").ToString();
         }
 
-        public void setSourceEstablishmentNumber (string sourceEstablishmentNumber)
+        public void setSourceEstablishmentNumber(string sourceEstablishmentNumber)
         {
             this.setProperty("sourceEstablishmentNumber", sourceEstablishmentNumber);
         }
 
-        public string getSourceEducationalInstitutionName ()
+        public string getSourceEducationalInstitutionName()
         {
             return this.getProperty("sourceEducationalInstitutionName").ToString();
         }
 
-        public void setSourceEducationalInstitutionName (string sourceEducationalInstitutionName)
+        public void setSourceEducationalInstitutionName(string sourceEducationalInstitutionName)
         {
             this.setProperty("sourceEducationalInstitutionName", sourceEducationalInstitutionName);
         }
 
-        public EducationalInstitution getSourceEducationalInstitution ()
+        public EducationalInstitution getSourceEducationalInstitution()
         {
-            return (EducationalInstitution) this.getProperty("sourceEducationalInstitution");
+            return (EducationalInstitution)this.getProperty("sourceEducationalInstitution");
         }
 
-        public void setSourceEducationalInstitution (EducationalInstitution sourceEducationalInstitution)
+        public void setSourceEducationalInstitution(EducationalInstitution sourceEducationalInstitution)
         {
             this.setProperty("sourceEducationalInstitution", sourceEducationalInstitution);
         }
 
-        public string getDestinationLocalAuthorityCode ()
+        public string getDestinationLocalAuthorityCode()
         {
             return this.getProperty("destinationLocalAuthorityCode").ToString();
         }
 
-        public void setDestinationLocalAuthorityCode (string destinationLocalAuthorityCode)
+        public void setDestinationLocalAuthorityCode(string destinationLocalAuthorityCode)
         {
             this.setProperty("destinationLocalAuthorityCode", destinationLocalAuthorityCode);
         }
 
-        public LocalAuthority getDestinationLocalAuthority ()
+        public LocalAuthority getDestinationLocalAuthority()
         {
-            return (LocalAuthority) this.getProperty("destinationLocalAuthority");
+            return (LocalAuthority)this.getProperty("destinationLocalAuthority");
         }
 
-        public void setDestinationLocalAuthority (LocalAuthority destinationLocalAuthority)
+        public void setDestinationLocalAuthority(LocalAuthority destinationLocalAuthority)
         {
             this.setProperty("destinationLocalAuthority", destinationLocalAuthority);
         }
 
-        public string getDestinationEstablishmentNumber ()
+        public string getDestinationEstablishmentNumber()
         {
             return this.getProperty("destinationEstablishmentNumber").ToString();
         }
 
-        public void setDestinationEstablishmentNumber (string destinationEstablishmentNumber)
+        public void setDestinationEstablishmentNumber(string destinationEstablishmentNumber)
         {
             this.setProperty("destinationEstablishmentNumber", destinationEstablishmentNumber);
         }
 
-        public EducationalInstitution getDestinationEducationalInstitution ()
+        public EducationalInstitution getDestinationEducationalInstitution()
         {
-            return (EducationalInstitution) this.getProperty("destinationEducationalInstitution");
+            return (EducationalInstitution)this.getProperty("destinationEducationalInstitution");
         }
 
-        public void setDestinationEducationalInstitution (EducationalInstitution destinationEducationalInstitution)
+        public void setDestinationEducationalInstitution(EducationalInstitution destinationEducationalInstitution)
         {
             this.setProperty("destinationEducationalInstitution", destinationEducationalInstitution);
         }
 
-        public DateTime getLastImportDatetime (){
+        public DateTime getLastImportDatetime()
+        {
             return Convert.ToDateTime(this.getProperty("lastImportDatetime"));
         }
 
-        public void setLastImportDatetime (DateTime lastImportDatetime)
+        public void setLastImportDatetime(DateTime lastImportDatetime)
         {
             this.setProperty("lastImportDatetime", lastImportDatetime);
         }
 
-        public string getStatus ()
+        public string getStatus()
         {
             return this.getProperty("status").ToString();
         }
 
-        public void setStatus (string status)
+        public void setStatus(string status)
         {
             this.setProperty("status", status);
         }

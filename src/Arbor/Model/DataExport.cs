@@ -9,128 +9,162 @@ namespace Arbor.Model
 {
     public class DataExport : ModelBase
     {
-        protected string resourceType = ResourceType.DATA_EXPORT;
+        protected new string resourceType = ResourceType.DATA_EXPORT;
         public const string USER = "user";
         public const string MODULE = "module";
         public const string CONTROLLER = "controller";
         public const string ACTION = "action";
         public const string PARAMS = "params";
         public const string HASH = "hash";
+        public const string LABEL = "label";
+        public const string REQUIRES_AUTHENTICATION = "requiresAuthentication";
+        public const string DEFAULT_EXPORT_TYPE = "defaultExportType";
         public const string LAST_EXPORT_DATETIME = "lastExportDatetime";
         public const string LAST_EXPORT_TITLE = "lastExportTitle";
 
-        public DataExport ()
+        public DataExport()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public DataExport (string resourceType = "DataExport", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<DataExport> query (SimpleQuery query = null)
+        public DataExport(string resourceType = "DataExport", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("DataExport");
-        	RestGateway gateway = (RestGateway) DataExport.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<DataExport> dataexportCollection = new ModelCollection<DataExport> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    dataexportCollection.add((DataExport) model);
-        	}
-        
-        	return dataexportCollection;
+
         }
 
-        public static DataExport retrieve (string id)
+
+        public static ModelCollection<DataExport> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) DataExport.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (DataExport) gateway.retrieve(ResourceType.DATA_EXPORT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("DataExport");
+            RestGateway gateway = (RestGateway)DataExport.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<DataExport> dataexportCollection = new ModelCollection<DataExport>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                dataexportCollection.add((DataExport)model);
+            }
+
+            return dataexportCollection;
         }
 
-        public User getUser ()
+        public static DataExport retrieve(string id)
         {
-            return (User) this.getProperty("user");
+            RestGateway gateway = (RestGateway)DataExport.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (DataExport)gateway.retrieve(ResourceType.DATA_EXPORT, id);
         }
 
-        public void setUser (User user)
+        public User getUser()
+        {
+            return (User)this.getProperty("user");
+        }
+
+        public void setUser(User user)
         {
             this.setProperty("user", user);
         }
 
-        public string getModule ()
+        public string getModule()
         {
             return this.getProperty("module").ToString();
         }
 
-        public void setModule (string module)
+        public void setModule(string module)
         {
             this.setProperty("module", module);
         }
 
-        public string getController ()
+        public string getController()
         {
             return this.getProperty("controller").ToString();
         }
 
-        public void setController (string controller)
+        public void setController(string controller)
         {
             this.setProperty("controller", controller);
         }
 
-        public string getAction ()
+        public string getAction()
         {
             return this.getProperty("action").ToString();
         }
 
-        public void setAction (string action)
+        public void setAction(string action)
         {
             this.setProperty("action", action);
         }
 
-        public string getParams ()
+        public string getParams()
         {
             return this.getProperty("params").ToString();
         }
 
-        public void setParams (string params)
+        public void setParams(string _params)
         {
-            this.setProperty("params", params);
+            this.setProperty("params", _params);
         }
 
-        public string getHash ()
+        public string getHash()
         {
             return this.getProperty("hash").ToString();
         }
 
-        public void setHash (string hash)
+        public void setHash(string hash)
         {
             this.setProperty("hash", hash);
         }
 
-        public DateTime getLastExportDatetime ()
+        public string getLabel()
+        {
+            return this.getProperty("label").ToString();
+        }
+
+        public void setLabel(string label)
+        {
+            this.setProperty("label", label);
+        }
+
+        public bool getRequiresAuthentication()
+        {
+            return Convert.ToBoolean(this.getProperty("requiresAuthentication"));
+        }
+
+        public void setRequiresAuthentication(bool requiresAuthentication)
+        {
+            this.setProperty("requiresAuthentication", requiresAuthentication);
+        }
+
+        public string getDefaultExportType()
+        {
+            return this.getProperty("defaultExportType").ToString();
+        }
+
+        public void setDefaultExportType(string defaultExportType)
+        {
+            this.setProperty("defaultExportType", defaultExportType);
+        }
+
+        public DateTime getLastExportDatetime()
         {
             return Convert.ToDateTime(this.getProperty("lastExportDatetime"));
         }
 
-        public void setLastExportDatetime (DateTime lastExportDatetime)
+        public void setLastExportDatetime(DateTime lastExportDatetime)
         {
             this.setProperty("lastExportDatetime", lastExportDatetime);
         }
 
-        public string getLastExportTitle ()
+        public string getLastExportTitle()
         {
             return this.getProperty("lastExportTitle").ToString();
         }
 
-        public void setLastExportTitle (string lastExportTitle)
+        public void setLastExportTitle(string lastExportTitle)
         {
             this.setProperty("lastExportTitle", lastExportTitle);
         }

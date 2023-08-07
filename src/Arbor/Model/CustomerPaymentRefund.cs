@@ -9,13 +9,14 @@ namespace Arbor.Model
 {
     public class CustomerPaymentRefund : ModelBase
     {
-        protected string resourceType = ResourceType.CUSTOMER_PAYMENT_REFUND;
+        protected new string resourceType = ResourceType.CUSTOMER_PAYMENT_REFUND;
         public const string CUSTOMER_PAYMENT = "customerPayment";
         public const string REFUND_DATETIME = "refundDatetime";
         public const string REFUND_AMOUNT = "refundAmount";
         public const string REFUND_TRANSACTION = "refundTransaction";
         public const string REFUND_SUCCEEDED_DATETIME = "refundSucceededDatetime";
         public const string REFUND_FAILED_DATETIME = "refundFailedDatetime";
+        public const string CUSTOMER_PAYMENT_REFUND_METHOD = "customerPaymentRefundMethod";
 
         public CustomerPaymentRefund ()
         {
@@ -111,6 +112,16 @@ namespace Arbor.Model
         public void setRefundFailedDatetime (DateTime refundFailedDatetime)
         {
             this.setProperty("refundFailedDatetime", refundFailedDatetime);
+        }
+
+        public string getCustomerPaymentRefundMethod ()
+        {
+            return this.getProperty("customerPaymentRefundMethod").ToString();
+        }
+
+        public void setCustomerPaymentRefundMethod (string customerPaymentRefundMethod)
+        {
+            this.setProperty("customerPaymentRefundMethod", customerPaymentRefundMethod);
         }
 
 

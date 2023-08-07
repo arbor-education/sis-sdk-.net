@@ -9,128 +9,162 @@ namespace Arbor.Model
 {
     public class SuspectedDuplicate : ModelBase
     {
-        protected string resourceType = ResourceType.SUSPECTED_DUPLICATE;
+        protected new string resourceType = ResourceType.SUSPECTED_DUPLICATE;
         public const string SUSPECT_ONE = "suspectOne";
         public const string SUSPECT_TWO = "suspectTwo";
         public const string UNIQUE_KEY = "uniqueKey";
         public const string TOTAL_DUPLICATE_SCORE = "totalDuplicateScore";
         public const string DUPLICATE_SCORES = "duplicateScores";
         public const string RESOLVED_DATETIME = "resolvedDatetime";
+        public const string RESOLUTION_APPROVAL_REQUESTED_BY_STAFF = "resolutionApprovalRequestedByStaff";
+        public const string RESOLUTION_APPROVAL_REQUESTED_FROM_STAFF = "resolutionApprovalRequestedFromStaff";
+        public const string RESOLUTION_APPROVED_BY_STAFF = "resolutionApprovedByStaff";
         public const string RESOLVED_BY_STAFF = "resolvedByStaff";
         public const string RESOLUTION = "resolution";
 
-        public SuspectedDuplicate ()
+        public SuspectedDuplicate()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public SuspectedDuplicate (string resourceType = "SuspectedDuplicate", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<SuspectedDuplicate> query (SimpleQuery query = null)
+        public SuspectedDuplicate(string resourceType = "SuspectedDuplicate", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("SuspectedDuplicate");
-        	RestGateway gateway = (RestGateway) SuspectedDuplicate.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<SuspectedDuplicate> suspectedduplicateCollection = new ModelCollection<SuspectedDuplicate> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    suspectedduplicateCollection.add((SuspectedDuplicate) model);
-        	}
-        
-        	return suspectedduplicateCollection;
+
         }
 
-        public static SuspectedDuplicate retrieve (string id)
+
+        public static ModelCollection<SuspectedDuplicate> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) SuspectedDuplicate.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (SuspectedDuplicate) gateway.retrieve(ResourceType.SUSPECTED_DUPLICATE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("SuspectedDuplicate");
+            RestGateway gateway = (RestGateway)SuspectedDuplicate.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<SuspectedDuplicate> suspectedduplicateCollection = new ModelCollection<SuspectedDuplicate>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                suspectedduplicateCollection.add((SuspectedDuplicate)model);
+            }
+
+            return suspectedduplicateCollection;
         }
 
-        public ModelBase getSuspectOne ()
+        public static SuspectedDuplicate retrieve(string id)
         {
-            return (ModelBase) this.getProperty("suspectOne");
+            RestGateway gateway = (RestGateway)SuspectedDuplicate.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (SuspectedDuplicate)gateway.retrieve(ResourceType.SUSPECTED_DUPLICATE, id);
         }
 
-        public void setSuspectOne (ModelBase suspectOne)
+        public ModelBase getSuspectOne()
+        {
+            return (ModelBase)this.getProperty("suspectOne");
+        }
+
+        public void setSuspectOne(ModelBase suspectOne)
         {
             this.setProperty("suspectOne", suspectOne);
         }
 
-        public ModelBase getSuspectTwo ()
+        public ModelBase getSuspectTwo()
         {
-            return (ModelBase) this.getProperty("suspectTwo");
+            return (ModelBase)this.getProperty("suspectTwo");
         }
 
-        public void setSuspectTwo (ModelBase suspectTwo)
+        public void setSuspectTwo(ModelBase suspectTwo)
         {
             this.setProperty("suspectTwo", suspectTwo);
         }
 
-        public string getUniqueKey ()
+        public string getUniqueKey()
         {
             return this.getProperty("uniqueKey").ToString();
         }
 
-        public void setUniqueKey (string uniqueKey)
+        public void setUniqueKey(string uniqueKey)
         {
             this.setProperty("uniqueKey", uniqueKey);
         }
 
-        public int getTotalDuplicateScore ()
+        public int getTotalDuplicateScore()
         {
             return Convert.ToInt32(this.getProperty("totalDuplicateScore"));
         }
 
-        public void setTotalDuplicateScore (int totalDuplicateScore)
+        public void setTotalDuplicateScore(int totalDuplicateScore)
         {
             this.setProperty("totalDuplicateScore", totalDuplicateScore);
         }
 
-        public string getDuplicateScores ()
+        public string getDuplicateScores()
         {
             return this.getProperty("duplicateScores").ToString();
         }
 
-        public void setDuplicateScores (string duplicateScores)
+        public void setDuplicateScores(string duplicateScores)
         {
             this.setProperty("duplicateScores", duplicateScores);
         }
 
-        public DateTime getResolvedDatetime ()
+        public DateTime getResolvedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("resolvedDatetime"));
         }
 
-        public void setResolvedDatetime (DateTime resolvedDatetime)
+        public void setResolvedDatetime(DateTime resolvedDatetime)
         {
             this.setProperty("resolvedDatetime", resolvedDatetime);
         }
 
-        public Staff getResolvedByStaff ()
+        public Staff getResolutionApprovalRequestedByStaff()
         {
-            return (Staff) this.getProperty("resolvedByStaff");
+            return (Staff)this.getProperty("resolutionApprovalRequestedByStaff");
         }
 
-        public void setResolvedByStaff (Staff resolvedByStaff)
+        public void setResolutionApprovalRequestedByStaff(Staff resolutionApprovalRequestedByStaff)
+        {
+            this.setProperty("resolutionApprovalRequestedByStaff", resolutionApprovalRequestedByStaff);
+        }
+
+        public Staff getResolutionApprovalRequestedFromStaff()
+        {
+            return (Staff)this.getProperty("resolutionApprovalRequestedFromStaff");
+        }
+
+        public void setResolutionApprovalRequestedFromStaff(Staff resolutionApprovalRequestedFromStaff)
+        {
+            this.setProperty("resolutionApprovalRequestedFromStaff", resolutionApprovalRequestedFromStaff);
+        }
+
+        public Staff getResolutionApprovedByStaff()
+        {
+            return (Staff)this.getProperty("resolutionApprovedByStaff");
+        }
+
+        public void setResolutionApprovedByStaff(Staff resolutionApprovedByStaff)
+        {
+            this.setProperty("resolutionApprovedByStaff", resolutionApprovedByStaff);
+        }
+
+        public Staff getResolvedByStaff()
+        {
+            return (Staff)this.getProperty("resolvedByStaff");
+        }
+
+        public void setResolvedByStaff(Staff resolvedByStaff)
         {
             this.setProperty("resolvedByStaff", resolvedByStaff);
         }
 
-        public string getResolution ()
+        public string getResolution()
         {
             return this.getProperty("resolution").ToString();
         }
 
-        public void setResolution (string resolution)
+        public void setResolution(string resolution)
         {
             this.setProperty("resolution", resolution);
         }

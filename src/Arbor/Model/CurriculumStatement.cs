@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CurriculumStatement : ModelBase
     {
-        protected string resourceType = ResourceType.CURRICULUM_STATEMENT;
+        protected new string resourceType = ResourceType.CURRICULUM_STATEMENT;
         public const string CURRICULUM_SECTION = "curriculumSection";
         public const string CURRICULUM_STATEMENT_BAND = "curriculumStatementBand";
         public const string CODE = "code";
@@ -21,138 +21,139 @@ namespace Arbor.Model
         public const string REQUIREMENT_FOR_HIGHER = "requirementForHigher";
         public const string ORDER = "order";
 
-        public CurriculumStatement ()
+        public CurriculumStatement()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public CurriculumStatement (string resourceType = "CurriculumStatement", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<CurriculumStatement> query (SimpleQuery query = null)
+        public CurriculumStatement(string resourceType = "CurriculumStatement", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("CurriculumStatement");
-        	RestGateway gateway = (RestGateway) CurriculumStatement.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<CurriculumStatement> curriculumstatementCollection = new ModelCollection<CurriculumStatement> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    curriculumstatementCollection.add((CurriculumStatement) model);
-        	}
-        
-        	return curriculumstatementCollection;
+
         }
 
-        public static CurriculumStatement retrieve (string id)
+
+        public static ModelCollection<CurriculumStatement> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) CurriculumStatement.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (CurriculumStatement) gateway.retrieve(ResourceType.CURRICULUM_STATEMENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("CurriculumStatement");
+            RestGateway gateway = (RestGateway)CurriculumStatement.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<CurriculumStatement> curriculumstatementCollection = new ModelCollection<CurriculumStatement>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                curriculumstatementCollection.add((CurriculumStatement)model);
+            }
+
+            return curriculumstatementCollection;
         }
 
-        public CurriculumSection getCurriculumSection ()
+        public static CurriculumStatement retrieve(string id)
         {
-            return (CurriculumSection) this.getProperty("curriculumSection");
+            RestGateway gateway = (RestGateway)CurriculumStatement.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (CurriculumStatement)gateway.retrieve(ResourceType.CURRICULUM_STATEMENT, id);
         }
 
-        public void setCurriculumSection (CurriculumSection curriculumSection)
+        public CurriculumSection getCurriculumSection()
+        {
+            return (CurriculumSection)this.getProperty("curriculumSection");
+        }
+
+        public void setCurriculumSection(CurriculumSection curriculumSection)
         {
             this.setProperty("curriculumSection", curriculumSection);
         }
 
-        public CurriculumStatementBand getCurriculumStatementBand ()
+        public CurriculumStatementBand getCurriculumStatementBand()
         {
-            return (CurriculumStatementBand) this.getProperty("curriculumStatementBand");
+            return (CurriculumStatementBand)this.getProperty("curriculumStatementBand");
         }
 
-        public void setCurriculumStatementBand (CurriculumStatementBand curriculumStatementBand)
+        public void setCurriculumStatementBand(CurriculumStatementBand curriculumStatementBand)
         {
             this.setProperty("curriculumStatementBand", curriculumStatementBand);
         }
 
-        public string getCode ()
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public string getName ()
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }
 
-        public string getShortName ()
+        public string getShortName()
         {
             return this.getProperty("shortName").ToString();
         }
 
-        public void setShortName (string shortName)
+        public void setShortName(string shortName)
         {
             this.setProperty("shortName", shortName);
         }
 
-        public string getDescription ()
+        public string getDescription()
         {
             return this.getProperty("description").ToString();
         }
 
-        public void setDescription (string description)
+        public void setDescription(string description)
         {
             this.setProperty("description", description);
         }
 
-        public string getExamples ()
+        public string getExamples()
         {
             return this.getProperty("examples").ToString();
         }
 
-        public void setExamples (string examples)
+        public void setExamples(string examples)
         {
             this.setProperty("examples", examples);
         }
 
-        public float getWeighting ()
+        public float getWeighting()
         {
-            return (float) this.getProperty("weighting");
+            return (float)this.getProperty("weighting");
         }
 
-        public void setWeighting (float weighting)
+        public void setWeighting(float weighting)
         {
             this.setProperty("weighting", weighting);
         }
 
-        public bool getRequirementForHigher ()
+        public bool getRequirementForHigher()
         {
             return Convert.ToBoolean(this.getProperty("requirementForHigher"));
         }
 
-        public void setRequirementForHigher (bool requirementForHigher)
+        public void setRequirementForHigher(bool requirementForHigher)
         {
             this.setProperty("requirementForHigher", requirementForHigher);
         }
 
-        public int getOrder ()
+        public int getOrder()
         {
             return Convert.ToInt32(this.getProperty("order"));
         }
 
-        public void setOrder (int order)
+        public void setOrder(int order)
         {
             this.setProperty("order", order);
         }

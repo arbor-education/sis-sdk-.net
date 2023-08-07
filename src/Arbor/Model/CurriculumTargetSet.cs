@@ -9,95 +9,96 @@ namespace Arbor.Model
 {
     public class CurriculumTargetSet : ModelBase
     {
-        protected string resourceType = ResourceType.CURRICULUM_TARGET_SET;
+        protected new string resourceType = ResourceType.CURRICULUM_TARGET_SET;
         public const string CURRICULUM = "curriculum";
         public const string TYPE = "type";
         public const string NAME = "name";
         public const string EFFECTIVE_DATE = "effectiveDate";
         public const string END_DATE = "endDate";
 
-        public CurriculumTargetSet ()
+        public CurriculumTargetSet()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public CurriculumTargetSet (string resourceType = "CurriculumTargetSet", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<CurriculumTargetSet> query (SimpleQuery query = null)
+        public CurriculumTargetSet(string resourceType = "CurriculumTargetSet", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("CurriculumTargetSet");
-        	RestGateway gateway = (RestGateway) CurriculumTargetSet.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<CurriculumTargetSet> curriculumtargetsetCollection = new ModelCollection<CurriculumTargetSet> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    curriculumtargetsetCollection.add((CurriculumTargetSet) model);
-        	}
-        
-        	return curriculumtargetsetCollection;
+
         }
 
-        public static CurriculumTargetSet retrieve (string id)
+
+        public static ModelCollection<CurriculumTargetSet> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) CurriculumTargetSet.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (CurriculumTargetSet) gateway.retrieve(ResourceType.CURRICULUM_TARGET_SET, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("CurriculumTargetSet");
+            RestGateway gateway = (RestGateway)CurriculumTargetSet.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<CurriculumTargetSet> curriculumtargetsetCollection = new ModelCollection<CurriculumTargetSet>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                curriculumtargetsetCollection.add((CurriculumTargetSet)model);
+            }
+
+            return curriculumtargetsetCollection;
         }
 
-        public Curriculum getCurriculum ()
+        public static CurriculumTargetSet retrieve(string id)
         {
-            return (Curriculum) this.getProperty("curriculum");
+            RestGateway gateway = (RestGateway)CurriculumTargetSet.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (CurriculumTargetSet)gateway.retrieve(ResourceType.CURRICULUM_TARGET_SET, id);
         }
 
-        public void setCurriculum (Curriculum curriculum)
+        public Curriculum getCurriculum()
+        {
+            return (Curriculum)this.getProperty("curriculum");
+        }
+
+        public void setCurriculum(Curriculum curriculum)
         {
             this.setProperty("curriculum", curriculum);
         }
 
-        public string getType ()
+        public string getType()
         {
             return this.getProperty("type").ToString();
         }
 
-        public void setType (string type)
+        public void setType(string type)
         {
             this.setProperty("type", type);
         }
 
-        public string getName ()
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }
 
-        public DateTime getEffectiveDate ()
+        public DateTime getEffectiveDate()
         {
             return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
-        public void setEffectiveDate (DateTime effectiveDate)
+        public void setEffectiveDate(DateTime effectiveDate)
         {
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }

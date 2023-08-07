@@ -20,128 +20,129 @@ namespace Arbor.Model
         public const string SIGNED_DATETIME = "signedDatetime";
         public const string SIGNED_PERSON = "signedPerson";
 
-        public BehaviouralContractPeriod ()
+        public BehaviouralContractPeriod()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public BehaviouralContractPeriod (string resourceType = "BehaviouralContractPeriod", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<BehaviouralContractPeriod> query (SimpleQuery query = null)
+        public BehaviouralContractPeriod(string resourceType = "BehaviouralContractPeriod", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("BehaviouralContractPeriod");
-        	RestGateway gateway = (RestGateway) BehaviouralContractPeriod.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<BehaviouralContractPeriod> behaviouralcontractperiodCollection = new ModelCollection<BehaviouralContractPeriod> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    behaviouralcontractperiodCollection.add((BehaviouralContractPeriod) model);
-        	}
-        
-        	return behaviouralcontractperiodCollection;
+
         }
 
-        public static BehaviouralContractPeriod retrieve (string id)
+
+        public static ModelCollection<BehaviouralContractPeriod> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) BehaviouralContractPeriod.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (BehaviouralContractPeriod) gateway.retrieve(ResourceType.BEHAVIOURAL_CONTRACT_PERIOD, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("BehaviouralContractPeriod");
+            RestGateway gateway = (RestGateway)BehaviouralContractPeriod.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<BehaviouralContractPeriod> behaviouralcontractperiodCollection = new ModelCollection<BehaviouralContractPeriod>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                behaviouralcontractperiodCollection.add((BehaviouralContractPeriod)model);
+            }
+
+            return behaviouralcontractperiodCollection;
         }
 
-        public BehaviouralContract getBehaviouralContract ()
+        public static BehaviouralContractPeriod retrieve(string id)
         {
-            return (BehaviouralContract) this.getProperty("behaviouralContract");
+            RestGateway gateway = (RestGateway)BehaviouralContractPeriod.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (BehaviouralContractPeriod)gateway.retrieve(ResourceType.BEHAVIOURAL_CONTRACT_PERIOD, id);
         }
 
-        public void setBehaviouralContract (BehaviouralContract behaviouralContract)
+        public BehaviouralContract getBehaviouralContract()
+        {
+            return (BehaviouralContract)this.getProperty("behaviouralContract");
+        }
+
+        public void setBehaviouralContract(BehaviouralContract behaviouralContract)
         {
             this.setProperty("behaviouralContract", behaviouralContract);
         }
 
-        public BehaviouralContractGoal getBehaviouralContractGoal ()
+        public BehaviouralContractGoal getBehaviouralContractGoal()
         {
-            return (BehaviouralContractGoal) this.getProperty("behaviouralContractGoal");
+            return (BehaviouralContractGoal)this.getProperty("behaviouralContractGoal");
         }
 
-        public void setBehaviouralContractGoal (BehaviouralContractGoal behaviouralContractGoal)
+        public void setBehaviouralContractGoal(BehaviouralContractGoal behaviouralContractGoal)
         {
             this.setProperty("behaviouralContractGoal", behaviouralContractGoal);
         }
 
-        public Session getSession ()
+        public Session getSession()
         {
-            return (Session) this.getProperty("session");
+            return (Session)this.getProperty("session");
         }
 
-        public void setSession (Session session)
+        public void setSession(Session session)
         {
             this.setProperty("session", session);
         }
 
-        public bool getGoalAchieved ()
+        public bool getGoalAchieved()
         {
             return Convert.ToBoolean(this.getProperty("goalAchieved"));
         }
 
-        public void setGoalAchieved (bool goalAchieved)
+        public void setGoalAchieved(bool goalAchieved)
         {
             this.setProperty("goalAchieved", goalAchieved);
         }
 
-        public string getComment ()
+        public string getComment()
         {
             return this.getProperty("comment").ToString();
         }
 
-        public void setComment (string comment)
+        public void setComment(string comment)
         {
             this.setProperty("comment", comment);
         }
 
-        public DateTime getPeriodStartDatetime ()
+        public DateTime getPeriodStartDatetime()
         {
             return Convert.ToDateTime(this.getProperty("periodStartDatetime"));
         }
 
-        public void setPeriodStartDatetime (DateTime periodStartDatetime)
+        public void setPeriodStartDatetime(DateTime periodStartDatetime)
         {
             this.setProperty("periodStartDatetime", periodStartDatetime);
         }
 
-        public DateTime getPeriodEndDatetime ()
+        public DateTime getPeriodEndDatetime()
         {
             return Convert.ToDateTime(this.getProperty("periodEndDatetime"));
         }
 
-        public void setPeriodEndDatetime (DateTime periodEndDatetime)
+        public void setPeriodEndDatetime(DateTime periodEndDatetime)
         {
             this.setProperty("periodEndDatetime", periodEndDatetime);
         }
 
-        public DateTime getSignedDatetime ()
+        public DateTime getSignedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("signedDatetime"));
         }
 
-        public void setSignedDatetime (DateTime signedDatetime)
+        public void setSignedDatetime(DateTime signedDatetime)
         {
             this.setProperty("signedDatetime", signedDatetime);
         }
 
-        public ModelBase getSignedPerson ()
+        public ModelBase getSignedPerson()
         {
-            return (ModelBase) this.getProperty("signedPerson");
+            return (ModelBase)this.getProperty("signedPerson");
         }
 
-        public void setSignedPerson (ModelBase signedPerson)
+        public void setSignedPerson(ModelBase signedPerson)
         {
             this.setProperty("signedPerson", signedPerson);
         }

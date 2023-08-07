@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class IncomingDirectDebitTransaction : ModelBase
     {
-        protected string resourceType = ResourceType.INCOMING_DIRECT_DEBIT_TRANSACTION;
+        protected new string resourceType = ResourceType.INCOMING_DIRECT_DEBIT_TRANSACTION;
         public const string INCOMING_DIRECT_DEBIT_AGREEMENT = "incomingDirectDebitAgreement";
         public const string PAYMENT_PROVIDER_PAYOUT = "paymentProviderPayout";
         public const string PAYMENT_PROVIDER_TRANSACTION_IDENTIFIER = "paymentProviderTransactionIdentifier";
@@ -23,158 +23,159 @@ namespace Arbor.Model
         public const string CANCELLED_DATETIME = "cancelledDatetime";
         public const string CUSTOMER_NOTIFICATION_DATETIME = "customerNotificationDatetime";
 
-        public IncomingDirectDebitTransaction ()
+        public IncomingDirectDebitTransaction()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public IncomingDirectDebitTransaction (string resourceType = "IncomingDirectDebitTransaction", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<IncomingDirectDebitTransaction> query (SimpleQuery query = null)
+        public IncomingDirectDebitTransaction(string resourceType = "IncomingDirectDebitTransaction", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("IncomingDirectDebitTransaction");
-        	RestGateway gateway = (RestGateway) IncomingDirectDebitTransaction.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<IncomingDirectDebitTransaction> incomingdirectdebittransactionCollection = new ModelCollection<IncomingDirectDebitTransaction> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    incomingdirectdebittransactionCollection.add((IncomingDirectDebitTransaction) model);
-        	}
-        
-        	return incomingdirectdebittransactionCollection;
+
         }
 
-        public static IncomingDirectDebitTransaction retrieve (string id)
+
+        public static ModelCollection<IncomingDirectDebitTransaction> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) IncomingDirectDebitTransaction.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (IncomingDirectDebitTransaction) gateway.retrieve(ResourceType.INCOMING_DIRECT_DEBIT_TRANSACTION, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("IncomingDirectDebitTransaction");
+            RestGateway gateway = (RestGateway)IncomingDirectDebitTransaction.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<IncomingDirectDebitTransaction> incomingdirectdebittransactionCollection = new ModelCollection<IncomingDirectDebitTransaction>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                incomingdirectdebittransactionCollection.add((IncomingDirectDebitTransaction)model);
+            }
+
+            return incomingdirectdebittransactionCollection;
         }
 
-        public IncomingDirectDebitAgreement getIncomingDirectDebitAgreement ()
+        public static IncomingDirectDebitTransaction retrieve(string id)
         {
-            return (IncomingDirectDebitAgreement) this.getProperty("incomingDirectDebitAgreement");
+            RestGateway gateway = (RestGateway)IncomingDirectDebitTransaction.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (IncomingDirectDebitTransaction)gateway.retrieve(ResourceType.INCOMING_DIRECT_DEBIT_TRANSACTION, id);
         }
 
-        public void setIncomingDirectDebitAgreement (IncomingDirectDebitAgreement incomingDirectDebitAgreement)
+        public IncomingDirectDebitAgreement getIncomingDirectDebitAgreement()
+        {
+            return (IncomingDirectDebitAgreement)this.getProperty("incomingDirectDebitAgreement");
+        }
+
+        public void setIncomingDirectDebitAgreement(IncomingDirectDebitAgreement incomingDirectDebitAgreement)
         {
             this.setProperty("incomingDirectDebitAgreement", incomingDirectDebitAgreement);
         }
 
-        public PaymentProviderPayout getPaymentProviderPayout ()
+        public PaymentProviderPayout getPaymentProviderPayout()
         {
-            return (PaymentProviderPayout) this.getProperty("paymentProviderPayout");
+            return (PaymentProviderPayout)this.getProperty("paymentProviderPayout");
         }
 
-        public void setPaymentProviderPayout (PaymentProviderPayout paymentProviderPayout)
+        public void setPaymentProviderPayout(PaymentProviderPayout paymentProviderPayout)
         {
             this.setProperty("paymentProviderPayout", paymentProviderPayout);
         }
 
-        public string getPaymentProviderTransactionIdentifier ()
+        public string getPaymentProviderTransactionIdentifier()
         {
             return this.getProperty("paymentProviderTransactionIdentifier").ToString();
         }
 
-        public void setPaymentProviderTransactionIdentifier (string paymentProviderTransactionIdentifier)
+        public void setPaymentProviderTransactionIdentifier(string paymentProviderTransactionIdentifier)
         {
             this.setProperty("paymentProviderTransactionIdentifier", paymentProviderTransactionIdentifier);
         }
 
-        public string getTransactionNetAmount ()
+        public string getTransactionNetAmount()
         {
             return this.getProperty("transactionNetAmount").ToString();
         }
 
-        public void setTransactionNetAmount (string transactionNetAmount)
+        public void setTransactionNetAmount(string transactionNetAmount)
         {
             this.setProperty("transactionNetAmount", transactionNetAmount);
         }
 
-        public string getTransactionFee ()
+        public string getTransactionFee()
         {
             return this.getProperty("transactionFee").ToString();
         }
 
-        public void setTransactionFee (string transactionFee)
+        public void setTransactionFee(string transactionFee)
         {
             this.setProperty("transactionFee", transactionFee);
         }
 
-        public string getTransactionReference ()
+        public string getTransactionReference()
         {
             return this.getProperty("transactionReference").ToString();
         }
 
-        public void setTransactionReference (string transactionReference)
+        public void setTransactionReference(string transactionReference)
         {
             this.setProperty("transactionReference", transactionReference);
         }
 
-        public DateTime getTransactionInitiatedDatetime ()
+        public DateTime getTransactionInitiatedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("transactionInitiatedDatetime"));
         }
 
-        public void setTransactionInitiatedDatetime (DateTime transactionInitiatedDatetime)
+        public void setTransactionInitiatedDatetime(DateTime transactionInitiatedDatetime)
         {
             this.setProperty("transactionInitiatedDatetime", transactionInitiatedDatetime);
         }
 
-        public DateTime getTransactionSucceededDatetime ()
+        public DateTime getTransactionSucceededDatetime()
         {
             return Convert.ToDateTime(this.getProperty("transactionSucceededDatetime"));
         }
 
-        public void setTransactionSucceededDatetime (DateTime transactionSucceededDatetime)
+        public void setTransactionSucceededDatetime(DateTime transactionSucceededDatetime)
         {
             this.setProperty("transactionSucceededDatetime", transactionSucceededDatetime);
         }
 
-        public DateTime getTransactionFailedDatetime ()
+        public DateTime getTransactionFailedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("transactionFailedDatetime"));
         }
 
-        public void setTransactionFailedDatetime (DateTime transactionFailedDatetime)
+        public void setTransactionFailedDatetime(DateTime transactionFailedDatetime)
         {
             this.setProperty("transactionFailedDatetime", transactionFailedDatetime);
         }
 
-        public DateTime getTransactionRefundedDatetime ()
+        public DateTime getTransactionRefundedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("transactionRefundedDatetime"));
         }
 
-        public void setTransactionRefundedDatetime (DateTime transactionRefundedDatetime)
+        public void setTransactionRefundedDatetime(DateTime transactionRefundedDatetime)
         {
             this.setProperty("transactionRefundedDatetime", transactionRefundedDatetime);
         }
 
-        public DateTime getCancelledDatetime ()
+        public DateTime getCancelledDatetime()
         {
             return Convert.ToDateTime(this.getProperty("cancelledDatetime"));
         }
 
-        public void setCancelledDatetime (DateTime cancelledDatetime)
+        public void setCancelledDatetime(DateTime cancelledDatetime)
         {
             this.setProperty("cancelledDatetime", cancelledDatetime);
         }
 
-        public DateTime getCustomerNotificationDatetime ()
+        public DateTime getCustomerNotificationDatetime()
         {
             return Convert.ToDateTime(this.getProperty("customerNotificationDatetime"));
         }
 
-        public void setCustomerNotificationDatetime (DateTime customerNotificationDatetime)
+        public void setCustomerNotificationDatetime(DateTime customerNotificationDatetime)
         {
             this.setProperty("customerNotificationDatetime", customerNotificationDatetime);
         }

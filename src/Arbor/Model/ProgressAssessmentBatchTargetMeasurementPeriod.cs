@@ -9,97 +9,109 @@ namespace Arbor.Model
 {
     public class ProgressAssessmentBatchTargetMeasurementPeriod : ModelBase
     {
-        protected string resourceType = ResourceType.PROGRESS_ASSESSMENT_BATCH_TARGET_MEASUREMENT_PERIOD;
+        protected new string resourceType = ResourceType.PROGRESS_ASSESSMENT_BATCH_TARGET_MEASUREMENT_PERIOD;
         public const string PROGRESS_ASSESSMENT_BATCH_TARGET = "progressAssessmentBatchTarget";
         public const string PROGRESS_MEASUREMENT_PERIOD = "progressMeasurementPeriod";
         public const string MARKING_STARTED_DATETIME = "markingStartedDatetime";
         public const string MARKING_COMPLETED_DATETIME = "markingCompletedDatetime";
         public const string MARKING_FINALIZED_DATETIME = "markingFinalizedDatetime";
+        public const string ALL_MARKS_APPROVED = "allMarksApproved";
 
-        public ProgressAssessmentBatchTargetMeasurementPeriod ()
+        public ProgressAssessmentBatchTargetMeasurementPeriod()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public ProgressAssessmentBatchTargetMeasurementPeriod (string resourceType = "ProgressAssessmentBatchTargetMeasurementPeriod", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<ProgressAssessmentBatchTargetMeasurementPeriod> query (SimpleQuery query = null)
+        public ProgressAssessmentBatchTargetMeasurementPeriod(string resourceType = "ProgressAssessmentBatchTargetMeasurementPeriod", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("ProgressAssessmentBatchTargetMeasurementPeriod");
-        	RestGateway gateway = (RestGateway) ProgressAssessmentBatchTargetMeasurementPeriod.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<ProgressAssessmentBatchTargetMeasurementPeriod> progressassessmentbatchtargetmeasurementperiodCollection = new ModelCollection<ProgressAssessmentBatchTargetMeasurementPeriod> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    progressassessmentbatchtargetmeasurementperiodCollection.add((ProgressAssessmentBatchTargetMeasurementPeriod) model);
-        	}
-        
-        	return progressassessmentbatchtargetmeasurementperiodCollection;
+
         }
 
-        public static ProgressAssessmentBatchTargetMeasurementPeriod retrieve (string id)
+
+        public static ModelCollection<ProgressAssessmentBatchTargetMeasurementPeriod> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) ProgressAssessmentBatchTargetMeasurementPeriod.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (ProgressAssessmentBatchTargetMeasurementPeriod) gateway.retrieve(ResourceType.PROGRESS_ASSESSMENT_BATCH_TARGET_MEASUREMENT_PERIOD, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("ProgressAssessmentBatchTargetMeasurementPeriod");
+            RestGateway gateway = (RestGateway)ProgressAssessmentBatchTargetMeasurementPeriod.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<ProgressAssessmentBatchTargetMeasurementPeriod> progressassessmentbatchtargetmeasurementperiodCollection = new ModelCollection<ProgressAssessmentBatchTargetMeasurementPeriod>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                progressassessmentbatchtargetmeasurementperiodCollection.add((ProgressAssessmentBatchTargetMeasurementPeriod)model);
+            }
+
+            return progressassessmentbatchtargetmeasurementperiodCollection;
         }
 
-        public ProgressAssessmentBatchTarget getProgressAssessmentBatchTarget ()
+        public static ProgressAssessmentBatchTargetMeasurementPeriod retrieve(string id)
         {
-            return (ProgressAssessmentBatchTarget) this.getProperty("progressAssessmentBatchTarget");
+            RestGateway gateway = (RestGateway)ProgressAssessmentBatchTargetMeasurementPeriod.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (ProgressAssessmentBatchTargetMeasurementPeriod)gateway.retrieve(ResourceType.PROGRESS_ASSESSMENT_BATCH_TARGET_MEASUREMENT_PERIOD, id);
         }
 
-        public void setProgressAssessmentBatchTarget (ProgressAssessmentBatchTarget progressAssessmentBatchTarget)
+        public ProgressAssessmentBatchTarget getProgressAssessmentBatchTarget()
+        {
+            return (ProgressAssessmentBatchTarget)this.getProperty("progressAssessmentBatchTarget");
+        }
+
+        public void setProgressAssessmentBatchTarget(ProgressAssessmentBatchTarget progressAssessmentBatchTarget)
         {
             this.setProperty("progressAssessmentBatchTarget", progressAssessmentBatchTarget);
         }
 
-        public ProgressMeasurementPeriod getProgressMeasurementPeriod ()
+        public ProgressMeasurementPeriod getProgressMeasurementPeriod()
         {
-            return (ProgressMeasurementPeriod) this.getProperty("progressMeasurementPeriod");
+            return (ProgressMeasurementPeriod)this.getProperty("progressMeasurementPeriod");
         }
 
-        public void setProgressMeasurementPeriod (ProgressMeasurementPeriod progressMeasurementPeriod)
+        public void setProgressMeasurementPeriod(ProgressMeasurementPeriod progressMeasurementPeriod)
         {
             this.setProperty("progressMeasurementPeriod", progressMeasurementPeriod);
         }
 
-        public DateTime getMarkingStartedDatetime ()
+        public DateTime getMarkingStartedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("markingStartedDatetime"));
         }
 
-        public void setMarkingStartedDatetime (DateTime markingStartedDatetime)
+        public void setMarkingStartedDatetime(DateTime markingStartedDatetime)
         {
             this.setProperty("markingStartedDatetime", markingStartedDatetime);
         }
 
-        public DateTime getMarkingCompletedDatetime ()
+        public DateTime getMarkingCompletedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("markingCompletedDatetime"));
         }
 
-        public void setMarkingCompletedDatetime (DateTime markingCompletedDatetime)
+        public void setMarkingCompletedDatetime(DateTime markingCompletedDatetime)
         {
             this.setProperty("markingCompletedDatetime", markingCompletedDatetime);
         }
 
-        public DateTime getMarkingFinalizedDatetime ()
+        public DateTime getMarkingFinalizedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("markingFinalizedDatetime"));
         }
 
-        public void setMarkingFinalizedDatetime (DateTime markingFinalizedDatetime)
+        public void setMarkingFinalizedDatetime(DateTime markingFinalizedDatetime)
         {
             this.setProperty("markingFinalizedDatetime", markingFinalizedDatetime);
+        }
+
+        public bool getAllMarksApproved()
+        {
+            return Convert.ToBoolean(this.getProperty("allMarksApproved"));
+        }
+
+        public void setAllMarksApproved(bool allMarksApproved)
+        {
+            this.setProperty("allMarksApproved", allMarksApproved);
         }
 
 

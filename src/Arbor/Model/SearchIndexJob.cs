@@ -15,76 +15,79 @@ namespace Arbor.Model
         public const string THREAD_IDENTIFIER = "threadIdentifier";
         public const string COMPLETED_DATETIME = "completedDatetime";
 
-        public SearchIndexJob ()
+        public SearchIndexJob()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public SearchIndexJob (string resourceType = "SearchIndexJob", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<SearchIndexJob> query (SimpleQuery query = null)
+        public SearchIndexJob(string resourceType = "SearchIndexJob", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("SearchIndexJob");
-        	RestGateway gateway = (RestGateway) SearchIndexJob.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<SearchIndexJob> searchindexjobCollection = new ModelCollection<SearchIndexJob> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    searchindexjobCollection.add((SearchIndexJob) model);
-        	}
-        
-        	return searchindexjobCollection;
+
         }
 
-        public static SearchIndexJob retrieve (string id)
+
+        public static ModelCollection<SearchIndexJob> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) SearchIndexJob.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (SearchIndexJob) gateway.retrieve(ResourceType.SEARCH_INDEX_JOB, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("SearchIndexJob");
+            RestGateway gateway = (RestGateway)SearchIndexJob.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<SearchIndexJob> searchindexjobCollection = new ModelCollection<SearchIndexJob>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                searchindexjobCollection.add((SearchIndexJob)model);
+            }
+
+            return searchindexjobCollection;
         }
 
-        public ModelBase getObject ()
+        public static SearchIndexJob retrieve(string id)
         {
-            return (ModelBase) this.getProperty("object");
+            RestGateway gateway = (RestGateway)SearchIndexJob.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (SearchIndexJob)gateway.retrieve(ResourceType.SEARCH_INDEX_JOB, id);
         }
 
-        public void setObject (ModelBase _object)
+        public ModelBase getObject()
+        {
+            return (ModelBase)this.getProperty("object");
+        }
+
+        public void setObject(ModelBase _object)
         {
             this.setProperty("object", _object);
         }
 
-        public DateTime getStartedDatetime (){
+        public DateTime getStartedDatetime()
+        {
             return Convert.ToDateTime(this.getProperty("startedDatetime"));
         }
 
-        public void setStartedDatetime (DateTime startedDatetime)
+        public void setStartedDatetime(DateTime startedDatetime)
         {
             this.setProperty("startedDatetime", startedDatetime);
         }
 
-        public int getThreadIdentifier ()
+        public int getThreadIdentifier()
         {
             return Convert.ToInt32(this.getProperty("threadIdentifier"));
         }
 
-        public void setThreadIdentifier (int threadIdentifier)
+        public void setThreadIdentifier(int threadIdentifier)
         {
             this.setProperty("threadIdentifier", threadIdentifier);
         }
 
-        public DateTime getCompletedDatetime (){
+        public DateTime getCompletedDatetime()
+        {
             return Convert.ToDateTime(this.getProperty("completedDatetime"));
         }
 
-        public void setCompletedDatetime (DateTime completedDatetime)
+        public void setCompletedDatetime(DateTime completedDatetime)
         {
             this.setProperty("completedDatetime", completedDatetime);
         }

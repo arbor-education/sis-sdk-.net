@@ -45,376 +45,379 @@ namespace Arbor.Model.UkDfe
         public const string IS_CURRENTLY_BEING_PROCESSED = "isCurrentlyBeingProcessed";
         public const string IMPORT_ERRORS = "importErrors";
 
-        public CtfImportJobStudent ()
+        public CtfImportJobStudent()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public CtfImportJobStudent (string resourceType = "CtfImportJobStudent", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<CtfImportJobStudent> query (SimpleQuery query = null)
+        public CtfImportJobStudent(string resourceType = "CtfImportJobStudent", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("UkDfe_CtfImportJobStudent");
-        	RestGateway gateway = (RestGateway) CtfImportJobStudent.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<CtfImportJobStudent> ctfimportjobstudentCollection = new ModelCollection<CtfImportJobStudent> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    ctfimportjobstudentCollection.add((CtfImportJobStudent) model);
-        	}
-        
-        	return ctfimportjobstudentCollection;
+
         }
 
-        public static CtfImportJobStudent retrieve (string id)
+
+        public static ModelCollection<CtfImportJobStudent> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) CtfImportJobStudent.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (CtfImportJobStudent) gateway.retrieve(ResourceType.UK_DFE_CTF_IMPORT_JOB_STUDENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("UkDfe_CtfImportJobStudent");
+            RestGateway gateway = (RestGateway)CtfImportJobStudent.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<CtfImportJobStudent> ctfimportjobstudentCollection = new ModelCollection<CtfImportJobStudent>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                ctfimportjobstudentCollection.add((CtfImportJobStudent)model);
+            }
+
+            return ctfimportjobstudentCollection;
         }
 
-        public CtfImportJob getCtfImportJob ()
+        public static CtfImportJobStudent retrieve(string id)
         {
-            return (CtfImportJob) this.getProperty("ctfImportJob");
+            RestGateway gateway = (RestGateway)CtfImportJobStudent.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (CtfImportJobStudent)gateway.retrieve(ResourceType.UK_DFE_CTF_IMPORT_JOB_STUDENT, id);
         }
 
-        public void setCtfImportJob (CtfImportJob ctfImportJob)
+        public CtfImportJob getCtfImportJob()
+        {
+            return (CtfImportJob)this.getProperty("ctfImportJob");
+        }
+
+        public void setCtfImportJob(CtfImportJob ctfImportJob)
         {
             this.setProperty("ctfImportJob", ctfImportJob);
         }
 
-        public string getFirstName ()
+        public string getFirstName()
         {
             return this.getProperty("firstName").ToString();
         }
 
-        public void setFirstName (string firstName)
+        public void setFirstName(string firstName)
         {
             this.setProperty("firstName", firstName);
         }
 
-        public string getLastName ()
+        public string getLastName()
         {
             return this.getProperty("lastName").ToString();
         }
 
-        public void setLastName (string lastName)
+        public void setLastName(string lastName)
         {
             this.setProperty("lastName", lastName);
         }
 
-        public DateTime getDateOfBirth (){
+        public DateTime getDateOfBirth()
+        {
             return Convert.ToDateTime(this.getProperty("dateOfBirth"));
         }
 
-        public void setDateOfBirth (DateTime dateOfBirth)
+        public void setDateOfBirth(DateTime dateOfBirth)
         {
             this.setProperty("dateOfBirth", dateOfBirth);
         }
 
-        public Gender getGender ()
+        public Gender getGender()
         {
-            return (Gender) this.getProperty("gender");
+            return (Gender)this.getProperty("gender");
         }
 
-        public void setGender (Gender gender)
+        public void setGender(Gender gender)
         {
             this.setProperty("gender", gender);
         }
 
-        public string getUpn ()
+        public string getUpn()
         {
             return this.getProperty("upn").ToString();
         }
 
-        public void setUpn (string upn)
+        public void setUpn(string upn)
         {
             this.setProperty("upn", upn);
         }
 
-        public string getUniqueLearnerNumber ()
+        public string getUniqueLearnerNumber()
         {
             return this.getProperty("uniqueLearnerNumber").ToString();
         }
 
-        public void setUniqueLearnerNumber (string uniqueLearnerNumber)
+        public void setUniqueLearnerNumber(string uniqueLearnerNumber)
         {
             this.setProperty("uniqueLearnerNumber", uniqueLearnerNumber);
         }
 
-        public string getUniqueCandidateIdentifier ()
+        public string getUniqueCandidateIdentifier()
         {
             return this.getProperty("uniqueCandidateIdentifier").ToString();
         }
 
-        public void setUniqueCandidateIdentifier (string uniqueCandidateIdentifier)
+        public void setUniqueCandidateIdentifier(string uniqueCandidateIdentifier)
         {
             this.setProperty("uniqueCandidateIdentifier", uniqueCandidateIdentifier);
         }
 
-        public Student getStudent ()
+        public Student getStudent()
         {
-            return (Student) this.getProperty("student");
+            return (Student)this.getProperty("student");
         }
 
-        public void setStudent (Student student)
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public DateTime getImportDatetime (){
+        public DateTime getImportDatetime()
+        {
             return Convert.ToDateTime(this.getProperty("importDatetime"));
         }
 
-        public void setImportDatetime (DateTime importDatetime)
+        public void setImportDatetime(DateTime importDatetime)
         {
             this.setProperty("importDatetime", importDatetime);
         }
 
-        public bool getBasicDetailsProcessed ()
+        public bool getBasicDetailsProcessed()
         {
-            return (bool) this.getProperty("basicDetailsProcessed");
+            return (bool)this.getProperty("basicDetailsProcessed");
         }
 
-        public void setBasicDetailsProcessed (bool basicDetailsProcessed)
+        public void setBasicDetailsProcessed(bool basicDetailsProcessed)
         {
             this.setProperty("basicDetailsProcessed", basicDetailsProcessed);
         }
 
-        public bool getFsmHistoryProcessed ()
+        public bool getFsmHistoryProcessed()
         {
-            return (bool) this.getProperty("fsmHistoryProcessed");
+            return (bool)this.getProperty("fsmHistoryProcessed");
         }
 
-        public void setFsmHistoryProcessed (bool fsmHistoryProcessed)
+        public void setFsmHistoryProcessed(bool fsmHistoryProcessed)
         {
             this.setProperty("fsmHistoryProcessed", fsmHistoryProcessed);
         }
 
-        public bool getLookedAfterProcessed ()
+        public bool getLookedAfterProcessed()
         {
-            return (bool) this.getProperty("lookedAfterProcessed");
+            return (bool)this.getProperty("lookedAfterProcessed");
         }
 
-        public void setLookedAfterProcessed (bool lookedAfterProcessed)
+        public void setLookedAfterProcessed(bool lookedAfterProcessed)
         {
             this.setProperty("lookedAfterProcessed", lookedAfterProcessed);
         }
 
-        public bool getSenHistoryProcessed ()
+        public bool getSenHistoryProcessed()
         {
-            return (bool) this.getProperty("senHistoryProcessed");
+            return (bool)this.getProperty("senHistoryProcessed");
         }
 
-        public void setSenHistoryProcessed (bool senHistoryProcessed)
+        public void setSenHistoryProcessed(bool senHistoryProcessed)
         {
             this.setProperty("senHistoryProcessed", senHistoryProcessed);
         }
 
-        public bool getAddressProcessed ()
+        public bool getAddressProcessed()
         {
-            return (bool) this.getProperty("addressProcessed");
+            return (bool)this.getProperty("addressProcessed");
         }
 
-        public void setAddressProcessed (bool addressProcessed)
+        public void setAddressProcessed(bool addressProcessed)
         {
             this.setProperty("addressProcessed", addressProcessed);
         }
 
-        public bool getContactsProcessed ()
+        public bool getContactsProcessed()
         {
-            return (bool) this.getProperty("contactsProcessed");
+            return (bool)this.getProperty("contactsProcessed");
         }
 
-        public void setContactsProcessed (bool contactsProcessed)
+        public void setContactsProcessed(bool contactsProcessed)
         {
             this.setProperty("contactsProcessed", contactsProcessed);
         }
 
-        public bool getAttendanceProcessed ()
+        public bool getAttendanceProcessed()
         {
-            return (bool) this.getProperty("attendanceProcessed");
+            return (bool)this.getProperty("attendanceProcessed");
         }
 
-        public void setAttendanceProcessed (bool attendanceProcessed)
+        public void setAttendanceProcessed(bool attendanceProcessed)
         {
             this.setProperty("attendanceProcessed", attendanceProcessed);
         }
 
-        public bool getStageAssessmentsProcessed ()
+        public bool getStageAssessmentsProcessed()
         {
-            return (bool) this.getProperty("stageAssessmentsProcessed");
+            return (bool)this.getProperty("stageAssessmentsProcessed");
         }
 
-        public void setStageAssessmentsProcessed (bool stageAssessmentsProcessed)
+        public void setStageAssessmentsProcessed(bool stageAssessmentsProcessed)
         {
             this.setProperty("stageAssessmentsProcessed", stageAssessmentsProcessed);
         }
 
-        public bool getSchoolHistoryProcessed ()
+        public bool getSchoolHistoryProcessed()
         {
-            return (bool) this.getProperty("schoolHistoryProcessed");
+            return (bool)this.getProperty("schoolHistoryProcessed");
         }
 
-        public void setSchoolHistoryProcessed (bool schoolHistoryProcessed)
+        public void setSchoolHistoryProcessed(bool schoolHistoryProcessed)
         {
             this.setProperty("schoolHistoryProcessed", schoolHistoryProcessed);
         }
 
-        public bool getNawDetailsProcessed ()
+        public bool getNawDetailsProcessed()
         {
-            return (bool) this.getProperty("nawDetailsProcessed");
+            return (bool)this.getProperty("nawDetailsProcessed");
         }
 
-        public void setNawDetailsProcessed (bool nawDetailsProcessed)
+        public void setNawDetailsProcessed(bool nawDetailsProcessed)
         {
             this.setProperty("nawDetailsProcessed", nawDetailsProcessed);
         }
 
-        public string getImportName ()
+        public string getImportName()
         {
             return this.getProperty("importName").ToString();
         }
 
-        public void setImportName (string importName)
+        public void setImportName(string importName)
         {
             this.setProperty("importName", importName);
         }
 
-        public string getImportDateOfBirth ()
+        public string getImportDateOfBirth()
         {
             return this.getProperty("importDateOfBirth").ToString();
         }
 
-        public void setImportDateOfBirth (string importDateOfBirth)
+        public void setImportDateOfBirth(string importDateOfBirth)
         {
             this.setProperty("importDateOfBirth", importDateOfBirth);
         }
 
-        public string getImportLanguages ()
+        public string getImportLanguages()
         {
             return this.getProperty("importLanguages").ToString();
         }
 
-        public void setImportLanguages (string importLanguages)
+        public void setImportLanguages(string importLanguages)
         {
             this.setProperty("importLanguages", importLanguages);
         }
 
-        public string getImportDisabilities ()
+        public string getImportDisabilities()
         {
             return this.getProperty("importDisabilities").ToString();
         }
 
-        public void setImportDisabilities (string importDisabilities)
+        public void setImportDisabilities(string importDisabilities)
         {
             this.setProperty("importDisabilities", importDisabilities);
         }
 
-        public string getImportAddress ()
+        public string getImportAddress()
         {
             return this.getProperty("importAddress").ToString();
         }
 
-        public void setImportAddress (string importAddress)
+        public void setImportAddress(string importAddress)
         {
             this.setProperty("importAddress", importAddress);
         }
 
-        public string getImportGuardians ()
+        public string getImportGuardians()
         {
             return this.getProperty("importGuardians").ToString();
         }
 
-        public void setImportGuardians (string importGuardians)
+        public void setImportGuardians(string importGuardians)
         {
             this.setProperty("importGuardians", importGuardians);
         }
 
-        public string getImportSen ()
+        public string getImportSen()
         {
             return this.getProperty("importSen").ToString();
         }
 
-        public void setImportSen (string importSen)
+        public void setImportSen(string importSen)
         {
             this.setProperty("importSen", importSen);
         }
 
-        public string getImportAttendance ()
+        public string getImportAttendance()
         {
             return this.getProperty("importAttendance").ToString();
         }
 
-        public void setImportAttendance (string importAttendance)
+        public void setImportAttendance(string importAttendance)
         {
             this.setProperty("importAttendance", importAttendance);
         }
 
-        public string getImportAssessments ()
+        public string getImportAssessments()
         {
             return this.getProperty("importAssessments").ToString();
         }
 
-        public void setImportAssessments (string importAssessments)
+        public void setImportAssessments(string importAssessments)
         {
             this.setProperty("importAssessments", importAssessments);
         }
 
-        public string getImportSchoolHistory ()
+        public string getImportSchoolHistory()
         {
             return this.getProperty("importSchoolHistory").ToString();
         }
 
-        public void setImportSchoolHistory (string importSchoolHistory)
+        public void setImportSchoolHistory(string importSchoolHistory)
         {
             this.setProperty("importSchoolHistory", importSchoolHistory);
         }
 
-        public string getImportLookedAfter ()
+        public string getImportLookedAfter()
         {
             return this.getProperty("importLookedAfter").ToString();
         }
 
-        public void setImportLookedAfter (string importLookedAfter)
+        public void setImportLookedAfter(string importLookedAfter)
         {
             this.setProperty("importLookedAfter", importLookedAfter);
         }
 
-        public string getImportFsm ()
+        public string getImportFsm()
         {
             return this.getProperty("importFsm").ToString();
         }
 
-        public void setImportFsm (string importFsm)
+        public void setImportFsm(string importFsm)
         {
             this.setProperty("importFsm", importFsm);
         }
 
-        public bool getIsCurrentlyBeingProcessed ()
+        public bool getIsCurrentlyBeingProcessed()
         {
-            return (bool) this.getProperty("isCurrentlyBeingProcessed");
+            return (bool)this.getProperty("isCurrentlyBeingProcessed");
         }
 
-        public void setIsCurrentlyBeingProcessed (bool isCurrentlyBeingProcessed)
+        public void setIsCurrentlyBeingProcessed(bool isCurrentlyBeingProcessed)
         {
             this.setProperty("isCurrentlyBeingProcessed", isCurrentlyBeingProcessed);
         }
 
-        public string getImportErrors ()
+        public string getImportErrors()
         {
             return this.getProperty("importErrors").ToString();
         }
 
-        public void setImportErrors (string importErrors)
+        public void setImportErrors(string importErrors)
         {
             this.setProperty("importErrors", importErrors);
         }

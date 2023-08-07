@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class ObservationGrade : ModelBase
     {
-        protected string resourceType = ResourceType.OBSERVATION_GRADE;
+        protected new string resourceType = ResourceType.OBSERVATION_GRADE;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";
@@ -17,6 +17,10 @@ namespace Arbor.Model
         public const string SHORT_NAME = "shortName";
         public const string NAME = "name";
         public const string OBSERVATION_GRADE_VALUE = "observationGradeValue";
+        public const string LOWER_VALUE = "lowerValue";
+        public const string UPPER_VALUE = "upperValue";
+        public const string STATISTICAL_VALUE = "statisticalValue";
+        public const string GRADE_ORDER = "gradeOrder";
 
         public ObservationGrade ()
         {
@@ -122,6 +126,46 @@ namespace Arbor.Model
         public void setObservationGradeValue (float observationGradeValue)
         {
             this.setProperty("observationGradeValue", observationGradeValue);
+        }
+
+        public float getLowerValue ()
+        {
+            return (float) this.getProperty("lowerValue");
+        }
+
+        public void setLowerValue (float lowerValue)
+        {
+            this.setProperty("lowerValue", lowerValue);
+        }
+
+        public float getUpperValue ()
+        {
+            return (float) this.getProperty("upperValue");
+        }
+
+        public void setUpperValue (float upperValue)
+        {
+            this.setProperty("upperValue", upperValue);
+        }
+
+        public float getStatisticalValue ()
+        {
+            return (float) this.getProperty("statisticalValue");
+        }
+
+        public void setStatisticalValue (float statisticalValue)
+        {
+            this.setProperty("statisticalValue", statisticalValue);
+        }
+
+        public int getGradeOrder ()
+        {
+            return Convert.ToInt32(this.getProperty("gradeOrder"));
+        }
+
+        public void setGradeOrder (int gradeOrder)
+        {
+            this.setProperty("gradeOrder", gradeOrder);
         }
 
 

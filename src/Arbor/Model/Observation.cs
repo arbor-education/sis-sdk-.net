@@ -9,13 +9,14 @@ namespace Arbor.Model
 {
     public class Observation : ModelBase
     {
-        protected string resourceType = ResourceType.OBSERVATION;
+        protected new string resourceType = ResourceType.OBSERVATION;
         public const string OBSERVING_STAFF = "observingStaff";
         public const string OBSERVED_STAFF = "observedStaff";
         public const string SESSION = "session";
         public const string OBSERVATION_START_DATETIME = "observationStartDatetime";
         public const string OBSERVATION_END_DATETIME = "observationEndDatetime";
         public const string SUBMITTED_DATETIME = "submittedDatetime";
+        public const string OBSERVATION_FOCUS = "observationFocus";
 
         public Observation ()
         {
@@ -111,6 +112,16 @@ namespace Arbor.Model
         public void setSubmittedDatetime (DateTime submittedDatetime)
         {
             this.setProperty("submittedDatetime", submittedDatetime);
+        }
+
+        public string getObservationFocus ()
+        {
+            return this.getProperty("observationFocus").ToString();
+        }
+
+        public void setObservationFocus (string observationFocus)
+        {
+            this.setProperty("observationFocus", observationFocus);
         }
 
 

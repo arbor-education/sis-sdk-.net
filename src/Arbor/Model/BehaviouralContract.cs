@@ -17,98 +17,99 @@ namespace Arbor.Model
         public const string CONTRACT_END_DATE = "contractEndDate";
         public const string CONTRACT_REVIEW_DATE = "contractReviewDate";
 
-        public BehaviouralContract ()
+        public BehaviouralContract()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public BehaviouralContract (string resourceType = "BehaviouralContract", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<BehaviouralContract> query (SimpleQuery query = null)
+        public BehaviouralContract(string resourceType = "BehaviouralContract", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("BehaviouralContract");
-        	RestGateway gateway = (RestGateway) BehaviouralContract.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<BehaviouralContract> behaviouralcontractCollection = new ModelCollection<BehaviouralContract> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    behaviouralcontractCollection.add((BehaviouralContract) model);
-        	}
-        
-        	return behaviouralcontractCollection;
+
         }
 
-        public static BehaviouralContract retrieve (string id)
+
+        public static ModelCollection<BehaviouralContract> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) BehaviouralContract.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (BehaviouralContract) gateway.retrieve(ResourceType.BEHAVIOURAL_CONTRACT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("BehaviouralContract");
+            RestGateway gateway = (RestGateway)BehaviouralContract.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<BehaviouralContract> behaviouralcontractCollection = new ModelCollection<BehaviouralContract>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                behaviouralcontractCollection.add((BehaviouralContract)model);
+            }
+
+            return behaviouralcontractCollection;
         }
 
-        public string getBehaviouralContractTitle ()
+        public static BehaviouralContract retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)BehaviouralContract.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (BehaviouralContract)gateway.retrieve(ResourceType.BEHAVIOURAL_CONTRACT, id);
+        }
+
+        public string getBehaviouralContractTitle()
         {
             return this.getProperty("behaviouralContractTitle").ToString();
         }
 
-        public void setBehaviouralContractTitle (string behaviouralContractTitle)
+        public void setBehaviouralContractTitle(string behaviouralContractTitle)
         {
             this.setProperty("behaviouralContractTitle", behaviouralContractTitle);
         }
 
-        public Student getStudent ()
+        public Student getStudent()
         {
-            return (Student) this.getProperty("student");
+            return (Student)this.getProperty("student");
         }
 
-        public void setStudent (Student student)
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public string getNarrative ()
+        public string getNarrative()
         {
             return this.getProperty("narrative").ToString();
         }
 
-        public void setNarrative (string narrative)
+        public void setNarrative(string narrative)
         {
             this.setProperty("narrative", narrative);
         }
 
-        public DateTime getContractStartDate ()
+        public DateTime getContractStartDate()
         {
             return Convert.ToDateTime(this.getProperty("contractStartDate"));
         }
 
-        public void setContractStartDate (DateTime contractStartDate)
+        public void setContractStartDate(DateTime contractStartDate)
         {
             this.setProperty("contractStartDate", contractStartDate);
         }
 
-        public DateTime getContractEndDate ()
+        public DateTime getContractEndDate()
         {
             return Convert.ToDateTime(this.getProperty("contractEndDate"));
         }
 
-        public void setContractEndDate (DateTime contractEndDate)
+        public void setContractEndDate(DateTime contractEndDate)
         {
             this.setProperty("contractEndDate", contractEndDate);
         }
 
-        public DateTime getContractReviewDate ()
+        public DateTime getContractReviewDate()
         {
             return Convert.ToDateTime(this.getProperty("contractReviewDate"));
         }
 
-        public void setContractReviewDate (DateTime contractReviewDate)
+        public void setContractReviewDate(DateTime contractReviewDate)
         {
             this.setProperty("contractReviewDate", contractReviewDate);
         }

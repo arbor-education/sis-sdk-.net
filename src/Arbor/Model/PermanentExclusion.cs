@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class PermanentExclusion : ModelBase
     {
-        protected string resourceType = ResourceType.PERMANENT_EXCLUSION;
+        protected new string resourceType = ResourceType.PERMANENT_EXCLUSION;
         public const string STUDENT = "student";
         public const string EXCLUSION_REASON = "exclusionReason";
         public const string FROM_DATE = "fromDate";
@@ -18,108 +18,109 @@ namespace Arbor.Model
         public const string NOTIFIED_GUARDIANS_DATETIME = "notifiedGuardiansDatetime";
         public const string NARRATIVE = "narrative";
 
-        public PermanentExclusion ()
+        public PermanentExclusion()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public PermanentExclusion (string resourceType = "PermanentExclusion", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<PermanentExclusion> query (SimpleQuery query = null)
+        public PermanentExclusion(string resourceType = "PermanentExclusion", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("PermanentExclusion");
-        	RestGateway gateway = (RestGateway) PermanentExclusion.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<PermanentExclusion> permanentexclusionCollection = new ModelCollection<PermanentExclusion> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    permanentexclusionCollection.add((PermanentExclusion) model);
-        	}
-        
-        	return permanentexclusionCollection;
+
         }
 
-        public static PermanentExclusion retrieve (string id)
+
+        public static ModelCollection<PermanentExclusion> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) PermanentExclusion.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (PermanentExclusion) gateway.retrieve(ResourceType.PERMANENT_EXCLUSION, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("PermanentExclusion");
+            RestGateway gateway = (RestGateway)PermanentExclusion.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<PermanentExclusion> permanentexclusionCollection = new ModelCollection<PermanentExclusion>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                permanentexclusionCollection.add((PermanentExclusion)model);
+            }
+
+            return permanentexclusionCollection;
         }
 
-        public Student getStudent ()
+        public static PermanentExclusion retrieve(string id)
         {
-            return (Student) this.getProperty("student");
+            RestGateway gateway = (RestGateway)PermanentExclusion.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (PermanentExclusion)gateway.retrieve(ResourceType.PERMANENT_EXCLUSION, id);
         }
 
-        public void setStudent (Student student)
+        public Student getStudent()
+        {
+            return (Student)this.getProperty("student");
+        }
+
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public ExclusionReason getExclusionReason ()
+        public ExclusionReason getExclusionReason()
         {
-            return (ExclusionReason) this.getProperty("exclusionReason");
+            return (ExclusionReason)this.getProperty("exclusionReason");
         }
 
-        public void setExclusionReason (ExclusionReason exclusionReason)
+        public void setExclusionReason(ExclusionReason exclusionReason)
         {
             this.setProperty("exclusionReason", exclusionReason);
         }
 
-        public DateTime getFromDate ()
+        public DateTime getFromDate()
         {
             return Convert.ToDateTime(this.getProperty("fromDate"));
         }
 
-        public void setFromDate (DateTime fromDate)
+        public void setFromDate(DateTime fromDate)
         {
             this.setProperty("fromDate", fromDate);
         }
 
-        public DateTime getDecisionDatetime ()
+        public DateTime getDecisionDatetime()
         {
             return Convert.ToDateTime(this.getProperty("decisionDatetime"));
         }
 
-        public void setDecisionDatetime (DateTime decisionDatetime)
+        public void setDecisionDatetime(DateTime decisionDatetime)
         {
             this.setProperty("decisionDatetime", decisionDatetime);
         }
 
-        public DateTime getNotifiedStudentDatetime ()
+        public DateTime getNotifiedStudentDatetime()
         {
             return Convert.ToDateTime(this.getProperty("notifiedStudentDatetime"));
         }
 
-        public void setNotifiedStudentDatetime (DateTime notifiedStudentDatetime)
+        public void setNotifiedStudentDatetime(DateTime notifiedStudentDatetime)
         {
             this.setProperty("notifiedStudentDatetime", notifiedStudentDatetime);
         }
 
-        public DateTime getNotifiedGuardiansDatetime ()
+        public DateTime getNotifiedGuardiansDatetime()
         {
             return Convert.ToDateTime(this.getProperty("notifiedGuardiansDatetime"));
         }
 
-        public void setNotifiedGuardiansDatetime (DateTime notifiedGuardiansDatetime)
+        public void setNotifiedGuardiansDatetime(DateTime notifiedGuardiansDatetime)
         {
             this.setProperty("notifiedGuardiansDatetime", notifiedGuardiansDatetime);
         }
 
-        public string getNarrative ()
+        public string getNarrative()
         {
             return this.getProperty("narrative").ToString();
         }
 
-        public void setNarrative (string narrative)
+        public void setNarrative(string narrative)
         {
             this.setProperty("narrative", narrative);
         }

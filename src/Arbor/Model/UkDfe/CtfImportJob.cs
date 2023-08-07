@@ -23,157 +23,159 @@ namespace Arbor.Model.UkDfe
         public const string LAST_IMPORT_DATETIME = "lastImportDatetime";
         public const string IS_QUEUED_FOR_ALL_STUDENT_IMPORT = "isQueuedForAllStudentImport";
 
-        public CtfImportJob ()
+        public CtfImportJob()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public CtfImportJob (string resourceType = "CtfImportJob", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<CtfImportJob> query (SimpleQuery query = null)
+        public CtfImportJob(string resourceType = "CtfImportJob", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("UkDfe_CtfImportJob");
-        	RestGateway gateway = (RestGateway) CtfImportJob.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<CtfImportJob> ctfimportjobCollection = new ModelCollection<CtfImportJob> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    ctfimportjobCollection.add((CtfImportJob) model);
-        	}
-        
-        	return ctfimportjobCollection;
+
         }
 
-        public static CtfImportJob retrieve (string id)
+
+        public static ModelCollection<CtfImportJob> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) CtfImportJob.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (CtfImportJob) gateway.retrieve(ResourceType.UK_DFE_CTF_IMPORT_JOB, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("UkDfe_CtfImportJob");
+            RestGateway gateway = (RestGateway)CtfImportJob.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<CtfImportJob> ctfimportjobCollection = new ModelCollection<CtfImportJob>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                ctfimportjobCollection.add((CtfImportJob)model);
+            }
+
+            return ctfimportjobCollection;
         }
 
-        public string getSourceLocalAuthorityCode ()
+        public static CtfImportJob retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)CtfImportJob.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (CtfImportJob)gateway.retrieve(ResourceType.UK_DFE_CTF_IMPORT_JOB, id);
+        }
+
+        public string getSourceLocalAuthorityCode()
         {
             return this.getProperty("sourceLocalAuthorityCode").ToString();
         }
 
-        public void setSourceLocalAuthorityCode (string sourceLocalAuthorityCode)
+        public void setSourceLocalAuthorityCode(string sourceLocalAuthorityCode)
         {
             this.setProperty("sourceLocalAuthorityCode", sourceLocalAuthorityCode);
         }
 
-        public LocalAuthority getSourceLocalAuthority ()
+        public LocalAuthority getSourceLocalAuthority()
         {
-            return (LocalAuthority) this.getProperty("sourceLocalAuthority");
+            return (LocalAuthority)this.getProperty("sourceLocalAuthority");
         }
 
-        public void setSourceLocalAuthority (LocalAuthority sourceLocalAuthority)
+        public void setSourceLocalAuthority(LocalAuthority sourceLocalAuthority)
         {
             this.setProperty("sourceLocalAuthority", sourceLocalAuthority);
         }
 
-        public string getSourceEstablishmentNumber ()
+        public string getSourceEstablishmentNumber()
         {
             return this.getProperty("sourceEstablishmentNumber").ToString();
         }
 
-        public void setSourceEstablishmentNumber (string sourceEstablishmentNumber)
+        public void setSourceEstablishmentNumber(string sourceEstablishmentNumber)
         {
             this.setProperty("sourceEstablishmentNumber", sourceEstablishmentNumber);
         }
 
-        public string getSourceEducationalInstitutionName ()
+        public string getSourceEducationalInstitutionName()
         {
             return this.getProperty("sourceEducationalInstitutionName").ToString();
         }
 
-        public void setSourceEducationalInstitutionName (string sourceEducationalInstitutionName)
+        public void setSourceEducationalInstitutionName(string sourceEducationalInstitutionName)
         {
             this.setProperty("sourceEducationalInstitutionName", sourceEducationalInstitutionName);
         }
 
-        public EducationalInstitution getSourceEducationalInstitution ()
+        public EducationalInstitution getSourceEducationalInstitution()
         {
-            return (EducationalInstitution) this.getProperty("sourceEducationalInstitution");
+            return (EducationalInstitution)this.getProperty("sourceEducationalInstitution");
         }
 
-        public void setSourceEducationalInstitution (EducationalInstitution sourceEducationalInstitution)
+        public void setSourceEducationalInstitution(EducationalInstitution sourceEducationalInstitution)
         {
             this.setProperty("sourceEducationalInstitution", sourceEducationalInstitution);
         }
 
-        public string getDestinationLocalAuthorityCode ()
+        public string getDestinationLocalAuthorityCode()
         {
             return this.getProperty("destinationLocalAuthorityCode").ToString();
         }
 
-        public void setDestinationLocalAuthorityCode (string destinationLocalAuthorityCode)
+        public void setDestinationLocalAuthorityCode(string destinationLocalAuthorityCode)
         {
             this.setProperty("destinationLocalAuthorityCode", destinationLocalAuthorityCode);
         }
 
-        public LocalAuthority getDestinationLocalAuthority ()
+        public LocalAuthority getDestinationLocalAuthority()
         {
-            return (LocalAuthority) this.getProperty("destinationLocalAuthority");
+            return (LocalAuthority)this.getProperty("destinationLocalAuthority");
         }
 
-        public void setDestinationLocalAuthority (LocalAuthority destinationLocalAuthority)
+        public void setDestinationLocalAuthority(LocalAuthority destinationLocalAuthority)
         {
             this.setProperty("destinationLocalAuthority", destinationLocalAuthority);
         }
 
-        public string getDestinationEstablishmentNumber ()
+        public string getDestinationEstablishmentNumber()
         {
             return this.getProperty("destinationEstablishmentNumber").ToString();
         }
 
-        public void setDestinationEstablishmentNumber (string destinationEstablishmentNumber)
+        public void setDestinationEstablishmentNumber(string destinationEstablishmentNumber)
         {
             this.setProperty("destinationEstablishmentNumber", destinationEstablishmentNumber);
         }
 
-        public EducationalInstitution getDestinationEducationalInstitution ()
+        public EducationalInstitution getDestinationEducationalInstitution()
         {
-            return (EducationalInstitution) this.getProperty("destinationEducationalInstitution");
+            return (EducationalInstitution)this.getProperty("destinationEducationalInstitution");
         }
 
-        public void setDestinationEducationalInstitution (EducationalInstitution destinationEducationalInstitution)
+        public void setDestinationEducationalInstitution(EducationalInstitution destinationEducationalInstitution)
         {
             this.setProperty("destinationEducationalInstitution", destinationEducationalInstitution);
         }
 
-        public IntakeSeason getDefaultIntakeSeason ()
+        public IntakeSeason getDefaultIntakeSeason()
         {
-            return (IntakeSeason) this.getProperty("defaultIntakeSeason");
+            return (IntakeSeason)this.getProperty("defaultIntakeSeason");
         }
 
-        public void setDefaultIntakeSeason (IntakeSeason defaultIntakeSeason)
+        public void setDefaultIntakeSeason(IntakeSeason defaultIntakeSeason)
         {
             this.setProperty("defaultIntakeSeason", defaultIntakeSeason);
         }
 
-        public DateTime getLastImportDatetime (){
+        public DateTime getLastImportDatetime()
+        {
             return Convert.ToDateTime(this.getProperty("lastImportDatetime"));
         }
 
-        public void setLastImportDatetime (DateTime lastImportDatetime)
+        public void setLastImportDatetime(DateTime lastImportDatetime)
         {
             this.setProperty("lastImportDatetime", lastImportDatetime);
         }
 
-        public bool getIsQueuedForAllStudentImport ()
+        public bool getIsQueuedForAllStudentImport()
         {
-            return (bool) this.getProperty("isQueuedForAllStudentImport");
+            return (bool)this.getProperty("isQueuedForAllStudentImport");
         }
 
-        public void setIsQueuedForAllStudentImport (bool isQueuedForAllStudentImport)
+        public void setIsQueuedForAllStudentImport(bool isQueuedForAllStudentImport)
         {
             this.setProperty("isQueuedForAllStudentImport", isQueuedForAllStudentImport);
         }

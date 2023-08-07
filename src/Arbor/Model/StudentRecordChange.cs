@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class StudentRecordChange : ModelBase
     {
-        protected string resourceType = ResourceType.STUDENT_RECORD_CHANGE;
+        protected new string resourceType = ResourceType.STUDENT_RECORD_CHANGE;
         public const string STUDENT = "student";
         public const string CHANGER_CLASS_NAME = "changerClassName";
         public const string CHANGE_TYPE = "changeType";
@@ -20,128 +20,129 @@ namespace Arbor.Model
         public const string OLD_DATA = "oldData";
         public const string NEW_DATA = "newData";
 
-        public StudentRecordChange ()
+        public StudentRecordChange()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public StudentRecordChange (string resourceType = "StudentRecordChange", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<StudentRecordChange> query (SimpleQuery query = null)
+        public StudentRecordChange(string resourceType = "StudentRecordChange", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("StudentRecordChange");
-        	RestGateway gateway = (RestGateway) StudentRecordChange.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<StudentRecordChange> studentrecordchangeCollection = new ModelCollection<StudentRecordChange> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    studentrecordchangeCollection.add((StudentRecordChange) model);
-        	}
-        
-        	return studentrecordchangeCollection;
+
         }
 
-        public static StudentRecordChange retrieve (string id)
+
+        public static ModelCollection<StudentRecordChange> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) StudentRecordChange.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (StudentRecordChange) gateway.retrieve(ResourceType.STUDENT_RECORD_CHANGE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("StudentRecordChange");
+            RestGateway gateway = (RestGateway)StudentRecordChange.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<StudentRecordChange> studentrecordchangeCollection = new ModelCollection<StudentRecordChange>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                studentrecordchangeCollection.add((StudentRecordChange)model);
+            }
+
+            return studentrecordchangeCollection;
         }
 
-        public Student getStudent ()
+        public static StudentRecordChange retrieve(string id)
         {
-            return (Student) this.getProperty("student");
+            RestGateway gateway = (RestGateway)StudentRecordChange.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (StudentRecordChange)gateway.retrieve(ResourceType.STUDENT_RECORD_CHANGE, id);
         }
 
-        public void setStudent (Student student)
+        public Student getStudent()
+        {
+            return (Student)this.getProperty("student");
+        }
+
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public string getChangerClassName ()
+        public string getChangerClassName()
         {
             return this.getProperty("changerClassName").ToString();
         }
 
-        public void setChangerClassName (string changerClassName)
+        public void setChangerClassName(string changerClassName)
         {
             this.setProperty("changerClassName", changerClassName);
         }
 
-        public string getChangeType ()
+        public string getChangeType()
         {
             return this.getProperty("changeType").ToString();
         }
 
-        public void setChangeType (string changeType)
+        public void setChangeType(string changeType)
         {
             this.setProperty("changeType", changeType);
         }
 
-        public ModelBase getReferenceObject ()
+        public ModelBase getReferenceObject()
         {
-            return (ModelBase) this.getProperty("referenceObject");
+            return (ModelBase)this.getProperty("referenceObject");
         }
 
-        public void setReferenceObject (ModelBase referenceObject)
+        public void setReferenceObject(ModelBase referenceObject)
         {
             this.setProperty("referenceObject", referenceObject);
         }
 
-        public DateTime getAcceptedDatetime ()
+        public DateTime getAcceptedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("acceptedDatetime"));
         }
 
-        public void setAcceptedDatetime (DateTime acceptedDatetime)
+        public void setAcceptedDatetime(DateTime acceptedDatetime)
         {
             this.setProperty("acceptedDatetime", acceptedDatetime);
         }
 
-        public DateTime getRejectedDatetime ()
+        public DateTime getRejectedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("rejectedDatetime"));
         }
 
-        public void setRejectedDatetime (DateTime rejectedDatetime)
+        public void setRejectedDatetime(DateTime rejectedDatetime)
         {
             this.setProperty("rejectedDatetime", rejectedDatetime);
         }
 
-        public Staff getActionedByStaff ()
+        public Staff getActionedByStaff()
         {
-            return (Staff) this.getProperty("actionedByStaff");
+            return (Staff)this.getProperty("actionedByStaff");
         }
 
-        public void setActionedByStaff (Staff actionedByStaff)
+        public void setActionedByStaff(Staff actionedByStaff)
         {
             this.setProperty("actionedByStaff", actionedByStaff);
         }
 
-        public string getOldData ()
+        public string getOldData()
         {
             return this.getProperty("oldData").ToString();
         }
 
-        public void setOldData (string oldData)
+        public void setOldData(string oldData)
         {
             this.setProperty("oldData", oldData);
         }
 
-        public string getNewData ()
+        public string getNewData()
         {
             return this.getProperty("newData").ToString();
         }
 
-        public void setNewData (string newData)
+        public void setNewData(string newData)
         {
             this.setProperty("newData", newData);
         }

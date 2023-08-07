@@ -10,81 +10,82 @@ namespace Arbor.Model
 {
     public class AcademicProgrammeInstance : ModelBase
     {
-        protected string resourceType = ResourceType.ACADEMIC_PROGRAMME_INSTANCE;
+        protected new string resourceType = ResourceType.ACADEMIC_PROGRAMME_INSTANCE;
         public const string ACADEMIC_PROGRAMME = "academicProgramme";
         public const string INSTANCE_NAME = "instanceName";
         public const string ACADEMIC_YEAR = "academicYear";
 
-        public AcademicProgrammeInstance ()
+        public AcademicProgrammeInstance()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AcademicProgrammeInstance (string resourceType = "AcademicProgrammeInstance", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AcademicProgrammeInstance> query (SimpleQuery query = null)
+        public AcademicProgrammeInstance(string resourceType = "AcademicProgrammeInstance", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AcademicProgrammeInstance");
-        	RestGateway gateway = (RestGateway) AcademicProgrammeInstance.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AcademicProgrammeInstance> academicprogrammeinstanceCollection = new ModelCollection<AcademicProgrammeInstance> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    academicprogrammeinstanceCollection.add((AcademicProgrammeInstance) model);
-        	}
-        
-        	return academicprogrammeinstanceCollection;
+
         }
 
-        public static AcademicProgrammeInstance retrieve (string id)
+
+        public static ModelCollection<AcademicProgrammeInstance> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AcademicProgrammeInstance.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AcademicProgrammeInstance) gateway.retrieve(ResourceType.ACADEMIC_PROGRAMME_INSTANCE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AcademicProgrammeInstance");
+            RestGateway gateway = (RestGateway)AcademicProgrammeInstance.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AcademicProgrammeInstance> academicprogrammeinstanceCollection = new ModelCollection<AcademicProgrammeInstance>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                academicprogrammeinstanceCollection.add((AcademicProgrammeInstance)model);
+            }
+
+            return academicprogrammeinstanceCollection;
         }
 
-        public AcademicProgramme getAcademicProgramme ()
+        public static AcademicProgrammeInstance retrieve(string id)
         {
-            return (AcademicProgramme) this.getProperty("academicProgramme");
+            RestGateway gateway = (RestGateway)AcademicProgrammeInstance.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AcademicProgrammeInstance)gateway.retrieve(ResourceType.ACADEMIC_PROGRAMME_INSTANCE, id);
         }
 
-        public void setAcademicProgramme (AcademicProgramme academicProgramme)
+        public AcademicProgramme getAcademicProgramme()
+        {
+            return (AcademicProgramme)this.getProperty("academicProgramme");
+        }
+
+        public void setAcademicProgramme(AcademicProgramme academicProgramme)
         {
             this.setProperty("academicProgramme", academicProgramme);
         }
 
-        public string getInstanceName ()
+        public string getInstanceName()
         {
             return this.getProperty("instanceName").ToString();
         }
 
-        public void setInstanceName (string instanceName)
+        public void setInstanceName(string instanceName)
         {
             this.setProperty("instanceName", instanceName);
         }
 
-        public AcademicYear getAcademicYear ()
+        public AcademicYear getAcademicYear()
         {
-            return (AcademicYear) this.getProperty("academicYear");
+            return (AcademicYear)this.getProperty("academicYear");
         }
 
-        public void setAcademicYear (AcademicYear academicYear)
+        public void setAcademicYear(AcademicYear academicYear)
         {
             this.setProperty("academicYear", academicYear);
         }
 
-        public ModelCollection<AcademicUnit> getTopLevelAcademicUnits ()
+        public ModelCollection<AcademicUnit> getTopLevelAcademicUnits()
         {
-            ModelCollection<ModelBase> collection = (ModelCollection<ModelBase>) this.getCollectionProperty("topLevelAcademicUnits");
-        	return (ModelCollection<AcademicUnit>) this.getApiGateway().castCollection<AcademicUnit>(collection);
+            ModelCollection<ModelBase> collection = (ModelCollection<ModelBase>)this.getCollectionProperty("topLevelAcademicUnits");
+            return (ModelCollection<AcademicUnit>)this.getApiGateway().castCollection<AcademicUnit>(collection);
         }
 
 

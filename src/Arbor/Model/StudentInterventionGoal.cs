@@ -14,68 +14,69 @@ namespace Arbor.Model
         public const string TARGET_DATE = "targetDate";
         public const string OBJECTIVES = "objectives";
 
-        public StudentInterventionGoal ()
+        public StudentInterventionGoal()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public StudentInterventionGoal (string resourceType = "StudentInterventionGoal", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<StudentInterventionGoal> query (SimpleQuery query = null)
+        public StudentInterventionGoal(string resourceType = "StudentInterventionGoal", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("StudentInterventionGoal");
-        	RestGateway gateway = (RestGateway) StudentInterventionGoal.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<StudentInterventionGoal> studentinterventiongoalCollection = new ModelCollection<StudentInterventionGoal> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    studentinterventiongoalCollection.add((StudentInterventionGoal) model);
-        	}
-        
-        	return studentinterventiongoalCollection;
+
         }
 
-        public static StudentInterventionGoal retrieve (string id)
+
+        public static ModelCollection<StudentInterventionGoal> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) StudentInterventionGoal.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (StudentInterventionGoal) gateway.retrieve(ResourceType.STUDENT_INTERVENTION_GOAL, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("StudentInterventionGoal");
+            RestGateway gateway = (RestGateway)StudentInterventionGoal.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<StudentInterventionGoal> studentinterventiongoalCollection = new ModelCollection<StudentInterventionGoal>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                studentinterventiongoalCollection.add((StudentInterventionGoal)model);
+            }
+
+            return studentinterventiongoalCollection;
         }
 
-        public StudentIntervention getStudentIntervention ()
+        public static StudentInterventionGoal retrieve(string id)
         {
-            return (StudentIntervention) this.getProperty("studentIntervention");
+            RestGateway gateway = (RestGateway)StudentInterventionGoal.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (StudentInterventionGoal)gateway.retrieve(ResourceType.STUDENT_INTERVENTION_GOAL, id);
         }
 
-        public void setStudentIntervention (StudentIntervention studentIntervention)
+        public StudentIntervention getStudentIntervention()
+        {
+            return (StudentIntervention)this.getProperty("studentIntervention");
+        }
+
+        public void setStudentIntervention(StudentIntervention studentIntervention)
         {
             this.setProperty("studentIntervention", studentIntervention);
         }
 
-        public DateTime getTargetDate ()
+        public DateTime getTargetDate()
         {
             return Convert.ToDateTime(this.getProperty("targetDate"));
         }
 
-        public void setTargetDate (DateTime targetDate)
+        public void setTargetDate(DateTime targetDate)
         {
             this.setProperty("targetDate", targetDate);
         }
 
-        public string getObjectives ()
+        public string getObjectives()
         {
             return this.getProperty("objectives").ToString();
         }
 
-        public void setObjectives (string objectives)
+        public void setObjectives(string objectives)
         {
             this.setProperty("objectives", objectives);
         }

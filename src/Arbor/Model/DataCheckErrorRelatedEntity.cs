@@ -13,58 +13,59 @@ namespace Arbor.Model
         public const string DATA_CHECK_ERROR = "dataCheckError";
         public const string RELATED_ENTITY = "relatedEntity";
 
-        public DataCheckErrorRelatedEntity ()
+        public DataCheckErrorRelatedEntity()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public DataCheckErrorRelatedEntity (string resourceType = "DataCheckErrorRelatedEntity", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<DataCheckErrorRelatedEntity> query (SimpleQuery query = null)
+        public DataCheckErrorRelatedEntity(string resourceType = "DataCheckErrorRelatedEntity", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("DataCheckErrorRelatedEntity");
-        	RestGateway gateway = (RestGateway) DataCheckErrorRelatedEntity.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<DataCheckErrorRelatedEntity> datacheckerrorrelatedentityCollection = new ModelCollection<DataCheckErrorRelatedEntity> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    datacheckerrorrelatedentityCollection.add((DataCheckErrorRelatedEntity) model);
-        	}
-        
-        	return datacheckerrorrelatedentityCollection;
+
         }
 
-        public static DataCheckErrorRelatedEntity retrieve (string id)
+
+        public static ModelCollection<DataCheckErrorRelatedEntity> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) DataCheckErrorRelatedEntity.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (DataCheckErrorRelatedEntity) gateway.retrieve(ResourceType.DATA_CHECK_ERROR_RELATED_ENTITY, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("DataCheckErrorRelatedEntity");
+            RestGateway gateway = (RestGateway)DataCheckErrorRelatedEntity.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<DataCheckErrorRelatedEntity> datacheckerrorrelatedentityCollection = new ModelCollection<DataCheckErrorRelatedEntity>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                datacheckerrorrelatedentityCollection.add((DataCheckErrorRelatedEntity)model);
+            }
+
+            return datacheckerrorrelatedentityCollection;
         }
 
-        public DataCheckError getDataCheckError ()
+        public static DataCheckErrorRelatedEntity retrieve(string id)
         {
-            return (DataCheckError) this.getProperty("dataCheckError");
+            RestGateway gateway = (RestGateway)DataCheckErrorRelatedEntity.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (DataCheckErrorRelatedEntity)gateway.retrieve(ResourceType.DATA_CHECK_ERROR_RELATED_ENTITY, id);
         }
 
-        public void setDataCheckError (DataCheckError dataCheckError)
+        public DataCheckError getDataCheckError()
+        {
+            return (DataCheckError)this.getProperty("dataCheckError");
+        }
+
+        public void setDataCheckError(DataCheckError dataCheckError)
         {
             this.setProperty("dataCheckError", dataCheckError);
         }
 
-        public ModelBase getRelatedEntity ()
+        public ModelBase getRelatedEntity()
         {
-            return (ModelBase) this.getProperty("relatedEntity");
+            return (ModelBase)this.getProperty("relatedEntity");
         }
 
-        public void setRelatedEntity (ModelBase relatedEntity)
+        public void setRelatedEntity(ModelBase relatedEntity)
         {
             this.setProperty("relatedEntity", relatedEntity);
         }

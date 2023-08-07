@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class CustomReportColumn : ModelBase
     {
-        protected string resourceType = ResourceType.CUSTOM_REPORT_COLUMN;
+        protected new string resourceType = ResourceType.CUSTOM_REPORT_COLUMN;
         public const string CUSTOM_REPORT = "customReport";
         public const string FIELD_CLASS = "fieldClass";
         public const string FIELD_PARAMS = "fieldParams";
@@ -19,131 +19,165 @@ namespace Arbor.Model
         public const string FORMATTER_CLASS = "formatterClass";
         public const string LOCKED = "locked";
         public const string CUSTOM_LABEL = "customLabel";
+        public const string SUMMARY_ROW_FORMULA_CLASS = "summaryRowFormulaClass";
+        public const string IS_HIDDEN = "isHidden";
+        public const string IS_SOURCE_UPDATE_PERMITTED = "isSourceUpdatePermitted";
 
-        public CustomReportColumn ()
+        public CustomReportColumn()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public CustomReportColumn (string resourceType = "CustomReportColumn", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<CustomReportColumn> query (SimpleQuery query = null)
+        public CustomReportColumn(string resourceType = "CustomReportColumn", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("CustomReportColumn");
-        	RestGateway gateway = (RestGateway) CustomReportColumn.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<CustomReportColumn> customreportcolumnCollection = new ModelCollection<CustomReportColumn> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    customreportcolumnCollection.add((CustomReportColumn) model);
-        	}
-        
-        	return customreportcolumnCollection;
+
         }
 
-        public static CustomReportColumn retrieve (string id)
+
+        public static ModelCollection<CustomReportColumn> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) CustomReportColumn.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (CustomReportColumn) gateway.retrieve(ResourceType.CUSTOM_REPORT_COLUMN, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("CustomReportColumn");
+            RestGateway gateway = (RestGateway)CustomReportColumn.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<CustomReportColumn> customreportcolumnCollection = new ModelCollection<CustomReportColumn>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                customreportcolumnCollection.add((CustomReportColumn)model);
+            }
+
+            return customreportcolumnCollection;
         }
 
-        public CustomReport getCustomReport ()
+        public static CustomReportColumn retrieve(string id)
         {
-            return (CustomReport) this.getProperty("customReport");
+            RestGateway gateway = (RestGateway)CustomReportColumn.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (CustomReportColumn)gateway.retrieve(ResourceType.CUSTOM_REPORT_COLUMN, id);
         }
 
-        public void setCustomReport (CustomReport customReport)
+        public CustomReport getCustomReport()
+        {
+            return (CustomReport)this.getProperty("customReport");
+        }
+
+        public void setCustomReport(CustomReport customReport)
         {
             this.setProperty("customReport", customReport);
         }
 
-        public string getFieldClass ()
+        public string getFieldClass()
         {
             return this.getProperty("fieldClass").ToString();
         }
 
-        public void setFieldClass (string fieldClass)
+        public void setFieldClass(string fieldClass)
         {
             this.setProperty("fieldClass", fieldClass);
         }
 
-        public string getFieldParams ()
+        public string getFieldParams()
         {
             return this.getProperty("fieldParams").ToString();
         }
 
-        public void setFieldParams (string fieldParams)
+        public void setFieldParams(string fieldParams)
         {
             this.setProperty("fieldParams", fieldParams);
         }
 
-        public CustomReportGrouping getTargetGrouping ()
+        public CustomReportGrouping getTargetGrouping()
         {
-            return (CustomReportGrouping) this.getProperty("targetGrouping");
+            return (CustomReportGrouping)this.getProperty("targetGrouping");
         }
 
-        public void setTargetGrouping (CustomReportGrouping targetGrouping)
+        public void setTargetGrouping(CustomReportGrouping targetGrouping)
         {
             this.setProperty("targetGrouping", targetGrouping);
         }
 
-        public string getTransformationClass ()
+        public string getTransformationClass()
         {
             return this.getProperty("transformationClass").ToString();
         }
 
-        public void setTransformationClass (string transformationClass)
+        public void setTransformationClass(string transformationClass)
         {
             this.setProperty("transformationClass", transformationClass);
         }
 
-        public int getDisplayOrder ()
+        public int getDisplayOrder()
         {
             return Convert.ToInt32(this.getProperty("displayOrder"));
         }
 
-        public void setDisplayOrder (int displayOrder)
+        public void setDisplayOrder(int displayOrder)
         {
             this.setProperty("displayOrder", displayOrder);
         }
 
-        public string getFormatterClass ()
+        public string getFormatterClass()
         {
             return this.getProperty("formatterClass").ToString();
         }
 
-        public void setFormatterClass (string formatterClass)
+        public void setFormatterClass(string formatterClass)
         {
             this.setProperty("formatterClass", formatterClass);
         }
 
-        public bool getLocked ()
+        public bool getLocked()
         {
             return Convert.ToBoolean(this.getProperty("locked"));
         }
 
-        public void setLocked (bool locked)
+        public void setLocked(bool locked)
         {
             this.setProperty("locked", locked);
         }
 
-        public string getCustomLabel ()
+        public string getCustomLabel()
         {
             return this.getProperty("customLabel").ToString();
         }
 
-        public void setCustomLabel (string customLabel)
+        public void setCustomLabel(string customLabel)
         {
             this.setProperty("customLabel", customLabel);
+        }
+
+        public string getSummaryRowFormulaClass()
+        {
+            return this.getProperty("summaryRowFormulaClass").ToString();
+        }
+
+        public void setSummaryRowFormulaClass(string summaryRowFormulaClass)
+        {
+            this.setProperty("summaryRowFormulaClass", summaryRowFormulaClass);
+        }
+
+        public bool getIsHidden()
+        {
+            return Convert.ToBoolean(this.getProperty("isHidden"));
+        }
+
+        public void setIsHidden(bool isHidden)
+        {
+            this.setProperty("isHidden", isHidden);
+        }
+
+        public bool getIsSourceUpdatePermitted()
+        {
+            return Convert.ToBoolean(this.getProperty("isSourceUpdatePermitted"));
+        }
+
+        public void setIsSourceUpdatePermitted(bool isSourceUpdatePermitted)
+        {
+            this.setProperty("isSourceUpdatePermitted", isSourceUpdatePermitted);
         }
 
 

@@ -9,73 +9,74 @@ namespace Arbor.Model
 {
     public class UniversityStaff : ModelBase
     {
-        protected string resourceType = ResourceType.UNIVERSITY_STAFF;
+        protected new string resourceType = ResourceType.UNIVERSITY_STAFF;
         public const string UNIVERSITY = "university";
         public const string PERSON = "person";
         public const string POSITION = "position";
 
-        public UniversityStaff ()
+        public UniversityStaff()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public UniversityStaff (string resourceType = "UniversityStaff", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<UniversityStaff> query (SimpleQuery query = null)
+        public UniversityStaff(string resourceType = "UniversityStaff", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("UniversityStaff");
-        	RestGateway gateway = (RestGateway) UniversityStaff.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<UniversityStaff> universitystaffCollection = new ModelCollection<UniversityStaff> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    universitystaffCollection.add((UniversityStaff) model);
-        	}
-        
-        	return universitystaffCollection;
+
         }
 
-        public static UniversityStaff retrieve (string id)
+
+        public static ModelCollection<UniversityStaff> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) UniversityStaff.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (UniversityStaff) gateway.retrieve(ResourceType.UNIVERSITY_STAFF, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("UniversityStaff");
+            RestGateway gateway = (RestGateway)UniversityStaff.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<UniversityStaff> universitystaffCollection = new ModelCollection<UniversityStaff>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                universitystaffCollection.add((UniversityStaff)model);
+            }
+
+            return universitystaffCollection;
         }
 
-        public University getUniversity ()
+        public static UniversityStaff retrieve(string id)
         {
-            return (University) this.getProperty("university");
+            RestGateway gateway = (RestGateway)UniversityStaff.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (UniversityStaff)gateway.retrieve(ResourceType.UNIVERSITY_STAFF, id);
         }
 
-        public void setUniversity (University university)
+        public University getUniversity()
+        {
+            return (University)this.getProperty("university");
+        }
+
+        public void setUniversity(University university)
         {
             this.setProperty("university", university);
         }
 
-        public Person getPerson ()
+        public Person getPerson()
         {
-            return (Person) this.getProperty("person");
+            return (Person)this.getProperty("person");
         }
 
-        public void setPerson (Person person)
+        public void setPerson(Person person)
         {
             this.setProperty("person", person);
         }
 
-        public string getPosition ()
+        public string getPosition()
         {
             return this.getProperty("position").ToString();
         }
 
-        public void setPosition (string position)
+        public void setPosition(string position)
         {
             this.setProperty("position", position);
         }

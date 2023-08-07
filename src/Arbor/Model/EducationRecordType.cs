@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string DATA_ORDER = "dataOrder";
         public const string NAME = "name";
 
-        public EducationRecordType ()
+        public EducationRecordType()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public EducationRecordType (string resourceType = "EducationRecordType", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<EducationRecordType> query (SimpleQuery query = null)
+        public EducationRecordType(string resourceType = "EducationRecordType", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("EducationRecordType");
-        	RestGateway gateway = (RestGateway) EducationRecordType.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<EducationRecordType> educationrecordtypeCollection = new ModelCollection<EducationRecordType> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    educationrecordtypeCollection.add((EducationRecordType) model);
-        	}
-        
-        	return educationrecordtypeCollection;
+
         }
 
-        public static EducationRecordType retrieve (string id)
+
+        public static ModelCollection<EducationRecordType> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) EducationRecordType.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (EducationRecordType) gateway.retrieve(ResourceType.EDUCATION_RECORD_TYPE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("EducationRecordType");
+            RestGateway gateway = (RestGateway)EducationRecordType.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<EducationRecordType> educationrecordtypeCollection = new ModelCollection<EducationRecordType>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                educationrecordtypeCollection.add((EducationRecordType)model);
+            }
+
+            return educationrecordtypeCollection;
         }
 
-        public string getCode ()
+        public static EducationRecordType retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)EducationRecordType.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (EducationRecordType)gateway.retrieve(ResourceType.EDUCATION_RECORD_TYPE, id);
+        }
+
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
-            return (bool) this.getProperty("active");
+            return (bool)this.getProperty("active");
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }
 
-        public string getName ()
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
         }

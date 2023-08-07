@@ -9,95 +9,96 @@ namespace Arbor.Model
 {
     public class InCareStatusAssignment : ModelBase
     {
-        protected string resourceType = ResourceType.IN_CARE_STATUS_ASSIGNMENT;
+        protected new string resourceType = ResourceType.IN_CARE_STATUS_ASSIGNMENT;
         public const string RESPONSIBLE_LOCAL_AUTHORITY = "responsibleLocalAuthority";
         public const string IN_CARE_STATUS = "inCareStatus";
         public const string STUDENT = "student";
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
 
-        public InCareStatusAssignment ()
+        public InCareStatusAssignment()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public InCareStatusAssignment (string resourceType = "InCareStatusAssignment", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<InCareStatusAssignment> query (SimpleQuery query = null)
+        public InCareStatusAssignment(string resourceType = "InCareStatusAssignment", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("InCareStatusAssignment");
-        	RestGateway gateway = (RestGateway) InCareStatusAssignment.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<InCareStatusAssignment> incarestatusassignmentCollection = new ModelCollection<InCareStatusAssignment> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    incarestatusassignmentCollection.add((InCareStatusAssignment) model);
-        	}
-        
-        	return incarestatusassignmentCollection;
+
         }
 
-        public static InCareStatusAssignment retrieve (string id)
+
+        public static ModelCollection<InCareStatusAssignment> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) InCareStatusAssignment.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (InCareStatusAssignment) gateway.retrieve(ResourceType.IN_CARE_STATUS_ASSIGNMENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("InCareStatusAssignment");
+            RestGateway gateway = (RestGateway)InCareStatusAssignment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<InCareStatusAssignment> incarestatusassignmentCollection = new ModelCollection<InCareStatusAssignment>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                incarestatusassignmentCollection.add((InCareStatusAssignment)model);
+            }
+
+            return incarestatusassignmentCollection;
         }
 
-        public LocalAuthority getResponsibleLocalAuthority ()
+        public static InCareStatusAssignment retrieve(string id)
         {
-            return (LocalAuthority) this.getProperty("responsibleLocalAuthority");
+            RestGateway gateway = (RestGateway)InCareStatusAssignment.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (InCareStatusAssignment)gateway.retrieve(ResourceType.IN_CARE_STATUS_ASSIGNMENT, id);
         }
 
-        public void setResponsibleLocalAuthority (LocalAuthority responsibleLocalAuthority)
+        public LocalAuthority getResponsibleLocalAuthority()
+        {
+            return (LocalAuthority)this.getProperty("responsibleLocalAuthority");
+        }
+
+        public void setResponsibleLocalAuthority(LocalAuthority responsibleLocalAuthority)
         {
             this.setProperty("responsibleLocalAuthority", responsibleLocalAuthority);
         }
 
-        public InCareStatus getInCareStatus ()
+        public InCareStatus getInCareStatus()
         {
-            return (InCareStatus) this.getProperty("inCareStatus");
+            return (InCareStatus)this.getProperty("inCareStatus");
         }
 
-        public void setInCareStatus (InCareStatus inCareStatus)
+        public void setInCareStatus(InCareStatus inCareStatus)
         {
             this.setProperty("inCareStatus", inCareStatus);
         }
 
-        public Student getStudent ()
+        public Student getStudent()
         {
-            return (Student) this.getProperty("student");
+            return (Student)this.getProperty("student");
         }
 
-        public void setStudent (Student student)
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDate()
         {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }

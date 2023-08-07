@@ -9,84 +9,85 @@ namespace Arbor.Model
 {
     public class NewStudentReportCardSection : ModelBase
     {
-        protected string resourceType = ResourceType.NEW_STUDENT_REPORT_CARD_SECTION;
+        protected new string resourceType = ResourceType.NEW_STUDENT_REPORT_CARD_SECTION;
         public const string STUDENT_REPORT_CARD = "studentReportCard";
         public const string LINKED_ENTITY = "linkedEntity";
         public const string COMPLETED_DATETIME = "completedDatetime";
         public const string APPROVED_DATETIME = "approvedDatetime";
 
-        public NewStudentReportCardSection ()
+        public NewStudentReportCardSection()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public NewStudentReportCardSection (string resourceType = "NewStudentReportCardSection", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<NewStudentReportCardSection> query (SimpleQuery query = null)
+        public NewStudentReportCardSection(string resourceType = "NewStudentReportCardSection", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("NewStudentReportCardSection");
-        	RestGateway gateway = (RestGateway) NewStudentReportCardSection.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<NewStudentReportCardSection> newstudentreportcardsectionCollection = new ModelCollection<NewStudentReportCardSection> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    newstudentreportcardsectionCollection.add((NewStudentReportCardSection) model);
-        	}
-        
-        	return newstudentreportcardsectionCollection;
+
         }
 
-        public static NewStudentReportCardSection retrieve (string id)
+
+        public static ModelCollection<NewStudentReportCardSection> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) NewStudentReportCardSection.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (NewStudentReportCardSection) gateway.retrieve(ResourceType.NEW_STUDENT_REPORT_CARD_SECTION, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("NewStudentReportCardSection");
+            RestGateway gateway = (RestGateway)NewStudentReportCardSection.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<NewStudentReportCardSection> newstudentreportcardsectionCollection = new ModelCollection<NewStudentReportCardSection>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                newstudentreportcardsectionCollection.add((NewStudentReportCardSection)model);
+            }
+
+            return newstudentreportcardsectionCollection;
         }
 
-        public NewStudentReportCard getStudentReportCard ()
+        public static NewStudentReportCardSection retrieve(string id)
         {
-            return (NewStudentReportCard) this.getProperty("studentReportCard");
+            RestGateway gateway = (RestGateway)NewStudentReportCardSection.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (NewStudentReportCardSection)gateway.retrieve(ResourceType.NEW_STUDENT_REPORT_CARD_SECTION, id);
         }
 
-        public void setStudentReportCard (NewStudentReportCard studentReportCard)
+        public NewStudentReportCard getStudentReportCard()
+        {
+            return (NewStudentReportCard)this.getProperty("studentReportCard");
+        }
+
+        public void setStudentReportCard(NewStudentReportCard studentReportCard)
         {
             this.setProperty("studentReportCard", studentReportCard);
         }
 
-        public ModelBase getLinkedEntity ()
+        public ModelBase getLinkedEntity()
         {
-            return (ModelBase) this.getProperty("linkedEntity");
+            return (ModelBase)this.getProperty("linkedEntity");
         }
 
-        public void setLinkedEntity (ModelBase linkedEntity)
+        public void setLinkedEntity(ModelBase linkedEntity)
         {
             this.setProperty("linkedEntity", linkedEntity);
         }
 
-        public DateTime getCompletedDatetime ()
+        public DateTime getCompletedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("completedDatetime"));
         }
 
-        public void setCompletedDatetime (DateTime completedDatetime)
+        public void setCompletedDatetime(DateTime completedDatetime)
         {
             this.setProperty("completedDatetime", completedDatetime);
         }
 
-        public DateTime getApprovedDatetime ()
+        public DateTime getApprovedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("approvedDatetime"));
         }
 
-        public void setApprovedDatetime (DateTime approvedDatetime)
+        public void setApprovedDatetime(DateTime approvedDatetime)
         {
             this.setProperty("approvedDatetime", approvedDatetime);
         }

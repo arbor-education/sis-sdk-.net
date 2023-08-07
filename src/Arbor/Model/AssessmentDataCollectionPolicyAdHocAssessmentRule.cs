@@ -18,108 +18,109 @@ namespace Arbor.Model
         public const string COLLECT_COMMENT = "collectComment";
         public const string AD_HOC_ASSESSMENT = "adHocAssessment";
 
-        public AssessmentDataCollectionPolicyAdHocAssessmentRule ()
+        public AssessmentDataCollectionPolicyAdHocAssessmentRule()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AssessmentDataCollectionPolicyAdHocAssessmentRule (string resourceType = "AssessmentDataCollectionPolicyAdHocAssessmentRule", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AssessmentDataCollectionPolicyAdHocAssessmentRule> query (SimpleQuery query = null)
+        public AssessmentDataCollectionPolicyAdHocAssessmentRule(string resourceType = "AssessmentDataCollectionPolicyAdHocAssessmentRule", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AssessmentDataCollectionPolicyAdHocAssessmentRule");
-        	RestGateway gateway = (RestGateway) AssessmentDataCollectionPolicyAdHocAssessmentRule.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AssessmentDataCollectionPolicyAdHocAssessmentRule> assessmentdatacollectionpolicyadhocassessmentruleCollection = new ModelCollection<AssessmentDataCollectionPolicyAdHocAssessmentRule> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    assessmentdatacollectionpolicyadhocassessmentruleCollection.add((AssessmentDataCollectionPolicyAdHocAssessmentRule) model);
-        	}
-        
-        	return assessmentdatacollectionpolicyadhocassessmentruleCollection;
+
         }
 
-        public static AssessmentDataCollectionPolicyAdHocAssessmentRule retrieve (string id)
+
+        public static ModelCollection<AssessmentDataCollectionPolicyAdHocAssessmentRule> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AssessmentDataCollectionPolicyAdHocAssessmentRule.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AssessmentDataCollectionPolicyAdHocAssessmentRule) gateway.retrieve(ResourceType.ASSESSMENT_DATA_COLLECTION_POLICY_AD_HOC_ASSESSMENT_RULE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AssessmentDataCollectionPolicyAdHocAssessmentRule");
+            RestGateway gateway = (RestGateway)AssessmentDataCollectionPolicyAdHocAssessmentRule.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AssessmentDataCollectionPolicyAdHocAssessmentRule> assessmentdatacollectionpolicyadhocassessmentruleCollection = new ModelCollection<AssessmentDataCollectionPolicyAdHocAssessmentRule>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                assessmentdatacollectionpolicyadhocassessmentruleCollection.add((AssessmentDataCollectionPolicyAdHocAssessmentRule)model);
+            }
+
+            return assessmentdatacollectionpolicyadhocassessmentruleCollection;
         }
 
-        public AssessmentDataCollectionPolicy getAssessmentDataCollectionPolicy ()
+        public static AssessmentDataCollectionPolicyAdHocAssessmentRule retrieve(string id)
         {
-            return (AssessmentDataCollectionPolicy) this.getProperty("assessmentDataCollectionPolicy");
+            RestGateway gateway = (RestGateway)AssessmentDataCollectionPolicyAdHocAssessmentRule.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AssessmentDataCollectionPolicyAdHocAssessmentRule)gateway.retrieve(ResourceType.ASSESSMENT_DATA_COLLECTION_POLICY_AD_HOC_ASSESSMENT_RULE, id);
         }
 
-        public void setAssessmentDataCollectionPolicy (AssessmentDataCollectionPolicy assessmentDataCollectionPolicy)
+        public AssessmentDataCollectionPolicy getAssessmentDataCollectionPolicy()
+        {
+            return (AssessmentDataCollectionPolicy)this.getProperty("assessmentDataCollectionPolicy");
+        }
+
+        public void setAssessmentDataCollectionPolicy(AssessmentDataCollectionPolicy assessmentDataCollectionPolicy)
         {
             this.setProperty("assessmentDataCollectionPolicy", assessmentDataCollectionPolicy);
         }
 
-        public string getInputStaffType ()
+        public string getInputStaffType()
         {
             return this.getProperty("inputStaffType").ToString();
         }
 
-        public void setInputStaffType (string inputStaffType)
+        public void setInputStaffType(string inputStaffType)
         {
             this.setProperty("inputStaffType", inputStaffType);
         }
 
-        public string getLevelOneApprovalStaffType ()
+        public string getLevelOneApprovalStaffType()
         {
             return this.getProperty("levelOneApprovalStaffType").ToString();
         }
 
-        public void setLevelOneApprovalStaffType (string levelOneApprovalStaffType)
+        public void setLevelOneApprovalStaffType(string levelOneApprovalStaffType)
         {
             this.setProperty("levelOneApprovalStaffType", levelOneApprovalStaffType);
         }
 
-        public string getLevelTwoApprovalStaffType ()
+        public string getLevelTwoApprovalStaffType()
         {
             return this.getProperty("levelTwoApprovalStaffType").ToString();
         }
 
-        public void setLevelTwoApprovalStaffType (string levelTwoApprovalStaffType)
+        public void setLevelTwoApprovalStaffType(string levelTwoApprovalStaffType)
         {
             this.setProperty("levelTwoApprovalStaffType", levelTwoApprovalStaffType);
         }
 
-        public bool getCollectCurrentMark ()
+        public bool getCollectCurrentMark()
         {
-            return (bool) this.getProperty("collectCurrentMark");
+            return (bool)this.getProperty("collectCurrentMark");
         }
 
-        public void setCollectCurrentMark (bool collectCurrentMark)
+        public void setCollectCurrentMark(bool collectCurrentMark)
         {
             this.setProperty("collectCurrentMark", collectCurrentMark);
         }
 
-        public bool getCollectComment ()
+        public bool getCollectComment()
         {
-            return (bool) this.getProperty("collectComment");
+            return (bool)this.getProperty("collectComment");
         }
 
-        public void setCollectComment (bool collectComment)
+        public void setCollectComment(bool collectComment)
         {
             this.setProperty("collectComment", collectComment);
         }
 
-        public AdHocAssessment getAdHocAssessment ()
+        public AdHocAssessment getAdHocAssessment()
         {
-            return (AdHocAssessment) this.getProperty("adHocAssessment");
+            return (AdHocAssessment)this.getProperty("adHocAssessment");
         }
 
-        public void setAdHocAssessment (AdHocAssessment adHocAssessment)
+        public void setAdHocAssessment(AdHocAssessment adHocAssessment)
         {
             this.setProperty("adHocAssessment", adHocAssessment);
         }

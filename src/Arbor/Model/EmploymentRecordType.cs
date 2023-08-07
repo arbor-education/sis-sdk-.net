@@ -9,86 +9,109 @@ namespace Arbor.Model
 {
     public class EmploymentRecordType : ModelBase
     {
-        protected string resourceType = ResourceType.EMPLOYMENT_RECORD_TYPE;
+        protected new string resourceType = ResourceType.EMPLOYMENT_RECORD_TYPE;
         public const string CODE = "code";
         public const string ACTIVE = "active";
         public const string DATA_ORDER = "dataOrder";
         public const string NAME = "name";
+        public const string IS_EMPLOYED = "isEmployed";
+        public const string EMPLOYER_REQUIRED = "employerRequired";
 
-        public EmploymentRecordType ()
+        public EmploymentRecordType()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public EmploymentRecordType (string resourceType = "EmploymentRecordType", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<EmploymentRecordType> query (SimpleQuery query = null)
+        public EmploymentRecordType(string resourceType = "EmploymentRecordType", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("EmploymentRecordType");
-        	RestGateway gateway = (RestGateway) EmploymentRecordType.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<EmploymentRecordType> employmentrecordtypeCollection = new ModelCollection<EmploymentRecordType> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    employmentrecordtypeCollection.add((EmploymentRecordType) model);
-        	}
-        
-        	return employmentrecordtypeCollection;
+
         }
 
-        public static EmploymentRecordType retrieve (string id)
+
+        public static ModelCollection<EmploymentRecordType> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) EmploymentRecordType.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (EmploymentRecordType) gateway.retrieve(ResourceType.EMPLOYMENT_RECORD_TYPE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("EmploymentRecordType");
+            RestGateway gateway = (RestGateway)EmploymentRecordType.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<EmploymentRecordType> employmentrecordtypeCollection = new ModelCollection<EmploymentRecordType>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                employmentrecordtypeCollection.add((EmploymentRecordType)model);
+            }
+
+            return employmentrecordtypeCollection;
         }
 
-        public string getCode ()
+        public static EmploymentRecordType retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)EmploymentRecordType.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (EmploymentRecordType)gateway.retrieve(ResourceType.EMPLOYMENT_RECORD_TYPE, id);
+        }
+
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public bool getActive ()
+        public bool getActive()
         {
             return Convert.ToBoolean(this.getProperty("active"));
         }
 
-        public void setActive (bool active)
+        public void setActive(bool active)
         {
             this.setProperty("active", active);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }
 
-        public string getName ()
+        public string getName()
         {
             return this.getProperty("name").ToString();
         }
 
-        public void setName (string name)
+        public void setName(string name)
         {
             this.setProperty("name", name);
+        }
+
+        public bool getIsEmployed()
+        {
+            return Convert.ToBoolean(this.getProperty("isEmployed"));
+        }
+
+        public void setIsEmployed(bool isEmployed)
+        {
+            this.setProperty("isEmployed", isEmployed);
+        }
+
+        public bool getEmployerRequired()
+        {
+            return Convert.ToBoolean(this.getProperty("employerRequired"));
+        }
+
+        public void setEmployerRequired(bool employerRequired)
+        {
+            this.setProperty("employerRequired", employerRequired);
         }
 
 

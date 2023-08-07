@@ -9,51 +9,52 @@ namespace Arbor.Model
 {
     public class AdHocAssessmentCategory : ModelBase
     {
-        protected string resourceType = ResourceType.AD_HOC_ASSESSMENT_CATEGORY;
+        protected new string resourceType = ResourceType.AD_HOC_ASSESSMENT_CATEGORY;
         public const string CATEGORY_NAME = "categoryName";
 
-        public AdHocAssessmentCategory ()
+        public AdHocAssessmentCategory()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public AdHocAssessmentCategory (string resourceType = "AdHocAssessmentCategory", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<AdHocAssessmentCategory> query (SimpleQuery query = null)
+        public AdHocAssessmentCategory(string resourceType = "AdHocAssessmentCategory", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("AdHocAssessmentCategory");
-        	RestGateway gateway = (RestGateway) AdHocAssessmentCategory.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<AdHocAssessmentCategory> adhocassessmentcategoryCollection = new ModelCollection<AdHocAssessmentCategory> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    adhocassessmentcategoryCollection.add((AdHocAssessmentCategory) model);
-        	}
-        
-        	return adhocassessmentcategoryCollection;
+
         }
 
-        public static AdHocAssessmentCategory retrieve (string id)
+
+        public static ModelCollection<AdHocAssessmentCategory> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) AdHocAssessmentCategory.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (AdHocAssessmentCategory) gateway.retrieve(ResourceType.AD_HOC_ASSESSMENT_CATEGORY, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("AdHocAssessmentCategory");
+            RestGateway gateway = (RestGateway)AdHocAssessmentCategory.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<AdHocAssessmentCategory> adhocassessmentcategoryCollection = new ModelCollection<AdHocAssessmentCategory>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                adhocassessmentcategoryCollection.add((AdHocAssessmentCategory)model);
+            }
+
+            return adhocassessmentcategoryCollection;
         }
 
-        public string getCategoryName ()
+        public static AdHocAssessmentCategory retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)AdHocAssessmentCategory.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (AdHocAssessmentCategory)gateway.retrieve(ResourceType.AD_HOC_ASSESSMENT_CATEGORY, id);
+        }
+
+        public string getCategoryName()
         {
             return this.getProperty("categoryName").ToString();
         }
 
-        public void setCategoryName (string categoryName)
+        public void setCategoryName(string categoryName)
         {
             this.setProperty("categoryName", categoryName);
         }

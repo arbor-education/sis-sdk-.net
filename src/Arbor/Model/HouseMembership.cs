@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class HouseMembership : ModelBase
     {
-        protected string resourceType = ResourceType.HOUSE_MEMBERSHIP;
+        protected new string resourceType = ResourceType.HOUSE_MEMBERSHIP;
         public const string HOUSE = "house";
         public const string STUDENT = "student";
         public const string START_DATE = "startDate";
@@ -17,98 +17,99 @@ namespace Arbor.Model
         public const string HOUSE_AUTOMATIC_ENROLMENT = "houseAutomaticEnrolment";
         public const string ENROLMENT_DEPENDENCY = "enrolmentDependency";
 
-        public HouseMembership ()
+        public HouseMembership()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public HouseMembership (string resourceType = "HouseMembership", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<HouseMembership> query (SimpleQuery query = null)
+        public HouseMembership(string resourceType = "HouseMembership", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("HouseMembership");
-        	RestGateway gateway = (RestGateway) HouseMembership.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<HouseMembership> housemembershipCollection = new ModelCollection<HouseMembership> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    housemembershipCollection.add((HouseMembership) model);
-        	}
-        
-        	return housemembershipCollection;
+
         }
 
-        public static HouseMembership retrieve (string id)
+
+        public static ModelCollection<HouseMembership> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) HouseMembership.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (HouseMembership) gateway.retrieve(ResourceType.HOUSE_MEMBERSHIP, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("HouseMembership");
+            RestGateway gateway = (RestGateway)HouseMembership.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<HouseMembership> housemembershipCollection = new ModelCollection<HouseMembership>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                housemembershipCollection.add((HouseMembership)model);
+            }
+
+            return housemembershipCollection;
         }
 
-        public House getHouse ()
+        public static HouseMembership retrieve(string id)
         {
-            return (House) this.getProperty("house");
+            RestGateway gateway = (RestGateway)HouseMembership.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (HouseMembership)gateway.retrieve(ResourceType.HOUSE_MEMBERSHIP, id);
         }
 
-        public void setHouse (House house)
+        public House getHouse()
+        {
+            return (House)this.getProperty("house");
+        }
+
+        public void setHouse(House house)
         {
             this.setProperty("house", house);
         }
 
-        public Student getStudent ()
+        public Student getStudent()
         {
-            return (Student) this.getProperty("student");
+            return (Student)this.getProperty("student");
         }
 
-        public void setStudent (Student student)
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDate()
         {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }
 
-        public HouseAutomaticEnrolment getHouseAutomaticEnrolment ()
+        public HouseAutomaticEnrolment getHouseAutomaticEnrolment()
         {
-            return (HouseAutomaticEnrolment) this.getProperty("houseAutomaticEnrolment");
+            return (HouseAutomaticEnrolment)this.getProperty("houseAutomaticEnrolment");
         }
 
-        public void setHouseAutomaticEnrolment (HouseAutomaticEnrolment houseAutomaticEnrolment)
+        public void setHouseAutomaticEnrolment(HouseAutomaticEnrolment houseAutomaticEnrolment)
         {
             this.setProperty("houseAutomaticEnrolment", houseAutomaticEnrolment);
         }
 
-        public RegistrationFormMembership getEnrolmentDependency ()
+        public RegistrationFormMembership getEnrolmentDependency()
         {
-            return (RegistrationFormMembership) this.getProperty("enrolmentDependency");
+            return (RegistrationFormMembership)this.getProperty("enrolmentDependency");
         }
 
-        public void setEnrolmentDependency (RegistrationFormMembership enrolmentDependency)
+        public void setEnrolmentDependency(RegistrationFormMembership enrolmentDependency)
         {
             this.setProperty("enrolmentDependency", enrolmentDependency);
         }

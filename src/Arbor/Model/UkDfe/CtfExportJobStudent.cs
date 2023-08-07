@@ -14,68 +14,69 @@ namespace Arbor.Model.UkDfe
         public const string STUDENT = "student";
         public const string CML_REMOVAL_GROUNDS = "cmlRemovalGrounds";
 
-        public CtfExportJobStudent ()
+        public CtfExportJobStudent()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public CtfExportJobStudent (string resourceType = "CtfExportJobStudent", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<CtfExportJobStudent> query (SimpleQuery query = null)
+        public CtfExportJobStudent(string resourceType = "CtfExportJobStudent", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("UkDfe_CtfExportJobStudent");
-        	RestGateway gateway = (RestGateway) CtfExportJobStudent.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<CtfExportJobStudent> ctfexportjobstudentCollection = new ModelCollection<CtfExportJobStudent> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    ctfexportjobstudentCollection.add((CtfExportJobStudent) model);
-        	}
-        
-        	return ctfexportjobstudentCollection;
+
         }
 
-        public static CtfExportJobStudent retrieve (string id)
+
+        public static ModelCollection<CtfExportJobStudent> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) CtfExportJobStudent.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (CtfExportJobStudent) gateway.retrieve(ResourceType.UK_DFE_CTF_EXPORT_JOB_STUDENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("UkDfe_CtfExportJobStudent");
+            RestGateway gateway = (RestGateway)CtfExportJobStudent.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<CtfExportJobStudent> ctfexportjobstudentCollection = new ModelCollection<CtfExportJobStudent>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                ctfexportjobstudentCollection.add((CtfExportJobStudent)model);
+            }
+
+            return ctfexportjobstudentCollection;
         }
 
-        public CtfExportJob getCtfExportJob ()
+        public static CtfExportJobStudent retrieve(string id)
         {
-            return (CtfExportJob) this.getProperty("ctfExportJob");
+            RestGateway gateway = (RestGateway)CtfExportJobStudent.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (CtfExportJobStudent)gateway.retrieve(ResourceType.UK_DFE_CTF_EXPORT_JOB_STUDENT, id);
         }
 
-        public void setCtfExportJob (CtfExportJob ctfExportJob)
+        public CtfExportJob getCtfExportJob()
+        {
+            return (CtfExportJob)this.getProperty("ctfExportJob");
+        }
+
+        public void setCtfExportJob(CtfExportJob ctfExportJob)
         {
             this.setProperty("ctfExportJob", ctfExportJob);
         }
 
-        public Student getStudent ()
+        public Student getStudent()
         {
-            return (Student) this.getProperty("student");
+            return (Student)this.getProperty("student");
         }
 
-        public void setStudent (Student student)
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public string getCmlRemovalGrounds ()
+        public string getCmlRemovalGrounds()
         {
             return this.getProperty("cmlRemovalGrounds").ToString();
         }
 
-        public void setCmlRemovalGrounds (string cmlRemovalGrounds)
+        public void setCmlRemovalGrounds(string cmlRemovalGrounds)
         {
             this.setProperty("cmlRemovalGrounds", cmlRemovalGrounds);
         }

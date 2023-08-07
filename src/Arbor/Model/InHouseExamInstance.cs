@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class InHouseExamInstance : ModelBase
     {
-        protected string resourceType = ResourceType.IN_HOUSE_EXAM_INSTANCE;
+        protected new string resourceType = ResourceType.IN_HOUSE_EXAM_INSTANCE;
         public const string IN_HOUSE_EXAM = "inHouseExam";
         public const string EXPECTED_START_DATETIME = "expectedStartDatetime";
         public const string EXPECTED_END_DATETIME = "expectedEndDatetime";

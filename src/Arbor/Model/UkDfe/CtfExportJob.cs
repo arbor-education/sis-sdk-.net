@@ -25,175 +25,179 @@ namespace Arbor.Model.UkDfe
         public const string DATA_ERROR_MESSAGE = "dataErrorMessage";
         public const string CUSTOM_CTF_INCLUDED_FIELDS = "customCtfIncludedFields";
 
-        public CtfExportJob ()
+        public CtfExportJob()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public CtfExportJob (string resourceType = "CtfExportJob", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<CtfExportJob> query (SimpleQuery query = null)
+        public CtfExportJob(string resourceType = "CtfExportJob", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("UkDfe_CtfExportJob");
-        	RestGateway gateway = (RestGateway) CtfExportJob.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<CtfExportJob> ctfexportjobCollection = new ModelCollection<CtfExportJob> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    ctfexportjobCollection.add((CtfExportJob) model);
-        	}
-        
-        	return ctfexportjobCollection;
+
         }
 
-        public static CtfExportJob retrieve (string id)
+
+        public static ModelCollection<CtfExportJob> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) CtfExportJob.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (CtfExportJob) gateway.retrieve(ResourceType.UK_DFE_CTF_EXPORT_JOB, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("UkDfe_CtfExportJob");
+            RestGateway gateway = (RestGateway)CtfExportJob.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<CtfExportJob> ctfexportjobCollection = new ModelCollection<CtfExportJob>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                ctfexportjobCollection.add((CtfExportJob)model);
+            }
+
+            return ctfexportjobCollection;
         }
 
-        public string getExportType ()
+        public static CtfExportJob retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)CtfExportJob.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (CtfExportJob)gateway.retrieve(ResourceType.UK_DFE_CTF_EXPORT_JOB, id);
+        }
+
+        public string getExportType()
         {
             return this.getProperty("exportType").ToString();
         }
 
-        public void setExportType (string exportType)
+        public void setExportType(string exportType)
         {
             this.setProperty("exportType", exportType);
         }
 
-        public string getLaSend ()
+        public string getLaSend()
         {
             return this.getProperty("laSend").ToString();
         }
 
-        public void setLaSend (string laSend)
+        public void setLaSend(string laSend)
         {
             this.setProperty("laSend", laSend);
         }
 
-        public string getLaReceive ()
+        public string getLaReceive()
         {
             return this.getProperty("laReceive").ToString();
         }
 
-        public void setLaReceive (string laReceive)
+        public void setLaReceive(string laReceive)
         {
             this.setProperty("laReceive", laReceive);
         }
 
-        public string getDfeSend ()
+        public string getDfeSend()
         {
             return this.getProperty("dfeSend").ToString();
         }
 
-        public void setDfeSend (string dfeSend)
+        public void setDfeSend(string dfeSend)
         {
             this.setProperty("dfeSend", dfeSend);
         }
 
-        public string getDfeReceive ()
+        public string getDfeReceive()
         {
             return this.getProperty("dfeReceive").ToString();
         }
 
-        public void setDfeReceive (string dfeReceive)
+        public void setDfeReceive(string dfeReceive)
         {
             this.setProperty("dfeReceive", dfeReceive);
         }
 
-        public string getFileName ()
+        public string getFileName()
         {
             return this.getProperty("fileName").ToString();
         }
 
-        public void setFileName (string fileName)
+        public void setFileName(string fileName)
         {
             this.setProperty("fileName", fileName);
         }
 
-        public int getFileNumber ()
+        public int getFileNumber()
         {
             return Convert.ToInt32(this.getProperty("fileNumber"));
         }
 
-        public void setFileNumber (int fileNumber)
+        public void setFileNumber(int fileNumber)
         {
             this.setProperty("fileNumber", fileNumber);
         }
 
-        public DateTime getReportingPeriodStartDate (){
+        public DateTime getReportingPeriodStartDate()
+        {
             return Convert.ToDateTime(this.getProperty("reportingPeriodStartDate"));
         }
 
-        public void setReportingPeriodStartDate (DateTime reportingPeriodStartDate)
+        public void setReportingPeriodStartDate(DateTime reportingPeriodStartDate)
         {
             this.setProperty("reportingPeriodStartDate", reportingPeriodStartDate);
         }
 
-        public DateTime getReportingPeriodEndDate (){
+        public DateTime getReportingPeriodEndDate()
+        {
             return Convert.ToDateTime(this.getProperty("reportingPeriodEndDate"));
         }
 
-        public void setReportingPeriodEndDate (DateTime reportingPeriodEndDate)
+        public void setReportingPeriodEndDate(DateTime reportingPeriodEndDate)
         {
             this.setProperty("reportingPeriodEndDate", reportingPeriodEndDate);
         }
 
-        public DateTime getExportDatetime (){
+        public DateTime getExportDatetime()
+        {
             return Convert.ToDateTime(this.getProperty("exportDatetime"));
         }
 
-        public void setExportDatetime (DateTime exportDatetime)
+        public void setExportDatetime(DateTime exportDatetime)
         {
             this.setProperty("exportDatetime", exportDatetime);
         }
 
-        public bool getXsdError ()
+        public bool getXsdError()
         {
-            return (bool) this.getProperty("xsdError");
+            return (bool)this.getProperty("xsdError");
         }
 
-        public void setXsdError (bool xsdError)
+        public void setXsdError(bool xsdError)
         {
             this.setProperty("xsdError", xsdError);
         }
 
-        public bool getDataError ()
+        public bool getDataError()
         {
-            return (bool) this.getProperty("dataError");
+            return (bool)this.getProperty("dataError");
         }
 
-        public void setDataError (bool dataError)
+        public void setDataError(bool dataError)
         {
             this.setProperty("dataError", dataError);
         }
 
-        public string getDataErrorMessage ()
+        public string getDataErrorMessage()
         {
             return this.getProperty("dataErrorMessage").ToString();
         }
 
-        public void setDataErrorMessage (string dataErrorMessage)
+        public void setDataErrorMessage(string dataErrorMessage)
         {
             this.setProperty("dataErrorMessage", dataErrorMessage);
         }
 
-        public string getCustomCtfIncludedFields ()
+        public string getCustomCtfIncludedFields()
         {
             return this.getProperty("customCtfIncludedFields").ToString();
         }
 
-        public void setCustomCtfIncludedFields (string customCtfIncludedFields)
+        public void setCustomCtfIncludedFields(string customCtfIncludedFields)
         {
             this.setProperty("customCtfIncludedFields", customCtfIncludedFields);
         }

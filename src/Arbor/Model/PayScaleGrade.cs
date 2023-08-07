@@ -9,73 +9,74 @@ namespace Arbor.Model
 {
     public class PayScaleGrade : ModelBase
     {
-        protected string resourceType = ResourceType.PAY_SCALE_GRADE;
+        protected new string resourceType = ResourceType.PAY_SCALE_GRADE;
         public const string PAY_SCALE = "payScale";
         public const string GRADE_NAME = "gradeName";
         public const string DATA_ORDER = "dataOrder";
 
-        public PayScaleGrade ()
+        public PayScaleGrade()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public PayScaleGrade (string resourceType = "PayScaleGrade", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<PayScaleGrade> query (SimpleQuery query = null)
+        public PayScaleGrade(string resourceType = "PayScaleGrade", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("PayScaleGrade");
-        	RestGateway gateway = (RestGateway) PayScaleGrade.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<PayScaleGrade> payscalegradeCollection = new ModelCollection<PayScaleGrade> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    payscalegradeCollection.add((PayScaleGrade) model);
-        	}
-        
-        	return payscalegradeCollection;
+
         }
 
-        public static PayScaleGrade retrieve (string id)
+
+        public static ModelCollection<PayScaleGrade> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) PayScaleGrade.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (PayScaleGrade) gateway.retrieve(ResourceType.PAY_SCALE_GRADE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("PayScaleGrade");
+            RestGateway gateway = (RestGateway)PayScaleGrade.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<PayScaleGrade> payscalegradeCollection = new ModelCollection<PayScaleGrade>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                payscalegradeCollection.add((PayScaleGrade)model);
+            }
+
+            return payscalegradeCollection;
         }
 
-        public PayScale getPayScale ()
+        public static PayScaleGrade retrieve(string id)
         {
-            return (PayScale) this.getProperty("payScale");
+            RestGateway gateway = (RestGateway)PayScaleGrade.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (PayScaleGrade)gateway.retrieve(ResourceType.PAY_SCALE_GRADE, id);
         }
 
-        public void setPayScale (PayScale payScale)
+        public PayScale getPayScale()
+        {
+            return (PayScale)this.getProperty("payScale");
+        }
+
+        public void setPayScale(PayScale payScale)
         {
             this.setProperty("payScale", payScale);
         }
 
-        public string getGradeName ()
+        public string getGradeName()
         {
             return this.getProperty("gradeName").ToString();
         }
 
-        public void setGradeName (string gradeName)
+        public void setGradeName(string gradeName)
         {
             this.setProperty("gradeName", gradeName);
         }
 
-        public int getDataOrder ()
+        public int getDataOrder()
         {
             return Convert.ToInt32(this.getProperty("dataOrder"));
         }
 
-        public void setDataOrder (int dataOrder)
+        public void setDataOrder(int dataOrder)
         {
             this.setProperty("dataOrder", dataOrder);
         }

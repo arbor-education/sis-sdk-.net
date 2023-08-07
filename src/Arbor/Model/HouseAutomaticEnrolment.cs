@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class HouseAutomaticEnrolment : ModelBase
     {
-        protected string resourceType = ResourceType.HOUSE_AUTOMATIC_ENROLMENT;
+        protected new string resourceType = ResourceType.HOUSE_AUTOMATIC_ENROLMENT;
         public const string HOUSE = "house";
         public const string TRIGGER = "trigger";
 

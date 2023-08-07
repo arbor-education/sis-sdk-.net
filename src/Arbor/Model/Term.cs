@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class Term : ModelBase
     {
-        protected string resourceType = ResourceType.TERM;
+        protected new string resourceType = ResourceType.TERM;
         public const string ACADEMIC_YEAR = "academicYear";
         public const string TERM_NAME = "termName";
         public const string SHORT_TERM_NAME = "shortTermName";
@@ -17,98 +17,99 @@ namespace Arbor.Model
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
 
-        public Term ()
+        public Term()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public Term (string resourceType = "Term", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<Term> query (SimpleQuery query = null)
+        public Term(string resourceType = "Term", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("Term");
-        	RestGateway gateway = (RestGateway) Term.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<Term> termCollection = new ModelCollection<Term> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    termCollection.add((Term) model);
-        	}
-        
-        	return termCollection;
+
         }
 
-        public static Term retrieve (string id)
+
+        public static ModelCollection<Term> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) Term.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (Term) gateway.retrieve(ResourceType.TERM, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("Term");
+            RestGateway gateway = (RestGateway)Term.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<Term> termCollection = new ModelCollection<Term>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                termCollection.add((Term)model);
+            }
+
+            return termCollection;
         }
 
-        public AcademicYear getAcademicYear ()
+        public static Term retrieve(string id)
         {
-            return (AcademicYear) this.getProperty("academicYear");
+            RestGateway gateway = (RestGateway)Term.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (Term)gateway.retrieve(ResourceType.TERM, id);
         }
 
-        public void setAcademicYear (AcademicYear academicYear)
+        public AcademicYear getAcademicYear()
+        {
+            return (AcademicYear)this.getProperty("academicYear");
+        }
+
+        public void setAcademicYear(AcademicYear academicYear)
         {
             this.setProperty("academicYear", academicYear);
         }
 
-        public string getTermName ()
+        public string getTermName()
         {
             return this.getProperty("termName").ToString();
         }
 
-        public void setTermName (string termName)
+        public void setTermName(string termName)
         {
             this.setProperty("termName", termName);
         }
 
-        public string getShortTermName ()
+        public string getShortTermName()
         {
             return this.getProperty("shortTermName").ToString();
         }
 
-        public void setShortTermName (string shortTermName)
+        public void setShortTermName(string shortTermName)
         {
             this.setProperty("shortTermName", shortTermName);
         }
 
-        public string getCode ()
+        public string getCode()
         {
             return this.getProperty("code").ToString();
         }
 
-        public void setCode (string code)
+        public void setCode(string code)
         {
             this.setProperty("code", code);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDate()
         {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }

@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class StudentCurriculumAchievement : ModelBase
     {
-        protected string resourceType = ResourceType.STUDENT_CURRICULUM_ACHIEVEMENT;
+        protected new string resourceType = ResourceType.STUDENT_CURRICULUM_ACHIEVEMENT;
         public const string STUDENT = "student";
         public const string CURRICULUM_STATEMENT = "curriculumStatement";
         public const string ACHIEVEMENT_LEVEL = "achievementLevel";
@@ -17,98 +17,99 @@ namespace Arbor.Model
         public const string ASSESSMENT_TYPE = "assessmentType";
         public const string ACHIEVEMENT_DATE = "achievementDate";
 
-        public StudentCurriculumAchievement ()
+        public StudentCurriculumAchievement()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public StudentCurriculumAchievement (string resourceType = "StudentCurriculumAchievement", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<StudentCurriculumAchievement> query (SimpleQuery query = null)
+        public StudentCurriculumAchievement(string resourceType = "StudentCurriculumAchievement", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("StudentCurriculumAchievement");
-        	RestGateway gateway = (RestGateway) StudentCurriculumAchievement.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<StudentCurriculumAchievement> studentcurriculumachievementCollection = new ModelCollection<StudentCurriculumAchievement> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    studentcurriculumachievementCollection.add((StudentCurriculumAchievement) model);
-        	}
-        
-        	return studentcurriculumachievementCollection;
+
         }
 
-        public static StudentCurriculumAchievement retrieve (string id)
+
+        public static ModelCollection<StudentCurriculumAchievement> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) StudentCurriculumAchievement.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (StudentCurriculumAchievement) gateway.retrieve(ResourceType.STUDENT_CURRICULUM_ACHIEVEMENT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("StudentCurriculumAchievement");
+            RestGateway gateway = (RestGateway)StudentCurriculumAchievement.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<StudentCurriculumAchievement> studentcurriculumachievementCollection = new ModelCollection<StudentCurriculumAchievement>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                studentcurriculumachievementCollection.add((StudentCurriculumAchievement)model);
+            }
+
+            return studentcurriculumachievementCollection;
         }
 
-        public Student getStudent ()
+        public static StudentCurriculumAchievement retrieve(string id)
         {
-            return (Student) this.getProperty("student");
+            RestGateway gateway = (RestGateway)StudentCurriculumAchievement.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (StudentCurriculumAchievement)gateway.retrieve(ResourceType.STUDENT_CURRICULUM_ACHIEVEMENT, id);
         }
 
-        public void setStudent (Student student)
+        public Student getStudent()
+        {
+            return (Student)this.getProperty("student");
+        }
+
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public CurriculumStatement getCurriculumStatement ()
+        public CurriculumStatement getCurriculumStatement()
         {
-            return (CurriculumStatement) this.getProperty("curriculumStatement");
+            return (CurriculumStatement)this.getProperty("curriculumStatement");
         }
 
-        public void setCurriculumStatement (CurriculumStatement curriculumStatement)
+        public void setCurriculumStatement(CurriculumStatement curriculumStatement)
         {
             this.setProperty("curriculumStatement", curriculumStatement);
         }
 
-        public AchievementLevel getAchievementLevel ()
+        public AchievementLevel getAchievementLevel()
         {
-            return (AchievementLevel) this.getProperty("achievementLevel");
+            return (AchievementLevel)this.getProperty("achievementLevel");
         }
 
-        public void setAchievementLevel (AchievementLevel achievementLevel)
+        public void setAchievementLevel(AchievementLevel achievementLevel)
         {
             this.setProperty("achievementLevel", achievementLevel);
         }
 
-        public float getAchievementValue ()
+        public float getAchievementValue()
         {
-            return (float) this.getProperty("achievementValue");
+            return (float)this.getProperty("achievementValue");
         }
 
-        public void setAchievementValue (float achievementValue)
+        public void setAchievementValue(float achievementValue)
         {
             this.setProperty("achievementValue", achievementValue);
         }
 
-        public string getAssessmentType ()
+        public string getAssessmentType()
         {
             return this.getProperty("assessmentType").ToString();
         }
 
-        public void setAssessmentType (string assessmentType)
+        public void setAssessmentType(string assessmentType)
         {
             this.setProperty("assessmentType", assessmentType);
         }
 
-        public DateTime getAchievementDate ()
+        public DateTime getAchievementDate()
         {
             return Convert.ToDateTime(this.getProperty("achievementDate"));
         }
 
-        public void setAchievementDate (DateTime achievementDate)
+        public void setAchievementDate(DateTime achievementDate)
         {
             this.setProperty("achievementDate", achievementDate);
         }

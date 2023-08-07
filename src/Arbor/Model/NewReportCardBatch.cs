@@ -9,7 +9,7 @@ namespace Arbor.Model
 {
     public class NewReportCardBatch : ModelBase
     {
-        protected string resourceType = ResourceType.NEW_REPORT_CARD_BATCH;
+        protected new string resourceType = ResourceType.NEW_REPORT_CARD_BATCH;
         public const string REPORT_CARD_TEMPLATE = "reportCardTemplate";
         public const string REPORT_CARD_TITLE = "reportCardTitle";
         public const string GENERAL_SETTINGS_JSON = "generalSettingsJson";
@@ -30,283 +30,295 @@ namespace Arbor.Model
         public const string FINALIZED_DATETIME = "finalizedDatetime";
         public const string FINALIZATION_IN_PROGRESS = "finalizationInProgress";
         public const string SHARED_WITH_GUARDIANS = "sharedWithGuardians";
+        public const string SHARED_WITH_STUDENTS = "sharedWithStudents";
         public const string BEHAVIOUR_FIELDS = "behaviourFields";
         public const string ATTENDANCE_FIELDS = "attendanceFields";
         public const string SHOW_COMMENTS = "showComments";
         public const string CUSTOM_DISPLAY_NAMES_JSON = "customDisplayNamesJson";
 
-        public NewReportCardBatch ()
+        public NewReportCardBatch()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public NewReportCardBatch (string resourceType = "NewReportCardBatch", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<NewReportCardBatch> query (SimpleQuery query = null)
+        public NewReportCardBatch(string resourceType = "NewReportCardBatch", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("NewReportCardBatch");
-        	RestGateway gateway = (RestGateway) NewReportCardBatch.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<NewReportCardBatch> newreportcardbatchCollection = new ModelCollection<NewReportCardBatch> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    newreportcardbatchCollection.add((NewReportCardBatch) model);
-        	}
-        
-        	return newreportcardbatchCollection;
+
         }
 
-        public static NewReportCardBatch retrieve (string id)
+
+        public static ModelCollection<NewReportCardBatch> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) NewReportCardBatch.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (NewReportCardBatch) gateway.retrieve(ResourceType.NEW_REPORT_CARD_BATCH, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("NewReportCardBatch");
+            RestGateway gateway = (RestGateway)NewReportCardBatch.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<NewReportCardBatch> newreportcardbatchCollection = new ModelCollection<NewReportCardBatch>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                newreportcardbatchCollection.add((NewReportCardBatch)model);
+            }
+
+            return newreportcardbatchCollection;
         }
 
-        public NewReportCardTemplate getReportCardTemplate ()
+        public static NewReportCardBatch retrieve(string id)
         {
-            return (NewReportCardTemplate) this.getProperty("reportCardTemplate");
+            RestGateway gateway = (RestGateway)NewReportCardBatch.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (NewReportCardBatch)gateway.retrieve(ResourceType.NEW_REPORT_CARD_BATCH, id);
         }
 
-        public void setReportCardTemplate (NewReportCardTemplate reportCardTemplate)
+        public NewReportCardTemplate getReportCardTemplate()
+        {
+            return (NewReportCardTemplate)this.getProperty("reportCardTemplate");
+        }
+
+        public void setReportCardTemplate(NewReportCardTemplate reportCardTemplate)
         {
             this.setProperty("reportCardTemplate", reportCardTemplate);
         }
 
-        public string getReportCardTitle ()
+        public string getReportCardTitle()
         {
             return this.getProperty("reportCardTitle").ToString();
         }
 
-        public void setReportCardTitle (string reportCardTitle)
+        public void setReportCardTitle(string reportCardTitle)
         {
             this.setProperty("reportCardTitle", reportCardTitle);
         }
 
-        public string getGeneralSettingsJson ()
+        public string getGeneralSettingsJson()
         {
             return this.getProperty("generalSettingsJson").ToString();
         }
 
-        public void setGeneralSettingsJson (string generalSettingsJson)
+        public void setGeneralSettingsJson(string generalSettingsJson)
         {
             this.setProperty("generalSettingsJson", generalSettingsJson);
         }
 
-        public DateTime getReportCardDate ()
+        public DateTime getReportCardDate()
         {
             return Convert.ToDateTime(this.getProperty("reportCardDate"));
         }
 
-        public void setReportCardDate (DateTime reportCardDate)
+        public void setReportCardDate(DateTime reportCardDate)
         {
             this.setProperty("reportCardDate", reportCardDate);
         }
 
-        public string getAttainmentSettingsJson ()
+        public string getAttainmentSettingsJson()
         {
             return this.getProperty("attainmentSettingsJson").ToString();
         }
 
-        public void setAttainmentSettingsJson (string attainmentSettingsJson)
+        public void setAttainmentSettingsJson(string attainmentSettingsJson)
         {
             this.setProperty("attainmentSettingsJson", attainmentSettingsJson);
         }
 
-        public DateTime getAssessmentPeriodStartDate ()
+        public DateTime getAssessmentPeriodStartDate()
         {
             return Convert.ToDateTime(this.getProperty("assessmentPeriodStartDate"));
         }
 
-        public void setAssessmentPeriodStartDate (DateTime assessmentPeriodStartDate)
+        public void setAssessmentPeriodStartDate(DateTime assessmentPeriodStartDate)
         {
             this.setProperty("assessmentPeriodStartDate", assessmentPeriodStartDate);
         }
 
-        public DateTime getAssessmentPeriodEndDate ()
+        public DateTime getAssessmentPeriodEndDate()
         {
             return Convert.ToDateTime(this.getProperty("assessmentPeriodEndDate"));
         }
 
-        public void setAssessmentPeriodEndDate (DateTime assessmentPeriodEndDate)
+        public void setAssessmentPeriodEndDate(DateTime assessmentPeriodEndDate)
         {
             this.setProperty("assessmentPeriodEndDate", assessmentPeriodEndDate);
         }
 
-        public DateTime getDueDate ()
+        public DateTime getDueDate()
         {
             return Convert.ToDateTime(this.getProperty("dueDate"));
         }
 
-        public void setDueDate (DateTime dueDate)
+        public void setDueDate(DateTime dueDate)
         {
             this.setProperty("dueDate", dueDate);
         }
 
-        public AcademicYear getAcademicYear ()
+        public AcademicYear getAcademicYear()
         {
-            return (AcademicYear) this.getProperty("academicYear");
+            return (AcademicYear)this.getProperty("academicYear");
         }
 
-        public void setAcademicYear (AcademicYear academicYear)
+        public void setAcademicYear(AcademicYear academicYear)
         {
             this.setProperty("academicYear", academicYear);
         }
 
-        public bool getIncludeTeacherInitials ()
+        public bool getIncludeTeacherInitials()
         {
             return Convert.ToBoolean(this.getProperty("includeTeacherInitials"));
         }
 
-        public void setIncludeTeacherInitials (bool includeTeacherInitials)
+        public void setIncludeTeacherInitials(bool includeTeacherInitials)
         {
             this.setProperty("includeTeacherInitials", includeTeacherInitials);
         }
 
-        public bool getIncludeTeacherName ()
+        public bool getIncludeTeacherName()
         {
             return Convert.ToBoolean(this.getProperty("includeTeacherName"));
         }
 
-        public void setIncludeTeacherName (bool includeTeacherName)
+        public void setIncludeTeacherName(bool includeTeacherName)
         {
             this.setProperty("includeTeacherName", includeTeacherName);
         }
 
-        public bool getIncludeStudentPhoto ()
+        public bool getIncludeStudentPhoto()
         {
             return Convert.ToBoolean(this.getProperty("includeStudentPhoto"));
         }
 
-        public void setIncludeStudentPhoto (bool includeStudentPhoto)
+        public void setIncludeStudentPhoto(bool includeStudentPhoto)
         {
             this.setProperty("includeStudentPhoto", includeStudentPhoto);
         }
 
-        public bool getIncludeBaseline ()
+        public bool getIncludeBaseline()
         {
             return Convert.ToBoolean(this.getProperty("includeBaseline"));
         }
 
-        public void setIncludeBaseline (bool includeBaseline)
+        public void setIncludeBaseline(bool includeBaseline)
         {
             this.setProperty("includeBaseline", includeBaseline);
         }
 
-        public bool getIncludeWorkingAtCurrentPeriod ()
+        public bool getIncludeWorkingAtCurrentPeriod()
         {
             return Convert.ToBoolean(this.getProperty("includeWorkingAtCurrentPeriod"));
         }
 
-        public void setIncludeWorkingAtCurrentPeriod (bool includeWorkingAtCurrentPeriod)
+        public void setIncludeWorkingAtCurrentPeriod(bool includeWorkingAtCurrentPeriod)
         {
             this.setProperty("includeWorkingAtCurrentPeriod", includeWorkingAtCurrentPeriod);
         }
 
-        public bool getIncludeWorkingAtPreviousPeriod ()
+        public bool getIncludeWorkingAtPreviousPeriod()
         {
             return Convert.ToBoolean(this.getProperty("includeWorkingAtPreviousPeriod"));
         }
 
-        public void setIncludeWorkingAtPreviousPeriod (bool includeWorkingAtPreviousPeriod)
+        public void setIncludeWorkingAtPreviousPeriod(bool includeWorkingAtPreviousPeriod)
         {
             this.setProperty("includeWorkingAtPreviousPeriod", includeWorkingAtPreviousPeriod);
         }
 
-        public string getPreviousPeriodMeaning ()
+        public string getPreviousPeriodMeaning()
         {
             return this.getProperty("previousPeriodMeaning").ToString();
         }
 
-        public void setPreviousPeriodMeaning (string previousPeriodMeaning)
+        public void setPreviousPeriodMeaning(string previousPeriodMeaning)
         {
             this.setProperty("previousPeriodMeaning", previousPeriodMeaning);
         }
 
-        public bool getIncludeTeacherTarget ()
+        public bool getIncludeTeacherTarget()
         {
             return Convert.ToBoolean(this.getProperty("includeTeacherTarget"));
         }
 
-        public void setIncludeTeacherTarget (bool includeTeacherTarget)
+        public void setIncludeTeacherTarget(bool includeTeacherTarget)
         {
             this.setProperty("includeTeacherTarget", includeTeacherTarget);
         }
 
-        public DateTime getFinalizedDatetime ()
+        public DateTime getFinalizedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("finalizedDatetime"));
         }
 
-        public void setFinalizedDatetime (DateTime finalizedDatetime)
+        public void setFinalizedDatetime(DateTime finalizedDatetime)
         {
             this.setProperty("finalizedDatetime", finalizedDatetime);
         }
 
-        public bool getFinalizationInProgress ()
+        public bool getFinalizationInProgress()
         {
             return Convert.ToBoolean(this.getProperty("finalizationInProgress"));
         }
 
-        public void setFinalizationInProgress (bool finalizationInProgress)
+        public void setFinalizationInProgress(bool finalizationInProgress)
         {
             this.setProperty("finalizationInProgress", finalizationInProgress);
         }
 
-        public bool getSharedWithGuardians ()
+        public bool getSharedWithGuardians()
         {
             return Convert.ToBoolean(this.getProperty("sharedWithGuardians"));
         }
 
-        public void setSharedWithGuardians (bool sharedWithGuardians)
+        public void setSharedWithGuardians(bool sharedWithGuardians)
         {
             this.setProperty("sharedWithGuardians", sharedWithGuardians);
         }
 
-        public string getBehaviourFields ()
+        public bool getSharedWithStudents()
+        {
+            return Convert.ToBoolean(this.getProperty("sharedWithStudents"));
+        }
+
+        public void setSharedWithStudents(bool sharedWithStudents)
+        {
+            this.setProperty("sharedWithStudents", sharedWithStudents);
+        }
+
+        public string getBehaviourFields()
         {
             return this.getProperty("behaviourFields").ToString();
         }
 
-        public void setBehaviourFields (string behaviourFields)
+        public void setBehaviourFields(string behaviourFields)
         {
             this.setProperty("behaviourFields", behaviourFields);
         }
 
-        public string getAttendanceFields ()
+        public string getAttendanceFields()
         {
             return this.getProperty("attendanceFields").ToString();
         }
 
-        public void setAttendanceFields (string attendanceFields)
+        public void setAttendanceFields(string attendanceFields)
         {
             this.setProperty("attendanceFields", attendanceFields);
         }
 
-        public bool getShowComments ()
+        public bool getShowComments()
         {
             return Convert.ToBoolean(this.getProperty("showComments"));
         }
 
-        public void setShowComments (bool showComments)
+        public void setShowComments(bool showComments)
         {
             this.setProperty("showComments", showComments);
         }
 
-        public string getCustomDisplayNamesJson ()
+        public string getCustomDisplayNamesJson()
         {
             return this.getProperty("customDisplayNamesJson").ToString();
         }
 
-        public void setCustomDisplayNamesJson (string customDisplayNamesJson)
+        public void setCustomDisplayNamesJson(string customDisplayNamesJson)
         {
             this.setProperty("customDisplayNamesJson", customDisplayNamesJson);
         }

@@ -9,84 +9,85 @@ namespace Arbor.Model
 {
     public class CustomReportScheduledExportReport : ModelBase
     {
-        protected string resourceType = ResourceType.CUSTOM_REPORT_SCHEDULED_EXPORT_REPORT;
+        protected new string resourceType = ResourceType.CUSTOM_REPORT_SCHEDULED_EXPORT_REPORT;
         public const string CUSTOM_REPORT_SCHEDULED_EXPORT = "customReportScheduledExport";
         public const string CUSTOM_REPORT = "customReport";
         public const string EXPORT_FORMAT = "exportFormat";
         public const string SCHEDULED_TIME = "scheduledTime";
 
-        public CustomReportScheduledExportReport ()
+        public CustomReportScheduledExportReport()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public CustomReportScheduledExportReport (string resourceType = "CustomReportScheduledExportReport", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<CustomReportScheduledExportReport> query (SimpleQuery query = null)
+        public CustomReportScheduledExportReport(string resourceType = "CustomReportScheduledExportReport", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("CustomReportScheduledExportReport");
-        	RestGateway gateway = (RestGateway) CustomReportScheduledExportReport.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<CustomReportScheduledExportReport> customreportscheduledexportreportCollection = new ModelCollection<CustomReportScheduledExportReport> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    customreportscheduledexportreportCollection.add((CustomReportScheduledExportReport) model);
-        	}
-        
-        	return customreportscheduledexportreportCollection;
+
         }
 
-        public static CustomReportScheduledExportReport retrieve (string id)
+
+        public static ModelCollection<CustomReportScheduledExportReport> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) CustomReportScheduledExportReport.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (CustomReportScheduledExportReport) gateway.retrieve(ResourceType.CUSTOM_REPORT_SCHEDULED_EXPORT_REPORT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("CustomReportScheduledExportReport");
+            RestGateway gateway = (RestGateway)CustomReportScheduledExportReport.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<CustomReportScheduledExportReport> customreportscheduledexportreportCollection = new ModelCollection<CustomReportScheduledExportReport>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                customreportscheduledexportreportCollection.add((CustomReportScheduledExportReport)model);
+            }
+
+            return customreportscheduledexportreportCollection;
         }
 
-        public CustomReportScheduledExport getCustomReportScheduledExport ()
+        public static CustomReportScheduledExportReport retrieve(string id)
         {
-            return (CustomReportScheduledExport) this.getProperty("customReportScheduledExport");
+            RestGateway gateway = (RestGateway)CustomReportScheduledExportReport.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (CustomReportScheduledExportReport)gateway.retrieve(ResourceType.CUSTOM_REPORT_SCHEDULED_EXPORT_REPORT, id);
         }
 
-        public void setCustomReportScheduledExport (CustomReportScheduledExport customReportScheduledExport)
+        public CustomReportScheduledExport getCustomReportScheduledExport()
+        {
+            return (CustomReportScheduledExport)this.getProperty("customReportScheduledExport");
+        }
+
+        public void setCustomReportScheduledExport(CustomReportScheduledExport customReportScheduledExport)
         {
             this.setProperty("customReportScheduledExport", customReportScheduledExport);
         }
 
-        public CustomReport getCustomReport ()
+        public CustomReport getCustomReport()
         {
-            return (CustomReport) this.getProperty("customReport");
+            return (CustomReport)this.getProperty("customReport");
         }
 
-        public void setCustomReport (CustomReport customReport)
+        public void setCustomReport(CustomReport customReport)
         {
             this.setProperty("customReport", customReport);
         }
 
-        public string getExportFormat ()
+        public string getExportFormat()
         {
             return this.getProperty("exportFormat").ToString();
         }
 
-        public void setExportFormat (string exportFormat)
+        public void setExportFormat(string exportFormat)
         {
             this.setProperty("exportFormat", exportFormat);
         }
 
-        public string getScheduledTime ()
+        public string getScheduledTime()
         {
             return this.getProperty("scheduledTime").ToString();
         }
 
-        public void setScheduledTime (string scheduledTime)
+        public void setScheduledTime(string scheduledTime)
         {
             this.setProperty("scheduledTime", scheduledTime);
         }

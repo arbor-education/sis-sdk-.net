@@ -9,84 +9,85 @@ namespace Arbor.Model
 {
     public class ReportCardBatchAcademicUnit : ModelBase
     {
-        protected string resourceType = ResourceType.REPORT_CARD_BATCH_ACADEMIC_UNIT;
+        protected new string resourceType = ResourceType.REPORT_CARD_BATCH_ACADEMIC_UNIT;
         public const string REPORT_CARD_BATCH = "reportCardBatch";
         public const string ORDER = "order";
         public const string ACADEMIC_UNIT = "academicUnit";
         public const string MARKING_COMPLETED_DATETIME = "markingCompletedDatetime";
 
-        public ReportCardBatchAcademicUnit ()
+        public ReportCardBatchAcademicUnit()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public ReportCardBatchAcademicUnit (string resourceType = "ReportCardBatchAcademicUnit", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<ReportCardBatchAcademicUnit> query (SimpleQuery query = null)
+        public ReportCardBatchAcademicUnit(string resourceType = "ReportCardBatchAcademicUnit", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("ReportCardBatchAcademicUnit");
-        	RestGateway gateway = (RestGateway) ReportCardBatchAcademicUnit.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<ReportCardBatchAcademicUnit> reportcardbatchacademicunitCollection = new ModelCollection<ReportCardBatchAcademicUnit> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    reportcardbatchacademicunitCollection.add((ReportCardBatchAcademicUnit) model);
-        	}
-        
-        	return reportcardbatchacademicunitCollection;
+
         }
 
-        public static ReportCardBatchAcademicUnit retrieve (string id)
+
+        public static ModelCollection<ReportCardBatchAcademicUnit> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) ReportCardBatchAcademicUnit.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (ReportCardBatchAcademicUnit) gateway.retrieve(ResourceType.REPORT_CARD_BATCH_ACADEMIC_UNIT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("ReportCardBatchAcademicUnit");
+            RestGateway gateway = (RestGateway)ReportCardBatchAcademicUnit.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<ReportCardBatchAcademicUnit> reportcardbatchacademicunitCollection = new ModelCollection<ReportCardBatchAcademicUnit>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                reportcardbatchacademicunitCollection.add((ReportCardBatchAcademicUnit)model);
+            }
+
+            return reportcardbatchacademicunitCollection;
         }
 
-        public NewReportCardBatch getReportCardBatch ()
+        public static ReportCardBatchAcademicUnit retrieve(string id)
         {
-            return (NewReportCardBatch) this.getProperty("reportCardBatch");
+            RestGateway gateway = (RestGateway)ReportCardBatchAcademicUnit.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (ReportCardBatchAcademicUnit)gateway.retrieve(ResourceType.REPORT_CARD_BATCH_ACADEMIC_UNIT, id);
         }
 
-        public void setReportCardBatch (NewReportCardBatch reportCardBatch)
+        public NewReportCardBatch getReportCardBatch()
+        {
+            return (NewReportCardBatch)this.getProperty("reportCardBatch");
+        }
+
+        public void setReportCardBatch(NewReportCardBatch reportCardBatch)
         {
             this.setProperty("reportCardBatch", reportCardBatch);
         }
 
-        public int getOrder ()
+        public int getOrder()
         {
             return Convert.ToInt32(this.getProperty("order"));
         }
 
-        public void setOrder (int order)
+        public void setOrder(int order)
         {
             this.setProperty("order", order);
         }
 
-        public AcademicUnit getAcademicUnit ()
+        public AcademicUnit getAcademicUnit()
         {
-            return (AcademicUnit) this.getProperty("academicUnit");
+            return (AcademicUnit)this.getProperty("academicUnit");
         }
 
-        public void setAcademicUnit (AcademicUnit academicUnit)
+        public void setAcademicUnit(AcademicUnit academicUnit)
         {
             this.setProperty("academicUnit", academicUnit);
         }
 
-        public DateTime getMarkingCompletedDatetime ()
+        public DateTime getMarkingCompletedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("markingCompletedDatetime"));
         }
 
-        public void setMarkingCompletedDatetime (DateTime markingCompletedDatetime)
+        public void setMarkingCompletedDatetime(DateTime markingCompletedDatetime)
         {
             this.setProperty("markingCompletedDatetime", markingCompletedDatetime);
         }

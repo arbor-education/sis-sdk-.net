@@ -9,62 +9,63 @@ namespace Arbor.Model
 {
     public class ProgrammeAcademicUnit : ModelBase
     {
-        protected string resourceType = ResourceType.PROGRAMME_ACADEMIC_UNIT;
+        protected new string resourceType = ResourceType.PROGRAMME_ACADEMIC_UNIT;
         public const string PROGRAMME_INSTANCE = "programmeInstance";
         public const string ACADEMIC_UNIT = "academicUnit";
 
-        public ProgrammeAcademicUnit ()
+        public ProgrammeAcademicUnit()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public ProgrammeAcademicUnit (string resourceType = "ProgrammeAcademicUnit", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<ProgrammeAcademicUnit> query (SimpleQuery query = null)
+        public ProgrammeAcademicUnit(string resourceType = "ProgrammeAcademicUnit", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("ProgrammeAcademicUnit");
-        	RestGateway gateway = (RestGateway) ProgrammeAcademicUnit.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<ProgrammeAcademicUnit> programmeacademicunitCollection = new ModelCollection<ProgrammeAcademicUnit> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    programmeacademicunitCollection.add((ProgrammeAcademicUnit) model);
-        	}
-        
-        	return programmeacademicunitCollection;
+
         }
 
-        public static ProgrammeAcademicUnit retrieve (string id)
+
+        public static ModelCollection<ProgrammeAcademicUnit> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) ProgrammeAcademicUnit.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (ProgrammeAcademicUnit) gateway.retrieve(ResourceType.PROGRAMME_ACADEMIC_UNIT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("ProgrammeAcademicUnit");
+            RestGateway gateway = (RestGateway)ProgrammeAcademicUnit.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<ProgrammeAcademicUnit> programmeacademicunitCollection = new ModelCollection<ProgrammeAcademicUnit>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                programmeacademicunitCollection.add((ProgrammeAcademicUnit)model);
+            }
+
+            return programmeacademicunitCollection;
         }
 
-        public ProgrammeInstance getProgrammeInstance ()
+        public static ProgrammeAcademicUnit retrieve(string id)
         {
-            return (ProgrammeInstance) this.getProperty("programmeInstance");
+            RestGateway gateway = (RestGateway)ProgrammeAcademicUnit.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (ProgrammeAcademicUnit)gateway.retrieve(ResourceType.PROGRAMME_ACADEMIC_UNIT, id);
         }
 
-        public void setProgrammeInstance (ProgrammeInstance programmeInstance)
+        public ProgrammeInstance getProgrammeInstance()
+        {
+            return (ProgrammeInstance)this.getProperty("programmeInstance");
+        }
+
+        public void setProgrammeInstance(ProgrammeInstance programmeInstance)
         {
             this.setProperty("programmeInstance", programmeInstance);
         }
 
-        public AcademicUnit getAcademicUnit ()
+        public AcademicUnit getAcademicUnit()
         {
-            return (AcademicUnit) this.getProperty("academicUnit");
+            return (AcademicUnit)this.getProperty("academicUnit");
         }
 
-        public void setAcademicUnit (AcademicUnit academicUnit)
+        public void setAcademicUnit(AcademicUnit academicUnit)
         {
             this.setProperty("academicUnit", academicUnit);
         }

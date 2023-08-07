@@ -9,117 +9,129 @@ namespace Arbor.Model
 {
     public class InternalExclusion : ModelBase
     {
-        protected string resourceType = ResourceType.INTERNAL_EXCLUSION;
+        protected new string resourceType = ResourceType.INTERNAL_EXCLUSION;
         public const string STUDENT = "student";
         public const string ISSUED_BY_STAFF = "issuedByStaff";
         public const string INTERNAL_EXCLUSION_SESSION = "internalExclusionSession";
         public const string INTERNAL_EXCLUSION_TYPE = "internalExclusionType";
         public const string EXCLUSION_REASON = "exclusionReason";
+        public const string INTERNAL_EXCLUSION_REASON = "internalExclusionReason";
         public const string ISSUED_DATETIME = "issuedDatetime";
         public const string NARRATIVE = "narrative";
 
-        public InternalExclusion ()
+        public InternalExclusion()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public InternalExclusion (string resourceType = "InternalExclusion", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<InternalExclusion> query (SimpleQuery query = null)
+        public InternalExclusion(string resourceType = "InternalExclusion", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("InternalExclusion");
-        	RestGateway gateway = (RestGateway) InternalExclusion.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<InternalExclusion> internalexclusionCollection = new ModelCollection<InternalExclusion> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    internalexclusionCollection.add((InternalExclusion) model);
-        	}
-        
-        	return internalexclusionCollection;
+
         }
 
-        public static InternalExclusion retrieve (string id)
+
+        public static ModelCollection<InternalExclusion> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) InternalExclusion.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (InternalExclusion) gateway.retrieve(ResourceType.INTERNAL_EXCLUSION, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("InternalExclusion");
+            RestGateway gateway = (RestGateway)InternalExclusion.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<InternalExclusion> internalexclusionCollection = new ModelCollection<InternalExclusion>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                internalexclusionCollection.add((InternalExclusion)model);
+            }
+
+            return internalexclusionCollection;
         }
 
-        public Student getStudent ()
+        public static InternalExclusion retrieve(string id)
         {
-            return (Student) this.getProperty("student");
+            RestGateway gateway = (RestGateway)InternalExclusion.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (InternalExclusion)gateway.retrieve(ResourceType.INTERNAL_EXCLUSION, id);
         }
 
-        public void setStudent (Student student)
+        public Student getStudent()
+        {
+            return (Student)this.getProperty("student");
+        }
+
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public Staff getIssuedByStaff ()
+        public Staff getIssuedByStaff()
         {
-            return (Staff) this.getProperty("issuedByStaff");
+            return (Staff)this.getProperty("issuedByStaff");
         }
 
-        public void setIssuedByStaff (Staff issuedByStaff)
+        public void setIssuedByStaff(Staff issuedByStaff)
         {
             this.setProperty("issuedByStaff", issuedByStaff);
         }
 
-        public InternalExclusionSession getInternalExclusionSession ()
+        public InternalExclusionSession getInternalExclusionSession()
         {
-            return (InternalExclusionSession) this.getProperty("internalExclusionSession");
+            return (InternalExclusionSession)this.getProperty("internalExclusionSession");
         }
 
-        public void setInternalExclusionSession (InternalExclusionSession internalExclusionSession)
+        public void setInternalExclusionSession(InternalExclusionSession internalExclusionSession)
         {
             this.setProperty("internalExclusionSession", internalExclusionSession);
         }
 
-        public InternalExclusionType getInternalExclusionType ()
+        public InternalExclusionType getInternalExclusionType()
         {
-            return (InternalExclusionType) this.getProperty("internalExclusionType");
+            return (InternalExclusionType)this.getProperty("internalExclusionType");
         }
 
-        public void setInternalExclusionType (InternalExclusionType internalExclusionType)
+        public void setInternalExclusionType(InternalExclusionType internalExclusionType)
         {
             this.setProperty("internalExclusionType", internalExclusionType);
         }
 
-        public ExclusionReason getExclusionReason ()
+        public ExclusionReason getExclusionReason()
         {
-            return (ExclusionReason) this.getProperty("exclusionReason");
+            return (ExclusionReason)this.getProperty("exclusionReason");
         }
 
-        public void setExclusionReason (ExclusionReason exclusionReason)
+        public void setExclusionReason(ExclusionReason exclusionReason)
         {
             this.setProperty("exclusionReason", exclusionReason);
         }
 
-        public DateTime getIssuedDatetime ()
+        public InternalExclusionReason getInternalExclusionReason()
+        {
+            return (InternalExclusionReason)this.getProperty("internalExclusionReason");
+        }
+
+        public void setInternalExclusionReason(InternalExclusionReason internalExclusionReason)
+        {
+            this.setProperty("internalExclusionReason", internalExclusionReason);
+        }
+
+        public DateTime getIssuedDatetime()
         {
             return Convert.ToDateTime(this.getProperty("issuedDatetime"));
         }
 
-        public void setIssuedDatetime (DateTime issuedDatetime)
+        public void setIssuedDatetime(DateTime issuedDatetime)
         {
             this.setProperty("issuedDatetime", issuedDatetime);
         }
 
-        public string getNarrative ()
+        public string getNarrative()
         {
             return this.getProperty("narrative").ToString();
         }
 
-        public void setNarrative (string narrative)
+        public void setNarrative(string narrative)
         {
             this.setProperty("narrative", narrative);
         }

@@ -18,106 +18,109 @@ namespace Arbor.Model
         public const string CREATED_DATETIME = "createdDatetime";
         public const string LAST_ACCESS_DATETIME = "lastAccessDatetime";
 
-        public UiParams ()
+        public UiParams()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public UiParams (string resourceType = "UiParams", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<UiParams> query (SimpleQuery query = null)
+        public UiParams(string resourceType = "UiParams", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("UiParams");
-        	RestGateway gateway = (RestGateway) UiParams.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<UiParams> uiparamsCollection = new ModelCollection<UiParams> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    uiparamsCollection.add((UiParams) model);
-        	}
-        
-        	return uiparamsCollection;
+
         }
 
-        public static UiParams retrieve (string id)
+
+        public static ModelCollection<UiParams> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) UiParams.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (UiParams) gateway.retrieve(ResourceType.UI_PARAMS, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("UiParams");
+            RestGateway gateway = (RestGateway)UiParams.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<UiParams> uiparamsCollection = new ModelCollection<UiParams>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                uiparamsCollection.add((UiParams)model);
+            }
+
+            return uiparamsCollection;
         }
 
-        public string getIdentifier ()
+        public static UiParams retrieve(string id)
+        {
+            RestGateway gateway = (RestGateway)UiParams.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (UiParams)gateway.retrieve(ResourceType.UI_PARAMS, id);
+        }
+
+        public string getIdentifier()
         {
             return this.getProperty("identifier").ToString();
         }
 
-        public void setIdentifier (string identifier)
+        public void setIdentifier(string identifier)
         {
             this.setProperty("identifier", identifier);
         }
 
-        public string getParams ()
+        public string getParams()
         {
             return this.getProperty("params").ToString();
         }
 
-        public void setParams (string _params)
+        public void setParams(string _params)
         {
             this.setProperty("params", _params);
         }
 
-        public string getHash ()
+        public string getHash()
         {
             return this.getProperty("hash").ToString();
         }
 
-        public void setHash (string hash)
+        public void setHash(string hash)
         {
             this.setProperty("hash", hash);
         }
 
-        public User getUser ()
+        public User getUser()
         {
-            return (User) this.getProperty("user");
+            return (User)this.getProperty("user");
         }
 
-        public void setUser (User user)
+        public void setUser(User user)
         {
             this.setProperty("user", user);
         }
 
-        public string getSessionId ()
+        public string getSessionId()
         {
             return this.getProperty("sessionId").ToString();
         }
 
-        public void setSessionId (string sessionId)
+        public void setSessionId(string sessionId)
         {
             this.setProperty("sessionId", sessionId);
         }
 
-        public DateTime getCreatedDatetime (){
+        public DateTime getCreatedDatetime()
+        {
             return Convert.ToDateTime(this.getProperty("createdDatetime"));
         }
 
-        public void setCreatedDatetime (DateTime createdDatetime)
+        public void setCreatedDatetime(DateTime createdDatetime)
         {
             this.setProperty("createdDatetime", createdDatetime);
         }
 
-        public DateTime getLastAccessDatetime (){
+        public DateTime getLastAccessDatetime()
+        {
             return Convert.ToDateTime(this.getProperty("lastAccessDatetime"));
         }
 
-        public void setLastAccessDatetime (DateTime lastAccessDatetime)
+        public void setLastAccessDatetime(DateTime lastAccessDatetime)
         {
             this.setProperty("lastAccessDatetime", lastAccessDatetime);
         }

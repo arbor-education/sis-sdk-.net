@@ -14,68 +14,69 @@ namespace Arbor.Model
         public const string PARTY = "party";
         public const string RESPONSIBLE = "responsible";
 
-        public BehaviouralContractParty ()
+        public BehaviouralContractParty()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public BehaviouralContractParty (string resourceType = "BehaviouralContractParty", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<BehaviouralContractParty> query (SimpleQuery query = null)
+        public BehaviouralContractParty(string resourceType = "BehaviouralContractParty", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("BehaviouralContractParty");
-        	RestGateway gateway = (RestGateway) BehaviouralContractParty.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<BehaviouralContractParty> behaviouralcontractpartyCollection = new ModelCollection<BehaviouralContractParty> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    behaviouralcontractpartyCollection.add((BehaviouralContractParty) model);
-        	}
-        
-        	return behaviouralcontractpartyCollection;
+
         }
 
-        public static BehaviouralContractParty retrieve (string id)
+
+        public static ModelCollection<BehaviouralContractParty> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) BehaviouralContractParty.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (BehaviouralContractParty) gateway.retrieve(ResourceType.BEHAVIOURAL_CONTRACT_PARTY, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("BehaviouralContractParty");
+            RestGateway gateway = (RestGateway)BehaviouralContractParty.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<BehaviouralContractParty> behaviouralcontractpartyCollection = new ModelCollection<BehaviouralContractParty>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                behaviouralcontractpartyCollection.add((BehaviouralContractParty)model);
+            }
+
+            return behaviouralcontractpartyCollection;
         }
 
-        public BehaviouralContract getBehaviouralContract ()
+        public static BehaviouralContractParty retrieve(string id)
         {
-            return (BehaviouralContract) this.getProperty("behaviouralContract");
+            RestGateway gateway = (RestGateway)BehaviouralContractParty.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (BehaviouralContractParty)gateway.retrieve(ResourceType.BEHAVIOURAL_CONTRACT_PARTY, id);
         }
 
-        public void setBehaviouralContract (BehaviouralContract behaviouralContract)
+        public BehaviouralContract getBehaviouralContract()
+        {
+            return (BehaviouralContract)this.getProperty("behaviouralContract");
+        }
+
+        public void setBehaviouralContract(BehaviouralContract behaviouralContract)
         {
             this.setProperty("behaviouralContract", behaviouralContract);
         }
 
-        public ModelBase getParty ()
+        public ModelBase getParty()
         {
-            return (ModelBase) this.getProperty("party");
+            return (ModelBase)this.getProperty("party");
         }
 
-        public void setParty (ModelBase party)
+        public void setParty(ModelBase party)
         {
             this.setProperty("party", party);
         }
 
-        public bool getResponsible ()
+        public bool getResponsible()
         {
             return Convert.ToBoolean(this.getProperty("responsible"));
         }
 
-        public void setResponsible (bool responsible)
+        public void setResponsible(bool responsible)
         {
             this.setProperty("responsible", responsible);
         }

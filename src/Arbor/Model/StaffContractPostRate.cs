@@ -9,95 +9,96 @@ namespace Arbor.Model
 {
     public class StaffContractPostRate : ModelBase
     {
-        protected string resourceType = ResourceType.STAFF_CONTRACT_POST_RATE;
+        protected new string resourceType = ResourceType.STAFF_CONTRACT_POST_RATE;
         public const string STAFF_CONTRACT_POST = "staffContractPost";
         public const string RATE = "rate";
         public const string RATE_FREQUENCY = "rateFrequency";
         public const string EFFECTIVE_DATE = "effectiveDate";
         public const string END_DATE = "endDate";
 
-        public StaffContractPostRate ()
+        public StaffContractPostRate()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public StaffContractPostRate (string resourceType = "StaffContractPostRate", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<StaffContractPostRate> query (SimpleQuery query = null)
+        public StaffContractPostRate(string resourceType = "StaffContractPostRate", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("StaffContractPostRate");
-        	RestGateway gateway = (RestGateway) StaffContractPostRate.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<StaffContractPostRate> staffcontractpostrateCollection = new ModelCollection<StaffContractPostRate> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    staffcontractpostrateCollection.add((StaffContractPostRate) model);
-        	}
-        
-        	return staffcontractpostrateCollection;
+
         }
 
-        public static StaffContractPostRate retrieve (string id)
+
+        public static ModelCollection<StaffContractPostRate> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) StaffContractPostRate.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (StaffContractPostRate) gateway.retrieve(ResourceType.STAFF_CONTRACT_POST_RATE, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("StaffContractPostRate");
+            RestGateway gateway = (RestGateway)StaffContractPostRate.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<StaffContractPostRate> staffcontractpostrateCollection = new ModelCollection<StaffContractPostRate>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                staffcontractpostrateCollection.add((StaffContractPostRate)model);
+            }
+
+            return staffcontractpostrateCollection;
         }
 
-        public StaffContractPost getStaffContractPost ()
+        public static StaffContractPostRate retrieve(string id)
         {
-            return (StaffContractPost) this.getProperty("staffContractPost");
+            RestGateway gateway = (RestGateway)StaffContractPostRate.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (StaffContractPostRate)gateway.retrieve(ResourceType.STAFF_CONTRACT_POST_RATE, id);
         }
 
-        public void setStaffContractPost (StaffContractPost staffContractPost)
+        public StaffContractPost getStaffContractPost()
+        {
+            return (StaffContractPost)this.getProperty("staffContractPost");
+        }
+
+        public void setStaffContractPost(StaffContractPost staffContractPost)
         {
             this.setProperty("staffContractPost", staffContractPost);
         }
 
-        public string getRate ()
+        public string getRate()
         {
             return this.getProperty("rate").ToString();
         }
 
-        public void setRate (string rate)
+        public void setRate(string rate)
         {
             this.setProperty("rate", rate);
         }
 
-        public string getRateFrequency ()
+        public string getRateFrequency()
         {
             return this.getProperty("rateFrequency").ToString();
         }
 
-        public void setRateFrequency (string rateFrequency)
+        public void setRateFrequency(string rateFrequency)
         {
             this.setProperty("rateFrequency", rateFrequency);
         }
 
-        public DateTime getEffectiveDate ()
+        public DateTime getEffectiveDate()
         {
             return Convert.ToDateTime(this.getProperty("effectiveDate"));
         }
 
-        public void setEffectiveDate (DateTime effectiveDate)
+        public void setEffectiveDate(DateTime effectiveDate)
         {
             this.setProperty("effectiveDate", effectiveDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }

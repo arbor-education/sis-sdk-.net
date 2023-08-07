@@ -21,135 +21,139 @@ namespace Arbor.Model
         public const string IGNORED_USER = "ignoredUser";
         public const string IGNORED_DATETIME = "ignoredDatetime";
 
-        public DataQualityCheckResult ()
+        public DataQualityCheckResult()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public DataQualityCheckResult (string resourceType = "DataQualityCheckResult", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<DataQualityCheckResult> query (SimpleQuery query = null)
+        public DataQualityCheckResult(string resourceType = "DataQualityCheckResult", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("DataQualityCheckResult");
-        	RestGateway gateway = (RestGateway) DataQualityCheckResult.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<DataQualityCheckResult> dataqualitycheckresultCollection = new ModelCollection<DataQualityCheckResult> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    dataqualitycheckresultCollection.add((DataQualityCheckResult) model);
-        	}
-        
-        	return dataqualitycheckresultCollection;
+
         }
 
-        public static DataQualityCheckResult retrieve (string id)
+
+        public static ModelCollection<DataQualityCheckResult> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) DataQualityCheckResult.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (DataQualityCheckResult) gateway.retrieve(ResourceType.DATA_QUALITY_CHECK_RESULT, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("DataQualityCheckResult");
+            RestGateway gateway = (RestGateway)DataQualityCheckResult.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<DataQualityCheckResult> dataqualitycheckresultCollection = new ModelCollection<DataQualityCheckResult>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                dataqualitycheckresultCollection.add((DataQualityCheckResult)model);
+            }
+
+            return dataqualitycheckresultCollection;
         }
 
-        public ModelBase getObject ()
+        public static DataQualityCheckResult retrieve(string id)
         {
-            return (ModelBase) this.getProperty("object");
+            RestGateway gateway = (RestGateway)DataQualityCheckResult.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (DataQualityCheckResult)gateway.retrieve(ResourceType.DATA_QUALITY_CHECK_RESULT, id);
         }
 
-        public void setObject (ModelBase _object)
+        public ModelBase getObject()
+        {
+            return (ModelBase)this.getProperty("object");
+        }
+
+        public void setObject(ModelBase _object)
         {
             this.setProperty("object", _object);
         }
 
-        public string getCheckClass ()
+        public string getCheckClass()
         {
             return this.getProperty("checkClass").ToString();
         }
 
-        public void setCheckClass (string checkClass)
+        public void setCheckClass(string checkClass)
         {
             this.setProperty("checkClass", checkClass);
         }
 
-        public string getResultType ()
+        public string getResultType()
         {
             return this.getProperty("resultType").ToString();
         }
 
-        public void setResultType (string resultType)
+        public void setResultType(string resultType)
         {
             this.setProperty("resultType", resultType);
         }
 
-        public string getResultCode ()
+        public string getResultCode()
         {
             return this.getProperty("resultCode").ToString();
         }
 
-        public void setResultCode (string resultCode)
+        public void setResultCode(string resultCode)
         {
             this.setProperty("resultCode", resultCode);
         }
 
-        public string getMessage ()
+        public string getMessage()
         {
             return this.getProperty("message").ToString();
         }
 
-        public void setMessage (string message)
+        public void setMessage(string message)
         {
             this.setProperty("message", message);
         }
 
-        public DateTime getLastCheckedDatetime (){
+        public DateTime getLastCheckedDatetime()
+        {
             return Convert.ToDateTime(this.getProperty("lastCheckedDatetime"));
         }
 
-        public void setLastCheckedDatetime (DateTime lastCheckedDatetime)
+        public void setLastCheckedDatetime(DateTime lastCheckedDatetime)
         {
             this.setProperty("lastCheckedDatetime", lastCheckedDatetime);
         }
 
-        public DateTime getResolvedDatetime (){
+        public DateTime getResolvedDatetime()
+        {
             return Convert.ToDateTime(this.getProperty("resolvedDatetime"));
         }
 
-        public void setResolvedDatetime (DateTime resolvedDatetime)
+        public void setResolvedDatetime(DateTime resolvedDatetime)
         {
             this.setProperty("resolvedDatetime", resolvedDatetime);
         }
 
-        public User getResolvedUser ()
+        public User getResolvedUser()
         {
-            return (User) this.getProperty("resolvedUser");
+            return (User)this.getProperty("resolvedUser");
         }
 
-        public void setResolvedUser (User resolvedUser)
+        public void setResolvedUser(User resolvedUser)
         {
             this.setProperty("resolvedUser", resolvedUser);
         }
 
-        public User getIgnoredUser ()
+        public User getIgnoredUser()
         {
-            return (User) this.getProperty("ignoredUser");
+            return (User)this.getProperty("ignoredUser");
         }
 
-        public void setIgnoredUser (User ignoredUser)
+        public void setIgnoredUser(User ignoredUser)
         {
             this.setProperty("ignoredUser", ignoredUser);
         }
 
-        public DateTime getIgnoredDatetime (){
+        public DateTime getIgnoredDatetime()
+        {
             return Convert.ToDateTime(this.getProperty("ignoredDatetime"));
         }
 
-        public void setIgnoredDatetime (DateTime ignoredDatetime)
+        public void setIgnoredDatetime(DateTime ignoredDatetime)
         {
             this.setProperty("ignoredDatetime", ignoredDatetime);
         }

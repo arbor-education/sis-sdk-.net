@@ -15,78 +15,79 @@ namespace Arbor.Model
         public const string IMPORTED_RECORD_ENTITY_TYPE = "importedRecordEntityType";
         public const string IMPORTED_RECORD = "importedRecord";
 
-        public ImportRecord ()
+        public ImportRecord()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public ImportRecord (string resourceType = "ImportRecord", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<ImportRecord> query (SimpleQuery query = null)
+        public ImportRecord(string resourceType = "ImportRecord", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("ImportRecord");
-        	RestGateway gateway = (RestGateway) ImportRecord.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<ImportRecord> importrecordCollection = new ModelCollection<ImportRecord> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    importrecordCollection.add((ImportRecord) model);
-        	}
-        
-        	return importrecordCollection;
+
         }
 
-        public static ImportRecord retrieve (string id)
+
+        public static ModelCollection<ImportRecord> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) ImportRecord.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (ImportRecord) gateway.retrieve(ResourceType.IMPORT_RECORD, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("ImportRecord");
+            RestGateway gateway = (RestGateway)ImportRecord.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<ImportRecord> importrecordCollection = new ModelCollection<ImportRecord>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                importrecordCollection.add((ImportRecord)model);
+            }
+
+            return importrecordCollection;
         }
 
-        public ModelBase getImporter ()
+        public static ImportRecord retrieve(string id)
         {
-            return (ModelBase) this.getProperty("importer");
+            RestGateway gateway = (RestGateway)ImportRecord.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (ImportRecord)gateway.retrieve(ResourceType.IMPORT_RECORD, id);
         }
 
-        public void setImporter (ModelBase importer)
+        public ModelBase getImporter()
+        {
+            return (ModelBase)this.getProperty("importer");
+        }
+
+        public void setImporter(ModelBase importer)
         {
             this.setProperty("importer", importer);
         }
 
-        public string getImporterName ()
+        public string getImporterName()
         {
             return this.getProperty("importerName").ToString();
         }
 
-        public void setImporterName (string importerName)
+        public void setImporterName(string importerName)
         {
             this.setProperty("importerName", importerName);
         }
 
-        public int getImportedRecordEntityType ()
+        public int getImportedRecordEntityType()
         {
             return Convert.ToInt32(this.getProperty("importedRecordEntityType"));
         }
 
-        public void setImportedRecordEntityType (int importedRecordEntityType)
+        public void setImportedRecordEntityType(int importedRecordEntityType)
         {
             this.setProperty("importedRecordEntityType", importedRecordEntityType);
         }
 
-        public ModelBase getImportedRecord ()
+        public ModelBase getImportedRecord()
         {
-            return (ModelBase) this.getProperty("importedRecord");
+            return (ModelBase)this.getProperty("importedRecord");
         }
 
-        public void setImportedRecord (ModelBase importedRecord)
+        public void setImportedRecord(ModelBase importedRecord)
         {
             this.setProperty("importedRecord", importedRecord);
         }

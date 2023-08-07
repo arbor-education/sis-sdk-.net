@@ -9,84 +9,85 @@ namespace Arbor.Model
 {
     public class RegistrationFormMembership : ModelBase
     {
-        protected string resourceType = ResourceType.REGISTRATION_FORM_MEMBERSHIP;
+        protected new string resourceType = ResourceType.REGISTRATION_FORM_MEMBERSHIP;
         public const string REGISTRATION_FORM = "registrationForm";
         public const string STUDENT = "student";
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
 
-        public RegistrationFormMembership ()
+        public RegistrationFormMembership()
         {
             base.resourceType = this.resourceType;
         }
-        
-        public RegistrationFormMembership (string resourceType = "RegistrationFormMembership", Hashtable properties = null, IGateway apiGateway = null) 
-        			: base (resourceType, properties, apiGateway)
-        {
-        
-        }
-        
 
-        public static ModelCollection<RegistrationFormMembership> query (SimpleQuery query = null)
+        public RegistrationFormMembership(string resourceType = "RegistrationFormMembership", Hashtable properties = null, IGateway apiGateway = null)
+                    : base(resourceType, properties, apiGateway)
         {
-            if (query == null) query = new SimpleQuery ();
-        	query.setResourceType ("RegistrationFormMembership");
-        	RestGateway gateway = (RestGateway) RegistrationFormMembership.getDefaultGateway ();
-        	if(gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
-        
-        	ModelCollection<RegistrationFormMembership> registrationformmembershipCollection = new ModelCollection<RegistrationFormMembership> ();
-        	ModelCollection<ModelBase> collection = gateway.query (query);
-        
-        	foreach (ModelBase model in collection) {
-        	    registrationformmembershipCollection.add((RegistrationFormMembership) model);
-        	}
-        
-        	return registrationformmembershipCollection;
+
         }
 
-        public static RegistrationFormMembership retrieve (string id)
+
+        public static ModelCollection<RegistrationFormMembership> query(SimpleQuery query = null)
         {
-            RestGateway gateway = (RestGateway) RegistrationFormMembership.getDefaultGateway();
-        	if(gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
-        	return (RegistrationFormMembership) gateway.retrieve(ResourceType.REGISTRATION_FORM_MEMBERSHIP, id);
+            if (query == null) query = new SimpleQuery();
+            query.setResourceType("RegistrationFormMembership");
+            RestGateway gateway = (RestGateway)RegistrationFormMembership.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase.setDefaultGateway() prior to calling query()");
+
+            ModelCollection<RegistrationFormMembership> registrationformmembershipCollection = new ModelCollection<RegistrationFormMembership>();
+            ModelCollection<ModelBase> collection = gateway.query(query);
+
+            foreach (ModelBase model in collection)
+            {
+                registrationformmembershipCollection.add((RegistrationFormMembership)model);
+            }
+
+            return registrationformmembershipCollection;
         }
 
-        public RegistrationForm getRegistrationForm ()
+        public static RegistrationFormMembership retrieve(string id)
         {
-            return (RegistrationForm) this.getProperty("registrationForm");
+            RestGateway gateway = (RestGateway)RegistrationFormMembership.getDefaultGateway();
+            if (gateway == null) throw new Exception("You must call ModelBase::setDefaultGateway() prior to calling query()");
+            return (RegistrationFormMembership)gateway.retrieve(ResourceType.REGISTRATION_FORM_MEMBERSHIP, id);
         }
 
-        public void setRegistrationForm (RegistrationForm registrationForm)
+        public RegistrationForm getRegistrationForm()
+        {
+            return (RegistrationForm)this.getProperty("registrationForm");
+        }
+
+        public void setRegistrationForm(RegistrationForm registrationForm)
         {
             this.setProperty("registrationForm", registrationForm);
         }
 
-        public Student getStudent ()
+        public Student getStudent()
         {
-            return (Student) this.getProperty("student");
+            return (Student)this.getProperty("student");
         }
 
-        public void setStudent (Student student)
+        public void setStudent(Student student)
         {
             this.setProperty("student", student);
         }
 
-        public DateTime getStartDate ()
+        public DateTime getStartDate()
         {
             return Convert.ToDateTime(this.getProperty("startDate"));
         }
 
-        public void setStartDate (DateTime startDate)
+        public void setStartDate(DateTime startDate)
         {
             this.setProperty("startDate", startDate);
         }
 
-        public DateTime getEndDate ()
+        public DateTime getEndDate()
         {
             return Convert.ToDateTime(this.getProperty("endDate"));
         }
 
-        public void setEndDate (DateTime endDate)
+        public void setEndDate(DateTime endDate)
         {
             this.setProperty("endDate", endDate);
         }
