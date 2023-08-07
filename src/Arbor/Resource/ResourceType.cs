@@ -273,6 +273,10 @@ namespace Arbor.Resource
         public const string ENABLED_FEATURE = "EnabledFeature";
         public const string ENROLMENT_MODE = "EnrolmentMode";
         public const string ENROLMENT_MODE_ASSIGNMENT = "EnrolmentModeAssignment";
+        public const string ENTITY_PUSHDOWN = "EntityPushdown";
+        public const string ENTITY_PUSHDOWN_SYNCED_ENTITY = "EntityPushdownSyncedEntity";
+        public const string ENTITY_PUSHDOWN_VERSION = "EntityPushdownVersion";
+        public const string ENTITY_PUSHDOWN_VERSION_STATUS = "EntityPushdownVersionStatus";
         public const string ETHNICITY = "Ethnicity";
         public const string ETHNICITY_CATEGORY = "EthnicityCategory";
         public const string EVENT_PARTICIPANT = "EventParticipant";
@@ -675,6 +679,8 @@ namespace Arbor.Resource
         public const string TERM = "Term";
         public const string THIRD_PARTY_LOGIN = "ThirdPartyLogin";
         public const string THIRD_PARTY_SITE = "ThirdPartySite";
+        public const string TIMETABLE_IMPORT_TIMETABLE_SLOT = "TimetableImportTimetableSlot";
+        public const string TIMETABLE_IMPORT_TIMETABLE_SLOT_RELATED_ENTITY = "TimetableImportTimetableSlotRelatedEntity";
         public const string TIMETABLE_PERIOD = "TimetablePeriod";
         public const string TIMETABLE_PERIOD_GROUPING = "TimetablePeriodGrouping";
         public const string TIMETABLE_SLOT = "TimetableSlot";
