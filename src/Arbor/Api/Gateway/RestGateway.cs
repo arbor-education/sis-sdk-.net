@@ -294,7 +294,7 @@ namespace Arbor.Api.Gateway
             webReq.Headers.Add("Authorization", "Basic " + auth);
             webReq.Method = WebRequestMethods.Http.Get;
             webReq.AllowAutoRedirect = true;
-            webReq.Proxy = null;
+            // webReq.Proxy = null;
             webReq.Accept = "application/json";
             webReq.UserAgent = this.userAgent;
 
