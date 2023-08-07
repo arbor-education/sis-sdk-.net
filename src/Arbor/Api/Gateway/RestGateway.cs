@@ -211,14 +211,11 @@ namespace Arbor.Api.Gateway
             return model;
         }
 
-        public HttpWebResponse delete(ModelBase model)
+        public JObject delete(ModelBase model)
         {
-            string url = model.getResourceUrl().AbsoluteUri;
-            WebRequest request = WebRequest.Create(url);
-            request.Method = HTTP_METHOD_DELETE;
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            Uri url = new Uri(this.baseUrl + model.getResourceUrl().OriginalString);
 
-            return response;
+            return this.sendRequest(HTTP_METHOD_DELETE.ToString(), url.AbsoluteUri);
         }
 
         public ModelCollection<ModelBase> query(SimpleQuery query)
@@ -427,12 +424,17 @@ namespace Arbor.Api.Gateway
                 case HttpStatusCode.Created:
                     responsePayload = JObject.Parse(serverResponse);
                     break;
+                case HttpStatusCode.NoContent:
+                    responsePayload = JObject.Parse("{message: 'Successfully deleted entity'}");
+                    break;
                 case HttpStatusCode.NotFound:
                 case HttpStatusCode.InternalServerError:
                     throw new ServerErrorException(message);
+                    break;
                 default:
 
                     throw new ServerErrorException(message);
+                    break;
             }
 
             return responsePayload;
