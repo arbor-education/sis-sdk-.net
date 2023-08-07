@@ -56,7 +56,7 @@ namespace Arbor.Api.Gateway
             hResource.Add(resourceRoot, arrayRepresentation);
             hBody.Add("request", hResource);
 
-            string body = JsonConvert.SerializeObject(hBody, Formatting.None, new ArborJsonConverter());
+            string body = JsonConvert.SerializeObject(hBody, Formatting.None);
 
             //Console.WriteLine(hBody.ToString());
             //Console.WriteLine(body);
@@ -211,14 +211,17 @@ namespace Arbor.Api.Gateway
             return model;
         }
 
-        public HttpWebResponse delete(ModelBase model)
+        public JObject delete(ModelBase model)
         {
-            string url = model.getResourceUrl().AbsoluteUri;
-            WebRequest request = WebRequest.Create(url);
-            request.Method = HTTP_METHOD_DELETE;
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            // Filters
+            PluralizeFilter filterPluralize = new PluralizeFilter();
+            CamelCaseToDash filterCamelToDash = new CamelCaseToDash();
 
-            return response;
+            string resourceSegment = (filterCamelToDash.filter(filterPluralize.filter(resource)));
+            string url = baseUrl + "/rest-v2/" + resourceSegment + "/" + id;
+
+            // Request / Response
+            return this.sendRequest(HTTP_METHOD_DELETE.ToString(), url);
         }
 
         public ModelCollection<ModelBase> query(SimpleQuery query)
@@ -297,7 +300,7 @@ namespace Arbor.Api.Gateway
             webReq.Headers.Add("Authorization", "Basic " + auth);
             webReq.Method = WebRequestMethods.Http.Get;
             webReq.AllowAutoRedirect = true;
-            // webReq.Proxy = null;
+            webReq.Proxy = null;
             webReq.Accept = "application/json";
             webReq.UserAgent = this.userAgent;
 
@@ -427,12 +430,17 @@ namespace Arbor.Api.Gateway
                 case HttpStatusCode.Created:
                     responsePayload = JObject.Parse(serverResponse);
                     break;
+                case HttpStatusCode.NoContent:
+                    responsePayload = JObject.Parse("{message: 'Successfully deleted entity'}");
+                    break;
                 case HttpStatusCode.NotFound:
                 case HttpStatusCode.InternalServerError:
                     throw new ServerErrorException(message);
+                    break;
                 default:
 
                     throw new ServerErrorException(message);
+                    break;
             }
 
             return responsePayload;
