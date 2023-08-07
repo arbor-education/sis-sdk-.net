@@ -213,15 +213,9 @@ namespace Arbor.Api.Gateway
 
         public JObject delete(ModelBase model)
         {
-            // Filters
-            PluralizeFilter filterPluralize = new PluralizeFilter();
-            CamelCaseToDash filterCamelToDash = new CamelCaseToDash();
+            Uri url = new Uri(this.baseUrl + model.getResourceUrl().OriginalString);
 
-            string resourceSegment = (filterCamelToDash.filter(filterPluralize.filter(resource)));
-            string url = baseUrl + "/rest-v2/" + resourceSegment + "/" + id;
-
-            // Request / Response
-            return this.sendRequest(HTTP_METHOD_DELETE.ToString(), url);
+            return this.sendRequest(HTTP_METHOD_DELETE.ToString(), url.AbsoluteUri);
         }
 
         public ModelCollection<ModelBase> query(SimpleQuery query)
