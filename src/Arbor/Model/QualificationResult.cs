@@ -19,6 +19,7 @@ namespace Arbor.Model
         public const string CANDIDATE_ASSESSABLE_ENTRY = "candidateAssessableEntry";
         public const string RESULT_DATETIME = "resultDatetime";
         public const string EMBARGO_DATETIME = "embargoDatetime";
+        public const string QUALIFICATION_AVAILABILITY_INSTANCE = "qualificationAvailabilityInstance";
         public const string MISSING_RESULT_REASON = "missingResultReason";
         public const string PARTIAL_ABSENCE = "partialAbsence";
         public const string ENDORSEMENT_GRADE = "endorsementGrade";
@@ -148,6 +149,16 @@ namespace Arbor.Model
         public void setEmbargoDatetime(DateTime embargoDatetime)
         {
             this.setProperty("embargoDatetime", embargoDatetime);
+        }
+
+        public QualificationAvailabilityInstance getQualificationAvailabilityInstance()
+        {
+            return (QualificationAvailabilityInstance)this.getProperty("qualificationAvailabilityInstance");
+        }
+
+        public void setQualificationAvailabilityInstance(QualificationAvailabilityInstance qualificationAvailabilityInstance)
+        {
+            this.setProperty("qualificationAvailabilityInstance", qualificationAvailabilityInstance);
         }
 
         public string getMissingResultReason()
