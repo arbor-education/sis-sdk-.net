@@ -19,7 +19,7 @@ jobs:
       - name: Package SDK
         run: nuget pack src/ArborSdk.csproj -Build -Symbols -SymbolPackageFormat snupkg -Version ${{ github.ref_name }}
       - name: Upload SDK Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: sdk
           path: |
