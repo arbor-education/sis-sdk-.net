@@ -16,6 +16,8 @@ jobs:
           dotnet-version: 6.0.x
       - name: Configure NuGet
         run: nuget SetApiKey ${{ secrets.NUGET_TOKEN }}
+      - name: Restore packages
+        run: nuget restore ArborSdkDotNet.sln
       - name: Package SDK
         run: nuget pack src/ArborSdk.csproj -Build -Symbols -SymbolPackageFormat snupkg -Version ${{ github.ref_name }}
       - name: Upload SDK Artifact
