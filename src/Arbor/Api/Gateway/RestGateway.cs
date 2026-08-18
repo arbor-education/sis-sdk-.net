@@ -22,6 +22,36 @@ namespace Arbor.Api.Gateway
         public const string HTTP_METHOD_PUT = "put";
         public const string HTTP_METHOD_DELETE = "delete";
 
+        // Identifies requests originating from this SDK to the Arbor API.
+        // The header's presence marks the caller as the .NET SDK; the value
+        // carries this SDK's version. The release build stamps the version from
+        // the git tag into the assembly (see .github/workflows/publish.yaml).
+        public const string SDK_CLIENT_HEADER = "X-Arbor-Sdk";
+
+        private static readonly string SdkVersion = ResolveSdkVersion();
+
+        private static string ResolveSdkVersion()
+        {
+            System.Reflection.Assembly assembly = typeof(RestGateway).Assembly;
+
+            object[] attributes = assembly.GetCustomAttributes(
+                typeof(System.Reflection.AssemblyInformationalVersionAttribute), false);
+
+            if (attributes.Length > 0)
+            {
+                string informationalVersion =
+                    ((System.Reflection.AssemblyInformationalVersionAttribute)attributes[0])
+                        .InformationalVersion;
+
+                if (!string.IsNullOrEmpty(informationalVersion))
+                {
+                    return informationalVersion;
+                }
+            }
+
+            return assembly.GetName().Version.ToString();
+        }
+
         private string baseUrl;
         private string authUser;
         private string authPassword;
@@ -297,6 +327,7 @@ namespace Arbor.Api.Gateway
             // webReq.Proxy = null;
             webReq.Accept = "application/json";
             webReq.UserAgent = this.userAgent;
+            webReq.Headers.Add(SDK_CLIENT_HEADER, SdkVersion);
 
             try
             {
@@ -352,6 +383,7 @@ namespace Arbor.Api.Gateway
             webReq.AllowAutoRedirect = true;
             webReq.Accept = "application/json";
             webReq.UserAgent = this.userAgent;
+            webReq.Headers.Add(SDK_CLIENT_HEADER, SdkVersion);
             webReq.AllowAutoRedirect = true;
             webReq.MaximumAutomaticRedirections = 1;
 

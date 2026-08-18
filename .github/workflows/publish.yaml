@@ -18,6 +18,20 @@ jobs:
         run: nuget SetApiKey ${{ secrets.NUGET_TOKEN }}
       - name: Restore packages
         run: nuget restore ArborSdkDotNet.sln
+      - name: Stamp SDK version from tag
+        shell: pwsh
+        run: |
+          $tag = "${{ github.ref_name }}"
+          # AssemblyVersion/FileVersion must be numeric; strip any leading "v" and pre-release/build suffix.
+          $numeric = ($tag -replace '^v', '') -replace '[-+].*$', ''
+          if ($numeric -notmatch '^\d+(\.\d+){0,3}$') { $numeric = '0.0.0' }
+          $file = 'src/AssemblyInfo.cs'
+          $content = Get-Content $file -Raw
+          $content = [regex]::Replace($content, 'AssemblyVersion\("[^"]*"\)', "AssemblyVersion(""$numeric"")")
+          $content = [regex]::Replace($content, 'AssemblyFileVersion\("[^"]*"\)', "AssemblyFileVersion(""$numeric"")")
+          $content = [regex]::Replace($content, 'AssemblyInformationalVersion\("[^"]*"\)', "AssemblyInformationalVersion(""$tag"")")
+          Set-Content -Path $file -Value $content -NoNewline
+          Write-Host "Stamped SDK version: informational=$tag numeric=$numeric"
       - name: Package SDK
         run: nuget pack src/ArborSdk.csproj -Build -Symbols -SymbolPackageFormat snupkg -Version ${{ github.ref_name }}
       - name: Upload SDK Artifact
