@@ -115,6 +115,14 @@ var student = (Student)gateway.retrieve(ResourceType.STUDENT, "1");
 Use credentials for an appropriate non-production Arbor environment while
 developing. Some SDK methods create, update, or delete API resources.
 
+## Request identification
+
+Every request the SDK sends to the Arbor API includes an `X-Arbor-Sdk` header.
+Its presence identifies the caller as the .NET SDK, and its value is the SDK
+version (e.g. `3.7.1`). Released builds have this version stamped from the git
+tag by `.github/workflows/publish.yaml`; local/dev builds report `0.0.0-dev`.
+The User-Agent is left untouched so integrators can still set their own.
+
 ## Validation
 
 The repository currently has no automated unit test suite. Changes should at
