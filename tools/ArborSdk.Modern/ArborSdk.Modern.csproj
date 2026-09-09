@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    A build shim, NOT a fork: it compiles the exact same sources as
+    src/ArborSdk.csproj (../../src/Arbor/**/*.cs) against modern .NET instead of
+    .NET Framework 4.5.1. No files are copied and no code is duplicated, so
+    RestGateway here is byte-for-byte the gateway the SDK ships.
+
+    Why it exists: src/ArborSdk.csproj needs MSBuild or Mono, which is awkward on
+    macOS and Linux. This lets tools/AuthCheck exercise the real gateway with
+    only the `dotnet` SDK installed.
+
+    Anything added to src/Arbor is picked up automatically by the glob below.
+  -->
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RollForward>LatestMajor</RollForward>
+    <AssemblyName>ArborSdk</AssemblyName>
+    <!--
+      Report the same version a local build of src/ArborSdk.csproj reports, so the
+      X-Arbor-Sdk header this tool sends matches an unreleased SDK build rather
+      than inventing a version. Releases stamp the git tag instead.
+    -->
+    <Version>0.0.0-dev</Version>
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+    <RootNamespace>Arbor</RootNamespace>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <!--
+      The SDK targets an old framework and uses APIs that modern .NET marks
+      obsolete (WebRequest/WebClient factory methods, ServicePointManager).
+      They still function; silence the advisories rather than editing the
+      shipped source.
+    -->
+    <!--
+      CS0162 (unreachable code after throw) and CS0105 (duplicate using) are
+      pre-existing in the shipped sources; suppressed so this tool's build output
+      stays readable, not because they were reviewed and dismissed.
+    -->
+    <NoWarn>SYSLIB0014;CS0618;CS0612;CS0162;CS0105</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="../../src/Arbor/**/*.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Matches the version pinned in src/ArborSdk.csproj and packages.config. -->
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+</Project>

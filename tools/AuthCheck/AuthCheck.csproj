@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Authentication smoke test. Drives the SDK's real RestGateway, referenced via
+    the ArborSdk.Modern shim so the same SDK sources can be built and run with
+    only the `dotnet` SDK installed (no MSBuild or Mono).
+
+    Deliberately NOT part of ArborSdkDotNet.sln, which targets .NET Framework
+    4.5.1 and would not load this project.
+  -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <!--
+      Target the oldest supported LTS so the tool builds on any modern SDK, but
+      roll forward so it also RUNS on a machine that only has a newer runtime
+      (e.g. .NET 10). Without this, a net8.0 build refuses to start on .NET 10.
+    -->
+    <RollForward>LatestMajor</RollForward>
+    <RootNamespace>Arbor.Tools.AuthCheck</RootNamespace>
+    <AssemblyName>arbor-auth-check</AssemblyName>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../ArborSdk.Modern/ArborSdk.Modern.csproj" />
+  </ItemGroup>
+
+</Project>

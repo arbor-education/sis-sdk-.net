@@ -13,6 +13,11 @@ example applications.
 - `src/` — SDK source and `ArborSdk.csproj`.
 - `examples/` — C# console example.
 - `ArborSdkVbExamplets/` — VB.NET console example.
+- `tools/AuthCheck/` — command-line check that credentials can authenticate via
+  the SDK's `RestGateway`, against `GET /students` or any other resource type.
+  Needs only `dotnet`; see [tools/AuthCheck/README.md](tools/AuthCheck/README.md).
+- `tools/ArborSdk.Modern/` — build shim that compiles the `src/Arbor` sources
+  against modern .NET so `tools/AuthCheck` can run without MSBuild or Mono.
 - `.github/workflows/` — package, lint, publish, and security workflows.
 
 ## Requirements
@@ -122,6 +127,30 @@ Its presence identifies the caller as the .NET SDK, and its value is the SDK
 version (e.g. `3.7.1`). Released builds have this version stamped from the git
 tag by `.github/workflows/publish.yaml`; local/dev builds report `0.0.0-dev`.
 The User-Agent is left untouched so integrators can still set their own.
+
+## Test API authentication
+
+To check that an `applicationUsername` and `dpt_token` authenticate, without
+setting up MSBuild or Mono:
+
+```bash
+brew install dotnet
+dotnet run --project tools/AuthCheck -- \
+  --url https://myschool.uk.arbor.sc --application-username my-application
+```
+
+The `dpt_token` is prompted for, and is not echoed. The request goes through
+`RestGateway`, so a pass means the SDK itself authenticates.
+
+Add `--resource` to check any other entity, and `--list-resources` to search the
+860 resource types the SDK defines:
+
+```bash
+dotnet run --project tools/AuthCheck -- --list-resources enrolment
+```
+
+Full options, exit codes and a list of gateway limitations that affect the
+diagnostics are in [tools/AuthCheck/README.md](tools/AuthCheck/README.md).
 
 ## Validation
 
